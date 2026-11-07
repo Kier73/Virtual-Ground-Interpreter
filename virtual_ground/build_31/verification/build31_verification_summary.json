@@ -1,0 +1,47 @@
+{
+  "build": 31,
+  "build30_direct_suite_on_fresh_extraction": {
+    "log": "verification/build30_fresh_extraction_tests.txt",
+    "passed": 24,
+    "status": "PASS",
+    "total": 24
+  },
+  "build30_original_package_manifest": {
+    "entries": 386,
+    "method": "sha256sum -c against preserved original extracted package",
+    "status": "VERIFIED"
+  },
+  "build31_experiments": {
+    "binary_errors": 0,
+    "binary_operations": 512,
+    "composed_chains": 2048,
+    "composition_errors": 0,
+    "observer_commutation_cases": 512,
+    "observer_commutation_errors": 0,
+    "reversibility_errors": 0,
+    "reversible_roundtrips": 512
+  },
+  "build31_unit_tests": {
+    "log": "verification/build31_tests.txt",
+    "passed": 20,
+    "status": "PASS",
+    "total": 20
+  },
+  "inherited_builds_24_to_30_regression_record": {
+    "counts": {
+      "build24": 17,
+      "build25": 34,
+      "build26": 27,
+      "build27": 30,
+      "build28": 21,
+      "build29": 24,
+      "build30": 24
+    },
+    "fresh_extraction_note": "The predecessor archive includes a separate fresh-extraction verification report stating 177/177 direct tests passed; Build 31 independently re-ran the Build 30 suite on a clean extracted copy.",
+    "passed": 177,
+    "source": "predecessor/vl_response_geometry_build_30/verification/combined_regression_summary.json",
+    "status": "PASS",
+    "total": 177
+  },
+  "scope": "synthetic complex-baseband simulation; not physical hardware"
+}

@@ -6,7 +6,7 @@ it never edits a build or shares code between builds.
 
 The top-level trees are split by purpose:
   theory_development/build_01 .. build_19   (Build 16 is embedded in build_17)
-  virtual_ground/build_20 .. build_30       (Build 24 is embedded in build_25/26)
+  virtual_ground/build_20 .. build_31       (Build 24 is embedded in build_25/26)
 
 Builds 16 and 24 have no standalone directory. Run the embedded Build 24-30
 regression chain with virtual_ground/build_30/run_all_regressions.py if needed.
@@ -61,7 +61,7 @@ def discover_command(build_dir: Path) -> list[str]:
 def run_build(build_dir: Path, write_log: bool) -> dict:
     command = discover_command(build_dir)
     env = dict(os.environ)
-    # Keep the shipped manifests intact on Builds 27/30 and avoid cache clutter.
+    # Keep the shipped manifests intact on Builds 27/30/31 and avoid cache clutter.
     env.setdefault("PYTHONDONTWRITEBYTECODE", "1")
     proc = subprocess.run(
         command,

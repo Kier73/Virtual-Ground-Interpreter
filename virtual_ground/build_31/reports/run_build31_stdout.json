@@ -1,0 +1,140 @@
+{
+  "observer_symbol_errors": 0,
+  "observer_reframe_errors": 0,
+  "binary_cases": 512,
+  "binary_errors": 0,
+  "commuting_cases": 512,
+  "commuting_errors": 0,
+  "composed_chains": 2048,
+  "composition_errors": 0,
+  "reversible_roundtrips": 512,
+  "reversibility_errors": 0,
+  "calibration_drift": [
+    {
+      "input_a_error_rad": 0.0,
+      "input_b_error_rad": 0.0,
+      "intermediate_error_rad": 0.0,
+      "input_c_error_rad": 0.0,
+      "predicted_output_phase_error_rad": 0.0,
+      "measured_output_phase_error_rad": 2.220446049250313e-16,
+      "absolute_model_residual_rad": 2.220446049250313e-16,
+      "decoded_output": 7,
+      "expected_output": 7,
+      "correct": true
+    },
+    {
+      "input_a_error_rad": 0.05,
+      "input_b_error_rad": 0.1,
+      "intermediate_error_rad": 0.04,
+      "input_c_error_rad": 0.02,
+      "predicted_output_phase_error_rad": 0.17000000000000004,
+      "measured_output_phase_error_rad": 0.16999999999999224,
+      "absolute_model_residual_rad": 7.799316747991725e-15,
+      "decoded_output": 7,
+      "expected_output": 7,
+      "correct": true
+    },
+    {
+      "input_a_error_rad": 0.12,
+      "input_b_error_rad": 0.09,
+      "intermediate_error_rad": 0.08,
+      "input_c_error_rad": 0.03,
+      "predicted_output_phase_error_rad": 0.26,
+      "measured_output_phase_error_rad": 0.26,
+      "absolute_model_residual_rad": 0.0,
+      "decoded_output": 7,
+      "expected_output": 7,
+      "correct": true
+    },
+    {
+      "input_a_error_rad": 0.25,
+      "input_b_error_rad": 0.2,
+      "intermediate_error_rad": 0.15,
+      "input_c_error_rad": 0.02,
+      "predicted_output_phase_error_rad": 0.58,
+      "measured_output_phase_error_rad": 0.5800000000000022,
+      "absolute_model_residual_rad": 2.220446049250313e-15,
+      "decoded_output": 0,
+      "expected_output": 7,
+      "correct": false
+    },
+    {
+      "input_a_error_rad": 0.45,
+      "input_b_error_rad": 0.0,
+      "intermediate_error_rad": 0.0,
+      "input_c_error_rad": 0.0,
+      "predicted_output_phase_error_rad": 0.45,
+      "measured_output_phase_error_rad": 0.4500000000000007,
+      "absolute_model_residual_rad": 6.661338147750939e-16,
+      "decoded_output": 0,
+      "expected_output": 7,
+      "correct": false
+    }
+  ],
+  "noise_sweep": [
+    {
+      "complex_noise_sigma_per_component": 0.0,
+      "chains": 2048,
+      "errors": 0,
+      "erasures": 0,
+      "accuracy_including_erasures": 1.0
+    },
+    {
+      "complex_noise_sigma_per_component": 0.02,
+      "chains": 2048,
+      "errors": 0,
+      "erasures": 0,
+      "accuracy_including_erasures": 1.0
+    },
+    {
+      "complex_noise_sigma_per_component": 0.1,
+      "chains": 2048,
+      "errors": 0,
+      "erasures": 0,
+      "accuracy_including_erasures": 1.0
+    },
+    {
+      "complex_noise_sigma_per_component": 0.25,
+      "chains": 2048,
+      "errors": 0,
+      "erasures": 0,
+      "accuracy_including_erasures": 1.0
+    },
+    {
+      "complex_noise_sigma_per_component": 0.5,
+      "chains": 2048,
+      "errors": 18,
+      "erasures": 0,
+      "accuracy_including_erasures": 0.9912109375
+    },
+    {
+      "complex_noise_sigma_per_component": 1.0,
+      "chains": 2048,
+      "errors": 362,
+      "erasures": 0,
+      "accuracy_including_erasures": 0.8232421875
+    },
+    {
+      "complex_noise_sigma_per_component": 1.5,
+      "chains": 2048,
+      "errors": 783,
+      "erasures": 0,
+      "accuracy_including_erasures": 0.61767578125
+    },
+    {
+      "complex_noise_sigma_per_component": 2.0,
+      "chains": 2048,
+      "errors": 1074,
+      "erasures": 0,
+      "accuracy_including_erasures": 0.4755859375
+    }
+  ],
+  "performance": {
+    "loops_per_repeat": 120,
+    "repeats": 5,
+    "signal_chain_median_seconds_per_chain": 0.00033261818333395844,
+    "decode_compute_reencode_median_seconds_per_chain": 0.00022329194999883839,
+    "ratio_signal_to_decode_compute_reencode": 1.4896111719911478,
+    "scope": "Python complex-sample simulation only; not analog hardware, energy, throughput, or optimized implementation evidence"
+  }
+}

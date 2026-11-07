@@ -1,0 +1,265 @@
+{
+  "actual_outputs": [
+    1,
+    5,
+    6,
+    5,
+    2,
+    5
+  ],
+  "control_encoding": "16-ary orthogonal FSK, with preamble and opcode complements",
+  "decoded_control_opcodes": [
+    "ADD8",
+    "SUB8",
+    "ADD8",
+    "SUB8",
+    "ADD8",
+    "SUB8"
+  ],
+  "exhaustive_pair_coverage": {
+    "ADD8": 64,
+    "SUB8": 64,
+    "errors": 0
+  },
+  "expected_fsk_symbol_boundaries_frame_indices": [
+    9,
+    17,
+    25,
+    33,
+    41,
+    49,
+    57,
+    65,
+    73,
+    81,
+    89,
+    97,
+    105,
+    113,
+    121
+  ],
+  "expected_outputs": [
+    1,
+    5,
+    6,
+    5,
+    2,
+    5
+  ],
+  "fsk_event_boundary_audit_via_build29": {
+    "combined": {
+      "f1": 0.846153846153846,
+      "fn": 4,
+      "fp": 0,
+      "precision": 1.0,
+      "predicted_boundaries": [
+        8,
+        15,
+        24,
+        39,
+        55,
+        63,
+        71,
+        87,
+        95,
+        103,
+        119
+      ],
+      "recall": 0.7333333333333333,
+      "tp": 11
+    },
+    "harmonic": {
+      "f1": 0.6956521739130436,
+      "fn": 7,
+      "fp": 0,
+      "precision": 1.0,
+      "predicted_boundaries": [
+        8,
+        15,
+        24,
+        39,
+        63,
+        71,
+        95,
+        103
+      ],
+      "recall": 0.5333333333333333,
+      "tp": 8
+    },
+    "temporal": {
+      "f1": 0.9655172413793104,
+      "fn": 1,
+      "fp": 0,
+      "precision": 1.0,
+      "predicted_boundaries": [
+        7,
+        15,
+        23,
+        39,
+        47,
+        56,
+        63,
+        71,
+        79,
+        87,
+        95,
+        103,
+        111,
+        120
+      ],
+      "recall": 0.9333333333333333,
+      "tp": 14
+    }
+  },
+  "interpretation": {
+    "physical_hardware": "not tested; complex-baseband computation is a numerical signal-domain model",
+    "signal_as_data": "yes: FSK control symbols and PSK operands carry the program",
+    "signal_as_instruction": "yes within the finite declared ISA: FSK opcodes select the operation",
+    "signal_domain_computation": "yes for modular phase addition/subtraction via complex phasor transformations",
+    "universal_computation": "not demonstrated; finite Z/8Z ISA only"
+  },
+  "minimum_fsk_decision_margin": 0.999999639516818,
+  "noise_robustness": [
+    {
+      "accuracy": 1.0,
+      "complex_noise_sigma": 0.0,
+      "errors": 0,
+      "total_operations": 128
+    },
+    {
+      "accuracy": 1.0,
+      "complex_noise_sigma": 0.02,
+      "errors": 0,
+      "total_operations": 128
+    },
+    {
+      "accuracy": 1.0,
+      "complex_noise_sigma": 0.1,
+      "errors": 0,
+      "total_operations": 128
+    },
+    {
+      "accuracy": 1.0,
+      "complex_noise_sigma": 0.5,
+      "errors": 0,
+      "total_operations": 128
+    },
+    {
+      "accuracy": 0.9921875,
+      "complex_noise_sigma": 1.0,
+      "errors": 1,
+      "total_operations": 128
+    },
+    {
+      "accuracy": 0.9765625,
+      "complex_noise_sigma": 1.5,
+      "errors": 3,
+      "total_operations": 128
+    },
+    {
+      "accuracy": 0.90625,
+      "complex_noise_sigma": 2.0,
+      "errors": 12,
+      "total_operations": 128
+    }
+  ],
+  "operand_encoding": "8-PSK complex phasors with per-channel pilot references",
+  "operation_law": "z(a+b mod 8) = z(a) z(b); z(a-b mod 8) = z(a) conjugate(z(b))",
+  "phase_domain_execution_records": [
+    {
+      "opcode": "ADD8",
+      "output_phasor": [
+        0.7070282478995569,
+        0.7071853057523768
+      ],
+      "output_symbol": 1,
+      "signal_domain_operation": "phasor_multiply"
+    },
+    {
+      "opcode": "SUB8",
+      "output_phasor": [
+        -0.7073931591952134,
+        -0.7068202871478829
+      ],
+      "output_symbol": 5,
+      "signal_domain_operation": "phasor_multiply_conjugate"
+    },
+    {
+      "opcode": "ADD8",
+      "output_phasor": [
+        0.00014345322079817313,
+        -0.9999999897105867
+      ],
+      "output_symbol": 6,
+      "signal_domain_operation": "phasor_multiply"
+    },
+    {
+      "opcode": "SUB8",
+      "output_phasor": [
+        -0.7070551413464878,
+        -0.7071584172556374
+      ],
+      "output_symbol": 5,
+      "signal_domain_operation": "phasor_multiply_conjugate"
+    },
+    {
+      "opcode": "ADD8",
+      "output_phasor": [
+        2.581371528681542e-05,
+        0.9999999996668261
+      ],
+      "output_symbol": 2,
+      "signal_domain_operation": "phasor_multiply"
+    },
+    {
+      "opcode": "SUB8",
+      "output_phasor": [
+        -0.7070920271813406,
+        -0.707121534883914
+      ],
+      "output_symbol": 5,
+      "signal_domain_operation": "phasor_multiply_conjugate"
+    }
+  ],
+  "pilot_calibration_control": {
+    "calibration_required": true,
+    "correct_pilot_output": 1,
+    "expected_add8_output": 1,
+    "one_symbol_phase_miscalibration_output": 0
+  },
+  "preamble_offset_samples_recovered": 37,
+  "program_correct": true,
+  "program_instructions": [
+    {
+      "a": 3,
+      "b": 6,
+      "opcode": "ADD8"
+    },
+    {
+      "a": 1,
+      "b": 4,
+      "opcode": "SUB8"
+    },
+    {
+      "a": 7,
+      "b": 7,
+      "opcode": "ADD8"
+    },
+    {
+      "a": 0,
+      "b": 3,
+      "opcode": "SUB8"
+    },
+    {
+      "a": 5,
+      "b": 5,
+      "opcode": "ADD8"
+    },
+    {
+      "a": 7,
+      "b": 2,
+      "opcode": "SUB8"
+    }
+  ],
+  "scope": "finite signal-domain arithmetic over Z/8Z; not universal computation"
+}

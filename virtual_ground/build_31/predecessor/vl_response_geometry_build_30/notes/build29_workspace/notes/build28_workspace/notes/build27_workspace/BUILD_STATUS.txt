@@ -1,0 +1,15 @@
+BUILD 27 COMPLETE
+Build 27 tests: 30 / 30 PASS
+Inherited Build 26 tests: 27 / 27 PASS
+Inherited Build 25 tests: 34 / 34 PASS
+Inherited Build 24 tests: 17 / 17 PASS
+Combined regression tests: 108 / 108 PASS
+Fresh extraction: PASS
+Top-level manifest on first fresh extraction: 228 / 228 verified
+Embedded Build 26 manifest: PASS
+Embedded original Build 24 manifest: PASS
+Synthetic held-out operation windows: 6 / 6 PASS
+Deliberate out-of-family counterexample: DETECTED (candidate law rejected)
+Physical sensor data: not processed
+Ground revision: proposal-only; no automatic commit
+Packaging: COMPLETE

@@ -1,0 +1,85 @@
+{
+  "expected_symbol_boundaries_frame_indices": [
+    9,
+    17,
+    25,
+    33,
+    41,
+    49,
+    57,
+    65,
+    73,
+    81,
+    89,
+    97,
+    105,
+    113,
+    121
+  ],
+  "provenance": "synthetic FSK control waveform, analyzed by Build 29 event detector",
+  "views": {
+    "combined": {
+      "f1": 0.846153846153846,
+      "fn": 4,
+      "fp": 0,
+      "precision": 1.0,
+      "predicted_boundaries": [
+        8,
+        15,
+        24,
+        39,
+        55,
+        63,
+        71,
+        87,
+        95,
+        103,
+        119
+      ],
+      "recall": 0.7333333333333333,
+      "tp": 11
+    },
+    "harmonic": {
+      "f1": 0.6956521739130436,
+      "fn": 7,
+      "fp": 0,
+      "precision": 1.0,
+      "predicted_boundaries": [
+        8,
+        15,
+        24,
+        39,
+        63,
+        71,
+        95,
+        103
+      ],
+      "recall": 0.5333333333333333,
+      "tp": 8
+    },
+    "temporal": {
+      "f1": 0.9655172413793104,
+      "fn": 1,
+      "fp": 0,
+      "precision": 1.0,
+      "predicted_boundaries": [
+        7,
+        15,
+        23,
+        39,
+        47,
+        56,
+        63,
+        71,
+        79,
+        87,
+        95,
+        103,
+        111,
+        120
+      ],
+      "recall": 0.9333333333333333,
+      "tp": 14
+    }
+  }
+}

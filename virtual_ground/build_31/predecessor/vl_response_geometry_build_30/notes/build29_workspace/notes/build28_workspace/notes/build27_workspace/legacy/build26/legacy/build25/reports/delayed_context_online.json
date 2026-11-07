@@ -1,0 +1,118 @@
+{
+  "belief_after_distinguishing_probe": {
+    "belief": [
+      "q0"
+    ],
+    "buffered_observation_steps": [],
+    "completed_step_count": 6,
+    "conflict": null,
+    "history_total_count": 12,
+    "hypothesis_count": 1,
+    "last_action_step": 5,
+    "retained_history_records": 12,
+    "retired_step_count": 0,
+    "status": "tracking",
+    "unresolved_steps": [],
+    "version_monitor": {
+      "auto_committed": false,
+      "conflict_count": 0,
+      "conflicts": [],
+      "current_ground_fingerprint": "b15a9d0946d9a5537325d18184db901cf79eccdf53ec899aeaa8607536b540e3",
+      "distinct_actions": [],
+      "distinct_steps": 0,
+      "status": "current_ground_consistent"
+    }
+  },
+  "belief_before_distinguishing_probe": {
+    "belief": [
+      "q0",
+      "q1",
+      "q2",
+      "q3",
+      "q4",
+      "q5"
+    ],
+    "buffered_observation_steps": [],
+    "completed_step_count": 5,
+    "conflict": null,
+    "history_total_count": 10,
+    "hypothesis_count": 6,
+    "last_action_step": 4,
+    "retained_history_records": 10,
+    "retired_step_count": 0,
+    "status": "tracking",
+    "unresolved_steps": [],
+    "version_monitor": {
+      "auto_committed": false,
+      "conflict_count": 0,
+      "conflicts": [],
+      "current_ground_fingerprint": "b15a9d0946d9a5537325d18184db901cf79eccdf53ec899aeaa8607536b540e3",
+      "distinct_actions": [],
+      "distinct_steps": 0,
+      "status": "current_ground_consistent"
+    }
+  },
+  "note": "The physical starting mode is not exposed to the tracker; the observable context is only narrowed after the distinguishing event.",
+  "trace": [
+    {
+      "action": "HOLD",
+      "belief": [
+        "q0",
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5"
+      ],
+      "step": 0
+    },
+    {
+      "action": "HOLD",
+      "belief": [
+        "q0",
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5"
+      ],
+      "step": 1
+    },
+    {
+      "action": "HOLD",
+      "belief": [
+        "q0",
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5"
+      ],
+      "step": 2
+    },
+    {
+      "action": "HOLD",
+      "belief": [
+        "q0",
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5"
+      ],
+      "step": 3
+    },
+    {
+      "action": "HOLD",
+      "belief": [
+        "q0",
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5"
+      ],
+      "step": 4
+    }
+  ]
+}

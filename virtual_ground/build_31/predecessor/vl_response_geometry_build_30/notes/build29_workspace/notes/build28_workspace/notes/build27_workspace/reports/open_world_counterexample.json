@@ -1,0 +1,20 @@
+{
+  "action": "reject global law for this validation scope; retain a counterexample and consider a context-conditioned rule or ground revision",
+  "held_out_before": [
+    6
+  ],
+  "held_out_correct": false,
+  "held_out_observed_after": [
+    9
+  ],
+  "prediction": {
+    "evidence_scope": "finite observed examples; generalization remains a hypothesis",
+    "law": "constant_vector_delta",
+    "next_state": [
+      7
+    ],
+    "operation_id": "op_18023d3e6892",
+    "status": "inductive_candidate"
+  },
+  "training_effect": "+1"
+}

@@ -1,0 +1,5 @@
+Build 31 imports a local byte-for-byte copy of Build 30 signal_code.py.
+Build31 signal_code.py SHA-256: 2c482dea91c7b9bec8994830649ecc7c3335737ffda6f2925671567e7c31415d
+Preserved Build30 signal_code.py SHA-256: 2c482dea91c7b9bec8994830649ecc7c3335737ffda6f2925671567e7c31415d
+Match: YES
+Preserved original Build30 archive SHA-256: e5bfd82564386c56feb530024e20457cbfbfd35389ba2f4a5426552c05db6a7b

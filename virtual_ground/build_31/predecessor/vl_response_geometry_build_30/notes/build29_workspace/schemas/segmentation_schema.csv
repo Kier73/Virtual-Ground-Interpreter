@@ -1,0 +1,12 @@
+field,type,description
+threshold_name,string,sensitive/nominal/conservative hypothesis
+boundaries,array[int],Candidate frame offsets delimiting events
+start_frame,int,Inclusive event frame
+end_frame,int,Exclusive event frame
+start_sample,int,Inclusive sample offset
+end_sample,int,Exclusive sample offset
+duration_s,float,Duration implied by sample offsets and sample rate
+token,string,Opaque event cluster identifier
+confidence,float,Mean fused boundary evidence inside segment; heuristic only
+score,float,Segmentation objective for threshold hypothesis; heuristic only
+status,string,Candidate; not ground-truth segmentation

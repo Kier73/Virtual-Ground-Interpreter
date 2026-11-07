@@ -1,0 +1,3 @@
+operation_id,event_signature,support,distinct_pre_states,effect_mode,constant_delta,status,ambiguous_pre_states
+op_ea6357882a9f,"[""edge_04"", ""pulse_12""]",7,7,constant_vector_delta,[1],candidate,[]
+op_19734ed886f0,"[""ring_09""]",7,7,constant_vector_delta,[3],candidate,[]

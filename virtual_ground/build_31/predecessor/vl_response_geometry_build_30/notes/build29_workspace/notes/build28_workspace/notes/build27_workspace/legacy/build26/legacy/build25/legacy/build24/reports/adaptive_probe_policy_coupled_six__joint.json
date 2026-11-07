@@ -1,0 +1,121 @@
+{
+  "tree": {
+    "kind": "probe",
+    "probe": [
+      "PROBE_B"
+    ],
+    "cost": 1,
+    "information_bits": 2.584962500721156,
+    "branches": [
+      {
+        "observed_output": [
+          [
+            0,
+            0
+          ]
+        ],
+        "next": {
+          "kind": "identified",
+          "contexts": [
+            "q0"
+          ],
+          "cumulative_cost": 1
+        }
+      },
+      {
+        "observed_output": [
+          [
+            0,
+            1
+          ]
+        ],
+        "next": {
+          "kind": "identified",
+          "contexts": [
+            "q4"
+          ],
+          "cumulative_cost": 1
+        }
+      },
+      {
+        "observed_output": [
+          [
+            0,
+            2
+          ]
+        ],
+        "next": {
+          "kind": "identified",
+          "contexts": [
+            "q2"
+          ],
+          "cumulative_cost": 1
+        }
+      },
+      {
+        "observed_output": [
+          [
+            1,
+            0
+          ]
+        ],
+        "next": {
+          "kind": "identified",
+          "contexts": [
+            "q3"
+          ],
+          "cumulative_cost": 1
+        }
+      },
+      {
+        "observed_output": [
+          [
+            1,
+            1
+          ]
+        ],
+        "next": {
+          "kind": "identified",
+          "contexts": [
+            "q1"
+          ],
+          "cumulative_cost": 1
+        }
+      },
+      {
+        "observed_output": [
+          [
+            1,
+            2
+          ]
+        ],
+        "next": {
+          "kind": "identified",
+          "contexts": [
+            "q5"
+          ],
+          "cumulative_cost": 1
+        }
+      }
+    ]
+  },
+  "statistics": {
+    "nodes": 1,
+    "probe_cost": 1,
+    "identified": 6,
+    "ambiguous": 0,
+    "identification_cost_by_context": {
+      "q0": 1,
+      "q4": 1,
+      "q2": 1,
+      "q3": 1,
+      "q1": 1,
+      "q5": 1
+    },
+    "worst_case_probe_cost": 1,
+    "mean_probe_cost": 1.0
+  },
+  "initial_contexts": 6,
+  "max_probe_depth": 6,
+  "max_nodes": 32
+}

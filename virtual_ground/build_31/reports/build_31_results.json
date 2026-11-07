@@ -1,0 +1,287 @@
+{
+  "binary_operation_closure": {
+    "coverage": "4 observer coordinates x 2 operations x 8 x 8 operand pairs",
+    "errors": 0,
+    "per_observer": {
+      "1": {
+        "ADD8": {
+          "cases": 64,
+          "errors": 0
+        },
+        "SUB8": {
+          "cases": 64,
+          "errors": 0
+        }
+      },
+      "3": {
+        "ADD8": {
+          "cases": 64,
+          "errors": 0
+        },
+        "SUB8": {
+          "cases": 64,
+          "errors": 0
+        }
+      },
+      "5": {
+        "ADD8": {
+          "cases": 64,
+          "errors": 0
+        },
+        "SUB8": {
+          "cases": 64,
+          "errors": 0
+        }
+      },
+      "7": {
+        "ADD8": {
+          "cases": 64,
+          "errors": 0
+        },
+        "SUB8": {
+          "cases": 64,
+          "errors": 0
+        }
+      }
+    },
+    "total_cases": 512
+  },
+  "build": 31,
+  "channel_calibration": {
+    "calibration_drift_chain": [
+      {
+        "absolute_model_residual_rad": 2.220446049250313e-16,
+        "correct": true,
+        "decoded_output": 7,
+        "expected_output": 7,
+        "input_a_error_rad": 0.0,
+        "input_b_error_rad": 0.0,
+        "input_c_error_rad": 0.0,
+        "intermediate_error_rad": 0.0,
+        "measured_output_phase_error_rad": 2.220446049250313e-16,
+        "predicted_output_phase_error_rad": 0.0
+      },
+      {
+        "absolute_model_residual_rad": 7.799316747991725e-15,
+        "correct": true,
+        "decoded_output": 7,
+        "expected_output": 7,
+        "input_a_error_rad": 0.05,
+        "input_b_error_rad": 0.1,
+        "input_c_error_rad": 0.02,
+        "intermediate_error_rad": 0.04,
+        "measured_output_phase_error_rad": 0.16999999999999224,
+        "predicted_output_phase_error_rad": 0.17000000000000004
+      },
+      {
+        "absolute_model_residual_rad": 0.0,
+        "correct": true,
+        "decoded_output": 7,
+        "expected_output": 7,
+        "input_a_error_rad": 0.12,
+        "input_b_error_rad": 0.09,
+        "input_c_error_rad": 0.03,
+        "intermediate_error_rad": 0.08,
+        "measured_output_phase_error_rad": 0.26,
+        "predicted_output_phase_error_rad": 0.26
+      },
+      {
+        "absolute_model_residual_rad": 2.220446049250313e-15,
+        "correct": false,
+        "decoded_output": 0,
+        "expected_output": 7,
+        "input_a_error_rad": 0.25,
+        "input_b_error_rad": 0.2,
+        "input_c_error_rad": 0.02,
+        "intermediate_error_rad": 0.15,
+        "measured_output_phase_error_rad": 0.5800000000000022,
+        "predicted_output_phase_error_rad": 0.58
+      },
+      {
+        "absolute_model_residual_rad": 6.661338147750939e-16,
+        "correct": false,
+        "decoded_output": 0,
+        "expected_output": 7,
+        "input_a_error_rad": 0.45,
+        "input_b_error_rad": 0.0,
+        "input_c_error_rad": 0.0,
+        "intermediate_error_rad": 0.0,
+        "measured_output_phase_error_rad": 0.4500000000000007,
+        "predicted_output_phase_error_rad": 0.45
+      }
+    ],
+    "common_gain_phase": {
+      "cases": 32,
+      "errors": 0,
+      "invariance": "same scalar complex multiplier on signal and pilot cancels"
+    },
+    "decision_half_width_rad": 0.39269908169872414,
+    "propagation_law": "ADD residuals add; SUB residuals subtract; fresh stage calibration contributes its own residual"
+  },
+  "composed_execution": {
+    "errors": 0,
+    "observer_switching": "each input, intermediate, and final state may use a different odd-unit coordinate",
+    "per_pattern": {
+      "ADD8->ADD8": {
+        "cases": 512,
+        "errors": 0
+      },
+      "ADD8->SUB8": {
+        "cases": 512,
+        "errors": 0
+      },
+      "SUB8->ADD8": {
+        "cases": 512,
+        "errors": 0
+      },
+      "SUB8->SUB8": {
+        "cases": 512,
+        "errors": 0
+      }
+    },
+    "total_chains": 2048,
+    "triple_domain": "all 8^3=512 triples for each of four two-opcode sequences"
+  },
+  "limitations": [
+    "Synthetic numerical complex-baseband simulation; no physical analog hardware was constructed or measured.",
+    "The finite state group is Z/8Z; this does not establish universal or Turing-complete computation.",
+    "The observer-coordinate family is the four automorphisms of this cyclic group, not arbitrary sensor or model representations.",
+    "The scalar channel model does not include multipath, carrier-frequency offset, nonlinear distortion, or clock drift.",
+    "Noise measurements are specific to the chosen sample count, pilot, and generated Gaussian distribution.",
+    "The performance comparison is Python implementation timing, not a fair hardware comparison or evidence of speed/energy benefit.",
+    "Reversibility applies to group translations when the second operand is retained; arbitrary branching and state erasure are not shown reversible."
+  ],
+  "noise_sweep": {
+    "noise_model": "independent additive Gaussian I/Q noise on payload samples at input and both emitted stages; pilot is reference path",
+    "results": [
+      {
+        "accuracy_including_erasures": 1.0,
+        "chains": 2048,
+        "complex_noise_sigma_per_component": 0.0,
+        "erasures": 0,
+        "errors": 0
+      },
+      {
+        "accuracy_including_erasures": 1.0,
+        "chains": 2048,
+        "complex_noise_sigma_per_component": 0.02,
+        "erasures": 0,
+        "errors": 0
+      },
+      {
+        "accuracy_including_erasures": 1.0,
+        "chains": 2048,
+        "complex_noise_sigma_per_component": 0.1,
+        "erasures": 0,
+        "errors": 0
+      },
+      {
+        "accuracy_including_erasures": 1.0,
+        "chains": 2048,
+        "complex_noise_sigma_per_component": 0.25,
+        "erasures": 0,
+        "errors": 0
+      },
+      {
+        "accuracy_including_erasures": 0.9912109375,
+        "chains": 2048,
+        "complex_noise_sigma_per_component": 0.5,
+        "erasures": 0,
+        "errors": 18
+      },
+      {
+        "accuracy_including_erasures": 0.8232421875,
+        "chains": 2048,
+        "complex_noise_sigma_per_component": 1.0,
+        "erasures": 0,
+        "errors": 362
+      },
+      {
+        "accuracy_including_erasures": 0.61767578125,
+        "chains": 2048,
+        "complex_noise_sigma_per_component": 1.5,
+        "erasures": 0,
+        "errors": 783
+      },
+      {
+        "accuracy_including_erasures": 0.4755859375,
+        "chains": 2048,
+        "complex_noise_sigma_per_component": 2.0,
+        "erasures": 0,
+        "errors": 1074
+      }
+    ],
+    "sample_count_per_state": 64,
+    "warning": "Synthetic baseband channel only; sigma is in the same units as unit-amplitude complex samples."
+  },
+  "observer_isomorphisms": {
+    "coordinate_roundtrip_errors": 0,
+    "coordinate_roundtrips": 128,
+    "law": "chi_u(k)=exp(2*pi*i*u*k/8), u in units(Z/8Z); reframing u->v applies z^(v*u^-1 mod 8)",
+    "observer_units": [
+      1,
+      3,
+      5,
+      7
+    ],
+    "per_observer": [
+      {
+        "cross_coordinate_roundtrip_errors": 0,
+        "inverse_unit": 1,
+        "observer_unit": 1,
+        "symbol_roundtrip_errors": 0
+      },
+      {
+        "cross_coordinate_roundtrip_errors": 0,
+        "inverse_unit": 3,
+        "observer_unit": 3,
+        "symbol_roundtrip_errors": 0
+      },
+      {
+        "cross_coordinate_roundtrip_errors": 0,
+        "inverse_unit": 5,
+        "observer_unit": 5,
+        "symbol_roundtrip_errors": 0
+      },
+      {
+        "cross_coordinate_roundtrip_errors": 0,
+        "inverse_unit": 7,
+        "observer_unit": 7,
+        "symbol_roundtrip_errors": 0
+      }
+    ],
+    "symbol_cases": 32,
+    "symbol_errors": 0,
+    "tested_values_per_observer": 8
+  },
+  "observer_operation_commutation": {
+    "cases": 512,
+    "maximum_unit_phasor_distance": 2.3551386880256627e-15,
+    "property": "R_u(F(x,y)) = F(R_u(x),R_u(y)) for R_u(z)=z^u",
+    "semantic_commutation_errors": 0
+  },
+  "reversibility": {
+    "errors": 0,
+    "roundtrips": 512,
+    "scope": "inverse group translation with the second operand retained as an input state"
+  },
+  "scope": "finite signal-domain computation over Z/8Z using simulated complex-baseband arrays",
+  "software_performance_diagnostic": {
+    "decode_compute_reencode_median_seconds_per_chain": 0.00022329194999883839,
+    "loops_per_repeat": 120,
+    "ratio_signal_to_decode_compute_reencode": 1.4896111719911478,
+    "repeats": 5,
+    "scope": "Python complex-sample simulation only; not analog hardware, energy, throughput, or optimized implementation evidence",
+    "signal_chain_median_seconds_per_chain": 0.00033261818333395844
+  },
+  "title": "Compositional Signal Algebra and Observer-Coordinate Interchange",
+  "verification_contracts": {
+    "composition": "if each transition preserves chi_u semantics, their composition preserves the composed Z/8Z expression",
+    "encoding": "chi_u(k) = exp(2*pi*i*u*k/8), u in {1,3,5,7}",
+    "homomorphism": "chi_u(a+b) = chi_u(a)*chi_u(b)",
+    "operation_naturality": "R(F_u(x,y)) = F_v(R(x),R(y))",
+    "reframing": "R_(u->v)(z)=z^(v*u^-1 mod 8)",
+    "subtraction": "chi_u(a-b) = chi_u(a)*conjugate(chi_u(b))",
+    "terminal_decode": "semantic integer decoding occurs only at final observation / test oracle"
+  }
+}

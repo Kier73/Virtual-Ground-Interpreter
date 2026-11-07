@@ -1,0 +1,29 @@
+test_all_reported_features_finite (test_build29.BoundaryDetectionTests.test_all_reported_features_finite) ... ok
+test_amplitude_events_require_temporal_view (test_build29.BoundaryDetectionTests.test_amplitude_events_require_temporal_view) ... ok
+test_build28_motif_bridge_uses_signal_derived_tokens (test_build29.BoundaryDetectionTests.test_build28_motif_bridge_uses_signal_derived_tokens) ... ok
+test_candidate_status_distinguishes_subthreshold (test_build29.BoundaryDetectionTests.test_candidate_status_distinguishes_subthreshold) ... ok
+test_frequency_boundaries_exact_within_tolerance (test_build29.BoundaryDetectionTests.test_frequency_boundaries_exact_within_tolerance) ... ok
+test_harmonic_gain_invariance (test_build29.BoundaryDetectionTests.test_harmonic_gain_invariance) ... ok
+test_multiple_hypotheses_available (test_build29.BoundaryDetectionTests.test_multiple_hypotheses_available) ... ok
+test_phase_only_detection_is_partial_not_claimed_exact (test_build29.BoundaryDetectionTests.test_phase_only_detection_is_partial_not_claimed_exact) ... ok
+test_stationary_noise_no_selected_boundary (test_build29.BoundaryDetectionTests.test_stationary_noise_no_selected_boundary) ... ok
+test_stationary_tone_no_selected_boundary (test_build29.BoundaryDetectionTests.test_stationary_tone_no_selected_boundary) ... ok
+test_threshold_hypotheses_preserve_weak_alternatives (test_build29.BoundaryDetectionTests.test_threshold_hypotheses_preserve_weak_alternatives) ... ok
+test_token_labels_are_opaque (test_build29.BoundaryDetectionTests.test_token_labels_are_opaque) ... ok
+test_token_view_changes_observable_equivalence (test_build29.BoundaryDetectionTests.test_token_view_changes_observable_equivalence) ... ok
+test_reject_bad_rate (test_build29.SignalValidationTests.test_reject_bad_rate) ... ok
+test_reject_empty_name (test_build29.SignalValidationTests.test_reject_empty_name) ... ok
+test_reject_mismatched_channel_lengths (test_build29.SignalValidationTests.test_reject_mismatched_channel_lengths) ... ok
+test_reject_mismatched_channel_sample_rates (test_build29.SignalValidationTests.test_reject_mismatched_channel_sample_rates) ... ok
+test_reject_non_power_of_two_frame (test_build29.SignalValidationTests.test_reject_non_power_of_two_frame) ... ok
+test_reject_nonfinite_samples (test_build29.SignalValidationTests.test_reject_nonfinite_samples) ... ok
+test_reject_original_nyquist_above_current (test_build29.SignalValidationTests.test_reject_original_nyquist_above_current) ... ok
+test_reject_signal_shorter_than_frame (test_build29.SignalValidationTests.test_reject_signal_shorter_than_frame) ... ok
+test_raw_wav_analyzes (test_build29.WavIoTests.test_raw_wav_analyzes) ... ok
+test_stereo_pcm16_roundtrip (test_build29.WavIoTests.test_stereo_pcm16_roundtrip) ... ok
+test_stereo_pcm24_roundtrip (test_build29.WavIoTests.test_stereo_pcm24_roundtrip) ... ok
+
+----------------------------------------------------------------------
+Ran 24 tests in 4.366s
+
+OK

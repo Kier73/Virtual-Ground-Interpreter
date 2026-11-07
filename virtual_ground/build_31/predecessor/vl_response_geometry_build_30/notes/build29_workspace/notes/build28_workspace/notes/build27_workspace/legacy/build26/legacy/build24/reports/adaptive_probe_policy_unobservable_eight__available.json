@@ -1,0 +1,23 @@
+{
+  "tree": {
+    "kind": "identified",
+    "contexts": [
+      "q0"
+    ],
+    "cumulative_cost": 0
+  },
+  "statistics": {
+    "nodes": 0,
+    "probe_cost": 0,
+    "identified": 1,
+    "ambiguous": 0,
+    "identification_cost_by_context": {
+      "q0": 0
+    },
+    "worst_case_probe_cost": 0,
+    "mean_probe_cost": 0.0
+  },
+  "initial_contexts": 1,
+  "max_probe_depth": 6,
+  "max_nodes": 32
+}

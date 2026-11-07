@@ -1,0 +1,98 @@
+{
+  "tree": {
+    "kind": "probe",
+    "probe": [
+      "HOLD",
+      "PROBE_B"
+    ],
+    "cost": 2,
+    "information_bits": 2.0,
+    "branches": [
+      {
+        "observed_output": [
+          [
+            0
+          ],
+          [
+            0
+          ]
+        ],
+        "next": {
+          "kind": "identified",
+          "contexts": [
+            "q2"
+          ],
+          "cumulative_cost": 2
+        }
+      },
+      {
+        "observed_output": [
+          [
+            0
+          ],
+          [
+            1
+          ]
+        ],
+        "next": {
+          "kind": "identified",
+          "contexts": [
+            "q0"
+          ],
+          "cumulative_cost": 2
+        }
+      },
+      {
+        "observed_output": [
+          [
+            1
+          ],
+          [
+            0
+          ]
+        ],
+        "next": {
+          "kind": "identified",
+          "contexts": [
+            "q1"
+          ],
+          "cumulative_cost": 2
+        }
+      },
+      {
+        "observed_output": [
+          [
+            1
+          ],
+          [
+            1
+          ]
+        ],
+        "next": {
+          "kind": "identified",
+          "contexts": [
+            "q3"
+          ],
+          "cumulative_cost": 2
+        }
+      }
+    ]
+  },
+  "statistics": {
+    "nodes": 1,
+    "probe_cost": 2,
+    "identified": 4,
+    "ambiguous": 0,
+    "identification_cost_by_context": {
+      "q2": 2,
+      "q0": 2,
+      "q1": 2,
+      "q3": 2
+    },
+    "worst_case_probe_cost": 2,
+    "mean_probe_cost": 2.0
+  },
+  "initial_contexts": 4,
+  "max_probe_depth": 6,
+  "max_nodes": 32
+}

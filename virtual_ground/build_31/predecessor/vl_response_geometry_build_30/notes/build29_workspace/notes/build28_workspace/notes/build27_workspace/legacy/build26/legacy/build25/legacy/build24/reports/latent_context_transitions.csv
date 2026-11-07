@@ -1,0 +1,76 @@
+fixture,observer,context,action,output,next_context
+coupled_six,parity_only,q0,HOLD,"[0]",q1
+coupled_six,parity_only,q0,PROBE_A,"[0]",q0
+coupled_six,parity_only,q0,PROBE_B,"[0]",q1
+coupled_six,parity_only,q1,HOLD,"[1]",q0
+coupled_six,parity_only,q1,PROBE_A,"[1]",q1
+coupled_six,parity_only,q1,PROBE_B,"[1]",q0
+coupled_six,residue3_only,q0,HOLD,"[0]",q1
+coupled_six,residue3_only,q0,PROBE_A,"[0]",q2
+coupled_six,residue3_only,q0,PROBE_B,"[0]",q0
+coupled_six,residue3_only,q1,HOLD,"[1]",q2
+coupled_six,residue3_only,q1,PROBE_A,"[1]",q0
+coupled_six,residue3_only,q1,PROBE_B,"[1]",q1
+coupled_six,residue3_only,q2,HOLD,"[2]",q0
+coupled_six,residue3_only,q2,PROBE_A,"[2]",q1
+coupled_six,residue3_only,q2,PROBE_B,"[2]",q2
+coupled_six,joint,q0,HOLD,"[0, 0]",q1
+coupled_six,joint,q0,PROBE_A,"[0, 0]",q2
+coupled_six,joint,q0,PROBE_B,"[0, 0]",q3
+coupled_six,joint,q1,HOLD,"[1, 1]",q2
+coupled_six,joint,q1,PROBE_A,"[1, 1]",q3
+coupled_six,joint,q1,PROBE_B,"[1, 1]",q4
+coupled_six,joint,q2,HOLD,"[0, 2]",q3
+coupled_six,joint,q2,PROBE_A,"[0, 2]",q4
+coupled_six,joint,q2,PROBE_B,"[0, 2]",q5
+coupled_six,joint,q3,HOLD,"[1, 0]",q4
+coupled_six,joint,q3,PROBE_A,"[1, 0]",q5
+coupled_six,joint,q3,PROBE_B,"[1, 0]",q0
+coupled_six,joint,q4,HOLD,"[0, 1]",q5
+coupled_six,joint,q4,PROBE_A,"[0, 1]",q0
+coupled_six,joint,q4,PROBE_B,"[0, 1]",q1
+coupled_six,joint,q5,HOLD,"[1, 2]",q0
+coupled_six,joint,q5,PROBE_A,"[1, 2]",q1
+coupled_six,joint,q5,PROBE_B,"[1, 2]",q2
+delayed_six,available,q0,HOLD,"[0]",q1
+delayed_six,available,q0,PROBE_A,"[0]",q1
+delayed_six,available,q0,PROBE_B,"[0]",q1
+delayed_six,available,q1,HOLD,"[0]",q2
+delayed_six,available,q1,PROBE_A,"[0]",q2
+delayed_six,available,q1,PROBE_B,"[0]",q2
+delayed_six,available,q2,HOLD,"[0]",q3
+delayed_six,available,q2,PROBE_A,"[0]",q3
+delayed_six,available,q2,PROBE_B,"[0]",q3
+delayed_six,available,q3,HOLD,"[0]",q4
+delayed_six,available,q3,PROBE_A,"[0]",q4
+delayed_six,available,q3,PROBE_B,"[0]",q4
+delayed_six,available,q4,HOLD,"[0]",q5
+delayed_six,available,q4,PROBE_A,"[0]",q5
+delayed_six,available,q4,PROBE_B,"[0]",q5
+delayed_six,available,q5,HOLD,"[0]",q0
+delayed_six,available,q5,PROBE_A,"[1]",q0
+delayed_six,available,q5,PROBE_B,"[0]",q0
+aliased_six,residue3_only,q0,HOLD,"[0]",q1
+aliased_six,residue3_only,q0,PROBE_A,"[0]",q2
+aliased_six,residue3_only,q0,PROBE_B,"[0]",q0
+aliased_six,residue3_only,q1,HOLD,"[1]",q2
+aliased_six,residue3_only,q1,PROBE_A,"[1]",q0
+aliased_six,residue3_only,q1,PROBE_B,"[1]",q1
+aliased_six,residue3_only,q2,HOLD,"[2]",q0
+aliased_six,residue3_only,q2,PROBE_A,"[2]",q1
+aliased_six,residue3_only,q2,PROBE_B,"[2]",q2
+unobservable_eight,available,q0,HOLD,"[0]",q0
+unobservable_eight,available,q0,PROBE_A,"[0]",q0
+unobservable_eight,available,q0,PROBE_B,"[0]",q0
+partial_four,available,q0,HOLD,"[0]",q1
+partial_four,available,q0,PROBE_A,"[0]",q1
+partial_four,available,q0,PROBE_B,"[0]",q0
+partial_four,available,q1,HOLD,"[1]",q2
+partial_four,available,q1,PROBE_A,"[1]",q2
+partial_four,available,q1,PROBE_B,"[1]",q1
+partial_four,available,q2,HOLD,"[0]",q2
+partial_four,available,q2,PROBE_A,"[0]",q3
+partial_four,available,q2,PROBE_B,"[0]",q2
+partial_four,available,q3,HOLD,"[1]",q3
+partial_four,available,q3,PROBE_A,"[1]",q0
+partial_four,available,q3,PROBE_B,"[1]",q3

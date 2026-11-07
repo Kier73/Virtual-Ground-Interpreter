@@ -1,0 +1,78 @@
+{
+  "fixture": "delayed_six",
+  "mode": "Mealy/action-conditioned observation",
+  "rows": [
+    {
+      "collisions": 0,
+      "events": 1,
+      "horizon": 0,
+      "known_transitions": 1,
+      "predictive_contexts": 1,
+      "status": "tracking",
+      "unknown_transitions": 2
+    },
+    {
+      "collisions": 0,
+      "events": 2,
+      "horizon": 0,
+      "known_transitions": 1,
+      "predictive_contexts": 1,
+      "status": "tracking",
+      "unknown_transitions": 2
+    },
+    {
+      "collisions": 0,
+      "events": 3,
+      "horizon": 0,
+      "known_transitions": 1,
+      "predictive_contexts": 1,
+      "status": "tracking",
+      "unknown_transitions": 2
+    },
+    {
+      "collisions": 0,
+      "events": 4,
+      "horizon": 0,
+      "known_transitions": 1,
+      "predictive_contexts": 1,
+      "status": "tracking",
+      "unknown_transitions": 2
+    },
+    {
+      "collisions": 0,
+      "events": 5,
+      "horizon": 0,
+      "known_transitions": 1,
+      "predictive_contexts": 1,
+      "status": "tracking",
+      "unknown_transitions": 2
+    },
+    {
+      "collisions": 0,
+      "events": 6,
+      "horizon": 5,
+      "known_transitions": 6,
+      "predictive_contexts": 7,
+      "status": "tracking",
+      "unknown_transitions": 15
+    },
+    {
+      "collisions": 0,
+      "events": 12,
+      "horizon": 5,
+      "known_transitions": 6,
+      "predictive_contexts": 6,
+      "status": "tracking",
+      "unknown_transitions": 12
+    },
+    {
+      "collisions": 0,
+      "events": 18,
+      "horizon": 5,
+      "known_transitions": 6,
+      "predictive_contexts": 6,
+      "status": "tracking",
+      "unknown_transitions": 12
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+field,type,description
+observer_view,string,harmonic/temporal/combined boundary scoring view
+token_view,string,harmonic/temporal/combined event descriptor view
+token,string,Opaque evt_NNN identifier; no semantic meaning
+descriptor,array[float],Pooled event features for selected observer view
+prototype,array[float],Online centroid representing token cluster
+cluster_tolerance,float,Greedy nearest-prototype threshold

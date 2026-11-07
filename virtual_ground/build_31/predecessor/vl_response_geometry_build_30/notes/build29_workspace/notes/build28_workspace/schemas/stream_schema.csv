@@ -1,0 +1,7 @@
+field,type,description
+trace_id,string,Trace identifier; acquisition/session boundary supplied
+split,enum,train or heldout; evaluator split
+token_index,integer,Zero-based token position in continuous stream
+token,string,Opaque event token; tokenization supplied
+checkpoint_offset,integer,Number of tokens consumed at sparse observation
+state_vector,integer[],Observed state vector at checkpoint; not a segment label

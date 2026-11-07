@@ -1,0 +1,33 @@
+{
+  "auto_committed": false,
+  "conflict_count": 2,
+  "conflicts": [
+    {
+      "action": "HOLD",
+      "classification": "outside_predicted_output_support",
+      "observed": {
+        "0": 99
+      },
+      "possible_outputs": [],
+      "source": "sensor-A",
+      "step": 4
+    },
+    {
+      "action": "PROBE_A",
+      "classification": "outside_predicted_output_support",
+      "observed": {
+        "1": 99
+      },
+      "possible_outputs": [],
+      "source": "sensor-B",
+      "step": 7
+    }
+  ],
+  "current_ground_fingerprint": "fixture-ground-v1",
+  "distinct_actions": [
+    "HOLD",
+    "PROBE_A"
+  ],
+  "distinct_steps": 2,
+  "status": "ground_revision_proposal"
+}

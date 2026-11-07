@@ -1,0 +1,9 @@
+Build 29 research package
+Python 3.10+; standard library only
+New unit tests: 24 / 24 passed
+Inherited Build 24-28 tests: 129 / 129 passed
+Combined regression total: 153 / 153 passed
+All results: synthetic fixtures only
+Physical sensor data: not processed
+TAPS archive: not present
+Fresh-extraction package manifest: see MANIFEST.sha256

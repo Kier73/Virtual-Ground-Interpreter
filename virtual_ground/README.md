@@ -1,4 +1,4 @@
-# Virtual Ground — Builds 20–30
+# Virtual Ground — Builds 20–31
 
 This folder holds the Virtual Ground interpreter arc. A Virtual Ground is the **generative operational logic** of a system: the rules that generate valid states, actions, transitions, invariants and observer quotients, rather than a materialized state graph. The builds test that idea inside bounded, deterministic, synthetic domains.
 
@@ -19,6 +19,7 @@ All builds are frozen and self-contained. Builds 25 and 26 embed Build 24 under 
 | 28 | Boundary discovery from event streams; exact contiguous motifs; ordered-shuffle maximum-statistic null; sparse-checkpoint effect equations. |
 | 29 | Continuous measurements to observer-relative events; persistent change scores; harmonic, temporal and combined token views; WAV ingestion. |
 | 30 | Adaptive observer-profile selection and signal-coded computation: FSK opcodes plus 8-PSK operand phasors for modular phase arithmetic. |
+| 31 | Compositional signal algebra and observer interchange: four `Z/8Z` observer coordinates, coordinate reframing without integer decoding, composed two-operation chains, calibration/noise propagation. |
 
 The full outcome table, including exact figures and limitations, is in [`../INDEX.md`](../INDEX.md).
 

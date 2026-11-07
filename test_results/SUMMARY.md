@@ -1,10 +1,10 @@
 # Test summary
 
 **Environment:** Windows, Python 3.14.0, standard library only (the builds declare no third-party runtime dependencies).
-**Run:** all 28 unpacked top-level suites plus the embedded Build 24–30 regression chain, 2026-11-06.
-**Result:** **765 / 765 top-level tests passed** across 28 suites; **177 / 177 embedded tests passed** across Builds 24–30. No failures or errors.
+**Run:** all 29 unpacked top-level suites plus the embedded Build 24–30 regression chain, 2026-11-07.
+**Result:** **785 / 785 top-level tests passed** across 29 suites; **177 / 177 embedded tests passed** across Builds 24–30. No failures or errors.
 
-Per-build logs are in `build_01.txt` … `build_15.txt` and `build_17.txt` … `build_30.txt`; these are the raw `unittest -v` captures. Builds **16** and **24** have no standalone ZIP or top-level directory:
+Per-build logs are in `build_01.txt` … `build_15.txt` and `build_17.txt` … `build_31.txt`; these are the raw `unittest -v` captures. Builds **16** and **24** have no standalone ZIP or top-level directory:
 
 - Build 16's source and 24 tests are embedded in `theory_development/build_17/` and are included in that suite's 83 tests.
 - Build 24's 17 tests are embedded in `virtual_ground/build_25/legacy/build24/` and `virtual_ground/build_26/legacy/build24/`; the fresh run is preserved in `build_24_30_embedded/`.
@@ -48,7 +48,8 @@ Use `python run_all_tests.py --write-logs` to refresh the logs and `--builds 12 
 | 28 | 21 | 0.27 | OK |
 | 29 | 24 | 11.03 | OK |
 | 30 | 24 | 76.01 | OK |
-| **Top-level total** | **765** | **158.27** | **OK** |
+| 31 | 20 | 1.29 | OK |
+| **Top-level total** | **785** | **158.27** | **OK** |
 
 ## Embedded Build 24–30 chain
 

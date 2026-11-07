@@ -1,0 +1,9 @@
+field,type,description
+control_stream,real_samples,FSK opcode and complement frames preceded by sync preamble
+operand_a,complex_samples,8-PSK I/Q operand samples for first input
+pilot_a,complex_samples,per-channel carrier and phase reference for operand A
+operand_b,complex_samples,8-PSK I/Q operand samples for second input
+pilot_b,complex_samples,per-channel carrier and phase reference for operand B
+opcode,enum,ADD8 or SUB8
+output_phasor,complex,signal-domain arithmetic output before integer decoding
+output_symbol,integer,final evaluator-only decoded element of Z/8Z

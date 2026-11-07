@@ -1,0 +1,4 @@
+filename,channels,sample_rate_hz,encoding,description
+signal_program_control_fsk.wav,1,8192,PCM16,FSK preamble and opcode/complement control stream with 37-sample prefix
+instruction_0_operands_iq.wav,8,8192,PCM16,First instruction I/Q operand and pilot pairs (A and B)
+instruction_0_output_iq.wav,2,8192,PCM16,First instruction output carrier I/Q samples

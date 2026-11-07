@@ -1,0 +1,228 @@
+{
+  "limitations": [
+    "Labels used only in calibration/evaluator fixture; not unsupervised observer discovery",
+    "Synthetic signal tasks only",
+    "Fixed frame size/hop; adaptive scale is deferred",
+    "Greedy event token clustering is order-dependent as in Build 29"
+  ],
+  "method": "calibration-selected observer profile, frozen before held-out evaluation",
+  "task_results": {
+    "amplitude": {
+      "ambiguous_selection": true,
+      "calibration_trace_count": 4,
+      "calibration_utility": 0.7169747899159664,
+      "candidate_scores": [
+        {
+          "boundary_f1": 0.6058823529411765,
+          "profile": "temporal__temporal__f256_h64",
+          "token_pairwise_accuracy": 0.9761904761904762,
+          "utility": 0.7169747899159664
+        },
+        {
+          "boundary_f1": 0.6058823529411765,
+          "profile": "temporal__combined__f256_h64",
+          "token_pairwise_accuracy": 0.9285714285714286,
+          "utility": 0.7026890756302522
+        },
+        {
+          "boundary_f1": 0.5348039215686274,
+          "profile": "combined__temporal__f256_h64",
+          "token_pairwise_accuracy": 0.9692460317460317,
+          "utility": 0.6651365546218486
+        },
+        {
+          "boundary_f1": 0.5348039215686274,
+          "profile": "combined__combined__f256_h64",
+          "token_pairwise_accuracy": 0.939484126984127,
+          "utility": 0.6562079831932772
+        },
+        {
+          "boundary_f1": 0.6058823529411765,
+          "profile": "temporal__harmonic__f256_h64",
+          "token_pairwise_accuracy": 0.2222222222222222,
+          "utility": 0.4907843137254902
+        },
+        {
+          "boundary_f1": 0.5348039215686274,
+          "profile": "combined__harmonic__f256_h64",
+          "token_pairwise_accuracy": 0.20734126984126983,
+          "utility": 0.43656512605042014
+        },
+        {
+          "boundary_f1": 0.12692307692307692,
+          "profile": "harmonic__combined__f256_h64",
+          "token_pairwise_accuracy": 0.475,
+          "utility": 0.2313461538461538
+        },
+        {
+          "boundary_f1": 0.12692307692307692,
+          "profile": "harmonic__temporal__f256_h64",
+          "token_pairwise_accuracy": 0.425,
+          "utility": 0.21634615384615385
+        },
+        {
+          "boundary_f1": 0.12692307692307692,
+          "profile": "harmonic__harmonic__f256_h64",
+          "token_pairwise_accuracy": 0.075,
+          "utility": 0.11134615384615384
+        }
+      ],
+      "heldout_boundary_f1": 0.7475490196078431,
+      "heldout_token_pairwise_accuracy": 1.0,
+      "heldout_trace_count": 4,
+      "heldout_utility": 0.8232843137254902,
+      "plausible_profiles": [
+        "temporal__temporal__f256_h64",
+        "temporal__combined__f256_h64"
+      ],
+      "selected_boundary_view": "temporal",
+      "selected_profile": "temporal__temporal__f256_h64",
+      "selected_token_view": "temporal"
+    },
+    "frequency": {
+      "ambiguous_selection": true,
+      "calibration_trace_count": 4,
+      "calibration_utility": 0.8455357142857143,
+      "candidate_scores": [
+        {
+          "boundary_f1": 0.7946428571428572,
+          "profile": "combined__harmonic__f256_h64",
+          "token_pairwise_accuracy": 0.9642857142857143,
+          "utility": 0.8455357142857143
+        },
+        {
+          "boundary_f1": 0.7946428571428572,
+          "profile": "combined__combined__f256_h64",
+          "token_pairwise_accuracy": 0.930952380952381,
+          "utility": 0.8355357142857143
+        },
+        {
+          "boundary_f1": 0.7050137362637363,
+          "profile": "harmonic__harmonic__f256_h64",
+          "token_pairwise_accuracy": 1.0,
+          "utility": 0.7935096153846154
+        },
+        {
+          "boundary_f1": 0.7050137362637363,
+          "profile": "harmonic__combined__f256_h64",
+          "token_pairwise_accuracy": 0.95,
+          "utility": 0.7785096153846154
+        },
+        {
+          "boundary_f1": 0.7946428571428572,
+          "profile": "combined__temporal__f256_h64",
+          "token_pairwise_accuracy": 0.5101190476190476,
+          "utility": 0.7092857142857143
+        },
+        {
+          "boundary_f1": 0.5686274509803921,
+          "profile": "temporal__harmonic__f256_h64",
+          "token_pairwise_accuracy": 1.0,
+          "utility": 0.6980392156862745
+        },
+        {
+          "boundary_f1": 0.5686274509803921,
+          "profile": "temporal__combined__f256_h64",
+          "token_pairwise_accuracy": 0.8888888888888888,
+          "utility": 0.6647058823529411
+        },
+        {
+          "boundary_f1": 0.7050137362637363,
+          "profile": "harmonic__temporal__f256_h64",
+          "token_pairwise_accuracy": 0.5196428571428572,
+          "utility": 0.6494024725274725
+        },
+        {
+          "boundary_f1": 0.5686274509803921,
+          "profile": "temporal__temporal__f256_h64",
+          "token_pairwise_accuracy": 0.5041666666666667,
+          "utility": 0.5492892156862745
+        }
+      ],
+      "heldout_boundary_f1": 0.7699175824175825,
+      "heldout_token_pairwise_accuracy": 1.0,
+      "heldout_trace_count": 4,
+      "heldout_utility": 0.8389423076923077,
+      "plausible_profiles": [
+        "combined__harmonic__f256_h64",
+        "combined__combined__f256_h64"
+      ],
+      "selected_boundary_view": "combined",
+      "selected_profile": "combined__harmonic__f256_h64",
+      "selected_token_view": "harmonic"
+    },
+    "mixed": {
+      "ambiguous_selection": true,
+      "calibration_trace_count": 4,
+      "calibration_utility": 0.9225367647058824,
+      "candidate_scores": [
+        {
+          "boundary_f1": 0.8893382352941177,
+          "profile": "combined__temporal__f256_h64",
+          "token_pairwise_accuracy": 1.0,
+          "utility": 0.9225367647058824
+        },
+        {
+          "boundary_f1": 0.8893382352941177,
+          "profile": "combined__combined__f256_h64",
+          "token_pairwise_accuracy": 1.0,
+          "utility": 0.9225367647058824
+        },
+        {
+          "boundary_f1": 0.8562500000000001,
+          "profile": "harmonic__combined__f256_h64",
+          "token_pairwise_accuracy": 1.0,
+          "utility": 0.899375
+        },
+        {
+          "boundary_f1": 0.8893382352941177,
+          "profile": "combined__harmonic__f256_h64",
+          "token_pairwise_accuracy": 0.8918650793650793,
+          "utility": 0.8900962885154062
+        },
+        {
+          "boundary_f1": 0.8562500000000001,
+          "profile": "harmonic__temporal__f256_h64",
+          "token_pairwise_accuracy": 0.9642857142857143,
+          "utility": 0.8886607142857142
+        },
+        {
+          "boundary_f1": 0.8562500000000001,
+          "profile": "harmonic__harmonic__f256_h64",
+          "token_pairwise_accuracy": 0.8988095238095238,
+          "utility": 0.8690178571428571
+        },
+        {
+          "boundary_f1": 0.6699346405228759,
+          "profile": "temporal__combined__f256_h64",
+          "token_pairwise_accuracy": 1.0,
+          "utility": 0.768954248366013
+        },
+        {
+          "boundary_f1": 0.6699346405228759,
+          "profile": "temporal__temporal__f256_h64",
+          "token_pairwise_accuracy": 0.9666666666666667,
+          "utility": 0.758954248366013
+        },
+        {
+          "boundary_f1": 0.6699346405228759,
+          "profile": "temporal__harmonic__f256_h64",
+          "token_pairwise_accuracy": 0.8916666666666666,
+          "utility": 0.736454248366013
+        }
+      ],
+      "heldout_boundary_f1": 0.8391402714932127,
+      "heldout_token_pairwise_accuracy": 0.9692460317460317,
+      "heldout_trace_count": 4,
+      "heldout_utility": 0.8781719995690583,
+      "plausible_profiles": [
+        "combined__temporal__f256_h64",
+        "combined__combined__f256_h64"
+      ],
+      "selected_boundary_view": "combined",
+      "selected_profile": "combined__temporal__f256_h64",
+      "selected_token_view": "temporal"
+    }
+  },
+  "task_utility": "0.7 * boundary F1 + 0.3 * pairwise event-class agreement"
+}

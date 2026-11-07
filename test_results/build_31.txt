@@ -1,0 +1,25 @@
+test_exhaustive_add_sub_closure_all_observers (test_build31.BinaryAlgebraTests.test_exhaustive_add_sub_closure_all_observers) ... ok
+test_invalid_opcode_is_rejected (test_build31.BinaryAlgebraTests.test_invalid_opcode_is_rejected) ... ok
+test_operation_is_natural_under_all_observer_changes (test_build31.BinaryAlgebraTests.test_operation_is_natural_under_all_observer_changes) ... ok
+test_signal_operation_does_not_call_integer_decoder (test_build31.BinaryAlgebraTests.test_signal_operation_does_not_call_integer_decoder) ... ok
+test_calibration_error_adds_on_add_and_subtracts_on_sub (test_build31.ChannelTests.test_calibration_error_adds_on_add_and_subtracts_on_sub) ... ok
+test_common_gain_and_phase_are_cancelled_by_pilot_reference (test_build31.ChannelTests.test_common_gain_and_phase_are_cancelled_by_pilot_reference) ... ok
+test_half_decision_width_is_the_nearest_phase_boundary (test_build31.ChannelTests.test_half_decision_width_is_the_nearest_phase_boundary) ... ok
+test_intermediate_calibration_error_propagates_to_final_state (test_build31.ChannelTests.test_intermediate_calibration_error_propagates_to_final_state) ... ok
+test_noise_is_reproducible_for_fixed_seed (test_build31.ChannelTests.test_noise_is_reproducible_for_fixed_seed) ... ok
+test_zero_gain_channel_is_rejected (test_build31.ChannelTests.test_zero_gain_channel_is_rejected) ... ok
+test_all_2048_three_operand_chains (test_build31.CompositionTests.test_all_2048_three_operand_chains) ... ok
+test_associative_addition_via_two_composition_orders (test_build31.CompositionTests.test_associative_addition_via_two_composition_orders) ... ok
+test_chain_has_no_intermediate_integer_decode (test_build31.CompositionTests.test_chain_has_no_intermediate_integer_decode) ... ok
+test_inverse_translations_recover_first_operand (test_build31.CompositionTests.test_inverse_translations_recover_first_operand) ... ok
+test_all_four_characters_roundtrip_all_symbols (test_build31.ObserverCoordinateTests.test_all_four_characters_roundtrip_all_symbols) ... ok
+test_character_homomorphism_for_all_units (test_build31.ObserverCoordinateTests.test_character_homomorphism_for_all_units) ... ok
+test_odd_units_are_the_invertible_coordinates (test_build31.ObserverCoordinateTests.test_odd_units_are_the_invertible_coordinates) ... ok
+test_reframe_does_not_decode_integer (test_build31.ObserverCoordinateTests.test_reframe_does_not_decode_integer) ... ok
+test_reframe_inverse_recovers_original_phasor (test_build31.ObserverCoordinateTests.test_reframe_inverse_recovers_original_phasor) ... ok
+test_reframe_preserves_semantics_for_every_coordinate_pair (test_build31.ObserverCoordinateTests.test_reframe_preserves_semantics_for_every_coordinate_pair) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 1.289s
+
+OK
