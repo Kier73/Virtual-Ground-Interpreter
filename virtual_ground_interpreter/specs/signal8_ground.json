@@ -1,0 +1,42 @@
+{
+  "fingerprint": "4ba599c21ec7e446572dad61b2a66ecb9c0844fd3dee406e4d947e04db56c43b",
+  "ground": {
+    "assumptions": [
+      "The current value domain is the finite cyclic group Z/8Z.",
+      "Signal values are pilot-referenced unit complex phasors.",
+      "Observer coordinates are the four odd-unit characters of Z/8Z.",
+      "Phase error bounds are conservative absolute bounds in radians.",
+      "Conditional equality is evaluated geometrically in phase space.",
+      "Ambiguous branch decisions stop execution rather than guessing."
+    ],
+    "branch_ambiguity_policy": "trap",
+    "domain_id": "signal.phase.cyclic.z8.v1",
+    "evidence": [
+      "Finite exhaustive signal-algebra checks over Z/8Z.",
+      "Exhaustive composition and observer-interchange checks.",
+      "Synthetic complex-baseband noise and calibration experiments.",
+      "No physical analog implementation or general-computation claim."
+    ],
+    "ground_id": "virtual-ground.signal-state.z8",
+    "instruction_set": [
+      "LOAD",
+      "STORE",
+      "MOVE",
+      "REFRAME",
+      "ADD",
+      "SUB",
+      "BRANCH_EQ",
+      "BRANCH_IDENTITY",
+      "JUMP",
+      "EMIT",
+      "HALT"
+    ],
+    "observer_profiles": [
+      1,
+      3,
+      5,
+      7
+    ],
+    "version": "0.1.0"
+  }
+}

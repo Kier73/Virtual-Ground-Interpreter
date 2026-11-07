@@ -1,0 +1,23 @@
+{
+  "name": "select-by-signal-identity",
+  "inputs": ["input.a", "input.b"],
+  "outputs": [
+    {
+      "label": "selected",
+      "expression": {
+        "type": "if",
+        "guard": {
+          "type": "is_identity",
+          "value": {
+            "type": "add",
+            "left": {"type": "input", "address": "input.a"},
+            "right": {"type": "input", "address": "input.b"}
+          },
+          "tolerance_rad": 0.02
+        },
+        "when_true": {"type": "input", "address": "input.b"},
+        "when_false": {"type": "input", "address": "input.a"}
+      }
+    }
+  ]
+}

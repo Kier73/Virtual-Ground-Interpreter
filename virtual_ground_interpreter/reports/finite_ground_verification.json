@@ -1,0 +1,18 @@
+{
+  "counts": {
+    "binary_arithmetic": 512,
+    "compiled_task_paths": 2,
+    "conditional_paths": 2,
+    "encode_observe": 32,
+    "observer_naturality": 2048,
+    "reframe_round_trip": 128,
+    "two_operation_composition": 2048
+  },
+  "errors": [],
+  "ground_fingerprint": "4ba599c21ec7e446572dad61b2a66ecb9c0844fd3dee406e4d947e04db56c43b",
+  "ground_id": "virtual-ground.signal-state.z8",
+  "ground_version": "0.1.0",
+  "scope": "finite exhaustive checks for the declared Z/8Z signal Ground; not a proof about arbitrary domains",
+  "status": "PASS",
+  "total_cases": 4772
+}

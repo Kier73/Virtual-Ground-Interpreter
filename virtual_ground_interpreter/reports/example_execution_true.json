@@ -1,0 +1,262 @@
+{
+  "ground_fingerprint": "4ba599c21ec7e446572dad61b2a66ecb9c0844fd3dee406e4d947e04db56c43b",
+  "halted": true,
+  "observed_outputs": {
+    "selected": 5
+  },
+  "program_fingerprint": "997f2ff3eb46ddebc057c12ce024a94500e0400ebd3989b6c1ff6c911916b50d",
+  "signal_outputs": [
+    {
+      "label": "selected",
+      "value": {
+        "imag": -0.7071067811865477,
+        "observer": 3,
+        "phase_error_bound": 0.0,
+        "real": 0.7071067811865474
+      }
+    }
+  ],
+  "trace": [
+    {
+      "branch_distance_rad": null,
+      "branch_lower_bound_rad": null,
+      "branch_observer": null,
+      "branch_operands": [],
+      "branch_result": null,
+      "branch_tolerance_rad": null,
+      "branch_uncertainty_rad": null,
+      "branch_upper_bound_rad": null,
+      "opcode": "LOAD",
+      "pc_after": 1,
+      "pc_before": 0,
+      "step": 0,
+      "write_values": [
+        {
+          "location": "register:t0",
+          "value": {
+            "imag": 0.7071067811865476,
+            "observer": 1,
+            "phase_error_bound": 0.0,
+            "real": -0.7071067811865475
+          }
+        }
+      ],
+      "writes": [
+        "register:t0"
+      ]
+    },
+    {
+      "branch_distance_rad": null,
+      "branch_lower_bound_rad": null,
+      "branch_observer": null,
+      "branch_operands": [],
+      "branch_result": null,
+      "branch_tolerance_rad": null,
+      "branch_uncertainty_rad": null,
+      "branch_upper_bound_rad": null,
+      "opcode": "LOAD",
+      "pc_after": 2,
+      "pc_before": 1,
+      "step": 1,
+      "write_values": [
+        {
+          "location": "register:t1",
+          "value": {
+            "imag": -0.7071067811865477,
+            "observer": 3,
+            "phase_error_bound": 0.0,
+            "real": 0.7071067811865474
+          }
+        }
+      ],
+      "writes": [
+        "register:t1"
+      ]
+    },
+    {
+      "branch_distance_rad": null,
+      "branch_lower_bound_rad": null,
+      "branch_observer": null,
+      "branch_operands": [],
+      "branch_result": null,
+      "branch_tolerance_rad": null,
+      "branch_uncertainty_rad": null,
+      "branch_upper_bound_rad": null,
+      "opcode": "ADD",
+      "pc_after": 3,
+      "pc_before": 2,
+      "step": 2,
+      "write_values": [
+        {
+          "location": "register:t2",
+          "value": {
+            "imag": -7.216449660063518e-16,
+            "observer": 1,
+            "phase_error_bound": 0.0,
+            "real": 1.0
+          }
+        }
+      ],
+      "writes": [
+        "register:t2"
+      ]
+    },
+    {
+      "branch_distance_rad": 7.216449660063518e-16,
+      "branch_lower_bound_rad": 7.216449660063518e-16,
+      "branch_observer": 1,
+      "branch_operands": [
+        {
+          "imag": -7.216449660063518e-16,
+          "observer": 1,
+          "phase_error_bound": 0.0,
+          "real": 1.0
+        },
+        {
+          "imag": 0.0,
+          "observer": 1,
+          "phase_error_bound": 0.0,
+          "real": 1.0
+        }
+      ],
+      "branch_result": true,
+      "branch_tolerance_rad": 0.02,
+      "branch_uncertainty_rad": 0.0,
+      "branch_upper_bound_rad": 7.216449660063518e-16,
+      "opcode": "BRANCH_IDENTITY",
+      "pc_after": 7,
+      "pc_before": 3,
+      "step": 3,
+      "write_values": [],
+      "writes": []
+    },
+    {
+      "branch_distance_rad": null,
+      "branch_lower_bound_rad": null,
+      "branch_observer": null,
+      "branch_operands": [],
+      "branch_result": null,
+      "branch_tolerance_rad": null,
+      "branch_uncertainty_rad": null,
+      "branch_upper_bound_rad": null,
+      "opcode": "LOAD",
+      "pc_after": 8,
+      "pc_before": 7,
+      "step": 4,
+      "write_values": [
+        {
+          "location": "register:t5",
+          "value": {
+            "imag": -0.7071067811865477,
+            "observer": 3,
+            "phase_error_bound": 0.0,
+            "real": 0.7071067811865474
+          }
+        }
+      ],
+      "writes": [
+        "register:t5"
+      ]
+    },
+    {
+      "branch_distance_rad": null,
+      "branch_lower_bound_rad": null,
+      "branch_observer": null,
+      "branch_operands": [],
+      "branch_result": null,
+      "branch_tolerance_rad": null,
+      "branch_uncertainty_rad": null,
+      "branch_upper_bound_rad": null,
+      "opcode": "MOVE",
+      "pc_after": 9,
+      "pc_before": 8,
+      "step": 5,
+      "write_values": [
+        {
+          "location": "register:t3",
+          "value": {
+            "imag": -0.7071067811865477,
+            "observer": 3,
+            "phase_error_bound": 0.0,
+            "real": 0.7071067811865474
+          }
+        }
+      ],
+      "writes": [
+        "register:t3"
+      ]
+    },
+    {
+      "branch_distance_rad": null,
+      "branch_lower_bound_rad": null,
+      "branch_observer": null,
+      "branch_operands": [],
+      "branch_result": null,
+      "branch_tolerance_rad": null,
+      "branch_uncertainty_rad": null,
+      "branch_upper_bound_rad": null,
+      "opcode": "STORE",
+      "pc_after": 10,
+      "pc_before": 9,
+      "step": 6,
+      "write_values": [
+        {
+          "location": "memory:output.selected",
+          "value": {
+            "imag": -0.7071067811865477,
+            "observer": 3,
+            "phase_error_bound": 0.0,
+            "real": 0.7071067811865474
+          }
+        }
+      ],
+      "writes": [
+        "memory:output.selected"
+      ]
+    },
+    {
+      "branch_distance_rad": null,
+      "branch_lower_bound_rad": null,
+      "branch_observer": null,
+      "branch_operands": [],
+      "branch_result": null,
+      "branch_tolerance_rad": null,
+      "branch_uncertainty_rad": null,
+      "branch_upper_bound_rad": null,
+      "opcode": "EMIT",
+      "pc_after": 11,
+      "pc_before": 10,
+      "step": 7,
+      "write_values": [
+        {
+          "location": "output:selected",
+          "value": {
+            "imag": -0.7071067811865477,
+            "observer": 3,
+            "phase_error_bound": 0.0,
+            "real": 0.7071067811865474
+          }
+        }
+      ],
+      "writes": [
+        "output:selected"
+      ]
+    },
+    {
+      "branch_distance_rad": null,
+      "branch_lower_bound_rad": null,
+      "branch_observer": null,
+      "branch_operands": [],
+      "branch_result": null,
+      "branch_tolerance_rad": null,
+      "branch_uncertainty_rad": null,
+      "branch_upper_bound_rad": null,
+      "opcode": "HALT",
+      "pc_after": 12,
+      "pc_before": 11,
+      "step": 8,
+      "write_values": [],
+      "writes": []
+    }
+  ]
+}

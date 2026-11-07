@@ -1,0 +1,19 @@
+{
+  "name": "conditional-signal-select",
+  "metadata": {
+    "purpose": "Select an output using a signal-domain identity predicate.",
+    "domain": "Z/8Z represented by observer-relative 8-PSK phasors"
+  },
+  "instructions": [
+    {"op": "LOAD", "dst": "a", "address": "input.a"},
+    {"op": "LOAD", "dst": "b", "address": "input.b"},
+    {"op": "ADD", "dst": "sum", "left": "a", "right": "b"},
+    {"op": "BRANCH_IDENTITY", "src": "sum", "target": 6, "tolerance_rad": 0.02},
+    {"op": "MOVE", "dst": "selected", "src": "a"},
+    {"op": "JUMP", "target": 7},
+    {"op": "MOVE", "dst": "selected", "src": "b"},
+    {"op": "STORE", "src": "selected", "address": "persistent.result"},
+    {"op": "EMIT", "src": "selected", "label": "selected"},
+    {"op": "HALT"}
+  ]
+}

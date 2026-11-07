@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "virtual-ground-interpreter"
+version = "0.1.0"
+description = "A bounded signal-state interpreter with conditional transitions and executable Ground contracts"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "Virtual Ground research"}]
+dependencies = []
+
+[project.scripts]
+vgi = "vgi.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["vgi*"]

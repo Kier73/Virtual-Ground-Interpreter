@@ -1,0 +1,47 @@
+test_equality_guard_compiles (test_compiler.DeclarativeCompilerTests.test_equality_guard_compiles) ... ok
+test_interpreter_direct_task_entrypoint (test_compiler.DeclarativeCompilerTests.test_interpreter_direct_task_entrypoint) ... ok
+test_nested_conditional_control_flow (test_compiler.DeclarativeCompilerTests.test_nested_conditional_control_flow) ... ok
+test_task_compiles_and_executes_false_branch (test_compiler.DeclarativeCompilerTests.test_task_compiles_and_executes_false_branch) ... ok
+test_task_compiles_and_executes_true_branch (test_compiler.DeclarativeCompilerTests.test_task_compiles_and_executes_true_branch) ... ok
+test_task_input_contract_rejects_undeclared_address (test_compiler.DeclarativeCompilerTests.test_task_input_contract_rejects_undeclared_address) ... ok
+test_task_rejects_output_memory_collision (test_compiler.DeclarativeCompilerTests.test_task_rejects_output_memory_collision) ... ok
+test_task_requires_unique_inputs_and_outputs (test_compiler.DeclarativeCompilerTests.test_task_requires_unique_inputs_and_outputs) ... ok
+test_task_spec_json_round_trip (test_compiler.DeclarativeCompilerTests.test_task_spec_json_round_trip) ... ok
+test_ambiguous_branch_traps_without_partial_transition (test_machine.InterpreterMachineTests.test_ambiguous_branch_traps_without_partial_transition) ... ok
+test_branch_eq_across_observers (test_machine.InterpreterMachineTests.test_branch_eq_across_observers) ... ok
+test_ground_backend_domain_mismatch_rejected (test_machine.InterpreterMachineTests.test_ground_backend_domain_mismatch_rejected) ... ok
+test_ground_rejects_unsupported_instruction (test_machine.InterpreterMachineTests.test_ground_rejects_unsupported_instruction) ... ok
+test_identity_branch_false_path (test_machine.InterpreterMachineTests.test_identity_branch_false_path) ... ok
+test_identity_branch_true_path (test_machine.InterpreterMachineTests.test_identity_branch_true_path) ... ok
+test_infinite_loop_stops_at_step_limit (test_machine.InterpreterMachineTests.test_infinite_loop_stops_at_step_limit) ... ok
+test_instruction_and_program_validation (test_machine.InterpreterMachineTests.test_instruction_and_program_validation) ... ok
+test_ir_arguments_are_immutable_after_validation (test_machine.InterpreterMachineTests.test_ir_arguments_are_immutable_after_validation) ... ok
+test_memory_is_persistent_and_written (test_machine.InterpreterMachineTests.test_memory_is_persistent_and_written) ... ok
+test_missing_memory_cell_and_register_are_explicit (test_machine.InterpreterMachineTests.test_missing_memory_cell_and_register_are_explicit) ... ok
+test_no_integer_decode_during_machine_execution (test_machine.InterpreterMachineTests.test_no_integer_decode_during_machine_execution) ... ok
+test_program_json_round_trip (test_machine.InterpreterMachineTests.test_program_json_round_trip) ... ok
+test_program_metadata_is_deeply_immutable (test_machine.InterpreterMachineTests.test_program_metadata_is_deeply_immutable) ... ok
+test_reset_restores_initial_memory_and_clears_execution_history (test_machine.InterpreterMachineTests.test_reset_restores_initial_memory_and_clears_execution_history) ... ok
+test_restored_machine_reset_uses_original_initial_memory (test_machine.InterpreterMachineTests.test_restored_machine_reset_uses_original_initial_memory) ... ok
+test_snapshot_detects_state_tampering (test_machine.InterpreterMachineTests.test_snapshot_detects_state_tampering) ... ok
+test_snapshot_rejects_different_program (test_machine.InterpreterMachineTests.test_snapshot_rejects_different_program) ... ok
+test_snapshot_restore_preserves_execution_state (test_machine.InterpreterMachineTests.test_snapshot_restore_preserves_execution_state) ... ok
+test_stepwise_execution_can_pause_and_resume (test_machine.InterpreterMachineTests.test_stepwise_execution_can_pause_and_resume) ... ok
+test_trace_records_signal_state_written_by_operations (test_machine.InterpreterMachineTests.test_trace_records_signal_state_written_by_operations) ... ok
+test_undo_restores_branch_path (test_machine.InterpreterMachineTests.test_undo_restores_branch_path) ... ok
+test_undo_restores_pc_registers_memory_and_outputs (test_machine.InterpreterMachineTests.test_undo_restores_pc_registers_memory_and_outputs) ... ok
+test_add_sub_all_pairs_and_mixed_observers (test_values.SignalDomainTests.test_add_sub_all_pairs_and_mixed_observers) ... ok
+test_arithmetic_propagates_error_bounds (test_values.SignalDomainTests.test_arithmetic_propagates_error_bounds) ... ok
+test_comparison_three_way_decision (test_values.SignalDomainTests.test_comparison_three_way_decision) ... ok
+test_encode_observe_all_symbols_and_observers (test_values.SignalDomainTests.test_encode_observe_all_symbols_and_observers) ... ok
+test_invalid_signal_values_rejected (test_values.SignalDomainTests.test_invalid_signal_values_rejected) ... ok
+test_iq_ingress_and_egress_round_trip (test_values.SignalDomainTests.test_iq_ingress_and_egress_round_trip) ... ok
+test_iq_ingress_rejects_invalid_pilot (test_values.SignalDomainTests.test_iq_ingress_rejects_invalid_pilot) ... ok
+test_operation_does_not_call_terminal_decoder (test_values.SignalDomainTests.test_operation_does_not_call_terminal_decoder) ... ok
+test_reframe_all_observer_pairs_round_trip (test_values.SignalDomainTests.test_reframe_all_observer_pairs_round_trip) ... ok
+test_reframe_propagates_phase_error_bound (test_values.SignalDomainTests.test_reframe_propagates_phase_error_bound) ... ok
+
+----------------------------------------------------------------------
+Ran 42 tests in 0.010s
+
+OK

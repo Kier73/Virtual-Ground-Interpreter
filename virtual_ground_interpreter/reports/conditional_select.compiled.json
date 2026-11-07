@@ -1,0 +1,75 @@
+{
+  "instructions": [
+    {
+      "address": "input.a",
+      "dst": "t0",
+      "op": "LOAD"
+    },
+    {
+      "address": "input.b",
+      "dst": "t1",
+      "op": "LOAD"
+    },
+    {
+      "dst": "t2",
+      "left": "t0",
+      "op": "ADD",
+      "right": "t1"
+    },
+    {
+      "op": "BRANCH_IDENTITY",
+      "src": "t2",
+      "target": 7,
+      "tolerance_rad": 0.02
+    },
+    {
+      "address": "input.a",
+      "dst": "t4",
+      "op": "LOAD"
+    },
+    {
+      "dst": "t3",
+      "op": "MOVE",
+      "src": "t4"
+    },
+    {
+      "op": "JUMP",
+      "target": 9
+    },
+    {
+      "address": "input.b",
+      "dst": "t5",
+      "op": "LOAD"
+    },
+    {
+      "dst": "t3",
+      "op": "MOVE",
+      "src": "t5"
+    },
+    {
+      "address": "output.selected",
+      "op": "STORE",
+      "src": "t3"
+    },
+    {
+      "label": "selected",
+      "op": "EMIT",
+      "src": "t3"
+    },
+    {
+      "op": "HALT"
+    }
+  ],
+  "metadata": {
+    "declared_inputs": [
+      "input.a",
+      "input.b"
+    ],
+    "declared_outputs": [
+      "selected"
+    ],
+    "lowering": "typed expression tree to signal-state IR",
+    "source": "vgi.task-expression.v1"
+  },
+  "name": "select-by-signal-identity"
+}

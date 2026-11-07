@@ -7,6 +7,7 @@ it never edits a build or shares code between builds.
 The top-level trees are split by purpose:
   theory_development/build_01 .. build_19   (Build 16 is embedded in build_17)
   virtual_ground/build_20 .. build_31       (Build 24 is embedded in build_25/26)
+  virtual_ground_interpreter                (active versioned interpreter package)
 
 Builds 16 and 24 have no standalone directory. Run the embedded Build 24-30
 regression chain with virtual_ground/build_30/run_all_regressions.py if needed.
@@ -40,10 +41,15 @@ def all_build_dirs() -> list[Path]:
         for path in root.glob("build_*")
         if path.is_dir()
     ]
-    return sorted(dirs, key=lambda path: int(path.name.split("_")[1]))
+    builds = sorted(dirs, key=lambda path: int(path.name.split("_")[1]))
+    vgi = ROOT / "virtual_ground_interpreter"
+    return builds + ([vgi] if vgi.is_dir() else [])
 
 
 def find_build(number: int) -> Path | None:
+    if number == 0:
+        vgi = ROOT / "virtual_ground_interpreter"
+        return vgi if vgi.is_dir() else None
     for root in BUILD_ROOTS:
         path = root / f"build_{number:02d}"
         if path.is_dir():
