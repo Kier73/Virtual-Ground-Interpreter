@@ -1,0 +1,12 @@
+{
+  "status": "complete",
+  "states": 648,
+  "edges": 5832,
+  "diameter": 8,
+  "mean_shortest_all_targets": 4.645061728395062,
+  "mean_factorized_all_targets": 5,
+  "mean_macro_commands_all_targets": 1.9212962962962963,
+  "locked_reachable": 24,
+  "support_states": 232,
+  "support_revised_states": 200
+}

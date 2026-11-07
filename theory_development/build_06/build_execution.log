@@ -1,0 +1,29 @@
+Build 06 artifact generation completed.
+Hamilton product instructions: 28
+Regular path hypotheses: 4
+Observer / intent selections:
+  endpoint_only / same_base_endpoint: NO PROBE NEEDED (target constant over candidates)
+  endpoint_only / cap_size: UNRESOLVED (no available distinguishing probe)
+  endpoint_only / loop_orientation: UNRESOLVED (no available distinguishing probe)
+  endpoint_only / full_path: UNRESOLVED (no available distinguishing probe)
+  base_path / same_base_endpoint: NO PROBE NEEDED (target constant over candidates)
+  base_path / cap_size: base_apex
+  base_path / loop_orientation: base_area
+  base_path / full_path: base_area
+  so3 / same_base_endpoint: NO PROBE NEEDED (target constant over candidates)
+  so3 / cap_size: so3_angle
+  so3 / loop_orientation: so3_angle
+  so3 / full_path: so3_angle
+  s3_lift / same_base_endpoint: NO PROBE NEEDED (target constant over candidates)
+  s3_lift / cap_size: base_apex
+  s3_lift / loop_orientation: so3_angle
+  s3_lift / full_path: so3_angle
+  hybrid / same_base_endpoint: NO PROBE NEEDED (target constant over candidates)
+  hybrid / cap_size: base_apex
+  hybrid / loop_orientation: so3_angle
+  hybrid / full_path: so3_angle
+Antipodal pair selections:
+  endpoint_only: UNRESOLVED (antipodes indistinguishable)
+  base_path: UNRESOLVED (antipodes indistinguishable)
+  so3: UNRESOLVED (antipodes indistinguishable)
+  s3_lift: s3_phase

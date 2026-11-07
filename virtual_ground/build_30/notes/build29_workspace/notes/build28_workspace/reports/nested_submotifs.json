@@ -1,0 +1,38 @@
+[
+  {
+    "occurrences": 89,
+    "signature": [
+      "bend",
+      "tail"
+    ],
+    "status": "nested_submotif_excluded_from_segmentation",
+    "trace_support": 12
+  },
+  {
+    "occurrences": 81,
+    "signature": [
+      "edge",
+      "tail"
+    ],
+    "status": "nested_submotif_excluded_from_segmentation",
+    "trace_support": 12
+  },
+  {
+    "occurrences": 89,
+    "signature": [
+      "pulse",
+      "bend"
+    ],
+    "status": "nested_submotif_excluded_from_segmentation",
+    "trace_support": 12
+  },
+  {
+    "occurrences": 81,
+    "signature": [
+      "pulse",
+      "edge"
+    ],
+    "status": "nested_submotif_excluded_from_segmentation",
+    "trace_support": 12
+  }
+]

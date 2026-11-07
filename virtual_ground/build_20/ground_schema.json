@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0",
+  "ground_id": "rotor4-v1",
+  "name": "Rotor-4",
+  "version": 1,
+  "state_space": {
+    "pieces": 4,
+    "orientation_modulus": 3,
+    "state_encoding": "permutation plus orientations at slots",
+    "constraints": ["permutation is bijective", "sum(orientation) mod 3 equals zero"],
+    "valid_state_count": 648
+  },
+  "primitive_operations": [
+    {"name": "SWAP01", "type": "permutation", "inverse": "SWAP01"},
+    {"name": "SWAP12", "type": "permutation", "inverse": "SWAP12"},
+    {"name": "SWAP23", "type": "permutation", "inverse": "SWAP23"},
+    {"name": "TWIST0+", "type": "orientation_pair", "inverse": "TWIST0-"},
+    {"name": "TWIST0-", "type": "orientation_pair", "inverse": "TWIST0+"},
+    {"name": "TWIST1+", "type": "orientation_pair", "inverse": "TWIST1-"},
+    {"name": "TWIST1-", "type": "orientation_pair", "inverse": "TWIST1+"},
+    {"name": "TWIST2+", "type": "orientation_pair", "inverse": "TWIST2-"},
+    {"name": "TWIST2-", "type": "orientation_pair", "inverse": "TWIST2+"}
+  ],
+  "observers": [
+    {"name": "full", "projection": ["permutation", "orientation"], "class_count": 648},
+    {"name": "layout", "projection": ["permutation"], "class_count": 24},
+    {"name": "orientation", "projection": ["orientation"], "class_count": 27}
+  ],
+  "intentions": ["exact_state", "layout_only", "orientation_only"],
+  "costs": ["primitive_steps", "macro_commands", "planning_expansions", "memory", "execution_time"],
+  "ground_revision_example": {
+    "name": "orientation_locked",
+    "version": 2,
+    "removed_operations": ["TWIST0+", "TWIST0-", "TWIST1+", "TWIST1-", "TWIST2+", "TWIST2-"],
+    "reachable_states_from_solved": 24
+  }
+}

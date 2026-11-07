@@ -1,0 +1,8 @@
+field,type,description
+boundary_view,enum,harmonic|temporal|combined
+token_view,enum,harmonic|temporal|combined
+frame_size,integer,analysis frame size in samples
+hop,integer,analysis hop in samples
+token_tolerance,float,descriptor clustering tolerance
+calibration_utility,float,task utility on calibration traces
+plausible_profiles,list,profiles within configured utility margin

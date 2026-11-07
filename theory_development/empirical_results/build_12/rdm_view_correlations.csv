@@ -1,0 +1,11 @@
+view_a,view_b,rdm_spearman
+decay,early_late,0.09924320962056811
+decay,spectral,0.15396019075264356
+decay,temporal,0.33776695003110097
+decay,level,0.27054737715115074
+early_late,spectral,0.08714493054115696
+early_late,temporal,0.7136014928467758
+early_late,level,0.18168152602114865
+spectral,temporal,0.11425461331121707
+spectral,level,0.08324694173750777
+temporal,level,0.1546133112170848

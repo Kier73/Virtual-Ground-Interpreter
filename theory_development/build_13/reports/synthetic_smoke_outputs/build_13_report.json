@@ -1,0 +1,101 @@
+{
+  "build": 13,
+  "analysis_status": "synthetic_smoke_test_complete",
+  "dataset": "Synthetic fixture",
+  "data_provenance": "synthetic_fixture",
+  "split": "test",
+  "pairs_discovered": 30,
+  "pairs_analyzed": 30,
+  "pairs_skipped": 0,
+  "speakers_analyzed": 3,
+  "utterances_per_speaker_cap": 10,
+  "sampling_rates_throat_hz": [
+    16000.0
+  ],
+  "sampling_rates_acoustic_hz": [
+    16000.0
+  ],
+  "residual_envelope_lag_ms": {
+    "median": 0.0,
+    "iqr": 0.0,
+    "median_absolute": 0.0
+  },
+  "raw_waveform_alignment_diagnostic": {
+    "median_residual_lag_ms": 1.0,
+    "median_best_normalized_correlation": 0.999990881809222,
+    "analysis_rate_hz": 4000,
+    "max_search_lag_ms": 5.0,
+    "applied_to_samples": false
+  },
+  "envelope_correlation": {
+    "median_after_source_preprocessing": 0.9887229887033386,
+    "median_at_zero_extra_shift": 0.9887229887033386
+  },
+  "cross_modal_geometry": {
+    "views": [
+      {
+        "view": "shared_spectral",
+        "speakers_analyzed": 3,
+        "utterances_analyzed": 30,
+        "median_rdm_spearman": 0.9212121212121213,
+        "speaker_bootstrap_95pct_ci": [
+          0.8757575757575757,
+          0.9733860342555994
+        ],
+        "median_permuted_null": -0.07786561264822134,
+        "permuted_null_95pct": 0.05455862977602084,
+        "empirical_one_sided_permutation_p": 0.05,
+        "n_permutations": 19
+      },
+      {
+        "view": "temporal",
+        "speakers_analyzed": 3,
+        "utterances_analyzed": 30,
+        "median_rdm_spearman": 0.8960474308300396,
+        "speaker_bootstrap_95pct_ci": [
+          0.8032938076416337,
+          0.9354413702239789
+        ],
+        "median_permuted_null": -0.036495388669301715,
+        "permuted_null_95pct": 0.07293807641633675,
+        "empirical_one_sided_permutation_p": 0.05,
+        "n_permutations": 19
+      },
+      {
+        "view": "periodicity",
+        "speakers_analyzed": 3,
+        "utterances_analyzed": 30,
+        "median_rdm_spearman": 0.902239789196311,
+        "speaker_bootstrap_95pct_ci": [
+          0.5284584980237154,
+          0.9288537549407114
+        ],
+        "median_permuted_null": -0.029907773386034255,
+        "permuted_null_95pct": 0.1451646903820815,
+        "empirical_one_sided_permutation_p": 0.05,
+        "n_permutations": 19
+      },
+      {
+        "view": "combined_common",
+        "speakers_analyzed": 3,
+        "utterances_analyzed": 30,
+        "median_rdm_spearman": 0.9247694334650857,
+        "speaker_bootstrap_95pct_ci": [
+          0.8733860342555995,
+          0.9736495388669302
+        ],
+        "median_permuted_null": -0.045718050065876155,
+        "permuted_null_95pct": 0.22936758893280607,
+        "empirical_one_sided_permutation_p": 0.05,
+        "n_permutations": 19
+      }
+    ]
+  },
+  "interpretation_guardrails": [
+    "No emotion labels are present in the documented TAPS schema; no emotion classification is performed.",
+    "Speaker IDs and transcripts are used only for within-speaker grouping and are not written to outputs.",
+    "The source dataset is already preprocessed and globally aligned; residual lag is diagnostic only.",
+    "Throat/acoustic amplitudes have different physical units and are not directly compared.",
+    "The acoustic-only high-frequency band is not treated as a missing throat signal that can be recovered without modelling."
+  ]
+}

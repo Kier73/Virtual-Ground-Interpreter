@@ -1,0 +1,30 @@
+test_acoustic_mode_classes (test_build_10.Build10Tests.test_acoustic_mode_classes) ... ok
+test_acoustic_outputs_finite (test_build_10.Build10Tests.test_acoustic_outputs_finite) ... ok
+test_active_feature_subset_matches_model (test_build_10.Build10Tests.test_active_feature_subset_matches_model) ... ok
+test_codon_alias_invariance (test_build_10.Build10Tests.test_codon_alias_invariance) ... ok
+test_codon_arithmetic (test_build_10.Build10Tests.test_codon_arithmetic) ... ok
+test_covariance_spectrum_normalizes (test_build_10.Build10Tests.test_covariance_spectrum_normalizes) ... ok
+test_feature_vector_shape_and_finiteness (test_build_10.Build10Tests.test_feature_vector_shape_and_finiteness) ... ok
+test_fixed_duration_sample_rate_bank (test_build_10.Build10Tests.test_fixed_duration_sample_rate_bank) ... ok
+test_information_gain_bounds (test_build_10.Build10Tests.test_information_gain_bounds) ... ok
+test_jacobi_known_eigenvalues (test_build_10.Build10Tests.test_jacobi_known_eigenvalues) ... ok
+test_mechanical_mass_and_stiffness_positive_definite (test_build_10.Build10Tests.test_mechanical_mass_and_stiffness_positive_definite) ... ok
+test_mechanical_modal_frequencies_positive (test_build_10.Build10Tests.test_mechanical_modal_frequencies_positive) ... ok
+test_mechanical_simulation_finite (test_build_10.Build10Tests.test_mechanical_simulation_finite) ... ok
+test_nonlinearity_changes_response_for_same_plant (test_build_10.Build10Tests.test_nonlinearity_changes_response_for_same_plant) ... ok
+test_nonproportional_damping_is_detected (test_build_10.Build10Tests.test_nonproportional_damping_is_detected) ... ok
+test_nuisance_sweep_outputs_expected_conditions (test_build_10.Build10Tests.test_nuisance_sweep_outputs_expected_conditions) ... ok
+test_policies_share_same_heldout_cases (test_build_10.Build10Tests.test_policies_share_same_heldout_cases) ... ok
+test_policy_probe_sequence_has_no_repeats (test_build_10.Build10Tests.test_policy_probe_sequence_has_no_repeats) ... ok
+test_posterior_normalizes (test_build_10.Build10Tests.test_posterior_normalizes) ... ok
+test_probe_set_is_complete (test_build_10.Build10Tests.test_probe_set_is_complete) ... ok
+test_proportional_damping_control (test_build_10.Build10Tests.test_proportional_damping_control) ... ok
+test_rdm_is_symmetric_and_zero_diagonal (test_build_10.Build10Tests.test_rdm_is_symmetric_and_zero_diagonal) ... ok
+test_sensor_lowpass_and_gain_are_applied (test_build_10.Build10Tests.test_sensor_lowpass_and_gain_are_applied) ... ok
+test_unpaired_geometry_does_not_claim_paired_rdm (test_build_10.Build10Tests.test_unpaired_geometry_does_not_claim_paired_rdm) ... ok
+test_wilson_interval_contains_observed_rate (test_build_10.Build10Tests.test_wilson_interval_contains_observed_rate) ... ok
+
+----------------------------------------------------------------------
+Ran 25 tests in 8.759s
+
+OK

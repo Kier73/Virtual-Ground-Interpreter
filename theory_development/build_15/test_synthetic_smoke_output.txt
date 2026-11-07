@@ -1,0 +1,8 @@
+{
+  "trials": 30,
+  "f1_mean": 0.9318040519503473,
+  "precision_mean": 0.9168016681401411,
+  "recall_mean": 0.9476031301499637,
+  "clock_residual_median_s": 0.0007997396157005676,
+  "report": "/mnt/data/vl_response_geometry_build_15/reports/synthetic_local_clock_stress.json"
+}

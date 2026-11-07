@@ -1,0 +1,47 @@
+{
+  "status": "complete",
+  "report": "/mnt/data/vl_response_geometry_build_26/reports/build_26_results.json",
+  "observer_quotients": {
+    "parity_only": {
+      "predictive_contexts": 2,
+      "history_horizon": 1,
+      "known_transitions": 2,
+      "unknown_transitions": 4,
+      "status": "tracking"
+    },
+    "residue3_only": {
+      "predictive_contexts": 3,
+      "history_horizon": 1,
+      "known_transitions": 3,
+      "unknown_transitions": 6,
+      "status": "tracking"
+    },
+    "joint": {
+      "predictive_contexts": 6,
+      "history_horizon": 1,
+      "known_transitions": 6,
+      "unknown_transitions": 12,
+      "status": "tracking"
+    }
+  },
+  "bounded_stream": {
+    "status": "tracking",
+    "version": 6,
+    "horizon": 1,
+    "total_event_count": 200,
+    "retained_event_count": 64,
+    "retired_event_count": 136,
+    "data_truncated": true,
+    "pending_steps": [],
+    "current_context": "q_1cdfe7802fe0",
+    "predictive_context_count": 2,
+    "collision_count": 0,
+    "known_transition_count": 2,
+    "unknown_transition_count": 4,
+    "version_lineage_retained_count": 6,
+    "conflict_records_retained_count": 0,
+    "duplicate_count": 0,
+    "stale_count": 0,
+    "fingerprint": "8a3d9f2a0284162c1b0cdcdf7abf28de1cf1c75cbb81b5976d5ba8bd0e752684"
+  }
+}

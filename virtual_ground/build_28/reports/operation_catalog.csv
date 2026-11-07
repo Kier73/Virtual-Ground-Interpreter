@@ -1,0 +1,5 @@
+motif_id,signature,length,occurrences,trace_support,weight,effect,status
+M001,"[""pulse"", ""bend"", ""tail""]",3,89,12,3.0512221129918053,"[-1, 1]",candidate_operation
+M002,"[""pulse"", ""edge"", ""tail""]",3,81,12,3.043774879146524,"[1, 0]",candidate_operation
+M003,"[""ramp"", ""tick""]",2,79,12,2.6917994701392947,"[0, 2]",candidate_operation
+M004,"[""hum"", ""click""]",2,39,11,2.616337018776115,"[0, 0]",recurrent_zero_effect_motif

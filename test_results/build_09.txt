@@ -1,0 +1,29 @@
+test_alias_registry_equivalence (test_build_09.TestCodonExecution.test_alias_registry_equivalence) ... ok
+test_arithmetic_codons (test_build_09.TestCodonExecution.test_arithmetic_codons) ... ok
+test_division_by_zero_rejected (test_build_09.TestCodonExecution.test_division_by_zero_rejected) ... ok
+test_registry_rejects_duplicate_aliases (test_build_09.TestCodonExecution.test_registry_rejects_duplicate_aliases) ... ok
+test_partner_retrieval_on_identical_rdms (test_build_09.TestRepresentationalGeometry.test_partner_retrieval_on_identical_rdms) ... ok
+test_permutation_p_is_bounded (test_build_09.TestRepresentationalGeometry.test_permutation_p_is_bounded) ... ok
+test_rdm_symmetric_and_zero_diagonal (test_build_09.TestRepresentationalGeometry.test_rdm_symmetric_and_zero_diagonal) ... ok
+test_spearman_identity (test_build_09.TestRepresentationalGeometry.test_spearman_identity) ... ok
+test_spearman_reversal (test_build_09.TestRepresentationalGeometry.test_spearman_reversal) ... ok
+test_codonic_aliases_execute_identically (test_build_09.TestReproducedBuildResults.test_codonic_aliases_execute_identically) ... ok
+test_expected_sample_and_family_count (test_build_09.TestReproducedBuildResults.test_expected_sample_and_family_count) ... ok
+test_matched_linear_spectral_geometry (test_build_09.TestReproducedBuildResults.test_matched_linear_spectral_geometry) ... ok
+test_noise_and_dropout_sweeps_monotone_enough (test_build_09.TestReproducedBuildResults.test_noise_and_dropout_sweeps_monotone_enough) ... ok
+test_nonlinear_probes_are_domain_specific (test_build_09.TestReproducedBuildResults.test_nonlinear_probes_are_domain_specific) ... ok
+test_random_pairing_control_reports_nonzero_resolution (test_build_09.TestReproducedBuildResults.test_random_pairing_control_reports_nonzero_resolution) ... ok
+test_sample_rate_rank_geometry_preserved (test_build_09.TestReproducedBuildResults.test_sample_rate_rank_geometry_preserved) ... ok
+test_unit_rescaling_preserves_rank_geometry (test_build_09.TestReproducedBuildResults.test_unit_rescaling_preserves_rank_geometry) ... ok
+test_acoustic_resonator_finite_and_stable (test_build_09.TestSignalAndSystemModels.test_acoustic_resonator_finite_and_stable) ... ok
+test_fft_dc_signal (test_build_09.TestSignalAndSystemModels.test_fft_dc_signal) ... ok
+test_fft_single_bin (test_build_09.TestSignalAndSystemModels.test_fft_single_bin) ... ok
+test_frequency_feature_shape (test_build_09.TestSignalAndSystemModels.test_frequency_feature_shape) ... ok
+test_mechanical_impulse_decays (test_build_09.TestSignalAndSystemModels.test_mechanical_impulse_decays) ... ok
+test_mechanical_mass_and_gain_unit_rescale (test_build_09.TestSignalAndSystemModels.test_mechanical_mass_and_gain_unit_rescale) ... ok
+test_probe_lengths_and_finite_values (test_build_09.TestSignalAndSystemModels.test_probe_lengths_and_finite_values) ... ok
+
+----------------------------------------------------------------------
+Ran 24 tests in 0.647s
+
+OK

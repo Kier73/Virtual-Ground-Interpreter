@@ -1,0 +1,24 @@
+test_cap_loop_closes_in_base_but_not_in_total_space (test_s3_codonic_navigation.HopfTransportTests.test_cap_loop_closes_in_base_but_not_in_total_space) ... ok
+test_distinct_loops_same_base_endpoint_different_holonomy (test_s3_codonic_navigation.HopfTransportTests.test_distinct_loops_same_base_endpoint_different_holonomy) ... ok
+test_holonomy_matches_half_solid_angle (test_s3_codonic_navigation.HopfTransportTests.test_holonomy_matches_half_solid_angle) ... ok
+test_hopf_projection_is_invariant_under_fibre_action (test_s3_codonic_navigation.HopfTransportTests.test_hopf_projection_is_invariant_under_fibre_action) ... ok
+test_initial_fibre_gauge_representative_does_not_change_holonomy (test_s3_codonic_navigation.HopfTransportTests.test_initial_fibre_gauge_representative_does_not_change_holonomy) ... ok
+test_non_circular_loop_holonomy_matches_area_integral (test_s3_codonic_navigation.HopfTransportTests.test_non_circular_loop_holonomy_matches_area_integral) ... ok
+test_refinement_converges (test_s3_codonic_navigation.HopfTransportTests.test_refinement_converges) ... ok
+test_reversed_loop_negates_holonomy (test_s3_codonic_navigation.HopfTransportTests.test_reversed_loop_negates_holonomy) ... ok
+test_codonic_hamilton_product_matches_known_i_squared (test_s3_codonic_navigation.QuaternionAlgebraTests.test_codonic_hamilton_product_matches_known_i_squared) ... ok
+test_noncommutative_quaternion_product (test_s3_codonic_navigation.QuaternionAlgebraTests.test_noncommutative_quaternion_product) ... ok
+test_program_uses_only_registered_scalar_primitives (test_s3_codonic_navigation.QuaternionAlgebraTests.test_program_uses_only_registered_scalar_primitives) ... ok
+test_quaternion_normalization (test_s3_codonic_navigation.QuaternionAlgebraTests.test_quaternion_normalization) ... ok
+test_registry_alias_changes_names_not_algebra (test_s3_codonic_navigation.QuaternionAlgebraTests.test_registry_alias_changes_names_not_algebra) ... ok
+test_registry_rejects_ambiguous_aliases (test_s3_codonic_navigation.QuaternionAlgebraTests.test_registry_rejects_ambiguous_aliases) ... ok
+test_s3_antipodes_are_pi_apart (test_s3_codonic_navigation.S3AndSO3MetricTests.test_s3_antipodes_are_pi_apart) ... ok
+test_s3_slerp_has_unit_norm_and_constant_fractional_distance (test_s3_codonic_navigation.S3AndSO3MetricTests.test_s3_slerp_has_unit_norm_and_constant_fractional_distance) ... ok
+test_s3_slerp_rejects_ambiguous_antipodal_geodesic (test_s3_codonic_navigation.S3AndSO3MetricTests.test_s3_slerp_rejects_ambiguous_antipodal_geodesic) ... ok
+test_so3_identifies_antipodes (test_s3_codonic_navigation.S3AndSO3MetricTests.test_so3_identifies_antipodes) ... ok
+test_so3_slerp_avoids_antipodal_long_path (test_s3_codonic_navigation.S3AndSO3MetricTests.test_so3_slerp_avoids_antipodal_long_path) ... ok
+
+----------------------------------------------------------------------
+Ran 19 tests in 0.303s
+
+OK

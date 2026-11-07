@@ -1,0 +1,7 @@
+domain,sensor_cutoff_hz,sensor_gain,delay_seconds,rdm_rank_retention
+acoustic,24.0,1.7,0.008,0.9646383467278989
+acoustic,48.0,1.7,0.008,0.9831750339213026
+acoustic,72.0,1.7,0.008,0.9823817973071705
+mechanical,24.0,1.7,0.008,0.8980482204362802
+mechanical,48.0,1.7,0.008,0.9140799499008454
+mechanical,72.0,1.7,0.008,0.9124099780816198

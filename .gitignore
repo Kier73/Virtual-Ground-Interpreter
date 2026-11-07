@@ -1,0 +1,26 @@
+# Original binary archives are kept locally; only the checksums are committed.
+archives/*
+!archives/SHA256SUMS.txt
+
+# Python caches. The manifest-listed .pyc files in Builds 27/30 are force-added.
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Local virtual environments
+.venv/
+venv/
+env/
+
+# Editor and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Local scratch space
+tmp/
+scratch/

@@ -1,0 +1,9 @@
+case,status,primary_explanation,candidate_explanations,unresolved_ambiguities
+hidden_vs_stochastic,unresolved_predictive_divergence,,"[""hidden_predictive_variable"", ""stochastic_or_noisy_transition""]",[]
+insufficient_history,insufficient_history,,"[""insufficient_history""]",[]
+new_operation_candidate,diagnostic_candidates_ranked,new_operation_candidate,[],[]
+new_state_candidate,diagnostic_candidates_ranked,new_predictive_state_candidate,[],"[""new predictive state versus uncalibrated sensor remapping remains possible""]"
+persistent_regime_change,ground_regime_revision_candidate,,[],[]
+regime_explanation_ranking,diagnostic_candidates_ranked,ground_regime_change_candidate,[],[]
+sensor_calibration_shift,sensor_calibration_shift_candidate,,[],[]
+sensor_shift_without_reference,sensor_remap_vs_system_change_unresolved,,[],[]

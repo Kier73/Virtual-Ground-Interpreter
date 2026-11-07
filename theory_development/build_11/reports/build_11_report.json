@@ -1,0 +1,601 @@
+{
+  "build": "11",
+  "title": "Empirical vibration response geometry and sensor calibration audit",
+  "scope": "Pilot analysis of a source-derived excerpt from one real smartphone G-Force recording; full recording download is provided but was not fetched in this offline execution environment.",
+  "source": {
+    "dataset_title": "Vibration measurements with observer-declared variance change points",
+    "author": "Justyna Witulska",
+    "version": "1.0.0",
+    "publication_date": "2026-09-19",
+    "license": "CC BY 4.0",
+    "repository": "https://github.com/witulska/vibration-changepoint-dataset",
+    "raw_recording": "https://raw.githubusercontent.com/witulska/vibration-changepoint-dataset/main/data/processed/measurement_01.csv",
+    "measurement_id": 1,
+    "measurement_context": "person; gait / motion change; G-Force only; 83.74 s; 8,157 source rows",
+    "sensor_metadata": {
+      "range_g": [
+        -4.0,
+        4.0
+      ],
+      "nominal_max_sampling_hz": 100,
+      "units": "g",
+      "channels": [
+        "gforce_x",
+        "gforce_y",
+        "gforce_z"
+      ]
+    },
+    "observer_interval_s": [
+      66.0,
+      68.0
+    ],
+    "theoretical_change_point_s": 67.0,
+    "source_excerpt_rows": 411,
+    "source_excerpt_windows": 8,
+    "excerpt_selection": {
+      "file": "measurement_01_excerpt.csv",
+      "row_count": 411,
+      "window_count": 8,
+      "source_line_ranges_including_csv_header_offset": {
+        "pre_63_30_63_88": [
+          6277,
+          6335
+        ],
+        "pre_64_33_64_92": [
+          6380,
+          6438
+        ],
+        "pre_65_8_66_15": [
+          6499,
+          6543
+        ],
+        "transition_66_45_66_65": [
+          6574,
+          6593
+        ],
+        "transition_66_92_67_2": [
+          6594,
+          6633
+        ],
+        "post_67_51_68_53": [
+          6664,
+          6759
+        ],
+        "post_68_82_69_20": [
+          6760,
+          6811
+        ],
+        "post_69_20_69_60": [
+          6812,
+          6851
+        ]
+      },
+      "selection_note": "Selected contiguous line ranges from measurement_01.csv; the source line number is retained per row. Windows are not concatenated across gaps and no interpolation is performed. Some selected windows overlap or straddle the observer interval and are excluded from strict pre/event/post group contrasts."
+    },
+    "note": "The excerpt consists of selected line ranges from the canonical processed CSV. Discontinuous time spans are kept as separate windows; no missing samples are interpolated."
+  },
+  "data_audit": {
+    "window_count": 8,
+    "row_count": 411,
+    "observed_median_intervals_s": {
+      "pre_63_30_63_88": 0.00995129000000361,
+      "pre_64_33_64_92": 0.009970714999994357,
+      "pre_65_8_66_15": 0.009702634999996462,
+      "transition_66_45_66_65": 0.009992920000001959,
+      "transition_66_92_67_2": 0.00943815000000825,
+      "post_67_51_68_53": 0.009996389999997746,
+      "post_68_82_69_20": 0.009830850000000169,
+      "post_69_20_69_60": 0.00998272999999017
+    },
+    "observed_max_gaps_s": {
+      "pre_63_30_63_88": 0.10899299999999812,
+      "pre_64_33_64_92": 0.017243039999996768,
+      "pre_65_8_66_15": 0.01789807999999482,
+      "transition_66_45_66_65": 0.011697959999992236,
+      "transition_66_92_67_2": 0.01617215999999644,
+      "post_67_51_68_53": 0.021328890000006595,
+      "post_68_82_69_20": 0.010854460000004451,
+      "post_69_20_69_60": 0.01356687999999906
+    },
+    "near_limit_windows": [
+      "post_67_51_68_53",
+      "post_68_82_69_20",
+      "post_69_20_69_60"
+    ],
+    "unit_conversion_max_distance_error": 8.881784197001252e-16
+  },
+  "window_features": {
+    "pre_63_30_63_88": {
+      "n": 59,
+      "start_s": 63.30297684,
+      "end_s": 63.88329322,
+      "duration_s": 0.5803163799999993,
+      "median_dt_s": 0.00995129000000361,
+      "dt_mad_s": 0.00028450500000332113,
+      "max_dt_s": 0.10899299999999812,
+      "observed_interval_hz_median": 100.48948427788129,
+      "mean_x_g": -0.2304542372881356,
+      "mean_y_g": 0.008400000000000001,
+      "mean_z_g": 1.0321135593220339,
+      "std_x_g": 0.24941218917519656,
+      "std_y_g": 0.18116370628405754,
+      "std_z_g": 0.3889220698627352,
+      "centered_vector_rms_g": 0.49849600120797255,
+      "centered_vector_sd_g": 0.20950992091393283,
+      "centered_vector_p95_g": 0.8012954414631769,
+      "raw_vector_mean_norm_g": 1.095562318743884,
+      "cov_eig1_g2": 0.1675546185675539,
+      "cov_eig2_g2": 0.06093513764896347,
+      "cov_eig3_g2": 0.020008507003821608,
+      "cov_eig1_fraction": 0.6742687711220992,
+      "cov_eig2_fraction": 0.2452135353353893,
+      "cov_eig3_fraction": 0.08051769354251148,
+      "corr_xy": 0.13716643615005936,
+      "corr_xz": -0.31321621268660166,
+      "corr_yz": 0.4566857772798965,
+      "delta_mag_rms_g_per_sample": 0.11866860987733972,
+      "time_derivative_rms_g_per_s": 10.884398814779328,
+      "magnitude_acf_lag1": 0.8377669199764053,
+      "magnitude_acf_lag2": 0.46013929925583014,
+      "magnitude_zero_crossing_rate": 0.1724137931034483,
+      "magnitude_kurtosis": 2.1076472305344636,
+      "near_4g_fraction": 0.0
+    },
+    "pre_64_33_64_92": {
+      "n": 59,
+      "start_s": 64.33392357,
+      "end_s": 64.92254138,
+      "duration_s": 0.5886178100000024,
+      "median_dt_s": 0.009970714999994357,
+      "dt_mad_s": 0.00013638500000467957,
+      "max_dt_s": 0.017243039999996768,
+      "observed_interval_hz_median": 100.29371013017281,
+      "mean_x_g": -0.18753728813559323,
+      "mean_y_g": -0.011379661016949153,
+      "mean_z_g": 1.0223728813559323,
+      "std_x_g": 0.1990767298613949,
+      "std_y_g": 0.24698259719085336,
+      "std_z_g": 0.4112823801401316,
+      "centered_vector_rms_g": 0.5200957754041272,
+      "centered_vector_sd_g": 0.23750345902571207,
+      "centered_vector_p95_g": 0.8909749524156896,
+      "raw_vector_mean_norm_g": 1.0911636478247588,
+      "cov_eig1_g2": 0.19635102350126116,
+      "cov_eig2_g2": 0.043581948826495326,
+      "cov_eig3_g2": 0.030566643265463867,
+      "cov_eig1_fraction": 0.7258828189853531,
+      "cov_eig2_fraction": 0.1611164907976588,
+      "cov_eig3_fraction": 0.11300069021698815,
+      "corr_xy": -0.04290023641663651,
+      "corr_xz": -0.26551748993234,
+      "corr_yz": 0.5513491772079755,
+      "delta_mag_rms_g_per_sample": 0.12298561740156146,
+      "time_derivative_rms_g_per_s": 12.410950278021817,
+      "magnitude_acf_lag1": 0.8643472804357187,
+      "magnitude_acf_lag2": 0.5443618555653946,
+      "magnitude_zero_crossing_rate": 0.1896551724137931,
+      "magnitude_kurtosis": 2.458180130947438,
+      "near_4g_fraction": 0.0
+    },
+    "pre_65_8_66_15": {
+      "n": 45,
+      "start_s": 65.79928192,
+      "end_s": 66.14829395,
+      "duration_s": 0.34901202999999725,
+      "median_dt_s": 0.009702634999996462,
+      "dt_mad_s": 0.0011669849999975668,
+      "max_dt_s": 0.01789807999999482,
+      "observed_interval_hz_median": 103.06478600919901,
+      "mean_x_g": -0.19798222222222223,
+      "mean_y_g": -0.03568222222222222,
+      "mean_z_g": 1.1283666666666667,
+      "std_x_g": 0.29577226621461383,
+      "std_y_g": 0.17435973833031893,
+      "std_z_g": 0.37642350558321347,
+      "centered_vector_rms_g": 0.5137857281439846,
+      "centered_vector_sd_g": 0.23152603548421719,
+      "centered_vector_p95_g": 0.824753355157279,
+      "raw_vector_mean_norm_g": 1.200098030406021,
+      "cov_eig1_g2": 0.1561715515999761,
+      "cov_eig2_g2": 0.08802785590998076,
+      "cov_eig3_g2": 0.019776366934487557,
+      "cov_eig1_fraction": 0.5916131960542595,
+      "cov_eig2_fraction": 0.3334694484569335,
+      "cov_eig3_fraction": 0.07491735548880693,
+      "corr_xy": 0.504212803593765,
+      "corr_xz": -0.1466524441131521,
+      "corr_yz": -0.40849567638596407,
+      "delta_mag_rms_g_per_sample": 0.13826983439842175,
+      "time_derivative_rms_g_per_s": 15.27522516962747,
+      "magnitude_acf_lag1": 0.8196482962791787,
+      "magnitude_acf_lag2": 0.5101389466196792,
+      "magnitude_zero_crossing_rate": 0.20454545454545456,
+      "magnitude_kurtosis": 1.8337468758050937,
+      "near_4g_fraction": 0.0
+    },
+    "transition_66_45_66_65": {
+      "n": 20,
+      "start_s": 66.45814499,
+      "end_s": 66.64686218,
+      "duration_s": 0.18871719000000553,
+      "median_dt_s": 0.009992920000001959,
+      "dt_mad_s": 0.00032257999998819287,
+      "max_dt_s": 0.011697959999992236,
+      "observed_interval_hz_median": 100.07085016189501,
+      "mean_x_g": -0.07733999999999999,
+      "mean_y_g": -0.028679999999999994,
+      "mean_z_g": 1.170825,
+      "std_x_g": 0.24551942163503074,
+      "std_y_g": 0.2636889561585771,
+      "std_z_g": 0.48703369891107123,
+      "centered_vector_rms_g": 0.6135257981535903,
+      "centered_vector_sd_g": 0.2335395790001598,
+      "centered_vector_p95_g": 0.9964205483951586,
+      "raw_vector_mean_norm_g": 1.2442046976361865,
+      "cov_eig1_g2": 0.3142944295778686,
+      "cov_eig2_g2": 0.04749870418685917,
+      "cov_eig3_g2": 0.014620771235272279,
+      "cov_eig1_fraction": 0.834970295738327,
+      "cov_eig2_fraction": 0.12618743238738528,
+      "cov_eig3_fraction": 0.03884227187428763,
+      "corr_xy": -0.5699467799832605,
+      "corr_xz": -0.47520672808215153,
+      "corr_yz": 0.8383581406908912,
+      "delta_mag_rms_g_per_sample": 0.16514169820502914,
+      "time_derivative_rms_g_per_s": 18.130825863266978,
+      "magnitude_acf_lag1": 0.7552672562514108,
+      "magnitude_acf_lag2": 0.1957187354416551,
+      "magnitude_zero_crossing_rate": 0.3684210526315789,
+      "magnitude_kurtosis": 2.3927826435008215,
+      "near_4g_fraction": 0.0
+    },
+    "transition_66_92_67_2": {
+      "n": 40,
+      "start_s": 66.9247263,
+      "end_s": 67.19911503,
+      "duration_s": 0.2743887299999983,
+      "median_dt_s": 0.00943815000000825,
+      "dt_mad_s": 0.001360469999994507,
+      "max_dt_s": 0.01617215999999644,
+      "observed_interval_hz_median": 105.95296747764402,
+      "mean_x_g": -0.21856499999999998,
+      "mean_y_g": 0.018262499999999997,
+      "mean_z_g": 0.9453125,
+      "std_x_g": 0.6143843526449873,
+      "std_y_g": 0.2506521460984326,
+      "std_z_g": 0.6105517108269781,
+      "centered_vector_rms_g": 0.9037544091178754,
+      "centered_vector_sd_g": 0.4543813167015883,
+      "centered_vector_p95_g": 1.6421936230167888,
+      "raw_vector_mean_norm_g": 1.108325929098831,
+      "cov_eig1_g2": 0.580691000516871,
+      "cov_eig2_g2": 0.1963085460614855,
+      "cov_eig3_g2": 0.03977248542164344,
+      "cov_eig1_fraction": 0.7109584777223016,
+      "cov_eig2_fraction": 0.24034680225373525,
+      "cov_eig3_fraction": 0.04869472002396311,
+      "corr_xy": 0.44879812162557287,
+      "corr_xz": -0.5281334641354638,
+      "corr_yz": 0.02820819933344667,
+      "delta_mag_rms_g_per_sample": 0.2949877702613601,
+      "time_derivative_rms_g_per_s": 35.94977961650642,
+      "magnitude_acf_lag1": 0.7903911439653094,
+      "magnitude_acf_lag2": 0.41453942678452305,
+      "magnitude_zero_crossing_rate": 0.15384615384615385,
+      "magnitude_kurtosis": 3.671568226570579,
+      "near_4g_fraction": 0.0
+    },
+    "post_67_51_68_53": {
+      "n": 96,
+      "start_s": 67.51090807,
+      "end_s": 68.5307693,
+      "duration_s": 1.0198612300000036,
+      "median_dt_s": 0.009996389999997746,
+      "dt_mad_s": 0.0004641999999961399,
+      "max_dt_s": 0.021328890000006595,
+      "observed_interval_hz_median": 100.03611303682885,
+      "mean_x_g": -0.16551979166666667,
+      "mean_y_g": 0.03113958333333333,
+      "mean_z_g": 0.9417322916666667,
+      "std_x_g": 0.7576042191259607,
+      "std_y_g": 0.38180855572502087,
+      "std_z_g": 1.0151700396869885,
+      "centered_vector_rms_g": 1.3334712300436655,
+      "centered_vector_sd_g": 0.7472134475573516,
+      "centered_vector_p95_g": 2.6309467334361516,
+      "raw_vector_mean_norm_g": 1.2739587515990722,
+      "cov_eig1_g2": 1.3829348365811567,
+      "cov_eig2_g2": 0.2781448325708568,
+      "cov_eig3_g2": 0.11706585220215351,
+      "cov_eig1_fraction": 0.7777399655839005,
+      "cov_eig2_fraction": 0.15642411109245571,
+      "cov_eig3_fraction": 0.06583592332364377,
+      "corr_xy": 0.11791596833485173,
+      "corr_xz": -0.6640376842715564,
+      "corr_yz": 0.14790898916006484,
+      "delta_mag_rms_g_per_sample": 0.45632657615094585,
+      "time_derivative_rms_g_per_s": 41.511464419776246,
+      "magnitude_acf_lag1": 0.813235448547286,
+      "magnitude_acf_lag2": 0.5469879542879272,
+      "magnitude_zero_crossing_rate": 0.12631578947368421,
+      "magnitude_kurtosis": 4.987829188294332,
+      "near_4g_fraction": 0.006944444444444444
+    },
+    "post_68_82_69_20": {
+      "n": 52,
+      "start_s": 68.82358834,
+      "end_s": 69.20098103,
+      "duration_s": 0.37739268999999354,
+      "median_dt_s": 0.009830850000000169,
+      "dt_mad_s": 0.0004305300000027046,
+      "max_dt_s": 0.010854460000004451,
+      "observed_interval_hz_median": 101.7206040169449,
+      "mean_x_g": -0.18351346153846154,
+      "mean_y_g": -0.004375000000000002,
+      "mean_z_g": 1.0944865384615385,
+      "std_x_g": 1.0552151169728463,
+      "std_y_g": 0.42068755804086316,
+      "std_z_g": 1.2736170883367584,
+      "centered_vector_rms_g": 1.7386391509210255,
+      "centered_vector_sd_g": 1.0346098524621308,
+      "centered_vector_p95_g": 3.57866076957025,
+      "raw_vector_mean_norm_g": 1.6482525304827318,
+      "cov_eig1_g2": 2.5647835977516475,
+      "cov_eig2_g2": 0.2862692414521804,
+      "cov_eig3_g2": 0.17181325791155708,
+      "cov_eig1_fraction": 0.8484608697021447,
+      "cov_eig2_fraction": 0.09470126438129597,
+      "cov_eig3_fraction": 0.05683786591655927,
+      "corr_xy": 0.11488241622992879,
+      "corr_xz": -0.821465993106657,
+      "corr_yz": 0.035650024079759104,
+      "delta_mag_rms_g_per_sample": 0.6623303426365628,
+      "time_derivative_rms_g_per_s": 61.61251302801428,
+      "magnitude_acf_lag1": 0.7979033580806483,
+      "magnitude_acf_lag2": 0.49542590787981994,
+      "magnitude_zero_crossing_rate": 0.23529411764705882,
+      "magnitude_kurtosis": 3.164498212283279,
+      "near_4g_fraction": 0.01282051282051282
+    },
+    "post_69_20_69_60": {
+      "n": 40,
+      "start_s": 69.21108107,
+      "end_s": 69.60145653,
+      "duration_s": 0.39037545999998713,
+      "median_dt_s": 0.00998272999999017,
+      "dt_mad_s": 0.00017435000000887158,
+      "max_dt_s": 0.01356687999999906,
+      "observed_interval_hz_median": 100.17299876897249,
+      "mean_x_g": -0.22567749999999998,
+      "mean_y_g": -0.121005,
+      "mean_z_g": 0.98589,
+      "std_x_g": 0.9141227276704972,
+      "std_y_g": 0.4303409967397947,
+      "std_z_g": 1.1211771768547556,
+      "centered_vector_rms_g": 1.5151346775947014,
+      "centered_vector_sd_g": 0.9297601443043144,
+      "centered_vector_p95_g": 3.335388179838661,
+      "raw_vector_mean_norm_g": 1.4686892403870249,
+      "cov_eig1_g2": 1.9498943351071882,
+      "cov_eig2_g2": 0.23920621002831466,
+      "cov_eig3_g2": 0.10653254611449693,
+      "cov_eig1_fraction": 0.8493928505122947,
+      "cov_eig2_fraction": 0.10420054099240396,
+      "cov_eig3_fraction": 0.04640660849530125,
+      "corr_xy": 0.48209726037401407,
+      "corr_xz": -0.8155731799247989,
+      "corr_yz": -0.2940249242829356,
+      "delta_mag_rms_g_per_sample": 0.5374694938693871,
+      "time_derivative_rms_g_per_s": 54.419927189816995,
+      "magnitude_acf_lag1": 0.8355901111090459,
+      "magnitude_acf_lag2": 0.5786883228765558,
+      "magnitude_zero_crossing_rate": 0.1794871794871795,
+      "magnitude_kurtosis": 4.44866346058389,
+      "near_4g_fraction": 0.016666666666666666
+    }
+  },
+  "observer_groups": {
+    "pre": [
+      "pre_63_30_63_88",
+      "pre_64_33_64_92"
+    ],
+    "observer_interval": [
+      "transition_66_45_66_65",
+      "transition_66_92_67_2"
+    ],
+    "post": [
+      "post_68_82_69_20",
+      "post_69_20_69_60"
+    ]
+  },
+  "descriptive_differences": {
+    "pre_vs_observer_interval": {
+      "centered_vector_rms_g": {
+        "pre_mean": 0.5092958883060499,
+        "observer_interval_mean": 0.7586401036357329,
+        "difference_observer_interval_minus_pre": 0.24934421532968298,
+        "standardized_difference_descriptive": 2.4232858399326886
+      },
+      "centered_vector_sd_g": {
+        "pre_mean": 0.22350668996982245,
+        "observer_interval_mean": 0.3439604478508741,
+        "difference_observer_interval_minus_pre": 0.12045375788105164,
+        "standardized_difference_descriptive": 1.5304631312124681
+      },
+      "time_derivative_rms_g_per_s": {
+        "pre_mean": 11.647674546400573,
+        "observer_interval_mean": 27.040302739886698,
+        "difference_observer_interval_minus_pre": 15.392628193486125,
+        "standardized_difference_descriptive": 2.4343760635792813
+      },
+      "cov_eig1_fraction": {
+        "pre_mean": 0.7000757950537262,
+        "observer_interval_mean": 0.7729643867303143,
+        "difference_observer_interval_minus_pre": 0.07288859167658812,
+        "standardized_difference_descriptive": 1.5347968130087215
+      },
+      "near_4g_fraction": {
+        "pre_mean": 0.0,
+        "observer_interval_mean": 0.0,
+        "difference_observer_interval_minus_pre": 0.0,
+        "standardized_difference_descriptive": null
+      }
+    },
+    "observer_interval_vs_post": {
+      "centered_vector_rms_g": {
+        "observer_interval_mean": 0.7586401036357329,
+        "post_mean": 1.6268869142578635,
+        "difference_post_minus_observer_interval": 0.8682468106221306,
+        "standardized_difference_descriptive": 6.703986581268712
+      },
+      "centered_vector_sd_g": {
+        "observer_interval_mean": 0.3439604478508741,
+        "post_mean": 0.9821849983832226,
+        "difference_post_minus_observer_interval": 0.6382245505323485,
+        "standardized_difference_descriptive": 7.384085715150243
+      },
+      "time_derivative_rms_g_per_s": {
+        "observer_interval_mean": 27.040302739886698,
+        "post_mean": 58.01622010891563,
+        "difference_post_minus_observer_interval": 30.975917369028934,
+        "standardized_difference_descriptive": 4.5594227013106305
+      },
+      "cov_eig1_fraction": {
+        "observer_interval_mean": 0.7729643867303143,
+        "post_mean": 0.8489268601072197,
+        "difference_post_minus_observer_interval": 0.07596247337690543,
+        "standardized_difference_descriptive": 1.7324820849060574
+      },
+      "near_4g_fraction": {
+        "observer_interval_mean": 0.0,
+        "post_mean": 0.014743589743589743,
+        "difference_post_minus_observer_interval": 0.014743589743589743,
+        "standardized_difference_descriptive": 10.842303978193726
+      }
+    },
+    "pre_vs_post": {
+      "centered_vector_rms_g": {
+        "pre_mean": 0.5092958883060499,
+        "post_mean": 1.6268869142578635,
+        "difference_post_minus_pre": 1.1175910259518136,
+        "standardized_difference_descriptive": 14.077418896253311
+      },
+      "centered_vector_sd_g": {
+        "pre_mean": 0.22350668996982245,
+        "post_mean": 0.9821849983832226,
+        "difference_post_minus_pre": 0.7586783084134001,
+        "standardized_difference_descriptive": 19.77349730347484
+      },
+      "time_derivative_rms_g_per_s": {
+        "pre_mean": 11.647674546400573,
+        "post_mean": 58.01622010891563,
+        "difference_post_minus_pre": 46.36854556251506,
+        "standardized_difference_descriptive": 17.83675241344435
+      },
+      "cov_eig1_fraction": {
+        "pre_mean": 0.7000757950537262,
+        "post_mean": 0.8489268601072197,
+        "difference_post_minus_pre": 0.14885106505349355,
+        "standardized_difference_descriptive": 8.155643458400714
+      },
+      "near_4g_fraction": {
+        "pre_mean": 0.0,
+        "post_mean": 0.014743589743589743,
+        "difference_post_minus_pre": 0.014743589743589743,
+        "standardized_difference_descriptive": 10.842303978193726
+      }
+    }
+  },
+  "response_geometry": {
+    "views": {
+      "amplitude": {
+        "feature_columns": [
+          "std_x_g",
+          "std_y_g",
+          "std_z_g",
+          "centered_vector_rms_g",
+          "centered_vector_sd_g",
+          "centered_vector_p95_g"
+        ],
+        "mean_off_diagonal_distance": 4.014771503476491
+      },
+      "direction": {
+        "feature_columns": [
+          "cov_eig1_fraction",
+          "cov_eig2_fraction",
+          "cov_eig3_fraction",
+          "corr_xy",
+          "corr_xz",
+          "corr_yz"
+        ],
+        "mean_off_diagonal_distance": 2.9813073929948217
+      },
+      "temporal": {
+        "feature_columns": [
+          "delta_mag_rms_g_per_sample",
+          "time_derivative_rms_g_per_s",
+          "magnitude_acf_lag1",
+          "magnitude_acf_lag2",
+          "magnitude_zero_crossing_rate",
+          "magnitude_kurtosis"
+        ],
+        "mean_off_diagonal_distance": 4.473078533497953
+      },
+      "sensor": {
+        "feature_columns": [
+          "near_4g_fraction",
+          "median_dt_s",
+          "dt_mad_s",
+          "max_dt_s"
+        ],
+        "mean_off_diagonal_distance": 8.732134541218484
+      }
+    },
+    "rdm_correlations": [
+      {
+        "view_a": "amplitude",
+        "view_b": "direction",
+        "spearman_rdm_correlation": 0.230432402846196
+      },
+      {
+        "view_a": "amplitude",
+        "view_b": "temporal",
+        "spearman_rdm_correlation": 0.3858784893267653
+      },
+      {
+        "view_a": "amplitude",
+        "view_b": "sensor",
+        "spearman_rdm_correlation": -0.08976464148877944
+      },
+      {
+        "view_a": "direction",
+        "view_b": "temporal",
+        "spearman_rdm_correlation": 0.5555555555555557
+      },
+      {
+        "view_a": "direction",
+        "view_b": "sensor",
+        "spearman_rdm_correlation": -0.1729611384783799
+      },
+      {
+        "view_a": "temporal",
+        "view_b": "sensor",
+        "spearman_rdm_correlation": -0.28461959496442263
+      }
+    ],
+    "interpretation": "These matrices describe temporal windows from one recording; correlations are descriptive and are not independent-sample inference."
+  },
+  "codon_alias_check": {
+    "ad_equals_plus": true,
+    "mx_equals_times": true
+  },
+  "limitations": [
+    "Only one of the nine source recordings is sampled in this pilot.",
+    "The complete 8,157-row source recording is not included; only selected windows are included.",
+    "The processed G-Force channel is a sensor output, not a calibrated force/acceleration reference measurement.",
+    "Sensor transfer function cannot be estimated from this excerpt because no calibrated reference input is present.",
+    "Near-4g readings are flagged as possible range saturation, not confirmed clipping.",
+    "The observer's 66-68 s interval is a variance-change annotation; it is not an emotional label.",
+    "No empirical acoustic room-impulse waveform has been ingested in this build. Room-IR acquisition is reserved for the next empirical extension."
+  ]
+}

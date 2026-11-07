@@ -1,0 +1,15 @@
+{
+  "one_sensor_anomaly": {
+    "first_status": "quarantined_single_conflict",
+    "recovery_status": "consistent_with_current_ground",
+    "version_proposed": false
+  },
+  "persistent_law_change": {
+    "first_status": "quarantined_single_conflict",
+    "revision_candidate": [
+      "C3-inflow_B-demand_A-Q1-P1-V2"
+    ],
+    "second_status": "ground_revision_candidate",
+    "version_committed_automatically": false
+  }
+}

@@ -1,0 +1,4 @@
+observer,observed_variables,equivalence_classes,task_for_which_view_is_adequate,information_lost
+full,permutation+orientation,648,exact_state,none within finite fixture
+layout,permutation,24,layout_only,orientation
+orientation,orientation,27,orientation_only,piece permutation

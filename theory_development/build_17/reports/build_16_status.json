@@ -1,0 +1,10 @@
+{
+  "build": 16,
+  "status": "synthetic_falsification_and_harmonic_prototypes_complete",
+  "empirical_sensor_data_processed": false,
+  "falsification_trial_count_per_condition": 40,
+  "harmonic_dft_parseval_error": 1.0658141036401503e-14,
+  "graph_fourier_parseval_error": 3.552713678800501e-15,
+  "graph_spectrum_permutation_error": 8.881784197001252e-16,
+  "source_data_status": "no empirical sensor input; generated event fixtures only"
+}

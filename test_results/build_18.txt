@@ -1,0 +1,26 @@
+test_observer_charts_make_information_loss_explicit (test_build18.TestIntertwiners.test_observer_charts_make_information_loss_explicit) ... ok
+test_unitary_intertwiner_and_gram_preservation (test_build18.TestIntertwiners.test_unitary_intertwiner_and_gram_preservation) ... ok
+test_path_orientation_is_detected (test_build18.TestPathSignatures.test_path_orientation_is_detected) ... ok
+test_piecewise_linear_reparameterization_preserves_signature (test_build18.TestPathSignatures.test_piecewise_linear_reparameterization_preserves_signature) ... ok
+test_signature_degree_one_is_endpoint_displacement (test_build18.TestPathSignatures.test_signature_degree_one_is_endpoint_displacement) ... ok
+test_signature_straight_segment_subdivision_invariant (test_build18.TestPathSignatures.test_signature_straight_segment_subdivision_invariant) ... ok
+test_time_augmented_signature_retains_duration_change (test_build18.TestPathSignatures.test_time_augmented_signature_retains_duration_change) ... ok
+test_tree_like_backtrack_has_trivial_signature (test_build18.TestPathSignatures.test_tree_like_backtrack_has_trivial_signature) ... ok
+test_antipodal_parity (test_build18.TestQuaternionAndSU2.test_antipodal_parity) ... ok
+test_fibre_average_removes_half_integer_spin (test_build18.TestQuaternionAndSU2.test_fibre_average_removes_half_integer_spin) ... ok
+test_fibre_average_retains_integer_spin_zero_weight (test_build18.TestQuaternionAndSU2.test_fibre_average_retains_integer_spin_zero_weight) ... ok
+test_fibre_projector_rank (test_build18.TestQuaternionAndSU2.test_fibre_projector_rank) ... ok
+test_hopf_map_constant_on_fibre (test_build18.TestQuaternionAndSU2.test_hopf_map_constant_on_fibre) ... ok
+test_hopf_map_is_unit_vector (test_build18.TestQuaternionAndSU2.test_hopf_map_is_unit_vector) ... ok
+test_left_right_translation_preserves_representation_band_energy (test_build18.TestQuaternionAndSU2.test_left_right_translation_preserves_representation_band_energy) ... ok
+test_quaternion_inverse (test_build18.TestQuaternionAndSU2.test_quaternion_inverse) ... ok
+test_representation_homomorphism (test_build18.TestQuaternionAndSU2.test_representation_homomorphism) ... ok
+test_s3_geodesic_antipodes_are_maximally_separated (test_build18.TestQuaternionAndSU2.test_s3_geodesic_antipodes_are_maximally_separated) ... ok
+test_schur_orthogonality_monte_carlo (test_build18.TestQuaternionAndSU2.test_schur_orthogonality_monte_carlo) ... ok
+test_su2_unitary_and_determinant (test_build18.TestQuaternionAndSU2.test_su2_unitary_and_determinant) ... ok
+test_symmetric_power_is_unitary (test_build18.TestQuaternionAndSU2.test_symmetric_power_is_unitary) ... ok
+
+----------------------------------------------------------------------
+Ran 21 tests in 0.656s
+
+OK

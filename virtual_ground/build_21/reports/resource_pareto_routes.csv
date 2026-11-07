@@ -1,0 +1,3 @@
+time,energy,communication,path
+7.0,10.0,4.0,HOLD B_TO_A HOLD HOLD A_TO_B A_TO_B A_TO_B
+11.0,9.0,3.0,HOLD HOLD HOLD HOLD HOLD HOLD HOLD HOLD A_TO_B A_TO_B A_TO_B

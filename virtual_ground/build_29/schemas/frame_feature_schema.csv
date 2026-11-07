@@ -1,0 +1,19 @@
+feature,group,description,invariance_or_role
+log_rms,temporal,Log root-mean-square frame amplitude,Changes under gain
+peak_rms,temporal,Peak divided by frame RMS,Invariant to constant positive gain
+zcr,temporal,Zero-crossing rate,Scale invariant for positive gain
+centroid_nyquist,harmonic,Power-weighted centroid normalized by Nyquist,Scale invariant for positive gain
+spectral_flatness,harmonic,Geometric to arithmetic mean power ratio,Scale invariant for positive gain
+spectral_flux,harmonic,Half-L1 change in normalized spectral power,Scale invariant to frame gain
+phase_innovation,phase,Residual dominant-bin phase advance,Phase-sensitive cue; reliability-gated
+phase_reliability,phase,Dominant-bin magnitude over total spectral norm,Quality indicator
+dominant_bin,phase,Index of dominant positive-frequency bin,Frequency locator
+band_0,harmonic,Normalized energy share in [0,.08) Nyquist,Scale invariant for positive gain
+band_1,harmonic,Normalized energy share in [.08,.16) Nyquist,Scale invariant for positive gain
+band_2,harmonic,Normalized energy share in [.16,.28) Nyquist,Scale invariant for positive gain
+band_3,harmonic,Normalized energy share in [.28,.40) Nyquist,Scale invariant for positive gain
+band_4,harmonic,Normalized energy share in [.40,.50] Nyquist,Scale invariant for positive gain
+haar_0,wavelet,Haar-like detail energy fraction at level 1,Scale invariant for positive gain
+haar_1,wavelet,Haar-like detail energy fraction at level 2,Scale invariant for positive gain
+haar_2,wavelet,Haar-like detail energy fraction at level 3,Scale invariant for positive gain
+haar_3,wavelet,Haar-like detail energy fraction at level 4,Scale invariant for positive gain

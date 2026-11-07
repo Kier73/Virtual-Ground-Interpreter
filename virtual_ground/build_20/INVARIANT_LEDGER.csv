@@ -1,0 +1,24 @@
+id,invariant_or_property,scope,status,evidence,limitation
+R4-01,piece permutation is bijective,Rotor-4,verified,all 648 generated states and 5832 edges,toy finite state space
+R4-02,total orientation is zero modulo 3,Rotor-4,verified,all states and all primitive transitions,selected toy constraint
+R4-03,state space cardinality equals 4! times 3^3,Rotor-4,verified,648 unique valid states,does not generalize to other puzzles
+R4-04,primitive operations are invertible,Rotor-4,verified,inverse replay tests,only base reversible ground
+R4-05,primitive composition is associative,Rotor-4,verified,algebra implementation and tests,finite group construction
+R4-06,generated operations reach all valid states,Rotor-4,verified,exhaustive BFS reaches 648 of 648,finite exhaustive result
+R4-07,mixed-radix coordinate is bijective,Rotor-4,verified,encode/decode covers 0 through 647,constant-size only for fixed puzzle dimensions
+R4-08,coordinate transitions intertwine primitive transitions,Rotor-4,verified,all 5832 state/action combinations,one coordinate chart
+R4-09,layout quotient has 24 classes,Rotor-4 layout observer,verified,exhaustive quotient enumeration,only layout intention is adequate
+R4-10,orientation quotient has 27 classes,Rotor-4 orientation observer,verified,exhaustive quotient enumeration,only orientation intention is adequate
+R4-11,macro expansions reach declared target,Rotor-4 macro ground,verified,all 648 targets from solved and sampled arbitrary pairs,not guaranteed shortest in primitive moves
+R4-12,exact BFS path is shortest under unit primitive costs,Rotor-4,verified,complete finite breadth-first search,unit-cost objective only
+R4-13,resource costs can change preferred route,Rotor-4,verified,target code 5 under two cost profiles,illustrative cost assignments
+R4-14,ground revision changes reachable region,Rotor-4 version 1 to 2,verified,648 to 24 reachable states,removal of twist operations is a toy revision
+J9-01,elevated remaining blocks have support,Jenga-like symbolic ground,verified,stability predicate checked on every reachable state,not physical mechanics
+J9-02,removal transitions are irreversible,Jenga-like symbolic ground,verified,each action reduces bit count by one,symbolic action semantics
+J9-03,level-count observer is not transition-congruent,Jenga-like observer,verified,witness with same counts but different legal actions,other observer abstractions not tested
+J9-04,support-rule revision changes reachable region,Jenga-like ground version 1 to 2,verified,232 to 200 reachable states,one selected rule change
+OBS-01,stable consensus is observer value retained for dwell samples,observer model,implemented,consecutive-equal observation test,not truth or multi-observer consensus
+OPEN-01,task-relative productive ground improves total resource cost,general systems,open,no general evidence yet,requires workload-specific baselines
+OPEN-02,arbitrary multistate logic admits useful Virtual Ground,general systems,open,finite example only,existence can be definitional; productivity is the hard claim
+OPEN-03,constant-time navigation across state geometry,general systems,open,no general proof,precomputation and output-size costs remain
+OPEN-04,finite ground revisions can be inferred from observations,general systems,open,revision is explicit in fixtures,needs system identification and uncertainty

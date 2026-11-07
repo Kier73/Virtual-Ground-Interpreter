@@ -1,0 +1,22 @@
+test_active_episode_keeps_structural_identity_unchanged (test_active_observer.BayesianUpdateTests.test_active_episode_keeps_structural_identity_unchanged) ... ok
+test_active_policy_uses_complementary_probes (test_active_observer.BayesianUpdateTests.test_active_policy_uses_complementary_probes) ... ok
+test_custom_codon_aliases_preserve_response (test_active_observer.BayesianUpdateTests.test_custom_codon_aliases_preserve_response) ... ok
+test_observation_increases_probability_of_matching_hypothesis (test_active_observer.BayesianUpdateTests.test_observation_increases_probability_of_matching_hypothesis) ... ok
+test_posterior_normalizes (test_active_observer.BayesianUpdateTests.test_posterior_normalizes) ... ok
+test_probe_chains_use_declared_local_codon_operations (test_active_observer.BayesianUpdateTests.test_probe_chains_use_declared_local_codon_operations) ... ok
+test_observer_output_is_projection_not_new_underlying_state (test_active_observer.InvarianceTests.test_observer_output_is_projection_not_new_underlying_state) ... ok
+test_probe_energy_is_normalized (test_active_observer.InvarianceTests.test_probe_energy_is_normalized) ... ok
+test_probe_selection_does_not_mutate_algebra (test_active_observer.InvarianceTests.test_probe_selection_does_not_mutate_algebra) ... ok
+test_cost_adjustment_can_prefer_lower_raw_information_probe (test_active_observer.ProbeSelectionTests.test_cost_adjustment_can_prefer_lower_raw_information_probe) ... ok
+test_expected_information_gain_is_nonnegative (test_active_observer.ProbeSelectionTests.test_expected_information_gain_is_nonnegative) ... ok
+test_information_gain_does_not_exceed_target_entropy (test_active_observer.ProbeSelectionTests.test_information_gain_does_not_exceed_target_entropy) ... ok
+test_intention_changes_selected_probe (test_active_observer.ProbeSelectionTests.test_intention_changes_selected_probe) ... ok
+test_more_noise_does_not_improve_eig_in_this_model (test_active_observer.ProbeSelectionTests.test_more_noise_does_not_improve_eig_in_this_model) ... ok
+test_observer_projection_changes_selected_probe (test_active_observer.ProbeSelectionTests.test_observer_projection_changes_selected_probe) ... ok
+test_robust_score_is_worst_case_over_noise_scales (test_active_observer.ProbeSelectionTests.test_robust_score_is_worst_case_over_noise_scales) ... ok
+test_unobservable_intent_is_rejected (test_active_observer.ProbeSelectionTests.test_unobservable_intent_is_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 0.078s
+
+OK

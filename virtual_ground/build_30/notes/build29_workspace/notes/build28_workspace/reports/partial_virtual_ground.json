@@ -1,0 +1,71 @@
+{
+  "fingerprint": "90582901d96b1489dbacc8e7fd04f12347768848a9766d2cffd001b1e8aa48d1",
+  "format": "virtual-ground-stream-v1",
+  "operations": [
+    {
+      "effect": [
+        -1,
+        1
+      ],
+      "evidence_scope": "exact recurrent token motif; finite training checkpoints",
+      "operation_id": "M001",
+      "signature": [
+        "pulse",
+        "bend",
+        "tail"
+      ],
+      "status": "candidate_operation",
+      "support_occurrences": 89,
+      "support_traces": 12
+    },
+    {
+      "effect": [
+        1,
+        0
+      ],
+      "evidence_scope": "exact recurrent token motif; finite training checkpoints",
+      "operation_id": "M002",
+      "signature": [
+        "pulse",
+        "edge",
+        "tail"
+      ],
+      "status": "candidate_operation",
+      "support_occurrences": 81,
+      "support_traces": 12
+    },
+    {
+      "effect": [
+        0,
+        2
+      ],
+      "evidence_scope": "exact recurrent token motif; finite training checkpoints",
+      "operation_id": "M003",
+      "signature": [
+        "ramp",
+        "tick"
+      ],
+      "status": "candidate_operation",
+      "support_occurrences": 79,
+      "support_traces": 12
+    },
+    {
+      "effect": [
+        0,
+        0
+      ],
+      "evidence_scope": "exact recurrent token motif; finite training checkpoints",
+      "operation_id": "M004",
+      "signature": [
+        "hum",
+        "click"
+      ],
+      "status": "recurrent_zero_effect_motif",
+      "support_occurrences": 39,
+      "support_traces": 11
+    }
+  ],
+  "segmentation_scope": "exact contiguous motifs; ambiguity retained when top segmentations are close",
+  "status": "partial",
+  "unknown_semantics": "unseen or unresolved event sequences remain unknown"
+}

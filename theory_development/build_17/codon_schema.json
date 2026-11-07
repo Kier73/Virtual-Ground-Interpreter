@@ -1,0 +1,133 @@
+{
+  "schema_name": "VL Paired Sensor Response Codons",
+  "schema_version": "0.2-draft",
+  "status": "descriptive algebraic mapping; temporal operations are not dispatched by a Virtual Layer VM in this build",
+  "operations": [
+    {
+      "codon": "ld",
+      "meaning": "load channel sample/window",
+      "type": "Signal[N] -> Window[N]"
+    },
+    {
+      "codon": "hp",
+      "meaning": "high-pass / baseline removal",
+      "type": "Signal[N] -> Signal[N]",
+      "note": "The published TAPS release is already preprocessed; Build 13 does not apply a second high-pass filter."
+    },
+    {
+      "codon": "mx",
+      "meaning": "multiply / window taper",
+      "type": "Vector x Vector -> Vector"
+    },
+    {
+      "codon": "ad",
+      "meaning": "sum / accumulate energy",
+      "type": "Vector -> Scalar"
+    },
+    {
+      "codon": "sq",
+      "meaning": "square",
+      "type": "Scalar -> Scalar"
+    },
+    {
+      "codon": "rt",
+      "meaning": "square root",
+      "type": "Scalar -> Scalar"
+    },
+    {
+      "codon": "fft",
+      "meaning": "frequency transform",
+      "type": "Signal[N] -> Spectrum[N]"
+    },
+    {
+      "codon": "acf",
+      "meaning": "autocorrelation / periodicity probe",
+      "type": "Signal[N] -> LagProfile"
+    },
+    {
+      "codon": "cc",
+      "meaning": "cross-correlation for residual alignment diagnostics",
+      "type": "Signal[N] x Signal[M] -> LagScore"
+    },
+    {
+      "codon": "bn",
+      "meaning": "band-energy integration",
+      "type": "Spectrum x FrequencyBand -> Scalar"
+    },
+    {
+      "codon": "nr",
+      "meaning": "robust feature normalization",
+      "type": "FeatureSet -> FeatureSet"
+    },
+    {
+      "codon": "dp2",
+      "meaning": "dot product / distance primitive",
+      "type": "Vector x Vector -> Scalar"
+    },
+    {
+      "codon": "rd",
+      "meaning": "pairwise representational distance",
+      "type": "FeatureMatrix -> RDM"
+    },
+    {
+      "codon": "rk",
+      "meaning": "rank transform",
+      "type": "ScalarVector -> RankVector"
+    },
+    {
+      "codon": "prm",
+      "meaning": "within-speaker pairing permutation control",
+      "type": "PairedFeatureSets -> NullDistribution"
+    },
+    {
+      "codon": "bt",
+      "meaning": "speaker-level bootstrap",
+      "type": "SpeakerStatistics -> Interval"
+    },
+    {
+      "codon": "ev",
+      "meaning": "extract observer-defined envelope events",
+      "type": "Envelope[N] x ObserverRule -> EventSequence"
+    },
+    {
+      "codon": "dt",
+      "meaning": "derive inter-event durations",
+      "type": "EventTimes[N] -> IntervalSequence[N-1]"
+    },
+    {
+      "codon": "tn",
+      "meaning": "normalize intervals by their median",
+      "type": "IntervalSequence -> NormalizedIntervalSequence"
+    },
+    {
+      "codon": "ra",
+      "meaning": "derive absolute event rate",
+      "type": "EventSequence x Duration -> ScalarRate"
+    },
+    {
+      "codon": "ts",
+      "meaning": "summarize event-time shape and normalized marks",
+      "type": "EventSequence -> TemporalSignature"
+    },
+    {
+      "codon": "at",
+      "meaning": "apply affine clock-coordinate transform",
+      "type": "TimeSequence x Offset x PositiveScale -> TimeSequence"
+    },
+    {
+      "codon": "sv",
+      "meaning": "compare RDM under alternate feature scaling",
+      "type": "FeatureMatrix x ScalingMode -> RDM"
+    }
+  ],
+  "important_distinctions": [
+    "Throat and acoustic amplitudes are not assumed to share physical units.",
+    "Common-band features are limited to 80-3500 Hz, below the throat sensor original 4 kHz Nyquist.",
+    "The throat WAV is upsampled from 8 kHz to 16 kHz in the release; this does not create physical information above 4 kHz.",
+    "The 4000-7800 Hz energy share is acoustic-only, marked valid only when the original channel bandwidth supports it, and excluded from cross-modal RDMs.",
+    "Alignment estimates are diagnostics only; the final TAPS release already has a global alignment shift applied.",
+    "Temporal-emission features are extracted event-time landmarks from measured envelopes, not verified hidden state transitions.",
+    "Normalized interval shape is kept separate from absolute rate and dwell time; the former is affine-clock-scale invariant conditional on a fixed event set and scaled observer resolution.",
+    "The median normalized interval quantile is identically 1 by construction and is not used as an RDM feature."
+  ]
+}

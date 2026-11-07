@@ -1,0 +1,5 @@
+{
+  "inferred_capacity_lower_bound": 4,
+  "interpretation": "without observed saturation, capacity is not promoted from lower bound to exact structural constant",
+  "status": "lower_bound_only"
+}

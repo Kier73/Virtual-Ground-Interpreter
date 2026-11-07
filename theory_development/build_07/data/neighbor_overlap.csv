@@ -1,0 +1,7 @@
+observer_pair,mean_3nn_jaccard
+base_shape__holonomy,0.2
+base_shape__temporal,0.0
+base_shape__local_transition,1.0
+holonomy__temporal,0.1875
+holonomy__local_transition,0.2
+temporal__local_transition,0.0

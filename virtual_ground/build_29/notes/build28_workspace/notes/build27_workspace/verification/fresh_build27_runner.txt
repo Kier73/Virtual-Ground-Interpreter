@@ -1,0 +1,32 @@
+{
+  "build": 27,
+  "diagnostic_statuses": {
+    "hidden_vs_stochastic": "unresolved_predictive_divergence",
+    "history": "insufficient_history",
+    "noise": "measurement_noise",
+    "regime": "ground_regime_revision_candidate",
+    "sensor_shift": "sensor_calibration_shift_candidate",
+    "sensor_shift_no_reference": "sensor_remap_vs_system_change_unresolved"
+  },
+  "evidence_class": "synthetic integer-vector transition windows and rule-based diagnostic cases",
+  "limitations": [
+    "event windows are supplied by the observation interface; raw waveform boundary discovery is not implemented",
+    "event token strings are opaque symbols; semantic action names are not supplied or inferred",
+    "operation discovery uses recurrent exact event-window signatures, not arbitrary subsequence grammar induction",
+    "state values are discrete integer observation vectors; continuous latent variable discovery is not implemented",
+    "diagnostic rank scores are ordinal heuristics, not calibrated probabilities",
+    "hidden predictive variable and stochastic transition can remain observationally equivalent",
+    "sensor remap and physical state change remain ambiguous without independent calibration references",
+    "ground revision is proposed only; this build never automatically commits a new ground",
+    "constant-delta operation extrapolation is a hypothesis supported by finite examples, not proof outside tested domain",
+    "no physical sensor data was processed"
+  ],
+  "open_world_validation_correct": false,
+  "operation_discovery": {
+    "candidate_count": 2,
+    "held_out_correct": 6,
+    "held_out_total": 6
+  },
+  "probe_choice": "known_reference_input",
+  "status": "complete"
+}

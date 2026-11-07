@@ -1,0 +1,674 @@
+[
+  {
+    "capacity": 2,
+    "demand": [
+      0,
+      1,
+      0,
+      0
+    ],
+    "demand_name": "demand_A",
+    "identifier": "C2-inflow_A-demand_A-Q1-P1-V1",
+    "inflow": [
+      1,
+      0,
+      0,
+      1
+    ],
+    "inflow_name": "inflow_A",
+    "phase_stride": 1,
+    "transfer_quantum": 1,
+    "version": 1
+  },
+  {
+    "capacity": 2,
+    "demand": [
+      0,
+      1,
+      0,
+      0
+    ],
+    "demand_name": "demand_A",
+    "identifier": "C2-inflow_A-demand_A-Q1-P2-V1",
+    "inflow": [
+      1,
+      0,
+      0,
+      1
+    ],
+    "inflow_name": "inflow_A",
+    "phase_stride": 2,
+    "transfer_quantum": 1,
+    "version": 1
+  },
+  {
+    "capacity": 2,
+    "demand": [
+      0,
+      1,
+      0,
+      0
+    ],
+    "demand_name": "demand_A",
+    "identifier": "C2-inflow_A-demand_A-Q2-P1-V1",
+    "inflow": [
+      1,
+      0,
+      0,
+      1
+    ],
+    "inflow_name": "inflow_A",
+    "phase_stride": 1,
+    "transfer_quantum": 2,
+    "version": 1
+  },
+  {
+    "capacity": 2,
+    "demand": [
+      0,
+      1,
+      0,
+      0
+    ],
+    "demand_name": "demand_A",
+    "identifier": "C2-inflow_A-demand_A-Q2-P2-V1",
+    "inflow": [
+      1,
+      0,
+      0,
+      1
+    ],
+    "inflow_name": "inflow_A",
+    "phase_stride": 2,
+    "transfer_quantum": 2,
+    "version": 1
+  },
+  {
+    "capacity": 2,
+    "demand": [
+      1,
+      0,
+      0,
+      1
+    ],
+    "demand_name": "demand_B",
+    "identifier": "C2-inflow_A-demand_B-Q1-P1-V1",
+    "inflow": [
+      1,
+      0,
+      0,
+      1
+    ],
+    "inflow_name": "inflow_A",
+    "phase_stride": 1,
+    "transfer_quantum": 1,
+    "version": 1
+  },
+  {
+    "capacity": 2,
+    "demand": [
+      1,
+      0,
+      0,
+      1
+    ],
+    "demand_name": "demand_B",
+    "identifier": "C2-inflow_A-demand_B-Q1-P2-V1",
+    "inflow": [
+      1,
+      0,
+      0,
+      1
+    ],
+    "inflow_name": "inflow_A",
+    "phase_stride": 2,
+    "transfer_quantum": 1,
+    "version": 1
+  },
+  {
+    "capacity": 2,
+    "demand": [
+      1,
+      0,
+      0,
+      1
+    ],
+    "demand_name": "demand_B",
+    "identifier": "C2-inflow_A-demand_B-Q2-P1-V1",
+    "inflow": [
+      1,
+      0,
+      0,
+      1
+    ],
+    "inflow_name": "inflow_A",
+    "phase_stride": 1,
+    "transfer_quantum": 2,
+    "version": 1
+  },
+  {
+    "capacity": 2,
+    "demand": [
+      1,
+      0,
+      0,
+      1
+    ],
+    "demand_name": "demand_B",
+    "identifier": "C2-inflow_A-demand_B-Q2-P2-V1",
+    "inflow": [
+      1,
+      0,
+      0,
+      1
+    ],
+    "inflow_name": "inflow_A",
+    "phase_stride": 2,
+    "transfer_quantum": 2,
+    "version": 1
+  },
+  {
+    "capacity": 2,
+    "demand": [
+      0,
+      1,
+      0,
+      0
+    ],
+    "demand_name": "demand_A",
+    "identifier": "C2-inflow_B-demand_A-Q1-P1-V1",
+    "inflow": [
+      0,
+      1,
+      1,
+      0
+    ],
+    "inflow_name": "inflow_B",
+    "phase_stride": 1,
+    "transfer_quantum": 1,
+    "version": 1
+  },
+  {
+    "capacity": 2,
+    "demand": [
+      0,
+      1,
+      0,
+      0
+    ],
+    "demand_name": "demand_A",
+    "identifier": "C2-inflow_B-demand_A-Q1-P2-V1",
+    "inflow": [
+      0,
+      1,
+      1,
+      0
+    ],
+    "inflow_name": "inflow_B",
+    "phase_stride": 2,
+    "transfer_quantum": 1,
+    "version": 1
+  },
+  {
+    "capacity": 2,
+    "demand": [
+      0,
+      1,
+      0,
+      0
+    ],
+    "demand_name": "demand_A",
+    "identifier": "C2-inflow_B-demand_A-Q2-P1-V1",
+    "inflow": [
+      0,
+      1,
+      1,
+      0
+    ],
+    "inflow_name": "inflow_B",
+    "phase_stride": 1,
+    "transfer_quantum": 2,
+    "version": 1
+  },
+  {
+    "capacity": 2,
+    "demand": [
+      0,
+      1,
+      0,
+      0
+    ],
+    "demand_name": "demand_A",
+    "identifier": "C2-inflow_B-demand_A-Q2-P2-V1",
+    "inflow": [
+      0,
+      1,
+      1,
+      0
+    ],
+    "inflow_name": "inflow_B",
+    "phase_stride": 2,
+    "transfer_quantum": 2,
+    "version": 1
+  },
+  {
+    "capacity": 2,
+    "demand": [
+      1,
+      0,
+      0,
+      1
+    ],
+    "demand_name": "demand_B",
+    "identifier": "C2-inflow_B-demand_B-Q1-P1-V1",
+    "inflow": [
+      0,
+      1,
+      1,
+      0
+    ],
+    "inflow_name": "inflow_B",
+    "phase_stride": 1,
+    "transfer_quantum": 1,
+    "version": 1
+  },
+  {
+    "capacity": 2,
+    "demand": [
+      1,
+      0,
+      0,
+      1
+    ],
+    "demand_name": "demand_B",
+    "identifier": "C2-inflow_B-demand_B-Q1-P2-V1",
+    "inflow": [
+      0,
+      1,
+      1,
+      0
+    ],
+    "inflow_name": "inflow_B",
+    "phase_stride": 2,
+    "transfer_quantum": 1,
+    "version": 1
+  },
+  {
+    "capacity": 2,
+    "demand": [
+      1,
+      0,
+      0,
+      1
+    ],
+    "demand_name": "demand_B",
+    "identifier": "C2-inflow_B-demand_B-Q2-P1-V1",
+    "inflow": [
+      0,
+      1,
+      1,
+      0
+    ],
+    "inflow_name": "inflow_B",
+    "phase_stride": 1,
+    "transfer_quantum": 2,
+    "version": 1
+  },
+  {
+    "capacity": 2,
+    "demand": [
+      1,
+      0,
+      0,
+      1
+    ],
+    "demand_name": "demand_B",
+    "identifier": "C2-inflow_B-demand_B-Q2-P2-V1",
+    "inflow": [
+      0,
+      1,
+      1,
+      0
+    ],
+    "inflow_name": "inflow_B",
+    "phase_stride": 2,
+    "transfer_quantum": 2,
+    "version": 1
+  },
+  {
+    "capacity": 3,
+    "demand": [
+      0,
+      1,
+      0,
+      0
+    ],
+    "demand_name": "demand_A",
+    "identifier": "C3-inflow_A-demand_A-Q1-P1-V1",
+    "inflow": [
+      1,
+      0,
+      0,
+      1
+    ],
+    "inflow_name": "inflow_A",
+    "phase_stride": 1,
+    "transfer_quantum": 1,
+    "version": 1
+  },
+  {
+    "capacity": 3,
+    "demand": [
+      0,
+      1,
+      0,
+      0
+    ],
+    "demand_name": "demand_A",
+    "identifier": "C3-inflow_A-demand_A-Q1-P2-V1",
+    "inflow": [
+      1,
+      0,
+      0,
+      1
+    ],
+    "inflow_name": "inflow_A",
+    "phase_stride": 2,
+    "transfer_quantum": 1,
+    "version": 1
+  },
+  {
+    "capacity": 3,
+    "demand": [
+      0,
+      1,
+      0,
+      0
+    ],
+    "demand_name": "demand_A",
+    "identifier": "C3-inflow_A-demand_A-Q2-P1-V1",
+    "inflow": [
+      1,
+      0,
+      0,
+      1
+    ],
+    "inflow_name": "inflow_A",
+    "phase_stride": 1,
+    "transfer_quantum": 2,
+    "version": 1
+  },
+  {
+    "capacity": 3,
+    "demand": [
+      0,
+      1,
+      0,
+      0
+    ],
+    "demand_name": "demand_A",
+    "identifier": "C3-inflow_A-demand_A-Q2-P2-V1",
+    "inflow": [
+      1,
+      0,
+      0,
+      1
+    ],
+    "inflow_name": "inflow_A",
+    "phase_stride": 2,
+    "transfer_quantum": 2,
+    "version": 1
+  },
+  {
+    "capacity": 3,
+    "demand": [
+      1,
+      0,
+      0,
+      1
+    ],
+    "demand_name": "demand_B",
+    "identifier": "C3-inflow_A-demand_B-Q1-P1-V1",
+    "inflow": [
+      1,
+      0,
+      0,
+      1
+    ],
+    "inflow_name": "inflow_A",
+    "phase_stride": 1,
+    "transfer_quantum": 1,
+    "version": 1
+  },
+  {
+    "capacity": 3,
+    "demand": [
+      1,
+      0,
+      0,
+      1
+    ],
+    "demand_name": "demand_B",
+    "identifier": "C3-inflow_A-demand_B-Q1-P2-V1",
+    "inflow": [
+      1,
+      0,
+      0,
+      1
+    ],
+    "inflow_name": "inflow_A",
+    "phase_stride": 2,
+    "transfer_quantum": 1,
+    "version": 1
+  },
+  {
+    "capacity": 3,
+    "demand": [
+      1,
+      0,
+      0,
+      1
+    ],
+    "demand_name": "demand_B",
+    "identifier": "C3-inflow_A-demand_B-Q2-P1-V1",
+    "inflow": [
+      1,
+      0,
+      0,
+      1
+    ],
+    "inflow_name": "inflow_A",
+    "phase_stride": 1,
+    "transfer_quantum": 2,
+    "version": 1
+  },
+  {
+    "capacity": 3,
+    "demand": [
+      1,
+      0,
+      0,
+      1
+    ],
+    "demand_name": "demand_B",
+    "identifier": "C3-inflow_A-demand_B-Q2-P2-V1",
+    "inflow": [
+      1,
+      0,
+      0,
+      1
+    ],
+    "inflow_name": "inflow_A",
+    "phase_stride": 2,
+    "transfer_quantum": 2,
+    "version": 1
+  },
+  {
+    "capacity": 3,
+    "demand": [
+      0,
+      1,
+      0,
+      0
+    ],
+    "demand_name": "demand_A",
+    "identifier": "C3-inflow_B-demand_A-Q1-P1-V1",
+    "inflow": [
+      0,
+      1,
+      1,
+      0
+    ],
+    "inflow_name": "inflow_B",
+    "phase_stride": 1,
+    "transfer_quantum": 1,
+    "version": 1
+  },
+  {
+    "capacity": 3,
+    "demand": [
+      0,
+      1,
+      0,
+      0
+    ],
+    "demand_name": "demand_A",
+    "identifier": "C3-inflow_B-demand_A-Q1-P2-V1",
+    "inflow": [
+      0,
+      1,
+      1,
+      0
+    ],
+    "inflow_name": "inflow_B",
+    "phase_stride": 2,
+    "transfer_quantum": 1,
+    "version": 1
+  },
+  {
+    "capacity": 3,
+    "demand": [
+      0,
+      1,
+      0,
+      0
+    ],
+    "demand_name": "demand_A",
+    "identifier": "C3-inflow_B-demand_A-Q2-P1-V1",
+    "inflow": [
+      0,
+      1,
+      1,
+      0
+    ],
+    "inflow_name": "inflow_B",
+    "phase_stride": 1,
+    "transfer_quantum": 2,
+    "version": 1
+  },
+  {
+    "capacity": 3,
+    "demand": [
+      0,
+      1,
+      0,
+      0
+    ],
+    "demand_name": "demand_A",
+    "identifier": "C3-inflow_B-demand_A-Q2-P2-V1",
+    "inflow": [
+      0,
+      1,
+      1,
+      0
+    ],
+    "inflow_name": "inflow_B",
+    "phase_stride": 2,
+    "transfer_quantum": 2,
+    "version": 1
+  },
+  {
+    "capacity": 3,
+    "demand": [
+      1,
+      0,
+      0,
+      1
+    ],
+    "demand_name": "demand_B",
+    "identifier": "C3-inflow_B-demand_B-Q1-P1-V1",
+    "inflow": [
+      0,
+      1,
+      1,
+      0
+    ],
+    "inflow_name": "inflow_B",
+    "phase_stride": 1,
+    "transfer_quantum": 1,
+    "version": 1
+  },
+  {
+    "capacity": 3,
+    "demand": [
+      1,
+      0,
+      0,
+      1
+    ],
+    "demand_name": "demand_B",
+    "identifier": "C3-inflow_B-demand_B-Q1-P2-V1",
+    "inflow": [
+      0,
+      1,
+      1,
+      0
+    ],
+    "inflow_name": "inflow_B",
+    "phase_stride": 2,
+    "transfer_quantum": 1,
+    "version": 1
+  },
+  {
+    "capacity": 3,
+    "demand": [
+      1,
+      0,
+      0,
+      1
+    ],
+    "demand_name": "demand_B",
+    "identifier": "C3-inflow_B-demand_B-Q2-P1-V1",
+    "inflow": [
+      0,
+      1,
+      1,
+      0
+    ],
+    "inflow_name": "inflow_B",
+    "phase_stride": 1,
+    "transfer_quantum": 2,
+    "version": 1
+  },
+  {
+    "capacity": 3,
+    "demand": [
+      1,
+      0,
+      0,
+      1
+    ],
+    "demand_name": "demand_B",
+    "identifier": "C3-inflow_B-demand_B-Q2-P2-V1",
+    "inflow": [
+      0,
+      1,
+      1,
+      0
+    ],
+    "inflow_name": "inflow_B",
+    "phase_stride": 2,
+    "transfer_quantum": 2,
+    "version": 1
+  }
+]

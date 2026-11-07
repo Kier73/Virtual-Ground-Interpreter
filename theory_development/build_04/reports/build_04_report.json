@@ -1,0 +1,162 @@
+{
+  "antipodal_metric_distinction": {
+    "s3_distance_q_to_minus_q_rad": 3.141592653589793,
+    "so3_distance_q_to_minus_q_rad": 0.0
+  },
+  "build": "04",
+  "fibre_gauge_shift": {
+    "difference_rad": 3.4416913763379853e-15,
+    "initial_fibre_shift_rad": 0.47,
+    "off_fibre_residual": 7.207792025188914e-16,
+    "shifted_holonomy_rad": 0.5847125951513187,
+    "unshifted_holonomy_rad": 0.5847125951513221
+  },
+  "interpolation": {
+    "s3_midpoint_norm": 1.0,
+    "so3_antipodal_midpoint_distance_to_identity": 0.0
+  },
+  "main_loop": {
+    "base_endpoint_error": 2.2459635491405113e-15,
+    "base_points": 961,
+    "expected_hopf_phase_rad": 0.5847180732237779,
+    "final_quaternion": [
+      0.8338707562318176,
+      -7.348722325106749e-16,
+      -8.491471414906471e-16,
+      0.5519597466313796
+    ],
+    "initial_quaternion": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "measured_hopf_phase_rad": 0.5847125951513221,
+    "off_fibre_residual": 1.1229817745702556e-15,
+    "phase_abs_error_rad": 5.478072455766814e-06,
+    "relative_quaternion": [
+      0.8338707562318176,
+      -7.348722325106749e-16,
+      -8.491471414906471e-16,
+      0.5519597466313796
+    ],
+    "s3_endpoint_distance_rad": 0.584712595151322,
+    "so3_endpoint_distance_rad": 1.169425190302644,
+    "solid_angle_sr": 1.1694361464475558,
+    "theta_colatitude_rad": 0.62
+  },
+  "model_scope": "Finite-dimensional mathematical experiment; not the full Virtual Layer address substrate.",
+  "noncircular_loop": {
+    "base_endpoint_error": 7.61624232739318e-15,
+    "expected_hopf_phase_rad": 0.7896936523160483,
+    "measured_hopf_phase_rad": 0.789690120976411,
+    "off_fibre_residual": 3.80812116369659e-15,
+    "parameters": {
+      "amplitude": 0.13,
+      "mode": 3,
+      "theta0": 0.72
+    },
+    "phase_abs_error_rad": 3.5313396372638195e-06,
+    "solid_angle_sr": 1.5793873046320965
+  },
+  "observer_views": {
+    "full_s3_endpoint_distance_rad": 0.584712595151322,
+    "hopf_base_endpoint_distance_rad": 0.0,
+    "q_vs_minus_q_s3_distance_rad": 3.141592653589793,
+    "q_vs_minus_q_so3_distance_rad": 0.0,
+    "so3_rotation_distance_rad": 1.169425190302644
+  },
+  "path_reversal": {
+    "forward_phase_rad": 0.5847125951513221,
+    "off_fibre_residual": 1.1229817745702556e-15,
+    "reverse_phase_rad": -0.5847125951513221,
+    "sum_rad": 0.0
+  },
+  "quaternion_multiply_instruction_count": 28,
+  "quaternion_multiply_uses_only_scalar_primitives": true,
+  "registry": {
+    "alias": {
+      "add": "plus",
+      "div": "over",
+      "mul": "times",
+      "sqrt": "root",
+      "sub": "minus"
+    },
+    "default": {
+      "add": "ad",
+      "div": "dv",
+      "mul": "mx",
+      "sqrt": "sr",
+      "sub": "su"
+    }
+  },
+  "registry_alias_equivalence": {
+    "alias_instruction_count": 28,
+    "alias_product": [
+      0.5599999999999999,
+      -0.43000000000000005,
+      -0.004999999999999949,
+      0.525
+    ],
+    "default_product": [
+      0.5599999999999999,
+      -0.43000000000000005,
+      -0.004999999999999949,
+      0.525
+    ],
+    "max_abs_difference": 0.0
+  },
+  "same_base_endpoint_different_holonomy": {
+    "base_endpoint_a": [
+      -2.227397720579841e-15,
+      2.881868463750057e-16,
+      1.0
+    ],
+    "base_endpoint_b": [
+      -1.8123756579699143e-15,
+      6.773038631691655e-17,
+      1.0000000000000002
+    ],
+    "base_endpoint_difference": 5.197577991821336e-16,
+    "full_s3_endpoint_distance_between_lifts_rad": 0.8069344578866434,
+    "phase_a_rad": 0.5847125951513221,
+    "phase_b_rad": 1.3916470530379657,
+    "phase_difference_rad": 0.8069344578866435
+  },
+  "second_loop": {
+    "base_endpoint_error": 1.827182732352961e-15,
+    "base_points": 961,
+    "expected_hopf_phase_rad": 1.3916547127851677,
+    "final_quaternion": [
+      0.1781925270932574,
+      -8.977193988179977e-16,
+      -1.2815269678778662e-16,
+      0.9839956419050436
+    ],
+    "initial_quaternion": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "measured_hopf_phase_rad": 1.3916470530379657,
+    "off_fibre_residual": 9.068203971614938e-16,
+    "phase_abs_error_rad": 7.659747202071188e-06,
+    "relative_quaternion": [
+      0.1781925270932574,
+      -8.977193988179977e-16,
+      -1.2815269678778662e-16,
+      0.9839956419050436
+    ],
+    "s3_endpoint_distance_rad": 1.3916470530379657,
+    "so3_endpoint_distance_rad": 2.7832941060759313,
+    "solid_angle_sr": 2.7833094255703354,
+    "theta_colatitude_rad": 0.98
+  },
+  "title": "S3 Codonic Path Navigation and Hopf-Fibre Holonomy",
+  "trace_files": [
+    "data/main_loop_trace.csv",
+    "data/second_loop_trace.csv",
+    "data/wavy_loop_trace.csv"
+  ]
+}

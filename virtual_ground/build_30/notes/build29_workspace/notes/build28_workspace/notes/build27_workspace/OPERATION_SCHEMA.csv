@@ -1,0 +1,9 @@
+field,meaning,epistemic_status
+operation_id,Stable identifier derived from opaque event-window signature,derived
+event_signature,Ordered low-level event tokens observed between two observation windows,observed_symbol_sequence
+support,Number of retained transition windows with this signature,observed_count
+distinct_pre_states,Number of distinct observed pre-state vectors,evidence_coverage
+effect_mode,constant delta or state-conditioned table or ambiguous,induced_hypothesis
+constant_delta,Delta inferred from repeated examples across multiple pre-states,finite_evidence_candidate
+transition_table,Observed pre-state to delta map,observed_only
+status,candidate or ambiguous effect,model_status

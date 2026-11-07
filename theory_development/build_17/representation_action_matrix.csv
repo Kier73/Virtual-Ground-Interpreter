@@ -1,0 +1,13 @@
+perspective,object,action_or_symmetry,representation,what_is_preserved,status_or_caveat
+signal vibration,continuous signal,circular time translation,finite Fourier magnitude,frequency magnitude,phase discarded and periodic boundary assumed
+signal vibration,continuous signal,frame-aligned time translation,STFT coefficient field,local time-frequency structure up to frame permutation,window and hop dependent
+signal vibration,continuous signal,circular integer translation,undecimated Haar-like detail energies,pooled multiscale detail energy,redundant descriptor not an orthonormal DWT
+positive-time scaling,f(t),multiplicative time dilation,Mellin transform in log-time coordinates,frequency magnitude on log-time periodic grid,L2 measure and boundary conditions must be stated
+event timing,ordered event nodes,positive affine clock map,normalized log intervals and recurrence graph,relative gaps and motif graph,nonlinear clock drift generally changes local interval patterns
+irregular event structure,weighted event graph,node relabeling,graph Laplacian spectrum and eigenspace energy,node-label-independent spectral summary,not a complete graph isomorphism invariant
+quaternion geometry,unit quaternions,left/right SU(2) action,Peter-Weyl / Wigner-D / S3 harmonics,irreducible representation structure,planned; retain SU(2) versus SO(3) distinction
+codonic execution,typed operation compositions,verified invertible subgroup,finite group Fourier transform,group composition and representation coefficients,only after closure identity and inverse proof
+finite residue arithmetic,residue tuples,finite cyclic/abelian group,DFT/NTT,exact finite-group convolution,requires valid roots and invertible transform length
+state evolution,dynamical system,composition semigroup,Koopman operator on observables,evolution of observable functions,spectrum depends on system and function space
+meaning/weight space,model parameters,function-preserving architecture symmetry,quotient geometry and kernels,functional equivalence classes,symmetry group is architecture-specific
+multichannel path,continuous path,increasing reparameterization,iterated-integral path signature,path structure up to tree-like equivalence and truncation,planned comparison; not a complete finite invariant

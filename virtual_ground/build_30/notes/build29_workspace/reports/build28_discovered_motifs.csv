@@ -1,0 +1,15 @@
+motif_id,signature,occurrences,trace_support
+M001,evt_001 evt_002 evt_001 evt_003,6,6
+M002,evt_001 evt_003 evt_004 evt_002,6,6
+M003,evt_002 evt_001 evt_003 evt_004,6,6
+M004,evt_002 evt_004 evt_003 evt_001,6,6
+M005,evt_003 evt_004 evt_002 evt_004,6,6
+M006,evt_004 evt_002 evt_004 evt_003,6,6
+M007,evt_004 evt_003 evt_001 evt_002,6,6
+M008,evt_001 evt_002 evt_003 evt_004,4,4
+M009,evt_001 evt_003 evt_002 evt_004,4,4
+M010,evt_002 evt_003 evt_004 evt_001,4,4
+M011,evt_002 evt_004 evt_001 evt_002,4,4
+M012,evt_003 evt_002 evt_004 evt_001,4,4
+M013,evt_003 evt_004 evt_001 evt_003,4,4
+M014,evt_004 evt_001 evt_003 evt_002,4,4

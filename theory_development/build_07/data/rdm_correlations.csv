@@ -1,0 +1,7 @@
+observer_pair,spearman_rho
+base_shape__holonomy,0.14661224246186771
+base_shape__temporal,-0.005066517016215284
+base_shape__local_transition,0.6930973923335007
+holonomy__temporal,0.382447702990372
+holonomy__local_transition,0.10331537451110968
+temporal__local_transition,-0.03170272583235004

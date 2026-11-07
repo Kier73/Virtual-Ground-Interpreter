@@ -1,0 +1,26 @@
+test_all_five_grounds_induce_exact_finite_programs (test_build23.Build23SynthesisTests.test_all_five_grounds_induce_exact_finite_programs) ... ok
+test_capacity_with_saturation_evidence_is_exact (test_build23.Build23SynthesisTests.test_capacity_with_saturation_evidence_is_exact) ... ok
+test_capacity_without_saturation_is_only_lower_bound (test_build23.Build23SynthesisTests.test_capacity_without_saturation_is_only_lower_bound) ... ok
+test_full_projection_is_transition_congruent (test_build23.Build23SynthesisTests.test_full_projection_is_transition_congruent) ... ok
+test_irregular_phase_progression_falls_back_to_lookup (test_build23.Build23SynthesisTests.test_irregular_phase_progression_falls_back_to_lookup) ... ok
+test_missing_action_intervention_fails_closed (test_build23.Build23SynthesisTests.test_missing_action_intervention_fails_closed) ... ok
+test_modular_inflow_is_discovered_as_expression (test_build23.Build23SynthesisTests.test_modular_inflow_is_discovered_as_expression) ... ok
+test_phase_coverage_is_required (test_build23.Build23SynthesisTests.test_phase_coverage_is_required) ... ok
+test_program_fingerprint_is_stable_after_serialization (test_build23.Build23SynthesisTests.test_program_fingerprint_is_stable_after_serialization) ... ok
+test_roles_distinguish_controlled_endogenous_and_exogenous (test_build23.Build23SynthesisTests.test_roles_distinguish_controlled_endogenous_and_exogenous) ... ok
+test_same_state_domain_can_have_new_transition_ground (test_build23.Build23SynthesisTests.test_same_state_domain_can_have_new_transition_ground) ... ok
+test_serialized_ground_spec_reloads_as_executable_program (test_build23.Build23SynthesisTests.test_serialized_ground_spec_reloads_as_executable_program) ... ok
+test_total_projection_is_not_transition_congruent (test_build23.Build23SynthesisTests.test_total_projection_is_not_transition_congruent) ... ok
+test_transfer_rule_refines_to_source_mod4_after_grammar_expansion (test_build23.Build23SynthesisTests.test_transfer_rule_refines_to_source_mod4_after_grammar_expansion) ... ok
+test_transfer_rule_refines_to_source_parity (test_build23.Build23SynthesisTests.test_transfer_rule_refines_to_source_parity) ... ok
+test_build20_base_ground_bfs_covers_states (test_regression_build20_22.PriorBuildRegressionTests.test_build20_base_ground_bfs_covers_states) ... ok
+test_build20_partial_ground_reachability (test_regression_build20_22.PriorBuildRegressionTests.test_build20_partial_ground_reachability) ... ok
+test_build20_reversible_state_count (test_regression_build20_22.PriorBuildRegressionTests.test_build20_reversible_state_count) ... ok
+test_build21_flow_ground_mass_balance (test_regression_build20_22.PriorBuildRegressionTests.test_build21_flow_ground_mass_balance) ... ok
+test_build22_active_probe_still_identifies_known_ground (test_regression_build20_22.PriorBuildRegressionTests.test_build22_active_probe_still_identifies_known_ground) ... ok
+test_build22_candidate_family_and_probe_catalog_remain (test_regression_build20_22.PriorBuildRegressionTests.test_build22_candidate_family_and_probe_catalog_remain) ... ok
+
+----------------------------------------------------------------------
+Ran 21 tests in 0.171s
+
+OK

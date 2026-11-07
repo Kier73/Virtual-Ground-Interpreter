@@ -1,0 +1,9 @@
+claim,evidence,scope,status
+training_exactness,exact replay of training transitions,observed records,verified
+heldout_generalization,exact replay of heldout action/state combinations,withheld records,verified
+finite_domain_exactness,comparison against every finite state/action pair,synthetic fixture domain,verified
+mass_balance,inferred residual equals zero,all supplied transitions,verified
+capacity_exactness,positive inflow at observed saturated upper boundary,ground-specific,conditional
+transfer_identifiability,uncensored active intervention,phase x source-residue contexts,conditional
+unrestricted_ground_discovery,not established,arbitrary systems,open
+latent_variable_discovery,phase is supplied in this build,raw sensor streams,open

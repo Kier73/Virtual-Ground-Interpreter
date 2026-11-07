@@ -1,0 +1,50 @@
+{
+  "base": {
+    "ground": "Support-9",
+    "version": 1,
+    "stable_masks": 232,
+    "reachable_masks": 232,
+    "every_stable_mask_reachable": true,
+    "edges": 774,
+    "max_depth": 9
+  },
+  "revised": {
+    "ground": "Support-9-support-revised",
+    "version": 2,
+    "stable_masks": 200,
+    "reachable_masks": 200,
+    "every_stable_mask_reachable": true,
+    "edges": 646,
+    "max_depth": 9
+  },
+  "observer_witness": {
+    "level_counts": [
+      3,
+      3,
+      2
+    ],
+    "state_a_mask": 447,
+    "state_a_legal_actions": [
+      "REMOVE_0",
+      "REMOVE_1",
+      "REMOVE_2",
+      "REMOVE_3",
+      "REMOVE_4",
+      "REMOVE_5",
+      "REMOVE_7",
+      "REMOVE_8"
+    ],
+    "state_b_mask": 383,
+    "state_b_legal_actions": [
+      "REMOVE_0",
+      "REMOVE_1",
+      "REMOVE_2",
+      "REMOVE_3",
+      "REMOVE_4",
+      "REMOVE_5",
+      "REMOVE_6",
+      "REMOVE_8"
+    ]
+  },
+  "provenance": "symbolic fixture only, not physical mechanics"
+}

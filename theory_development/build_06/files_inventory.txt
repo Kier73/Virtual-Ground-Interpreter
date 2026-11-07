@@ -1,0 +1,28 @@
+Build 06 package inventory
+
+Core implementation
+- s3_active_observer.py
+- generate_artifacts.py
+- codon_schema.json
+- run_build.sh
+
+Tests
+- tests/test_s3_active_observer.py
+- test_run.txt
+
+Documentation
+- README.md
+- BUILD_06.md
+- NOTES_NEXT.md
+- SOURCES.md
+
+Reports
+- reports/build_06_report.json
+- reports/antipodal_control.json
+- reports/summary.txt
+
+Data
+- data/regular_hopf_paths.csv
+- data/geometry_summary.csv
+- data/probe_rankings.csv
+- data/antipodal_control.csv

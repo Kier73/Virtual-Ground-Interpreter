@@ -1,0 +1,5 @@
+observer,initial_observation,fixed_width_observation_bits,initial_belief_size,policy_exists,policy_certificate_verified,worst_case_steps,belief_search_nodes
+TOTAL,"(2,)",3,12,True,True,10,454
+TOTAL_PHASE,"(2, 0)",5,3,True,True,8,121
+LEVELS,"(1, 1)",4,4,True,True,4,405
+FULL,"(1, 1, 0)",6,1,True,True,1,105

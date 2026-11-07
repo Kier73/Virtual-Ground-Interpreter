@@ -1,0 +1,20 @@
+{
+  "collision_count": 0,
+  "conflict_records_retained_count": 0,
+  "current_context": "q_1cdfe7802fe0",
+  "data_truncated": true,
+  "duplicate_count": 0,
+  "fingerprint": "8a3d9f2a0284162c1b0cdcdf7abf28de1cf1c75cbb81b5976d5ba8bd0e752684",
+  "horizon": 1,
+  "known_transition_count": 2,
+  "pending_steps": [],
+  "predictive_context_count": 2,
+  "retained_event_count": 64,
+  "retired_event_count": 136,
+  "stale_count": 0,
+  "status": "tracking",
+  "total_event_count": 200,
+  "unknown_transition_count": 4,
+  "version": 6,
+  "version_lineage_retained_count": 6
+}

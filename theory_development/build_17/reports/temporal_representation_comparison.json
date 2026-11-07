@@ -1,0 +1,160 @@
+{
+  "build": 17,
+  "provenance": "synthetic_unlabelled_event_pulse_fixture_only",
+  "synthetic_signal": {
+    "sample_count": 512,
+    "event_count": 10,
+    "event_pulse_amplitudes": "identical; no event-specific amplitude marks",
+    "event_centers_sample_indices": [
+      42,
+      66,
+      96,
+      128,
+      176,
+      213,
+      271,
+      319,
+      391,
+      447
+    ]
+  },
+  "transformations": {
+    "circular_translation_samples": 32,
+    "linear_time_dilation_factor": 1.15,
+    "nonlinear_clock_map": "phi(t)=t+0.35*T*(t/T)^2; strictly increasing",
+    "log_time_dilation_samples": 8
+  },
+  "fourier": {
+    "circular_shift_magnitude_relative_error": 4.9006186009956324e-14,
+    "dilation_magnitude_relative_error_same_frequency_bins": 0.5888735831593731,
+    "nonlinear_warp_magnitude_relative_error_same_frequency_bins": 0.5093128426662346,
+    "spectral_centroid_base_cycles_per_sample": 0.03386141313645361,
+    "spectral_centroid_dilated_cycles_per_sample": 0.028233548808690764,
+    "spectral_centroid_dilated_to_base_ratio": 0.8337971216651867,
+    "interpretation": "Magnitude is invariant to circular translation; dilation changes frequency coordinates rather than preserving bins."
+  },
+  "stft": {
+    "circular_shift_covariance_relative_error": 0.0,
+    "nonlinear_warp_unaligned_field_relative_error": 0.7023100427641515,
+    "frame_count": 32,
+    "frequency_bins_per_frame": 33,
+    "interpretation": "Aligned frame shifts permute columns; STFT is covariant/localized, not invariant as an indexed field."
+  },
+  "stationary_haar_detail_energy": {
+    "base_by_level": [
+      0.0037530406932563603,
+      0.026059489822487774,
+      0.12938492846733846,
+      0.3296836023297092,
+      0.4287120728015759,
+      0.2680340066646989
+    ],
+    "circular_shift_energy_relative_error": 0.0,
+    "dilated_by_level": [
+      0.0031306632866598136,
+      0.022539102989712505,
+      0.12464057461369434,
+      0.3753868950214972,
+      0.5669905142918814,
+      0.3658172137388842
+    ],
+    "scale_moment_base": 4.6511465783683095,
+    "scale_moment_dilated": 4.767576524587556,
+    "interpretation": "Undecimated Haar-like detail energies are pooled over all circular positions, giving shift invariance; dilation redistributes scale energy. This is a descriptor, not an orthonormal DWT."
+  },
+  "mellin": {
+    "transform_measure": "L2(R_+, dt/t), via uniform log-time coordinate u=log(t)",
+    "log_grid_period": 6.0,
+    "sample_count": 256,
+    "dilation_factor": 1.2062302494209807,
+    "dilation_magnitude_relative_error": 3.244333802220074e-14,
+    "interpretation": "Dilation acts as translation in log time; finite circular log-grid DFT magnitude is invariant to that shift. This is a periodic finite-window realization, not a claim about arbitrary boundaries."
+  },
+  "event_graph_fourier": {
+    "affine_clock_eigenvalue_relative_error": 0.0,
+    "affine_clock_eigenspace_energy_distance": 0.0,
+    "nonlinear_clock_eigenvalue_relative_error": 0.17962267685902977,
+    "nonlinear_clock_eigenspace_energy_distance": 0.22351552383965695,
+    "node_relabeling": {
+      "eigenvalue_max_abs_error": 8.173899415249051e-17,
+      "eigenspace_energy_max_abs_error": 5.551115123125783e-17,
+      "note": "Compare eigenspace energies, not individual eigenvector columns, because repeated eigenspaces admit basis rotations."
+    },
+    "graph_node_count": 10,
+    "motif_tolerance": 0.6,
+    "base_recurrence_edge_count": 3,
+    "nonlinear_recurrence_edge_count": 0,
+    "interpretation": "The chosen normalized-interval recurrence graph is invariant to affine time maps; nonlinear drift changes interval motifs. Laplacian spectra are node-relabel invariant but not complete graph identifiers."
+  },
+  "event_graph_threshold_sensitivity": [
+    {
+      "motif_tolerance": 0.3,
+      "base_recurrence_edges": 0,
+      "nonlinear_recurrence_edges": 0,
+      "laplacian_spectrum_relative_difference": 0.0,
+      "eigenspace_signature_distance": 0.1366502836593191
+    },
+    {
+      "motif_tolerance": 0.45,
+      "base_recurrence_edges": 0,
+      "nonlinear_recurrence_edges": 0,
+      "laplacian_spectrum_relative_difference": 0.0,
+      "eigenspace_signature_distance": 0.1366502836593191
+    },
+    {
+      "motif_tolerance": 0.6,
+      "base_recurrence_edges": 3,
+      "nonlinear_recurrence_edges": 0,
+      "laplacian_spectrum_relative_difference": 0.17962267685902977,
+      "eigenspace_signature_distance": 0.22351552383965695
+    },
+    {
+      "motif_tolerance": 0.8,
+      "base_recurrence_edges": 9,
+      "nonlinear_recurrence_edges": 1,
+      "laplacian_spectrum_relative_difference": 0.350675074031197,
+      "eigenspace_signature_distance": 0.3711930066540782
+    },
+    {
+      "motif_tolerance": 1.0,
+      "base_recurrence_edges": 12,
+      "nonlinear_recurrence_edges": 7,
+      "laplacian_spectrum_relative_difference": 0.2326538409301126,
+      "eigenspace_signature_distance": 0.2422982622404996
+    }
+  ],
+  "interval_sequence": {
+    "affine_clock_relative_error": 0.0,
+    "nonlinear_clock_relative_error": 0.3834029053966146,
+    "base_log_intervals": [
+      -0.6931471805599453,
+      -0.4700036292457356,
+      -0.40546510810816444,
+      0.0,
+      -0.2602830982636664,
+      0.18924199963852834,
+      0.0,
+      0.4054651081081644,
+      0.15415067982725836
+    ],
+    "nonlinear_log_intervals": [
+      -0.8109302162163287,
+      -0.5539276311371137,
+      -0.45187714987262856,
+      0.0,
+      -0.21322210344327844,
+      0.28640574809217606,
+      0.15025583556571762,
+      0.6126083180759333,
+      0.41860590166922307
+    ]
+  },
+  "caveats": [
+    "All signals and event streams are generated fixtures; no physical sensor measurements were processed.",
+    "The event graph is built from known synthetic event times, not a noisy peak detector.",
+    "Finite DFT/STFT use circular boundary semantics.",
+    "The Mellin test uses a log-periodic signal on a finite periodic log grid.",
+    "Stationary Haar detail energies are redundant pooled descriptors, not a complete wavelet transform.",
+    "Graph spectral signatures can collide for non-isomorphic graphs; they are not complete invariants."
+  ]
+}

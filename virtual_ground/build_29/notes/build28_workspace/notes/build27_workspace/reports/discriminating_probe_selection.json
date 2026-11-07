@@ -1,0 +1,74 @@
+{
+  "declines_unsafe_alternatives": {
+    "candidates": [],
+    "prior_entropy_bits": 1.584962500721156,
+    "selected_probe": null,
+    "status": "no_safe_discriminating_probe"
+  },
+  "hypotheses": [
+    "sensor_remap",
+    "new_predictive_state",
+    "ground_regime_change"
+  ],
+  "selected_probe": {
+    "candidates": [
+      {
+        "cost": 1.0,
+        "information_gain_bits": 0.9182958340544894,
+        "outcome_classes": 2,
+        "partitions": [
+          [
+            "sensor_remap"
+          ],
+          [
+            "ground_regime_change",
+            "new_predictive_state"
+          ]
+        ],
+        "probe": "known_reference_input",
+        "risk": 0.02,
+        "score": 0.9002900333867544
+      },
+      {
+        "cost": 2.0,
+        "information_gain_bits": 1.584962500721156,
+        "outcome_classes": 3,
+        "partitions": [
+          [
+            "sensor_remap"
+          ],
+          [
+            "new_predictive_state"
+          ],
+          [
+            "ground_regime_change"
+          ]
+        ],
+        "probe": "cross_context_probe",
+        "risk": 0.05,
+        "score": 0.7731524393761737
+      },
+      {
+        "cost": 1.5,
+        "information_gain_bits": 0.9182958340544894,
+        "outcome_classes": 2,
+        "partitions": [
+          [
+            "sensor_remap"
+          ],
+          [
+            "ground_regime_change",
+            "new_predictive_state"
+          ]
+        ],
+        "probe": "repeat_same_transition",
+        "risk": 0.03,
+        "score": 0.6001933555911696
+      }
+    ],
+    "prior_entropy_bits": 1.584962500721156,
+    "scope": "information gain conditional on the explicit competing-hypothesis set",
+    "selected_probe": "known_reference_input",
+    "status": "discriminating_probe_selected"
+  }
+}

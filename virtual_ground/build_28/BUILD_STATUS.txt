@@ -1,0 +1,9 @@
+Build 28 — Boundary Discovery from Continuous Event Streams
+Status: COMPLETE (bounded synthetic research prototype)
+Python: 3.10+
+Dependencies: Python standard library only
+Build 28 tests: 21/21 passed (initial final suite)
+Inherited Build 24–27 tests: 108/108 passed
+Boundaries supplied to learner: no operation boundaries; stream start/end and tokenization are supplied
+Evidence: deterministic synthetic streams and sparse unaligned checkpoints
+Real sensor/TAPS data: not processed

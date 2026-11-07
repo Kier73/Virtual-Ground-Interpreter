@@ -1,0 +1,46 @@
+{
+  "dataset": "Vibration measurements with observer-declared variance change points",
+  "author": "Justyna Witulska",
+  "version": "1.0.0",
+  "publication_date": "2026-09-19",
+  "license": "CC BY 4.0",
+  "repository": "https://github.com/witulska/vibration-changepoint-dataset",
+  "dataset_doi_status": "to_be_assigned_by_zenodo_on_github_release; no version-specific DOI is asserted here",
+  "related_article": "Witulska, J. & Wyłomańska, A. (2022). Identification of the structure break point for data with changing variance. Mathematica Applicanda, 50(1), 65-106. https://doi.org/10.14708/ma.v50i1.7155",
+  "measurement": {
+    "id": 1,
+    "subject": "person",
+    "factor": "gait / motion change",
+    "sensor": "three-axis G-Force only",
+    "units": "g",
+    "nominal_sensor_range": [-4.0, 4.0],
+    "nominal_max_sampling_rate_hz": 100,
+    "duration_s_in_source_documentation": 83.74,
+    "source_rows_in_source_documentation": 8157,
+    "observer_declared_interval_s": [66.0, 68.0],
+    "theoretical_change_point_midpoint_s": 67.0
+  },
+  "local_excerpt": {
+    "file": "measurement_01_excerpt.csv",
+    "row_count": 411,
+    "window_count": 8,
+    "source_line_ranges_including_csv_header_offset": {
+      "pre_63_30_63_88": [6277, 6335],
+      "pre_64_33_64_92": [6380, 6438],
+      "pre_65_8_66_15": [6499, 6543],
+      "transition_66_45_66_65": [6574, 6593],
+      "transition_66_92_67_2": [6594, 6633],
+      "post_67_51_68_53": [6664, 6759],
+      "post_68_82_69_20": [6760, 6811],
+      "post_69_20_69_60": [6812, 6851]
+    },
+    "selection_note": "Selected contiguous line ranges from measurement_01.csv; the source line number is retained per row. Windows are not concatenated across gaps and no interpolation is performed. Some selected windows overlap or straddle the observer interval and are excluded from strict pre/event/post group contrasts."
+  },
+  "raw_files": {
+    "measurement_01.csv": "https://raw.githubusercontent.com/witulska/vibration-changepoint-dataset/main/data/processed/measurement_01.csv",
+    "change_points.csv": "https://raw.githubusercontent.com/witulska/vibration-changepoint-dataset/main/documentation/change_points.csv",
+    "metadata.json": "https://raw.githubusercontent.com/witulska/vibration-changepoint-dataset/main/metadata/metadata.json",
+    "LICENSE": "https://raw.githubusercontent.com/witulska/vibration-changepoint-dataset/main/LICENSE"
+  },
+  "retrieval_status": "The full recording was not downloaded in the current execution environment. A downloader and full-recording window-analysis utility are included for local reproduction."
+}

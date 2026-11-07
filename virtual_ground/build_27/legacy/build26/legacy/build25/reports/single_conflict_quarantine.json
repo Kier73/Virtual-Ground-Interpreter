@@ -1,0 +1,174 @@
+{
+  "actions": {
+    "0": "HOLD"
+  },
+  "completed_step_count": 0,
+  "format": "VG-OnlineEvidence-1",
+  "ground_fingerprint": "ab196a80cccc7696bb6d4947eaaf02a87c7b28122b66fb43e89183f8ac387071",
+  "history": [
+    {
+      "action": "HOLD",
+      "kind": "action",
+      "step": 0
+    },
+    {
+      "action": "HOLD",
+      "classification": "observation_not_predicted_by_any_live_hypothesis",
+      "kind": "ground_contradiction",
+      "observed": {
+        "0": 99
+      },
+      "possible_outputs": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "source": "sensor-A",
+      "step": 0
+    }
+  ],
+  "history_total_count": 2,
+  "initial_candidate_states": [
+    "q0",
+    "q1",
+    "q2",
+    "q3",
+    "q4",
+    "q5"
+  ],
+  "observations": {
+    "0": {
+      "0": 99
+    }
+  },
+  "retained_completed_cache": [],
+  "retired_step_count": 0,
+  "snapshot": {
+    "belief": [
+      "q0",
+      "q1",
+      "q2",
+      "q3",
+      "q4",
+      "q5"
+    ],
+    "buffered_observation_steps": [
+      0
+    ],
+    "completed_step_count": 0,
+    "conflict": {
+      "action": "HOLD",
+      "classification": "observation_not_predicted_by_any_live_hypothesis",
+      "observed": {
+        "0": 99
+      },
+      "possible_outputs": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "source": "sensor-A",
+      "step": 0
+    },
+    "history_total_count": 2,
+    "hypothesis_count": 6,
+    "last_action_step": 0,
+    "retained_history_records": 2,
+    "retired_step_count": 0,
+    "status": "contradicted",
+    "unresolved_steps": [
+      0
+    ],
+    "version_monitor": {
+      "auto_committed": false,
+      "conflict_count": 1,
+      "conflicts": [
+        {
+          "action": "HOLD",
+          "classification": "observation_not_predicted_by_any_live_hypothesis",
+          "observed": {
+            "0": 99
+          },
+          "possible_outputs": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "source": "sensor-A",
+          "step": 0
+        }
+      ],
+      "current_ground_fingerprint": "ab196a80cccc7696bb6d4947eaaf02a87c7b28122b66fb43e89183f8ac387071",
+      "distinct_actions": [
+        "HOLD"
+      ],
+      "distinct_steps": 1,
+      "status": "single_or_unconfirmed_conflict"
+    }
+  },
+  "status": "contradicted",
+  "unknown_initial_context": true
+}

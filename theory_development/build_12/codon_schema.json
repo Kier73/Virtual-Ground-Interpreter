@@ -1,0 +1,44 @@
+{
+  "schema_version": "0.1",
+  "status": "descriptive_operation_map",
+  "note": "This schema records candidate codonic decompositions for the response-analysis pipeline. Build 12's numerical reference implementation is Python, and these chains are not yet dispatched through a codon VM.",
+  "aliases": {
+    "ad": "addition",
+    "su": "subtraction",
+    "mx": "multiplication",
+    "dv": "division",
+    "sq": "square",
+    "ab": "absolute_value",
+    "lg": "logarithm",
+    "rt": "square_root",
+    "sm": "sum_reduction",
+    "mn": "mean_reduction"
+  },
+  "response_chains": {
+    "energy": {
+      "chain": ["ab", "sq", "sm"],
+      "formula": "E = sum(x_i^2)",
+      "meaning": "Signal energy"
+    },
+    "rms": {
+      "chain": ["sq", "sm", "dv", "rt"],
+      "formula": "RMS = sqrt(sum(x_i^2)/N)",
+      "meaning": "Root mean square amplitude"
+    },
+    "schroeder_decay": {
+      "chain": ["sq", "reverse_sum", "normalize", "lg"],
+      "formula": "EDC[n] = sum_{k=n}^{N-1} x[k]^2; EDC_dB = 10 log10(EDC/EDC[0])",
+      "meaning": "Backward-integrated energy decay"
+    },
+    "clarity_c50": {
+      "chain": ["time_gate_50ms", "sm", "dv", "lg"],
+      "formula": "C50 = 10 log10(E_0_50ms/E_after_50ms)",
+      "meaning": "Early-to-late energy ratio"
+    },
+    "band_energy_share": {
+      "chain": ["band_filter", "sq", "sm", "normalize"],
+      "formula": "p_b = E_b / sum_j E_j",
+      "meaning": "Relative octave-band energy"
+    }
+  }
+}

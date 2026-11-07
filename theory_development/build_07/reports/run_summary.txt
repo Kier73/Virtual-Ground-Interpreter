@@ -1,0 +1,193 @@
+{
+  "candidate_count": 32,
+  "rdm_spearman": {
+    "base_shape__holonomy": 0.14661224246186771,
+    "base_shape__temporal": -0.005066517016215284,
+    "base_shape__local_transition": 0.6930973923335007,
+    "holonomy__temporal": 0.382447702990372,
+    "holonomy__local_transition": 0.10331537451110968,
+    "temporal__local_transition": -0.03170272583235004
+  },
+  "neighbor_overlap": {
+    "base_shape__holonomy": 0.2,
+    "base_shape__temporal": 0.0,
+    "base_shape__local_transition": 1.0,
+    "holonomy__temporal": 0.1875,
+    "holonomy__local_transition": 0.2,
+    "temporal__local_transition": 0.0
+  },
+  "h0_correlations": {
+    "base_shape__holonomy": 0.855651134752,
+    "base_shape__temporal": 0.7323922906700686,
+    "base_shape__local_transition": 0.7883497492247992,
+    "holonomy__temporal": 0.8549819600709617,
+    "holonomy__local_transition": 0.9203057192164079,
+    "temporal__local_transition": 0.9290195010403
+  },
+  "reparameterization": {
+    "pairs": [
+      {
+        "shape_id": "cap_055",
+        "direction": 1,
+        "base_shape_signature_max_abs": 0.0,
+        "holonomy_phase_abs_wrapped": 0.0,
+        "temporal_signature_l2": 0.3871617654029249,
+        "s3_endpoint_distance": 0.0
+      },
+      {
+        "shape_id": "cap_055",
+        "direction": -1,
+        "base_shape_signature_max_abs": 0.0,
+        "holonomy_phase_abs_wrapped": 0.0,
+        "temporal_signature_l2": 0.35977796215648616,
+        "s3_endpoint_distance": 0.0
+      },
+      {
+        "shape_id": "cap_072",
+        "direction": 1,
+        "base_shape_signature_max_abs": 0.0,
+        "holonomy_phase_abs_wrapped": 0.0,
+        "temporal_signature_l2": 0.49179473653961775,
+        "s3_endpoint_distance": 0.0
+      },
+      {
+        "shape_id": "cap_072",
+        "direction": -1,
+        "base_shape_signature_max_abs": 0.0,
+        "holonomy_phase_abs_wrapped": 0.0,
+        "temporal_signature_l2": 0.4574050966973732,
+        "s3_endpoint_distance": 0.0
+      },
+      {
+        "shape_id": "cap_092",
+        "direction": 1,
+        "base_shape_signature_max_abs": 0.0,
+        "holonomy_phase_abs_wrapped": 0.0,
+        "temporal_signature_l2": 0.6000105108594811,
+        "s3_endpoint_distance": 0.0
+      },
+      {
+        "shape_id": "cap_092",
+        "direction": -1,
+        "base_shape_signature_max_abs": 0.0,
+        "holonomy_phase_abs_wrapped": 0.0,
+        "temporal_signature_l2": 0.5587804096346849,
+        "s3_endpoint_distance": 0.0
+      },
+      {
+        "shape_id": "wave2_a",
+        "direction": 1,
+        "base_shape_signature_max_abs": 0.0,
+        "holonomy_phase_abs_wrapped": 0.0,
+        "temporal_signature_l2": 0.5099209189699414,
+        "s3_endpoint_distance": 0.0
+      },
+      {
+        "shape_id": "wave2_a",
+        "direction": -1,
+        "base_shape_signature_max_abs": 0.0,
+        "holonomy_phase_abs_wrapped": 0.0,
+        "temporal_signature_l2": 0.47557566144487734,
+        "s3_endpoint_distance": 0.0
+      },
+      {
+        "shape_id": "wave2_b",
+        "direction": 1,
+        "base_shape_signature_max_abs": 0.0,
+        "holonomy_phase_abs_wrapped": 0.0,
+        "temporal_signature_l2": 0.507081168895014,
+        "s3_endpoint_distance": 0.0
+      },
+      {
+        "shape_id": "wave2_b",
+        "direction": -1,
+        "base_shape_signature_max_abs": 0.0,
+        "holonomy_phase_abs_wrapped": 0.0,
+        "temporal_signature_l2": 0.4739154251083065,
+        "s3_endpoint_distance": 0.0
+      },
+      {
+        "shape_id": "wave3_a",
+        "direction": 1,
+        "base_shape_signature_max_abs": 0.0,
+        "holonomy_phase_abs_wrapped": 0.0,
+        "temporal_signature_l2": 0.5557419442583633,
+        "s3_endpoint_distance": 0.0
+      },
+      {
+        "shape_id": "wave3_a",
+        "direction": -1,
+        "base_shape_signature_max_abs": 0.0,
+        "holonomy_phase_abs_wrapped": 0.0,
+        "temporal_signature_l2": 0.5186988261577615,
+        "s3_endpoint_distance": 0.0
+      },
+      {
+        "shape_id": "wave3_b",
+        "direction": 1,
+        "base_shape_signature_max_abs": 0.0,
+        "holonomy_phase_abs_wrapped": 0.0,
+        "temporal_signature_l2": 0.5525821206822292,
+        "s3_endpoint_distance": 0.0
+      },
+      {
+        "shape_id": "wave3_b",
+        "direction": -1,
+        "base_shape_signature_max_abs": 0.0,
+        "holonomy_phase_abs_wrapped": 0.0,
+        "temporal_signature_l2": 0.5166635179375294,
+        "s3_endpoint_distance": 0.0
+      },
+      {
+        "shape_id": "wave4",
+        "direction": 1,
+        "base_shape_signature_max_abs": 0.0,
+        "holonomy_phase_abs_wrapped": 0.0,
+        "temporal_signature_l2": 0.6130601700705887,
+        "s3_endpoint_distance": 0.0
+      },
+      {
+        "shape_id": "wave4",
+        "direction": -1,
+        "base_shape_signature_max_abs": 0.0,
+        "holonomy_phase_abs_wrapped": 0.0,
+        "temporal_signature_l2": 0.5720146762983791,
+        "s3_endpoint_distance": 0.0
+      }
+    ],
+    "max_base_shape_signature_error": 0.0,
+    "max_holonomy_phase_error": 0.0,
+    "max_s3_endpoint_error": 0.0,
+    "min_temporal_signature_change": 0.35977796215648616
+  },
+  "alias": {
+    "max_abs_error": 0.0,
+    "passed": true
+  },
+  "resolution": {
+    "samples": [
+      {
+        "sample_count": 180,
+        "phase": 0.8037360872995685,
+        "solid_angle": 1.6076982960269899,
+        "phase_half_area_error": 0.00011306071392647166,
+        "phase_from_first_error": 0.0
+      },
+      {
+        "sample_count": 360,
+        "phase": 0.8038208827435421,
+        "solid_angle": 1.6076982960269899,
+        "phase_half_area_error": 2.8265269952809646e-05,
+        "phase_from_first_error": 8.479544397355099e-05
+      },
+      {
+        "sample_count": 720,
+        "phase": 0.8038420816902931,
+        "solid_angle": 1.6076982960269899,
+        "phase_half_area_error": 7.066323201798674e-06,
+        "phase_from_first_error": 0.00010599439072489503
+      }
+    ],
+    "final_phase_change": 2.119894675089995e-05
+  }
+}

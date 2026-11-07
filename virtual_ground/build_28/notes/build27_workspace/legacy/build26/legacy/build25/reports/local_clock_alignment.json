@@ -1,0 +1,41 @@
+{
+  "clock_registry": {
+    "clock_models": {
+      "sensor-A": {
+        "intercept": -10.0,
+        "retained_anchor_count": 2,
+        "slope": 1.0,
+        "source": "sensor-A",
+        "status": "affine_clock_calibrated",
+        "total_anchor_count": 2
+      },
+      "sensor-B": {
+        "intercept": -50.0,
+        "retained_anchor_count": 2,
+        "slope": 0.5,
+        "source": "sensor-B",
+        "status": "affine_clock_calibrated",
+        "total_anchor_count": 2
+      },
+      "sensor-C": {
+        "intercept": null,
+        "retained_anchor_count": 0,
+        "slope": null,
+        "source": "sensor-C",
+        "status": "unsynchronized_local_clock",
+        "total_anchor_count": 0
+      }
+    },
+    "retained_event_count": 5,
+    "retained_unmatched_event_count": 1,
+    "timestamp_join_policy": "never join different source clocks by raw timestamp alone",
+    "total_event_count": 5,
+    "total_unmatched_event_count": 1
+  },
+  "interpretation": "Per-source order is retained; explicit step identity joins observations; raw timestamps alone do not establish cross-source correspondence.",
+  "same_step_join_A": "joined_by_explicit_step_id",
+  "same_step_join_B": "joined_by_explicit_step_id",
+  "sensor_A_mapped_time": 5.0,
+  "sensor_B_mapped_time": 5.0,
+  "unkeyed_sensor_C": "unmatched_no_shared_event_identity"
+}

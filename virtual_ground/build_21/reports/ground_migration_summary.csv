@@ -1,0 +1,4 @@
+revision,old_version,new_version,old_state_count,new_state_count,directly_migratable_states,unmappable_states,law_changed
+capacity_expansion,1,2,64,100,64,0,True
+capacity_reduction,1,2,64,36,36,28,True
+environment_law_revision,1,2,64,64,64,0,True

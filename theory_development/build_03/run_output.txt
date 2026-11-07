@@ -1,0 +1,12 @@
+{
+  "build": "03",
+  "holonomy_phase_rad": 0.8,
+  "matrix_error": 0.0,
+  "radial_closed": true,
+  "full_closed": false,
+  "schedule_rate_rms": [
+    0.3764378395518073,
+    0.5231813034828802
+  ],
+  "report": "/mnt/data/vl_response_geometry_build_03/reports/build_03_report.json"
+}

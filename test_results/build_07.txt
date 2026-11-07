@@ -1,0 +1,27 @@
+test_all_base_paths_are_closed_at_north (test_build_07.Build07Tests.test_all_base_paths_are_closed_at_north) ... ok
+test_all_lifts_project_to_their_base_paths (test_build_07.Build07Tests.test_all_lifts_project_to_their_base_paths) ... ok
+test_base_shape_and_holonomy_invariant_under_time_warp (test_build_07.Build07Tests.test_base_shape_and_holonomy_invariant_under_time_warp) ... ok
+test_base_shape_and_local_transition_rdm_relation (test_build_07.Build07Tests.test_base_shape_and_local_transition_rdm_relation) ... ok
+test_base_shape_and_local_transition_share_knn (test_build_07.Build07Tests.test_base_shape_and_local_transition_share_knn) ... ok
+test_base_shape_observer_collapses_each_shape_family (test_build_07.Build07Tests.test_base_shape_observer_collapses_each_shape_family) ... ok
+test_block_permutation_control_is_deterministic (test_build_07.Build07Tests.test_block_permutation_control_is_deterministic) ... ok
+test_candidate_library_has_32_paths (test_build_07.Build07Tests.test_candidate_library_has_32_paths) ... ok
+test_codon_alias_renaming_preserves_quaternion_product (test_build_07.Build07Tests.test_codon_alias_renaming_preserves_quaternion_product) ... ok
+test_geometric_path_is_reparameterization_invariant (test_build_07.Build07Tests.test_geometric_path_is_reparameterization_invariant) ... ok
+test_graph_laplacian_spectra_are_nonnegative (test_build_07.Build07Tests.test_graph_laplacian_spectra_are_nonnegative) ... ok
+test_h0_interpretation_is_cautioned (test_build_07.Build07Tests.test_h0_interpretation_is_cautioned) ... ok
+test_holonomy_observer_refines_by_orientation (test_build_07.Build07Tests.test_holonomy_observer_refines_by_orientation) ... ok
+test_horizontal_lift_closes_onto_same_fibre (test_build_07.Build07Tests.test_horizontal_lift_closes_onto_same_fibre) ... ok
+test_library_has_eight_geometric_families (test_build_07.Build07Tests.test_library_has_eight_geometric_families) ... ok
+test_local_transition_observer_collapses_each_shape_family (test_build_07.Build07Tests.test_local_transition_observer_collapses_each_shape_family) ... ok
+test_phase_half_area_converges_with_resolution (test_build_07.Build07Tests.test_phase_half_area_converges_with_resolution) ... ok
+test_rdm_dimensions_symmetry_and_zero_diagonal (test_build_07.Build07Tests.test_rdm_dimensions_symmetry_and_zero_diagonal) ... ok
+test_reverse_paths_preserve_shape_and_reverse_signed_phase (test_build_07.Build07Tests.test_reverse_paths_preserve_shape_and_reverse_signed_phase) ... ok
+test_temporal_observer_separates_all_time_warp_variants (test_build_07.Build07Tests.test_temporal_observer_separates_all_time_warp_variants) ... ok
+test_temporal_signal_changes_under_time_warp (test_build_07.Build07Tests.test_temporal_signal_changes_under_time_warp) ... ok
+test_zero_dimensional_persistence_has_n_minus_one_deaths (test_build_07.Build07Tests.test_zero_dimensional_persistence_has_n_minus_one_deaths) ... ok
+
+----------------------------------------------------------------------
+Ran 22 tests in 16.208s
+
+OK

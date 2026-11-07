@@ -1,0 +1,35 @@
+feature,domain,meaning,used_in_cross_modal_rdm,units_or_scale
+log_rms,both,Log RMS of digital waveform,true,log normalized sample amplitude
+crest_factor,both,Peak divided by RMS,true,ratio
+zcr,both,Zero-crossing rate,true,0-1
+centroid_common_hz,both,Spectral centroid restricted to 80-3500 Hz,true,Hz
+rolloff85_common_hz,both,85 percent cumulative spectral-energy frequency restricted to common band,true,Hz
+flatness_common,both,Geometric-to-arithmetic mean spectral power ratio in common band,true,ratio
+band_80_250,both,Relative energy in 80-250 Hz,true,share
+band_250_500,both,Relative energy in 250-500 Hz,true,share
+band_500_1000,both,Relative energy in 500-1000 Hz,true,share
+band_1000_2000,both,Relative energy in 1000-2000 Hz,true,share
+band_2000_3500,both,Relative energy in 2000-3500 Hz,true,share
+f0_median_hz,both,Median autocorrelation-based periodicity frequency from sampled frames,true,Hz
+f0_iqr_hz,both,Interquartile range of estimated periodicity frequency,true,Hz
+voiced_fraction,both,Fraction of sampled frames with periodicity above threshold,true,share
+periodicity,both,Median normalized autocorrelation peak,true,0-1
+envelope_cv,both,Coefficient of variation of 20 ms frame RMS envelope,true,ratio
+envelope_modulation,both,Median absolute frame-envelope change divided by median envelope,true,ratio
+high_4000_7800_share,acoustic-only,Energy share strictly above the throat sensor's original 4 kHz Nyquist and up to 7.8 kHz,false,share
+valid_nyquist_hz,both,Highest frequency supported by original acquisition bandwidth,false,Hz
+high_band_valid,channel,Whether original sensor bandwidth supports the 4.0-7.8 kHz descriptor,false,boolean
+residual_lag_ms,pair,Estimated raw waveform residual lag after published preprocessing,not an RDM feature,ms
+raw_waveform_corr,pair,Best normalized raw-waveform cross-correlation within +/-5 ms,diagnostic,correlation
+frame_envelope_lag_ms,pair,Residual lag from 20 ms RMS envelopes,diagnostic,ms
+event_count,temporal,Number of selected envelope maxima,false,count; not an RDM shape feature
+event_rate_hz,temporal,Selected event count divided by recording duration,true,events per second; temporal_rate view
+event_interval_median_s,temporal,Median inter-event interval in seconds,true,seconds; temporal_rate view
+event_interval_cv,temporal,Coefficient of variation of inter-event intervals,true,ratio; temporal_emission view
+event_interval_entropy,temporal,Normalized histogram entropy of median-normalized intervals,true,0-1; temporal_emission view
+event_interval_q10_norm,temporal,10th percentile of intervals divided by their median,true,ratio; temporal_emission view
+event_interval_q25_norm,temporal,25th percentile of intervals divided by their median,true,ratio; temporal_emission view
+event_interval_q50_norm,temporal,Median normalized interval; identically 1 by construction,false,ratio; not used in RDM
+event_interval_q75_norm,temporal,75th percentile of intervals divided by their median,true,ratio; temporal_emission view
+event_interval_q90_norm,temporal,90th percentile of intervals divided by their median,true,ratio; temporal_emission view
+event_mark_cv_norm,temporal,Coefficient of variation of event marks after normalization by maximum mark,true,ratio; temporal_emission view

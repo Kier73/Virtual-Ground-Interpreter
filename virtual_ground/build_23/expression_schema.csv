@@ -1,0 +1,8 @@
+expression_type,syntax,parameters,exactness
+constant,c,one integer,exact on declared domain
+affine,a+b*phase,a and b,exact on declared domain
+modular_ramp,a+b*(phase mod m),a b m,exact on declared domain
+periodic_motif,lookup(periodic=motif),finite motif,exact when motif length divides phase count
+lookup,lookup(values),finite table,exact on observed finite phase domain
+permutation_stride,(phase+s) mod n,stride s,exact for cyclic phase permutation
+transfer_residue,Q(phase,source mod m),phase x residue integer table,exact on sampled and verified finite domain

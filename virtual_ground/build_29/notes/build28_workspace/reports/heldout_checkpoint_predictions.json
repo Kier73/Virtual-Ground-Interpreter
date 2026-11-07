@@ -1,0 +1,391 @@
+{
+  "accuracy": 1.0,
+  "correct": 24,
+  "records": [
+    {
+      "correct": true,
+      "interval": [
+        0,
+        9
+      ],
+      "observed_delta": [
+        0,
+        6
+      ],
+      "predicted_delta": [
+        0,
+        6
+      ],
+      "trace_id": "test_00"
+    },
+    {
+      "correct": true,
+      "interval": [
+        9,
+        19
+      ],
+      "observed_delta": [
+        0,
+        2
+      ],
+      "predicted_delta": [
+        0,
+        2
+      ],
+      "trace_id": "test_00"
+    },
+    {
+      "correct": true,
+      "interval": [
+        61,
+        68
+      ],
+      "observed_delta": [
+        1,
+        2
+      ],
+      "predicted_delta": [
+        1,
+        2
+      ],
+      "trace_id": "test_00"
+    },
+    {
+      "correct": true,
+      "interval": [
+        0,
+        7
+      ],
+      "observed_delta": [
+        1,
+        2
+      ],
+      "predicted_delta": [
+        1,
+        2
+      ],
+      "trace_id": "test_01"
+    },
+    {
+      "correct": true,
+      "interval": [
+        7,
+        14
+      ],
+      "observed_delta": [
+        0,
+        2
+      ],
+      "predicted_delta": [
+        0,
+        2
+      ],
+      "trace_id": "test_01"
+    },
+    {
+      "correct": true,
+      "interval": [
+        51,
+        58
+      ],
+      "observed_delta": [
+        1,
+        0
+      ],
+      "predicted_delta": [
+        1,
+        0
+      ],
+      "trace_id": "test_01"
+    },
+    {
+      "correct": true,
+      "interval": [
+        58,
+        67
+      ],
+      "observed_delta": [
+        -1,
+        3
+      ],
+      "predicted_delta": [
+        -1,
+        3
+      ],
+      "trace_id": "test_01"
+    },
+    {
+      "correct": true,
+      "interval": [
+        67,
+        75
+      ],
+      "observed_delta": [
+        -1,
+        3
+      ],
+      "predicted_delta": [
+        -1,
+        3
+      ],
+      "trace_id": "test_01"
+    },
+    {
+      "correct": true,
+      "interval": [
+        0,
+        9
+      ],
+      "observed_delta": [
+        -1,
+        5
+      ],
+      "predicted_delta": [
+        -1,
+        5
+      ],
+      "trace_id": "test_02"
+    },
+    {
+      "correct": true,
+      "interval": [
+        9,
+        17
+      ],
+      "observed_delta": [
+        0,
+        2
+      ],
+      "predicted_delta": [
+        0,
+        2
+      ],
+      "trace_id": "test_02"
+    },
+    {
+      "correct": true,
+      "interval": [
+        17,
+        25
+      ],
+      "observed_delta": [
+        2,
+        0
+      ],
+      "predicted_delta": [
+        2,
+        0
+      ],
+      "trace_id": "test_02"
+    },
+    {
+      "correct": true,
+      "interval": [
+        25,
+        34
+      ],
+      "observed_delta": [
+        -2,
+        2
+      ],
+      "predicted_delta": [
+        -2,
+        2
+      ],
+      "trace_id": "test_02"
+    },
+    {
+      "correct": true,
+      "interval": [
+        34,
+        44
+      ],
+      "observed_delta": [
+        1,
+        2
+      ],
+      "predicted_delta": [
+        1,
+        2
+      ],
+      "trace_id": "test_02"
+    },
+    {
+      "correct": true,
+      "interval": [
+        59,
+        68
+      ],
+      "observed_delta": [
+        -1,
+        5
+      ],
+      "predicted_delta": [
+        -1,
+        5
+      ],
+      "trace_id": "test_03"
+    },
+    {
+      "correct": true,
+      "interval": [
+        68,
+        75
+      ],
+      "observed_delta": [
+        1,
+        0
+      ],
+      "predicted_delta": [
+        1,
+        0
+      ],
+      "trace_id": "test_03"
+    },
+    {
+      "correct": true,
+      "interval": [
+        75,
+        83
+      ],
+      "observed_delta": [
+        -2,
+        2
+      ],
+      "predicted_delta": [
+        -2,
+        2
+      ],
+      "trace_id": "test_03"
+    },
+    {
+      "correct": true,
+      "interval": [
+        83,
+        90
+      ],
+      "observed_delta": [
+        -2,
+        2
+      ],
+      "predicted_delta": [
+        -2,
+        2
+      ],
+      "trace_id": "test_03"
+    },
+    {
+      "correct": true,
+      "interval": [
+        0,
+        10
+      ],
+      "observed_delta": [
+        2,
+        2
+      ],
+      "predicted_delta": [
+        2,
+        2
+      ],
+      "trace_id": "test_04"
+    },
+    {
+      "correct": true,
+      "interval": [
+        27,
+        35
+      ],
+      "observed_delta": [
+        -1,
+        3
+      ],
+      "predicted_delta": [
+        -1,
+        3
+      ],
+      "trace_id": "test_04"
+    },
+    {
+      "correct": true,
+      "interval": [
+        35,
+        42
+      ],
+      "observed_delta": [
+        -1,
+        3
+      ],
+      "predicted_delta": [
+        -1,
+        3
+      ],
+      "trace_id": "test_04"
+    },
+    {
+      "correct": true,
+      "interval": [
+        59,
+        67
+      ],
+      "observed_delta": [
+        0,
+        0
+      ],
+      "predicted_delta": [
+        0,
+        0
+      ],
+      "trace_id": "test_04"
+    },
+    {
+      "correct": true,
+      "interval": [
+        67,
+        74
+      ],
+      "observed_delta": [
+        0,
+        0
+      ],
+      "predicted_delta": [
+        0,
+        0
+      ],
+      "trace_id": "test_04"
+    },
+    {
+      "correct": true,
+      "interval": [
+        74,
+        84
+      ],
+      "observed_delta": [
+        0,
+        3
+      ],
+      "predicted_delta": [
+        0,
+        3
+      ],
+      "trace_id": "test_04"
+    },
+    {
+      "correct": true,
+      "interval": [
+        84,
+        89
+      ],
+      "observed_delta": [
+        1,
+        0
+      ],
+      "predicted_delta": [
+        1,
+        0
+      ],
+      "trace_id": "test_04"
+    }
+  ],
+  "total": 24
+}

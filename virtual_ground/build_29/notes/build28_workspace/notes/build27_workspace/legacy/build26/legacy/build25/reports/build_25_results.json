@@ -1,0 +1,112 @@
+{
+  "async_local_clocks": {
+    "clock_models": {
+      "sensor-A": {
+        "intercept": -10.0,
+        "retained_anchor_count": 2,
+        "slope": 1.0,
+        "source": "sensor-A",
+        "status": "affine_clock_calibrated",
+        "total_anchor_count": 2
+      },
+      "sensor-B": {
+        "intercept": -50.0,
+        "retained_anchor_count": 2,
+        "slope": 0.5,
+        "source": "sensor-B",
+        "status": "affine_clock_calibrated",
+        "total_anchor_count": 2
+      },
+      "sensor-C": {
+        "intercept": null,
+        "retained_anchor_count": 0,
+        "slope": null,
+        "source": "sensor-C",
+        "status": "unsynchronized_local_clock",
+        "total_anchor_count": 0
+      }
+    },
+    "retained_event_count": 5,
+    "retained_unmatched_event_count": 1,
+    "timestamp_join_policy": "never join different source clocks by raw timestamp alone",
+    "total_event_count": 5,
+    "total_unmatched_event_count": 1
+  },
+  "build": 25,
+  "evidence_class": "synthetic finite-state online tracking experiments",
+  "inherited_build24_tests": 17,
+  "limitations": [
+    "Build 24 still supplies the learned finite predictive machine; Build 25 does not yet learn a new transition law online.",
+    "Actions and channel schemas are known; raw action/sensor discovery is not implemented.",
+    "The online model is deterministic; stochastic observation likelihoods are not implemented.",
+    "Cross-source events are joined only by explicit step identity or separately calibrated clocks; raw timestamps are never treated as shared time.",
+    "Ground revision is proposed after independent conflicts but is never automatically committed.",
+    "Probe selection uses one-step output information gain with cost/risk penalties; it is not a globally optimal risk-sensitive control policy."
+  ],
+  "long_stream_memory": {
+    "belief": [
+      "q4"
+    ],
+    "buffered_observation_steps": [],
+    "completed_step_count": 250,
+    "conflict": null,
+    "history_total_count": 750,
+    "hypothesis_count": 1,
+    "last_action_step": 249,
+    "retained_history_records": 64,
+    "retired_step_count": 218,
+    "status": "tracking",
+    "unresolved_steps": [],
+    "version_monitor": {
+      "auto_committed": false,
+      "conflict_count": 0,
+      "conflicts": [],
+      "current_ground_fingerprint": "ab196a80cccc7696bb6d4947eaaf02a87c7b28122b66fb43e89183f8ac387071",
+      "distinct_actions": [],
+      "distinct_steps": 0,
+      "status": "current_ground_consistent"
+    }
+  },
+  "persistent_conflict_status": "ground_revision_proposal",
+  "probe_scheduler": {
+    "candidates": [
+      {
+        "action": "HOLD",
+        "cost": 1.0,
+        "information_bits": 2.584962500721156,
+        "response_classes": 6,
+        "risk": 0.01,
+        "score": 2.5342769614913294,
+        "side_effect": "passive observation"
+      },
+      {
+        "action": "PROBE_A",
+        "cost": 2.0,
+        "information_bits": 2.584962500721156,
+        "response_classes": 6,
+        "risk": 0.1,
+        "score": 1.1749829548732527,
+        "side_effect": "small reversible transition"
+      }
+    ],
+    "selected_action": "HOLD",
+    "status": "selected"
+  },
+  "single_conflict_status": "contradicted",
+  "status": "complete",
+  "tests_in_primary_suite": 34,
+  "unknown_start": {
+    "belief_after_both_channels": [
+      "q3"
+    ],
+    "belief_after_first_partial_channel": [
+      "q0",
+      "q3"
+    ],
+    "belief_after_second_action": [
+      "q5"
+    ],
+    "final_status": "tracking",
+    "initial_belief_size": 6
+  }
+}

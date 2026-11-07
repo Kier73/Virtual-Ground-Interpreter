@@ -1,0 +1,15 @@
+id,object,property,transformation_or_condition,status,verification
+B21-01,FlowState,0<=a,b<=capacity and phase in range,all valid transitions,proven within finite fixture,exhaustive 64-state enumeration
+B21-02,Gate action,a+b conserved by gate transfer,one legal gate action before environment,exact,transition ledger
+B21-03,Flow dynamics,a_next+b_next=a+b+inflow-actual_demand-spill,all legal actions,exact,136 transitions residual 0
+B21-04,Environment phase,phase follows phase_next,each state transition,exact,exhaustive transition checks
+B21-05,Observer abstraction,strong action-labelled transition congruence,coarsest refinement,full observation only among tested static maps,partition refinement
+B21-06,Belief navigation,chosen action legal for all states in belief,robust belief policy,verified for finite horizon,policy solver and tests
+B21-07,Task observability,goal predicate constant in observation classes,declared goal and sensor,task-relative,task_observability checks
+B21-08,Resource path,route Pareto-nondominated in (time,energy,communication),declared action cost vectors,verified in finite graph,label dominance algorithm and examples
+B21-09,Controlled viability,exists safe control successor in kernel,greatest controlled invariant subset,verified in finite fixture,fixed-point iteration and witness policy
+B21-10,Autonomous viability,HOLD successor remains safe,passive environment only,verified in finite fixture,fixed-point iteration
+B21-11,Ground versioning,structural rule changes increment ground version,capacity/environment law revision,implemented,revision methods and migration tests
+B21-12,Migration,identity state map valid under destination constraints,capacity or forcing law change,partial or total as reported,exhaustive old-state scan
+B21-13,Virtual Ground universality,all multistate systems admit productive resource-efficient grounds,general claim,open,requires broader existence and complexity analysis
+B21-14,Constant-time navigation,arbitrary target navigation is O(1),general claim,not established,finite precomputed fixture is not a general proof

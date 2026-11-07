@@ -1,0 +1,41 @@
+{
+  "build": 15,
+  "analysis_status": "local_clock_event_graph_implemented_synthetic_validation_passed_empirical_TAPS_pending",
+  "tests": {
+    "passed": 44,
+    "failed": 0,
+    "framework": "unittest",
+    "command": "./run_tests.sh"
+  },
+  "synthetic_stress": {
+    "trials": 30,
+    "provenance": "synthetic_event_fixture_only",
+    "mean_precision": 0.9168016681401411,
+    "mean_recall": 0.9476031301499637,
+    "mean_f1": 0.9318040519503473,
+    "median_of_trial_median_absolute_clock_fit_residual_s": 0.0007997396157005676,
+    "matching_used_absolute_cross_clock_timestamps": false
+  },
+  "empirical_TAPS": {
+    "audio_downloaded": false,
+    "audio_processed": false,
+    "event_graph_metrics_computed": false,
+    "status": "pending_archive_access",
+    "limitation": "The released TAPS channels are already resampled and globally aligned; they cannot alone validate independent unsynchronized acquisition clocks."
+  },
+  "privacy": {
+    "speaker_ids_exported": false,
+    "utterance_ids_exported": false,
+    "transcripts_exported": false,
+    "demographics_exported": false,
+    "raw_audio_bundled": false,
+    "per_utterance_empirical_outputs_written": false
+  },
+  "interpretation_limits": [
+    "Synthetic performance is not empirical sensor evidence.",
+    "Inferred event correspondences are not ground-truth state identities.",
+    "The alignment confidence score is not a calibrated probability.",
+    "The matcher assumes monotone event order and sufficiently informative shared event marks/interval structure.",
+    "Post-match affine clock fitting is diagnostic rather than a synchronization operation."
+  ]
+}

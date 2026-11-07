@@ -1,0 +1,49 @@
+{
+  "build": "11",
+  "source_rows_in_excerpt": 411,
+  "windows": 8,
+  "annotated_change_point_s": 67.0,
+  "annotated_interval_s": [
+    66.0,
+    68.0
+  ],
+  "unit_conversion_max_distance_error": 8.881784197001252e-16,
+  "near_limit_windows": [
+    "post_67_51_68_53",
+    "post_68_82_69_20",
+    "post_69_20_69_60"
+  ],
+  "rdm_view_correlations": [
+    {
+      "view_a": "amplitude",
+      "view_b": "direction",
+      "spearman_rdm_correlation": 0.230432402846196
+    },
+    {
+      "view_a": "amplitude",
+      "view_b": "temporal",
+      "spearman_rdm_correlation": 0.3858784893267653
+    },
+    {
+      "view_a": "amplitude",
+      "view_b": "sensor",
+      "spearman_rdm_correlation": -0.08976464148877944
+    },
+    {
+      "view_a": "direction",
+      "view_b": "temporal",
+      "spearman_rdm_correlation": 0.5555555555555557
+    },
+    {
+      "view_a": "direction",
+      "view_b": "sensor",
+      "spearman_rdm_correlation": -0.1729611384783799
+    },
+    {
+      "view_a": "temporal",
+      "view_b": "sensor",
+      "spearman_rdm_correlation": -0.28461959496442263
+    }
+  ],
+  "conclusion": "Empirical pilot only: selected G-Force windows show heterogeneous amplitude, direction and temporal signatures; the excerpt is insufficient for a robust claim about generalized tone or cross-modal invariance."
+}

@@ -1,0 +1,13 @@
+{
+  "all_passed": true,
+  "build28_return_code": 0,
+  "build28_tests": 21,
+  "combined_test_count": 129,
+  "inherited_return_code": 0,
+  "inherited_test_counts": {
+    "build24": 17,
+    "build25": 34,
+    "build26": 27,
+    "build27": 30
+  }
+}

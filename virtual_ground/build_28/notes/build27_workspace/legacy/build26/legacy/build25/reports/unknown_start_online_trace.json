@@ -1,0 +1,291 @@
+{
+  "action_sequence": [
+    "HOLD",
+    "PROBE_A"
+  ],
+  "final_evidence": {
+    "actions": {},
+    "completed_step_count": 2,
+    "format": "VG-OnlineEvidence-1",
+    "ground_fingerprint": "ab196a80cccc7696bb6d4947eaaf02a87c7b28122b66fb43e89183f8ac387071",
+    "history": [
+      {
+        "action": "HOLD",
+        "kind": "action",
+        "step": 0
+      },
+      {
+        "channel": 1,
+        "kind": "sensor_observation",
+        "local_sequence": 1,
+        "local_timestamp": 110.0,
+        "source": "sensor-B",
+        "step": 0,
+        "value": 2
+      },
+      {
+        "channel": 0,
+        "kind": "sensor_observation",
+        "local_sequence": 1,
+        "local_timestamp": 15.0,
+        "source": "sensor-A",
+        "step": 0,
+        "value": 0
+      },
+      {
+        "action": "PROBE_A",
+        "kind": "action",
+        "step": 1
+      },
+      {
+        "channel": 1,
+        "kind": "sensor_observation",
+        "local_sequence": 2,
+        "local_timestamp": 112.0,
+        "source": "sensor-B",
+        "step": 1,
+        "value": 0
+      },
+      {
+        "channel": 0,
+        "kind": "sensor_observation",
+        "local_sequence": 2,
+        "local_timestamp": 16.0,
+        "source": "sensor-A",
+        "step": 1,
+        "value": 1
+      }
+    ],
+    "history_total_count": 6,
+    "initial_candidate_states": [
+      "q0",
+      "q1",
+      "q2",
+      "q3",
+      "q4",
+      "q5"
+    ],
+    "observations": {},
+    "retained_completed_cache": [
+      {
+        "action": "HOLD",
+        "observations": {
+          "0": 0,
+          "1": 2
+        },
+        "step": 0
+      },
+      {
+        "action": "PROBE_A",
+        "observations": {
+          "0": 1,
+          "1": 0
+        },
+        "step": 1
+      }
+    ],
+    "retired_step_count": 0,
+    "snapshot": {
+      "belief": [
+        "q5"
+      ],
+      "buffered_observation_steps": [],
+      "completed_step_count": 2,
+      "conflict": null,
+      "history_total_count": 6,
+      "hypothesis_count": 1,
+      "last_action_step": 1,
+      "retained_history_records": 6,
+      "retired_step_count": 0,
+      "status": "tracking",
+      "unresolved_steps": [],
+      "version_monitor": {
+        "auto_committed": false,
+        "conflict_count": 0,
+        "conflicts": [],
+        "current_ground_fingerprint": "ab196a80cccc7696bb6d4947eaaf02a87c7b28122b66fb43e89183f8ac387071",
+        "distinct_actions": [],
+        "distinct_steps": 0,
+        "status": "current_ground_consistent"
+      }
+    },
+    "status": "tracking",
+    "unknown_initial_context": true
+  },
+  "snapshots": [
+    {
+      "belief": [
+        "q0",
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5"
+      ],
+      "buffered_observation_steps": [],
+      "completed_step_count": 0,
+      "conflict": null,
+      "event": "stream_open",
+      "history_total_count": 0,
+      "hypothesis_count": 6,
+      "last_action_step": null,
+      "retained_history_records": 0,
+      "retired_step_count": 0,
+      "status": "tracking",
+      "unresolved_steps": [],
+      "version_monitor": {
+        "auto_committed": false,
+        "conflict_count": 0,
+        "conflicts": [],
+        "current_ground_fingerprint": "ab196a80cccc7696bb6d4947eaaf02a87c7b28122b66fb43e89183f8ac387071",
+        "distinct_actions": [],
+        "distinct_steps": 0,
+        "status": "current_ground_consistent"
+      }
+    },
+    {
+      "belief": [
+        "q0",
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5"
+      ],
+      "buffered_observation_steps": [
+        0
+      ],
+      "completed_step_count": 0,
+      "conflict": null,
+      "event": "action_0_issued",
+      "history_total_count": 1,
+      "hypothesis_count": 6,
+      "last_action_step": 0,
+      "retained_history_records": 1,
+      "retired_step_count": 0,
+      "status": "tracking",
+      "unresolved_steps": [
+        0
+      ],
+      "version_monitor": {
+        "auto_committed": false,
+        "conflict_count": 0,
+        "conflicts": [],
+        "current_ground_fingerprint": "ab196a80cccc7696bb6d4947eaaf02a87c7b28122b66fb43e89183f8ac387071",
+        "distinct_actions": [],
+        "distinct_steps": 0,
+        "status": "current_ground_consistent"
+      }
+    },
+    {
+      "belief": [
+        "q0",
+        "q3"
+      ],
+      "buffered_observation_steps": [
+        0
+      ],
+      "completed_step_count": 0,
+      "conflict": null,
+      "event": "step_0_sensor_B",
+      "history_total_count": 2,
+      "hypothesis_count": 2,
+      "last_action_step": 0,
+      "retained_history_records": 2,
+      "retired_step_count": 0,
+      "status": "tracking",
+      "unresolved_steps": [
+        0
+      ],
+      "version_monitor": {
+        "auto_committed": false,
+        "conflict_count": 0,
+        "conflicts": [],
+        "current_ground_fingerprint": "ab196a80cccc7696bb6d4947eaaf02a87c7b28122b66fb43e89183f8ac387071",
+        "distinct_actions": [],
+        "distinct_steps": 0,
+        "status": "current_ground_consistent"
+      }
+    },
+    {
+      "belief": [
+        "q3"
+      ],
+      "buffered_observation_steps": [],
+      "completed_step_count": 1,
+      "conflict": null,
+      "event": "step_0_sensor_A",
+      "history_total_count": 3,
+      "hypothesis_count": 1,
+      "last_action_step": 0,
+      "retained_history_records": 3,
+      "retired_step_count": 0,
+      "status": "tracking",
+      "unresolved_steps": [],
+      "version_monitor": {
+        "auto_committed": false,
+        "conflict_count": 0,
+        "conflicts": [],
+        "current_ground_fingerprint": "ab196a80cccc7696bb6d4947eaaf02a87c7b28122b66fb43e89183f8ac387071",
+        "distinct_actions": [],
+        "distinct_steps": 0,
+        "status": "current_ground_consistent"
+      }
+    },
+    {
+      "belief": [
+        "q5"
+      ],
+      "buffered_observation_steps": [
+        1
+      ],
+      "completed_step_count": 1,
+      "conflict": null,
+      "event": "step_1_sensor_B",
+      "history_total_count": 5,
+      "hypothesis_count": 1,
+      "last_action_step": 1,
+      "retained_history_records": 5,
+      "retired_step_count": 0,
+      "status": "tracking",
+      "unresolved_steps": [
+        1
+      ],
+      "version_monitor": {
+        "auto_committed": false,
+        "conflict_count": 0,
+        "conflicts": [],
+        "current_ground_fingerprint": "ab196a80cccc7696bb6d4947eaaf02a87c7b28122b66fb43e89183f8ac387071",
+        "distinct_actions": [],
+        "distinct_steps": 0,
+        "status": "current_ground_consistent"
+      }
+    },
+    {
+      "belief": [
+        "q5"
+      ],
+      "buffered_observation_steps": [],
+      "completed_step_count": 2,
+      "conflict": null,
+      "event": "step_1_sensor_A",
+      "history_total_count": 6,
+      "hypothesis_count": 1,
+      "last_action_step": 1,
+      "retained_history_records": 6,
+      "retired_step_count": 0,
+      "status": "tracking",
+      "unresolved_steps": [],
+      "version_monitor": {
+        "auto_committed": false,
+        "conflict_count": 0,
+        "conflicts": [],
+        "current_ground_fingerprint": "ab196a80cccc7696bb6d4947eaaf02a87c7b28122b66fb43e89183f8ac387071",
+        "distinct_actions": [],
+        "distinct_steps": 0,
+        "status": "current_ground_consistent"
+      }
+    }
+  ],
+  "test_oracle_initial_context_not_available_to_learner": "q2"
+}

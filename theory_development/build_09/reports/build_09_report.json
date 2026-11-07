@@ -1,0 +1,354 @@
+{
+  "seed": 20261104,
+  "n_families": 40,
+  "n_systems_per_domain": 40,
+  "sample_rate_hz": 128.0,
+  "samples": 1024,
+  "duration_s": 8.0,
+  "frequency_range_hz": [
+    3.0,
+    24.0
+  ],
+  "observers": [
+    "spectral",
+    "phase",
+    "temporal",
+    "step",
+    "modulation",
+    "transfer",
+    "amplitude",
+    "modal"
+  ],
+  "matched_parameter_design": true,
+  "domain_models": {
+    "acoustic": "second-order digital resonator with pole radius/angle and optional output compression",
+    "mechanical": "continuous mass-spring-damper oscillator integrated with RK4 and optional cubic stiffness"
+  },
+  "cross_domain_rdm_correlations": {
+    "spectral": {
+      "spearman_rdm": 0.9999999241388527,
+      "permutation_p": 0.002,
+      "bootstrap_ci95": [
+        0.9999966671023505,
+        1.0
+      ],
+      "paired_profile_retrieval": 1.0,
+      "holm_adjusted_p": 0.016
+    },
+    "phase": {
+      "spearman_rdm": 0.9999999241388527,
+      "permutation_p": 0.002,
+      "bootstrap_ci95": [
+        0.9999982099200454,
+        1.0
+      ],
+      "paired_profile_retrieval": 1.0,
+      "holm_adjusted_p": 0.016
+    },
+    "temporal": {
+      "spearman_rdm": 0.9999998482777054,
+      "permutation_p": 0.002,
+      "bootstrap_ci95": [
+        0.999995640609008,
+        1.0
+      ],
+      "paired_profile_retrieval": 1.0,
+      "holm_adjusted_p": 0.016
+    },
+    "step": {
+      "spearman_rdm": 0.9754868863259902,
+      "permutation_p": 0.002,
+      "bootstrap_ci95": [
+        0.9640038426485521,
+        0.9826967593383695
+      ],
+      "paired_profile_retrieval": 0.675,
+      "holm_adjusted_p": 0.016
+    },
+    "modulation": {
+      "spearman_rdm": 0.18755457419327676,
+      "permutation_p": 0.004,
+      "bootstrap_ci95": [
+        -0.048103078622372085,
+        0.36718494096744597
+      ],
+      "paired_profile_retrieval": 0.1,
+      "holm_adjusted_p": 0.016
+    },
+    "transfer": {
+      "spearman_rdm": 0.8939571918074513,
+      "permutation_p": 0.002,
+      "bootstrap_ci95": [
+        0.859063109555009,
+        0.9287871358573464
+      ],
+      "paired_profile_retrieval": 0.45,
+      "holm_adjusted_p": 0.016
+    },
+    "amplitude": {
+      "spearman_rdm": 0.11546114663871268,
+      "permutation_p": 0.116,
+      "bootstrap_ci95": [
+        -0.09580898769793722,
+        0.3179244360267617
+      ],
+      "paired_profile_retrieval": 0.125,
+      "holm_adjusted_p": 0.116
+    },
+    "modal": {
+      "spearman_rdm": 0.9928518569607723,
+      "permutation_p": 0.002,
+      "bootstrap_ci95": [
+        0.9868155993629567,
+        0.996169774102577
+      ],
+      "paired_profile_retrieval": 0.875,
+      "holm_adjusted_p": 0.016
+    }
+  },
+  "cross_observer_correlations": [
+    {
+      "acoustic_observer": "spectral",
+      "mechanical_observer": "spectral",
+      "spearman_rdm": 0.9999999241388527
+    },
+    {
+      "acoustic_observer": "spectral",
+      "mechanical_observer": "temporal",
+      "spearman_rdm": 0.6461392555265162
+    },
+    {
+      "acoustic_observer": "spectral",
+      "mechanical_observer": "transfer",
+      "spearman_rdm": 0.7061932661346861
+    },
+    {
+      "acoustic_observer": "spectral",
+      "mechanical_observer": "modal",
+      "spearman_rdm": 0.8756955929857266
+    },
+    {
+      "acoustic_observer": "temporal",
+      "mechanical_observer": "spectral",
+      "spearman_rdm": 0.646118469572157
+    },
+    {
+      "acoustic_observer": "temporal",
+      "mechanical_observer": "temporal",
+      "spearman_rdm": 0.9999998482777054
+    },
+    {
+      "acoustic_observer": "temporal",
+      "mechanical_observer": "transfer",
+      "spearman_rdm": 0.3336272109889424
+    },
+    {
+      "acoustic_observer": "temporal",
+      "mechanical_observer": "modal",
+      "spearman_rdm": 0.7454194470303964
+    },
+    {
+      "acoustic_observer": "transfer",
+      "mechanical_observer": "spectral",
+      "spearman_rdm": 0.853276676856926
+    },
+    {
+      "acoustic_observer": "transfer",
+      "mechanical_observer": "temporal",
+      "spearman_rdm": 0.4268221752754107
+    },
+    {
+      "acoustic_observer": "transfer",
+      "mechanical_observer": "transfer",
+      "spearman_rdm": 0.8939571918074513
+    },
+    {
+      "acoustic_observer": "transfer",
+      "mechanical_observer": "modal",
+      "spearman_rdm": 0.7050049265493407
+    },
+    {
+      "acoustic_observer": "modal",
+      "mechanical_observer": "spectral",
+      "spearman_rdm": 0.8850073718069885
+    },
+    {
+      "acoustic_observer": "modal",
+      "mechanical_observer": "temporal",
+      "spearman_rdm": 0.7114068993437631
+    },
+    {
+      "acoustic_observer": "modal",
+      "mechanical_observer": "transfer",
+      "spearman_rdm": 0.6516716319894826
+    },
+    {
+      "acoustic_observer": "modal",
+      "mechanical_observer": "modal",
+      "spearman_rdm": 0.9928518569607723
+    }
+  ],
+  "noise_robustness_acoustic_spectral": [
+    {
+      "noise_sd": 0.0,
+      "mean_rdm_retention": 1.0,
+      "min": 1.0,
+      "max": 1.0
+    },
+    {
+      "noise_sd": 0.05,
+      "mean_rdm_retention": 0.9998231139306732,
+      "min": 0.9997913565578864,
+      "max": 0.9998595557293056
+    },
+    {
+      "noise_sd": 0.1,
+      "mean_rdm_retention": 0.9994068448501724,
+      "min": 0.9993100428653413,
+      "max": 0.9995133254530459
+    },
+    {
+      "noise_sd": 0.2,
+      "mean_rdm_retention": 0.9976946650774599,
+      "min": 0.9972794675356645,
+      "max": 0.9983422063481366
+    },
+    {
+      "noise_sd": 0.4,
+      "mean_rdm_retention": 0.9892944338021089,
+      "min": 0.9861803242229574,
+      "max": 0.9920330117368574
+    }
+  ],
+  "feature_dropout_acoustic_spectral": [
+    {
+      "retained_fraction": 1.0,
+      "mean_rdm_retention": 1.0,
+      "min": 1.0,
+      "max": 1.0
+    },
+    {
+      "retained_fraction": 0.75,
+      "mean_rdm_retention": 0.9974734950633991,
+      "min": 0.9954249659288622,
+      "max": 0.9990355519473746
+    },
+    {
+      "retained_fraction": 0.5,
+      "mean_rdm_retention": 0.9944426209672372,
+      "min": 0.9819566789860955,
+      "max": 0.9988950823896312
+    },
+    {
+      "retained_fraction": 0.25,
+      "mean_rdm_retention": 0.9854163518955867,
+      "min": 0.9707491300939022,
+      "max": 0.9976550560759279
+    }
+  ],
+  "codon_execution": {
+    "max_abs_output_difference": 0.0,
+    "n_system_domain_cases": 10,
+    "default_chain_acoustic": "ld \u00b7 mx \u00b7 ad \u00b7 mx \u00b7 ad \u00b7 st",
+    "default_chain_mechanical": "ld \u00b7 mx \u00b7 su \u00b7 mx \u00b7 su \u00b7 dv \u00b7 st",
+    "alias_registry": "load \u00b7 times \u00b7 plus \u00b7 minus \u00b7 divide \u00b7 write"
+  },
+  "nonlinear_response": {
+    "expected_linear_high_low_rms_ratio": 6.0,
+    "acoustic_mean_high_low_rms_ratio": 2.2595591587922197,
+    "mechanical_mean_high_low_rms_ratio": 5.984165095848347,
+    "acoustic_mean_deviation_from_linear": 0.6234068068679635,
+    "mechanical_mean_deviation_from_linear": 0.006274093243109169,
+    "interpretation": "domain-specific nonlinear stress probe; not a cross-modal perceptual rating"
+  },
+  "sample_rate_invariance": [
+    {
+      "domain": "acoustic",
+      "sample_rate_hz": 64.0,
+      "rdm_correlation_vs_128hz": 0.9961590648157812
+    },
+    {
+      "domain": "acoustic",
+      "sample_rate_hz": 128.0,
+      "rdm_correlation_vs_128hz": 1.0
+    },
+    {
+      "domain": "acoustic",
+      "sample_rate_hz": 256.0,
+      "rdm_correlation_vs_128hz": 0.999540757749713
+    },
+    {
+      "domain": "mechanical",
+      "sample_rate_hz": 64.0,
+      "rdm_correlation_vs_128hz": 0.9961590648157812
+    },
+    {
+      "domain": "mechanical",
+      "sample_rate_hz": 128.0,
+      "rdm_correlation_vs_128hz": 1.0
+    },
+    {
+      "domain": "mechanical",
+      "sample_rate_hz": 256.0,
+      "rdm_correlation_vs_128hz": 0.999540757749713
+    }
+  ],
+  "unit_scale_invariance": [
+    {
+      "domain": "acoustic",
+      "feature": "spectral",
+      "rdm_correlation_after_unit_rescale": 1.0
+    },
+    {
+      "domain": "acoustic",
+      "feature": "phase",
+      "rdm_correlation_after_unit_rescale": 1.0
+    },
+    {
+      "domain": "acoustic",
+      "feature": "temporal",
+      "rdm_correlation_after_unit_rescale": 1.0
+    },
+    {
+      "domain": "acoustic",
+      "feature": "step",
+      "rdm_correlation_after_unit_rescale": 1.0
+    },
+    {
+      "domain": "acoustic",
+      "feature": "transfer",
+      "rdm_correlation_after_unit_rescale": 1.0
+    },
+    {
+      "domain": "mechanical",
+      "feature": "spectral",
+      "rdm_correlation_after_unit_rescale": 1.0
+    },
+    {
+      "domain": "mechanical",
+      "feature": "phase",
+      "rdm_correlation_after_unit_rescale": 1.0
+    },
+    {
+      "domain": "mechanical",
+      "feature": "temporal",
+      "rdm_correlation_after_unit_rescale": 1.0
+    },
+    {
+      "domain": "mechanical",
+      "feature": "step",
+      "rdm_correlation_after_unit_rescale": 1.0
+    },
+    {
+      "domain": "mechanical",
+      "feature": "transfer",
+      "rdm_correlation_after_unit_rescale": 1.0
+    }
+  ],
+  "controls": {
+    "random_pairing_permutation": "permutation_test permutes the mechanical system labels",
+    "observer_feature_noise": "standardized Gaussian measurement noise",
+    "unit_scale": "sensor gain and mechanical mass vary independently; normalized spectral/modal features are compared separately from amplitude features",
+    "time_scale": "sample-rate sweep at 64/128/256 Hz, fixed physical duration and fixed natural frequencies; temporal sampling effects remain visible in raw signals"
+  }
+}

@@ -1,0 +1,48 @@
+[
+  {
+    "length": 3,
+    "motif_id": "M001",
+    "occurrences": 89,
+    "signature": [
+      "pulse",
+      "bend",
+      "tail"
+    ],
+    "trace_support": 12,
+    "weight": 3.0512221129918053
+  },
+  {
+    "length": 3,
+    "motif_id": "M002",
+    "occurrences": 81,
+    "signature": [
+      "pulse",
+      "edge",
+      "tail"
+    ],
+    "trace_support": 12,
+    "weight": 3.043774879146524
+  },
+  {
+    "length": 2,
+    "motif_id": "M003",
+    "occurrences": 79,
+    "signature": [
+      "ramp",
+      "tick"
+    ],
+    "trace_support": 12,
+    "weight": 2.6917994701392947
+  },
+  {
+    "length": 2,
+    "motif_id": "M004",
+    "occurrences": 39,
+    "signature": [
+      "hum",
+      "click"
+    ],
+    "trace_support": 11,
+    "weight": 2.616337018776115
+  }
+]

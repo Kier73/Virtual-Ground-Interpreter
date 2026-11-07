@@ -1,0 +1,11 @@
+name,object,transformation_or_equivalence,observer,exact_or_approximate,status,known_loss_or_caveat
+SU2_endpoint_homomorphism,D_n(q),q1*q2,D_n(q1*q2)=D_n(q1)D_n(q2),S3,exact algebraic law,used by Build18,finite harmonic band only
+SO3_antipodal_invariance,endpoint harmonic feature,q -> -q,SO3,exact for even n,verified numerically,half-integer spin is removed
+Hopf_fibre_invariance,endpoint harmonic feature,q -> q exp(i beta),Hopf,exact for zero-weight projection,verified numerically,right U1 fibre phase is lost
+Path_signature_reparameterization,path signature,increasing time reparameterization,clock-free path observer,exact for full BV signature; finite PL numerical model,selected synthetic checks,finite truncation and sampling matter
+Tree_like_equivalence,path signature,inserted exact forward-reverse excursion,all path observers,exact for full signature; finite fixture numerical,verified numerically,excursion history intentionally unobservable
+Endpoint_from_level_one,signature degree one,S1 = X(T)-X(0),known-start path,exact identity,verified exactly,absolute start is required to recover endpoint
+Observer_Gram_geometry,Gram kernel,feature-space inner product,declared observer,exact PSD construction,verified numerically,kernel adds no independent observations
+Common_action_kernel_invariance,endpoint/path Gram,common left/right SU2 action,full S3 chart,exact under unitary/orthogonal action,verified to floating precision,not an orbit metric between separately transformed samples
+Timed_path_sensitivity,time-augmented signature,reallocation of elapsed time,timed observer,exactly different fixture signatures,verified numerically,depends on chosen time coordinate
+Joint_kernel,direct-sum kernel,nonnegative weighted sum of PSD kernels,declared observer,exact PSD property,verified numerically,may duplicate endpoint information

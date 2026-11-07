@@ -1,0 +1,6 @@
+observer,observed_variables,observation_class_count,fixed_width_label_bits,task_notes
+FULL,a;b;phase,64,6,fully Markov and transition-congruent in fixture
+LEVELS,a;b,16,4,goal distribution visible; phase hidden; belief policy needed for exact prediction
+TOTAL,a+b,7,3,inventory total visible; distribution and phase hidden
+TOTAL_PHASE,a+b;phase,28,5,phase visible but reservoir distribution hidden
+PHASE,phase,4,2,levels hidden

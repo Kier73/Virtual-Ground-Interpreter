@@ -1,0 +1,8 @@
+Build 25 status: COMPLETE
+Primary tests: 34 / 34 passed
+Inherited Build 24 regression tests: 17 / 17 passed
+Total tested: 51 / 51 passed
+Runner: run_build25.py completed successfully
+Evidence: synthetic deterministic finite-state tests only
+Runtime: no reset interface; unknown initial context tracked online
+Packaging: final fresh-extraction verification performed against ZIP artifact

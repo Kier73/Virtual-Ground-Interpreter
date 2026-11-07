@@ -1,0 +1,28 @@
+{
+  "candidate_names": [
+    "representative_q",
+    "representative_minus_q"
+  ],
+  "interpretation": "Hopf base and SO(3) identify q with -q; S3 retains the antipodal distinction.",
+  "metrics": {
+    "hopf_base_distance": 0.0,
+    "s3_distance_rad": 3.141592653589793,
+    "s3_phase_minus_q": -2.5568869060297965,
+    "s3_phase_q": 0.5847057475599966,
+    "so3_angle_minus_q": 1.1694114951199932,
+    "so3_angle_q": 1.1694114951199932,
+    "so3_distance_rad": 0.0
+  },
+  "observer_intention_probe_selection": {
+    "base_path": null,
+    "endpoint_only": null,
+    "s3_lift": {
+      "cost": 0.9,
+      "eig_bits": 0.9999999999999999,
+      "probe": "s3_phase",
+      "robust_eig_bits": 0.9999999999999999,
+      "utility": 1.111111111111111
+    },
+    "so3": null
+  }
+}

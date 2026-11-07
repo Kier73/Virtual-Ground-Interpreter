@@ -1,0 +1,9 @@
+{
+  "build": 13,
+  "status": "pipeline_complete_empirical_data_pending",
+  "tests_passed": 18,
+  "empirical_audio_processed": false,
+  "synthetic_fixture_pairs": 30,
+  "critical_correction": "Upsampled throat channel retains 4 kHz original Nyquist; 4-7.8 kHz descriptor is acoustic-only.",
+  "no_emotion_inference": true
+}

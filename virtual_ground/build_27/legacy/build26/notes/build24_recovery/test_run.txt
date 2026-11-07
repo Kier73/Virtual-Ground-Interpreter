@@ -1,0 +1,22 @@
+test_action_dependent_phase_strides_are_recovered (test_build24.Build24Tests.test_action_dependent_phase_strides_are_recovered) ... ok
+test_adaptive_probe_tree_identifies_delayed_contexts (test_build24.Build24Tests.test_adaptive_probe_tree_identifies_delayed_contexts) ... ok
+test_bounded_certificate_is_explicitly_horizon_limited (test_build24.Build24Tests.test_bounded_certificate_is_explicitly_horizon_limited) ... ok
+test_build23_regression_inducer_still_works (test_build24.Build24Tests.test_build23_regression_inducer_still_works) ... ok
+test_combined_sensor_fuses_quotients_into_six (test_build24.Build24Tests.test_combined_sensor_fuses_quotients_into_six) ... ok
+test_compiled_general_automaton_matches_learned_machine (test_build24.Build24Tests.test_compiled_general_automaton_matches_learned_machine) ... ok
+test_compiled_phase_program_matches_learned_machine (test_build24.Build24Tests.test_compiled_phase_program_matches_learned_machine) ... ok
+test_delayed_hidden_mode_requires_long_counterexample (test_build24.Build24Tests.test_delayed_hidden_mode_requires_long_counterexample) ... ok
+test_joint_observation_recovers_six_predictive_contexts (test_build24.Build24Tests.test_joint_observation_recovers_six_predictive_contexts) ... ok
+test_mod3_sensor_observes_three_context_quotient (test_build24.Build24Tests.test_mod3_sensor_observes_three_context_quotient) ... ok
+test_nonbijective_context_is_not_forced_into_a_clock (test_build24.Build24Tests.test_nonbijective_context_is_not_forced_into_a_clock) ... ok
+test_parity_sensor_observes_two_context_quotient (test_build24.Build24Tests.test_parity_sensor_observes_two_context_quotient) ... ok
+test_query_purposes_are_separately_counted (test_build24.Build24Tests.test_query_purposes_are_separately_counted) ... ok
+test_repeated_query_is_deterministic_under_reset_contract (test_build24.Build24Tests.test_repeated_query_is_deterministic_under_reset_contract) ... ok
+test_serialization_round_trip (test_build24.Build24Tests.test_serialization_round_trip) ... ok
+test_six_physical_modes_can_collapse_to_three_predictive_contexts (test_build24.Build24Tests.test_six_physical_modes_can_collapse_to_three_predictive_contexts) ... ok
+test_unobservable_hidden_modes_are_not_invented (test_build24.Build24Tests.test_unobservable_hidden_modes_are_not_invented) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 1.115s
+
+OK

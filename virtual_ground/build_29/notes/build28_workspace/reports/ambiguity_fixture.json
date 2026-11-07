@@ -1,0 +1,114 @@
+{
+  "motifs": [
+    {
+      "length": 3,
+      "motif_id": "M001",
+      "occurrences": 5,
+      "signature": [
+        "a",
+        "b",
+        "c"
+      ],
+      "trace_support": 5,
+      "weight": 2.641280624845258
+    },
+    {
+      "length": 2,
+      "motif_id": "M002",
+      "occurrences": 10,
+      "signature": [
+        "a",
+        "b"
+      ],
+      "trace_support": 10,
+      "weight": 2.491305440023462
+    }
+  ],
+  "nested": [
+    {
+      "occurrences": 5,
+      "signature": [
+        "b",
+        "c"
+      ],
+      "status": "nested_submotif_excluded_from_segmentation",
+      "trace_support": 5
+    }
+  ],
+  "segmentation": {
+    "alternatives": [
+      {
+        "score": 2.64128062,
+        "segments": [
+          {
+            "end": 3,
+            "motif_id": "M001",
+            "score": 2.64128062,
+            "signature": [
+              "a",
+              "b",
+              "c"
+            ],
+            "start": 0
+          }
+        ],
+        "skipped_token_indices": []
+      },
+      {
+        "score": 2.47130544,
+        "segments": [
+          {
+            "end": 2,
+            "motif_id": "M002",
+            "score": 2.49130544,
+            "signature": [
+              "a",
+              "b"
+            ],
+            "start": 0
+          }
+        ],
+        "skipped_token_indices": [
+          2
+        ]
+      },
+      {
+        "score": -0.06,
+        "segments": [],
+        "skipped_token_indices": [
+          0,
+          1,
+          2
+        ]
+      }
+    ],
+    "ambiguous_regions": [
+      {
+        "candidate_signatures": [
+          [
+            "a",
+            "b"
+          ],
+          [
+            "a",
+            "b",
+            "c"
+          ]
+        ],
+        "candidate_spans": [
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ]
+        ]
+      }
+    ],
+    "score_gap": 0.16997518,
+    "status": "ambiguous",
+    "trace_id": "amb_target"
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "ambiguous_transitions": 0,
+  "events": 24,
+  "evidence_check": {
+    "all_known_predictions_match_evidence": true,
+    "candidate_status": "partial",
+    "certificate_scope": "replay of retained observations only; not proof of unseen transitions",
+    "matched_events": 24,
+    "mismatched_events": 0,
+    "observed_events": 24,
+    "unresolved_events": 0
+  },
+  "horizon": 0,
+  "known_transitions": 1,
+  "observed_raw_contexts": 1,
+  "predictive_contexts": 1,
+  "specification": {
+    "actions": [
+      "HOLD",
+      "PROBE_A",
+      "PROBE_B"
+    ],
+    "ambiguous_transitions": [],
+    "channels": [
+      0
+    ],
+    "complete_transition_table": false,
+    "current_context": "q_45f12f5b34db",
+    "evidence": {
+      "data_truncated": false,
+      "equivalence_scope": "observed action/output histories under declared channels and finite retained horizon",
+      "finite_history_horizon_only": true,
+      "physical_hidden_state_claim": "not inferred",
+      "retained_events": 24,
+      "retired_events": 0,
+      "total_committed_events": 24
+    },
+    "fingerprint": "2f33758a91a430d906d381daee940a72acb093135d1170b140f71e237d419d20",
+    "format": "VG-IncrementalPartialGround-1",
+    "history_horizon": 0,
+    "initial_context": "q_45f12f5b34db",
+    "known_transition_count": 1,
+    "limitations": [
+      "unknown transitions remain unknown; no default edge is inserted",
+      "states are finite-horizon predictive classes, not claims about physical hidden-state ontology",
+      "history refinement is provisional and can over-split equivalent access histories",
+      "when evidence retention is truncated, reconstruction applies only to the retained window",
+      "deterministic exact integer observations are assumed; noise/stochasticity require a separate likelihood model",
+      "action alphabet and channel schema are supplied by the interface"
+    ],
+    "observed_raw_context_count": 1,
+    "predictive_context_count": 1,
+    "signature_mode": "observation",
+    "startup_context_status": "observed_boundary_context",
+    "states": [
+      "q_45f12f5b34db"
+    ],
+    "status": "partial",
+    "support_summary": {
+      "high_fragmentation_warning": false,
+      "minimum_known_edge_support": 24,
+      "single_support_known_edges": 0
+    },
+    "transitions": {
+      "q_45f12f5b34db": {
+        "HOLD": {
+          "evidence_steps": [
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23
+          ],
+          "output": [
+            0
+          ],
+          "quotient_inference": false,
+          "status": "known",
+          "successor": "q_45f12f5b34db",
+          "support": 24
+        }
+      }
+    },
+    "unknown_transitions": [
+      [
+        "q_45f12f5b34db",
+        "PROBE_A"
+      ],
+      [
+        "q_45f12f5b34db",
+        "PROBE_B"
+      ]
+    ],
+    "version": 2
+  },
+  "status": "tracking",
+  "unknown_transitions": 2,
+  "version": 2
+}

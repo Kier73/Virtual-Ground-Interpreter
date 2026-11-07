@@ -1,0 +1,9 @@
+explanation,evidence_threshold,revision_authority
+measurement_noise,isolated excursion plus recovery plus independent channel stability,none
+sensor_calibration_shift,persistent single-channel offset plus stable independent reference,none
+insufficient_history,longer retained suffix resolves an observed predictive collision,none
+hidden_predictive_variable_candidate,maximum tested history still collides,none
+stochastic_or_unmodelled_context,same retained history and event signature produce multiple outputs,none
+new_predictive_state_candidate,three or more repeated observations plus independent channel corroboration plus stable transition profile,none
+ground_regime_change_candidate,persistent conflicts across multiple context-operation pairs plus multiple sensor corroboration,proposal_only
+new_operation_candidate,recurrent unseen event signature plus consistent observed effect,none

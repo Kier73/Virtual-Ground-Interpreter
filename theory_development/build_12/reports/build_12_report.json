@@ -1,0 +1,35 @@
+{
+  "build": "12",
+  "title": "Empirical room-impulse-response geometry",
+  "status": "analysis_pipeline_complete_empirical_archive_not_retrieved",
+  "dataset": {
+    "title": "University of Rochester room impulse response dataset",
+    "doi": "10.60593/ur.d.26801089.v3",
+    "license": "CC BY 4.0",
+    "documented_rooms": 14,
+    "documented_format": "48 kHz, 32-bit, mono WAV",
+    "download_all_size_mb": 94.65
+  },
+  "retrieval": {
+    "metadata_verified": true,
+    "binary_archive_downloaded_in_this_runtime": false,
+    "reason": "The execution container has no external DNS/network route. The official public Figshare API downloader is included for execution on a network-enabled machine."
+  },
+  "empirical_rir_file_count_analyzed": 0,
+  "empirical_rir_rooms_analyzed": 0,
+  "rir_derived_results": null,
+  "synthetic_test_fixtures": "Used only in unit tests to validate WAV decoding, response metrics, robust RDM construction, and end-to-end output generation. They are not empirical room data.",
+  "build_11_vibration_excerpt": {
+    "included_as_provenance_reference": true,
+    "used_for_cross_modal_rdm_correlation": false,
+    "reason": "The smartphone movement recording and room impulse responses are not paired by shared excitation, room, device, or trial. Their RDMs are not directly comparable as matched systems."
+  },
+  "research_context": {
+    "associated_paper": "Rutowski et al. (2024), Estimating direction of arrival in reverberant environments for wake-word detection using a single structural vibration sensor, JASA 156(4), 2619-2629.",
+    "paper_reported_spaces": 8,
+    "paper_reported_rt60_range_s": [0.27, 3.0],
+    "paper_reported_doa_accuracy_within_5_deg": {"least_reverberant_percent": 95.0, "most_reverberant_percent": 78.33},
+    "note": "These are results reported in the paper abstract, not calculations from the Rochester RIR archive or Build 12."
+  },
+  "next_step": "Run scripts/fetch_rochester_figshare.py, safely extract the archive, then execute build_12.py against the extracted WAV folder."
+}

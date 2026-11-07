@@ -1,0 +1,169 @@
+{
+  "build": "03",
+  "title": "Codonic connection geometry",
+  "status": "prototype experiment; not a universal invariant claim",
+  "scope": {
+    "codons_used": [
+      "ad",
+      "mx"
+    ],
+    "semantics": {
+      "ad": "addition",
+      "mx": "multiplication"
+    },
+    "registry_names_are_configurable": true,
+    "observer_base": "radius norm; states with equal radius are observationally identified",
+    "hidden_fibre": "orientation of the 2-D state",
+    "transport": "ordered product of invertible shear matrices",
+    "terminology_caveat": "discrete connection / holonomy analogue, not a complete principal-bundle connection"
+  },
+  "main_experiment": {
+    "theta_requested_rad": 0.8,
+    "codon_profile": {
+      "addition": "ad",
+      "multiplication": "mx"
+    },
+    "codon_chains": [
+      [
+        "mx(k, y)",
+        "ad(x, tmp)"
+      ],
+      [
+        "mx(k, x)",
+        "ad(y, tmp)"
+      ],
+      [
+        "mx(k, y)",
+        "ad(x, tmp)"
+      ]
+    ],
+    "edge_axes": [
+      "x",
+      "y",
+      "x"
+    ],
+    "edge_coefficients": [
+      -0.4227932187381618,
+      0.7173560908995228,
+      -0.4227932187381618
+    ],
+    "transport_matrix": [
+      [
+        0.6967067093471654,
+        -0.7173560908995228
+      ],
+      [
+        0.7173560908995228,
+        0.6967067093471654
+      ]
+    ],
+    "determinant": 1.0,
+    "trace": 1.3934134186943308,
+    "rotation_matrix_max_abs_error": 0.0,
+    "holonomy_phase_rad": 0.8,
+    "radial_observer_initial": 1.0,
+    "radial_observer_final": 1.0,
+    "radial_observer_closed": true,
+    "full_observer_closed": false,
+    "radial_observer_path": [
+      1.0,
+      1.0,
+      1.2306907658508877,
+      1.0
+    ],
+    "full_state_path": [
+      [
+        1.0,
+        0.0
+      ],
+      [
+        1.0,
+        0.0
+      ],
+      [
+        1.0,
+        0.7173560908995228
+      ],
+      [
+        0.6967067093471654,
+        0.7173560908995228
+      ]
+    ],
+    "signed_orientation_changed": true,
+    "interpretation": "nontrivial lifted transport with closure only under the radial observer"
+  },
+  "renamed_registry": {
+    "profile": {
+      "addition": "plus",
+      "multiplication": "times"
+    },
+    "same_transport_matrix_max_abs_error": 0.0,
+    "same_holonomy_phase_rad": 0.8
+  },
+  "time_reparameterization": {
+    "uniform_durations": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "warped_durations": [
+      2.0,
+      0.7,
+      1.3
+    ],
+    "uniform_total_time": 3.0,
+    "warped_total_time": 4.0,
+    "uniform_final_state": [
+      0.6967067093471654,
+      0.7173560908995228
+    ],
+    "warped_final_state": [
+      0.6967067093471654,
+      0.7173560908995228
+    ],
+    "final_state_max_abs_error": 0.0,
+    "uniform_radius_rate_rms": 0.2012640388663911,
+    "warped_radius_rate_rms": 0.23856296936556848,
+    "uniform_angle_rate_rms": 0.3764378395518073,
+    "warped_angle_rate_rms": 0.5231813034828802,
+    "interpretation": "same ordered path and endpoint transport; different time-resolved response"
+  },
+  "reverse_path": {
+    "forward_phase_rad": 0.8,
+    "reverse_phase_rad": -0.8,
+    "reverse_transport_matrix": [
+      [
+        0.6967067093471654,
+        0.7173560908995228
+      ],
+      [
+        -0.7173560908995228,
+        0.6967067093471654
+      ]
+    ],
+    "forward_reverse_product_max_abs_error": 0.0
+  },
+  "basis_change": {
+    "basis_matrix": [
+      [
+        2.0,
+        0.5
+      ],
+      [
+        0.0,
+        0.5
+      ]
+    ],
+    "original_trace": 1.3934134186943308,
+    "changed_trace": 1.3934134186943308,
+    "trace_abs_error": 0.0,
+    "original_determinant": 1.0,
+    "changed_determinant": 1.0,
+    "determinant_abs_error": 0.0,
+    "interpretation": "trace and determinant of holonomy are preserved by conjugation"
+  },
+  "files": [
+    "data/trajectory_uniform.csv",
+    "data/trajectory_warped.csv"
+  ]
+}

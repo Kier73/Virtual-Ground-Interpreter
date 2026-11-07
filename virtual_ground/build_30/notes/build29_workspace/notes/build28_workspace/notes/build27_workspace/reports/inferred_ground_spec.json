@@ -1,0 +1,122 @@
+{
+  "evidence_window": {
+    "data_truncated": false,
+    "retained_samples": 14,
+    "retired_samples": 0,
+    "total_samples": 14
+  },
+  "fingerprint": "779ec909451d06a2474f36f72696dd1a3072845868c8ebea2770f7f8729cbafe",
+  "format": "VG-DiscoveredGround-1",
+  "online_status": "candidate_ground_available",
+  "operations": [
+    {
+      "ambiguous_pre_states": [],
+      "constant_delta": [
+        1
+      ],
+      "distinct_pre_states": 7,
+      "effect_mode": "constant_vector_delta",
+      "event_signature": [
+        "edge_04",
+        "pulse_12"
+      ],
+      "evidence_steps": [
+        0,
+        2,
+        4,
+        6,
+        8,
+        10,
+        12
+      ],
+      "operation_id": "op_ea6357882a9f",
+      "status": "candidate",
+      "support": 7,
+      "transition_table": {
+        "[0]": [
+          1
+        ],
+        "[1]": [
+          1
+        ],
+        "[2]": [
+          1
+        ],
+        "[3]": [
+          1
+        ],
+        "[4]": [
+          1
+        ],
+        "[5]": [
+          1
+        ],
+        "[6]": [
+          1
+        ]
+      }
+    },
+    {
+      "ambiguous_pre_states": [],
+      "constant_delta": [
+        3
+      ],
+      "distinct_pre_states": 7,
+      "effect_mode": "constant_vector_delta",
+      "event_signature": [
+        "ring_09"
+      ],
+      "evidence_steps": [
+        1,
+        3,
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "operation_id": "op_19734ed886f0",
+      "status": "candidate",
+      "support": 7,
+      "transition_table": {
+        "[0]": [
+          3
+        ],
+        "[1]": [
+          3
+        ],
+        "[2]": [
+          3
+        ],
+        "[3]": [
+          3
+        ],
+        "[4]": [
+          3
+        ],
+        "[5]": [
+          3
+        ],
+        "[6]": [
+          3
+        ]
+      }
+    }
+  ],
+  "scope": "observation windows and opaque event tokens supplied; semantic action alphabet not supplied",
+  "state_dimension": 1,
+  "states_observed": [
+    "[0]",
+    "[1]",
+    "[2]",
+    "[3]",
+    "[4]",
+    "[5]",
+    "[6]",
+    "[7]",
+    "[8]",
+    "[9]"
+  ],
+  "status": "partial",
+  "unknown_operation_semantics": "event signatures not repeated at least twice remain unknown"
+}

@@ -1,0 +1,24 @@
+{
+  "candidates": [
+    {
+      "action": "HOLD",
+      "cost": 1.0,
+      "information_bits": 2.584962500721156,
+      "response_classes": 6,
+      "risk": 0.01,
+      "score": 2.5342769614913294,
+      "side_effect": "passive observation"
+    },
+    {
+      "action": "PROBE_A",
+      "cost": 2.0,
+      "information_bits": 2.584962500721156,
+      "response_classes": 6,
+      "risk": 0.1,
+      "score": 1.1749829548732527,
+      "side_effect": "small reversible transition"
+    }
+  ],
+  "selected_action": "HOLD",
+  "status": "selected"
+}

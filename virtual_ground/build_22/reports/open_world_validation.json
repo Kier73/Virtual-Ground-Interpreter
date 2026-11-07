@@ -1,0 +1,16 @@
+{
+  "active_discovery_status": "identified_within_candidate_family",
+  "actual_ground": "C3-inflow_C-demand_A-Q1-P1-V1",
+  "actual_observation": [
+    1,
+    0
+  ],
+  "candidate_prediction": [
+    0,
+    0
+  ],
+  "holdout_matches": false,
+  "holdout_probe": "(0, 0, 1)|HOLD|LEVELS",
+  "interpretation": "candidate fit is conditional on the declared model family; independent holdout exposes omitted law",
+  "selected_closed_family_candidate": "C3-inflow_A-demand_A-Q1-P1-V1"
+}

@@ -1,0 +1,9 @@
+Build 30 status: COMPLETE
+Build 30 tests: 24 / 24 PASS
+Combined Builds 24-30 tests: 177 / 177 PASS
+Fresh extraction: PASS
+Build 30 manifest: 386 entries
+Embedded Build 29 workspace manifest: verified
+Data provenance: synthetic controlled fixtures only
+Physical signal hardware: not tested
+Universal signal computation: not demonstrated

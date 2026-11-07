@@ -1,0 +1,3842 @@
+{
+  "aggregate": {
+    "all_finite_domain_exact": true,
+    "all_heldout_exact": true,
+    "all_invariants_zero": true,
+    "all_training_exact": true,
+    "ground_count": 5
+  },
+  "build": 23,
+  "capacity_uncertainty": {
+    "inferred_capacity_lower_bound": 4,
+    "interpretation": "without observed saturation, capacity is not promoted from lower bound to exact structural constant",
+    "status": "lower_bound_only"
+  },
+  "caveats": [
+    "The state schema (a, b, phase), action labels, integer arithmetic and update family are declared by the experiment interface.",
+    "This is not unrestricted program synthesis; it is a bounded grammar with counterexample-driven extension.",
+    "Exact capacity requires saturation evidence; otherwise the inferred value is only a lower bound.",
+    "The phase variable is observed in this build. Latent phase discovery from raw signals is future work.",
+    "The learned transfer law is symmetric across A_TO_B and B_TO_A by construction; asymmetric actuators are not covered.",
+    "All data are synthetic finite deterministic fixtures; no empirical sensor data were used.",
+    "The syntax-cost metric is a transparent proxy, not Kolmogorov complexity or measured execution time."
+  ],
+  "grammar": {
+    "expanded_source_residue_modulus": 4,
+    "max_initial_source_residue_modulus": 3,
+    "sequence_laws": [
+      "constant",
+      "affine",
+      "modular_ramp",
+      "periodic_motif",
+      "lookup",
+      "permutation_stride"
+    ],
+    "transfer_laws": [
+      "constant",
+      "phase lookup",
+      "source residue lookup",
+      "phase x source residue lookup"
+    ]
+  },
+  "ground_cases": [
+    {
+      "full_domain_transitions": 300,
+      "full_finite_domain_accuracy": 1.0,
+      "ground_fingerprint_sha256": "fde4b658adac784379136241d6bfaf21ed2238b0772381675905fb5d546b8889",
+      "heldout_accuracy": 1.0,
+      "heldout_records": 65,
+      "hidden_fixture_name": "cycle4-constant",
+      "inferred_ground": {
+        "capacity": 4,
+        "capacity_status": "exact_from_observed_saturation",
+        "demand": {
+          "expression": "lookup((0, 1, 0, 0))",
+          "mode": "lookup",
+          "params": [],
+          "values": [
+            0,
+            1,
+            0,
+            0
+          ]
+        },
+        "inferred_roles": {
+          "a": "endogenous_state",
+          "action": "controlled_input",
+          "b": "endogenous_state",
+          "capacity": "structural_constraint",
+          "demand_law": "structural_environment_rule",
+          "inflow_law": "structural_environment_rule",
+          "phase": "exogenous_context",
+          "phase_progression": "structural_environment_rule",
+          "transfer_quantum": "controlled_operation_rule"
+        },
+        "inflow": {
+          "expression": "lookup((1, 0, 0, 1))",
+          "mode": "lookup",
+          "params": [],
+          "values": [
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        "invariant_residuals": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "period": 4,
+        "phase_next": {
+          "expression": "(phase + 1) mod 4",
+          "mode": "permutation_stride",
+          "params": [
+            1
+          ],
+          "values": [
+            1,
+            2,
+            3,
+            0
+          ]
+        },
+        "syntax_cost": 22,
+        "training_count": 235,
+        "transfer": {
+          "expression": "q=1",
+          "modulus": 1,
+          "values": [
+            [
+              1
+            ],
+            [
+              1
+            ],
+            [
+              1
+            ],
+            [
+              1
+            ]
+          ]
+        }
+      },
+      "initial_grammar_limit": 4,
+      "initial_grammar_rejection": null,
+      "max_mass_balance_residual": 0,
+      "productivity": {
+        "explicit_transition_entries": 300,
+        "generated_transitions_per_syntax_unit": 13.636363636363637,
+        "interpretation": "finite-domain generative yield; not an asymptotic runtime claim",
+        "program_syntax_cost_units": 22
+      },
+      "projection_audits": {
+        "FULL": {
+          "class_count": 100,
+          "conflict_count": 0,
+          "example_conflicts": [],
+          "interpretation": "safe generative quotient",
+          "projection": "FULL",
+          "transition_congruent": true
+        },
+        "LEVELS": {
+          "class_count": 25,
+          "conflict_count": 25,
+          "example_conflicts": [
+            {
+              "action": "HOLD",
+              "distinct_next_observations": 2,
+              "observation": [
+                0,
+                0
+              ]
+            },
+            {
+              "action": "HOLD",
+              "distinct_next_observations": 3,
+              "observation": [
+                0,
+                1
+              ]
+            },
+            {
+              "action": "HOLD",
+              "distinct_next_observations": 3,
+              "observation": [
+                0,
+                2
+              ]
+            },
+            {
+              "action": "HOLD",
+              "distinct_next_observations": 3,
+              "observation": [
+                0,
+                3
+              ]
+            },
+            {
+              "action": "HOLD",
+              "distinct_next_observations": 3,
+              "observation": [
+                0,
+                4
+              ]
+            }
+          ],
+          "interpretation": "task observation only; cannot independently generate transitions",
+          "projection": "LEVELS",
+          "transition_congruent": false
+        },
+        "TOTAL": {
+          "class_count": 9,
+          "conflict_count": 9,
+          "example_conflicts": [
+            {
+              "action": "HOLD",
+              "distinct_next_observations": 2,
+              "observation": [
+                0
+              ]
+            },
+            {
+              "action": "HOLD",
+              "distinct_next_observations": 3,
+              "observation": [
+                1
+              ]
+            },
+            {
+              "action": "HOLD",
+              "distinct_next_observations": 3,
+              "observation": [
+                2
+              ]
+            },
+            {
+              "action": "HOLD",
+              "distinct_next_observations": 3,
+              "observation": [
+                3
+              ]
+            },
+            {
+              "action": "HOLD",
+              "distinct_next_observations": 3,
+              "observation": [
+                4
+              ]
+            }
+          ],
+          "interpretation": "task observation only; cannot independently generate transitions",
+          "projection": "TOTAL",
+          "transition_congruent": false
+        },
+        "TOTAL_PHASE": {
+          "class_count": 36,
+          "conflict_count": 12,
+          "example_conflicts": [
+            {
+              "action": "HOLD",
+              "distinct_next_observations": 2,
+              "observation": [
+                1,
+                1
+              ]
+            },
+            {
+              "action": "HOLD",
+              "distinct_next_observations": 2,
+              "observation": [
+                2,
+                1
+              ]
+            },
+            {
+              "action": "HOLD",
+              "distinct_next_observations": 2,
+              "observation": [
+                3,
+                1
+              ]
+            },
+            {
+              "action": "HOLD",
+              "distinct_next_observations": 2,
+              "observation": [
+                4,
+                0
+              ]
+            },
+            {
+              "action": "HOLD",
+              "distinct_next_observations": 2,
+              "observation": [
+                4,
+                1
+              ]
+            }
+          ],
+          "interpretation": "task observation only; cannot independently generate transitions",
+          "projection": "TOTAL_PHASE",
+          "transition_congruent": false
+        }
+      },
+      "refinement": {
+        "holdout": {
+          "correct": 65,
+          "count": 65,
+          "mismatches": []
+        },
+        "trace": [
+          {
+            "expression": "q=1",
+            "model": "global_constant_quantum",
+            "status": "retained"
+          }
+        ],
+        "transfer_quantum_values": [
+          1
+        ]
+      },
+      "training_accuracy": 1.0,
+      "training_records": 235,
+      "variable_roles": {
+        "a": "endogenous_state",
+        "action": "controlled_input",
+        "b": "endogenous_state",
+        "capacity": "structural_bound_inferred_from_boundary_evidence",
+        "phase": "exogenous_context",
+        "phase_pairs_observed": "4"
+      },
+      "wholly_unseen_state_count": 10,
+      "wholly_unseen_states": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          3
+        ],
+        [
+          0,
+          4,
+          1
+        ],
+        [
+          1,
+          3,
+          2
+        ],
+        [
+          2,
+          1,
+          0
+        ],
+        [
+          2,
+          2,
+          3
+        ],
+        [
+          3,
+          0,
+          1
+        ],
+        [
+          3,
+          4,
+          2
+        ],
+        [
+          4,
+          2,
+          0
+        ],
+        [
+          4,
+          3,
+          3
+        ]
+      ]
+    },
+    {
+      "full_domain_transitions": 648,
+      "full_finite_domain_accuracy": 1.0,
+      "ground_fingerprint_sha256": "c5acfd704d001a0013f8069a1fd885143960e674890218e77dadde3a4f2e4749",
+      "heldout_accuracy": 1.0,
+      "heldout_records": 138,
+      "hidden_fixture_name": "period6-modular-inflow",
+      "inferred_ground": {
+        "capacity": 5,
+        "capacity_status": "exact_from_observed_saturation",
+        "demand": {
+          "expression": "lookup(periodic=(0, 1, 0))",
+          "mode": "periodic_motif",
+          "params": [
+            3
+          ],
+          "values": [
+            0,
+            1,
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        "inferred_roles": {
+          "a": "endogenous_state",
+          "action": "controlled_input",
+          "b": "endogenous_state",
+          "capacity": "structural_constraint",
+          "demand_law": "structural_environment_rule",
+          "inflow_law": "structural_environment_rule",
+          "phase": "exogenous_context",
+          "phase_progression": "structural_environment_rule",
+          "transfer_quantum": "controlled_operation_rule"
+        },
+        "inflow": {
+          "expression": "0 + 1*(phase mod 3)",
+          "mode": "modular_ramp",
+          "params": [
+            0,
+            1,
+            3
+          ],
+          "values": [
+            0,
+            1,
+            2,
+            0,
+            1,
+            2
+          ]
+        },
+        "invariant_residuals": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "period": 6,
+        "phase_next": {
+          "expression": "(phase + 1) mod 6",
+          "mode": "permutation_stride",
+          "params": [
+            1
+          ],
+          "values": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            0
+          ]
+        },
+        "syntax_cost": 23,
+        "training_count": 510,
+        "transfer": {
+          "expression": "q(phase)=1 + 1*(phase mod 2)",
+          "modulus": 1,
+          "values": [
+            [
+              1
+            ],
+            [
+              2
+            ],
+            [
+              1
+            ],
+            [
+              2
+            ],
+            [
+              1
+            ],
+            [
+              2
+            ]
+          ]
+        }
+      },
+      "initial_grammar_limit": 4,
+      "initial_grammar_rejection": null,
+      "max_mass_balance_residual": 0,
+      "productivity": {
+        "explicit_transition_entries": 648,
+        "generated_transitions_per_syntax_unit": 28.17391304347826,
+        "interpretation": "finite-domain generative yield; not an asymptotic runtime claim",
+        "program_syntax_cost_units": 23
+      },
+      "projection_audits": {
+        "FULL": {
+          "class_count": 216,
+          "conflict_count": 0,
+          "example_conflicts": [],
+          "interpretation": "safe generative quotient",
+          "projection": "FULL",
+          "transition_congruent": true
+        },
+        "LEVELS": {
+          "class_count": 36,
+          "conflict_count": 36,
+          "example_conflicts": [
+            {
+              "action": "HOLD",
+              "distinct_next_observations": 3,
+              "observation": [
+                0,
+                0
+              ]
+            },
+            {
+              "action": "HOLD",
+              "distinct_next_observations": 3,
+              "observation": [
+                0,
+                1
+              ]
+            },
+            {
+              "action": "HOLD",
+              "distinct_next_observations": 3,
+              "observation": [
+                0,
+                2
+              ]
+            },
+            {
+              "action": "HOLD",
+              "distinct_next_observations": 3,
+              "observation": [
+                0,
+                3
+              ]
+            },
+            {
+              "action": "HOLD",
+              "distinct_next_observations": 3,
+              "observation": [
+                0,
+                4
+              ]
+            }
+          ],
+          "interpretation": "task observation only; cannot independently generate transitions",
+          "projection": "LEVELS",
+          "transition_congruent": false
+        },
+        "TOTAL": {
+          "class_count": 11,
+          "conflict_count": 11,
+          "example_conflicts": [
+            {
+              "action": "HOLD",
+              "distinct_next_observations": 3,
+              "observation": [
+                0
+              ]
+            },
+            {
+              "action": "HOLD",
+              "distinct_next_observations": 3,
+              "observation": [
+                1
+              ]
+            },
+            {
+              "action": "HOLD",
+              "distinct_next_observations": 3,
+              "observation": [
+                2
+              ]
+            },
+            {
+              "action": "HOLD",
+              "distinct_next_observations": 3,
+              "observation": [
+                3
+              ]
+            },
+            {
+              "action": "HOLD",
+              "distinct_next_observations": 3,
+              "observation": [
+                4
+              ]
+            }
+          ],
+          "interpretation": "task observation only; cannot independently generate transitions",
+          "projection": "TOTAL",
+          "transition_congruent": false
+        },
+        "TOTAL_PHASE": {
+          "class_count": 66,
+          "conflict_count": 28,
+          "example_conflicts": [
+            {
+              "action": "HOLD",
+              "distinct_next_observations": 2,
+              "observation": [
+                1,
+                1
+              ]
+            },
+            {
+              "action": "HOLD",
+              "distinct_next_observations": 2,
+              "observation": [
+                1,
+                4
+              ]
+            },
+            {
+              "action": "HOLD",
+              "distinct_next_observations": 2,
+              "observation": [
+                2,
+                1
+              ]
+            },
+            {
+              "action": "HOLD",
+              "distinct_next_observations": 2,
+              "observation": [
+                2,
+                4
+              ]
+            },
+            {
+              "action": "HOLD",
+              "distinct_next_observations": 2,
+              "observation": [
+                3,
+                1
+              ]
+            }
+          ],
+          "interpretation": "task observation only; cannot independently generate transitions",
+          "projection": "TOTAL_PHASE",
+          "transition_congruent": false
+        }
+      },
+      "refinement": {
+        "holdout": {
+          "correct": 138,
+          "count": 138,
+          "mismatches": []
+        },
+        "trace": [
+          {
+            "model": "global_constant_quantum",
+            "reason": "quantum varies by phase",
+            "status": "rejected_by_counterexample"
+          },
+          {
+            "expression": "q(phase)=1 + 1*(phase mod 2)",
+            "model": "phase_lookup_quantum",
+            "status": "selected"
+          }
+        ],
+        "transfer_quantum_values": [
+          1,
+          2
+        ]
+      },
+      "training_accuracy": 1.0,
+      "training_records": 510,
+      "variable_roles": {
+        "a": "endogenous_state",
+        "action": "controlled_input",
+        "b": "endogenous_state",
+        "capacity": "structural_bound_inferred_from_boundary_evidence",
+        "phase": "exogenous_context",
+        "phase_pairs_observed": "6"
+      },
+      "wholly_unseen_state_count": 20,
+      "wholly_unseen_states": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          3
+        ],
+        [
+          0,
+          4,
+          1
+        ],
+        [
+          0,
+          5,
+          4
+        ],
+        [
+          1,
+          0,
+          4
+        ],
+        [
+          1,
+          3,
+          2
+        ],
+        [
+          1,
+          4,
+          5
+        ],
+        [
+          2,
+          1,
+          0
+        ],
+        [
+          2,
+          2,
+          3
+        ],
+        [
+          2,
+          5,
+          1
+        ],
+        [
+          3,
+          0,
+          1
+        ],
+        [
+          3,
+          1,
+          4
+        ],
+        [
+          3,
+          4,
+          2
+        ],
+        [
+          3,
+          5,
+          5
+        ],
+        [
+          4,
+          0,
+          5
+        ],
+        [
+          4,
+          2,
+          0
+        ],
+        [
+          4,
+          3,
+          3
+        ],
+        [
+          5,
+          1,
+          1
+        ],
+        [
+          5,
+          2,
+          4
+        ],
+        [
+          5,
+          5,
+          2
+        ]
+      ]
+    },
+    {
+      "full_domain_transitions": 375,
+      "full_finite_domain_accuracy": 1.0,
+      "ground_fingerprint_sha256": "56c5ce49999e72d664b25017909ccecc9141e618abb7c79185343b6689b8ecbb",
+      "heldout_accuracy": 1.0,
+      "heldout_records": 79,
+      "hidden_fixture_name": "irregular-phase-source-parity",
+      "inferred_ground": {
+        "capacity": 4,
+        "capacity_status": "exact_from_observed_saturation",
+        "demand": {
+          "expression": "lookup((0, 2, 0, 1, 0))",
+          "mode": "lookup",
+          "params": [],
+          "values": [
+            0,
+            2,
+            0,
+            1,
+            0
+          ]
+        },
+        "inferred_roles": {
+          "a": "endogenous_state",
+          "action": "controlled_input",
+          "b": "endogenous_state",
+          "capacity": "structural_constraint",
+          "demand_law": "structural_environment_rule",
+          "inflow_law": "structural_environment_rule",
+          "phase": "exogenous_context",
+          "phase_progression": "structural_environment_rule",
+          "transfer_quantum": "controlled_operation_rule"
+        },
+        "inflow": {
+          "expression": "lookup((1, 0, 2, 1, 0))",
+          "mode": "lookup",
+          "params": [],
+          "values": [
+            1,
+            0,
+            2,
+            1,
+            0
+          ]
+        },
+        "invariant_residuals": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "period": 5,
+        "phase_next": {
+          "expression": "lookup((1, 3, 0, 4, 2))",
+          "mode": "lookup",
+          "params": [],
+          "values": [
+            1,
+            3,
+            0,
+            4,
+            2
+          ]
+        },
+        "syntax_cost": 33,
+        "training_count": 296,
+        "transfer": {
+          "expression": "q(phase, source mod 2)=((1, 2), (1, 2), (1, 2), (1, 2), (1, 2))",
+          "modulus": 2,
+          "values": [
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              2
+            ]
+          ]
+        }
+      },
+      "initial_grammar_limit": 4,
+      "initial_grammar_rejection": null,
+      "max_mass_balance_residual": 0,
+      "productivity": {
+        "explicit_transition_entries": 375,
+        "generated_transitions_per_syntax_unit": 11.363636363636363,
+        "interpretation": "finite-domain generative yield; not an asymptotic runtime claim",
+        "program_syntax_cost_units": 33
+      },
+      "projection_audits": {
+        "FULL": {
+          "class_count": 125,
+          "conflict_count": 0,
+          "example_conflicts": [],
+          "interpretation": "safe generative quotient",
+          "projection": "FULL",
+          "transition_congruent": true
+        },
+        "LEVELS": {
+          "class_count": 25,
+          "conflict_count": 25,
+          "example_conflicts": [
+            {
+              "action": "HOLD",
+              "distinct_next_observations": 3,
+              "observation": [
+                0,
+                0
+              ]
+            },
+            {
+              "action": "HOLD",
+              "distinct_next_observations": 5,
+              "observation": [
+                0,
+                1
+              ]
+            },
+            {
+              "action": "HOLD",
+              "distinct_next_observations": 5,
+              "observation": [
+                0,
+                2
+              ]
+            },
+            {
+              "action": "HOLD",
+              "distinct_next_observations": 5,
+              "observation": [
+                0,
+                3
+              ]
+            },
+            {
+              "action": "HOLD",
+              "distinct_next_observations": 5,
+              "observation": [
+                0,
+                4
+              ]
+            }
+          ],
+          "interpretation": "task observation only; cannot independently generate transitions",
+          "projection": "LEVELS",
+          "transition_congruent": false
+        },
+        "TOTAL": {
+          "class_count": 9,
+          "conflict_count": 9,
+          "example_conflicts": [
+            {
+              "action": "HOLD",
+              "distinct_next_observations": 3,
+              "observation": [
+                0
+              ]
+            },
+            {
+              "action": "HOLD",
+              "distinct_next_observations": 4,
+              "observation": [
+                1
+              ]
+            },
+            {
+              "action": "HOLD",
+              "distinct_next_observations": 5,
+              "observation": [
+                2
+              ]
+            },
+            {
+              "action": "HOLD",
+              "distinct_next_observations": 5,
+              "observation": [
+                3
+              ]
+            },
+            {
+              "action": "HOLD",
+              "distinct_next_observations": 5,
+              "observation": [
+                4
+              ]
+            }
+          ],
+          "interpretation": "task observation only; cannot independently generate transitions",
+          "projection": "TOTAL",
+          "transition_congruent": false
+        },
+        "TOTAL_PHASE": {
+          "class_count": 45,
+          "conflict_count": 20,
+          "example_conflicts": [
+            {
+              "action": "HOLD",
+              "distinct_next_observations": 2,
+              "observation": [
+                1,
+                1
+              ]
+            },
+            {
+              "action": "HOLD",
+              "distinct_next_observations": 2,
+              "observation": [
+                1,
+                3
+              ]
+            },
+            {
+              "action": "HOLD",
+              "distinct_next_observations": 3,
+              "observation": [
+                2,
+                1
+              ]
+            },
+            {
+              "action": "HOLD",
+              "distinct_next_observations": 2,
+              "observation": [
+                2,
+                3
+              ]
+            },
+            {
+              "action": "HOLD",
+              "distinct_next_observations": 3,
+              "observation": [
+                3,
+                1
+              ]
+            }
+          ],
+          "interpretation": "task observation only; cannot independently generate transitions",
+          "projection": "TOTAL_PHASE",
+          "transition_congruent": false
+        }
+      },
+      "refinement": {
+        "holdout": {
+          "correct": 79,
+          "count": 79,
+          "mismatches": []
+        },
+        "trace": [
+          {
+            "model": "constant_quantum",
+            "reason": "same phase requires different transfer at different source residues",
+            "status": "rejected_by_counterexample"
+          },
+          {
+            "expression": "q(phase, source mod 2)=((1, 2), (1, 2), (1, 2), (1, 2), (1, 2))",
+            "model": "phase_x_source_mod_2",
+            "status": "selected"
+          }
+        ],
+        "transfer_quantum_values": [
+          1,
+          2
+        ]
+      },
+      "training_accuracy": 1.0,
+      "training_records": 296,
+      "variable_roles": {
+        "a": "endogenous_state",
+        "action": "controlled_input",
+        "b": "endogenous_state",
+        "capacity": "structural_bound_inferred_from_boundary_evidence",
+        "phase": "exogenous_context",
+        "phase_pairs_observed": "5"
+      },
+      "wholly_unseen_state_count": 12,
+      "wholly_unseen_states": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          3
+        ],
+        [
+          0,
+          4,
+          1
+        ],
+        [
+          1,
+          0,
+          4
+        ],
+        [
+          1,
+          3,
+          2
+        ],
+        [
+          2,
+          1,
+          0
+        ],
+        [
+          2,
+          2,
+          3
+        ],
+        [
+          3,
+          0,
+          1
+        ],
+        [
+          3,
+          1,
+          4
+        ],
+        [
+          3,
+          4,
+          2
+        ],
+        [
+          4,
+          2,
+          0
+        ],
+        [
+          4,
+          3,
+          3
+        ]
+      ]
+    },
+    {
+      "full_domain_transitions": 540,
+      "full_finite_domain_accuracy": 1.0,
+      "ground_fingerprint_sha256": "f472b155ca75acbf566f9e9cdee13a9bf49fa2a0007da7044cccc7a494772d78",
+      "heldout_accuracy": 1.0,
+      "heldout_records": 114,
+      "hidden_fixture_name": "source-mod3-operation",
+      "inferred_ground": {
+        "capacity": 5,
+        "capacity_status": "exact_from_observed_saturation",
+        "demand": {
+          "expression": "lookup((1, 0, 2, 0, 1))",
+          "mode": "lookup",
+          "params": [],
+          "values": [
+            1,
+            0,
+            2,
+            0,
+            1
+          ]
+        },
+        "inferred_roles": {
+          "a": "endogenous_state",
+          "action": "controlled_input",
+          "b": "endogenous_state",
+          "capacity": "structural_constraint",
+          "demand_law": "structural_environment_rule",
+          "inflow_law": "structural_environment_rule",
+          "phase": "exogenous_context",
+          "phase_progression": "structural_environment_rule",
+          "transfer_quantum": "controlled_operation_rule"
+        },
+        "inflow": {
+          "expression": "lookup((0, 2, 1, 0, 2))",
+          "mode": "lookup",
+          "params": [],
+          "values": [
+            0,
+            2,
+            1,
+            0,
+            2
+          ]
+        },
+        "invariant_residuals": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "period": 5,
+        "phase_next": {
+          "expression": "(phase + 1) mod 5",
+          "mode": "permutation_stride",
+          "params": [
+            1
+          ],
+          "values": [
+            1,
+            2,
+            3,
+            4,
+            0
+          ]
+        },
+        "syntax_cost": 35,
+        "training_count": 426,
+        "transfer": {
+          "expression": "q(phase, source mod 3)=((1, 2, 3), (1, 2, 3), (1, 2, 3), (1, 2, 3), (1, 2, 3))",
+          "modulus": 3,
+          "values": [
+            [
+              1,
+              2,
+              3
+            ],
+            [
+              1,
+              2,
+              3
+            ],
+            [
+              1,
+              2,
+              3
+            ],
+            [
+              1,
+              2,
+              3
+            ],
+            [
+              1,
+              2,
+              3
+            ]
+          ]
+        }
+      },
+      "initial_grammar_limit": 4,
+      "initial_grammar_rejection": null,
+      "max_mass_balance_residual": 0,
+      "productivity": {
+        "explicit_transition_entries": 540,
+        "generated_transitions_per_syntax_unit": 15.428571428571429,
+        "interpretation": "finite-domain generative yield; not an asymptotic runtime claim",
+        "program_syntax_cost_units": 35
+      },
+      "projection_audits": {
+        "FULL": {
+          "class_count": 180,
+          "conflict_count": 0,
+          "example_conflicts": [],
+          "interpretation": "safe generative quotient",
+          "projection": "FULL",
+          "transition_congruent": true
+        },
+        "LEVELS": {
+          "class_count": 36,
+          "conflict_count": 36,
+          "example_conflicts": [
+            {
+              "action": "HOLD",
+              "distinct_next_observations": 3,
+              "observation": [
+                0,
+                0
+              ]
+            },
+            {
+              "action": "HOLD",
+              "distinct_next_observations": 5,
+              "observation": [
+                0,
+                1
+              ]
+            },
+            {
+              "action": "HOLD",
+              "distinct_next_observations": 5,
+              "observation": [
+                0,
+                2
+              ]
+            },
+            {
+              "action": "HOLD",
+              "distinct_next_observations": 5,
+              "observation": [
+                0,
+                3
+              ]
+            },
+            {
+              "action": "HOLD",
+              "distinct_next_observations": 5,
+              "observation": [
+                0,
+                4
+              ]
+            }
+          ],
+          "interpretation": "task observation only; cannot independently generate transitions",
+          "projection": "LEVELS",
+          "transition_congruent": false
+        },
+        "TOTAL": {
+          "class_count": 11,
+          "conflict_count": 11,
+          "example_conflicts": [
+            {
+              "action": "HOLD",
+              "distinct_next_observations": 3,
+              "observation": [
+                0
+              ]
+            },
+            {
+              "action": "HOLD",
+              "distinct_next_observations": 4,
+              "observation": [
+                1
+              ]
+            },
+            {
+              "action": "HOLD",
+              "distinct_next_observations": 4,
+              "observation": [
+                2
+              ]
+            },
+            {
+              "action": "HOLD",
+              "distinct_next_observations": 4,
+              "observation": [
+                3
+              ]
+            },
+            {
+              "action": "HOLD",
+              "distinct_next_observations": 4,
+              "observation": [
+                4
+              ]
+            }
+          ],
+          "interpretation": "task observation only; cannot independently generate transitions",
+          "projection": "TOTAL",
+          "transition_congruent": false
+        },
+        "TOTAL_PHASE": {
+          "class_count": 55,
+          "conflict_count": 27,
+          "example_conflicts": [
+            {
+              "action": "HOLD",
+              "distinct_next_observations": 2,
+              "observation": [
+                1,
+                0
+              ]
+            },
+            {
+              "action": "HOLD",
+              "distinct_next_observations": 2,
+              "observation": [
+                1,
+                2
+              ]
+            },
+            {
+              "action": "HOLD",
+              "distinct_next_observations": 2,
+              "observation": [
+                1,
+                4
+              ]
+            },
+            {
+              "action": "HOLD",
+              "distinct_next_observations": 2,
+              "observation": [
+                2,
+                0
+              ]
+            },
+            {
+              "action": "HOLD",
+              "distinct_next_observations": 3,
+              "observation": [
+                2,
+                2
+              ]
+            }
+          ],
+          "interpretation": "task observation only; cannot independently generate transitions",
+          "projection": "TOTAL_PHASE",
+          "transition_congruent": false
+        }
+      },
+      "refinement": {
+        "holdout": {
+          "correct": 114,
+          "count": 114,
+          "mismatches": []
+        },
+        "trace": [
+          {
+            "model": "constant_quantum",
+            "reason": "same phase requires different transfer at different source residues",
+            "status": "rejected_by_counterexample"
+          },
+          {
+            "expression": "q(phase, source mod 3)=((1, 2, 3), (1, 2, 3), (1, 2, 3), (1, 2, 3), (1, 2, 3))",
+            "model": "phase_x_source_mod_3",
+            "status": "selected"
+          }
+        ],
+        "transfer_quantum_values": [
+          1,
+          2,
+          3
+        ]
+      },
+      "training_accuracy": 1.0,
+      "training_records": 426,
+      "variable_roles": {
+        "a": "endogenous_state",
+        "action": "controlled_input",
+        "b": "endogenous_state",
+        "capacity": "structural_bound_inferred_from_boundary_evidence",
+        "phase": "exogenous_context",
+        "phase_pairs_observed": "5"
+      },
+      "wholly_unseen_state_count": 17,
+      "wholly_unseen_states": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          3
+        ],
+        [
+          0,
+          4,
+          1
+        ],
+        [
+          0,
+          5,
+          4
+        ],
+        [
+          1,
+          0,
+          4
+        ],
+        [
+          1,
+          3,
+          2
+        ],
+        [
+          2,
+          1,
+          0
+        ],
+        [
+          2,
+          2,
+          3
+        ],
+        [
+          2,
+          5,
+          1
+        ],
+        [
+          3,
+          0,
+          1
+        ],
+        [
+          3,
+          1,
+          4
+        ],
+        [
+          3,
+          4,
+          2
+        ],
+        [
+          4,
+          2,
+          0
+        ],
+        [
+          4,
+          3,
+          3
+        ],
+        [
+          5,
+          1,
+          1
+        ],
+        [
+          5,
+          2,
+          4
+        ],
+        [
+          5,
+          5,
+          2
+        ]
+      ]
+    },
+    {
+      "full_domain_transitions": 588,
+      "full_finite_domain_accuracy": 1.0,
+      "ground_fingerprint_sha256": "496fb49f74dee17f762a73a0508a1c470af142aa98166c58d9e4ed711c39910a",
+      "heldout_accuracy": 1.0,
+      "heldout_records": 125,
+      "hidden_fixture_name": "source-mod4-operation",
+      "inferred_ground": {
+        "capacity": 6,
+        "capacity_status": "exact_from_observed_saturation",
+        "demand": {
+          "expression": "lookup((0, 1, 0, 2))",
+          "mode": "lookup",
+          "params": [],
+          "values": [
+            0,
+            1,
+            0,
+            2
+          ]
+        },
+        "inferred_roles": {
+          "a": "endogenous_state",
+          "action": "controlled_input",
+          "b": "endogenous_state",
+          "capacity": "structural_constraint",
+          "demand_law": "structural_environment_rule",
+          "inflow_law": "structural_environment_rule",
+          "phase": "exogenous_context",
+          "phase_progression": "structural_environment_rule",
+          "transfer_quantum": "controlled_operation_rule"
+        },
+        "inflow": {
+          "expression": "lookup((1, 0, 2, 1))",
+          "mode": "lookup",
+          "params": [],
+          "values": [
+            1,
+            0,
+            2,
+            1
+          ]
+        },
+        "invariant_residuals": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "period": 4,
+        "phase_next": {
+          "expression": "(phase + 1) mod 4",
+          "mode": "permutation_stride",
+          "params": [
+            1
+          ],
+          "values": [
+            1,
+            2,
+            3,
+            0
+          ]
+        },
+        "syntax_cost": 34,
+        "training_count": 463,
+        "transfer": {
+          "expression": "q(phase, source mod 4)=((1, 2, 3, 1), (1, 2, 3, 1), (1, 2, 3, 1), (1, 2, 3, 1))",
+          "modulus": 4,
+          "values": [
+            [
+              1,
+              2,
+              3,
+              1
+            ],
+            [
+              1,
+              2,
+              3,
+              1
+            ],
+            [
+              1,
+              2,
+              3,
+              1
+            ],
+            [
+              1,
+              2,
+              3,
+              1
+            ]
+          ]
+        }
+      },
+      "initial_grammar_limit": 3,
+      "initial_grammar_rejection": "transfer observations require a richer rule or more probes",
+      "max_mass_balance_residual": 0,
+      "productivity": {
+        "explicit_transition_entries": 588,
+        "generated_transitions_per_syntax_unit": 17.294117647058822,
+        "interpretation": "finite-domain generative yield; not an asymptotic runtime claim",
+        "program_syntax_cost_units": 34
+      },
+      "projection_audits": {
+        "FULL": {
+          "class_count": 196,
+          "conflict_count": 0,
+          "example_conflicts": [],
+          "interpretation": "safe generative quotient",
+          "projection": "FULL",
+          "transition_congruent": true
+        },
+        "LEVELS": {
+          "class_count": 49,
+          "conflict_count": 49,
+          "example_conflicts": [
+            {
+              "action": "HOLD",
+              "distinct_next_observations": 3,
+              "observation": [
+                0,
+                0
+              ]
+            },
+            {
+              "action": "HOLD",
+              "distinct_next_observations": 4,
+              "observation": [
+                0,
+                1
+              ]
+            },
+            {
+              "action": "HOLD",
+              "distinct_next_observations": 4,
+              "observation": [
+                0,
+                2
+              ]
+            },
+            {
+              "action": "HOLD",
+              "distinct_next_observations": 4,
+              "observation": [
+                0,
+                3
+              ]
+            },
+            {
+              "action": "HOLD",
+              "distinct_next_observations": 4,
+              "observation": [
+                0,
+                4
+              ]
+            }
+          ],
+          "interpretation": "task observation only; cannot independently generate transitions",
+          "projection": "LEVELS",
+          "transition_congruent": false
+        },
+        "TOTAL": {
+          "class_count": 13,
+          "conflict_count": 13,
+          "example_conflicts": [
+            {
+              "action": "HOLD",
+              "distinct_next_observations": 3,
+              "observation": [
+                0
+              ]
+            },
+            {
+              "action": "HOLD",
+              "distinct_next_observations": 4,
+              "observation": [
+                1
+              ]
+            },
+            {
+              "action": "HOLD",
+              "distinct_next_observations": 4,
+              "observation": [
+                2
+              ]
+            },
+            {
+              "action": "HOLD",
+              "distinct_next_observations": 4,
+              "observation": [
+                3
+              ]
+            },
+            {
+              "action": "HOLD",
+              "distinct_next_observations": 4,
+              "observation": [
+                4
+              ]
+            }
+          ],
+          "interpretation": "task observation only; cannot independently generate transitions",
+          "projection": "TOTAL",
+          "transition_congruent": false
+        },
+        "TOTAL_PHASE": {
+          "class_count": 52,
+          "conflict_count": 29,
+          "example_conflicts": [
+            {
+              "action": "HOLD",
+              "distinct_next_observations": 2,
+              "observation": [
+                1,
+                1
+              ]
+            },
+            {
+              "action": "HOLD",
+              "distinct_next_observations": 2,
+              "observation": [
+                1,
+                3
+              ]
+            },
+            {
+              "action": "HOLD",
+              "distinct_next_observations": 2,
+              "observation": [
+                2,
+                1
+              ]
+            },
+            {
+              "action": "HOLD",
+              "distinct_next_observations": 3,
+              "observation": [
+                2,
+                3
+              ]
+            },
+            {
+              "action": "HOLD",
+              "distinct_next_observations": 2,
+              "observation": [
+                3,
+                1
+              ]
+            }
+          ],
+          "interpretation": "task observation only; cannot independently generate transitions",
+          "projection": "TOTAL_PHASE",
+          "transition_congruent": false
+        }
+      },
+      "refinement": {
+        "holdout": {
+          "correct": 125,
+          "count": 125,
+          "mismatches": []
+        },
+        "trace": [
+          {
+            "model": "constant_quantum",
+            "reason": "same phase requires different transfer at different source residues",
+            "status": "rejected_by_counterexample"
+          },
+          {
+            "expression": "q(phase, source mod 4)=((1, 2, 3, 1), (1, 2, 3, 1), (1, 2, 3, 1), (1, 2, 3, 1))",
+            "model": "phase_x_source_mod_4",
+            "status": "selected"
+          }
+        ],
+        "transfer_quantum_values": [
+          1,
+          2,
+          3
+        ]
+      },
+      "training_accuracy": 1.0,
+      "training_records": 463,
+      "variable_roles": {
+        "a": "endogenous_state",
+        "action": "controlled_input",
+        "b": "endogenous_state",
+        "capacity": "structural_bound_inferred_from_boundary_evidence",
+        "phase": "exogenous_context",
+        "phase_pairs_observed": "4"
+      },
+      "wholly_unseen_state_count": 18,
+      "wholly_unseen_states": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          3
+        ],
+        [
+          0,
+          4,
+          1
+        ],
+        [
+          1,
+          3,
+          2
+        ],
+        [
+          1,
+          6,
+          0
+        ],
+        [
+          2,
+          1,
+          0
+        ],
+        [
+          2,
+          2,
+          3
+        ],
+        [
+          2,
+          5,
+          1
+        ],
+        [
+          3,
+          0,
+          1
+        ],
+        [
+          3,
+          4,
+          2
+        ],
+        [
+          4,
+          2,
+          0
+        ],
+        [
+          4,
+          3,
+          3
+        ],
+        [
+          4,
+          6,
+          1
+        ],
+        [
+          5,
+          1,
+          1
+        ],
+        [
+          5,
+          5,
+          2
+        ],
+        [
+          6,
+          0,
+          2
+        ],
+        [
+          6,
+          3,
+          0
+        ],
+        [
+          6,
+          4,
+          3
+        ]
+      ]
+    }
+  ],
+  "ground_revision_comparison": {
+    "changed_components": [
+      {
+        "component": "inflow_law",
+        "new": [
+          "modular_ramp",
+          [
+            0,
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            1,
+            2
+          ]
+        ],
+        "old": [
+          "lookup",
+          [
+            1,
+            0,
+            0,
+            1
+          ],
+          []
+        ]
+      }
+    ],
+    "interpretation": "transition-law revision",
+    "new_fingerprint": "01f00659dca3cc71ed506ef687c20f7b4c74b29ed8c7d6adf76c4a65498f3f51",
+    "old_fingerprint": "fde4b658adac784379136241d6bfaf21ed2238b0772381675905fb5d546b8889",
+    "revision_required": true,
+    "same_ground": false,
+    "state_encoding_compatible": true
+  },
+  "method": "bounded inductive synthesis from transition records; no predefined model catalogue",
+  "probe_coverage_guard": {
+    "reason": "no uncensored transfer observations; active probing required",
+    "status": "insufficient_evidence_rejected"
+  }
+}

@@ -1,0 +1,22 @@
+test_analyze_tree_and_outputs (test_build_12.TestEndToEnd.test_analyze_tree_and_outputs) ... ok
+test_no_files_does_not_claim_empirical_analysis (test_build_12.TestEndToEnd.test_no_files_does_not_claim_empirical_analysis) ... ok
+test_feature_views_are_independent (test_build_12.TestGeometry.test_feature_views_are_independent) ... ok
+test_paired_cross_domain_rdm_requires_explicit_pairs (test_build_12.TestGeometry.test_paired_cross_domain_rdm_requires_explicit_pairs) ... ok
+test_rdm_symmetric (test_build_12.TestGeometry.test_rdm_symmetric) ... ok
+test_room_aggregation_median (test_build_12.TestGeometry.test_room_aggregation_median) ... ok
+test_spearman_rdm_identical (test_build_12.TestGeometry.test_spearman_rdm_identical) ... ok
+test_decay_estimate_exponential (test_build_12.TestResponseFeatures.test_decay_estimate_exponential) ... ok
+test_full_feature_bundle (test_build_12.TestResponseFeatures.test_full_feature_bundle) ... ok
+test_gain_scaling_preserves_normalized_decay (test_build_12.TestResponseFeatures.test_gain_scaling_preserves_normalized_decay) ... ok
+test_short_signal_rejected (test_build_12.TestResponseFeatures.test_short_signal_rejected) ... ok
+test_silent_signal_rejected (test_build_12.TestResponseFeatures.test_silent_signal_rejected) ... ok
+test_too_low_sample_rate_rejected (test_build_12.TestResponseFeatures.test_too_low_sample_rate_rejected) ... ok
+test_read_float32 (test_build_12.TestWavReader.test_read_float32) ... ok
+test_read_pcm16 (test_build_12.TestWavReader.test_read_pcm16) ... ok
+test_read_pcm24 (test_build_12.TestWavReader.test_read_pcm24) ... ok
+test_reject_non_wav (test_build_12.TestWavReader.test_reject_non_wav) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 1.797s
+
+OK

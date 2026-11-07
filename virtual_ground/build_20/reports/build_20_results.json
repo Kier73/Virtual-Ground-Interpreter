@@ -1,0 +1,2344 @@
+{
+  "status": "complete",
+  "provenance": "synthetic finite algebraic fixture; no physical puzzle or sensor was measured",
+  "virtual_ground": {
+    "name": "Rotor-4",
+    "version": 1,
+    "state_encoding": "4-piece permutation x four Z3 orientations with sum zero",
+    "state_count": 648,
+    "operations": [
+      {
+        "name": "SWAP01",
+        "dest": [
+          1,
+          0,
+          2,
+          3
+        ],
+        "twist": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "name": "SWAP12",
+        "dest": [
+          0,
+          2,
+          1,
+          3
+        ],
+        "twist": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "name": "SWAP23",
+        "dest": [
+          0,
+          1,
+          3,
+          2
+        ],
+        "twist": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "name": "TWIST0+",
+        "dest": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "twist": [
+          1,
+          0,
+          0,
+          2
+        ]
+      },
+      {
+        "name": "TWIST0-",
+        "dest": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "twist": [
+          2,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "name": "TWIST1+",
+        "dest": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "twist": [
+          0,
+          1,
+          0,
+          2
+        ]
+      },
+      {
+        "name": "TWIST1-",
+        "dest": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "twist": [
+          0,
+          2,
+          0,
+          1
+        ]
+      },
+      {
+        "name": "TWIST2+",
+        "dest": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "twist": [
+          0,
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "name": "TWIST2-",
+        "dest": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "twist": [
+          0,
+          0,
+          2,
+          1
+        ]
+      }
+    ],
+    "invariant": "sum(orientation) == 0 mod 3",
+    "observers": [
+      "full",
+      "layout",
+      "orientation"
+    ]
+  },
+  "state_space": {
+    "valid_states": 648,
+    "reachable_states_from_solved": 648,
+    "directed_edges": 5832,
+    "group_order_expected": "4! * 3^3 = 648",
+    "graph_diameter": 8,
+    "coordinate_bijection_verified": true
+  },
+  "navigation": {
+    "all_targets_from_solved": {
+      "target_count": 648,
+      "mean_exact_shortest_primitive_steps": 4.645061728395062,
+      "mean_factorized_primitive_steps": 5,
+      "mean_macro_commands": 1.9212962962962963,
+      "mean_macro_expansion_steps": 5,
+      "factorized_path_differs_from_shortest_for_targets": 230,
+      "factorized_paths_reach_every_target": true
+    },
+    "sampled_start_target_pairs": 50,
+    "mean_exact_shortest_primitive_steps": 4.84,
+    "mean_factorized_primitive_steps": 5.32,
+    "mean_macro_commands": 1.98,
+    "max_macro_commands": 2,
+    "mean_macro_expansion_steps": 5.32,
+    "factorized_paths_all_reach_target": true,
+    "factorized_paths_are_not_claimed_shortest": true,
+    "intention_example": {
+      "target_code": 1,
+      "same_layout_as_solved": true,
+      "same_full_state_as_solved": false,
+      "layout_quotient_plan": [],
+      "full_state_plan_primitive_steps": 1
+    },
+    "resource_weighting_example": {
+      "target_code": 5,
+      "unit_cost_plan": [
+        "TWIST1+",
+        "TWIST2-"
+      ],
+      "unit_cost": 2.0,
+      "twists_cost_four_plan": [
+        "SWAP23",
+        "TWIST1+",
+        "SWAP23"
+      ],
+      "twists_cost_four_total": 6.0,
+      "purpose": "same ground, different observer/resource cost profile, different optimal navigation"
+    }
+  },
+  "observer_quotients": {
+    "class_counts": {
+      "full": 648,
+      "layout": 24,
+      "orientation": 27
+    },
+    "reachable_quotient_classes": {
+      "full": {
+        "class_count": 648,
+        "max_distance": 8
+      },
+      "layout": {
+        "class_count": 24,
+        "max_distance": 6
+      },
+      "orientation": {
+        "class_count": 27,
+        "max_distance": 3
+      }
+    },
+    "layout_observer_collapses_orientation": true,
+    "full_observer_distinguishes_orientation": true,
+    "task_note": "layout-only observation is sufficient for layout goals, not exact full-state goals"
+  },
+  "consensus": {
+    "definition": "observer value retained for a configured number of consecutive samples",
+    "examples": {
+      "stable": true,
+      "unstable": false
+    },
+    "not_claimed": "stable observation does not prove external truth or permanence"
+  },
+  "ground_shift": {
+    "new_version": 2,
+    "new_operation_count": 3,
+    "reachable_from_solved_after_orientation_lock": 24,
+    "old_reachable_count": 648,
+    "interpretation": "changing legal operations changes the generative ground, not merely the state coordinate"
+  },
+  "partial_irreversible_ground": {
+    "model": "symbolic nine-block support graph; not a physical mechanics simulation",
+    "initial_state_mask": 511,
+    "reachable_stable_states": 232,
+    "all_stable_masks": 232,
+    "every_stable_mask_reachable": true,
+    "directed_removal_edges": 774,
+    "max_removal_depth": 9,
+    "terminal_states": 1,
+    "all_transitions_remove_exactly_one_block": true,
+    "level_count_observer_is_transition_congruent": false,
+    "same_profile_different_legal_actions_witness": {
+      "level_counts": [
+        3,
+        3,
+        2
+      ],
+      "state_a_mask": 447,
+      "state_a_legal_actions": [
+        "REMOVE_0",
+        "REMOVE_1",
+        "REMOVE_2",
+        "REMOVE_3",
+        "REMOVE_4",
+        "REMOVE_5",
+        "REMOVE_7",
+        "REMOVE_8"
+      ],
+      "state_b_mask": 383,
+      "state_b_legal_actions": [
+        "REMOVE_0",
+        "REMOVE_1",
+        "REMOVE_2",
+        "REMOVE_3",
+        "REMOVE_4",
+        "REMOVE_5",
+        "REMOVE_6",
+        "REMOVE_8"
+      ]
+    },
+    "revised_support_ground_version": 2,
+    "revised_reachable_states": 200,
+    "revised_all_stable_masks": 200,
+    "every_revised_stable_mask_reachable": true,
+    "revised_edges": 646,
+    "interpretation": "partial irreversible logic needs state-dependent legality; coarse height/count observations can be insufficient"
+  },
+  "algebra_checks": {
+    "primitive_inverse_checks": 9,
+    "composition_associativity_checks": 5,
+    "all_primitive_moves_preserve_orientation_sum": true
+  },
+  "representation_storage": {
+    "measurement": "serialized JSON payload bytes; excludes runtime objects and executable code",
+    "primitive_ground_descriptor_bytes": 708,
+    "coordinate_chart_schema_bytes": 168,
+    "macro_schema_bytes": 155,
+    "materialized_graph_payload_bytes": 182701,
+    "shortest_policy_payload_bytes": 51376,
+    "interpretation": "procedural rules are compact relative to expanded state/edge/policy tables in this fixture; storage does not measure total compute cost"
+  },
+  "representation_tradeoffs": {
+    "primitive_generator_count": 9,
+    "coordinate_addresses": 648,
+    "explicit_graph_edges": 5832,
+    "observer_class_counts": {
+      "full": 648,
+      "layout": 24,
+      "orientation": 27
+    },
+    "macro_stages": [
+      "SET_LAYOUT",
+      "SET_ORIENTATION"
+    ],
+    "interpretation": "different operational views trade retained detail, planning work, storage and command depth"
+  },
+  "cost_model": {
+    "primitive_steps": "count of low-level legal state transitions",
+    "macro_commands": "number of high-level procedural commands; each has a primitive expansion",
+    "planning_work": "state expansions required by exact search; separate from action count",
+    "constant_time_claim": "not established; fixed-state indexing is constant-size arithmetic only for this fixed four-piece system"
+  },
+  "sampled_pairs": [
+    {
+      "case": 0,
+      "start_code": 0,
+      "target_code": 113,
+      "shortest_primitive_steps": 3,
+      "factorized_primitive_steps": 4,
+      "macro_commands": 2,
+      "macro_expansion_steps": 4,
+      "shortest_path": [
+        "TWIST1-",
+        "SWAP23",
+        "SWAP12"
+      ],
+      "factorized_path": [
+        "SWAP23",
+        "SWAP12",
+        "TWIST1+",
+        "TWIST2-"
+      ],
+      "macros": [
+        {
+          "name": "SET_LAYOUT",
+          "expansion": [
+            "SWAP23",
+            "SWAP12"
+          ]
+        },
+        {
+          "name": "SET_ORIENTATION",
+          "expansion": [
+            "TWIST1+",
+            "TWIST2-"
+          ]
+        }
+      ]
+    },
+    {
+      "case": 1,
+      "start_code": 13,
+      "target_code": 594,
+      "shortest_primitive_steps": 7,
+      "factorized_primitive_steps": 7,
+      "macro_commands": 2,
+      "macro_expansion_steps": 7,
+      "shortest_path": [
+        "SWAP12",
+        "SWAP01",
+        "SWAP23",
+        "SWAP12",
+        "SWAP01",
+        "TWIST1-",
+        "TWIST2-"
+      ],
+      "factorized_path": [
+        "SWAP23",
+        "SWAP12",
+        "SWAP01",
+        "SWAP23",
+        "SWAP12",
+        "TWIST1-",
+        "TWIST2-"
+      ],
+      "macros": [
+        {
+          "name": "SET_LAYOUT",
+          "expansion": [
+            "SWAP23",
+            "SWAP12",
+            "SWAP01",
+            "SWAP23",
+            "SWAP12"
+          ]
+        },
+        {
+          "name": "SET_ORIENTATION",
+          "expansion": [
+            "TWIST1-",
+            "TWIST2-"
+          ]
+        }
+      ]
+    },
+    {
+      "case": 2,
+      "start_code": 26,
+      "target_code": 427,
+      "shortest_primitive_steps": 5,
+      "factorized_primitive_steps": 6,
+      "macro_commands": 2,
+      "macro_expansion_steps": 6,
+      "shortest_path": [
+        "SWAP01",
+        "SWAP12",
+        "SWAP01",
+        "TWIST1-",
+        "SWAP23"
+      ],
+      "factorized_path": [
+        "SWAP12",
+        "SWAP01",
+        "SWAP12",
+        "SWAP23",
+        "TWIST1-",
+        "TWIST2+"
+      ],
+      "macros": [
+        {
+          "name": "SET_LAYOUT",
+          "expansion": [
+            "SWAP12",
+            "SWAP01",
+            "SWAP12",
+            "SWAP23"
+          ]
+        },
+        {
+          "name": "SET_ORIENTATION",
+          "expansion": [
+            "TWIST1-",
+            "TWIST2+"
+          ]
+        }
+      ]
+    },
+    {
+      "case": 3,
+      "start_code": 39,
+      "target_code": 260,
+      "shortest_primitive_steps": 5,
+      "factorized_primitive_steps": 6,
+      "macro_commands": 2,
+      "macro_expansion_steps": 6,
+      "shortest_path": [
+        "SWAP01",
+        "SWAP12",
+        "TWIST1-",
+        "SWAP23",
+        "SWAP12"
+      ],
+      "factorized_path": [
+        "SWAP01",
+        "SWAP23",
+        "SWAP12",
+        "SWAP23",
+        "TWIST1+",
+        "TWIST2-"
+      ],
+      "macros": [
+        {
+          "name": "SET_LAYOUT",
+          "expansion": [
+            "SWAP01",
+            "SWAP23",
+            "SWAP12",
+            "SWAP23"
+          ]
+        },
+        {
+          "name": "SET_ORIENTATION",
+          "expansion": [
+            "TWIST1+",
+            "TWIST2-"
+          ]
+        }
+      ]
+    },
+    {
+      "case": 4,
+      "start_code": 52,
+      "target_code": 93,
+      "shortest_primitive_steps": 5,
+      "factorized_primitive_steps": 5,
+      "macro_commands": 2,
+      "macro_expansion_steps": 5,
+      "shortest_path": [
+        "SWAP12",
+        "SWAP23",
+        "SWAP12",
+        "TWIST0-",
+        "TWIST2-"
+      ],
+      "factorized_path": [
+        "SWAP23",
+        "SWAP12",
+        "SWAP23",
+        "TWIST0-",
+        "TWIST2-"
+      ],
+      "macros": [
+        {
+          "name": "SET_LAYOUT",
+          "expansion": [
+            "SWAP23",
+            "SWAP12",
+            "SWAP23"
+          ]
+        },
+        {
+          "name": "SET_ORIENTATION",
+          "expansion": [
+            "TWIST0-",
+            "TWIST2-"
+          ]
+        }
+      ]
+    },
+    {
+      "case": 5,
+      "start_code": 65,
+      "target_code": 574,
+      "shortest_primitive_steps": 7,
+      "factorized_primitive_steps": 7,
+      "macro_commands": 2,
+      "macro_expansion_steps": 7,
+      "shortest_path": [
+        "SWAP01",
+        "SWAP12",
+        "SWAP01",
+        "SWAP23",
+        "SWAP12",
+        "SWAP01",
+        "TWIST2+"
+      ],
+      "factorized_path": [
+        "SWAP23",
+        "SWAP12",
+        "SWAP01",
+        "SWAP23",
+        "SWAP12",
+        "SWAP23",
+        "TWIST2+"
+      ],
+      "macros": [
+        {
+          "name": "SET_LAYOUT",
+          "expansion": [
+            "SWAP23",
+            "SWAP12",
+            "SWAP01",
+            "SWAP23",
+            "SWAP12",
+            "SWAP23"
+          ]
+        },
+        {
+          "name": "SET_ORIENTATION",
+          "expansion": [
+            "TWIST2+"
+          ]
+        }
+      ]
+    },
+    {
+      "case": 6,
+      "start_code": 78,
+      "target_code": 407,
+      "shortest_primitive_steps": 4,
+      "factorized_primitive_steps": 4,
+      "macro_commands": 2,
+      "macro_expansion_steps": 4,
+      "shortest_path": [
+        "SWAP01",
+        "SWAP12",
+        "SWAP23",
+        "TWIST0+"
+      ],
+      "factorized_path": [
+        "SWAP01",
+        "SWAP12",
+        "SWAP23",
+        "TWIST0+"
+      ],
+      "macros": [
+        {
+          "name": "SET_LAYOUT",
+          "expansion": [
+            "SWAP01",
+            "SWAP12",
+            "SWAP23"
+          ]
+        },
+        {
+          "name": "SET_ORIENTATION",
+          "expansion": [
+            "TWIST0+"
+          ]
+        }
+      ]
+    },
+    {
+      "case": 7,
+      "start_code": 91,
+      "target_code": 240,
+      "shortest_primitive_steps": 6,
+      "factorized_primitive_steps": 7,
+      "macro_commands": 2,
+      "macro_expansion_steps": 7,
+      "shortest_path": [
+        "SWAP01",
+        "TWIST0-",
+        "SWAP23",
+        "SWAP12",
+        "SWAP01",
+        "TWIST2-"
+      ],
+      "factorized_path": [
+        "SWAP23",
+        "SWAP12",
+        "SWAP01",
+        "SWAP12",
+        "TWIST0+",
+        "TWIST1-",
+        "TWIST2-"
+      ],
+      "macros": [
+        {
+          "name": "SET_LAYOUT",
+          "expansion": [
+            "SWAP23",
+            "SWAP12",
+            "SWAP01",
+            "SWAP12"
+          ]
+        },
+        {
+          "name": "SET_ORIENTATION",
+          "expansion": [
+            "TWIST0+",
+            "TWIST1-",
+            "TWIST2-"
+          ]
+        }
+      ]
+    },
+    {
+      "case": 8,
+      "start_code": 104,
+      "target_code": 73,
+      "shortest_primitive_steps": 2,
+      "factorized_primitive_steps": 2,
+      "macro_commands": 2,
+      "macro_expansion_steps": 2,
+      "shortest_path": [
+        "SWAP23",
+        "TWIST1-"
+      ],
+      "factorized_path": [
+        "SWAP23",
+        "TWIST1-"
+      ],
+      "macros": [
+        {
+          "name": "SET_LAYOUT",
+          "expansion": [
+            "SWAP23"
+          ]
+        },
+        {
+          "name": "SET_ORIENTATION",
+          "expansion": [
+            "TWIST1-"
+          ]
+        }
+      ]
+    },
+    {
+      "case": 9,
+      "start_code": 117,
+      "target_code": 554,
+      "shortest_primitive_steps": 5,
+      "factorized_primitive_steps": 5,
+      "macro_commands": 2,
+      "macro_expansion_steps": 5,
+      "shortest_path": [
+        "SWAP01",
+        "SWAP12",
+        "TWIST0+",
+        "TWIST1+",
+        "TWIST2+"
+      ],
+      "factorized_path": [
+        "SWAP01",
+        "SWAP12",
+        "TWIST0+",
+        "TWIST1+",
+        "TWIST2+"
+      ],
+      "macros": [
+        {
+          "name": "SET_LAYOUT",
+          "expansion": [
+            "SWAP01",
+            "SWAP12"
+          ]
+        },
+        {
+          "name": "SET_ORIENTATION",
+          "expansion": [
+            "TWIST0+",
+            "TWIST1+",
+            "TWIST2+"
+          ]
+        }
+      ]
+    },
+    {
+      "case": 10,
+      "start_code": 130,
+      "target_code": 387,
+      "shortest_primitive_steps": 7,
+      "factorized_primitive_steps": 8,
+      "macro_commands": 2,
+      "macro_expansion_steps": 8,
+      "shortest_path": [
+        "SWAP12",
+        "SWAP01",
+        "TWIST1+",
+        "SWAP23",
+        "SWAP12",
+        "SWAP01",
+        "TWIST1-"
+      ],
+      "factorized_path": [
+        "SWAP23",
+        "SWAP12",
+        "SWAP01",
+        "SWAP23",
+        "SWAP12",
+        "TWIST0-",
+        "TWIST1-",
+        "TWIST2+"
+      ],
+      "macros": [
+        {
+          "name": "SET_LAYOUT",
+          "expansion": [
+            "SWAP23",
+            "SWAP12",
+            "SWAP01",
+            "SWAP23",
+            "SWAP12"
+          ]
+        },
+        {
+          "name": "SET_ORIENTATION",
+          "expansion": [
+            "TWIST0-",
+            "TWIST1-",
+            "TWIST2+"
+          ]
+        }
+      ]
+    },
+    {
+      "case": 11,
+      "start_code": 143,
+      "target_code": 220,
+      "shortest_primitive_steps": 7,
+      "factorized_primitive_steps": 8,
+      "macro_commands": 2,
+      "macro_expansion_steps": 8,
+      "shortest_path": [
+        "SWAP12",
+        "SWAP01",
+        "TWIST0-",
+        "SWAP23",
+        "SWAP12",
+        "SWAP01",
+        "TWIST2+"
+      ],
+      "factorized_path": [
+        "SWAP23",
+        "SWAP12",
+        "SWAP01",
+        "SWAP23",
+        "SWAP12",
+        "TWIST0+",
+        "TWIST1-",
+        "TWIST2+"
+      ],
+      "macros": [
+        {
+          "name": "SET_LAYOUT",
+          "expansion": [
+            "SWAP23",
+            "SWAP12",
+            "SWAP01",
+            "SWAP23",
+            "SWAP12"
+          ]
+        },
+        {
+          "name": "SET_ORIENTATION",
+          "expansion": [
+            "TWIST0+",
+            "TWIST1-",
+            "TWIST2+"
+          ]
+        }
+      ]
+    },
+    {
+      "case": 12,
+      "start_code": 156,
+      "target_code": 53,
+      "shortest_primitive_steps": 3,
+      "factorized_primitive_steps": 4,
+      "macro_commands": 2,
+      "macro_expansion_steps": 4,
+      "shortest_path": [
+        "TWIST1+",
+        "SWAP23",
+        "SWAP12"
+      ],
+      "factorized_path": [
+        "SWAP23",
+        "SWAP12",
+        "TWIST1-",
+        "TWIST2+"
+      ],
+      "macros": [
+        {
+          "name": "SET_LAYOUT",
+          "expansion": [
+            "SWAP23",
+            "SWAP12"
+          ]
+        },
+        {
+          "name": "SET_ORIENTATION",
+          "expansion": [
+            "TWIST1-",
+            "TWIST2+"
+          ]
+        }
+      ]
+    },
+    {
+      "case": 13,
+      "start_code": 169,
+      "target_code": 534,
+      "shortest_primitive_steps": 7,
+      "factorized_primitive_steps": 8,
+      "macro_commands": 2,
+      "macro_expansion_steps": 8,
+      "shortest_path": [
+        "SWAP01",
+        "SWAP12",
+        "TWIST0-",
+        "TWIST1-",
+        "SWAP23",
+        "SWAP12",
+        "SWAP01"
+      ],
+      "factorized_path": [
+        "SWAP23",
+        "SWAP12",
+        "SWAP01",
+        "SWAP12",
+        "SWAP23",
+        "TWIST0-",
+        "TWIST1-",
+        "TWIST2-"
+      ],
+      "macros": [
+        {
+          "name": "SET_LAYOUT",
+          "expansion": [
+            "SWAP23",
+            "SWAP12",
+            "SWAP01",
+            "SWAP12",
+            "SWAP23"
+          ]
+        },
+        {
+          "name": "SET_ORIENTATION",
+          "expansion": [
+            "TWIST0-",
+            "TWIST1-",
+            "TWIST2-"
+          ]
+        }
+      ]
+    },
+    {
+      "case": 14,
+      "start_code": 182,
+      "target_code": 367,
+      "shortest_primitive_steps": 6,
+      "factorized_primitive_steps": 7,
+      "macro_commands": 2,
+      "macro_expansion_steps": 7,
+      "shortest_path": [
+        "SWAP01",
+        "SWAP12",
+        "SWAP01",
+        "TWIST0-",
+        "TWIST1-",
+        "SWAP23"
+      ],
+      "factorized_path": [
+        "SWAP12",
+        "SWAP01",
+        "SWAP12",
+        "SWAP23",
+        "TWIST0-",
+        "TWIST1-",
+        "TWIST2-"
+      ],
+      "macros": [
+        {
+          "name": "SET_LAYOUT",
+          "expansion": [
+            "SWAP12",
+            "SWAP01",
+            "SWAP12",
+            "SWAP23"
+          ]
+        },
+        {
+          "name": "SET_ORIENTATION",
+          "expansion": [
+            "TWIST0-",
+            "TWIST1-",
+            "TWIST2-"
+          ]
+        }
+      ]
+    },
+    {
+      "case": 15,
+      "start_code": 195,
+      "target_code": 200,
+      "shortest_primitive_steps": 3,
+      "factorized_primitive_steps": 3,
+      "macro_commands": 1,
+      "macro_expansion_steps": 3,
+      "shortest_path": [
+        "TWIST0+",
+        "TWIST1+",
+        "TWIST2-"
+      ],
+      "factorized_path": [
+        "TWIST0+",
+        "TWIST1+",
+        "TWIST2-"
+      ],
+      "macros": [
+        {
+          "name": "SET_ORIENTATION",
+          "expansion": [
+            "TWIST0+",
+            "TWIST1+",
+            "TWIST2-"
+          ]
+        }
+      ]
+    },
+    {
+      "case": 16,
+      "start_code": 208,
+      "target_code": 33,
+      "shortest_primitive_steps": 2,
+      "factorized_primitive_steps": 2,
+      "macro_commands": 2,
+      "macro_expansion_steps": 2,
+      "shortest_path": [
+        "SWAP01",
+        "TWIST2-"
+      ],
+      "factorized_path": [
+        "SWAP01",
+        "TWIST2-"
+      ],
+      "macros": [
+        {
+          "name": "SET_LAYOUT",
+          "expansion": [
+            "SWAP01"
+          ]
+        },
+        {
+          "name": "SET_ORIENTATION",
+          "expansion": [
+            "TWIST2-"
+          ]
+        }
+      ]
+    },
+    {
+      "case": 17,
+      "start_code": 221,
+      "target_code": 514,
+      "shortest_primitive_steps": 7,
+      "factorized_primitive_steps": 7,
+      "macro_commands": 2,
+      "macro_expansion_steps": 7,
+      "shortest_path": [
+        "SWAP01",
+        "SWAP12",
+        "SWAP01",
+        "SWAP23",
+        "SWAP12",
+        "SWAP01",
+        "TWIST1+"
+      ],
+      "factorized_path": [
+        "SWAP23",
+        "SWAP12",
+        "SWAP01",
+        "SWAP23",
+        "SWAP12",
+        "SWAP23",
+        "TWIST1+"
+      ],
+      "macros": [
+        {
+          "name": "SET_LAYOUT",
+          "expansion": [
+            "SWAP23",
+            "SWAP12",
+            "SWAP01",
+            "SWAP23",
+            "SWAP12",
+            "SWAP23"
+          ]
+        },
+        {
+          "name": "SET_ORIENTATION",
+          "expansion": [
+            "TWIST1+"
+          ]
+        }
+      ]
+    },
+    {
+      "case": 18,
+      "start_code": 234,
+      "target_code": 347,
+      "shortest_primitive_steps": 4,
+      "factorized_primitive_steps": 4,
+      "macro_commands": 2,
+      "macro_expansion_steps": 4,
+      "shortest_path": [
+        "SWAP01",
+        "SWAP12",
+        "TWIST0-",
+        "TWIST1+"
+      ],
+      "factorized_path": [
+        "SWAP01",
+        "SWAP12",
+        "TWIST0-",
+        "TWIST1+"
+      ],
+      "macros": [
+        {
+          "name": "SET_LAYOUT",
+          "expansion": [
+            "SWAP01",
+            "SWAP12"
+          ]
+        },
+        {
+          "name": "SET_ORIENTATION",
+          "expansion": [
+            "TWIST0-",
+            "TWIST1+"
+          ]
+        }
+      ]
+    },
+    {
+      "case": 19,
+      "start_code": 247,
+      "target_code": 180,
+      "shortest_primitive_steps": 4,
+      "factorized_primitive_steps": 5,
+      "macro_commands": 2,
+      "macro_expansion_steps": 5,
+      "shortest_path": [
+        "TWIST0-",
+        "TWIST1-",
+        "SWAP23",
+        "SWAP12"
+      ],
+      "factorized_path": [
+        "SWAP23",
+        "SWAP12",
+        "TWIST0-",
+        "TWIST1-",
+        "TWIST2-"
+      ],
+      "macros": [
+        {
+          "name": "SET_LAYOUT",
+          "expansion": [
+            "SWAP23",
+            "SWAP12"
+          ]
+        },
+        {
+          "name": "SET_ORIENTATION",
+          "expansion": [
+            "TWIST0-",
+            "TWIST1-",
+            "TWIST2-"
+          ]
+        }
+      ]
+    },
+    {
+      "case": 20,
+      "start_code": 260,
+      "target_code": 13,
+      "shortest_primitive_steps": 4,
+      "factorized_primitive_steps": 4,
+      "macro_commands": 2,
+      "macro_expansion_steps": 4,
+      "shortest_path": [
+        "SWAP23",
+        "SWAP12",
+        "SWAP01",
+        "TWIST2-"
+      ],
+      "factorized_path": [
+        "SWAP23",
+        "SWAP12",
+        "SWAP01",
+        "TWIST2-"
+      ],
+      "macros": [
+        {
+          "name": "SET_LAYOUT",
+          "expansion": [
+            "SWAP23",
+            "SWAP12",
+            "SWAP01"
+          ]
+        },
+        {
+          "name": "SET_ORIENTATION",
+          "expansion": [
+            "TWIST2-"
+          ]
+        }
+      ]
+    },
+    {
+      "case": 21,
+      "start_code": 273,
+      "target_code": 494,
+      "shortest_primitive_steps": 5,
+      "factorized_primitive_steps": 5,
+      "macro_commands": 2,
+      "macro_expansion_steps": 5,
+      "shortest_path": [
+        "SWAP01",
+        "SWAP12",
+        "TWIST0-",
+        "TWIST1-",
+        "TWIST2-"
+      ],
+      "factorized_path": [
+        "SWAP01",
+        "SWAP12",
+        "TWIST0-",
+        "TWIST1-",
+        "TWIST2-"
+      ],
+      "macros": [
+        {
+          "name": "SET_LAYOUT",
+          "expansion": [
+            "SWAP01",
+            "SWAP12"
+          ]
+        },
+        {
+          "name": "SET_ORIENTATION",
+          "expansion": [
+            "TWIST0-",
+            "TWIST1-",
+            "TWIST2-"
+          ]
+        }
+      ]
+    },
+    {
+      "case": 22,
+      "start_code": 286,
+      "target_code": 327,
+      "shortest_primitive_steps": 6,
+      "factorized_primitive_steps": 7,
+      "macro_commands": 2,
+      "macro_expansion_steps": 7,
+      "shortest_path": [
+        "SWAP12",
+        "SWAP01",
+        "TWIST1-",
+        "SWAP23",
+        "SWAP12",
+        "SWAP01"
+      ],
+      "factorized_path": [
+        "SWAP23",
+        "SWAP12",
+        "SWAP01",
+        "SWAP23",
+        "SWAP12",
+        "TWIST0+",
+        "TWIST2-"
+      ],
+      "macros": [
+        {
+          "name": "SET_LAYOUT",
+          "expansion": [
+            "SWAP23",
+            "SWAP12",
+            "SWAP01",
+            "SWAP23",
+            "SWAP12"
+          ]
+        },
+        {
+          "name": "SET_ORIENTATION",
+          "expansion": [
+            "TWIST0+",
+            "TWIST2-"
+          ]
+        }
+      ]
+    },
+    {
+      "case": 23,
+      "start_code": 299,
+      "target_code": 160,
+      "shortest_primitive_steps": 7,
+      "factorized_primitive_steps": 8,
+      "macro_commands": 2,
+      "macro_expansion_steps": 8,
+      "shortest_path": [
+        "SWAP01",
+        "SWAP12",
+        "TWIST0-",
+        "SWAP23",
+        "SWAP12",
+        "SWAP01",
+        "TWIST2-"
+      ],
+      "factorized_path": [
+        "SWAP23",
+        "SWAP12",
+        "SWAP01",
+        "SWAP12",
+        "SWAP23",
+        "TWIST0+",
+        "TWIST1-",
+        "TWIST2-"
+      ],
+      "macros": [
+        {
+          "name": "SET_LAYOUT",
+          "expansion": [
+            "SWAP23",
+            "SWAP12",
+            "SWAP01",
+            "SWAP12",
+            "SWAP23"
+          ]
+        },
+        {
+          "name": "SET_ORIENTATION",
+          "expansion": [
+            "TWIST0+",
+            "TWIST1-",
+            "TWIST2-"
+          ]
+        }
+      ]
+    },
+    {
+      "case": 24,
+      "start_code": 312,
+      "target_code": 641,
+      "shortest_primitive_steps": 3,
+      "factorized_primitive_steps": 3,
+      "macro_commands": 2,
+      "macro_expansion_steps": 3,
+      "shortest_path": [
+        "SWAP01",
+        "SWAP12",
+        "TWIST2+"
+      ],
+      "factorized_path": [
+        "SWAP01",
+        "SWAP12",
+        "TWIST2+"
+      ],
+      "macros": [
+        {
+          "name": "SET_LAYOUT",
+          "expansion": [
+            "SWAP01",
+            "SWAP12"
+          ]
+        },
+        {
+          "name": "SET_ORIENTATION",
+          "expansion": [
+            "TWIST2+"
+          ]
+        }
+      ]
+    },
+    {
+      "case": 25,
+      "start_code": 325,
+      "target_code": 474,
+      "shortest_primitive_steps": 4,
+      "factorized_primitive_steps": 5,
+      "macro_commands": 2,
+      "macro_expansion_steps": 5,
+      "shortest_path": [
+        "SWAP23",
+        "SWAP12",
+        "TWIST0+",
+        "SWAP23"
+      ],
+      "factorized_path": [
+        "SWAP23",
+        "SWAP12",
+        "SWAP23",
+        "TWIST0+",
+        "TWIST2-"
+      ],
+      "macros": [
+        {
+          "name": "SET_LAYOUT",
+          "expansion": [
+            "SWAP23",
+            "SWAP12",
+            "SWAP23"
+          ]
+        },
+        {
+          "name": "SET_ORIENTATION",
+          "expansion": [
+            "TWIST0+",
+            "TWIST2-"
+          ]
+        }
+      ]
+    },
+    {
+      "case": 26,
+      "start_code": 338,
+      "target_code": 307,
+      "shortest_primitive_steps": 5,
+      "factorized_primitive_steps": 6,
+      "macro_commands": 2,
+      "macro_expansion_steps": 6,
+      "shortest_path": [
+        "SWAP12",
+        "SWAP01",
+        "TWIST0-",
+        "SWAP23",
+        "SWAP12"
+      ],
+      "factorized_path": [
+        "SWAP12",
+        "SWAP01",
+        "SWAP23",
+        "SWAP12",
+        "TWIST0-",
+        "TWIST1+"
+      ],
+      "macros": [
+        {
+          "name": "SET_LAYOUT",
+          "expansion": [
+            "SWAP12",
+            "SWAP01",
+            "SWAP23",
+            "SWAP12"
+          ]
+        },
+        {
+          "name": "SET_ORIENTATION",
+          "expansion": [
+            "TWIST0-",
+            "TWIST1+"
+          ]
+        }
+      ]
+    },
+    {
+      "case": 27,
+      "start_code": 351,
+      "target_code": 140,
+      "shortest_primitive_steps": 4,
+      "factorized_primitive_steps": 4,
+      "macro_commands": 2,
+      "macro_expansion_steps": 4,
+      "shortest_path": [
+        "SWAP01",
+        "SWAP12",
+        "TWIST1+",
+        "TWIST2-"
+      ],
+      "factorized_path": [
+        "SWAP01",
+        "SWAP12",
+        "TWIST1+",
+        "TWIST2-"
+      ],
+      "macros": [
+        {
+          "name": "SET_LAYOUT",
+          "expansion": [
+            "SWAP01",
+            "SWAP12"
+          ]
+        },
+        {
+          "name": "SET_ORIENTATION",
+          "expansion": [
+            "TWIST1+",
+            "TWIST2-"
+          ]
+        }
+      ]
+    },
+    {
+      "case": 28,
+      "start_code": 364,
+      "target_code": 621,
+      "shortest_primitive_steps": 5,
+      "factorized_primitive_steps": 5,
+      "macro_commands": 2,
+      "macro_expansion_steps": 5,
+      "shortest_path": [
+        "SWAP12",
+        "SWAP01",
+        "SWAP23",
+        "TWIST0-",
+        "TWIST1-"
+      ],
+      "factorized_path": [
+        "SWAP12",
+        "SWAP01",
+        "SWAP23",
+        "TWIST0-",
+        "TWIST1-"
+      ],
+      "macros": [
+        {
+          "name": "SET_LAYOUT",
+          "expansion": [
+            "SWAP12",
+            "SWAP01",
+            "SWAP23"
+          ]
+        },
+        {
+          "name": "SET_ORIENTATION",
+          "expansion": [
+            "TWIST0-",
+            "TWIST1-"
+          ]
+        }
+      ]
+    },
+    {
+      "case": 29,
+      "start_code": 377,
+      "target_code": 454,
+      "shortest_primitive_steps": 3,
+      "factorized_primitive_steps": 3,
+      "macro_commands": 2,
+      "macro_expansion_steps": 3,
+      "shortest_path": [
+        "SWAP12",
+        "TWIST1-",
+        "TWIST2-"
+      ],
+      "factorized_path": [
+        "SWAP12",
+        "TWIST1-",
+        "TWIST2-"
+      ],
+      "macros": [
+        {
+          "name": "SET_LAYOUT",
+          "expansion": [
+            "SWAP12"
+          ]
+        },
+        {
+          "name": "SET_ORIENTATION",
+          "expansion": [
+            "TWIST1-",
+            "TWIST2-"
+          ]
+        }
+      ]
+    },
+    {
+      "case": 30,
+      "start_code": 390,
+      "target_code": 287,
+      "shortest_primitive_steps": 5,
+      "factorized_primitive_steps": 6,
+      "macro_commands": 2,
+      "macro_expansion_steps": 6,
+      "shortest_path": [
+        "SWAP01",
+        "SWAP12",
+        "TWIST1-",
+        "SWAP23",
+        "SWAP12"
+      ],
+      "factorized_path": [
+        "SWAP01",
+        "SWAP23",
+        "SWAP12",
+        "SWAP23",
+        "TWIST1+",
+        "TWIST2-"
+      ],
+      "macros": [
+        {
+          "name": "SET_LAYOUT",
+          "expansion": [
+            "SWAP01",
+            "SWAP23",
+            "SWAP12",
+            "SWAP23"
+          ]
+        },
+        {
+          "name": "SET_ORIENTATION",
+          "expansion": [
+            "TWIST1+",
+            "TWIST2-"
+          ]
+        }
+      ]
+    },
+    {
+      "case": 31,
+      "start_code": 403,
+      "target_code": 120,
+      "shortest_primitive_steps": 6,
+      "factorized_primitive_steps": 6,
+      "macro_commands": 2,
+      "macro_expansion_steps": 6,
+      "shortest_path": [
+        "SWAP01",
+        "SWAP12",
+        "SWAP01",
+        "SWAP23",
+        "SWAP12",
+        "TWIST2+"
+      ],
+      "factorized_path": [
+        "SWAP12",
+        "SWAP01",
+        "SWAP23",
+        "SWAP12",
+        "SWAP23",
+        "TWIST2+"
+      ],
+      "macros": [
+        {
+          "name": "SET_LAYOUT",
+          "expansion": [
+            "SWAP12",
+            "SWAP01",
+            "SWAP23",
+            "SWAP12",
+            "SWAP23"
+          ]
+        },
+        {
+          "name": "SET_ORIENTATION",
+          "expansion": [
+            "TWIST2+"
+          ]
+        }
+      ]
+    },
+    {
+      "case": 32,
+      "start_code": 416,
+      "target_code": 601,
+      "shortest_primitive_steps": 5,
+      "factorized_primitive_steps": 6,
+      "macro_commands": 2,
+      "macro_expansion_steps": 6,
+      "shortest_path": [
+        "SWAP12",
+        "SWAP01",
+        "TWIST0+",
+        "TWIST1+",
+        "SWAP23"
+      ],
+      "factorized_path": [
+        "SWAP12",
+        "SWAP01",
+        "SWAP23",
+        "TWIST0+",
+        "TWIST1+",
+        "TWIST2+"
+      ],
+      "macros": [
+        {
+          "name": "SET_LAYOUT",
+          "expansion": [
+            "SWAP12",
+            "SWAP01",
+            "SWAP23"
+          ]
+        },
+        {
+          "name": "SET_ORIENTATION",
+          "expansion": [
+            "TWIST0+",
+            "TWIST1+",
+            "TWIST2+"
+          ]
+        }
+      ]
+    },
+    {
+      "case": 33,
+      "start_code": 429,
+      "target_code": 434,
+      "shortest_primitive_steps": 3,
+      "factorized_primitive_steps": 3,
+      "macro_commands": 2,
+      "macro_expansion_steps": 3,
+      "shortest_path": [
+        "SWAP12",
+        "SWAP23",
+        "TWIST0+"
+      ],
+      "factorized_path": [
+        "SWAP12",
+        "SWAP23",
+        "TWIST0+"
+      ],
+      "macros": [
+        {
+          "name": "SET_LAYOUT",
+          "expansion": [
+            "SWAP12",
+            "SWAP23"
+          ]
+        },
+        {
+          "name": "SET_ORIENTATION",
+          "expansion": [
+            "TWIST0+"
+          ]
+        }
+      ]
+    },
+    {
+      "case": 34,
+      "start_code": 442,
+      "target_code": 267,
+      "shortest_primitive_steps": 5,
+      "factorized_primitive_steps": 5,
+      "macro_commands": 2,
+      "macro_expansion_steps": 5,
+      "shortest_path": [
+        "SWAP23",
+        "SWAP12",
+        "SWAP01",
+        "TWIST0+",
+        "TWIST1+"
+      ],
+      "factorized_path": [
+        "SWAP23",
+        "SWAP12",
+        "SWAP01",
+        "TWIST0+",
+        "TWIST1+"
+      ],
+      "macros": [
+        {
+          "name": "SET_LAYOUT",
+          "expansion": [
+            "SWAP23",
+            "SWAP12",
+            "SWAP01"
+          ]
+        },
+        {
+          "name": "SET_ORIENTATION",
+          "expansion": [
+            "TWIST0+",
+            "TWIST1+"
+          ]
+        }
+      ]
+    },
+    {
+      "case": 35,
+      "start_code": 455,
+      "target_code": 100,
+      "shortest_primitive_steps": 3,
+      "factorized_primitive_steps": 3,
+      "macro_commands": 2,
+      "macro_expansion_steps": 3,
+      "shortest_path": [
+        "SWAP12",
+        "SWAP01",
+        "TWIST1+"
+      ],
+      "factorized_path": [
+        "SWAP12",
+        "SWAP01",
+        "TWIST1+"
+      ],
+      "macros": [
+        {
+          "name": "SET_LAYOUT",
+          "expansion": [
+            "SWAP12",
+            "SWAP01"
+          ]
+        },
+        {
+          "name": "SET_ORIENTATION",
+          "expansion": [
+            "TWIST1+"
+          ]
+        }
+      ]
+    },
+    {
+      "case": 36,
+      "start_code": 468,
+      "target_code": 581,
+      "shortest_primitive_steps": 5,
+      "factorized_primitive_steps": 5,
+      "macro_commands": 2,
+      "macro_expansion_steps": 5,
+      "shortest_path": [
+        "SWAP01",
+        "SWAP12",
+        "TWIST0+",
+        "TWIST1+",
+        "TWIST2+"
+      ],
+      "factorized_path": [
+        "SWAP01",
+        "SWAP12",
+        "TWIST0+",
+        "TWIST1+",
+        "TWIST2+"
+      ],
+      "macros": [
+        {
+          "name": "SET_LAYOUT",
+          "expansion": [
+            "SWAP01",
+            "SWAP12"
+          ]
+        },
+        {
+          "name": "SET_ORIENTATION",
+          "expansion": [
+            "TWIST0+",
+            "TWIST1+",
+            "TWIST2+"
+          ]
+        }
+      ]
+    },
+    {
+      "case": 37,
+      "start_code": 481,
+      "target_code": 414,
+      "shortest_primitive_steps": 4,
+      "factorized_primitive_steps": 4,
+      "macro_commands": 2,
+      "macro_expansion_steps": 4,
+      "shortest_path": [
+        "SWAP12",
+        "TWIST0-",
+        "TWIST1-",
+        "TWIST2-"
+      ],
+      "factorized_path": [
+        "SWAP12",
+        "TWIST0-",
+        "TWIST1-",
+        "TWIST2-"
+      ],
+      "macros": [
+        {
+          "name": "SET_LAYOUT",
+          "expansion": [
+            "SWAP12"
+          ]
+        },
+        {
+          "name": "SET_ORIENTATION",
+          "expansion": [
+            "TWIST0-",
+            "TWIST1-",
+            "TWIST2-"
+          ]
+        }
+      ]
+    },
+    {
+      "case": 38,
+      "start_code": 494,
+      "target_code": 247,
+      "shortest_primitive_steps": 6,
+      "factorized_primitive_steps": 7,
+      "macro_commands": 2,
+      "macro_expansion_steps": 7,
+      "shortest_path": [
+        "SWAP12",
+        "SWAP01",
+        "TWIST0+",
+        "SWAP23",
+        "SWAP12",
+        "TWIST2+"
+      ],
+      "factorized_path": [
+        "SWAP12",
+        "SWAP01",
+        "SWAP23",
+        "SWAP12",
+        "TWIST0+",
+        "TWIST1-",
+        "TWIST2+"
+      ],
+      "macros": [
+        {
+          "name": "SET_LAYOUT",
+          "expansion": [
+            "SWAP12",
+            "SWAP01",
+            "SWAP23",
+            "SWAP12"
+          ]
+        },
+        {
+          "name": "SET_ORIENTATION",
+          "expansion": [
+            "TWIST0+",
+            "TWIST1-",
+            "TWIST2+"
+          ]
+        }
+      ]
+    },
+    {
+      "case": 39,
+      "start_code": 507,
+      "target_code": 80,
+      "shortest_primitive_steps": 6,
+      "factorized_primitive_steps": 7,
+      "macro_commands": 2,
+      "macro_expansion_steps": 7,
+      "shortest_path": [
+        "SWAP01",
+        "SWAP12",
+        "TWIST0+",
+        "SWAP23",
+        "SWAP12",
+        "TWIST2-"
+      ],
+      "factorized_path": [
+        "SWAP01",
+        "SWAP23",
+        "SWAP12",
+        "SWAP23",
+        "TWIST0+",
+        "TWIST1-",
+        "TWIST2-"
+      ],
+      "macros": [
+        {
+          "name": "SET_LAYOUT",
+          "expansion": [
+            "SWAP01",
+            "SWAP23",
+            "SWAP12",
+            "SWAP23"
+          ]
+        },
+        {
+          "name": "SET_ORIENTATION",
+          "expansion": [
+            "TWIST0+",
+            "TWIST1-",
+            "TWIST2-"
+          ]
+        }
+      ]
+    },
+    {
+      "case": 40,
+      "start_code": 520,
+      "target_code": 561,
+      "shortest_primitive_steps": 4,
+      "factorized_primitive_steps": 5,
+      "macro_commands": 2,
+      "macro_expansion_steps": 5,
+      "shortest_path": [
+        "TWIST0-",
+        "SWAP23",
+        "SWAP12",
+        "TWIST2+"
+      ],
+      "factorized_path": [
+        "SWAP23",
+        "SWAP12",
+        "TWIST0-",
+        "TWIST1+",
+        "TWIST2+"
+      ],
+      "macros": [
+        {
+          "name": "SET_LAYOUT",
+          "expansion": [
+            "SWAP23",
+            "SWAP12"
+          ]
+        },
+        {
+          "name": "SET_ORIENTATION",
+          "expansion": [
+            "TWIST0-",
+            "TWIST1+",
+            "TWIST2+"
+          ]
+        }
+      ]
+    },
+    {
+      "case": 41,
+      "start_code": 533,
+      "target_code": 394,
+      "shortest_primitive_steps": 6,
+      "factorized_primitive_steps": 7,
+      "macro_commands": 2,
+      "macro_expansion_steps": 7,
+      "shortest_path": [
+        "SWAP12",
+        "SWAP01",
+        "SWAP23",
+        "SWAP12",
+        "TWIST0-",
+        "SWAP23"
+      ],
+      "factorized_path": [
+        "SWAP12",
+        "SWAP01",
+        "SWAP23",
+        "SWAP12",
+        "SWAP23",
+        "TWIST0-",
+        "TWIST2+"
+      ],
+      "macros": [
+        {
+          "name": "SET_LAYOUT",
+          "expansion": [
+            "SWAP12",
+            "SWAP01",
+            "SWAP23",
+            "SWAP12",
+            "SWAP23"
+          ]
+        },
+        {
+          "name": "SET_ORIENTATION",
+          "expansion": [
+            "TWIST0-",
+            "TWIST2+"
+          ]
+        }
+      ]
+    },
+    {
+      "case": 42,
+      "start_code": 546,
+      "target_code": 227,
+      "shortest_primitive_steps": 6,
+      "factorized_primitive_steps": 7,
+      "macro_commands": 2,
+      "macro_expansion_steps": 7,
+      "shortest_path": [
+        "SWAP01",
+        "SWAP12",
+        "TWIST0-",
+        "TWIST1-",
+        "SWAP23",
+        "SWAP12"
+      ],
+      "factorized_path": [
+        "SWAP01",
+        "SWAP23",
+        "SWAP12",
+        "SWAP23",
+        "TWIST0-",
+        "TWIST1-",
+        "TWIST2-"
+      ],
+      "macros": [
+        {
+          "name": "SET_LAYOUT",
+          "expansion": [
+            "SWAP01",
+            "SWAP23",
+            "SWAP12",
+            "SWAP23"
+          ]
+        },
+        {
+          "name": "SET_ORIENTATION",
+          "expansion": [
+            "TWIST0-",
+            "TWIST1-",
+            "TWIST2-"
+          ]
+        }
+      ]
+    },
+    {
+      "case": 43,
+      "start_code": 559,
+      "target_code": 60,
+      "shortest_primitive_steps": 7,
+      "factorized_primitive_steps": 7,
+      "macro_commands": 2,
+      "macro_expansion_steps": 7,
+      "shortest_path": [
+        "SWAP01",
+        "SWAP12",
+        "SWAP01",
+        "SWAP23",
+        "SWAP12",
+        "TWIST0-",
+        "TWIST1-"
+      ],
+      "factorized_path": [
+        "SWAP12",
+        "SWAP01",
+        "SWAP23",
+        "SWAP12",
+        "SWAP23",
+        "TWIST0-",
+        "TWIST1-"
+      ],
+      "macros": [
+        {
+          "name": "SET_LAYOUT",
+          "expansion": [
+            "SWAP12",
+            "SWAP01",
+            "SWAP23",
+            "SWAP12",
+            "SWAP23"
+          ]
+        },
+        {
+          "name": "SET_ORIENTATION",
+          "expansion": [
+            "TWIST0-",
+            "TWIST1-"
+          ]
+        }
+      ]
+    },
+    {
+      "case": 44,
+      "start_code": 572,
+      "target_code": 541,
+      "shortest_primitive_steps": 2,
+      "factorized_primitive_steps": 3,
+      "macro_commands": 2,
+      "macro_expansion_steps": 3,
+      "shortest_path": [
+        "TWIST1-",
+        "SWAP23"
+      ],
+      "factorized_path": [
+        "SWAP23",
+        "TWIST1-",
+        "TWIST2+"
+      ],
+      "macros": [
+        {
+          "name": "SET_LAYOUT",
+          "expansion": [
+            "SWAP23"
+          ]
+        },
+        {
+          "name": "SET_ORIENTATION",
+          "expansion": [
+            "TWIST1-",
+            "TWIST2+"
+          ]
+        }
+      ]
+    },
+    {
+      "case": 45,
+      "start_code": 585,
+      "target_code": 374,
+      "shortest_primitive_steps": 5,
+      "factorized_primitive_steps": 5,
+      "macro_commands": 2,
+      "macro_expansion_steps": 5,
+      "shortest_path": [
+        "SWAP12",
+        "SWAP01",
+        "SWAP23",
+        "SWAP12",
+        "TWIST0-"
+      ],
+      "factorized_path": [
+        "SWAP12",
+        "SWAP01",
+        "SWAP23",
+        "SWAP12",
+        "TWIST0-"
+      ],
+      "macros": [
+        {
+          "name": "SET_LAYOUT",
+          "expansion": [
+            "SWAP12",
+            "SWAP01",
+            "SWAP23",
+            "SWAP12"
+          ]
+        },
+        {
+          "name": "SET_ORIENTATION",
+          "expansion": [
+            "TWIST0-"
+          ]
+        }
+      ]
+    },
+    {
+      "case": 46,
+      "start_code": 598,
+      "target_code": 207,
+      "shortest_primitive_steps": 6,
+      "factorized_primitive_steps": 7,
+      "macro_commands": 2,
+      "macro_expansion_steps": 7,
+      "shortest_path": [
+        "SWAP12",
+        "SWAP01",
+        "TWIST0-",
+        "SWAP23",
+        "SWAP12",
+        "SWAP01"
+      ],
+      "factorized_path": [
+        "SWAP23",
+        "SWAP12",
+        "SWAP01",
+        "SWAP23",
+        "SWAP12",
+        "TWIST0+",
+        "TWIST1-"
+      ],
+      "macros": [
+        {
+          "name": "SET_LAYOUT",
+          "expansion": [
+            "SWAP23",
+            "SWAP12",
+            "SWAP01",
+            "SWAP23",
+            "SWAP12"
+          ]
+        },
+        {
+          "name": "SET_ORIENTATION",
+          "expansion": [
+            "TWIST0+",
+            "TWIST1-"
+          ]
+        }
+      ]
+    },
+    {
+      "case": 47,
+      "start_code": 611,
+      "target_code": 40,
+      "shortest_primitive_steps": 5,
+      "factorized_primitive_steps": 5,
+      "macro_commands": 2,
+      "macro_expansion_steps": 5,
+      "shortest_path": [
+        "SWAP12",
+        "SWAP01",
+        "SWAP23",
+        "SWAP12",
+        "TWIST0-"
+      ],
+      "factorized_path": [
+        "SWAP12",
+        "SWAP01",
+        "SWAP23",
+        "SWAP12",
+        "TWIST0-"
+      ],
+      "macros": [
+        {
+          "name": "SET_LAYOUT",
+          "expansion": [
+            "SWAP12",
+            "SWAP01",
+            "SWAP23",
+            "SWAP12"
+          ]
+        },
+        {
+          "name": "SET_ORIENTATION",
+          "expansion": [
+            "TWIST0-"
+          ]
+        }
+      ]
+    },
+    {
+      "case": 48,
+      "start_code": 624,
+      "target_code": 521,
+      "shortest_primitive_steps": 3,
+      "factorized_primitive_steps": 3,
+      "macro_commands": 2,
+      "macro_expansion_steps": 3,
+      "shortest_path": [
+        "SWAP23",
+        "SWAP12",
+        "TWIST2+"
+      ],
+      "factorized_path": [
+        "SWAP23",
+        "SWAP12",
+        "TWIST2+"
+      ],
+      "macros": [
+        {
+          "name": "SET_LAYOUT",
+          "expansion": [
+            "SWAP23",
+            "SWAP12"
+          ]
+        },
+        {
+          "name": "SET_ORIENTATION",
+          "expansion": [
+            "TWIST2+"
+          ]
+        }
+      ]
+    },
+    {
+      "case": 49,
+      "start_code": 637,
+      "target_code": 354,
+      "shortest_primitive_steps": 5,
+      "factorized_primitive_steps": 6,
+      "macro_commands": 2,
+      "macro_expansion_steps": 6,
+      "shortest_path": [
+        "SWAP01",
+        "TWIST0+",
+        "SWAP23",
+        "SWAP12",
+        "TWIST2-"
+      ],
+      "factorized_path": [
+        "SWAP01",
+        "SWAP23",
+        "SWAP12",
+        "TWIST0+",
+        "TWIST1-",
+        "TWIST2-"
+      ],
+      "macros": [
+        {
+          "name": "SET_LAYOUT",
+          "expansion": [
+            "SWAP01",
+            "SWAP23",
+            "SWAP12"
+          ]
+        },
+        {
+          "name": "SET_ORIENTATION",
+          "expansion": [
+            "TWIST0+",
+            "TWIST1-",
+            "TWIST2-"
+          ]
+        }
+      ]
+    }
+  ]
+}

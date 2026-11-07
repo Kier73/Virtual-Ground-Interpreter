@@ -1,0 +1,22 @@
+test_bootstrap_is_deterministic (test_build_08.Build08Tests.test_bootstrap_is_deterministic) ... ok
+test_codon_alias_and_tree_variants_match (test_build_08.Build08Tests.test_codon_alias_and_tree_variants_match) ... ok
+test_h0_persistence_has_n_minus_one_deaths (test_build_08.Build08Tests.test_h0_persistence_has_n_minus_one_deaths) ... ok
+test_hash_addresses_do_not_encode_semantic_neighborhood_by_construction (test_build_08.Build08Tests.test_hash_addresses_do_not_encode_semantic_neighborhood_by_construction) ... ok
+test_holonomy_phase_matches_half_solid_angle_modulo_pi (test_build_08.Build08Tests.test_holonomy_phase_matches_half_solid_angle_modulo_pi) ... ok
+test_observer_rdms_are_symmetric (test_build_08.Build08Tests.test_observer_rdms_are_symmetric) ... ok
+test_path_library_is_nontrivial (test_build_08.Build08Tests.test_path_library_is_nontrivial) ... ok
+test_persistence_reports_h1 (test_build_08.Build08Tests.test_persistence_reports_h1) ... ok
+test_quaternion_identity_elements (test_build_08.Build08Tests.test_quaternion_identity_elements) ... ok
+test_random_paths_are_closed_and_unit (test_build_08.Build08Tests.test_random_paths_are_closed_and_unit) ... ok
+test_report_shape (test_build_08.Build08Tests.test_report_shape) ... ok
+test_robustness_sweep_has_noise_and_projection_levels (test_build_08.Build08Tests.test_robustness_sweep_has_noise_and_projection_levels) ... ok
+test_shape_signature_invariant_to_reversal (test_build_08.Build08Tests.test_shape_signature_invariant_to_reversal) ... ok
+test_substrate_hashes_are_fixed_size_and_distinct (test_build_08.Build08Tests.test_substrate_hashes_are_fixed_size_and_distinct) ... ok
+test_temporal_low_band_retains_each_axis_and_schedule (test_build_08.Build08Tests.test_temporal_low_band_retains_each_axis_and_schedule) ... ok
+test_temporal_signature_detects_warp (test_build_08.Build08Tests.test_temporal_signature_detects_warp) ... ok
+test_time_reparameterization_keeps_shape_but_changes_temporal_response (test_build_08.Build08Tests.test_time_reparameterization_keeps_shape_but_changes_temporal_response) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 2.523s
+
+OK

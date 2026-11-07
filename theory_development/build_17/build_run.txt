@@ -1,0 +1,13 @@
+{
+  "build": 17,
+  "status": "synthetic_temporal_representation_comparison_complete",
+  "empirical_sensor_data_processed": false,
+  "source_data_status": "synthetic unlabelled event-pulse fixture only",
+  "fourier_shift_invariance_error": 4.9006186009956324e-14,
+  "stft_shift_covariance_error": 0.0,
+  "stationary_haar_shift_invariance_error": 0.0,
+  "mellin_dilation_invariance_error": 3.244333802220074e-14,
+  "event_graph_affine_invariance_error": 0.0,
+  "event_graph_nonlinear_drift_distance": 0.17962267685902977,
+  "important_scope": "The outputs establish finite-fixture implementation properties only, not empirical sensor or universal-invariant claims."
+}

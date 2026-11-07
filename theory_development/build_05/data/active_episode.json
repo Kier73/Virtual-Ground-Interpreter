@@ -1,0 +1,51 @@
+{
+  "history": [
+    {
+      "codon_chain": [
+        "ld",
+        "mx",
+        "ad"
+      ],
+      "observation": [
+        1.2355802490737873,
+        1.0828512480358778
+      ],
+      "posterior": {
+        "H0_identity": 1.7970387064793793e-23,
+        "H1_upper_coupling": 0.9973998653406834,
+        "H2_lower_coupling": 1.7970387064793793e-23,
+        "H3_bidirectional": 0.0026001346593165467
+      },
+      "probe": "probe_y",
+      "probe_cost": 1.0,
+      "robust_eig_bits_before": 0.9973042399833258,
+      "step": 1,
+      "target_posterior": {
+        "H0_identity": 1.7970387064793796e-23,
+        "H1_upper_coupling": 0.9973998653406835,
+        "H2_lower_coupling": 1.7970387064793796e-23,
+        "H3_bidirectional": 0.002600134659316547
+      }
+    }
+  ],
+  "hypothesis_correct": true,
+  "posterior": {
+    "H0_identity": 1.7970387064793793e-23,
+    "H1_upper_coupling": 0.9973998653406834,
+    "H2_lower_coupling": 1.7970387064793793e-23,
+    "H3_bidirectional": 0.0026001346593165467
+  },
+  "predicted_hypothesis": "H1_upper_coupling",
+  "predicted_target": "H1_upper_coupling",
+  "steps": 1,
+  "target_correct": true,
+  "target_posterior": {
+    "H0_identity": 1.7970387064793796e-23,
+    "H1_upper_coupling": 0.9973998653406835,
+    "H2_lower_coupling": 1.7970387064793796e-23,
+    "H3_bidirectional": 0.002600134659316547
+  },
+  "total_cost": 1.0,
+  "true_hypothesis": "H1_upper_coupling",
+  "true_target": "H1_upper_coupling"
+}

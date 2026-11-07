@@ -1,0 +1,296 @@
+{
+  "build": "12-corrected",
+  "dataset": "University of Rochester room impulse response dataset",
+  "dataset_doi": "10.60593/ur.d.26801089.v3",
+  "frozen_build_source": "theory_development/build_12/build_12.py",
+  "correction": "Build 12 onset = first sample with |x| >= 0.001 * peak. All Rochester files contain a 1.000 s noise pre-roll, so onset fired at a median of 968.8 ms before the direct-sound peak. This reanalysis trims at the direct-sound peak (sample 48000 in every file) and then applies the unmodified Build 12 feature functions. The frozen iteration was not edited.",
+  "files_analyzed": 90,
+  "rooms_detected": 15,
+  "failures": [],
+  "onset_diagnostics": {
+    "pre_peak_energy_fraction_min": 0.008505185965873147,
+    "pre_peak_energy_fraction_median": 0.10592119485382126,
+    "pre_peak_energy_fraction_max": 0.4095738149390672,
+    "pre_peak_energy_fraction_p95": 0.28509658864689924,
+    "old_onset_to_peak_ms_median": 968.8020833333333,
+    "old_onset_to_peak_ms_range": [
+      415.9583333333333,
+      1000.0
+    ],
+    "old_edt_s_median": 19.84606604398257,
+    "old_edt_s_range": [
+      4.043634384858211,
+      59.869863560936
+    ],
+    "corrected_edt_s_median": 0.6249131792379271,
+    "corrected_edt_s_range": [
+      0.15720311641498116,
+      3.2839671797232994
+    ],
+    "old_c50_db_median": -48.443815294329326,
+    "old_c50_db_range": [
+      -56.54871429019146,
+      -27.994245944943223
+    ],
+    "corrected_c50_db_median": 5.270328584736623,
+    "corrected_c50_db_range": [
+      -4.416838906229764,
+      17.32697659129044
+    ]
+  },
+  "view_correlations_shipped_vs_corrected": [
+    {
+      "view_a": "decay",
+      "view_b": "early_late",
+      "rdm_spearman_corrected": 0.6307899647522288,
+      "rdm_spearman_shipped": 0.09924320962056811,
+      "delta": 0.5315467551316607
+    },
+    {
+      "view_a": "decay",
+      "view_b": "spectral",
+      "rdm_spearman_corrected": 0.09916027368857558,
+      "rdm_spearman_shipped": 0.15396019075264356,
+      "delta": -0.05479991706406798
+    },
+    {
+      "view_a": "decay",
+      "view_b": "temporal",
+      "rdm_spearman_corrected": 0.6657059921210864,
+      "rdm_spearman_shipped": 0.33776695003110097,
+      "delta": 0.3279390420899854
+    },
+    {
+      "view_a": "decay",
+      "view_b": "level",
+      "rdm_spearman_corrected": 0.22200912295251918,
+      "rdm_spearman_shipped": 0.27054737715115074,
+      "delta": -0.04853825419863156
+    },
+    {
+      "view_a": "early_late",
+      "view_b": "spectral",
+      "rdm_spearman_corrected": 0.28435620982790794,
+      "rdm_spearman_shipped": 0.08714493054115696,
+      "delta": 0.19721127928675097
+    },
+    {
+      "view_a": "early_late",
+      "view_b": "temporal",
+      "rdm_spearman_corrected": 0.7374455732946299,
+      "rdm_spearman_shipped": 0.7136014928467758,
+      "delta": 0.023844080447854132
+    },
+    {
+      "view_a": "early_late",
+      "view_b": "level",
+      "rdm_spearman_corrected": 0.31755131660792035,
+      "rdm_spearman_shipped": 0.18168152602114865,
+      "delta": 0.1358697905867717
+    },
+    {
+      "view_a": "spectral",
+      "view_b": "temporal",
+      "rdm_spearman_corrected": 0.26516690856313496,
+      "rdm_spearman_shipped": 0.11425461331121707,
+      "delta": 0.1509122952519179
+    },
+    {
+      "view_a": "spectral",
+      "view_b": "level",
+      "rdm_spearman_corrected": 0.08176446195314119,
+      "rdm_spearman_shipped": 0.08324694173750777,
+      "delta": -0.0014824797843665805
+    },
+    {
+      "view_a": "temporal",
+      "view_b": "level",
+      "rdm_spearman_corrected": 0.32083765291312455,
+      "rdm_spearman_shipped": 0.1546133112170848,
+      "delta": 0.16622434169603975
+    }
+  ],
+  "room_comparison": [
+    {
+      "room_id": "Room10_IRwavs",
+      "old_edt_s": 19.059556090482374,
+      "corrected_edt_s": 0.9212416604190863,
+      "old_t20_s": 1.103140862665894,
+      "corrected_t20_s": 1.1128461551090143,
+      "old_c50_db": -45.53614677587196,
+      "corrected_c50_db": 1.0125378566482548,
+      "old_d50": 2.7955165055512863e-05,
+      "corrected_d50": 0.5575689242624884,
+      "pre_peak_energy_fraction": 0.06649206954207362
+    },
+    {
+      "room_id": "Room11_IRwavs",
+      "old_edt_s": 13.2478482000882,
+      "corrected_edt_s": 1.1348173058464064,
+      "old_t20_s": 2.1166532985334126,
+      "corrected_t20_s": 2.1470856577407487,
+      "old_c50_db": -43.86425191124914,
+      "corrected_c50_db": 6.606423551363669,
+      "old_d50": 4.1206850806889274e-05,
+      "corrected_d50": 0.8206659040469664,
+      "pre_peak_energy_fraction": 0.1702494077527589
+    },
+    {
+      "room_id": "Room12_IRwavs",
+      "old_edt_s": 9.864842385275223,
+      "corrected_edt_s": 1.4119719180260684,
+      "old_t20_s": 2.15296285956725,
+      "corrected_t20_s": 2.165344135700132,
+      "old_c50_db": -51.43911978762256,
+      "corrected_c50_db": 4.771249526014495,
+      "old_d50": 7.353875306814577e-06,
+      "corrected_d50": 0.749757088804218,
+      "pre_peak_energy_fraction": 0.13417257026974092
+    },
+    {
+      "room_id": "Room13_IRwavs",
+      "old_edt_s": 12.769884213358951,
+      "corrected_edt_s": 1.9023737811244803,
+      "old_t20_s": 2.107543311688412,
+      "corrected_t20_s": 2.1192717301647224,
+      "old_c50_db": -53.899562631834954,
+      "corrected_c50_db": -2.8300853909008694,
+      "old_d50": 4.07419646303363e-06,
+      "corrected_d50": 0.34261752995491507,
+      "pre_peak_energy_fraction": 0.10599821298233976
+    },
+    {
+      "room_id": "Room14_IRwavs",
+      "old_edt_s": 6.628087279146469,
+      "corrected_edt_s": 3.0986152313953426,
+      "old_t20_s": 3.1543096748192405,
+      "corrected_t20_s": 3.1609336900576945,
+      "old_c50_db": -47.25208966127201,
+      "corrected_c50_db": 0.0681622411120972,
+      "old_d50": 1.913469023318289e-05,
+      "corrected_d50": 0.5039195704865058,
+      "pre_peak_energy_fraction": 0.12209932418224945
+    },
+    {
+      "room_id": "Room1_IRwavs",
+      "old_edt_s": 39.59194469616048,
+      "corrected_edt_s": 0.4513593895464141,
+      "old_t20_s": 0.26177882844261335,
+      "corrected_t20_s": 0.28139341790917105,
+      "old_c50_db": -40.828174371897795,
+      "corrected_c50_db": 9.049918554922897,
+      "old_d50": 8.664420640163362e-05,
+      "corrected_d50": 0.88885261339832,
+      "pre_peak_energy_fraction": 0.16171044854970038
+    },
+    {
+      "room_id": "Room2a_IRwavs",
+      "old_edt_s": 28.489383109988587,
+      "corrected_edt_s": 0.24321721656172762,
+      "old_t20_s": 0.5592723965663248,
+      "corrected_t20_s": 0.5721363278568126,
+      "old_c50_db": -49.500124552114,
+      "corrected_c50_db": 11.515756192088345,
+      "old_d50": 1.2314410536844958e-05,
+      "corrected_d50": 0.9332639656702717,
+      "pre_peak_energy_fraction": 0.09008844185874343
+    },
+    {
+      "room_id": "Room2b_IRwavs",
+      "old_edt_s": 28.633322097026458,
+      "corrected_edt_s": 0.2280705885197432,
+      "old_t20_s": 0.39504919567494234,
+      "corrected_t20_s": 0.40549591653233374,
+      "old_c50_db": -47.70017536853605,
+      "corrected_c50_db": 13.729842045077906,
+      "old_d50": 1.6988710455712995e-05,
+      "corrected_d50": 0.9590290170828875,
+      "pre_peak_energy_fraction": 0.07477089365438204
+    },
+    {
+      "room_id": "Room3_IRwavs",
+      "old_edt_s": 44.17269400798045,
+      "corrected_edt_s": 0.27959881292446853,
+      "old_t20_s": 0.3557829575813011,
+      "corrected_t20_s": 0.36937140464045637,
+      "old_c50_db": -46.02690155654188,
+      "corrected_c50_db": 10.55377423177394,
+      "old_d50": 2.4995415864723246e-05,
+      "corrected_d50": 0.9190921317712444,
+      "pre_peak_energy_fraction": 0.2620756821155331
+    },
+    {
+      "room_id": "Room4_IRwavs",
+      "old_edt_s": 32.93341100730163,
+      "corrected_edt_s": 0.4887830618194601,
+      "old_t20_s": 0.4747306642906447,
+      "corrected_t20_s": 0.4832018086368881,
+      "old_c50_db": -53.91715822830128,
+      "corrected_c50_db": 5.166675035661987,
+      "old_d50": 4.068857539685372e-06,
+      "corrected_d50": 0.765009946859639,
+      "pre_peak_energy_fraction": 0.030431240278869124
+    },
+    {
+      "room_id": "Room5_IRwavs",
+      "old_edt_s": 29.79606431537013,
+      "corrected_edt_s": 0.4095915637137699,
+      "old_t20_s": 0.5476299698838855,
+      "corrected_t20_s": 0.5532534786093132,
+      "old_c50_db": -48.85371111737844,
+      "corrected_c50_db": 7.210595089329503,
+      "old_d50": 1.3131747090154345e-05,
+      "corrected_d50": 0.8396237605996559,
+      "pre_peak_energy_fraction": 0.08336095930131501
+    },
+    {
+      "room_id": "Room6_IRwavs",
+      "old_edt_s": 28.124560788435637,
+      "corrected_edt_s": 0.4911906069247717,
+      "old_t20_s": 0.4975945293082627,
+      "corrected_t20_s": 0.4910431647639088,
+      "old_c50_db": -53.16487866207261,
+      "corrected_c50_db": 4.649585133307898,
+      "old_d50": 4.833079882062539e-06,
+      "corrected_d50": 0.7435260716308917,
+      "pre_peak_energy_fraction": 0.11237948398004247
+    },
+    {
+      "room_id": "Room7_IRwavs",
+      "old_edt_s": 17.915344490267298,
+      "corrected_edt_s": 0.5613825539390391,
+      "old_t20_s": 0.8690542918935675,
+      "corrected_t20_s": 0.8728609569241492,
+      "old_c50_db": -49.82686203654326,
+      "corrected_c50_db": 4.861261923051883,
+      "old_d50": 1.0715685014247447e-05,
+      "corrected_d50": 0.7538640632069344,
+      "pre_peak_energy_fraction": 0.09190547178066705
+    },
+    {
+      "room_id": "Room8_IRwavs",
+      "old_edt_s": 16.95505225041648,
+      "corrected_edt_s": 0.8915142962222533,
+      "old_t20_s": 1.0083543228847858,
+      "corrected_t20_s": 1.012452272511281,
+      "old_c50_db": -50.18173938674542,
+      "corrected_c50_db": 2.9452850155249486,
+      "old_d50": 1.0267033682855148e-05,
+      "corrected_d50": 0.6632587769218268,
+      "pre_peak_energy_fraction": 0.1292100174612576
+    },
+    {
+      "room_id": "Room9_IRwavs",
+      "old_edt_s": 14.451088765108572,
+      "corrected_edt_s": 0.9221718887491557,
+      "old_t20_s": 1.5535066710034586,
+      "corrected_t20_s": 1.5703968596802584,
+      "old_c50_db": -48.70313896890271,
+      "corrected_c50_db": 7.468432752603839,
+      "old_d50": 1.6136780631845914e-05,
+      "corrected_d50": 0.8479416068956942,
+      "pre_peak_energy_fraction": 0.07122754128355949
+    }
+  ],
+  "interpretation": "After removing the pre-roll, per-file EDT falls from tens of seconds to the sub-second range and C50 becomes positive, as expected for measured rooms. The corrected decay, early/late and spectral views are now usable as within-acoustic-domain descriptors. The shipped RDM correlations should be cited only as an illustration of the bug, not as evidence about room acoustics."
+}

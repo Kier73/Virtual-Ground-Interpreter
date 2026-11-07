@@ -1,0 +1,97 @@
+{
+  "aggregate": {
+    "ground_count": 5,
+    "all_training_exact": true,
+    "all_heldout_exact": true,
+    "all_finite_domain_exact": true,
+    "all_invariants_zero": true
+  },
+  "ground_cases": [
+    {
+      "name": "cycle4-constant",
+      "grammar_initial_rejection": null,
+      "transfer": "q=1",
+      "inflow": "lookup((1, 0, 0, 1))",
+      "heldout_accuracy": 1.0,
+      "full_domain_accuracy": 1.0
+    },
+    {
+      "name": "period6-modular-inflow",
+      "grammar_initial_rejection": null,
+      "transfer": "q(phase)=1 + 1*(phase mod 2)",
+      "inflow": "0 + 1*(phase mod 3)",
+      "heldout_accuracy": 1.0,
+      "full_domain_accuracy": 1.0
+    },
+    {
+      "name": "irregular-phase-source-parity",
+      "grammar_initial_rejection": null,
+      "transfer": "q(phase, source mod 2)=((1, 2), (1, 2), (1, 2), (1, 2), (1, 2))",
+      "inflow": "lookup((1, 0, 2, 1, 0))",
+      "heldout_accuracy": 1.0,
+      "full_domain_accuracy": 1.0
+    },
+    {
+      "name": "source-mod3-operation",
+      "grammar_initial_rejection": null,
+      "transfer": "q(phase, source mod 3)=((1, 2, 3), (1, 2, 3), (1, 2, 3), (1, 2, 3), (1, 2, 3))",
+      "inflow": "lookup((0, 2, 1, 0, 2))",
+      "heldout_accuracy": 1.0,
+      "full_domain_accuracy": 1.0
+    },
+    {
+      "name": "source-mod4-operation",
+      "grammar_initial_rejection": "transfer observations require a richer rule or more probes",
+      "transfer": "q(phase, source mod 4)=((1, 2, 3, 1), (1, 2, 3, 1), (1, 2, 3, 1), (1, 2, 3, 1))",
+      "inflow": "lookup((1, 0, 2, 1))",
+      "heldout_accuracy": 1.0,
+      "full_domain_accuracy": 1.0
+    }
+  ],
+  "capacity_uncertainty": {
+    "status": "lower_bound_only",
+    "inferred_capacity_lower_bound": 4,
+    "interpretation": "without observed saturation, capacity is not promoted from lower bound to exact structural constant"
+  },
+  "revision": {
+    "old_fingerprint": "fde4b658adac784379136241d6bfaf21ed2238b0772381675905fb5d546b8889",
+    "new_fingerprint": "01f00659dca3cc71ed506ef687c20f7b4c74b29ed8c7d6adf76c4a65498f3f51",
+    "same_ground": false,
+    "revision_required": true,
+    "changed_components": [
+      {
+        "component": "inflow_law",
+        "old": [
+          "lookup",
+          [
+            1,
+            0,
+            0,
+            1
+          ],
+          []
+        ],
+        "new": [
+          "modular_ramp",
+          [
+            0,
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            1,
+            2
+          ]
+        ]
+      }
+    ],
+    "state_encoding_compatible": true,
+    "interpretation": "transition-law revision"
+  },
+  "probe_coverage": {
+    "status": "insufficient_evidence_rejected",
+    "reason": "no uncensored transfer observations; active probing required"
+  }
+}

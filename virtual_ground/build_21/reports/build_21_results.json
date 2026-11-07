@@ -1,0 +1,640 @@
+{
+  "build": 21,
+  "provenance": "synthetic_deterministic_finite_model_not_physical_hydraulics",
+  "ground": {
+    "name": "Flow-2",
+    "version": 1,
+    "capacity_per_reservoir": 3,
+    "phase_count": 4,
+    "environment_inflow_schedule": [
+      1,
+      0,
+      0,
+      1
+    ],
+    "environment_demand_schedule": [
+      0,
+      1,
+      0,
+      0
+    ],
+    "variable_partition": {
+      "structural_banks": [
+        "capacity",
+        "legal-action-rules",
+        "mass-balance-law",
+        "phase-transition-law"
+      ],
+      "controlled": [
+        "gate_command"
+      ],
+      "endogenous_flow_and_storage": [
+        "reservoir_a",
+        "reservoir_b",
+        "actual_transfer",
+        "spill",
+        "unmet_demand"
+      ],
+      "exogenous_environment": [
+        "inflow_schedule",
+        "demand_schedule",
+        "environment_phase"
+      ]
+    }
+  },
+  "verification": {
+    "state_count": 64,
+    "directed_transition_count": 136,
+    "max_mass_balance_residual": 0,
+    "all_transitions_valid": true
+  },
+  "build20_regression": {
+    "rotor4_valid_states": 648,
+    "rotor4_reachable_states": 648,
+    "rotor4_policy_entries": 648,
+    "support9_reachable_stable_states": 232,
+    "support9_directed_edges": 774
+  },
+  "reachable_from_canonical_start": {
+    "start": [
+      1,
+      1,
+      0
+    ],
+    "state_count": 40,
+    "directed_edge_count": 93
+  },
+  "observer_refinement": [
+    {
+      "observer": "FULL",
+      "initial_observation_classes": 64,
+      "refined_predictive_classes": 64,
+      "refinement_rounds": 1,
+      "additional_predictive_splits": 0
+    },
+    {
+      "observer": "LEVELS",
+      "initial_observation_classes": 16,
+      "refined_predictive_classes": 64,
+      "refinement_rounds": 4,
+      "additional_predictive_splits": 48
+    },
+    {
+      "observer": "TOTAL",
+      "initial_observation_classes": 7,
+      "refined_predictive_classes": 64,
+      "refinement_rounds": 4,
+      "additional_predictive_splits": 57
+    },
+    {
+      "observer": "TOTAL_PHASE",
+      "initial_observation_classes": 28,
+      "refined_predictive_classes": 64,
+      "refinement_rounds": 3,
+      "additional_predictive_splits": 36
+    },
+    {
+      "observer": "PHASE",
+      "initial_observation_classes": 4,
+      "refined_predictive_classes": 64,
+      "refinement_rounds": 4,
+      "additional_predictive_splits": 60
+    }
+  ],
+  "task_observability": [
+    {
+      "observer": "TOTAL",
+      "task_goal_is_observable": true,
+      "mixed_goal_observation_classes": [],
+      "transition_congruent_without_refinement": false,
+      "predictive_refinement_classes": 64
+    },
+    {
+      "observer": "TOTAL",
+      "task_goal_is_observable": false,
+      "mixed_goal_observation_classes": [
+        {
+          "observation": [
+            3
+          ],
+          "target_and_non_target": 16
+        }
+      ],
+      "transition_congruent_without_refinement": false,
+      "predictive_refinement_classes": 64
+    },
+    {
+      "observer": "TOTAL_PHASE",
+      "task_goal_is_observable": false,
+      "mixed_goal_observation_classes": [
+        {
+          "observation": [
+            3,
+            0
+          ],
+          "target_and_non_target": 4
+        },
+        {
+          "observation": [
+            3,
+            1
+          ],
+          "target_and_non_target": 4
+        },
+        {
+          "observation": [
+            3,
+            2
+          ],
+          "target_and_non_target": 4
+        },
+        {
+          "observation": [
+            3,
+            3
+          ],
+          "target_and_non_target": 4
+        }
+      ],
+      "transition_congruent_without_refinement": false,
+      "predictive_refinement_classes": 64
+    },
+    {
+      "observer": "LEVELS",
+      "task_goal_is_observable": true,
+      "mixed_goal_observation_classes": [],
+      "transition_congruent_without_refinement": false,
+      "predictive_refinement_classes": 64
+    },
+    {
+      "observer": "FULL",
+      "task_goal_is_observable": true,
+      "mixed_goal_observation_classes": [],
+      "transition_congruent_without_refinement": true,
+      "predictive_refinement_classes": 64
+    }
+  ],
+  "same_world_sensor_tradeoff": {
+    "actual_initial_state": [
+      1,
+      1,
+      0
+    ],
+    "exact_goal": "a=1 and b=2; any phase",
+    "cases": [
+      {
+        "observer": "TOTAL",
+        "initial_observation": [
+          2
+        ],
+        "fixed_width_observation_bits": 3,
+        "initial_belief_size": 12,
+        "policy_exists": true,
+        "policy_certificate_verified": true,
+        "worst_case_steps": 10,
+        "belief_search_nodes": 454
+      },
+      {
+        "observer": "TOTAL_PHASE",
+        "initial_observation": [
+          2,
+          0
+        ],
+        "fixed_width_observation_bits": 5,
+        "initial_belief_size": 3,
+        "policy_exists": true,
+        "policy_certificate_verified": true,
+        "worst_case_steps": 8,
+        "belief_search_nodes": 121
+      },
+      {
+        "observer": "LEVELS",
+        "initial_observation": [
+          1,
+          1
+        ],
+        "fixed_width_observation_bits": 4,
+        "initial_belief_size": 4,
+        "policy_exists": true,
+        "policy_certificate_verified": true,
+        "worst_case_steps": 4,
+        "belief_search_nodes": 405
+      },
+      {
+        "observer": "FULL",
+        "initial_observation": [
+          1,
+          1,
+          0
+        ],
+        "fixed_width_observation_bits": 6,
+        "initial_belief_size": 1,
+        "policy_exists": true,
+        "policy_certificate_verified": true,
+        "worst_case_steps": 1,
+        "belief_search_nodes": 105
+      }
+    ]
+  },
+  "resource_pareto": {
+    "start": [
+      0,
+      1,
+      0
+    ],
+    "target": [
+      1,
+      2,
+      3
+    ],
+    "nondominated_routes": 2,
+    "routes": [
+      {
+        "target": [
+          1,
+          2,
+          3
+        ],
+        "cost": [
+          7.0,
+          10.0,
+          4.0
+        ],
+        "path": [
+          "HOLD",
+          "B_TO_A",
+          "HOLD",
+          "HOLD",
+          "A_TO_B",
+          "A_TO_B",
+          "A_TO_B"
+        ]
+      },
+      {
+        "target": [
+          1,
+          2,
+          3
+        ],
+        "cost": [
+          11.0,
+          9.0,
+          3.0
+        ],
+        "path": [
+          "HOLD",
+          "HOLD",
+          "HOLD",
+          "HOLD",
+          "HOLD",
+          "HOLD",
+          "HOLD",
+          "HOLD",
+          "A_TO_B",
+          "A_TO_B",
+          "A_TO_B"
+        ]
+      }
+    ],
+    "resource_profile_choices": [
+      {
+        "profile": "time-first",
+        "feasible": true,
+        "cost": [
+          7.0,
+          10.0,
+          4.0
+        ],
+        "path": [
+          "HOLD",
+          "B_TO_A",
+          "HOLD",
+          "HOLD",
+          "A_TO_B",
+          "A_TO_B",
+          "A_TO_B"
+        ],
+        "target": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "profile": "energy-first",
+        "feasible": true,
+        "cost": [
+          11.0,
+          9.0,
+          3.0
+        ],
+        "path": [
+          "HOLD",
+          "HOLD",
+          "HOLD",
+          "HOLD",
+          "HOLD",
+          "HOLD",
+          "HOLD",
+          "HOLD",
+          "A_TO_B",
+          "A_TO_B",
+          "A_TO_B"
+        ],
+        "target": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "profile": "tight-energy",
+        "feasible": true,
+        "cost": [
+          11.0,
+          9.0,
+          3.0
+        ],
+        "path": [
+          "HOLD",
+          "HOLD",
+          "HOLD",
+          "HOLD",
+          "HOLD",
+          "HOLD",
+          "HOLD",
+          "HOLD",
+          "A_TO_B",
+          "A_TO_B",
+          "A_TO_B"
+        ],
+        "target": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "profile": "tight-time-and-energy",
+        "feasible": false,
+        "cost": null,
+        "path": null,
+        "target": null
+      }
+    ]
+  },
+  "viability": {
+    "safe_predicate": "a>=1 and b>=1",
+    "controlled_kernel_size": 35,
+    "hold_only_kernel_size": 0,
+    "states_kept_viable_by_control": 35,
+    "viability_policy_action_counts": {
+      "HOLD": 33,
+      "A_TO_B": 2,
+      "B_TO_A": 0
+    }
+  },
+  "environment_trace_under_hold": [
+    {
+      "before": [
+        1,
+        1,
+        0
+      ],
+      "action": "HOLD",
+      "inflow": 1,
+      "demand_requested": 0,
+      "demand_actual": 0,
+      "spill": 0,
+      "after": [
+        2,
+        1,
+        1
+      ],
+      "ground_version": 1
+    },
+    {
+      "before": [
+        2,
+        1,
+        1
+      ],
+      "action": "HOLD",
+      "inflow": 0,
+      "demand_requested": 1,
+      "demand_actual": 1,
+      "spill": 0,
+      "after": [
+        2,
+        0,
+        2
+      ],
+      "ground_version": 1
+    },
+    {
+      "before": [
+        2,
+        0,
+        2
+      ],
+      "action": "HOLD",
+      "inflow": 0,
+      "demand_requested": 0,
+      "demand_actual": 0,
+      "spill": 0,
+      "after": [
+        2,
+        0,
+        3
+      ],
+      "ground_version": 1
+    },
+    {
+      "before": [
+        2,
+        0,
+        3
+      ],
+      "action": "HOLD",
+      "inflow": 1,
+      "demand_requested": 0,
+      "demand_actual": 0,
+      "spill": 0,
+      "after": [
+        3,
+        0,
+        0
+      ],
+      "ground_version": 1
+    },
+    {
+      "before": [
+        3,
+        0,
+        0
+      ],
+      "action": "HOLD",
+      "inflow": 1,
+      "demand_requested": 0,
+      "demand_actual": 0,
+      "spill": 1,
+      "after": [
+        3,
+        0,
+        1
+      ],
+      "ground_version": 1
+    },
+    {
+      "before": [
+        3,
+        0,
+        1
+      ],
+      "action": "HOLD",
+      "inflow": 0,
+      "demand_requested": 1,
+      "demand_actual": 0,
+      "spill": 0,
+      "after": [
+        3,
+        0,
+        2
+      ],
+      "ground_version": 1
+    },
+    {
+      "before": [
+        3,
+        0,
+        2
+      ],
+      "action": "HOLD",
+      "inflow": 0,
+      "demand_requested": 0,
+      "demand_actual": 0,
+      "spill": 0,
+      "after": [
+        3,
+        0,
+        3
+      ],
+      "ground_version": 1
+    },
+    {
+      "before": [
+        3,
+        0,
+        3
+      ],
+      "action": "HOLD",
+      "inflow": 1,
+      "demand_requested": 0,
+      "demand_actual": 0,
+      "spill": 1,
+      "after": [
+        3,
+        0,
+        0
+      ],
+      "ground_version": 1
+    }
+  ],
+  "ground_version_migration": {
+    "capacity_expansion": {
+      "old_version": 1,
+      "new_version": 2,
+      "old_state_count": 64,
+      "new_state_count": 100,
+      "directly_migratable_states": 64,
+      "unmappable_states": 0,
+      "migration_is_total": true,
+      "lost_examples": [],
+      "law_changed": true
+    },
+    "capacity_reduction": {
+      "old_version": 1,
+      "new_version": 2,
+      "old_state_count": 64,
+      "new_state_count": 36,
+      "directly_migratable_states": 36,
+      "unmappable_states": 28,
+      "migration_is_total": false,
+      "lost_examples": [
+        [
+          0,
+          3,
+          0
+        ],
+        [
+          0,
+          3,
+          1
+        ],
+        [
+          0,
+          3,
+          2
+        ],
+        [
+          0,
+          3,
+          3
+        ],
+        [
+          1,
+          3,
+          0
+        ],
+        [
+          1,
+          3,
+          1
+        ],
+        [
+          1,
+          3,
+          2
+        ],
+        [
+          1,
+          3,
+          3
+        ]
+      ],
+      "law_changed": true
+    },
+    "environment_law_revision": {
+      "old_version": 1,
+      "new_version": 2,
+      "old_state_count": 64,
+      "new_state_count": 64,
+      "directly_migratable_states": 64,
+      "unmappable_states": 0,
+      "migration_is_total": true,
+      "lost_examples": [],
+      "law_changed": true
+    },
+    "ordinary_phase_advance": {
+      "version_before": 1,
+      "version_after": 1,
+      "ground_shift": false
+    },
+    "observer_sensor_change": {
+      "ground_version_change": 0,
+      "ground_shift": false
+    },
+    "resource_profile_change": {
+      "ground_version_change": 0,
+      "ground_shift": false
+    }
+  },
+  "interpretation": {
+    "normal_phase_progress_is_not_ground_revision": true,
+    "capacity_or_forcing_law_change_is_ground_revision": true,
+    "observer_capability_change_is_not_ground_revision": true,
+    "resource_budget_change_is_not_ground_revision": true,
+    "observer_quotient_requires_transition_congruence_for_memoryless_navigation": true,
+    "belief_policies_can_navigate_without_full_state_observation": true
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "dataset": "TAPS: Throat and Acoustic Paired Speech Dataset",
+  "zenodo_record": "https://zenodo.org/records/18324208",
+  "zenodo_doi": "10.5281/zenodo.18324208",
+  "huggingface_repository": "yskim3271/Throat_and_Acoustic_Pairing_Speech_Dataset",
+  "paper": "https://www.nature.com/articles/s41597-026-07268-2",
+  "paper_doi": "10.1038/s41597-026-07268-2",
+  "published": "2026-04-20",
+  "record_summary": {
+    "speakers": 60,
+    "utterances": 6000,
+    "duration_hours_approx": 15.3,
+    "splits": {
+      "train": {"speakers": 40, "utterances": 4000, "hours_approx": 10.2},
+      "dev": {"speakers": 10, "utterances": 1000, "hours_approx": 2.5},
+      "test": {"speakers": 10, "utterances": 1000, "hours_approx": 2.6}
+    },
+    "speaker_overlap_between_splits": false
+  },
+  "sensor_configuration": {
+    "throat_channel": {
+      "sensor_type": "MEMS accelerometer mounted in a throat microphone assembly",
+      "recorded_axis": "z only",
+      "original_sample_rate_hz": 8000,
+      "resolution_bits": 16,
+      "dynamic_range_g": "+/-4",
+      "original_nyquist_hz": 4000
+    },
+    "acoustic_channel": {
+      "sensor_type": "MEMS acoustic microphone",
+      "sample_rate_hz": 16000,
+      "resolution_bits": 24
+    },
+    "simultaneous_acquisition": true
+  },
+  "documented_preprocessing": {
+    "throat_dc_and_gravity_removal": "5th-order Butterworth high-pass at 50 Hz, forward-backward zero-phase filtering",
+    "acoustic_noise_processing": "Causal Demucs denoising reported by the authors",
+    "speech_trimming": "Energy-based segmentation with short leading/trailing margins",
+    "throat_resampling": "Original 8 kHz throat channel Fourier-resampled to 16 kHz for the released aligned dataset",
+    "global_alignment_shift_original_throat_samples": 13,
+    "global_alignment_shift_ms": 1.625,
+    "alignment_policy": "Overall mean speaker mismatch correction used in final dataset"
+  },
+  "file_layout": "<split>/<speaker_id>/<sentence_id>/{throat_microphone.wav,acoustic_microphone.wav,features.json}",
+  "metadata_policy": "The analysis reads speaker_id and sentence_id only for internal pairing/grouping, and per-channel sampling_rate for consistency checks. It does not export transcript, normalized_text, gender, or raw speaker IDs.",
+  "license_note": "The Hugging Face dataset card identifies CC-BY-4.0. The Zenodo record rendering did not expose a readable license label in the inspected view; verify the current data-level terms before redistribution. The journal article itself is CC BY-NC-ND 4.0, which is distinct from the dataset license.",
+  "local_retrieval_status": "Not downloaded in this build environment. The included downloader fetches only the held-out test archive by default (about 452 MB), verifies its published MD5, and safely extracts it.",
+  "empirical_metrics_computed_by_build_13": false
+}

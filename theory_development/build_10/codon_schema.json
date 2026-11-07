@@ -1,0 +1,44 @@
+{
+  "schema_name": "VL Build 09 executable arithmetic subset",
+  "schema_version": "0.1",
+  "scope": "Local executable codon subset used by the synthetic cross-modal response benchmark; not a replacement for the user's full Virtual Layer registry.",
+  "operations": {
+    "ld": {"canonical": "load", "arity": 1, "meaning": "Pass/load one operand into the expression."},
+    "ad": {"canonical": "add", "arity": 2, "meaning": "Arithmetic addition."},
+    "su": {"canonical": "subtract", "arity": 2, "meaning": "Arithmetic subtraction."},
+    "mx": {"canonical": "multiply", "arity": 2, "meaning": "Arithmetic multiplication."},
+    "dv": {"canonical": "divide", "arity": 2, "meaning": "Arithmetic division; rejects near-zero divisor."},
+    "pw": {"canonical": "integer_power", "arity": 2, "meaning": "Raise the first operand to the integer exponent in the second operand."},
+    "st": {"canonical": "store", "arity": 1, "meaning": "Return/store one output value."}
+  },
+  "alternate_registry": {
+    "ld": "load",
+    "ad": "plus",
+    "su": "minus",
+    "mx": "times",
+    "dv": "divide",
+    "pw": "pow",
+    "st": "write"
+  },
+  "models": {
+    "acoustic_like_digital_resonator": {
+      "equation": "y[n] = b0*x[n] + a1*y[n-1] + a2*y[n-2]",
+      "operation_pattern": ["ld", "mx", "ad", "mx", "ad", "st"],
+      "note": "The operation pattern is a compact execution outline; operand edges are specified by the recurrence equation."
+    },
+    "mechanical_linear_acceleration": {
+      "equation": "xddot = (F - c*xdot - k*x) / m",
+      "operation_pattern": ["ld", "mx", "su", "mx", "su", "dv", "st"],
+      "note": "The operation pattern is a compact execution outline; operand edges are specified by the differential equation."
+    },
+    "mechanical_nonlinear_acceleration": {
+      "equation": "xddot = (F - c*xdot - k*x - beta*x^3) / m",
+      "additional_operations": ["pw", "mx", "su"],
+      "note": "Cubic stiffness is enabled only in the nonlinear amplitude stress probe."
+    }
+  },
+  "verification": {
+    "default_and_alternate_registry_max_abs_output_difference": 0.0,
+    "system_domain_cases": 10
+  }
+}

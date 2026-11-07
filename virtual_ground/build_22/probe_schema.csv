@@ -1,0 +1,8 @@
+field,type,description
+initial_state,tuple[int,int,int],Calibrated reset state (A level B level phase)
+action,categorical,HOLD A_TO_B or B_TO_A
+sensor,categorical,TOTAL LEVELS or FULL
+reset_cost,float,Resource cost for calibrated initial state
+execution_cost,float,Action execution cost
+measurement_cost,float,Observer-dependent sensor cost
+predicted_observation,tuple[int,...],Candidate model output

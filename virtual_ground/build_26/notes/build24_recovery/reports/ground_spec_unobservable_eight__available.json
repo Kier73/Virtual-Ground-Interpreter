@@ -1,0 +1,74 @@
+{
+  "specification": {
+    "format": "VG-PredictiveMealy-1",
+    "initial": "q0",
+    "actions": [
+      "HOLD",
+      "PROBE_A",
+      "PROBE_B"
+    ],
+    "state_count": 1,
+    "transitions": {
+      "q0": {
+        "HOLD": "q0",
+        "PROBE_A": "q0",
+        "PROBE_B": "q0"
+      }
+    },
+    "outputs": {
+      "q0": {
+        "HOLD": [
+          0
+        ],
+        "PROBE_A": [
+          0
+        ],
+        "PROBE_B": [
+          0
+        ]
+      }
+    },
+    "access_representatives": {
+      "q0": []
+    },
+    "experiment_count": 3,
+    "access_count": 1
+  },
+  "compiled_program": {
+    "compiler_kind": "finite_predictive_automaton",
+    "initial_state": "q0",
+    "transitions": {
+      "q0": {
+        "HOLD": "q0",
+        "PROBE_A": "q0",
+        "PROBE_B": "q0"
+      }
+    },
+    "outputs": {
+      "q0": {
+        "HOLD": [
+          0
+        ],
+        "PROBE_A": [
+          0
+        ],
+        "PROBE_B": [
+          0
+        ]
+      }
+    },
+    "semantics": "state_next=transitions[state][action]; output=outputs[state][action]"
+  },
+  "compiler_verification": {
+    "cases_checked": 3,
+    "exact": true,
+    "compiler_kind": "finite_predictive_automaton"
+  },
+  "metadata": {
+    "ground_name": "unobservable_eight",
+    "observer_profile": "available",
+    "semantic_claim": "minimal predictive quotient supported by the observation table and bounded conformance suite",
+    "physical_hidden_state_claim": "not inferred; only behaviorally distinguishable predictive contexts are represented"
+  },
+  "fingerprint": "fec72fa420a0ff901dd28a79f90d531e24ffce48b652f98517a235ec0c3dee5a"
+}

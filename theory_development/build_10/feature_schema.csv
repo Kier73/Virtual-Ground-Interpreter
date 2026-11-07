@@ -1,0 +1,19 @@
+index,name,description
+0,log_gain,Log RMS output-to-input ratio
+1,crest,Peak absolute output divided by output RMS
+2,zero_crossing,Adjacent sign-change rate
+3,spectral_centroid,Output spectral centroid normalized by 64 Hz
+4,spectral_bandwidth,Spectral bandwidth normalized by 64 Hz
+5,spectral_flatness,Geometric-to-arithmetic mean of spectral magnitudes over 2-64 Hz
+6,peak_frequency,Frequency of largest non-DC spectral bin normalized by 64 Hz
+7,band_3_10,Output spectral energy fraction from 3 to 10 Hz
+8,band_10_20,Output spectral energy fraction from 10 to 20 Hz
+9,band_20_40,Output spectral energy fraction from 20 to 40 Hz
+10,band_40_64,Output spectral energy fraction from 40 to 64 Hz
+11,decay_slope,Least-squares slope of log windowed RMS envelope
+12,late_early_ratio,Last-quarter RMS divided by first-quarter RMS
+13-28,log_spectral_bin_00..15,Log normalized energy in sixteen adjacent 4-Hz bands from 2 to 66 Hz
+29,gain_block_span,Range of four blockwise log output-to-input RMS gains
+30,gain_block_slope,Regression slope of block log-gain against block input log-RMS
+31,spectral_peak_count,Count of local spectral maxima exceeding 11 percent of global peak
+32,spectral_notch_depth,Median minus minimum of sixteen log spectral-bin energies; a trough proxy, not a calibrated antiresonance metric

@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "ground_id": "support9-v1",
+  "name": "Support-9",
+  "version": 1,
+  "model_type": "symbolic partial irreversible transition system",
+  "physical_mechanics_claim": false,
+  "state": {"encoding": "9-bit block occupancy mask", "initial_mask": 511},
+  "layers": {"base": [0, 1, 2], "middle": [3, 4, 5], "top": [6, 7, 8]},
+  "support_edges": {
+    "3": [0, 1], "4": [1, 2], "5": [2, 0],
+    "6": [3, 4], "7": [4, 5], "8": [5, 3]
+  },
+  "stability_predicate": "each present elevated block has at least one present support in the layer immediately below",
+  "operations": {"schema": "REMOVE_i where i is present and the resulting state remains stable", "invertible": false},
+  "observations": ["full_block_occupancy", "per_layer_counts"],
+  "measured_reachable_states": 232,
+  "measured_directed_edges": 774,
+  "revised_example": {"version": 2, "block_6_supports": [3], "reachable_states": 200, "directed_edges": 646}
+}

@@ -1,0 +1,50 @@
+{
+  "active_identification_rate": 1.0,
+  "active_mean_probes": 2,
+  "active_mean_cost": 6.375,
+  "passive_identification_rate": 0.0,
+  "passive_mean_remaining": 2,
+  "first_probe": "(2, 0, 3)|A_TO_B|FULL",
+  "revision_monitor": {
+    "one_sensor_anomaly": {
+      "first_status": "quarantined_single_conflict",
+      "recovery_status": "consistent_with_current_ground",
+      "version_proposed": false
+    },
+    "persistent_law_change": {
+      "first_status": "quarantined_single_conflict",
+      "second_status": "ground_revision_candidate",
+      "revision_candidate": [
+        "C3-inflow_B-demand_A-Q1-P1-V2"
+      ],
+      "version_committed_automatically": false
+    }
+  },
+  "alternative_cost_probe": {
+    "full_sensor_cost": 20.0,
+    "selected_probe": "(1, 2, 3)|HOLD|LEVELS",
+    "selected_sensor": "LEVELS",
+    "information_gain_bits": 2.0,
+    "score_per_cost": 1.1428571428571428,
+    "selection_changed_from_default": true,
+    "all_true_candidates_identified": true,
+    "mean_probe_count": 4,
+    "mean_total_probe_cost": 26.6875
+  },
+  "open_world_validation": {
+    "actual_ground": "C3-inflow_C-demand_A-Q1-P1-V1",
+    "active_discovery_status": "identified_within_candidate_family",
+    "selected_closed_family_candidate": "C3-inflow_A-demand_A-Q1-P1-V1",
+    "holdout_probe": "(0, 0, 1)|HOLD|LEVELS",
+    "candidate_prediction": [
+      0,
+      0
+    ],
+    "actual_observation": [
+      1,
+      0
+    ],
+    "holdout_matches": false,
+    "interpretation": "candidate fit is conditional on the declared model family; independent holdout exposes omitted law"
+  }
+}

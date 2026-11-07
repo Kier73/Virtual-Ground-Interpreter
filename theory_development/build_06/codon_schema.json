@@ -1,0 +1,23 @@
+{
+  "schema": "build06.scalar-algebra.v1",
+  "purpose": "Scalar primitive aliases used by the compiled quaternion Hamilton-product program.",
+  "default_registry": {
+    "ad": {"operation": "add", "arity": 2},
+    "su": {"operation": "subtract", "arity": 2},
+    "mx": {"operation": "multiply", "arity": 2},
+    "dv": {"operation": "divide", "arity": 2, "requires_nonzero_divisor": true},
+    "sr": {"operation": "square_root", "arity": 1, "requires_nonnegative_input": true}
+  },
+  "alias_registry_test": {
+    "plus": "add",
+    "minus": "subtract",
+    "times": "multiply",
+    "over": "divide",
+    "root": "square_root"
+  },
+  "notes": [
+    "Quaternion Hamilton multiplication is compiled to 28 scalar instructions.",
+    "Codon strings are configurable aliases; scalar operation semantics are the stable contract.",
+    "The schema is local to this experiment and is not a canonical Virtual Layer registry update."
+  ]
+}

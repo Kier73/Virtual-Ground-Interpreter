@@ -1,0 +1,593 @@
+[
+  {
+    "empirical_tail_fraction_with_plus_one": 0.34375,
+    "familywise_null_max_across_candidates": 37,
+    "interpretation": "within-trace token frequency preserved; local order randomized; maximum statistic controls candidate-family search",
+    "motif_id": "M001",
+    "null_max_occurrences_for_motif": 7,
+    "null_mean_occurrences": 4.193548,
+    "observed_occurrences": 6,
+    "signature": [
+      "tail",
+      "tail",
+      "pulse"
+    ],
+    "survives_order_null": false
+  },
+  {
+    "empirical_tail_fraction_with_plus_one": 0.03125,
+    "familywise_null_max_across_candidates": 37,
+    "interpretation": "within-trace token frequency preserved; local order randomized; maximum statistic controls candidate-family search",
+    "motif_id": "M002",
+    "null_max_occurrences_for_motif": 4,
+    "null_mean_occurrences": 1.935484,
+    "observed_occurrences": 5,
+    "signature": [
+      "pulse",
+      "bend",
+      "pulse"
+    ],
+    "survives_order_null": false
+  },
+  {
+    "empirical_tail_fraction_with_plus_one": 0.0625,
+    "familywise_null_max_across_candidates": 37,
+    "interpretation": "within-trace token frequency preserved; local order randomized; maximum statistic controls candidate-family search",
+    "motif_id": "M003",
+    "null_max_occurrences_for_motif": 5,
+    "null_mean_occurrences": 1.387097,
+    "observed_occurrences": 5,
+    "signature": [
+      "tail",
+      "tail",
+      "edge"
+    ],
+    "survives_order_null": false
+  },
+  {
+    "empirical_tail_fraction_with_plus_one": 0.59375,
+    "familywise_null_max_across_candidates": 37,
+    "interpretation": "within-trace token frequency preserved; local order randomized; maximum statistic controls candidate-family search",
+    "motif_id": "M004",
+    "null_max_occurrences_for_motif": 34,
+    "null_mean_occurrences": 25.870968,
+    "observed_occurrences": 26,
+    "signature": [
+      "tail",
+      "pulse"
+    ],
+    "survives_order_null": false
+  },
+  {
+    "empirical_tail_fraction_with_plus_one": 0.4375,
+    "familywise_null_max_across_candidates": 37,
+    "interpretation": "within-trace token frequency preserved; local order randomized; maximum statistic controls candidate-family search",
+    "motif_id": "M005",
+    "null_max_occurrences_for_motif": 32,
+    "null_mean_occurrences": 24.290323,
+    "observed_occurrences": 25,
+    "signature": [
+      "tail",
+      "tail"
+    ],
+    "survives_order_null": false
+  },
+  {
+    "empirical_tail_fraction_with_plus_one": 0.8125,
+    "familywise_null_max_across_candidates": 37,
+    "interpretation": "within-trace token frequency preserved; local order randomized; maximum statistic controls candidate-family search",
+    "motif_id": "M006",
+    "null_max_occurrences_for_motif": 37,
+    "null_mean_occurrences": 26.032258,
+    "observed_occurrences": 23,
+    "signature": [
+      "pulse",
+      "tail"
+    ],
+    "survives_order_null": false
+  },
+  {
+    "empirical_tail_fraction_with_plus_one": 0.1875,
+    "familywise_null_max_across_candidates": 37,
+    "interpretation": "within-trace token frequency preserved; local order randomized; maximum statistic controls candidate-family search",
+    "motif_id": "M007",
+    "null_max_occurrences_for_motif": 20,
+    "null_mean_occurrences": 13.516129,
+    "observed_occurrences": 17,
+    "signature": [
+      "bend",
+      "pulse"
+    ],
+    "survives_order_null": false
+  },
+  {
+    "empirical_tail_fraction_with_plus_one": 0.28125,
+    "familywise_null_max_across_candidates": 37,
+    "interpretation": "within-trace token frequency preserved; local order randomized; maximum statistic controls candidate-family search",
+    "motif_id": "M008",
+    "null_max_occurrences_for_motif": 17,
+    "null_mean_occurrences": 11.258065,
+    "observed_occurrences": 14,
+    "signature": [
+      "pulse",
+      "ramp"
+    ],
+    "survives_order_null": false
+  },
+  {
+    "empirical_tail_fraction_with_plus_one": 0.28125,
+    "familywise_null_max_across_candidates": 37,
+    "interpretation": "within-trace token frequency preserved; local order randomized; maximum statistic controls candidate-family search",
+    "motif_id": "M009",
+    "null_max_occurrences_for_motif": 20,
+    "null_mean_occurrences": 11.032258,
+    "observed_occurrences": 13,
+    "signature": [
+      "edge",
+      "pulse"
+    ],
+    "survives_order_null": false
+  },
+  {
+    "empirical_tail_fraction_with_plus_one": 0.28125,
+    "familywise_null_max_across_candidates": 37,
+    "interpretation": "within-trace token frequency preserved; local order randomized; maximum statistic controls candidate-family search",
+    "motif_id": "M010",
+    "null_max_occurrences_for_motif": 18,
+    "null_mean_occurrences": 10.967742,
+    "observed_occurrences": 13,
+    "signature": [
+      "tick",
+      "pulse"
+    ],
+    "survives_order_null": false
+  },
+  {
+    "empirical_tail_fraction_with_plus_one": 0.53125,
+    "familywise_null_max_across_candidates": 37,
+    "interpretation": "within-trace token frequency preserved; local order randomized; maximum statistic controls candidate-family search",
+    "motif_id": "M011",
+    "null_max_occurrences_for_motif": 17,
+    "null_mean_occurrences": 11.419355,
+    "observed_occurrences": 12,
+    "signature": [
+      "ramp",
+      "tail"
+    ],
+    "survives_order_null": false
+  },
+  {
+    "empirical_tail_fraction_with_plus_one": 0.46875,
+    "familywise_null_max_across_candidates": 37,
+    "interpretation": "within-trace token frequency preserved; local order randomized; maximum statistic controls candidate-family search",
+    "motif_id": "M012",
+    "null_max_occurrences_for_motif": 19,
+    "null_mean_occurrences": 10.709677,
+    "observed_occurrences": 12,
+    "signature": [
+      "tail",
+      "ramp"
+    ],
+    "survives_order_null": false
+  },
+  {
+    "empirical_tail_fraction_with_plus_one": 0.4375,
+    "familywise_null_max_across_candidates": 37,
+    "interpretation": "within-trace token frequency preserved; local order randomized; maximum statistic controls candidate-family search",
+    "motif_id": "M013",
+    "null_max_occurrences_for_motif": 19,
+    "null_mean_occurrences": 14.354839,
+    "observed_occurrences": 16,
+    "signature": [
+      "bend",
+      "tail"
+    ],
+    "survives_order_null": false
+  },
+  {
+    "empirical_tail_fraction_with_plus_one": 0.90625,
+    "familywise_null_max_across_candidates": 37,
+    "interpretation": "within-trace token frequency preserved; local order randomized; maximum statistic controls candidate-family search",
+    "motif_id": "M014",
+    "null_max_occurrences_for_motif": 21,
+    "null_mean_occurrences": 13.806452,
+    "observed_occurrences": 11,
+    "signature": [
+      "tail",
+      "bend"
+    ],
+    "survives_order_null": false
+  },
+  {
+    "empirical_tail_fraction_with_plus_one": 0.71875,
+    "familywise_null_max_across_candidates": 37,
+    "interpretation": "within-trace token frequency preserved; local order randomized; maximum statistic controls candidate-family search",
+    "motif_id": "M015",
+    "null_max_occurrences_for_motif": 17,
+    "null_mean_occurrences": 11.967742,
+    "observed_occurrences": 11,
+    "signature": [
+      "tail",
+      "tick"
+    ],
+    "survives_order_null": false
+  },
+  {
+    "empirical_tail_fraction_with_plus_one": 0.34375,
+    "familywise_null_max_across_candidates": 37,
+    "interpretation": "within-trace token frequency preserved; local order randomized; maximum statistic controls candidate-family search",
+    "motif_id": "M016",
+    "null_max_occurrences_for_motif": 21,
+    "null_mean_occurrences": 12.516129,
+    "observed_occurrences": 14,
+    "signature": [
+      "pulse",
+      "bend"
+    ],
+    "survives_order_null": false
+  },
+  {
+    "empirical_tail_fraction_with_plus_one": 0.5,
+    "familywise_null_max_across_candidates": 37,
+    "interpretation": "within-trace token frequency preserved; local order randomized; maximum statistic controls candidate-family search",
+    "motif_id": "M017",
+    "null_max_occurrences_for_motif": 17,
+    "null_mean_occurrences": 11.870968,
+    "observed_occurrences": 13,
+    "signature": [
+      "edge",
+      "tail"
+    ],
+    "survives_order_null": false
+  },
+  {
+    "empirical_tail_fraction_with_plus_one": 1.0,
+    "familywise_null_max_across_candidates": 37,
+    "interpretation": "within-trace token frequency preserved; local order randomized; maximum statistic controls candidate-family search",
+    "motif_id": "M018",
+    "null_max_occurrences_for_motif": 34,
+    "null_mean_occurrences": 25.225806,
+    "observed_occurrences": 13,
+    "signature": [
+      "pulse",
+      "pulse"
+    ],
+    "survives_order_null": false
+  },
+  {
+    "empirical_tail_fraction_with_plus_one": 0.125,
+    "familywise_null_max_across_candidates": 37,
+    "interpretation": "within-trace token frequency preserved; local order randomized; maximum statistic controls candidate-family search",
+    "motif_id": "M019",
+    "null_max_occurrences_for_motif": 10,
+    "null_mean_occurrences": 5.83871,
+    "observed_occurrences": 9,
+    "signature": [
+      "tick",
+      "edge"
+    ],
+    "survives_order_null": false
+  },
+  {
+    "empirical_tail_fraction_with_plus_one": 0.375,
+    "familywise_null_max_across_candidates": 37,
+    "interpretation": "within-trace token frequency preserved; local order randomized; maximum statistic controls candidate-family search",
+    "motif_id": "M020",
+    "null_max_occurrences_for_motif": 16,
+    "null_mean_occurrences": 11.741935,
+    "observed_occurrences": 13,
+    "signature": [
+      "pulse",
+      "tick"
+    ],
+    "survives_order_null": false
+  },
+  {
+    "empirical_tail_fraction_with_plus_one": 0.3125,
+    "familywise_null_max_across_candidates": 37,
+    "interpretation": "within-trace token frequency preserved; local order randomized; maximum statistic controls candidate-family search",
+    "motif_id": "M021",
+    "null_max_occurrences_for_motif": 18,
+    "null_mean_occurrences": 11.258065,
+    "observed_occurrences": 13,
+    "signature": [
+      "tail",
+      "edge"
+    ],
+    "survives_order_null": false
+  },
+  {
+    "empirical_tail_fraction_with_plus_one": 0.09375,
+    "familywise_null_max_across_candidates": 37,
+    "interpretation": "within-trace token frequency preserved; local order randomized; maximum statistic controls candidate-family search",
+    "motif_id": "M022",
+    "null_max_occurrences_for_motif": 11,
+    "null_mean_occurrences": 6.16129,
+    "observed_occurrences": 11,
+    "signature": [
+      "ramp",
+      "bend"
+    ],
+    "survives_order_null": false
+  },
+  {
+    "empirical_tail_fraction_with_plus_one": 0.0625,
+    "familywise_null_max_across_candidates": 37,
+    "interpretation": "within-trace token frequency preserved; local order randomized; maximum statistic controls candidate-family search",
+    "motif_id": "M023",
+    "null_max_occurrences_for_motif": 11,
+    "null_mean_occurrences": 5.870968,
+    "observed_occurrences": 10,
+    "signature": [
+      "pulse",
+      "click"
+    ],
+    "survives_order_null": false
+  },
+  {
+    "empirical_tail_fraction_with_plus_one": 0.5,
+    "familywise_null_max_across_candidates": 37,
+    "interpretation": "within-trace token frequency preserved; local order randomized; maximum statistic controls candidate-family search",
+    "motif_id": "M024",
+    "null_max_occurrences_for_motif": 19,
+    "null_mean_occurrences": 12.225806,
+    "observed_occurrences": 13,
+    "signature": [
+      "pulse",
+      "edge"
+    ],
+    "survives_order_null": false
+  },
+  {
+    "empirical_tail_fraction_with_plus_one": 0.8125,
+    "familywise_null_max_across_candidates": 37,
+    "interpretation": "within-trace token frequency preserved; local order randomized; maximum statistic controls candidate-family search",
+    "motif_id": "M025",
+    "null_max_occurrences_for_motif": 17,
+    "null_mean_occurrences": 10.580645,
+    "observed_occurrences": 8,
+    "signature": [
+      "ramp",
+      "pulse"
+    ],
+    "survives_order_null": false
+  },
+  {
+    "empirical_tail_fraction_with_plus_one": 0.25,
+    "familywise_null_max_across_candidates": 37,
+    "interpretation": "within-trace token frequency preserved; local order randomized; maximum statistic controls candidate-family search",
+    "motif_id": "M026",
+    "null_max_occurrences_for_motif": 12,
+    "null_mean_occurrences": 5.903226,
+    "observed_occurrences": 8,
+    "signature": [
+      "tail",
+      "click"
+    ],
+    "survives_order_null": false
+  },
+  {
+    "empirical_tail_fraction_with_plus_one": 0.15625,
+    "familywise_null_max_across_candidates": 37,
+    "interpretation": "within-trace token frequency preserved; local order randomized; maximum statistic controls candidate-family search",
+    "motif_id": "M027",
+    "null_max_occurrences_for_motif": 9,
+    "null_mean_occurrences": 5.419355,
+    "observed_occurrences": 9,
+    "signature": [
+      "edge",
+      "tick"
+    ],
+    "survives_order_null": false
+  },
+  {
+    "empirical_tail_fraction_with_plus_one": 0.84375,
+    "familywise_null_max_across_candidates": 37,
+    "interpretation": "within-trace token frequency preserved; local order randomized; maximum statistic controls candidate-family search",
+    "motif_id": "M028",
+    "null_max_occurrences_for_motif": 19,
+    "null_mean_occurrences": 11.387097,
+    "observed_occurrences": 9,
+    "signature": [
+      "tick",
+      "tail"
+    ],
+    "survives_order_null": false
+  },
+  {
+    "empirical_tail_fraction_with_plus_one": 0.28125,
+    "familywise_null_max_across_candidates": 37,
+    "interpretation": "within-trace token frequency preserved; local order randomized; maximum statistic controls candidate-family search",
+    "motif_id": "M029",
+    "null_max_occurrences_for_motif": 11,
+    "null_mean_occurrences": 6.16129,
+    "observed_occurrences": 8,
+    "signature": [
+      "bend",
+      "edge"
+    ],
+    "survives_order_null": false
+  },
+  {
+    "empirical_tail_fraction_with_plus_one": 0.25,
+    "familywise_null_max_across_candidates": 37,
+    "interpretation": "within-trace token frequency preserved; local order randomized; maximum statistic controls candidate-family search",
+    "motif_id": "M030",
+    "null_max_occurrences_for_motif": 10,
+    "null_mean_occurrences": 5.290323,
+    "observed_occurrences": 7,
+    "signature": [
+      "click",
+      "pulse"
+    ],
+    "survives_order_null": false
+  },
+  {
+    "empirical_tail_fraction_with_plus_one": 0.0625,
+    "familywise_null_max_across_candidates": 37,
+    "interpretation": "within-trace token frequency preserved; local order randomized; maximum statistic controls candidate-family search",
+    "motif_id": "M031",
+    "null_max_occurrences_for_motif": 8,
+    "null_mean_occurrences": 2.870968,
+    "observed_occurrences": 7,
+    "signature": [
+      "hum",
+      "bend"
+    ],
+    "survives_order_null": false
+  },
+  {
+    "empirical_tail_fraction_with_plus_one": 0.28125,
+    "familywise_null_max_across_candidates": 37,
+    "interpretation": "within-trace token frequency preserved; local order randomized; maximum statistic controls candidate-family search",
+    "motif_id": "M032",
+    "null_max_occurrences_for_motif": 10,
+    "null_mean_occurrences": 5.290323,
+    "observed_occurrences": 7,
+    "signature": [
+      "hum",
+      "pulse"
+    ],
+    "survives_order_null": false
+  },
+  {
+    "empirical_tail_fraction_with_plus_one": 0.53125,
+    "familywise_null_max_across_candidates": 37,
+    "interpretation": "within-trace token frequency preserved; local order randomized; maximum statistic controls candidate-family search",
+    "motif_id": "M033",
+    "null_max_occurrences_for_motif": 12,
+    "null_mean_occurrences": 5.580645,
+    "observed_occurrences": 6,
+    "signature": [
+      "bend",
+      "tick"
+    ],
+    "survives_order_null": false
+  },
+  {
+    "empirical_tail_fraction_with_plus_one": 0.4375,
+    "familywise_null_max_across_candidates": 37,
+    "interpretation": "within-trace token frequency preserved; local order randomized; maximum statistic controls candidate-family search",
+    "motif_id": "M034",
+    "null_max_occurrences_for_motif": 9,
+    "null_mean_occurrences": 5.16129,
+    "observed_occurrences": 6,
+    "signature": [
+      "click",
+      "tail"
+    ],
+    "survives_order_null": false
+  },
+  {
+    "empirical_tail_fraction_with_plus_one": 0.5,
+    "familywise_null_max_across_candidates": 37,
+    "interpretation": "within-trace token frequency preserved; local order randomized; maximum statistic controls candidate-family search",
+    "motif_id": "M035",
+    "null_max_occurrences_for_motif": 10,
+    "null_mean_occurrences": 5.709677,
+    "observed_occurrences": 6,
+    "signature": [
+      "edge",
+      "edge"
+    ],
+    "survives_order_null": false
+  },
+  {
+    "empirical_tail_fraction_with_plus_one": 0.53125,
+    "familywise_null_max_across_candidates": 37,
+    "interpretation": "within-trace token frequency preserved; local order randomized; maximum statistic controls candidate-family search",
+    "motif_id": "M036",
+    "null_max_occurrences_for_motif": 11,
+    "null_mean_occurrences": 6.16129,
+    "observed_occurrences": 6,
+    "signature": [
+      "bend",
+      "ramp"
+    ],
+    "survives_order_null": false
+  },
+  {
+    "empirical_tail_fraction_with_plus_one": 0.03125,
+    "familywise_null_max_across_candidates": 37,
+    "interpretation": "within-trace token frequency preserved; local order randomized; maximum statistic controls candidate-family search",
+    "motif_id": "M037",
+    "null_max_occurrences_for_motif": 5,
+    "null_mean_occurrences": 2.483871,
+    "observed_occurrences": 6,
+    "signature": [
+      "click",
+      "edge"
+    ],
+    "survives_order_null": false
+  },
+  {
+    "empirical_tail_fraction_with_plus_one": 0.375,
+    "familywise_null_max_across_candidates": 37,
+    "interpretation": "within-trace token frequency preserved; local order randomized; maximum statistic controls candidate-family search",
+    "motif_id": "M038",
+    "null_max_occurrences_for_motif": 10,
+    "null_mean_occurrences": 5.322581,
+    "observed_occurrences": 6,
+    "signature": [
+      "pulse",
+      "hum"
+    ],
+    "survives_order_null": false
+  },
+  {
+    "empirical_tail_fraction_with_plus_one": 0.625,
+    "familywise_null_max_across_candidates": 37,
+    "interpretation": "within-trace token frequency preserved; local order randomized; maximum statistic controls candidate-family search",
+    "motif_id": "M039",
+    "null_max_occurrences_for_motif": 11,
+    "null_mean_occurrences": 6.0,
+    "observed_occurrences": 6,
+    "signature": [
+      "tick",
+      "bend"
+    ],
+    "survives_order_null": false
+  },
+  {
+    "empirical_tail_fraction_with_plus_one": 0.6875,
+    "familywise_null_max_across_candidates": 37,
+    "interpretation": "within-trace token frequency preserved; local order randomized; maximum statistic controls candidate-family search",
+    "motif_id": "M040",
+    "null_max_occurrences_for_motif": 10,
+    "null_mean_occurrences": 6.387097,
+    "observed_occurrences": 6,
+    "signature": [
+      "tick",
+      "ramp"
+    ],
+    "survives_order_null": false
+  },
+  {
+    "empirical_tail_fraction_with_plus_one": 0.71875,
+    "familywise_null_max_across_candidates": 37,
+    "interpretation": "within-trace token frequency preserved; local order randomized; maximum statistic controls candidate-family search",
+    "motif_id": "M041",
+    "null_max_occurrences_for_motif": 10,
+    "null_mean_occurrences": 5.903226,
+    "observed_occurrences": 5,
+    "signature": [
+      "ramp",
+      "tick"
+    ],
+    "survives_order_null": false
+  },
+  {
+    "empirical_tail_fraction_with_plus_one": 0.53125,
+    "familywise_null_max_across_candidates": 37,
+    "interpretation": "within-trace token frequency preserved; local order randomized; maximum statistic controls candidate-family search",
+    "motif_id": "M042",
+    "null_max_occurrences_for_motif": 11,
+    "null_mean_occurrences": 4.774194,
+    "observed_occurrences": 5,
+    "signature": [
+      "ramp",
+      "ramp"
+    ],
+    "survives_order_null": false
+  }
+]

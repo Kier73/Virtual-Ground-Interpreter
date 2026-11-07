@@ -1,0 +1,4 @@
+observer,endpoint_quotient,path_coordinates,visible,collapsed,notes
+S3 lift,none beyond finite harmonic band,quaternion coordinates R4,base position and selected fibre phase,tree-like signature excursions; time labels in geometric path view,full SU2 lift in selected sectors
+SO3,q equivalent to -q,flattened adjoint rotation matrix R9,rotation path,quaternion lift sign,even SU2 sectors only
+Hopf base,q equivalent to q exp(i beta),Hopf base point R3,base path,right U1 fibre phase,projected samples retained; sampling approximation remains

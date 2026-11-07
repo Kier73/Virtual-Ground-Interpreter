@@ -1,0 +1,36 @@
+test_active_policy_selects_area_to_resolve_full_path (test_s3_active_observer.ActiveObservationTests.test_active_policy_selects_area_to_resolve_full_path) ... ok
+test_alias_changes_do_not_change_observer_geometry (test_s3_active_observer.ActiveObservationTests.test_alias_changes_do_not_change_observer_geometry) ... ok
+test_antipodal_measurements (test_s3_active_observer.ActiveObservationTests.test_antipodal_measurements) ... ok
+test_antipodal_pair_invisible_to_base_and_so3 (test_s3_active_observer.ActiveObservationTests.test_antipodal_pair_invisible_to_base_and_so3) ... ok
+test_base_area_encodes_orientation_and_size (test_s3_active_observer.ActiveObservationTests.test_base_area_encodes_orientation_and_size) ... ok
+test_base_observer_chooses_apex_for_size_intent (test_s3_active_observer.ActiveObservationTests.test_base_observer_chooses_apex_for_size_intent) ... ok
+test_base_observer_chooses_area_for_orientation_intent (test_s3_active_observer.ActiveObservationTests.test_base_observer_chooses_area_for_orientation_intent) ... ok
+test_candidate_structures_are_immutable (test_s3_active_observer.ActiveObservationTests.test_candidate_structures_are_immutable) ... ok
+test_endpoint_only_has_zero_information_about_full_path (test_s3_active_observer.ActiveObservationTests.test_endpoint_only_has_zero_information_about_full_path) ... ok
+test_endpoint_only_reports_unresolved (test_s3_active_observer.ActiveObservationTests.test_endpoint_only_reports_unresolved) ... ok
+test_observable_quotient_base_path_observer_separates_four_paths (test_s3_active_observer.ActiveObservationTests.test_observable_quotient_base_path_observer_separates_four_paths) ... ok
+test_observable_quotient_endpoint_observer_collapses_all_four_paths (test_s3_active_observer.ActiveObservationTests.test_observable_quotient_endpoint_observer_collapses_all_four_paths) ... ok
+test_observable_quotient_so3_collapses_antipodes (test_s3_active_observer.ActiveObservationTests.test_observable_quotient_so3_collapses_antipodes) ... ok
+test_rotation_observer_can_discriminate_four_selected_paths (test_s3_active_observer.ActiveObservationTests.test_rotation_observer_can_discriminate_four_selected_paths) ... ok
+test_s3_active_episode_resolves_antipodal_pair (test_s3_active_observer.ActiveObservationTests.test_s3_active_episode_resolves_antipodal_pair) ... ok
+test_s3_observer_selects_phase_for_antipodal_pair (test_s3_active_observer.ActiveObservationTests.test_s3_observer_selects_phase_for_antipodal_pair) ... ok
+test_same_endpoint_intention_requires_no_probe (test_s3_active_observer.ActiveObservationTests.test_same_endpoint_intention_requires_no_probe) ... ok
+test_alias_renaming_preserves_hamilton_product (test_s3_active_observer.CodonicQuaternionTests.test_alias_renaming_preserves_hamilton_product) ... ok
+test_alias_renaming_preserves_lifted_path (test_s3_active_observer.CodonicQuaternionTests.test_alias_renaming_preserves_lifted_path) ... ok
+test_compiled_quaternion_product_identity (test_s3_active_observer.CodonicQuaternionTests.test_compiled_quaternion_product_identity) ... ok
+test_quaternion_product_noncommutative (test_s3_active_observer.CodonicQuaternionTests.test_quaternion_product_noncommutative) ... ok
+test_registry_rejects_duplicate_aliases (test_s3_active_observer.CodonicQuaternionTests.test_registry_rejects_duplicate_aliases) ... ok
+test_all_regular_paths_close_in_base_space (test_s3_active_observer.HopfGeometryTests.test_all_regular_paths_close_in_base_space) ... ok
+test_area_phase_half_area (test_s3_active_observer.HopfGeometryTests.test_area_phase_half_area) ... ok
+test_fibre_gauge_shift_preserves_hopf_projection (test_s3_active_observer.HopfGeometryTests.test_fibre_gauge_shift_preserves_hopf_projection) ... ok
+test_hopf_projection_is_unit (test_s3_active_observer.HopfGeometryTests.test_hopf_projection_is_unit) ... ok
+test_horizontal_lift_each_sample_matches_base (test_s3_active_observer.HopfGeometryTests.test_horizontal_lift_each_sample_matches_base) ... ok
+test_reverse_path_reverses_phase (test_s3_active_observer.HopfGeometryTests.test_reverse_path_reverses_phase) ... ok
+test_s3_and_so3_antipodal_metrics_differ (test_s3_active_observer.HopfGeometryTests.test_s3_and_so3_antipodal_metrics_differ) ... ok
+test_size_changes_holonomy_magnitude (test_s3_active_observer.HopfGeometryTests.test_size_changes_holonomy_magnitude) ... ok
+test_so3_signed_angle_identifies_antipodes (test_s3_active_observer.HopfGeometryTests.test_so3_signed_angle_identifies_antipodes) ... ok
+
+----------------------------------------------------------------------
+Ran 31 tests in 0.209s
+
+OK

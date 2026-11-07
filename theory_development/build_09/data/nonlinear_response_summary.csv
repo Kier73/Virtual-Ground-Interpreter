@@ -1,0 +1,2 @@
+expected_linear_high_low_rms_ratio,acoustic_mean_high_low_rms_ratio,mechanical_mean_high_low_rms_ratio,acoustic_mean_deviation_from_linear,mechanical_mean_deviation_from_linear,interpretation
+6.0,2.2595591587922197,5.984165095848347,0.6234068068679635,0.006274093243109169,domain-specific nonlinear stress probe; not a cross-modal perceptual rating

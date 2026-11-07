@@ -1,0 +1,182 @@
+{
+  "specification": {
+    "format": "VG-PredictiveMealy-1",
+    "initial": "q0",
+    "actions": [
+      "HOLD",
+      "PROBE_A",
+      "PROBE_B"
+    ],
+    "state_count": 4,
+    "transitions": {
+      "q0": {
+        "HOLD": "q1",
+        "PROBE_A": "q1",
+        "PROBE_B": "q0"
+      },
+      "q1": {
+        "HOLD": "q2",
+        "PROBE_A": "q2",
+        "PROBE_B": "q1"
+      },
+      "q2": {
+        "HOLD": "q2",
+        "PROBE_A": "q3",
+        "PROBE_B": "q2"
+      },
+      "q3": {
+        "HOLD": "q3",
+        "PROBE_A": "q0",
+        "PROBE_B": "q3"
+      }
+    },
+    "outputs": {
+      "q0": {
+        "HOLD": [
+          0
+        ],
+        "PROBE_A": [
+          0
+        ],
+        "PROBE_B": [
+          0
+        ]
+      },
+      "q1": {
+        "HOLD": [
+          1
+        ],
+        "PROBE_A": [
+          1
+        ],
+        "PROBE_B": [
+          1
+        ]
+      },
+      "q2": {
+        "HOLD": [
+          0
+        ],
+        "PROBE_A": [
+          0
+        ],
+        "PROBE_B": [
+          0
+        ]
+      },
+      "q3": {
+        "HOLD": [
+          1
+        ],
+        "PROBE_A": [
+          1
+        ],
+        "PROBE_B": [
+          1
+        ]
+      }
+    },
+    "access_representatives": {
+      "q0": [],
+      "q1": [
+        "HOLD"
+      ],
+      "q2": [
+        "HOLD",
+        "HOLD"
+      ],
+      "q3": [
+        "HOLD",
+        "HOLD",
+        "PROBE_A"
+      ]
+    },
+    "experiment_count": 4,
+    "access_count": 5
+  },
+  "compiled_program": {
+    "compiler_kind": "finite_predictive_automaton",
+    "initial_state": "q0",
+    "transitions": {
+      "q0": {
+        "HOLD": "q1",
+        "PROBE_A": "q1",
+        "PROBE_B": "q0"
+      },
+      "q1": {
+        "HOLD": "q2",
+        "PROBE_A": "q2",
+        "PROBE_B": "q1"
+      },
+      "q2": {
+        "HOLD": "q2",
+        "PROBE_A": "q3",
+        "PROBE_B": "q2"
+      },
+      "q3": {
+        "HOLD": "q3",
+        "PROBE_A": "q0",
+        "PROBE_B": "q3"
+      }
+    },
+    "outputs": {
+      "q0": {
+        "HOLD": [
+          0
+        ],
+        "PROBE_A": [
+          0
+        ],
+        "PROBE_B": [
+          0
+        ]
+      },
+      "q1": {
+        "HOLD": [
+          1
+        ],
+        "PROBE_A": [
+          1
+        ],
+        "PROBE_B": [
+          1
+        ]
+      },
+      "q2": {
+        "HOLD": [
+          0
+        ],
+        "PROBE_A": [
+          0
+        ],
+        "PROBE_B": [
+          0
+        ]
+      },
+      "q3": {
+        "HOLD": [
+          1
+        ],
+        "PROBE_A": [
+          1
+        ],
+        "PROBE_B": [
+          1
+        ]
+      }
+    },
+    "semantics": "state_next=transitions[state][action]; output=outputs[state][action]"
+  },
+  "compiler_verification": {
+    "cases_checked": 12,
+    "exact": true,
+    "compiler_kind": "finite_predictive_automaton"
+  },
+  "metadata": {
+    "ground_name": "partial_four",
+    "observer_profile": "available",
+    "semantic_claim": "minimal predictive quotient supported by the observation table and bounded conformance suite",
+    "physical_hidden_state_claim": "not inferred; only behaviorally distinguishable predictive contexts are represented"
+  },
+  "fingerprint": "0604bbc07e6bfbac5d05b19ba42862ed2ead043a9b200d445cdeca3827ee3c5c"
+}

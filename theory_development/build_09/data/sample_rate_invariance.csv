@@ -1,0 +1,7 @@
+domain,sample_rate_hz,rdm_correlation_vs_128hz
+acoustic,64.0,0.9961590648157812
+acoustic,128.0,1.0
+acoustic,256.0,0.999540757749713
+mechanical,64.0,0.9961590648157812
+mechanical,128.0,1.0
+mechanical,256.0,0.999540757749713

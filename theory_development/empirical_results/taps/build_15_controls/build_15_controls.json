@@ -1,0 +1,1178 @@
+{
+  "build": 15,
+  "dataset": "TAPS paired throat-vibration / acoustic speech corpus",
+  "split": "test",
+  "analysis_status": "external_controls_complete",
+  "control_design": {
+    "true_pairs": "same utterance, throat versus acoustic",
+    "mismatched_pairs": "throat utterance i versus acoustic utterance i+shift within speaker; preserves speaker and approximate duration, breaks utterance identity",
+    "null_shifts": [
+      1,
+      37,
+      73
+    ],
+    "mark_only": "mark_weight=1.0, interval_weight=0.0",
+    "interval_only": "mark_weight=0.0, interval_weight=1.0",
+    "combined": "mark_weight=0.78, interval_weight=0.22 (frozen Build 15 setting)",
+    "shuffled_marks": "marks permuted within each stream; times and mark marginal distribution preserved",
+    "shuffled_interval_order": "inter-event gaps permuted within each stream; preserves first event time, gap multiset, event count, mark sequence and total duration",
+    "shuffled_interval_order_interval_only": "shuffled interval order with mark_weight=0.0 and interval_weight=1.0; isolates whether the temporal-order sequence carries the signal",
+    "bootstrap": "within-speaker medians, 2000 speaker resamples, fixed seed 15"
+  },
+  "event_observer": {
+    "frame_ms": 20.0,
+    "min_gap_ms": 80.0
+  },
+  "speakers_analyzed": 10,
+  "utterances_per_speaker_cap": 100,
+  "conditions": [
+    {
+      "condition": "true_combined",
+      "pairs": 1000,
+      "metrics": {
+        "left_count": {
+          "speaker_groups": 10,
+          "median": 36.75,
+          "bootstrap_95pct_ci": [
+            35.0,
+            41.0
+          ],
+          "min": 33.5,
+          "max": 43.5
+        },
+        "right_count": {
+          "speaker_groups": 10,
+          "median": 40.0,
+          "bootstrap_95pct_ci": [
+            38.0,
+            41.0
+          ],
+          "min": 36.0,
+          "max": 46.0
+        },
+        "matched_count": {
+          "speaker_groups": 10,
+          "median": 33.25,
+          "bootstrap_95pct_ci": [
+            32.0,
+            36.0
+          ],
+          "min": 30.0,
+          "max": 39.5
+        },
+        "left_coverage": {
+          "speaker_groups": 10,
+          "median": 0.9115722441809397,
+          "bootstrap_95pct_ci": [
+            0.8913305623973727,
+            0.9285714285714286
+          ],
+          "min": 0.8642506142506143,
+          "max": 0.9333333333333333
+        },
+        "right_coverage": {
+          "speaker_groups": 10,
+          "median": 0.8597960502030269,
+          "bootstrap_95pct_ci": [
+            0.8358035454809649,
+            0.8748225587034956
+          ],
+          "min": 0.8333333333333334,
+          "max": 0.8941769316909294
+        },
+        "median_match_cost": {
+          "speaker_groups": 10,
+          "median": 0.14292346890946653,
+          "bootstrap_95pct_ci": [
+            0.1413540567317142,
+            0.1455927259295553
+          ],
+          "min": 0.1387041173431084,
+          "max": 0.15030067835406336
+        },
+        "mark_rank_spearman": {
+          "speaker_groups": 10,
+          "median": 0.7038244646422493,
+          "bootstrap_95pct_ci": [
+            0.6969578310891467,
+            0.7139083716832578
+          ],
+          "min": 0.6929752600340836,
+          "max": 0.7316598857887424
+        },
+        "interval_spearman": {
+          "speaker_groups": 10,
+          "median": 0.10672073662509615,
+          "bootstrap_95pct_ci": [
+            0.09656867868525953,
+            0.13850627320840703
+          ],
+          "min": 0.08950924770462626,
+          "max": 0.17241437649798985
+        },
+        "interval_log_error": {
+          "speaker_groups": 10,
+          "median": 0.5204347255894958,
+          "bootstrap_95pct_ci": [
+            0.5084202277881384,
+            0.5493061443340571
+          ],
+          "min": 0.4924764850977983,
+          "max": 0.5725661521515009
+        },
+        "clock_scale": {
+          "speaker_groups": 10,
+          "median": 0.9937579076486471,
+          "bootstrap_95pct_ci": [
+            0.9780109812587467,
+            1.002024291497976
+          ],
+          "min": 0.9675809163514082,
+          "max": 1.0336390331301972
+        },
+        "clock_offset_s": {
+          "speaker_groups": 10,
+          "median": -0.041972430907985525,
+          "bootstrap_95pct_ci": [
+            -0.10089223093103605,
+            0.05440185560321242
+          ],
+          "min": -0.1148830671316321,
+          "max": 0.10187568108165587
+        },
+        "clock_residual_s": {
+          "speaker_groups": 10,
+          "median": 0.1903373669870163,
+          "bootstrap_95pct_ci": [
+            0.15367516784485935,
+            0.20869261395953514
+          ],
+          "min": 0.12252144131554887,
+          "max": 0.2265067194403534
+        }
+      }
+    },
+    {
+      "condition": "true_mark_only",
+      "pairs": 1000,
+      "metrics": {
+        "left_count": {
+          "speaker_groups": 10,
+          "median": 36.75,
+          "bootstrap_95pct_ci": [
+            35.0,
+            41.0
+          ],
+          "min": 33.5,
+          "max": 43.5
+        },
+        "right_count": {
+          "speaker_groups": 10,
+          "median": 40.0,
+          "bootstrap_95pct_ci": [
+            38.0,
+            41.0
+          ],
+          "min": 36.0,
+          "max": 46.0
+        },
+        "matched_count": {
+          "speaker_groups": 10,
+          "median": 32.0,
+          "bootstrap_95pct_ci": [
+            31.0,
+            34.5
+          ],
+          "min": 29.0,
+          "max": 38.0
+        },
+        "left_coverage": {
+          "speaker_groups": 10,
+          "median": 0.885373101010442,
+          "bootstrap_95pct_ci": [
+            0.8612500123896085,
+            0.8952850877192983
+          ],
+          "min": 0.8369719981015662,
+          "max": 0.9028324154209284
+        },
+        "right_coverage": {
+          "speaker_groups": 10,
+          "median": 0.8309098639455782,
+          "bootstrap_95pct_ci": [
+            0.8099156965074268,
+            0.842979969765684
+          ],
+          "min": 0.8,
+          "max": 0.86775956284153
+        },
+        "median_match_cost": {
+          "speaker_groups": 10,
+          "median": 0.10703822709339275,
+          "bootstrap_95pct_ci": [
+            0.10387596899224805,
+            0.10872083599191157
+          ],
+          "min": 0.10266049739733953,
+          "max": 0.11067142374191055
+        },
+        "mark_rank_spearman": {
+          "speaker_groups": 10,
+          "median": 0.774156832283282,
+          "bootstrap_95pct_ci": [
+            0.7701337404988521,
+            0.7837985163138379
+          ],
+          "min": 0.7652737613263929,
+          "max": 0.7953938901307323
+        },
+        "interval_spearman": {
+          "speaker_groups": 10,
+          "median": 0.0193910354830603,
+          "bootstrap_95pct_ci": [
+            0.0026649318818128646,
+            0.037494099326495875
+          ],
+          "min": -0.01955273582950177,
+          "max": 0.06194103822666753
+        },
+        "interval_log_error": {
+          "speaker_groups": 10,
+          "median": 0.5971201408536491,
+          "bootstrap_95pct_ci": [
+            0.5737012264187726,
+            0.6125875059882719
+          ],
+          "min": 0.5584807136681507,
+          "max": 0.6269477359053998
+        },
+        "clock_scale": {
+          "speaker_groups": 10,
+          "median": 0.9890397896609809,
+          "bootstrap_95pct_ci": [
+            0.9808315686787694,
+            1.0074181526363353
+          ],
+          "min": 0.9588626089709902,
+          "max": 1.0305440414507772
+        },
+        "clock_offset_s": {
+          "speaker_groups": 10,
+          "median": -0.046008494552593926,
+          "bootstrap_95pct_ci": [
+            -0.10441784488168615,
+            0.01682053096031376
+          ],
+          "min": -0.15269513546128033,
+          "max": 0.18387758839273083
+        },
+        "clock_residual_s": {
+          "speaker_groups": 10,
+          "median": 0.2094778985952495,
+          "bootstrap_95pct_ci": [
+            0.1739260513051984,
+            0.23035225154054972
+          ],
+          "min": 0.16599838969404207,
+          "max": 0.234302612349287
+        }
+      }
+    },
+    {
+      "condition": "true_interval_only",
+      "pairs": 1000,
+      "metrics": {
+        "left_count": {
+          "speaker_groups": 10,
+          "median": 36.75,
+          "bootstrap_95pct_ci": [
+            35.0,
+            41.0
+          ],
+          "min": 33.5,
+          "max": 43.5
+        },
+        "right_count": {
+          "speaker_groups": 10,
+          "median": 40.0,
+          "bootstrap_95pct_ci": [
+            38.0,
+            41.0
+          ],
+          "min": 36.0,
+          "max": 46.0
+        },
+        "matched_count": {
+          "speaker_groups": 10,
+          "median": 34.5,
+          "bootstrap_95pct_ci": [
+            33.5,
+            36.5
+          ],
+          "min": 31.0,
+          "max": 41.0
+        },
+        "left_coverage": {
+          "speaker_groups": 10,
+          "median": 0.9462912087912088,
+          "bootstrap_95pct_ci": [
+            0.9293417366946779,
+            0.9649014778325123
+          ],
+          "min": 0.9028324154209284,
+          "max": 0.9700892857142858
+        },
+        "right_coverage": {
+          "speaker_groups": 10,
+          "median": 0.8925249737819727,
+          "bootstrap_95pct_ci": [
+            0.8733974358974359,
+            0.9134603750756201
+          ],
+          "min": 0.8610038610038611,
+          "max": 0.9344086021505376
+        },
+        "median_match_cost": {
+          "speaker_groups": 10,
+          "median": 0.09779897794860898,
+          "bootstrap_95pct_ci": [
+            0.09610175642365815,
+            0.09982294069303868
+          ],
+          "min": 0.08845077819608191,
+          "max": 0.10136627702704085
+        },
+        "mark_rank_spearman": {
+          "speaker_groups": 10,
+          "median": 0.07008913978486918,
+          "bootstrap_95pct_ci": [
+            0.04467941571133129,
+            0.0732853781266622
+          ],
+          "min": 0.02449193399677598,
+          "max": 0.12553825903970173
+        },
+        "interval_spearman": {
+          "speaker_groups": 10,
+          "median": 0.4393930838772403,
+          "bootstrap_95pct_ci": [
+            0.41769097065939337,
+            0.46408429353220443
+          ],
+          "min": 0.35701632558664087,
+          "max": 0.5210865907413353
+        },
+        "interval_log_error": {
+          "speaker_groups": 10,
+          "median": 0.37194119577955675,
+          "bootstrap_95pct_ci": [
+            0.3599232783327142,
+            0.39176682455163736
+          ],
+          "min": 0.2962910915618901,
+          "max": 0.4054651081081641
+        },
+        "clock_scale": {
+          "speaker_groups": 10,
+          "median": 0.995992785484781,
+          "bootstrap_95pct_ci": [
+            0.9836381463482676,
+            1.003467834389387
+          ],
+          "min": 0.9798023085537082,
+          "max": 1.0113816406376306
+        },
+        "clock_offset_s": {
+          "speaker_groups": 10,
+          "median": -0.009666666666666435,
+          "bootstrap_95pct_ci": [
+            -0.029940283512581684,
+            0.009963414634145698
+          ],
+          "min": -0.034994213899465776,
+          "max": 0.04985515199444565
+        },
+        "clock_residual_s": {
+          "speaker_groups": 10,
+          "median": 0.11722946905136322,
+          "bootstrap_95pct_ci": [
+            0.10244164037854897,
+            0.13452544473035433
+          ],
+          "min": 0.07241867273910216,
+          "max": 0.1769819316115282
+        }
+      }
+    },
+    {
+      "condition": "true_shuffled_marks",
+      "pairs": 1000,
+      "metrics": {
+        "left_count": {
+          "speaker_groups": 10,
+          "median": 36.75,
+          "bootstrap_95pct_ci": [
+            35.0,
+            41.0
+          ],
+          "min": 33.5,
+          "max": 43.5
+        },
+        "right_count": {
+          "speaker_groups": 10,
+          "median": 40.0,
+          "bootstrap_95pct_ci": [
+            38.0,
+            41.0
+          ],
+          "min": 36.0,
+          "max": 46.0
+        },
+        "matched_count": {
+          "speaker_groups": 10,
+          "median": 33.5,
+          "bootstrap_95pct_ci": [
+            31.5,
+            36.0
+          ],
+          "min": 30.0,
+          "max": 40.0
+        },
+        "left_coverage": {
+          "speaker_groups": 10,
+          "median": 0.9095270194360183,
+          "bootstrap_95pct_ci": [
+            0.8876262626262625,
+            0.9149605494371662
+          ],
+          "min": 0.8696943972835314,
+          "max": 0.9267857142857143
+        },
+        "right_coverage": {
+          "speaker_groups": 10,
+          "median": 0.8498185912295952,
+          "bootstrap_95pct_ci": [
+            0.8329043697094487,
+            0.8748512648437685
+          ],
+          "min": 0.824780701754386,
+          "max": 0.8923745173745175
+        },
+        "median_match_cost": {
+          "speaker_groups": 10,
+          "median": 0.1436966211849094,
+          "bootstrap_95pct_ci": [
+            0.14035572441061378,
+            0.14481611269776062
+          ],
+          "min": 0.13904844045136067,
+          "max": 0.14622091295483822
+        },
+        "mark_rank_spearman": {
+          "speaker_groups": 10,
+          "median": 0.7088979631235254,
+          "bootstrap_95pct_ci": [
+            0.6930797734257248,
+            0.7168275852486379
+          ],
+          "min": 0.6787359786086441,
+          "max": 0.7207208418354193
+        },
+        "interval_spearman": {
+          "speaker_groups": 10,
+          "median": 0.10148605907500408,
+          "bootstrap_95pct_ci": [
+            0.08193646104056541,
+            0.11449001917616931
+          ],
+          "min": 0.06956518251010615,
+          "max": 0.13239408630336663
+        },
+        "interval_log_error": {
+          "speaker_groups": 10,
+          "median": 0.5329545946217082,
+          "bootstrap_95pct_ci": [
+            0.5192759617707856,
+            0.5416498827618454
+          ],
+          "min": 0.5108256237659923,
+          "max": 0.5651033270431642
+        },
+        "clock_scale": {
+          "speaker_groups": 10,
+          "median": 0.9919593535953009,
+          "bootstrap_95pct_ci": [
+            0.983626422343727,
+            1.003760281433169
+          ],
+          "min": 0.9733269127486966,
+          "max": 1.0225023636936652
+        },
+        "clock_offset_s": {
+          "speaker_groups": 10,
+          "median": -0.02425588805682772,
+          "bootstrap_95pct_ci": [
+            -0.08285279594508899,
+            0.015987168046996514
+          ],
+          "min": -0.1529255285117581,
+          "max": 0.13494246384015662
+        },
+        "clock_residual_s": {
+          "speaker_groups": 10,
+          "median": 0.17694962174017545,
+          "bootstrap_95pct_ci": [
+            0.17081963794114519,
+            0.20145820769796519
+          ],
+          "min": 0.16039158238088705,
+          "max": 0.2390279637839703
+        }
+      }
+    },
+    {
+      "condition": "true_shuffled_interval_order",
+      "pairs": 1000,
+      "metrics": {
+        "left_count": {
+          "speaker_groups": 10,
+          "median": 36.75,
+          "bootstrap_95pct_ci": [
+            35.0,
+            41.0
+          ],
+          "min": 33.5,
+          "max": 43.5
+        },
+        "right_count": {
+          "speaker_groups": 10,
+          "median": 40.0,
+          "bootstrap_95pct_ci": [
+            38.0,
+            41.0
+          ],
+          "min": 36.0,
+          "max": 46.0
+        },
+        "matched_count": {
+          "speaker_groups": 10,
+          "median": 33.5,
+          "bootstrap_95pct_ci": [
+            32.0,
+            36.0
+          ],
+          "min": 30.0,
+          "max": 39.0
+        },
+        "left_coverage": {
+          "speaker_groups": 10,
+          "median": 0.91425983436853,
+          "bootstrap_95pct_ci": [
+            0.8901904894327031,
+            0.9285714285714286
+          ],
+          "min": 0.8645104895104896,
+          "max": 0.9321839080459771
+        },
+        "right_coverage": {
+          "speaker_groups": 10,
+          "median": 0.855221356835417,
+          "bootstrap_95pct_ci": [
+            0.8355855855855856,
+            0.8772536687631027
+          ],
+          "min": 0.8333333333333334,
+          "max": 0.8932370820668694
+        },
+        "median_match_cost": {
+          "speaker_groups": 10,
+          "median": 0.14639781062047183,
+          "bootstrap_95pct_ci": [
+            0.14489200484548898,
+            0.15064143607530517
+          ],
+          "min": 0.14176449751197018,
+          "max": 0.1557765927299384
+        },
+        "mark_rank_spearman": {
+          "speaker_groups": 10,
+          "median": 0.7088871246614658,
+          "bootstrap_95pct_ci": [
+            0.7001136757322886,
+            0.7161105493764746
+          ],
+          "min": 0.6974288127628441,
+          "max": 0.7231700076901315
+        },
+        "interval_spearman": {
+          "speaker_groups": 10,
+          "median": 0.06358531300778916,
+          "bootstrap_95pct_ci": [
+            0.035166600487712724,
+            0.07222793709379037
+          ],
+          "min": 0.01633089819583697,
+          "max": 0.07775908171294446
+        },
+        "interval_log_error": {
+          "speaker_groups": 10,
+          "median": 0.5570383770350775,
+          "bootstrap_95pct_ci": [
+            0.5424679662241936,
+            0.5697580316127066
+          ],
+          "min": 0.5203346266838715,
+          "max": 0.5881869852438569
+        },
+        "clock_scale": {
+          "speaker_groups": 10,
+          "median": 0.9742837820008599,
+          "bootstrap_95pct_ci": [
+            0.9623864759745964,
+            0.9999999999999949
+          ],
+          "min": 0.9558523673979447,
+          "max": 1.0170125986194423
+        },
+        "clock_offset_s": {
+          "speaker_groups": 10,
+          "median": 0.01983959970545139,
+          "bootstrap_95pct_ci": [
+            -0.06359396658229265,
+            0.045048226759577814
+          ],
+          "min": -0.26938985017015615,
+          "max": 0.14105223056076624
+        },
+        "clock_residual_s": {
+          "speaker_groups": 10,
+          "median": 0.22563655409913885,
+          "bootstrap_95pct_ci": [
+            0.21331833179832493,
+            0.24528858466990938
+          ],
+          "min": 0.1973169206201354,
+          "max": 0.2621089266959889
+        }
+      }
+    },
+    {
+      "condition": "true_shuffled_interval_order_interval_only",
+      "pairs": 1000,
+      "metrics": {
+        "left_count": {
+          "speaker_groups": 10,
+          "median": 36.75,
+          "bootstrap_95pct_ci": [
+            35.0,
+            41.0
+          ],
+          "min": 33.5,
+          "max": 43.5
+        },
+        "right_count": {
+          "speaker_groups": 10,
+          "median": 40.0,
+          "bootstrap_95pct_ci": [
+            38.0,
+            41.0
+          ],
+          "min": 36.0,
+          "max": 46.0
+        },
+        "matched_count": {
+          "speaker_groups": 10,
+          "median": 34.0,
+          "bootstrap_95pct_ci": [
+            33.0,
+            36.0
+          ],
+          "min": 31.0,
+          "max": 40.0
+        },
+        "left_coverage": {
+          "speaker_groups": 10,
+          "median": 0.9298172757475083,
+          "bootstrap_95pct_ci": [
+            0.9162087912087913,
+            0.9459459459459459
+          ],
+          "min": 0.880333138515488,
+          "max": 0.9615384615384616
+        },
+        "right_coverage": {
+          "speaker_groups": 10,
+          "median": 0.8703940034031568,
+          "bootstrap_95pct_ci": [
+            0.8588039867109634,
+            0.8956442831215972
+          ],
+          "min": 0.8437908496732026,
+          "max": 0.911437908496732
+        },
+        "median_match_cost": {
+          "speaker_groups": 10,
+          "median": 0.10641687120432236,
+          "bootstrap_95pct_ci": [
+            0.10380363836117801,
+            0.10674217369536781
+          ],
+          "min": 0.09758872832995652,
+          "max": 0.11002491207269927
+        },
+        "mark_rank_spearman": {
+          "speaker_groups": 10,
+          "median": 0.05082583847910106,
+          "bootstrap_95pct_ci": [
+            0.03204170958333315,
+            0.06488322400195104
+          ],
+          "min": 0.019700099552015925,
+          "max": 0.06654678970468446
+        },
+        "interval_spearman": {
+          "speaker_groups": 10,
+          "median": 0.35631978117335794,
+          "bootstrap_95pct_ci": [
+            0.3467228385801921,
+            0.3661729134171404
+          ],
+          "min": 0.33275504368279196,
+          "max": 0.38579308616750774
+        },
+        "interval_log_error": {
+          "speaker_groups": 10,
+          "median": 0.4135365411737815,
+          "bootstrap_95pct_ci": [
+            0.4054651081081644,
+            0.4210508907516991
+          ],
+          "min": 0.39708646431104017,
+          "max": 0.4355610624472728
+        },
+        "clock_scale": {
+          "speaker_groups": 10,
+          "median": 0.9758192326623273,
+          "bootstrap_95pct_ci": [
+            0.9591903795714354,
+            0.9966959968860307
+          ],
+          "min": 0.9421008908192141,
+          "max": 1.0316931213777418
+        },
+        "clock_offset_s": {
+          "speaker_groups": 10,
+          "median": 0.015772772083902917,
+          "bootstrap_95pct_ci": [
+            -0.036089759501767425,
+            0.04182863694163283
+          ],
+          "min": -0.25272631578947624,
+          "max": 0.22991119613989763
+        },
+        "clock_residual_s": {
+          "speaker_groups": 10,
+          "median": 0.19842113844039763,
+          "bootstrap_95pct_ci": [
+            0.17790971884949736,
+            0.22802964518395685
+          ],
+          "min": 0.16385108233518553,
+          "max": 0.2699660405664237
+        }
+      }
+    },
+    {
+      "condition": "mismatched_shift_1",
+      "pairs": 1000,
+      "metrics": {
+        "left_count": {
+          "speaker_groups": 10,
+          "median": 36.75,
+          "bootstrap_95pct_ci": [
+            35.0,
+            41.0
+          ],
+          "min": 33.5,
+          "max": 43.5
+        },
+        "right_count": {
+          "speaker_groups": 10,
+          "median": 40.0,
+          "bootstrap_95pct_ci": [
+            38.0,
+            41.0
+          ],
+          "min": 36.0,
+          "max": 46.0
+        },
+        "matched_count": {
+          "speaker_groups": 10,
+          "median": 31.5,
+          "bootstrap_95pct_ci": [
+            30.5,
+            34.0
+          ],
+          "min": 28.0,
+          "max": 37.0
+        },
+        "left_coverage": {
+          "speaker_groups": 10,
+          "median": 0.907586292916376,
+          "bootstrap_95pct_ci": [
+            0.8819444444444444,
+            0.9249530956848031
+          ],
+          "min": 0.8688172043010753,
+          "max": 0.9354838709677419
+        },
+        "right_coverage": {
+          "speaker_groups": 10,
+          "median": 0.8457254611330698,
+          "bootstrap_95pct_ci": [
+            0.8284798602396595,
+            0.8852566915313734
+          ],
+          "min": 0.8172619047619047,
+          "max": 0.9055555555555556
+        },
+        "median_match_cost": {
+          "speaker_groups": 10,
+          "median": 0.13475739439605766,
+          "bootstrap_95pct_ci": [
+            0.1321171784369511,
+            0.1381617501151308
+          ],
+          "min": 0.12918611910958583,
+          "max": 0.14246872260426643
+        },
+        "mark_rank_spearman": {
+          "speaker_groups": 10,
+          "median": 0.7496009999930702,
+          "bootstrap_95pct_ci": [
+            0.7395451297928078,
+            0.7539406158357771
+          ],
+          "min": 0.7370669611718205,
+          "max": 0.760039391618339
+        },
+        "interval_spearman": {
+          "speaker_groups": 10,
+          "median": 0.09392451209034676,
+          "bootstrap_95pct_ci": [
+            0.07798103982488545,
+            0.10257133432369787
+          ],
+          "min": 0.05107335980743029,
+          "max": 0.11993909108893955
+        },
+        "interval_log_error": {
+          "speaker_groups": 10,
+          "median": 0.5719247534568028,
+          "bootstrap_95pct_ci": [
+            0.5514539491964201,
+            0.5825944313679764
+          ],
+          "min": 0.5179249834658972,
+          "max": 0.5974099665974983
+        },
+        "clock_scale": {
+          "speaker_groups": 10,
+          "median": 0.9960358430127533,
+          "bootstrap_95pct_ci": [
+            0.9777768377116911,
+            1.026649611013183
+          ],
+          "min": 0.9449143597559773,
+          "max": 1.052569018404908
+        },
+        "clock_offset_s": {
+          "speaker_groups": 10,
+          "median": -0.04679520748418556,
+          "bootstrap_95pct_ci": [
+            -0.12342661041708908,
+            0.0033487545349560888
+          ],
+          "min": -0.17386104849430684,
+          "max": 0.12347358312445038
+        },
+        "clock_residual_s": {
+          "speaker_groups": 10,
+          "median": 0.225445198918097,
+          "bootstrap_95pct_ci": [
+            0.20104561991114944,
+            0.25246487503829895
+          ],
+          "min": 0.1922071114636006,
+          "max": 0.29496283648051447
+        }
+      }
+    },
+    {
+      "condition": "mismatched_shift_37",
+      "pairs": 1000,
+      "metrics": {
+        "left_count": {
+          "speaker_groups": 10,
+          "median": 36.75,
+          "bootstrap_95pct_ci": [
+            35.0,
+            41.0
+          ],
+          "min": 33.5,
+          "max": 43.5
+        },
+        "right_count": {
+          "speaker_groups": 10,
+          "median": 40.0,
+          "bootstrap_95pct_ci": [
+            38.0,
+            41.0
+          ],
+          "min": 36.0,
+          "max": 46.0
+        },
+        "matched_count": {
+          "speaker_groups": 10,
+          "median": 31.5,
+          "bootstrap_95pct_ci": [
+            30.5,
+            33.0
+          ],
+          "min": 29.0,
+          "max": 38.0
+        },
+        "left_coverage": {
+          "speaker_groups": 10,
+          "median": 0.9109848484848484,
+          "bootstrap_95pct_ci": [
+            0.8844133807369101,
+            0.9245014245014245
+          ],
+          "min": 0.8603896103896104,
+          "max": 0.9285714285714286
+        },
+        "right_coverage": {
+          "speaker_groups": 10,
+          "median": 0.8468259767196765,
+          "bootstrap_95pct_ci": [
+            0.8268951999735353,
+            0.8692153434800494
+          ],
+          "min": 0.8136574074074074,
+          "max": 0.8888888888888888
+        },
+        "median_match_cost": {
+          "speaker_groups": 10,
+          "median": 0.13530433266246078,
+          "bootstrap_95pct_ci": [
+            0.13221378054805788,
+            0.13739274824082365
+          ],
+          "min": 0.13127433977311923,
+          "max": 0.14194186414337323
+        },
+        "mark_rank_spearman": {
+          "speaker_groups": 10,
+          "median": 0.7461225544557191,
+          "bootstrap_95pct_ci": [
+            0.7413230964955103,
+            0.7544922291052322
+          ],
+          "min": 0.7303053129666033,
+          "max": 0.7589928917506056
+        },
+        "interval_spearman": {
+          "speaker_groups": 10,
+          "median": 0.0850743501468305,
+          "bootstrap_95pct_ci": [
+            0.052415550615461305,
+            0.10261273876183065
+          ],
+          "min": 0.01785238399057569,
+          "max": 0.12109117539250434
+        },
+        "interval_log_error": {
+          "speaker_groups": 10,
+          "median": 0.578509905910322,
+          "bootstrap_95pct_ci": [
+            0.555327518128861,
+            0.5948571031319467
+          ],
+          "min": 0.5439700587159897,
+          "max": 0.6059368087151642
+        },
+        "clock_scale": {
+          "speaker_groups": 10,
+          "median": 0.9905411651300482,
+          "bootstrap_95pct_ci": [
+            0.9511491993782986,
+            1.008107331285928
+          ],
+          "min": 0.9178743961352656,
+          "max": 1.0327083427288628
+        },
+        "clock_offset_s": {
+          "speaker_groups": 10,
+          "median": -0.027722712261313377,
+          "bootstrap_95pct_ci": [
+            -0.05801216816444721,
+            0.023929512321912677
+          ],
+          "min": -0.07515928029271533,
+          "max": 0.11399903897603275
+        },
+        "clock_residual_s": {
+          "speaker_groups": 10,
+          "median": 0.22413334164666357,
+          "bootstrap_95pct_ci": [
+            0.20953273993808036,
+            0.24186873958043875
+          ],
+          "min": 0.19478508109468862,
+          "max": 0.2617294330183435
+        }
+      }
+    },
+    {
+      "condition": "mismatched_shift_73",
+      "pairs": 1000,
+      "metrics": {
+        "left_count": {
+          "speaker_groups": 10,
+          "median": 36.75,
+          "bootstrap_95pct_ci": [
+            35.0,
+            41.0
+          ],
+          "min": 33.5,
+          "max": 43.5
+        },
+        "right_count": {
+          "speaker_groups": 10,
+          "median": 40.0,
+          "bootstrap_95pct_ci": [
+            38.0,
+            41.0
+          ],
+          "min": 36.0,
+          "max": 46.0
+        },
+        "matched_count": {
+          "speaker_groups": 10,
+          "median": 31.5,
+          "bootstrap_95pct_ci": [
+            30.5,
+            33.5
+          ],
+          "min": 29.0,
+          "max": 38.0
+        },
+        "left_coverage": {
+          "speaker_groups": 10,
+          "median": 0.8990609351422524,
+          "bootstrap_95pct_ci": [
+            0.8830759462408398,
+            0.9166666666666666
+          ],
+          "min": 0.8589015151515151,
+          "max": 0.9383301707779885
+        },
+        "right_coverage": {
+          "speaker_groups": 10,
+          "median": 0.8475334448160534,
+          "bootstrap_95pct_ci": [
+            0.8369583943492118,
+            0.8775410025410025
+          ],
+          "min": 0.8202020202020202,
+          "max": 0.8893421723610403
+        },
+        "median_match_cost": {
+          "speaker_groups": 10,
+          "median": 0.13628855239572496,
+          "bootstrap_95pct_ci": [
+            0.13349068054588203,
+            0.13992584749658316
+          ],
+          "min": 0.1307970647235827,
+          "max": 0.1441452484393223
+        },
+        "mark_rank_spearman": {
+          "speaker_groups": 10,
+          "median": 0.7492858056018379,
+          "bootstrap_95pct_ci": [
+            0.7372031966011533,
+            0.7607550377179289
+          ],
+          "min": 0.7275928635776489,
+          "max": 0.776525392765802
+        },
+        "interval_spearman": {
+          "speaker_groups": 10,
+          "median": 0.09075947912772182,
+          "bootstrap_95pct_ci": [
+            0.06690304543004216,
+            0.102440480398266
+          ],
+          "min": 0.05147136460612231,
+          "max": 0.10501275258866297
+        },
+        "interval_log_error": {
+          "speaker_groups": 10,
+          "median": 0.5689544366692271,
+          "bootstrap_95pct_ci": [
+            0.5383679209910044,
+            0.5877866649021217
+          ],
+          "min": 0.534348983735099,
+          "max": 0.6040611028666384
+        },
+        "clock_scale": {
+          "speaker_groups": 10,
+          "median": 1.0013787395534741,
+          "bootstrap_95pct_ci": [
+            0.9873107667204688,
+            1.02356075964438
+          ],
+          "min": 0.9611726117261172,
+          "max": 1.0345604924752538
+        },
+        "clock_offset_s": {
+          "speaker_groups": 10,
+          "median": -0.040426025245940155,
+          "bootstrap_95pct_ci": [
+            -0.18693199138190608,
+            0.01706628776195762
+          ],
+          "min": -0.22366783916723798,
+          "max": 0.06310724694903856
+        },
+        "clock_residual_s": {
+          "speaker_groups": 10,
+          "median": 0.2265833778449741,
+          "bootstrap_95pct_ci": [
+            0.2067280518394648,
+            0.26046514361267104
+          ],
+          "min": 0.1943804131089566,
+          "max": 0.2805647164471961
+        }
+      }
+    }
+  ],
+  "privacy": {
+    "raw_speaker_ids_exported": false,
+    "utterance_ids_exported": false,
+    "transcripts_exported": false,
+    "demographics_exported": false,
+    "per_utterance_results_exported": false,
+    "raw_audio_copied": false
+  },
+  "interpretation_limits": [
+    "Mismatched pairs are a within-speaker null, not a universal null.",
+    "A high matched-event count can reflect permissive monotone alignment even when correspondence is wrong.",
+    "The frozen Build 15 report does not include these controls; read both files together.",
+    "Detector-threshold stability is not tested by this run unless a sweep is also reported."
+  ]
+}

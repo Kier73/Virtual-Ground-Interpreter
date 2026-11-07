@@ -1,0 +1,21 @@
+test_conjugacy_preserves_trace_and_determinant (test_codonic_connection.CodonicConnectionTests.test_conjugacy_preserves_trace_and_determinant) ... ok
+test_each_shear_is_area_preserving (test_codonic_connection.CodonicConnectionTests.test_each_shear_is_area_preserving) ... ok
+test_full_observer_detects_hidden_fibre_change (test_codonic_connection.CodonicConnectionTests.test_full_observer_detects_hidden_fibre_change) ... ok
+test_holonomy_phase_matches_parameter (test_codonic_connection.CodonicConnectionTests.test_holonomy_phase_matches_parameter) ... ok
+test_invalid_axis_rejected (test_codonic_connection.CodonicConnectionTests.test_invalid_axis_rejected) ... ok
+test_noncommuting_shears (test_codonic_connection.CodonicConnectionTests.test_noncommuting_shears) ... ok
+test_radial_observer_closes (test_codonic_connection.CodonicConnectionTests.test_radial_observer_closes) ... ok
+test_registry_renaming_preserves_operation (test_codonic_connection.CodonicConnectionTests.test_registry_renaming_preserves_operation) ... ok
+test_reverse_path_is_inverse (test_codonic_connection.CodonicConnectionTests.test_reverse_path_is_inverse) ... ok
+test_reverse_path_reverses_signed_phase (test_codonic_connection.CodonicConnectionTests.test_reverse_path_reverses_signed_phase) ... ok
+test_rotation_matches_analytic_matrix (test_codonic_connection.CodonicConnectionTests.test_rotation_matches_analytic_matrix) ... ok
+test_theta_outside_domain_rejected (test_codonic_connection.CodonicConnectionTests.test_theta_outside_domain_rejected) ... ok
+test_time_schedule_keeps_endpoint_but_changes_rate_signature (test_codonic_connection.CodonicConnectionTests.test_time_schedule_keeps_endpoint_but_changes_rate_signature) ... ok
+test_total_transport_preserves_area (test_codonic_connection.CodonicConnectionTests.test_total_transport_preserves_area) ... ok
+test_transport_matrix_is_derived_from_executable_codons (test_codonic_connection.CodonicConnectionTests.test_transport_matrix_is_derived_from_executable_codons) ... ok
+test_unknown_codon_rejected (test_codonic_connection.CodonicConnectionTests.test_unknown_codon_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.005s
+
+OK

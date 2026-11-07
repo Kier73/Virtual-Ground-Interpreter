@@ -1,0 +1,15 @@
+Build 09 — Cross-modal response geometry
+
+Execution
+- Main deterministic build: completed
+- Parameter seed: 20261104
+- Families: 40 matched acoustic-like/mechanical pairs
+- Sampling: 128 Hz, 1024 samples, 8 seconds
+- Additional sampling-rate sweep: 64 / 128 / 256 Hz on 12 families per domain
+- Executable arithmetic codon alias comparison: 10 domain/family cases
+- Test suite: 24 / 24 passed
+- Third-party dependencies: none
+
+The main build was run with `python cross_modal_response.py`; outputs are in reports/ and data/.
+The test suite was run with `python -m unittest discover -s tests -v`.
+See BUILD_09.md for the experimental design and limitations.

@@ -1,0 +1,8 @@
+{
+  "profile_name": "experimental-project-spellings",
+  "operations": {
+    "ad": "addition",
+    "mx": "multiplication"
+  },
+  "note": "Operation identifiers are configurable aliases for this experiment, not a commitment to a canonical Virtual Layer registry."
+}

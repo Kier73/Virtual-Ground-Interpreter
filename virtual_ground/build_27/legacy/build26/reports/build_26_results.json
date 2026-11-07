@@ -1,0 +1,394 @@
+{
+  "asynchronous_ingestion": {
+    "after_gap_closed": {
+      "collision_count": 0,
+      "conflict_records_retained_count": 0,
+      "current_context": "q_45f12f5b34db",
+      "data_truncated": false,
+      "duplicate_count": 0,
+      "fingerprint": "29c118373f60f731e618a48c211be243aafb294b38545a82f59f32a1e1dc23da",
+      "horizon": 0,
+      "known_transition_count": 2,
+      "pending_steps": [],
+      "predictive_context_count": 1,
+      "retained_event_count": 2,
+      "retired_event_count": 0,
+      "stale_count": 0,
+      "status": "tracking",
+      "total_event_count": 2,
+      "unknown_transition_count": 1,
+      "version": 3,
+      "version_lineage_retained_count": 3
+    },
+    "before_gap_closed": {
+      "collision_count": 0,
+      "conflict_records_retained_count": 0,
+      "current_context": null,
+      "data_truncated": false,
+      "duplicate_count": 0,
+      "fingerprint": "f510980857cb29c932dcc57480a90ba532804bf3d7fb9c45744eab09147c1417",
+      "horizon": 0,
+      "known_transition_count": 0,
+      "pending_steps": [
+        0,
+        1
+      ],
+      "predictive_context_count": 0,
+      "retained_event_count": 0,
+      "retired_event_count": 0,
+      "stale_count": 0,
+      "status": "collecting",
+      "total_event_count": 0,
+      "unknown_transition_count": 0,
+      "version": 1,
+      "version_lineage_retained_count": 1
+    },
+    "event_order": [
+      {
+        "action": "HOLD",
+        "output": [
+          0,
+          1
+        ],
+        "step": 0
+      },
+      {
+        "action": "PROBE_A",
+        "output": [
+          1,
+          2
+        ],
+        "step": 1
+      }
+    ]
+  },
+  "bounded_stream": {
+    "collision_count": 0,
+    "conflict_records_retained_count": 0,
+    "current_context": "q_1cdfe7802fe0",
+    "data_truncated": true,
+    "duplicate_count": 0,
+    "fingerprint": "8a3d9f2a0284162c1b0cdcdf7abf28de1cf1c75cbb81b5976d5ba8bd0e752684",
+    "horizon": 1,
+    "known_transition_count": 2,
+    "pending_steps": [],
+    "predictive_context_count": 2,
+    "retained_event_count": 64,
+    "retired_event_count": 136,
+    "stale_count": 0,
+    "status": "tracking",
+    "total_event_count": 200,
+    "unknown_transition_count": 4,
+    "version": 6,
+    "version_lineage_retained_count": 6
+  },
+  "build": 26,
+  "delayed_horizon": {
+    "fixture": "delayed_six",
+    "mode": "Mealy/action-conditioned observation",
+    "rows": [
+      {
+        "collisions": 0,
+        "events": 1,
+        "horizon": 0,
+        "known_transitions": 1,
+        "predictive_contexts": 1,
+        "status": "tracking",
+        "unknown_transitions": 2
+      },
+      {
+        "collisions": 0,
+        "events": 2,
+        "horizon": 0,
+        "known_transitions": 1,
+        "predictive_contexts": 1,
+        "status": "tracking",
+        "unknown_transitions": 2
+      },
+      {
+        "collisions": 0,
+        "events": 3,
+        "horizon": 0,
+        "known_transitions": 1,
+        "predictive_contexts": 1,
+        "status": "tracking",
+        "unknown_transitions": 2
+      },
+      {
+        "collisions": 0,
+        "events": 4,
+        "horizon": 0,
+        "known_transitions": 1,
+        "predictive_contexts": 1,
+        "status": "tracking",
+        "unknown_transitions": 2
+      },
+      {
+        "collisions": 0,
+        "events": 5,
+        "horizon": 0,
+        "known_transitions": 1,
+        "predictive_contexts": 1,
+        "status": "tracking",
+        "unknown_transitions": 2
+      },
+      {
+        "collisions": 0,
+        "events": 6,
+        "horizon": 5,
+        "known_transitions": 6,
+        "predictive_contexts": 7,
+        "status": "tracking",
+        "unknown_transitions": 15
+      },
+      {
+        "collisions": 0,
+        "events": 12,
+        "horizon": 5,
+        "known_transitions": 6,
+        "predictive_contexts": 6,
+        "status": "tracking",
+        "unknown_transitions": 12
+      },
+      {
+        "collisions": 0,
+        "events": 18,
+        "horizon": 5,
+        "known_transitions": 6,
+        "predictive_contexts": 6,
+        "status": "tracking",
+        "unknown_transitions": 12
+      }
+    ]
+  },
+  "evidence_class": "synthetic deterministic finite-state streaming experiments",
+  "limitations": [
+    "action alphabet and selected channel schema are supplied by the connector",
+    "the learner induces finite-horizon history contexts from a single non-resettable stream",
+    "context quotient is provisional; finite evidence cannot prove global predictive equivalence",
+    "unknown action/context pairs remain explicit and are not defaulted",
+    "deterministic exact integer observations are assumed; stochastic/noisy dynamics are not learned",
+    "Mealy and post-action observation signatures are distinct interface contracts",
+    "no physical sensor stream or TAPS recording was processed"
+  ],
+  "observer_quotients": {
+    "joint": {
+      "history_horizon": 1,
+      "known_transitions": 6,
+      "predictive_contexts": 6,
+      "status": "tracking",
+      "unknown_transitions": 12
+    },
+    "parity_only": {
+      "history_horizon": 1,
+      "known_transitions": 2,
+      "predictive_contexts": 2,
+      "status": "tracking",
+      "unknown_transitions": 4
+    },
+    "residue3_only": {
+      "history_horizon": 1,
+      "known_transitions": 3,
+      "predictive_contexts": 3,
+      "status": "tracking",
+      "unknown_transitions": 6
+    }
+  },
+  "partial_ground": {
+    "program_round_trip_fingerprint": "67b7aafc470f86b473b30027adb5b3d34144680bf4620773de018e5fe36260ff",
+    "summary": {
+      "collision_count": 0,
+      "conflict_records_retained_count": 0,
+      "current_context": "q_9717824fcc35",
+      "data_truncated": false,
+      "duplicate_count": 0,
+      "fingerprint": "67b7aafc470f86b473b30027adb5b3d34144680bf4620773de018e5fe36260ff",
+      "horizon": 1,
+      "known_transition_count": 6,
+      "pending_steps": [],
+      "predictive_context_count": 6,
+      "retained_event_count": 24,
+      "retired_event_count": 0,
+      "stale_count": 0,
+      "status": "tracking",
+      "total_event_count": 24,
+      "unknown_transition_count": 12,
+      "version": 9,
+      "version_lineage_retained_count": 9
+    },
+    "unknown_edge_exploration": {
+      "candidates": [
+        {
+          "action": "PROBE_A",
+          "cost": 2.0,
+          "risk": 0.1,
+          "score": 0.47619047619047616,
+          "side_effect": "reversible diagnostic operation",
+          "transition_status": "unknown"
+        }
+      ],
+      "information_gain_estimate": null,
+      "score_semantics": "novelty divided by declared cost plus risk penalty; no output entropy claimed",
+      "selected_action": "PROBE_A",
+      "status": "exploration_probe_selected"
+    },
+    "unknown_edges_are_explicit": [
+      [
+        "q_43e3a2174fd9",
+        "PROBE_A"
+      ],
+      [
+        "q_43e3a2174fd9",
+        "PROBE_B"
+      ],
+      [
+        "q_5422a0be1dcb",
+        "PROBE_A"
+      ],
+      [
+        "q_5422a0be1dcb",
+        "PROBE_B"
+      ],
+      [
+        "q_5c7e9e0580ea",
+        "PROBE_A"
+      ],
+      [
+        "q_5c7e9e0580ea",
+        "PROBE_B"
+      ],
+      [
+        "q_6b512ce1edf6",
+        "PROBE_A"
+      ],
+      [
+        "q_6b512ce1edf6",
+        "PROBE_B"
+      ],
+      [
+        "q_7f0fb47c4531",
+        "PROBE_A"
+      ],
+      [
+        "q_7f0fb47c4531",
+        "PROBE_B"
+      ],
+      [
+        "q_9717824fcc35",
+        "PROBE_A"
+      ],
+      [
+        "q_9717824fcc35",
+        "PROBE_B"
+      ]
+    ],
+    "verification": {
+      "all_known_predictions_match_evidence": true,
+      "candidate_status": "partial",
+      "certificate_scope": "replay of retained observations only; not proof of unseen transitions",
+      "matched_events": 24,
+      "mismatched_events": 0,
+      "observed_events": 24,
+      "unresolved_events": 0
+    },
+    "version_lineage": [
+      {
+        "collision_count": 0,
+        "event_count_seen": 0,
+        "fingerprint": "f510980857cb29c932dcc57480a90ba532804bf3d7fb9c45744eab09147c1417",
+        "horizon": 0,
+        "previous_fingerprint": null,
+        "reason": "initialization",
+        "version": 1
+      },
+      {
+        "collision_count": 0,
+        "event_count_seen": 1,
+        "fingerprint": "2117af97d0520aed06ee76fe20eb1b6d2201f74cf5e9809178c1ceb3ce9afd86",
+        "horizon": 0,
+        "previous_fingerprint": "f510980857cb29c932dcc57480a90ba532804bf3d7fb9c45744eab09147c1417",
+        "reason": "new_transition_evidence",
+        "version": 2
+      },
+      {
+        "collision_count": 1,
+        "event_count_seen": 2,
+        "fingerprint": "8384a2858570c15dc3ce1369897427f39e4a6837a94549aae963757c8ad21c7d",
+        "horizon": 0,
+        "previous_fingerprint": "2117af97d0520aed06ee76fe20eb1b6d2201f74cf5e9809178c1ceb3ce9afd86",
+        "reason": "new_transition_evidence",
+        "version": 3
+      },
+      {
+        "collision_count": 0,
+        "event_count_seen": 2,
+        "fingerprint": "3cc43f0295fffe346365b07468b9aeaea52a67f1994fbfe66a79e035b53c5b97",
+        "horizon": 1,
+        "previous_fingerprint": "8384a2858570c15dc3ce1369897427f39e4a6837a94549aae963757c8ad21c7d",
+        "reason": "history_horizon_refinement_after_collision",
+        "version": 4
+      },
+      {
+        "collision_count": 0,
+        "event_count_seen": 3,
+        "fingerprint": "c747da6aee63c5315482a835308f0bdf31f5c318b4f6822b8976459980aa5355",
+        "horizon": 1,
+        "previous_fingerprint": "3cc43f0295fffe346365b07468b9aeaea52a67f1994fbfe66a79e035b53c5b97",
+        "reason": "new_transition_evidence",
+        "version": 5
+      },
+      {
+        "collision_count": 0,
+        "event_count_seen": 4,
+        "fingerprint": "bd5812d8b4df298691eafeebabac0d35711d050269c1e8062e5a667871cdcea5",
+        "horizon": 1,
+        "previous_fingerprint": "c747da6aee63c5315482a835308f0bdf31f5c318b4f6822b8976459980aa5355",
+        "reason": "new_transition_evidence",
+        "version": 6
+      },
+      {
+        "collision_count": 0,
+        "event_count_seen": 5,
+        "fingerprint": "2c12e7a5b33bf68382353f85459216cb11a37baf8a5154bb312f05dc9ff065fd",
+        "horizon": 1,
+        "previous_fingerprint": "bd5812d8b4df298691eafeebabac0d35711d050269c1e8062e5a667871cdcea5",
+        "reason": "new_transition_evidence",
+        "version": 7
+      },
+      {
+        "collision_count": 0,
+        "event_count_seen": 6,
+        "fingerprint": "cd4e7577721669a821e709043b3501356d35048e2ae442b2ba318ce4276e368d",
+        "horizon": 1,
+        "previous_fingerprint": "2c12e7a5b33bf68382353f85459216cb11a37baf8a5154bb312f05dc9ff065fd",
+        "reason": "new_transition_evidence",
+        "version": 8
+      },
+      {
+        "collision_count": 0,
+        "event_count_seen": 7,
+        "fingerprint": "67b7aafc470f86b473b30027adb5b3d34144680bf4620773de018e5fe36260ff",
+        "horizon": 1,
+        "previous_fingerprint": "cd4e7577721669a821e709043b3501356d35048e2ae442b2ba318ce4276e368d",
+        "reason": "new_transition_evidence",
+        "version": 9
+      }
+    ]
+  },
+  "status": "complete",
+  "unobservable_eight": {
+    "evidence_check": {
+      "all_known_predictions_match_evidence": true,
+      "candidate_status": "partial",
+      "certificate_scope": "replay of retained observations only; not proof of unseen transitions",
+      "matched_events": 24,
+      "mismatched_events": 0,
+      "observed_events": 24,
+      "unresolved_events": 0
+    },
+    "known_transitions": 1,
+    "predictive_contexts": 1,
+    "status": "tracking",
+    "unknown_transitions": 2
+  }
+}

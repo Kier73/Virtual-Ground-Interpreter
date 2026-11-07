@@ -1,0 +1,105 @@
+{
+  "build": "02",
+  "ellipse": {
+    "analytic_signed_area": 2.638937829015426,
+    "samples": 4096,
+    "semi_axis_a": 1.2,
+    "semi_axis_b": 0.7
+  },
+  "filtering_tradeoff": {
+    "added_noise_cycles": 80,
+    "desired_signal_cycles": 2,
+    "filter_window": 25,
+    "filtered_mse_to_clean_low_frequency_signal": 0.0004235160070509559,
+    "high_frequency_component_gain_after_same_filter": 0.05114149927926995,
+    "raw_mse_to_clean_low_frequency_signal": 0.12499999999999994,
+    "warning": "The filter suppresses the high-frequency component whether it is noise or desired signal. Separation only works here because the assumed signal and noise bands do not overlap."
+  },
+  "interpretation": {
+    "intention": "An intention selects which response coordinates contribute to a comparison; it does not alter the raw measurements.",
+    "observer": "A rank-deficient observation map collapses a dimension and can erase the loop/phase information.",
+    "path_invariant": "The closed-loop integral is invariant to monotone time reparameterization when the same oriented path and connection are used.",
+    "stability": "The transverse error decays exponentially toward the limiting cycle in this model.",
+    "temporal_tone": "The time-resolved phase-rate profile changes under nonuniform traversal speed."
+  },
+  "observer_geometry": {
+    "area_preserving_stretch": {
+      "det_projection": 1.0,
+      "geometric_phase": 2.6389367940694077,
+      "path_length": 9.888852335953821,
+      "signed_area": 2.6389367940694077,
+      "winding": 1.0000000000000018
+    },
+    "contract_y": {
+      "det_projection": 0.5,
+      "geometric_phase": 1.3194683970347039,
+      "path_length": 5.243034888356558,
+      "signed_area": 1.3194683970347039,
+      "winding": 1.0000000000000009
+    },
+    "identity": {
+      "det_projection": 1.0,
+      "geometric_phase": 2.6389367940694077,
+      "path_length": 6.072822560756294,
+      "signed_area": 2.6389367940694077,
+      "winding": 0.9999999999999979
+    },
+    "rank_one_blind_y": {
+      "det_projection": 0.0,
+      "geometric_phase": 0.0,
+      "path_length": 4.8,
+      "signed_area": 0.0,
+      "winding": 0.0
+    },
+    "rotated": {
+      "det_projection": 1.0,
+      "geometric_phase": 2.6389367940694077,
+      "path_length": 6.072822560756294,
+      "signed_area": 2.6389367940694077,
+      "winding": 0.9999999999999979
+    }
+  },
+  "scope": "Synthetic geometric/dynamical experiment; no biological or bicycle model is claimed.",
+  "stable_limit_cycle": {
+    "absolute_estimation_error": 1.1102230246251565e-16,
+    "limiting_cycle_phase": 2.5132741228718345,
+    "per_cycle_phase_accumulation": [
+      3.94415051996198,
+      3.182400073811194,
+      2.835330670258015,
+      2.670676082720356,
+      2.5908085924764843,
+      2.551615502644236,
+      2.5322681808520286,
+      2.522689040160997
+    ],
+    "transverse_decay_rate_estimated": 0.7000000000000001,
+    "transverse_decay_rate_true": 0.7
+  },
+  "time_reparameterization": {
+    "combined_distance": 0.16240323840822715,
+    "shape_intention_distance": 7.624272079495397e-08,
+    "temporal_tone_distance": 0.22967286233020417,
+    "uniform": {
+      "closure_error": 1.7145055188062944e-16,
+      "geometric_phase": 2.6389367940694077,
+      "path_length": 6.072822560756294,
+      "phase_rate_cv": 1.611387946381221e-13,
+      "phase_rate_rms": 2.6389367940694077,
+      "radial_decay_rate": 0.0,
+      "signed_area": 2.6389367940694077,
+      "winding": 0.9999999999999979
+    },
+    "warped": {
+      "closure_error": 1.7145055188062944e-16,
+      "geometric_phase": 2.6389364797047117,
+      "path_length": 6.072822402009442,
+      "phase_rate_cv": 0.318197789705095,
+      "phase_rate_rms": 2.7693118531688006,
+      "radial_decay_rate": 0.0,
+      "signed_area": 2.6389364797047117,
+      "winding": 1.0000000000000007
+    }
+  },
+  "title": "Shape, Movement, Observer, and Geometric Phase"
+}

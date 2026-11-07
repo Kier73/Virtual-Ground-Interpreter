@@ -1,0 +1,564 @@
+{
+  "active_episode_traces": {
+    "base_path_full_path": {
+      "correct": true,
+      "history": [
+        {
+          "cost": 0.8,
+          "expected_mean": -2.783309425570338,
+          "measurement": "oriented_base_solid_angle",
+          "observation": -2.720969812054768,
+          "posterior": {
+            "large_forward": 0.0,
+            "large_reverse": 1.0,
+            "small_forward": 0.0,
+            "small_reverse": 2.853819415156348e-82
+          },
+          "probe": "base_area",
+          "robust_eig_bits_before": 1.9999999999999998,
+          "step": 1,
+          "target_posterior": {
+            "large_forward": 0.0,
+            "large_reverse": 1.0,
+            "small_forward": 0.0,
+            "small_reverse": 2.853819415156348e-82
+          }
+        }
+      ],
+      "posterior": {
+        "large_forward": 0.0,
+        "large_reverse": 1.0,
+        "small_forward": 0.0,
+        "small_reverse": 2.853819415156348e-82
+      },
+      "predicted_target": "large_reverse",
+      "reason": "target posterior reached confidence threshold",
+      "status": "resolved",
+      "steps": 1,
+      "target_posterior": {
+        "large_forward": 0.0,
+        "large_reverse": 1.0,
+        "small_forward": 0.0,
+        "small_reverse": 2.853819415156348e-82
+      },
+      "total_cost": 0.8,
+      "true_target": "large_reverse"
+    },
+    "endpoint_only_full_path": {
+      "correct": null,
+      "history": [],
+      "posterior": {
+        "large_forward": 0.25,
+        "large_reverse": 0.25,
+        "small_forward": 0.25,
+        "small_reverse": 0.25
+      },
+      "predicted_target": "small_forward",
+      "reason": "no available probe distinguishes the remaining target classes",
+      "status": "unresolved",
+      "steps": 0,
+      "target_posterior": {
+        "large_forward": 0.25,
+        "large_reverse": 0.25,
+        "small_forward": 0.25,
+        "small_reverse": 0.25
+      },
+      "total_cost": 0,
+      "true_target": "small_forward"
+    },
+    "s3_lift_antipodal": {
+      "correct": true,
+      "history": [
+        {
+          "cost": 0.9,
+          "expected_mean": -2.5568869060297965,
+          "measurement": "signed_S3_fibre_phase",
+          "observation": -2.574831116844963,
+          "posterior": {
+            "representative_minus_q": 1.0,
+            "representative_q": 0.0
+          },
+          "probe": "s3_phase",
+          "robust_eig_bits_before": 0.9999999999999999,
+          "step": 1,
+          "target_posterior": {
+            "minus_q": 1.0,
+            "q": 0.0
+          }
+        }
+      ],
+      "posterior": {
+        "representative_minus_q": 1.0,
+        "representative_q": 0.0
+      },
+      "predicted_target": "minus_q",
+      "reason": "target posterior reached confidence threshold",
+      "status": "resolved",
+      "steps": 1,
+      "target_posterior": {
+        "minus_q": 1.0,
+        "q": 0.0
+      },
+      "total_cost": 0.9,
+      "true_target": "minus_q"
+    },
+    "same_endpoint_intention": {
+      "correct": true,
+      "history": [],
+      "posterior": {
+        "large_forward": 0.25,
+        "large_reverse": 0.25,
+        "small_forward": 0.25,
+        "small_reverse": 0.25
+      },
+      "predicted_target": "same",
+      "reason": "all candidates share the requested target label",
+      "status": "already_resolved",
+      "steps": 0,
+      "target_posterior": {
+        "same": 1.0
+      },
+      "total_cost": 0.0,
+      "true_target": "same"
+    }
+  },
+  "antipodal_quotient_control": {
+    "candidate_names": [
+      "representative_q",
+      "representative_minus_q"
+    ],
+    "interpretation": "Hopf base and SO(3) identify q with -q; S3 retains the antipodal distinction.",
+    "metrics": {
+      "hopf_base_distance": 0.0,
+      "s3_distance_rad": 3.141592653589793,
+      "s3_phase_minus_q": -2.5568869060297965,
+      "s3_phase_q": 0.5847057475599966,
+      "so3_angle_minus_q": 1.1694114951199932,
+      "so3_angle_q": 1.1694114951199932,
+      "so3_distance_rad": 0.0
+    },
+    "observer_intention_probe_selection": {
+      "base_path": null,
+      "endpoint_only": null,
+      "s3_lift": {
+        "cost": 0.9,
+        "eig_bits": 0.9999999999999999,
+        "probe": "s3_phase",
+        "robust_eig_bits": 0.9999999999999999,
+        "utility": 1.111111111111111
+      },
+      "so3": null
+    }
+  },
+  "build": "06",
+  "codon_registry": {
+    "alias_test": {
+      "add": "plus",
+      "div": "over",
+      "mul": "times",
+      "sqrt": "root",
+      "sub": "minus"
+    },
+    "default": {
+      "add": "ad",
+      "div": "dv",
+      "mul": "mx",
+      "sqrt": "sr",
+      "sub": "su"
+    }
+  },
+  "compiled_hamilton_product_instructions": 28,
+  "constraints": [
+    "Probe costs and noise levels are synthetic relative units.",
+    "The base-path area probe assumes the observer can retain the full projected trajectory and knows the chosen connection convention.",
+    "Endpoint-only observers do not receive path-history or fibre-phase data.",
+    "The S3 phase probe uses a fixed reference representative; it is not invariant to arbitrary fibre gauge changes.",
+    "The SO3 probe measures the signed rotation about the known k-axis and identifies q with -q.",
+    "No emotional or biological tone labels are inferred."
+  ],
+  "endpoint_only_nonidentifiability": {
+    "intent": "full_path",
+    "interpretation": "All available endpoint measurements are equal within numerical tolerance; no active policy can infer the path class from endpoint-only data.",
+    "observer": "endpoint_only",
+    "selection": null
+  },
+  "observable_quotient_partitions": {
+    "antipodal_pair": {
+      "base_path": [
+        [
+          "representative_q",
+          "representative_minus_q"
+        ]
+      ],
+      "endpoint_only": [
+        [
+          "representative_q",
+          "representative_minus_q"
+        ]
+      ],
+      "s3_lift": [
+        [
+          "representative_q"
+        ],
+        [
+          "representative_minus_q"
+        ]
+      ],
+      "so3": [
+        [
+          "representative_q",
+          "representative_minus_q"
+        ]
+      ]
+    },
+    "interpretation": "Candidates in the same class have equal observation means for every probe available to that observer; with the common noise law, their observation distributions are identical within tolerance.",
+    "regular_paths": {
+      "base_path": [
+        [
+          "small_forward"
+        ],
+        [
+          "small_reverse"
+        ],
+        [
+          "large_forward"
+        ],
+        [
+          "large_reverse"
+        ]
+      ],
+      "endpoint_only": [
+        [
+          "small_forward",
+          "small_reverse",
+          "large_forward",
+          "large_reverse"
+        ]
+      ],
+      "hybrid": [
+        [
+          "small_forward"
+        ],
+        [
+          "small_reverse"
+        ],
+        [
+          "large_forward"
+        ],
+        [
+          "large_reverse"
+        ]
+      ],
+      "s3_lift": [
+        [
+          "small_forward"
+        ],
+        [
+          "small_reverse"
+        ],
+        [
+          "large_forward"
+        ],
+        [
+          "large_reverse"
+        ]
+      ],
+      "so3": [
+        [
+          "small_forward"
+        ],
+        [
+          "small_reverse"
+        ],
+        [
+          "large_forward"
+        ],
+        [
+          "large_reverse"
+        ]
+      ]
+    }
+  },
+  "observer_intention_probe_selection": {
+    "base_path": {
+      "cap_size": {
+        "cost": 0.55,
+        "eig_bits": 1.0,
+        "probe": "base_apex",
+        "robust_eig_bits": 0.9999982648020334,
+        "utility": 1.818178663276424
+      },
+      "full_path": {
+        "cost": 0.8,
+        "eig_bits": 1.9999999999999998,
+        "probe": "base_area",
+        "robust_eig_bits": 1.9999999999999998,
+        "utility": 2.4999999999999996
+      },
+      "loop_orientation": {
+        "cost": 0.8,
+        "eig_bits": 0.9999999999999999,
+        "probe": "base_area",
+        "robust_eig_bits": 0.9999999999999999,
+        "utility": 1.2499999999999998
+      },
+      "same_base_endpoint": null
+    },
+    "endpoint_only": {
+      "cap_size": null,
+      "full_path": null,
+      "loop_orientation": null,
+      "same_base_endpoint": null
+    },
+    "hybrid": {
+      "cap_size": {
+        "cost": 0.55,
+        "eig_bits": 1.0,
+        "probe": "base_apex",
+        "robust_eig_bits": 0.9999982648020334,
+        "utility": 1.818178663276424
+      },
+      "full_path": {
+        "cost": 0.7,
+        "eig_bits": 1.9999999999999998,
+        "probe": "so3_angle",
+        "robust_eig_bits": 1.9999999999999998,
+        "utility": 2.857142857142857
+      },
+      "loop_orientation": {
+        "cost": 0.7,
+        "eig_bits": 0.9999999999999999,
+        "probe": "so3_angle",
+        "robust_eig_bits": 0.9999999999999999,
+        "utility": 1.4285714285714286
+      },
+      "same_base_endpoint": null
+    },
+    "s3_lift": {
+      "cap_size": {
+        "cost": 0.55,
+        "eig_bits": 1.0,
+        "probe": "base_apex",
+        "robust_eig_bits": 0.9999982648020334,
+        "utility": 1.818178663276424
+      },
+      "full_path": {
+        "cost": 0.7,
+        "eig_bits": 1.9999999999999998,
+        "probe": "so3_angle",
+        "robust_eig_bits": 1.9999999999999998,
+        "utility": 2.857142857142857
+      },
+      "loop_orientation": {
+        "cost": 0.7,
+        "eig_bits": 0.9999999999999999,
+        "probe": "so3_angle",
+        "robust_eig_bits": 0.9999999999999999,
+        "utility": 1.4285714285714286
+      },
+      "same_base_endpoint": null
+    },
+    "so3": {
+      "cap_size": {
+        "cost": 0.7,
+        "eig_bits": 0.9999999999999999,
+        "probe": "so3_angle",
+        "robust_eig_bits": 0.9999999999999999,
+        "utility": 1.4285714285714286
+      },
+      "full_path": {
+        "cost": 0.7,
+        "eig_bits": 1.9999999999999998,
+        "probe": "so3_angle",
+        "robust_eig_bits": 1.9999999999999998,
+        "utility": 2.857142857142857
+      },
+      "loop_orientation": {
+        "cost": 0.7,
+        "eig_bits": 0.9999999999999999,
+        "probe": "so3_angle",
+        "robust_eig_bits": 0.9999999999999999,
+        "utility": 1.4285714285714286
+      },
+      "same_base_endpoint": null
+    }
+  },
+  "observer_intention_selection_status": {
+    "base_path": {
+      "cap_size": "probe_selected",
+      "full_path": "probe_selected",
+      "loop_orientation": "probe_selected",
+      "same_base_endpoint": "no_probe_needed_target_constant"
+    },
+    "endpoint_only": {
+      "cap_size": "unresolved_no_discriminating_probe",
+      "full_path": "unresolved_no_discriminating_probe",
+      "loop_orientation": "unresolved_no_discriminating_probe",
+      "same_base_endpoint": "no_probe_needed_target_constant"
+    },
+    "hybrid": {
+      "cap_size": "probe_selected",
+      "full_path": "probe_selected",
+      "loop_orientation": "probe_selected",
+      "same_base_endpoint": "no_probe_needed_target_constant"
+    },
+    "s3_lift": {
+      "cap_size": "probe_selected",
+      "full_path": "probe_selected",
+      "loop_orientation": "probe_selected",
+      "same_base_endpoint": "no_probe_needed_target_constant"
+    },
+    "so3": {
+      "cap_size": "probe_selected",
+      "full_path": "probe_selected",
+      "loop_orientation": "probe_selected",
+      "same_base_endpoint": "no_probe_needed_target_constant"
+    }
+  },
+  "regular_path_hypotheses": [
+    {
+      "base_endpoint": [
+        9.302597195478663e-16,
+        -1.6788369551844807e-15,
+        1.0000000000000002
+      ],
+      "base_signed_area_sr": 1.1694361464475576,
+      "direction": 1,
+      "expected_s3_phase_half_area_rad": 0.5847180732237788,
+      "measured_s3_phase_rad": 0.5847057475599966,
+      "name": "small_forward",
+      "off_fibre_residual": 9.596713848899492e-16,
+      "phase_error_rad": 1.2325663782175589e-05,
+      "so3_signed_k_angle_rad": 1.1694114951199932,
+      "theta_rad": 0.62
+    },
+    {
+      "base_endpoint": [
+        9.302597195478663e-16,
+        1.6788369551844807e-15,
+        1.0000000000000002
+      ],
+      "base_signed_area_sr": -1.1694361464475576,
+      "direction": -1,
+      "expected_s3_phase_half_area_rad": -0.5847180732237788,
+      "measured_s3_phase_rad": -0.5847057475599966,
+      "name": "small_reverse",
+      "off_fibre_residual": 9.596713848899492e-16,
+      "phase_error_rad": 1.2325663782175589e-05,
+      "so3_signed_k_angle_rad": -1.1694114951199932,
+      "theta_rad": 0.62
+    },
+    {
+      "base_endpoint": [
+        7.125473369335722e-16,
+        1.8123962346507144e-15,
+        1.0
+      ],
+      "base_signed_area_sr": 2.783309425570338,
+      "direction": 1,
+      "expected_s3_phase_half_area_rad": 1.391654712785169,
+      "measured_s3_phase_rad": 1.3916374782662606,
+      "name": "large_forward",
+      "off_fibre_residual": 9.737175949354122e-16,
+      "phase_error_rad": 1.7234518908448848e-05,
+      "so3_signed_k_angle_rad": 2.783274956532521,
+      "theta_rad": 0.98
+    },
+    {
+      "base_endpoint": [
+        7.125473369335722e-16,
+        -1.8123962346507144e-15,
+        1.0
+      ],
+      "base_signed_area_sr": -2.783309425570338,
+      "direction": -1,
+      "expected_s3_phase_half_area_rad": -1.391654712785169,
+      "measured_s3_phase_rad": -1.3916374782662606,
+      "name": "large_reverse",
+      "off_fibre_residual": 9.737175949354122e-16,
+      "phase_error_rad": 1.7234518908448848e-05,
+      "so3_signed_k_angle_rad": -2.783274956532521,
+      "theta_rad": 0.98
+    }
+  ],
+  "scope": "Finite synthetic Hopf-bundle experiment. Not the full Virtual Layer address space.",
+  "sequential_policy_evaluation": {
+    "base_path_full_path": {
+      "active": {
+        "mean_probe_cost": 0.8,
+        "mean_probe_count": 1.0,
+        "resolution_rate": 1.0,
+        "resolved_accuracy": 1.0,
+        "resolved_accuracy_wilson_95": [
+          0.9842455102000642,
+          1.0
+        ],
+        "resolved_trials": 240,
+        "trials": 240
+      },
+      "fixed_initial": {
+        "mean_probe_cost": 0.8,
+        "mean_probe_count": 1.0,
+        "resolution_rate": 1.0,
+        "resolved_accuracy": 1.0,
+        "resolved_accuracy_wilson_95": [
+          0.9842455102000642,
+          1.0
+        ],
+        "resolved_trials": 240,
+        "trials": 240
+      },
+      "random": {
+        "mean_probe_cost": 0.8614583333333333,
+        "mean_probe_count": 1.6833333333333333,
+        "resolution_rate": 0.65,
+        "resolved_accuracy": 1.0,
+        "resolved_accuracy_wilson_95": [
+          0.9759662065444789,
+          0.9999999999999999
+        ],
+        "resolved_trials": 156,
+        "trials": 240
+      }
+    },
+    "s3_lift_antipodal": {
+      "active": {
+        "mean_probe_cost": 0.9,
+        "mean_probe_count": 1.0,
+        "resolution_rate": 1.0,
+        "resolved_accuracy": 1.0,
+        "resolved_accuracy_wilson_95": [
+          0.9811539940816791,
+          1.0
+        ],
+        "resolved_trials": 200,
+        "trials": 200
+      },
+      "fixed_initial": {
+        "mean_probe_cost": 0.9,
+        "mean_probe_count": 1.0,
+        "resolution_rate": 1.0,
+        "resolved_accuracy": 1.0,
+        "resolved_accuracy_wilson_95": [
+          0.9811539940816791,
+          1.0
+        ],
+        "resolved_trials": 200,
+        "trials": 200
+      },
+      "random": {
+        "mean_probe_cost": 1.00825,
+        "mean_probe_count": 1.82,
+        "resolution_rate": 0.445,
+        "resolved_accuracy": 1.0,
+        "resolved_accuracy_wilson_95": [
+          0.9586219970358116,
+          1.0
+        ],
+        "resolved_trials": 89,
+        "trials": 200
+      }
+    }
+  },
+  "title": "Active Observation on S3 / Hopf Geometry"
+}

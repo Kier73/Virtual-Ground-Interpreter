@@ -1,0 +1,63 @@
+{
+  "after_gap_closed": {
+    "collision_count": 0,
+    "conflict_records_retained_count": 0,
+    "current_context": "q_45f12f5b34db",
+    "data_truncated": false,
+    "duplicate_count": 0,
+    "fingerprint": "29c118373f60f731e618a48c211be243aafb294b38545a82f59f32a1e1dc23da",
+    "horizon": 0,
+    "known_transition_count": 2,
+    "pending_steps": [],
+    "predictive_context_count": 1,
+    "retained_event_count": 2,
+    "retired_event_count": 0,
+    "stale_count": 0,
+    "status": "tracking",
+    "total_event_count": 2,
+    "unknown_transition_count": 1,
+    "version": 3,
+    "version_lineage_retained_count": 3
+  },
+  "before_gap_closed": {
+    "collision_count": 0,
+    "conflict_records_retained_count": 0,
+    "current_context": null,
+    "data_truncated": false,
+    "duplicate_count": 0,
+    "fingerprint": "f510980857cb29c932dcc57480a90ba532804bf3d7fb9c45744eab09147c1417",
+    "horizon": 0,
+    "known_transition_count": 0,
+    "pending_steps": [
+      0,
+      1
+    ],
+    "predictive_context_count": 0,
+    "retained_event_count": 0,
+    "retired_event_count": 0,
+    "stale_count": 0,
+    "status": "collecting",
+    "total_event_count": 0,
+    "unknown_transition_count": 0,
+    "version": 1,
+    "version_lineage_retained_count": 1
+  },
+  "event_order": [
+    {
+      "action": "HOLD",
+      "output": [
+        0,
+        1
+      ],
+      "step": 0
+    },
+    {
+      "action": "PROBE_A",
+      "output": [
+        1,
+        2
+      ],
+      "step": 1
+    }
+  ]
+}

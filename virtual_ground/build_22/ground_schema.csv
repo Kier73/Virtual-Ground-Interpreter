@@ -1,0 +1,7 @@
+field,role,type,description
+capacity,structural,integer,Maximum reservoir level
+inflow_name,exogenous_law,categorical,Selected phase-indexed inflow schedule
+demand_name,exogenous_law,categorical,Selected phase-indexed demand schedule
+transfer_quantum,controlled_transition_parameter,integer,Maximum requested amount per gate action
+phase_stride,environmental_dynamics,integer,Phase increment modulo four
+version,ground_metadata,integer,Ground revision identifier

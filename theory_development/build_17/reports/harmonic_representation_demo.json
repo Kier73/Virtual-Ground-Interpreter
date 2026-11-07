@@ -1,0 +1,97 @@
+{
+  "provenance": "synthetic_deterministic_fixture",
+  "finite_dft": {
+    "sample_count": 32,
+    "input_norm_squared": 18.120000000000005,
+    "frequency_norm_squared": 18.119999999999994,
+    "parseval_abs_error": 1.0658141036401503e-14,
+    "reconstruction_max_abs_error": 1.1240845358973328e-14,
+    "fourth_power_identity_max_abs_error": 2.495712463338828e-14,
+    "transform_convention": "unitary_forward_N^-1/2_negative_exponent_inverse_positive_exponent"
+  },
+  "circular_shift_magnitude_invariance_max_abs_error": 1.1657341758564144e-14,
+  "event_graph_fourier": {
+    "node_count": 14,
+    "laplacian_eigenvalues": [
+      3.0989967672731e-16,
+      0.3353958214323881,
+      1.5151488197644016,
+      1.9999999999999998,
+      2.52867106745704,
+      3.170492972915616,
+      3.4042979182795086,
+      3.695944754090533,
+      3.997772290871174,
+      4.332577505871258,
+      5.629950677920944,
+      6.0860182045751845,
+      6.511968294238949,
+      6.756258901324936
+    ],
+    "eigenvalue_multiplicity_groups": [
+      {
+        "eigenvalue_mean": 3.0989967672731e-16,
+        "multiplicity": 1
+      },
+      {
+        "eigenvalue_mean": 0.3353958214323881,
+        "multiplicity": 1
+      },
+      {
+        "eigenvalue_mean": 1.5151488197644016,
+        "multiplicity": 1
+      },
+      {
+        "eigenvalue_mean": 1.9999999999999998,
+        "multiplicity": 1
+      },
+      {
+        "eigenvalue_mean": 2.52867106745704,
+        "multiplicity": 1
+      },
+      {
+        "eigenvalue_mean": 3.170492972915616,
+        "multiplicity": 1
+      },
+      {
+        "eigenvalue_mean": 3.4042979182795086,
+        "multiplicity": 1
+      },
+      {
+        "eigenvalue_mean": 3.695944754090533,
+        "multiplicity": 1
+      },
+      {
+        "eigenvalue_mean": 3.997772290871174,
+        "multiplicity": 1
+      },
+      {
+        "eigenvalue_mean": 4.332577505871258,
+        "multiplicity": 1
+      },
+      {
+        "eigenvalue_mean": 5.629950677920944,
+        "multiplicity": 1
+      },
+      {
+        "eigenvalue_mean": 6.0860182045751845,
+        "multiplicity": 1
+      },
+      {
+        "eigenvalue_mean": 6.511968294238949,
+        "multiplicity": 1
+      },
+      {
+        "eigenvalue_mean": 6.756258901324936,
+        "multiplicity": 1
+      }
+    ],
+    "input_signal_energy": 5.415,
+    "spectral_energy": 5.415000000000004,
+    "parseval_abs_error": 3.552713678800501e-15,
+    "reconstruction_max_abs_error": 9.992007221626409e-16,
+    "permutation_spectrum_max_abs_error": 8.881784197001252e-16,
+    "interpretation": "Graph Fourier modes diagonalize the chosen graph Laplacian. The spectrum is invariant under node relabeling, but is not a complete graph isomorphism test; eigenvectors inside repeated eigenspaces are not individually canonical."
+  },
+  "cross_representation_note": "The ordinary DFT is tied to cyclic translation on an ordered finite sequence. The graph Fourier transform is tied to the chosen graph Laplacian. They answer different symmetry questions and should not be treated as interchangeable."
+}

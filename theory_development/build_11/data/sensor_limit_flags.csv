@@ -1,0 +1,9 @@
+window_id,near_4g_fraction,flagged
+pre_63_30_63_88,0.0,False
+pre_64_33_64_92,0.0,False
+pre_65_8_66_15,0.0,False
+transition_66_45_66_65,0.0,False
+transition_66_92_67_2,0.0,False
+post_67_51_68_53,0.006944444444444444,True
+post_68_82_69_20,0.01282051282051282,True
+post_69_20_69_60,0.016666666666666666,True

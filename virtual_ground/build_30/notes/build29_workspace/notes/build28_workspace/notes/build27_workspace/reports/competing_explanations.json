@@ -1,0 +1,156 @@
+{
+  "hidden_vs_stochastic": {
+    "candidate_explanations": [
+      "hidden_predictive_variable",
+      "stochastic_or_noisy_transition"
+    ],
+    "history_collisions": 1,
+    "interpretation": "Maximum tested history does not resolve the collision; hidden context and stochasticity remain competing explanations.",
+    "minimum_resolving_horizon": null,
+    "status": "unresolved_predictive_divergence"
+  },
+  "insufficient_history": {
+    "candidate_explanations": [
+      "insufficient_history"
+    ],
+    "candidate_predictive_factor": {
+      "distinct_values": [
+        0,
+        1
+      ],
+      "lag": 2,
+      "scope": "predictive factor in supplied observation histories",
+      "type": "observed_history_lag"
+    },
+    "history_collisions": 1,
+    "interpretation": "A longer observed suffix resolves the collision; no new physical state is asserted.",
+    "minimum_resolving_horizon": 2,
+    "status": "insufficient_history"
+  },
+  "measurement_noise": {
+    "diagnosis": {
+      "candidates": [
+        {
+          "discriminating_next_test": "Repeat the same observation under unchanged conditions.",
+          "explanation": "measurement_noise",
+          "rank_score": 8,
+          "score_semantics": "ordinal evidence heuristic, not probability",
+          "supporting_evidence": [
+            "single-sample excursion",
+            "returns to prior value",
+            "independent channels remain stable"
+          ]
+        }
+      ],
+      "ground_revision_authorized": false,
+      "primary_explanation": "measurement_noise",
+      "status": "diagnostic_candidates_ranked",
+      "unresolved_ambiguities": []
+    },
+    "spike_indices": [
+      2
+    ],
+    "trace": [
+      1,
+      2,
+      99,
+      2,
+      3,
+      4
+    ]
+  },
+  "new_operation_candidate": {
+    "candidates": [
+      {
+        "discriminating_next_test": "Repeat the event signature in a second pre-state and check whether its effect law generalizes.",
+        "explanation": "new_operation_candidate",
+        "rank_score": 8,
+        "score_semantics": "ordinal evidence heuristic, not probability",
+        "supporting_evidence": [
+          "previously unlabelled event signature recurs",
+          "observed effect is consistent"
+        ]
+      }
+    ],
+    "ground_revision_authorized": false,
+    "primary_explanation": "new_operation_candidate",
+    "status": "diagnostic_candidates_ranked",
+    "unresolved_ambiguities": []
+  },
+  "new_state_candidate": {
+    "candidates": [
+      {
+        "discriminating_next_test": "Probe the candidate state with multiple known and newly discovered operations.",
+        "explanation": "new_predictive_state_candidate",
+        "rank_score": 9,
+        "score_semantics": "ordinal evidence heuristic, not probability",
+        "supporting_evidence": [
+          "novel observation repeated at least three times",
+          "independent channels corroborate",
+          "transition profile is reproducible"
+        ]
+      }
+    ],
+    "ground_revision_authorized": false,
+    "primary_explanation": "new_predictive_state_candidate",
+    "status": "diagnostic_candidates_ranked",
+    "unresolved_ambiguities": [
+      "new predictive state versus uncalibrated sensor remapping remains possible"
+    ]
+  },
+  "persistent_regime_change": {
+    "baseline_mismatch_records": [],
+    "change_point": 20,
+    "changed_keys": [
+      [
+        "q0",
+        "opA"
+      ],
+      [
+        "q1",
+        "opB"
+      ],
+      [
+        "q2",
+        "opA"
+      ]
+    ],
+    "commit_policy": "proposal only; independent validation required",
+    "independent_sensor_count": 2,
+    "qualifying_context_operations": 3,
+    "sensor_corroboration": true,
+    "status": "ground_regime_revision_candidate"
+  },
+  "regime_explanation_ranking": {
+    "candidates": [
+      {
+        "discriminating_next_test": "Run a held-out probe set across old and new contexts; version only after validation.",
+        "explanation": "ground_regime_change_candidate",
+        "rank_score": 10,
+        "score_semantics": "ordinal evidence heuristic, not probability",
+        "supporting_evidence": [
+          "persistent conflicts across multiple context-operation pairs",
+          "multiple sensors corroborate"
+        ]
+      }
+    ],
+    "ground_revision_authorized": false,
+    "primary_explanation": "ground_regime_change_candidate",
+    "status": "diagnostic_candidates_ranked",
+    "unresolved_ambiguities": []
+  },
+  "sensor_calibration_shift": {
+    "channel": "sensor_A",
+    "constant_offset": 3,
+    "not_proven": "A physical state change affecting only this sensor remains possible without an external calibration reference.",
+    "reference_channels_stable": true,
+    "status": "sensor_calibration_shift_candidate"
+  },
+  "sensor_shift_without_reference": {
+    "reference_channels_stable": false,
+    "shifted_channels": {
+      "sensor_A": 3
+    },
+    "status": "sensor_remap_vs_system_change_unresolved"
+  }
+}

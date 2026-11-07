@@ -1,0 +1,41 @@
+{
+  "build": "08",
+  "families": 40,
+  "pairs": {
+    "shape_clean__local_clean": 0.272,
+    "shape_clean__holonomy_clean": 0.177,
+    "shape_clean__temporal_clean": 0.095,
+    "holonomy_clean__temporal_clean": 0.002,
+    "local_clean__temporal_clean": 0.464,
+    "shape_clean__shape_noisy_drop": 0.931,
+    "local_clean__local_jittered": 0.809,
+    "holonomy_clean__holonomy_noisy": 0.944,
+    "temporal_clean__temporal_low_band": 0.482
+  },
+  "persistence": {
+    "shape_clean": [
+      12,
+      0
+    ],
+    "local_clean": [
+      4,
+      0
+    ],
+    "holonomy_clean": [
+      1,
+      0
+    ],
+    "temporal_clean": [
+      9,
+      0
+    ],
+    "shape_noisy_drop": [
+      10,
+      0
+    ],
+    "temporal_low_band": [
+      25,
+      0
+    ]
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "registry": {
+    "ld": "load probe input vector",
+    "mx": "scalar multiplication",
+    "ad": "scalar addition / accumulation"
+  },
+  "probe_program_template": [
+    "ld",
+    "mx",
+    "ad"
+  ],
+  "execution_note": "ld is executed by Probe.load(); each 2-element output row is evaluated as mx(coef0,input0), mx(coef1,input1), then ad(product0,product1). The same canonical operations can be given alternate aliases without changing their algebra."
+}

@@ -1,0 +1,58 @@
+{
+  "all_passed": true,
+  "builds": {
+    "build24": {
+      "passed": true,
+      "path": "notes\\build29_workspace\\notes\\build28_workspace\\notes\\build27_workspace\\legacy\\build26\\legacy\\build24",
+      "return_code": 0,
+      "test_count": 17
+    },
+    "build25": {
+      "passed": true,
+      "path": "notes\\build29_workspace\\notes\\build28_workspace\\notes\\build27_workspace\\legacy\\build26\\legacy\\build25",
+      "return_code": 0,
+      "test_count": 34
+    },
+    "build26": {
+      "passed": true,
+      "path": "notes\\build29_workspace\\notes\\build28_workspace\\notes\\build27_workspace\\legacy\\build26",
+      "return_code": 0,
+      "test_count": 27
+    },
+    "build27": {
+      "passed": true,
+      "path": "notes\\build29_workspace\\notes\\build28_workspace\\notes\\build27_workspace",
+      "return_code": 0,
+      "test_count": 30
+    },
+    "build28": {
+      "passed": true,
+      "path": "notes\\build29_workspace\\notes\\build28_workspace",
+      "return_code": 0,
+      "test_count": 21
+    },
+    "build29": {
+      "passed": true,
+      "path": "notes\\build29_workspace",
+      "return_code": 0,
+      "test_count": 24
+    },
+    "build30": {
+      "passed": true,
+      "path": ".",
+      "return_code": 0,
+      "test_count": 24
+    }
+  },
+  "combined_test_count": 177,
+  "method": "direct execution of each preserved suite once; avoids recursive duplicate regression runs",
+  "test_counts": {
+    "build24": 17,
+    "build25": 34,
+    "build26": 27,
+    "build27": 30,
+    "build28": 21,
+    "build29": 24,
+    "build30": 24
+  }
+}

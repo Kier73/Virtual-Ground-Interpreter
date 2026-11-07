@@ -1,0 +1,43 @@
+{
+  "build": 14,
+  "dataset": "TAPS: Throat and Acoustic Paired Speech Dataset (Korean)",
+  "dataset_record": "https://zenodo.org/records/18324208",
+  "source_metadata_verified": true,
+  "held_out_test_archive_size_approx_mb": 452.1,
+  "empirical_audio_downloaded_in_this_execution": false,
+  "empirical_pair_count": null,
+  "empirical_metrics_computed": false,
+  "local_retrieval_attempted": true,
+  "local_retrieval_status": "blocked_by_external_dns_resolution_failure",
+  "analysis_status": "empirical_data_pending",
+  "synthetic_pipeline_smoke": {
+    "status": "passed",
+    "pairs": 30,
+    "synthetic_groups": 3,
+    "pairs_skipped": 0,
+    "note": "Synthetic signals validate the analysis path only; they are not TAPS observations."
+  },
+  "temporal_invariance_probe": {
+    "time_origin_invariance_max_abs_error": 3.3306690738754696e-16,
+    "clock_scale_shape_invariance_max_abs_error": 1.1102230246251565e-16,
+    "clock_scale_rate_relation_abs_error": 2.7755575615628914e-17,
+    "clock_scale": 3.5,
+    "expected_rate_after_scale_hz": 0.2380952380952381,
+    "observed_rate_after_scale_hz": 0.23809523809523808,
+    "status": "passed"
+  },
+  "privacy": {
+    "speaker_ids_exported": false,
+    "transcripts_exported": false,
+    "demographics_exported": false,
+    "aggregate_outputs_default": true,
+    "pair_keys_ephemeral": true,
+    "audio_in_package": false
+  },
+  "limitations": [
+    "No empirical TAPS waveform was downloaded or analyzed.",
+    "Synthetic smoke statistics are not empirical speech findings.",
+    "Envelope maxima are observation landmarks, not validated hidden-state transitions or phonetic events.",
+    "Clock-scale shape invariance is conditional on a fixed event set and consistent scaling of observer time resolution."
+  ]
+}

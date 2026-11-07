@@ -1,0 +1,14 @@
+variable,role,controlled_by,observed_by_default,description
+capacity,structural bank,ground designer,ground metadata,reservoir upper bound
+legal_action_rules,structural bank,ground designer,ground metadata,gate preconditions
+mass_balance_law,structural bank,ground designer,ground metadata,conservation relation
+phase_transition_law,structural bank,ground designer,ground metadata,environment phase update
+gate_command,controlled,controller,actuator log,gate transfer decision
+reservoir_a,endogenous,system dynamics,observer-dependent,stored level in A
+reservoir_b,endogenous,system dynamics,observer-dependent,stored level in B
+actual_transfer,endogenous,control plus state,ledger,executed transfer
+spill,endogenous,state plus environment,ledger,overflow at A capacity
+unmet_demand,endogenous,state plus environment,ledger,demand not met from B
+inflow_schedule,exogenous law,environment/ground,environment observer,phase-indexed inflow rule
+demand_schedule,exogenous law,environment/ground,environment observer,phase-indexed demand rule
+environment_phase,exogenous state,environment,observer-dependent,current phase in the forcing cycle

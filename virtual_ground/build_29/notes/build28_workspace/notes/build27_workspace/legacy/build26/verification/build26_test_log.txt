@@ -1,0 +1,32 @@
+test_bounded_event_history_marks_truncation (test_build26.Build26Tests.test_bounded_event_history_marks_truncation) ... ok
+test_bounded_stream_does_not_relearn_truncated_boundary_as_a_new_state_each_step (test_build26.Build26Tests.test_bounded_stream_does_not_relearn_truncated_boundary_as_a_new_state_each_step) ... ok
+test_conflicting_duplicate_quarantines_without_reset (test_build26.Build26Tests.test_conflicting_duplicate_quarantines_without_reset) ... ok
+test_context_budget_is_enforced (test_build26.Build26Tests.test_context_budget_is_enforced) ... ok
+test_delayed_signal_forces_history_horizon_refinement (test_build26.Build26Tests.test_delayed_signal_forces_history_horizon_refinement) ... ok
+test_duplicate_sensor_delivery_is_idempotent (test_build26.Build26Tests.test_duplicate_sensor_delivery_is_idempotent) ... ok
+test_evidence_replay_reports_scope_without_claiming_unseen_proof (test_build26.Build26Tests.test_evidence_replay_reports_scope_without_claiming_unseen_proof) ... ok
+test_exploration_selector_can_target_unknown_edge_without_claiming_information_gain (test_build26.Build26Tests.test_exploration_selector_can_target_unknown_edge_without_claiming_information_gain) ... ok
+test_exploration_selector_declines_when_unknown_edges_are_too_risky (test_build26.Build26Tests.test_exploration_selector_declines_when_unknown_edges_are_too_risky) ... ok
+test_joint_observer_learns_six_predictive_contexts (test_build26.Build26Tests.test_joint_observer_learns_six_predictive_contexts) ... ok
+test_mealy_and_observation_signatures_are_explicitly_distinct (test_build26.Build26Tests.test_mealy_and_observation_signatures_are_explicitly_distinct) ... ok
+test_modulo_three_observer_learns_three_context_quotient (test_build26.Build26Tests.test_modulo_three_observer_learns_three_context_quotient) ... ok
+test_nonbijective_fixture_is_not_forced_into_a_cycle (test_build26.Build26Tests.test_nonbijective_fixture_is_not_forced_into_a_cycle) ... ok
+test_out_of_order_future_step_waits_for_gap (test_build26.Build26Tests.test_out_of_order_future_step_waits_for_gap) ... ok
+test_parity_observer_learns_two_context_quotient (test_build26.Build26Tests.test_parity_observer_learns_two_context_quotient) ... ok
+test_partial_channels_commit_only_when_all_selected_channels_arrive (test_build26.Build26Tests.test_partial_channels_commit_only_when_all_selected_channels_arrive) ... ok
+test_partial_specification_round_trip (test_build26.Build26Tests.test_partial_specification_round_trip) ... ok
+test_persistent_unresolved_collisions_keep_conflict_and_version_logs_bounded (test_build26.Build26Tests.test_persistent_unresolved_collisions_keep_conflict_and_version_logs_bounded) ... ok
+test_quarantined_partial_ground_cannot_execute (test_build26.Build26Tests.test_quarantined_partial_ground_cannot_execute) ... ok
+test_safe_probe_scheduler_uses_only_known_edges (test_build26.Build26Tests.test_safe_probe_scheduler_uses_only_known_edges) ... ok
+test_sensor_channels_can_arrive_before_action_registration (test_build26.Build26Tests.test_sensor_channels_can_arrive_before_action_registration) ... ok
+test_structural_version_does_not_increment_for_duplicate_confirmation (test_build26.Build26Tests.test_structural_version_does_not_increment_for_duplicate_confirmation) ... ok
+test_unknown_initial_context_is_not_claimed_as_physical_state (test_build26.Build26Tests.test_unknown_initial_context_is_not_claimed_as_physical_state) ... ok
+test_unknown_transition_remains_unknown_after_other_action_observed (test_build26.Build26Tests.test_unknown_transition_remains_unknown_after_other_action_observed) ... ok
+test_unknown_transitions_are_explicit_and_never_defaulted (test_build26.Build26Tests.test_unknown_transitions_are_explicit_and_never_defaulted) ... ok
+test_unobservable_eight_modes_are_not_invented (test_build26.Build26Tests.test_unobservable_eight_modes_are_not_invented) ... ok
+test_version_lineage_records_horizon_refinement (test_build26.Build26Tests.test_version_lineage_records_horizon_refinement) ... ok
+
+----------------------------------------------------------------------
+Ran 27 tests in 0.253s
+
+OK

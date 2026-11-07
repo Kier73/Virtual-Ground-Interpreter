@@ -1,0 +1,577 @@
+test_active_episode_keeps_structural_identity_unchanged (test_active_observer.BayesianUpdateTests.test_active_episode_keeps_structural_identity_unchanged) ... ok
+test_active_policy_uses_complementary_probes (test_active_observer.BayesianUpdateTests.test_active_policy_uses_complementary_probes) ... ok
+test_custom_codon_aliases_preserve_response (test_active_observer.BayesianUpdateTests.test_custom_codon_aliases_preserve_response) ... ok
+test_observation_increases_probability_of_matching_hypothesis (test_active_observer.BayesianUpdateTests.test_observation_increases_probability_of_matching_hypothesis) ... ok
+test_posterior_normalizes (test_active_observer.BayesianUpdateTests.test_posterior_normalizes) ... ok
+test_probe_chains_use_declared_local_codon_operations (test_active_observer.BayesianUpdateTests.test_probe_chains_use_declared_local_codon_operations) ... ok
+test_observer_output_is_projection_not_new_underlying_state (test_active_observer.InvarianceTests.test_observer_output_is_projection_not_new_underlying_state) ... ok
+test_probe_energy_is_normalized (test_active_observer.InvarianceTests.test_probe_energy_is_normalized) ... ok
+test_probe_selection_does_not_mutate_algebra (test_active_observer.InvarianceTests.test_probe_selection_does_not_mutate_algebra) ... ok
+test_cost_adjustment_can_prefer_lower_raw_information_probe (test_active_observer.ProbeSelectionTests.test_cost_adjustment_can_prefer_lower_raw_information_probe) ... ok
+test_expected_information_gain_is_nonnegative (test_active_observer.ProbeSelectionTests.test_expected_information_gain_is_nonnegative) ... ok
+test_information_gain_does_not_exceed_target_entropy (test_active_observer.ProbeSelectionTests.test_information_gain_does_not_exceed_target_entropy) ... ok
+test_intention_changes_selected_probe (test_active_observer.ProbeSelectionTests.test_intention_changes_selected_probe) ... ok
+test_more_noise_does_not_improve_eig_in_this_model (test_active_observer.ProbeSelectionTests.test_more_noise_does_not_improve_eig_in_this_model) ... ok
+test_observer_projection_changes_selected_probe (test_active_observer.ProbeSelectionTests.test_observer_projection_changes_selected_probe) ... ok
+test_robust_score_is_worst_case_over_noise_scales (test_active_observer.ProbeSelectionTests.test_robust_score_is_worst_case_over_noise_scales) ... ok
+test_unobservable_intent_is_rejected (test_active_observer.ProbeSelectionTests.test_unobservable_intent_is_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 0.052s
+
+OK
+{
+  "report": "/mnt/data/vl_response_geometry_build_05/reports/build_05_report.json",
+  "full_identification": [
+    {
+      "probe": "probe_y",
+      "eig_bits": 1.3163764434729857,
+      "robust_eig_bits": 0.9973042399833258,
+      "cost": 1.0,
+      "utility": 0.9973042399833258,
+      "eigs_by_noise_scale": [
+        1.3163764434729857,
+        0.9973042399833258
+      ]
+    },
+    {
+      "probe": "probe_x",
+      "eig_bits": 1.3163764434729857,
+      "robust_eig_bits": 0.9973042399833254,
+      "cost": 1.0,
+      "utility": 0.9973042399833254,
+      "eigs_by_noise_scale": [
+        1.3163764434729857,
+        0.9973042399833254
+      ]
+    },
+    {
+      "probe": "probe_diagonal",
+      "eig_bits": 1.9718222819483482,
+      "robust_eig_bits": 1.432953505984293,
+      "cost": 2.6,
+      "utility": 0.5511359638401127,
+      "eigs_by_noise_scale": [
+        1.9718222819483482,
+        1.432953505984293
+      ]
+    }
+  ],
+  "x_only_upper": [
+    {
+      "probe": "probe_y",
+      "eig_bits": 0.9995060265077786,
+      "robust_eig_bits": 0.8788445458633933,
+      "cost": 1.0,
+      "utility": 0.8788445458633933,
+      "eigs_by_noise_scale": [
+        0.9995060265077786,
+        0.8788445458633933
+      ]
+    },
+    {
+      "probe": "probe_diagonal",
+      "eig_bits": 0.9703333221931221,
+      "robust_eig_bits": 0.682317439197482,
+      "cost": 2.6,
+      "utility": 0.2624297843067238,
+      "eigs_by_noise_scale": [
+        0.9703333221931221,
+        0.682317439197482
+      ]
+    },
+    {
+      "probe": "probe_x",
+      "eig_bits": 0.0,
+      "robust_eig_bits": 0.0,
+      "cost": 1.0,
+      "utility": 0.0,
+      "eigs_by_noise_scale": [
+        0.0,
+        0.0
+      ]
+    }
+  ],
+  "y_only_lower": [
+    {
+      "probe": "probe_x",
+      "eig_bits": 0.9995060265077786,
+      "robust_eig_bits": 0.8788445458633933,
+      "cost": 1.0,
+      "utility": 0.8788445458633933,
+      "eigs_by_noise_scale": [
+        0.9995060265077786,
+        0.8788445458633933
+      ]
+    },
+    {
+      "probe": "probe_diagonal",
+      "eig_bits": 0.9703333221931221,
+      "robust_eig_bits": 0.682317439197482,
+      "cost": 2.6,
+      "utility": 0.2624297843067238,
+      "eigs_by_noise_scale": [
+        0.9703333221931221,
+        0.682317439197482
+      ]
+    },
+    {
+      "probe": "probe_y",
+      "eig_bits": 0.0,
+      "robust_eig_bits": 0.0,
+      "cost": 1.0,
+      "utility": 0.0,
+      "eigs_by_noise_scale": [
+        0.0,
+        0.0
+      ]
+    }
+  ],
+  "policy_evaluation": {
+    "trials_per_hypothesis": 40,
+    "total_trials": 160,
+    "observer": "full_observer",
+    "intent": "identify_structure",
+    "noise_scale": 1.0,
+    "max_steps": 2,
+    "policies": {
+      "active": {
+        "target_accuracy": 1.0,
+        "target_accuracy_wilson_95": [
+          0.9765529633499672,
+          1.0
+        ],
+        "full_hypothesis_accuracy": 1.0,
+        "full_hypothesis_accuracy_wilson_95": [
+          0.9765529633499672,
+          1.0
+        ],
+        "mean_steps": 1.9125,
+        "mean_probe_cost": 1.9125,
+        "correct_targets": 160,
+        "correct_hypotheses": 160
+      },
+      "fixed_probe_x_repeat": {
+        "target_accuracy": 0.725,
+        "target_accuracy_wilson_95": [
+          0.651149022400604,
+          0.7882998111068811
+        ],
+        "full_hypothesis_accuracy": 0.725,
+        "full_hypothesis_accuracy_wilson_95": [
+          0.651149022400604,
+          0.7882998111068811
+        ],
+        "mean_steps": 1.925,
+        "mean_probe_cost": 1.925,
+        "correct_targets": 116,
+        "correct_hypotheses": 116
+      },
+      "fixed_complementary_xy": {
+        "target_accuracy": 1.0,
+        "target_accuracy_wilson_95": [
+          0.9765529633499672,
+          1.0
+        ],
+        "full_hypothesis_accuracy": 1.0,
+        "full_hypothesis_accuracy_wilson_95": [
+          0.9765529633499672,
+          1.0
+        ],
+        "mean_steps": 1.89375,
+        "mean_probe_cost": 1.89375,
+        "correct_targets": 160,
+        "correct_hypotheses": 160
+      },
+      "random": {
+        "target_accuracy": 0.95625,
+        "target_accuracy_wilson_95": [
+          0.9124559185916465,
+          0.9786486604651987
+        ],
+        "full_hypothesis_accuracy": 0.95625,
+        "full_hypothesis_accuracy_wilson_95": [
+          0.9124559185916465,
+          0.9786486604651987
+        ],
+        "mean_steps": 1.6875,
+        "mean_probe_cost": 2.5475000000000034,
+        "correct_targets": 153,
+        "correct_hypotheses": 153
+      }
+    }
+  },
+  "noise_robustness": [
+    {
+      "trials_per_hypothesis": 60,
+      "total_trials": 240,
+      "observer": "full_observer_noise_x0.5",
+      "intent": "identify_structure",
+      "noise_scale": 1.0,
+      "max_steps": 2,
+      "policies": {
+        "active": {
+          "target_accuracy": 1.0,
+          "target_accuracy_wilson_95": [
+            0.9842455102000642,
+            1.0
+          ],
+          "full_hypothesis_accuracy": 1.0,
+          "full_hypothesis_accuracy_wilson_95": [
+            0.9842455102000642,
+            1.0
+          ],
+          "mean_steps": 1.5375,
+          "mean_probe_cost": 1.5375,
+          "correct_targets": 240,
+          "correct_hypotheses": 240
+        },
+        "fixed_probe_x_repeat": {
+          "target_accuracy": 0.75,
+          "target_accuracy_wilson_95": [
+            0.691568446042421,
+            0.8005543090576113
+          ],
+          "full_hypothesis_accuracy": 0.75,
+          "full_hypothesis_accuracy_wilson_95": [
+            0.691568446042421,
+            0.8005543090576113
+          ],
+          "mean_steps": 1.5166666666666666,
+          "mean_probe_cost": 1.5166666666666666,
+          "correct_targets": 180,
+          "correct_hypotheses": 180
+        },
+        "fixed_complementary_xy": {
+          "target_accuracy": 1.0,
+          "target_accuracy_wilson_95": [
+            0.9842455102000642,
+            1.0
+          ],
+          "full_hypothesis_accuracy": 1.0,
+          "full_hypothesis_accuracy_wilson_95": [
+            0.9842455102000642,
+            1.0
+          ],
+          "mean_steps": 1.5208333333333333,
+          "mean_probe_cost": 1.5208333333333333,
+          "correct_targets": 240,
+          "correct_hypotheses": 240
+        },
+        "random": {
+          "target_accuracy": 0.9416666666666667,
+          "target_accuracy_wilson_95": [
+            0.9044789797630133,
+            0.9649378875803767
+          ],
+          "full_hypothesis_accuracy": 0.9416666666666667,
+          "full_hypothesis_accuracy_wilson_95": [
+            0.9044789797630133,
+            0.9649378875803767
+          ],
+          "mean_steps": 1.4041666666666666,
+          "mean_probe_cost": 2.150833333333338,
+          "correct_targets": 226,
+          "correct_hypotheses": 226
+        }
+      }
+    },
+    {
+      "trials_per_hypothesis": 60,
+      "total_trials": 240,
+      "observer": "full_observer_noise_x1",
+      "intent": "identify_structure",
+      "noise_scale": 1.0,
+      "max_steps": 2,
+      "policies": {
+        "active": {
+          "target_accuracy": 1.0,
+          "target_accuracy_wilson_95": [
+            0.9842455102000642,
+            1.0
+          ],
+          "full_hypothesis_accuracy": 1.0,
+          "full_hypothesis_accuracy_wilson_95": [
+            0.9842455102000642,
+            1.0
+          ],
+          "mean_steps": 1.9125,
+          "mean_probe_cost": 1.9125,
+          "correct_targets": 240,
+          "correct_hypotheses": 240
+        },
+        "fixed_probe_x_repeat": {
+          "target_accuracy": 0.7333333333333333,
+          "target_accuracy_wilson_95": [
+            0.6740300322180951,
+            0.7852845392086015
+          ],
+          "full_hypothesis_accuracy": 0.7333333333333333,
+          "full_hypothesis_accuracy_wilson_95": [
+            0.6740300322180951,
+            0.7852845392086015
+          ],
+          "mean_steps": 1.8916666666666666,
+          "mean_probe_cost": 1.8916666666666666,
+          "correct_targets": 176,
+          "correct_hypotheses": 176
+        },
+        "fixed_complementary_xy": {
+          "target_accuracy": 1.0,
+          "target_accuracy_wilson_95": [
+            0.9842455102000642,
+            1.0
+          ],
+          "full_hypothesis_accuracy": 1.0,
+          "full_hypothesis_accuracy_wilson_95": [
+            0.9842455102000642,
+            1.0
+          ],
+          "mean_steps": 1.875,
+          "mean_probe_cost": 1.875,
+          "correct_targets": 240,
+          "correct_hypotheses": 240
+        },
+        "random": {
+          "target_accuracy": 0.9416666666666667,
+          "target_accuracy_wilson_95": [
+            0.9044789797630133,
+            0.9649378875803767
+          ],
+          "full_hypothesis_accuracy": 0.9416666666666667,
+          "full_hypothesis_accuracy_wilson_95": [
+            0.9044789797630133,
+            0.9649378875803767
+          ],
+          "mean_steps": 1.6708333333333334,
+          "mean_probe_cost": 2.5041666666666718,
+          "correct_targets": 226,
+          "correct_hypotheses": 226
+        }
+      }
+    },
+    {
+      "trials_per_hypothesis": 60,
+      "total_trials": 240,
+      "observer": "full_observer_noise_x2",
+      "intent": "identify_structure",
+      "noise_scale": 1.0,
+      "max_steps": 2,
+      "policies": {
+        "active": {
+          "target_accuracy": 0.9541666666666667,
+          "target_accuracy_wilson_95": [
+            0.9198052204282001,
+            0.9742177846701916
+          ],
+          "full_hypothesis_accuracy": 0.9541666666666667,
+          "full_hypothesis_accuracy_wilson_95": [
+            0.9198052204282001,
+            0.9742177846701916
+          ],
+          "mean_steps": 2.0,
+          "mean_probe_cost": 2.0,
+          "correct_targets": 229,
+          "correct_hypotheses": 229
+        },
+        "fixed_probe_x_repeat": {
+          "target_accuracy": 0.7,
+          "target_accuracy_wilson_95": [
+            0.6392437983263725,
+            0.7544544057536532
+          ],
+          "full_hypothesis_accuracy": 0.7,
+          "full_hypothesis_accuracy_wilson_95": [
+            0.6392437983263725,
+            0.7544544057536532
+          ],
+          "mean_steps": 2.0,
+          "mean_probe_cost": 2.0,
+          "correct_targets": 168,
+          "correct_hypotheses": 168
+        },
+        "fixed_complementary_xy": {
+          "target_accuracy": 0.9708333333333333,
+          "target_accuracy_wilson_95": [
+            0.9410297384352175,
+            0.9858014503365096
+          ],
+          "full_hypothesis_accuracy": 0.9708333333333333,
+          "full_hypothesis_accuracy_wilson_95": [
+            0.9410297384352175,
+            0.9858014503365096
+          ],
+          "mean_steps": 2.0,
+          "mean_probe_cost": 2.0,
+          "correct_targets": 233,
+          "correct_hypotheses": 233
+        },
+        "random": {
+          "target_accuracy": 0.8625,
+          "target_accuracy_wilson_95": [
+            0.8131885436096845,
+            0.9003894512853622
+          ],
+          "full_hypothesis_accuracy": 0.8625,
+          "full_hypothesis_accuracy_wilson_95": [
+            0.8131885436096845,
+            0.9003894512853622
+          ],
+          "mean_steps": 1.9666666666666666,
+          "mean_probe_cost": 3.1133333333333413,
+          "correct_targets": 207,
+          "correct_hypotheses": 207
+        }
+      }
+    },
+    {
+      "trials_per_hypothesis": 60,
+      "total_trials": 240,
+      "observer": "full_observer_noise_x4",
+      "intent": "identify_structure",
+      "noise_scale": 1.0,
+      "max_steps": 2,
+      "policies": {
+        "active": {
+          "target_accuracy": 0.725,
+          "target_accuracy_wilson_95": [
+            0.6652981678559164,
+            0.7776123117341125
+          ],
+          "full_hypothesis_accuracy": 0.725,
+          "full_hypothesis_accuracy_wilson_95": [
+            0.6652981678559164,
+            0.7776123117341125
+          ],
+          "mean_steps": 2.0,
+          "mean_probe_cost": 2.0,
+          "correct_targets": 174,
+          "correct_hypotheses": 174
+        },
+        "fixed_probe_x_repeat": {
+          "target_accuracy": 0.49583333333333335,
+          "target_accuracy_wilson_95": [
+            0.43314267661105676,
+            0.5586552774706094
+          ],
+          "full_hypothesis_accuracy": 0.49583333333333335,
+          "full_hypothesis_accuracy_wilson_95": [
+            0.43314267661105676,
+            0.5586552774706094
+          ],
+          "mean_steps": 2.0,
+          "mean_probe_cost": 2.0,
+          "correct_targets": 119,
+          "correct_hypotheses": 119
+        },
+        "fixed_complementary_xy": {
+          "target_accuracy": 0.7208333333333333,
+          "target_accuracy_wilson_95": [
+            0.6609412590301074,
+            0.7737671746415877
+          ],
+          "full_hypothesis_accuracy": 0.7208333333333333,
+          "full_hypothesis_accuracy_wilson_95": [
+            0.6609412590301074,
+            0.7737671746415877
+          ],
+          "mean_steps": 2.0,
+          "mean_probe_cost": 2.0,
+          "correct_targets": 173,
+          "correct_hypotheses": 173
+        },
+        "random": {
+          "target_accuracy": 0.6375,
+          "target_accuracy_wilson_95": [
+            0.5749561398366994,
+            0.6957113754683182
+          ],
+          "full_hypothesis_accuracy": 0.6375,
+          "full_hypothesis_accuracy_wilson_95": [
+            0.5749561398366994,
+            0.6957113754683182
+          ],
+          "mean_steps": 2.0,
+          "mean_probe_cost": 3.0266666666666735,
+          "correct_targets": 153,
+          "correct_hypotheses": 153
+        }
+      }
+    },
+    {
+      "trials_per_hypothesis": 60,
+      "total_trials": 240,
+      "observer": "full_observer_noise_x6",
+      "intent": "identify_structure",
+      "noise_scale": 1.0,
+      "max_steps": 2,
+      "policies": {
+        "active": {
+          "target_accuracy": 0.5166666666666667,
+          "target_accuracy_wilson_95": [
+            0.45367997248566677,
+            0.5791282111876689
+          ],
+          "full_hypothesis_accuracy": 0.5166666666666667,
+          "full_hypothesis_accuracy_wilson_95": [
+            0.45367997248566677,
+            0.5791282111876689
+          ],
+          "mean_steps": 2.0,
+          "mean_probe_cost": 2.0,
+          "correct_targets": 124,
+          "correct_hypotheses": 124
+        },
+        "fixed_probe_x_repeat": {
+          "target_accuracy": 0.45,
+          "target_accuracy_wilson_95": [
+            0.3883388915516926,
+            0.513236557428301
+          ],
+          "full_hypothesis_accuracy": 0.45,
+          "full_hypothesis_accuracy_wilson_95": [
+            0.3883388915516926,
+            0.513236557428301
+          ],
+          "mean_steps": 2.0,
+          "mean_probe_cost": 2.0,
+          "correct_targets": 108,
+          "correct_hypotheses": 108
+        },
+        "fixed_complementary_xy": {
+          "target_accuracy": 0.5958333333333333,
+          "target_accuracy_wilson_95": [
+            0.5327101180756953,
+            0.6559369380459835
+          ],
+          "full_hypothesis_accuracy": 0.5958333333333333,
+          "full_hypothesis_accuracy_wilson_95": [
+            0.5327101180756953,
+            0.6559369380459835
+          ],
+          "mean_steps": 2.0,
+          "mean_probe_cost": 2.0,
+          "correct_targets": 143,
+          "correct_hypotheses": 143
+        },
+        "random": {
+          "target_accuracy": 0.48333333333333334,
+          "target_accuracy_wilson_95": [
+            0.42087178881233117,
+            0.5463200275143333
+          ],
+          "full_hypothesis_accuracy": 0.48333333333333334,
+          "full_hypothesis_accuracy_wilson_95": [
+            0.42087178881233117,
+            0.5463200275143333
+          ],
+          "mean_steps": 2.0,
+          "mean_probe_cost": 3.1066666666666736,
+          "correct_targets": 116,
+          "correct_hypotheses": 116
+        }
+      }
+    }
+  ],
+  "invariance_audit": true
+}

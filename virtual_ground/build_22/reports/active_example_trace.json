@@ -1,0 +1,61 @@
+{
+  "identified": true,
+  "probe_count": 2,
+  "realized_entropy_reduction_bits": 5.0,
+  "remaining_hypotheses": 1,
+  "remaining_ids": [
+    "C2-inflow_A-demand_A-Q1-P1-V1"
+  ],
+  "status": "identified_within_candidate_family",
+  "sum_expected_information_gain_bits": 4.75,
+  "total_probe_cost": 6.0,
+  "trace": [
+    {
+      "action": "A_TO_B",
+      "cost": 4.0,
+      "expected_information_gain_bits": 3.75,
+      "hypotheses_after": 2,
+      "hypotheses_before": 32,
+      "index": 1,
+      "initial": [
+        2,
+        0,
+        3
+      ],
+      "observation": [
+        2,
+        1,
+        0
+      ],
+      "posterior_entropy_bits": 1.0,
+      "prior_entropy_bits": 5.0,
+      "probe": "(2, 0, 3)|A_TO_B|FULL",
+      "realized_entropy_reduction_bits": 4.0,
+      "score_per_cost": 0.9375,
+      "sensor": "FULL"
+    },
+    {
+      "action": "HOLD",
+      "cost": 2.0,
+      "expected_information_gain_bits": 1.0,
+      "hypotheses_after": 1,
+      "hypotheses_before": 2,
+      "index": 2,
+      "initial": [
+        2,
+        2,
+        3
+      ],
+      "observation": [
+        4
+      ],
+      "posterior_entropy_bits": 0.0,
+      "prior_entropy_bits": 1.0,
+      "probe": "(2, 2, 3)|HOLD|TOTAL",
+      "realized_entropy_reduction_bits": 1.0,
+      "score_per_cost": 0.5,
+      "sensor": "TOTAL"
+    }
+  ],
+  "true_ground": "C2-inflow_A-demand_A-Q1-P1-V1"
+}

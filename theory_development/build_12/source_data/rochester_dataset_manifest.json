@@ -1,0 +1,17 @@
+{
+  "title": "University of Rochester room impulse response dataset",
+  "authors": ["Jenna Rutowski", "Tre DiPassio", "Benjamin R. Thompson", "Michael C. Heilemann", "Mark F. Bocko"],
+  "repository": "University of Rochester Figshare",
+  "article_id": 26801089,
+  "version": 3,
+  "published": "2024-10-17",
+  "doi": "10.60593/ur.d.26801089.v3",
+  "landing_page": "https://rochester.figshare.com/articles/dataset/University_of_Rochester_room_impulse_response_dataset/26801089",
+  "license": "CC BY 4.0",
+  "documented_rooms": 14,
+  "documented_format": {"sample_rate_hz": 48000, "bit_depth": 32, "channels": 1, "container": "WAV"},
+  "documented_contents": ["room impulse responses", "room layouts", "acoustic plots"],
+  "landing_page_download_all_size_mb": 94.65,
+  "retrieval_status_in_this_build": "metadata verified; 94.65 MB binary archive was not downloaded in this runtime; no room impulse-response waveform is claimed as analyzed",
+  "associated_publication_doi": "10.1121/10.0032367"
+}

@@ -1,0 +1,5 @@
+domain,sample_rate_hz,rdm_rank_retention_vs_256hz
+acoustic,128,0.9349545976411648
+acoustic,512,0.9804195804195804
+mechanical,128,0.9613401523849285
+mechanical,512,0.978499112827471

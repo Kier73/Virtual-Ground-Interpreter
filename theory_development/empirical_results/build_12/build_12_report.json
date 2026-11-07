@@ -1,0 +1,90 @@
+{
+  "build": "12",
+  "dataset": "University of Rochester room impulse response dataset",
+  "dataset_doi": "10.60593/ur.d.26801089.v3",
+  "license": "CC BY 4.0",
+  "analysis_status": "analyzed",
+  "source_summary": {
+    "wav_files_found": 90,
+    "channel_records_analyzed": 90,
+    "rooms_detected": 15,
+    "failures": [],
+    "status": "analyzed"
+  },
+  "rooms": [
+    "Room10_IRwavs",
+    "Room11_IRwavs",
+    "Room12_IRwavs",
+    "Room13_IRwavs",
+    "Room14_IRwavs",
+    "Room1_IRwavs",
+    "Room2a_IRwavs",
+    "Room2b_IRwavs",
+    "Room3_IRwavs",
+    "Room4_IRwavs",
+    "Room5_IRwavs",
+    "Room6_IRwavs",
+    "Room7_IRwavs",
+    "Room8_IRwavs",
+    "Room9_IRwavs"
+  ],
+  "rdm_view_correlations": [
+    {
+      "view_a": "decay",
+      "view_b": "early_late",
+      "rdm_spearman": 0.09924320962056811
+    },
+    {
+      "view_a": "decay",
+      "view_b": "spectral",
+      "rdm_spearman": 0.15396019075264356
+    },
+    {
+      "view_a": "decay",
+      "view_b": "temporal",
+      "rdm_spearman": 0.33776695003110097
+    },
+    {
+      "view_a": "decay",
+      "view_b": "level",
+      "rdm_spearman": 0.27054737715115074
+    },
+    {
+      "view_a": "early_late",
+      "view_b": "spectral",
+      "rdm_spearman": 0.08714493054115696
+    },
+    {
+      "view_a": "early_late",
+      "view_b": "temporal",
+      "rdm_spearman": 0.7136014928467758
+    },
+    {
+      "view_a": "early_late",
+      "view_b": "level",
+      "rdm_spearman": 0.18168152602114865
+    },
+    {
+      "view_a": "spectral",
+      "view_b": "temporal",
+      "rdm_spearman": 0.11425461331121707
+    },
+    {
+      "view_a": "spectral",
+      "view_b": "level",
+      "rdm_spearman": 0.08324694173750777
+    },
+    {
+      "view_a": "temporal",
+      "view_b": "level",
+      "rdm_spearman": 0.1546133112170848
+    }
+  ],
+  "interpretation": "These are within-acoustic-domain room comparisons. No cross-modal RDM correlation with the Build 11 smartphone movement excerpt is calculated because the recordings are not paired by shared excitation, room, device, or trial.",
+  "measurement_cautions": [
+    "RIR amplitude depends on source, microphone and acquisition gain; level features are kept separate.",
+    "RT/EDT estimates are regression extrapolations from the recorded decay range, not necessarily direct 60 dB measurements.",
+    "The documented 48 kHz / 32-bit / mono format is source metadata; each file's actual WAV header is inspected.",
+    "Octave-band filters are compact second-order analysis filters, not a certified ISO 3382 implementation."
+  ]
+}

@@ -1,0 +1,138 @@
+{
+  "specification": {
+    "format": "VG-PredictiveMealy-1",
+    "initial": "q0",
+    "actions": [
+      "HOLD",
+      "PROBE_A",
+      "PROBE_B"
+    ],
+    "state_count": 3,
+    "transitions": {
+      "q0": {
+        "HOLD": "q1",
+        "PROBE_A": "q2",
+        "PROBE_B": "q0"
+      },
+      "q1": {
+        "HOLD": "q2",
+        "PROBE_A": "q0",
+        "PROBE_B": "q1"
+      },
+      "q2": {
+        "HOLD": "q0",
+        "PROBE_A": "q1",
+        "PROBE_B": "q2"
+      }
+    },
+    "outputs": {
+      "q0": {
+        "HOLD": [
+          0
+        ],
+        "PROBE_A": [
+          0
+        ],
+        "PROBE_B": [
+          0
+        ]
+      },
+      "q1": {
+        "HOLD": [
+          1
+        ],
+        "PROBE_A": [
+          1
+        ],
+        "PROBE_B": [
+          1
+        ]
+      },
+      "q2": {
+        "HOLD": [
+          2
+        ],
+        "PROBE_A": [
+          2
+        ],
+        "PROBE_B": [
+          2
+        ]
+      }
+    },
+    "access_representatives": {
+      "q0": [],
+      "q1": [
+        "HOLD"
+      ],
+      "q2": [
+        "PROBE_A"
+      ]
+    },
+    "experiment_count": 3,
+    "access_count": 3
+  },
+  "compiled_program": {
+    "compiler_kind": "modular_phase_program",
+    "phase_count": 3,
+    "phase_order": [
+      "q0",
+      "q1",
+      "q2"
+    ],
+    "initial_phase": 0,
+    "action_phase_strides": {
+      "HOLD": 1,
+      "PROBE_A": 2,
+      "PROBE_B": 0
+    },
+    "output_table_by_phase_and_action": {
+      "0": {
+        "HOLD": [
+          0
+        ],
+        "PROBE_A": [
+          0
+        ],
+        "PROBE_B": [
+          0
+        ]
+      },
+      "1": {
+        "HOLD": [
+          1
+        ],
+        "PROBE_A": [
+          1
+        ],
+        "PROBE_B": [
+          1
+        ]
+      },
+      "2": {
+        "HOLD": [
+          2
+        ],
+        "PROBE_A": [
+          2
+        ],
+        "PROBE_B": [
+          2
+        ]
+      }
+    },
+    "semantics": "phase_next=(phase+stride[action]) mod phase_count; output=table[phase][action]"
+  },
+  "compiler_verification": {
+    "cases_checked": 9,
+    "exact": true,
+    "compiler_kind": "modular_phase_program"
+  },
+  "metadata": {
+    "ground_name": "coupled_six",
+    "observer_profile": "residue3_only",
+    "semantic_claim": "minimal predictive quotient supported by the observation table and bounded conformance suite",
+    "physical_hidden_state_claim": "not inferred; only behaviorally distinguishable predictive contexts are represented"
+  },
+  "fingerprint": "13af814ae00e32719e70b8d9cf248727df11c3bd4dd3f2913725a94ad3c9f9d7"
+}

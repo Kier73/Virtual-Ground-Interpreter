@@ -1,0 +1,10 @@
+{
+  "build": "12",
+  "pipeline": "implemented",
+  "tests_passed": 17,
+  "fresh_archive_verification": "verified: extracted archive, checked 18 SHA-256 entries, reran 17 tests successfully",
+  "rochester_archive_downloaded_here": false,
+  "empirical_rochester_wav_files_analyzed": 0,
+  "reason": "The assistant execution container could not resolve external hosts; the package includes a public Figshare downloader for a network-enabled machine.",
+  "synthetic_data_policy": "Synthetic WAV signals appear only in unit tests and are not reported as measured room data."
+}

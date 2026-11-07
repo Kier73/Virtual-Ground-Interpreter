@@ -1,0 +1,9 @@
+depth,learned_predictive_contexts,counterexamples,learning_rounds,bounded_equivalent_within_depth,distinguishing_suffixes
+1,1,0,1,1,3
+2,1,0,1,1,3
+3,1,0,1,1,3
+4,1,0,1,1,3
+5,1,0,1,1,3
+6,6,1,2,1,7
+7,6,1,2,1,7
+8,6,1,2,1,7

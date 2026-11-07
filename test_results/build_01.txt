@@ -1,0 +1,20 @@
+test_damping_changes_peak_strength (test_dynamic_response.DynamicResponseTests.test_damping_changes_peak_strength) ... ok
+test_observer_weighting_changes_spectral_geometry (test_dynamic_response.DynamicResponseTests.test_observer_weighting_changes_spectral_geometry) ... ok
+test_peak_tracks_natural_frequency (test_dynamic_response.DynamicResponseTests.test_peak_tracks_natural_frequency) ... ok
+test_poles_encode_radius_and_frequency (test_dynamic_response.DynamicResponseTests.test_poles_encode_radius_and_frequency) ... ok
+test_simulated_gain_matches_analytic_transfer (test_dynamic_response.DynamicResponseTests.test_simulated_gain_matches_analytic_transfer) ... ok
+test_stability_constraints_are_enforced (test_dynamic_response.DynamicResponseTests.test_stability_constraints_are_enforced) ... ok
+test_amplitude_is_not_silently_lost (test_vl_response_geometry.ResponseGeometryTests.test_amplitude_is_not_silently_lost) ... ok
+test_commutative_reordering_is_canonical (test_vl_response_geometry.ResponseGeometryTests.test_commutative_reordering_is_canonical) ... ok
+test_declared_identity_reductions (test_vl_response_geometry.ResponseGeometryTests.test_declared_identity_reductions) ... ok
+test_hash_is_identity_not_metric (test_vl_response_geometry.ResponseGeometryTests.test_hash_is_identity_not_metric) ... ok
+test_invalid_arity_fails (test_vl_response_geometry.ResponseGeometryTests.test_invalid_arity_fails) ... ok
+test_observer_can_change_neighborhood_geometry (test_vl_response_geometry.ResponseGeometryTests.test_observer_can_change_neighborhood_geometry) ... ok
+test_orthogonal_observer_reparameterization_preserves_geometry (test_vl_response_geometry.ResponseGeometryTests.test_orthogonal_observer_reparameterization_preserves_geometry) ... ok
+test_s3_antipode_is_maximally_distant (test_vl_response_geometry.ResponseGeometryTests.test_s3_antipode_is_maximally_distant) ... ok
+test_unknown_operation_fails (test_vl_response_geometry.ResponseGeometryTests.test_unknown_operation_fails) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.041s
+
+OK

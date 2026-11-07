@@ -1,0 +1,12 @@
+representation,transformation_action,observer_scope,invariant_or_equivariant,what_is_preserved,what_is_quotiented_or_lost,verification_obligation
+Fourier L2(R),translation group,signal observer,equivariant coefficients and Plancherel inner product,translation action and Hilbert geometry,frequency magnitude discards phase,unitary normalization and domain conditions
+Mellin L2(R+),positive dilation group,scale observer,equivariant coefficients,dilation action in log coordinates,absolute scale if normalized,measure and Mellin-line normalization
+SU2 Peter-Weyl,SU2 left/right action,S3-lift observer,matrix-valued equivariant coefficients,irreducible sectors and L2 energy,finite harmonic truncation omits tail,Schur orthogonality and Parseval
+SO3 quotient,center {+I,-I},rotation observer,invariant under antipode,integer-spin sectors,half-integer spin sectors,antipodal parity test
+Hopf S2 quotient,right U1 fibre action,base observer,fibre-invariant projection,base coordinates and zero right-weight sectors,fibre phase and nonzero right weights,zero-weight projection test
+Path signature,increasing reparameterization,path observer,invariant signature tensor,ordered iterated path interactions,absolute speed translation tree-like excursions,Chen composition and truncation error
+Timed path signature,path evolution with time as coordinate,timing-aware observer,equivariant under declared clock action,geometry plus explicit elapsed-time channel,only declared clock symmetries,clock transform calibration tests
+Event graph,local affine clock / node relabeling,event-stream observer,graph and interval invariants,event order recurrence and normalized intervals,global epoch and normalized rate,negative controls and threshold sweep
+Koopman,system time evolution,observable observer,linear operator action on observables,dynamics projected into observable function space,unobserved degrees and projection memory,measure-preserving assumptions and residual memory
+Observer kernel,declared group action,paired observers,invariant Gram kernel,relational distances under unitary actions,null directions of feature map,quotient separation and perturbation bounds
+RNS/NTT,finite cyclic group,exact arithmetic observer,ring/field equivariance,exact modular cyclic convolution,not automatically a positive Hilbert norm,roots of unity and invertible transform normalization

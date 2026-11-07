@@ -1,0 +1,90 @@
+{
+  "build": 18,
+  "empirical_sensor_data_processed": false,
+  "observer_intertwiner_demo": {
+    "gram_matrix_error": 5.963898054868629e-15,
+    "intertwiner_residual": 8.244153548874836e-16
+  },
+  "path_signature": {
+    "clock_free_signature_difference_same_state_path": 0.0,
+    "forward_reverse_signature_distance_depth_3": 3.3499585403736307,
+    "note": "finite_depth_signature_is_not_a_complete_path_identifier",
+    "time_augmented_signature_difference_duration_scale_1_vs_2": 12.946470990625635,
+    "tree_like_backtrack_identity_residual_depth_4": 2.8609792490763984e-17
+  },
+  "provenance": "mathematical_fixture_and_numerical_verification_only",
+  "quaternion_hopf": {
+    "antipodal_base_residual": 0.0,
+    "antipodal_s3_geodesic_distance": 3.141592653589793,
+    "q_vs_fibre_beta_pi_hopf_residual": 0.0,
+    "q_vs_fibre_beta_pi_s3_distance": 3.141592653589793,
+    "s3_distance_for_beta_pi_over_3": 1.0471975511965974,
+    "same_base_fibre_residual_beta_pi_over_3": 5.551115123125783e-17
+  },
+  "schur_orthogonality_monte_carlo": {
+    "interpretation": "sampling_error_against_exact_schur_orthogonality",
+    "samples_18000_seed_77_max_entrywise_error": 0.007683309701157845,
+    "samples_30000_seed_1802_max_entrywise_error": 0.005448620460254555,
+    "spin": 0.5
+  },
+  "su2_harmonic_sectors": [
+    {
+      "antipodal_parity": "even",
+      "dimension": 1,
+      "fibre_average_frobenius_norm": 1.0,
+      "fibre_projector_residual": 0.0,
+      "highest_weight_n": 0,
+      "spin_j": 0.0,
+      "zero_weight_dimension": 1
+    },
+    {
+      "antipodal_parity": "odd",
+      "dimension": 2,
+      "fibre_average_frobenius_norm": 3.333470163352529e-16,
+      "fibre_projector_residual": 3.333470163352529e-16,
+      "highest_weight_n": 1,
+      "spin_j": 0.5,
+      "zero_weight_dimension": 0
+    },
+    {
+      "antipodal_parity": "even",
+      "dimension": 3,
+      "fibre_average_frobenius_norm": 0.9999999999999987,
+      "fibre_projector_residual": 2.568026494733756e-15,
+      "highest_weight_n": 2,
+      "spin_j": 1.0,
+      "zero_weight_dimension": 1
+    },
+    {
+      "antipodal_parity": "odd",
+      "dimension": 4,
+      "fibre_average_frobenius_norm": 1.7587185558289748e-16,
+      "fibre_projector_residual": 1.7587185558289748e-16,
+      "highest_weight_n": 3,
+      "spin_j": 1.5,
+      "zero_weight_dimension": 0
+    },
+    {
+      "antipodal_parity": "even",
+      "dimension": 5,
+      "fibre_average_frobenius_norm": 1.0000000000000013,
+      "fibre_projector_residual": 2.6559124047228004e-15,
+      "highest_weight_n": 4,
+      "spin_j": 2.0,
+      "zero_weight_dimension": 1
+    },
+    {
+      "antipodal_parity": "odd",
+      "dimension": 6,
+      "fibre_average_frobenius_norm": 2.7810076128338906e-16,
+      "fibre_projector_residual": 2.7810076128338906e-16,
+      "highest_weight_n": 5,
+      "spin_j": 2.5,
+      "zero_weight_dimension": 0
+    }
+  ],
+  "tests": {
+    "command": "python -m unittest discover -s tests -v",
+    "expected_count": 21
+  }
+}

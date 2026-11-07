@@ -1,0 +1,26 @@
+test_ambiguous_prefix_segmentation_is_preserved (test_build28.ContinuousStreamBoundaryTests.test_ambiguous_prefix_segmentation_is_preserved) ... ok
+test_ambiguous_segmentation_is_not_used_for_effect_learning (test_build28.ContinuousStreamBoundaryTests.test_ambiguous_segmentation_is_not_used_for_effect_learning) ... ok
+test_boundaries_recovered_on_training_and_heldout_streams (test_build28.ContinuousStreamBoundaryTests.test_boundaries_recovered_on_training_and_heldout_streams) ... ok
+test_checkpoint_equations_use_sparse_unaligned_observations (test_build28.ContinuousStreamBoundaryTests.test_checkpoint_equations_use_sparse_unaligned_observations) ... ok
+test_checkpoint_validation_rejects_unsorted_offsets (test_build28.ContinuousStreamBoundaryTests.test_checkpoint_validation_rejects_unsorted_offsets) ... ok
+test_discovers_four_recurrent_opaque_motifs (test_build28.ContinuousStreamBoundaryTests.test_discovers_four_recurrent_opaque_motifs) ... ok
+test_executable_ground_roundtrip_and_fingerprint (test_build28.ContinuousStreamBoundaryTests.test_executable_ground_roundtrip_and_fingerprint) ... ok
+test_ground_fingerprint_rejects_tampering (test_build28.ContinuousStreamBoundaryTests.test_ground_fingerprint_rejects_tampering) ... ok
+test_heldout_checkpoint_effects_predict_exactly (test_build28.ContinuousStreamBoundaryTests.test_heldout_checkpoint_effects_predict_exactly) ... ok
+test_inconsistent_checkpoint_equations_are_not_forced (test_build28.ContinuousStreamBoundaryTests.test_inconsistent_checkpoint_equations_are_not_forced) ... ok
+test_inferred_checkpoint_effects_are_exact_and_unique (test_build28.ContinuousStreamBoundaryTests.test_inferred_checkpoint_effects_are_exact_and_unique) ... ok
+test_inserted_token_does_not_silently_match_exact_motif (test_build28.ContinuousStreamBoundaryTests.test_inserted_token_does_not_silently_match_exact_motif) ... ok
+test_learner_receives_continuous_tokens_not_operation_boundaries (test_build28.ContinuousStreamBoundaryTests.test_learner_receives_continuous_tokens_not_operation_boundaries) ... ok
+test_nested_submotifs_are_audited_not_double_counted (test_build28.ContinuousStreamBoundaryTests.test_nested_submotifs_are_audited_not_double_counted) ... ok
+test_order_permutation_rejects_accidental_motifs (test_build28.ContinuousStreamBoundaryTests.test_order_permutation_rejects_accidental_motifs) ... ok
+test_real_motifs_survive_familywise_permutation_screen (test_build28.ContinuousStreamBoundaryTests.test_real_motifs_survive_familywise_permutation_screen) ... ok
+test_recurrent_motif_counts_and_order_are_deterministic (test_build28.ContinuousStreamBoundaryTests.test_recurrent_motif_counts_and_order_are_deterministic) ... ok
+test_recurrent_zero_effect_decoy_is_not_promoted_to_operation (test_build28.ContinuousStreamBoundaryTests.test_recurrent_zero_effect_decoy_is_not_promoted_to_operation) ... ok
+test_underdetermined_effects_remain_unknown (test_build28.ContinuousStreamBoundaryTests.test_underdetermined_effects_remain_unknown) ... ok
+test_unknown_background_sequence_is_not_compiled (test_build28.ContinuousStreamBoundaryTests.test_unknown_background_sequence_is_not_compiled) ... ok
+test_zero_effect_motif_does_not_change_state (test_build28.ContinuousStreamBoundaryTests.test_zero_effect_motif_does_not_change_state) ... ok
+
+----------------------------------------------------------------------
+Ran 21 tests in 0.257s
+
+OK

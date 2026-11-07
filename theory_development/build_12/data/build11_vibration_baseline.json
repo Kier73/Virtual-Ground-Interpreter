@@ -1,0 +1,19 @@
+{
+  "source_build": "11",
+  "dataset": "Vibration measurements with observer-declared variance change points",
+  "recording": 1,
+  "source_excerpt_rows": 411,
+  "window_count": 8,
+  "observer_declared_interval_s": [66.0, 68.0],
+  "sensor": "three-axis smartphone G-Force",
+  "units": "g",
+  "within_domain_rdm_correlations": {
+    "amplitude_direction": 0.230432402846196,
+    "amplitude_temporal": 0.3858784893267653,
+    "direction_temporal": 0.5555555555555557
+  },
+  "status": "inherited_from_build_11; not recomputed as part of build_12",
+  "cross_modal_use": "reference_only; no cross-domain RDM correlation is valid because the smartphone motion windows are not paired with the Rochester room impulse responses by shared excitation, room, device, or trial",
+  "license": "CC BY 4.0",
+  "repository": "https://github.com/witulska/vibration-changepoint-dataset"
+}

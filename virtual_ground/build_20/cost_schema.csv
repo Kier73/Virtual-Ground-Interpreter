@@ -1,0 +1,7 @@
+cost_dimension,measured_as,build20_status,notes
+primitive_steps,number of low-level legal transitions,exact,unit-cost and weighted variants
+macro_commands,number of high-level procedural commands,exact,each macro has an explicit primitive expansion
+planning_work,number of explored states/edges,partially measured,BFS explores finite generated graph; full timing is not generalized
+memory,serialized bytes or number of retained states/edges,structural counts,Python runtime memory not claimed
+execution_time,elapsed time on target mechanism,not measured,virtual puzzle only
+observer_time,planning plus rendering latency for a specified observer,not physically measured,resource-dependent cost profile modeled abstractly

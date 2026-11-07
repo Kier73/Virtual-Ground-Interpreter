@@ -1,0 +1,11 @@
+domain,feature,rdm_correlation_after_unit_rescale
+acoustic,spectral,1.0
+acoustic,phase,1.0
+acoustic,temporal,1.0
+acoustic,step,1.0
+acoustic,transfer,1.0
+mechanical,spectral,1.0
+mechanical,phase,1.0
+mechanical,temporal,1.0
+mechanical,step,1.0
+mechanical,transfer,1.0

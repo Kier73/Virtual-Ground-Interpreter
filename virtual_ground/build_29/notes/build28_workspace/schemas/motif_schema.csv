@@ -1,0 +1,8 @@
+field,type,description
+motif_id,string,Generated candidate identifier
+signature,string[],Ordered exact contiguous token sequence
+length,integer,Number of tokens in signature
+occurrences,integer,Count in training streams
+trace_support,integer,Number of distinct traces supporting motif
+null_max,integer,Maximum count in within-trace permutation family
+status,enum,candidate operation; recurrent zero-effect motif; unknown effect

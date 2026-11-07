@@ -1,0 +1,9 @@
+Build 24 status
+===============
+Purpose: latent predictive-context discovery for a self-constructing Virtual Ground interpreter.
+Experiments: synthetic, deterministic, finite.
+Tests: 17 passed.
+Compiler targets: modular_phase_program and finite_predictive_automaton.
+Evidence limit: exhaustive conformance over action words up to depth 8 for the main suite; depth sweep 1..8 for delayed-six fixture.
+Reset assumption: deterministic reset to a fixed hidden initial context.
+No physical sensor or TAPS data processed.

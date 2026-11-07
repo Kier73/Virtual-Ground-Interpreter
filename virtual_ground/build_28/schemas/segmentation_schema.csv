@@ -1,0 +1,7 @@
+field,type,description
+trace_id,string,Trace identifier
+start,integer,Inclusive token offset
+end,integer,Exclusive token offset
+motif_id,string,Learned recurrent motif identifier
+score,float,Segmentation heuristic score; not a probability
+segmentation_status,enum,resolved or ambiguous

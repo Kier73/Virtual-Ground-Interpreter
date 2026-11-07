@@ -1,0 +1,6 @@
+observer,initial_observation_classes,refined_predictive_classes,refinement_rounds,additional_predictive_splits
+FULL,64,64,1,0
+LEVELS,16,64,4,48
+TOTAL,7,64,4,57
+TOTAL_PHASE,28,64,3,36
+PHASE,4,64,4,60

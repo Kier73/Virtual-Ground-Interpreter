@@ -1,0 +1,178 @@
+{
+  "common_left_right_action_kernel_errors": {
+    "endpoint": 3.012728497497566e-15,
+    "joint": 3.2815026291407894e-15,
+    "path": 4.5896678920952255e-15
+  },
+  "data_provenance": "deterministic_synthetic_quaternion_paths",
+  "fixed_start_endpoint_harmonic_reconstruction_error": 0.0,
+  "fixed_start_endpoint_reconstruction_error": 0.0,
+  "interpretation": {
+    "endpoint_harmonics": "symmetry-adapted endpoint coordinates; cannot distinguish different paths with the same endpoint",
+    "joint_representation": "can combine complementary endpoint and path distinctions, but may contain redundant coordinates",
+    "observer_kernel": "organizes feature relationships as a PSD Gram geometry; it adds no information beyond its feature map",
+    "path_signature": "captures ordered path information up to its tree-like equivalence; finite truncation is not complete"
+  },
+  "kernel_geometry_error": 1.3322676295501878e-15,
+  "kernel_psd_violations": {
+    "hopf": {
+      "endpoint": 1.2815827229927238e-15,
+      "joint": 1.4795699914774593e-16,
+      "path": 1.2606120450868165e-16
+    },
+    "s3": {
+      "endpoint": 1.4397094022016322e-16,
+      "joint": 1.2875505753770841e-16,
+      "path": 1.1264171975013672e-16
+    },
+    "so3": {
+      "endpoint": 1.6835300280190907e-16,
+      "joint": 3.465111519152562e-16,
+      "path": 2.913451034221574e-18
+    }
+  },
+  "observer_quotient_checks": {
+    "hopf_fibre_endpoint_distance": 1.134516843463365e-17,
+    "hopf_projection_max_path_error": 2.2887833992611187e-16,
+    "s3_antipodal_endpoint_distance": 1.414213562373095,
+    "so3_antipodal_endpoint_distance": 0.0
+  },
+  "pairwise_kernel_distances_from_reference": {
+    "hopf": {
+      "alternate_same_endpoint": {
+        "endpoint": 0.0,
+        "joint": 0.7163911288992556,
+        "path": 1.0131300504530991
+      },
+      "antipodal_lift": {
+        "endpoint": 0.0,
+        "joint": 0.0,
+        "path": 0.0
+      },
+      "fibre_shifted": {
+        "endpoint": 0.0,
+        "joint": 0.0,
+        "path": 0.0
+      },
+      "reference": {
+        "endpoint": 0.0,
+        "joint": 0.0,
+        "path": 0.0
+      },
+      "reparameterized": {
+        "endpoint": 0.0,
+        "joint": 0.0,
+        "path": 0.0
+      },
+      "timed_path": {
+        "endpoint": 0.0,
+        "joint": 0.0,
+        "path": 0.0
+      },
+      "tree_like_excursion": {
+        "endpoint": 0.0,
+        "joint": 0.0,
+        "path": 0.0
+      }
+    },
+    "s3": {
+      "alternate_same_endpoint": {
+        "endpoint": 0.0,
+        "joint": 0.611875909644764,
+        "path": 0.8653232099089999
+      },
+      "antipodal_lift": {
+        "endpoint": 1.4142135623730947,
+        "joint": 1.496400338100023,
+        "path": 1.574302367314401
+      },
+      "fibre_shifted": {
+        "endpoint": 1.2690089692070383,
+        "joint": 1.0730957301730575,
+        "path": 0.8322770742387325
+      },
+      "reference": {
+        "endpoint": 0.0,
+        "joint": 0.0,
+        "path": 0.0
+      },
+      "reparameterized": {
+        "endpoint": 0.0,
+        "joint": 0.0,
+        "path": 0.0
+      },
+      "timed_path": {
+        "endpoint": 0.0,
+        "joint": 0.0,
+        "path": 0.0
+      },
+      "tree_like_excursion": {
+        "endpoint": 0.0,
+        "joint": 0.0,
+        "path": 0.0
+      }
+    },
+    "so3": {
+      "alternate_same_endpoint": {
+        "endpoint": 0.0,
+        "joint": 0.8887116002363097,
+        "path": 1.2568279980924855
+      },
+      "antipodal_lift": {
+        "endpoint": 0.0,
+        "joint": 0.0,
+        "path": 0.0
+      },
+      "fibre_shifted": {
+        "endpoint": 1.3773636898459107,
+        "joint": 1.253063295319345,
+        "path": 1.1149908116425045
+      },
+      "reference": {
+        "endpoint": 0.0,
+        "joint": 0.0,
+        "path": 0.0
+      },
+      "reparameterized": {
+        "endpoint": 0.0,
+        "joint": 0.0,
+        "path": 0.0
+      },
+      "timed_path": {
+        "endpoint": 0.0,
+        "joint": 0.0,
+        "path": 0.0
+      },
+      "tree_like_excursion": {
+        "endpoint": 0.0,
+        "joint": 0.0,
+        "path": 1.4901161193847656e-08
+      }
+    }
+  },
+  "path_names": [
+    "reference",
+    "alternate_same_endpoint",
+    "fibre_shifted",
+    "reparameterized",
+    "tree_like_excursion",
+    "antipodal_lift",
+    "timed_path"
+  ],
+  "signature_separation_by_depth_same_endpoints": {
+    "1": 4.440892098500626e-16,
+    "2": 1.08576719882616,
+    "3": 1.1508313205117153,
+    "4": 1.1568779259178799
+  },
+  "small_perturbation_signature_distances": {
+    "0.0001": 0.00011331325455274262,
+    "0.001": 0.0023283270500414886,
+    "0.01": 0.035041953180710614
+  },
+  "status": "synthetic_joint_representation_experiment_complete",
+  "time_vs_geometry": {
+    "geometric_signature_reparameterization_distance": 0.0,
+    "time_augmented_signature_distance": 0.2896100882518087
+  }
+}

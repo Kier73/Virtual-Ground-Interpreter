@@ -1,0 +1,241 @@
+{
+  "specification": {
+    "format": "VG-PredictiveMealy-1",
+    "initial": "q0",
+    "actions": [
+      "HOLD",
+      "PROBE_A",
+      "PROBE_B"
+    ],
+    "state_count": 6,
+    "transitions": {
+      "q0": {
+        "HOLD": "q1",
+        "PROBE_A": "q1",
+        "PROBE_B": "q1"
+      },
+      "q1": {
+        "HOLD": "q2",
+        "PROBE_A": "q2",
+        "PROBE_B": "q2"
+      },
+      "q2": {
+        "HOLD": "q3",
+        "PROBE_A": "q3",
+        "PROBE_B": "q3"
+      },
+      "q3": {
+        "HOLD": "q4",
+        "PROBE_A": "q4",
+        "PROBE_B": "q4"
+      },
+      "q4": {
+        "HOLD": "q5",
+        "PROBE_A": "q5",
+        "PROBE_B": "q5"
+      },
+      "q5": {
+        "HOLD": "q0",
+        "PROBE_A": "q0",
+        "PROBE_B": "q0"
+      }
+    },
+    "outputs": {
+      "q0": {
+        "HOLD": [
+          0
+        ],
+        "PROBE_A": [
+          0
+        ],
+        "PROBE_B": [
+          0
+        ]
+      },
+      "q1": {
+        "HOLD": [
+          0
+        ],
+        "PROBE_A": [
+          0
+        ],
+        "PROBE_B": [
+          0
+        ]
+      },
+      "q2": {
+        "HOLD": [
+          0
+        ],
+        "PROBE_A": [
+          0
+        ],
+        "PROBE_B": [
+          0
+        ]
+      },
+      "q3": {
+        "HOLD": [
+          0
+        ],
+        "PROBE_A": [
+          0
+        ],
+        "PROBE_B": [
+          0
+        ]
+      },
+      "q4": {
+        "HOLD": [
+          0
+        ],
+        "PROBE_A": [
+          0
+        ],
+        "PROBE_B": [
+          0
+        ]
+      },
+      "q5": {
+        "HOLD": [
+          0
+        ],
+        "PROBE_A": [
+          1
+        ],
+        "PROBE_B": [
+          0
+        ]
+      }
+    },
+    "access_representatives": {
+      "q0": [],
+      "q1": [
+        "HOLD"
+      ],
+      "q2": [
+        "HOLD",
+        "HOLD"
+      ],
+      "q3": [
+        "HOLD",
+        "HOLD",
+        "HOLD"
+      ],
+      "q4": [
+        "HOLD",
+        "HOLD",
+        "HOLD",
+        "HOLD"
+      ],
+      "q5": [
+        "HOLD",
+        "HOLD",
+        "HOLD",
+        "HOLD",
+        "HOLD"
+      ]
+    },
+    "experiment_count": 7,
+    "access_count": 6
+  },
+  "compiled_program": {
+    "compiler_kind": "modular_phase_program",
+    "phase_count": 6,
+    "phase_order": [
+      "q0",
+      "q1",
+      "q2",
+      "q3",
+      "q4",
+      "q5"
+    ],
+    "initial_phase": 0,
+    "action_phase_strides": {
+      "HOLD": 1,
+      "PROBE_A": 1,
+      "PROBE_B": 1
+    },
+    "output_table_by_phase_and_action": {
+      "0": {
+        "HOLD": [
+          0
+        ],
+        "PROBE_A": [
+          0
+        ],
+        "PROBE_B": [
+          0
+        ]
+      },
+      "1": {
+        "HOLD": [
+          0
+        ],
+        "PROBE_A": [
+          0
+        ],
+        "PROBE_B": [
+          0
+        ]
+      },
+      "2": {
+        "HOLD": [
+          0
+        ],
+        "PROBE_A": [
+          0
+        ],
+        "PROBE_B": [
+          0
+        ]
+      },
+      "3": {
+        "HOLD": [
+          0
+        ],
+        "PROBE_A": [
+          0
+        ],
+        "PROBE_B": [
+          0
+        ]
+      },
+      "4": {
+        "HOLD": [
+          0
+        ],
+        "PROBE_A": [
+          0
+        ],
+        "PROBE_B": [
+          0
+        ]
+      },
+      "5": {
+        "HOLD": [
+          0
+        ],
+        "PROBE_A": [
+          1
+        ],
+        "PROBE_B": [
+          0
+        ]
+      }
+    },
+    "semantics": "phase_next=(phase+stride[action]) mod phase_count; output=table[phase][action]"
+  },
+  "compiler_verification": {
+    "cases_checked": 18,
+    "exact": true,
+    "compiler_kind": "modular_phase_program"
+  },
+  "metadata": {
+    "ground_name": "delayed_six",
+    "observer_profile": "available",
+    "semantic_claim": "minimal predictive quotient supported by the observation table and bounded conformance suite",
+    "physical_hidden_state_claim": "not inferred; only behaviorally distinguishable predictive contexts are represented"
+  },
+  "fingerprint": "7b0fcbc5d743eae12cf26cb0cdc2c49386d0ee90f73e3b9df65ed2a04576ca5f"
+}

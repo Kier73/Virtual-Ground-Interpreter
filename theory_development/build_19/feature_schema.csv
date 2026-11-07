@@ -1,0 +1,9 @@
+feature,input,construction,depth_or_band,observer_effect,loss_or_caveat
+endpoint_harmonic_s3,final unit quaternion,"concatenated SU2 irreducible matrices D_n(q), normalized per sector",n=1..4,retains full lift incl half-integer sectors,finite sector band; endpoint only
+endpoint_harmonic_so3,final unit quaternion,even n SU2 sectors only,"n=2,4",identifies q and -q,drops half-integer spin/lift sign
+endpoint_harmonic_hopf,final unit quaternion,"even n sectors, right zero-weight column","n=2,4",identifies full selected right U1 fibre,drops fibre phase and nonzero right weights
+path_signature_s3,quaternion path in R4,"iterated integrals, ambient coordinate signature",degrees 1..3,retains ordered lift path modulo tree-like equivalence,finite truncation; sampled path approximation
+path_signature_so3,quaternion path mapped to flattened rotation matrices in R9,iterated integrals of SO3 adjoint coordinates,degrees 1..3,identifies antipodal lifts,ambient R9 embedding; finite truncation
+path_signature_hopf,pointwise Hopf projection in R3,iterated integrals of observed base path,degrees 1..3,identifies right U1 fibre at each sampled time,finite projected sampling; finite truncation
+observer_kernel,feature rows from endpoint/path maps,linear Gram matrix and induced Hilbert distance,same as source feature,pairwise relation under selected coordinates,does not add observations beyond feature map
+joint_kernel,endpoint and path Gram matrices,0.5 normalized endpoint kernel + 0.5 normalized path kernel,endpoint n<=4; path depth 3,combines observer endpoint and path geometry,may contain redundant endpoint information

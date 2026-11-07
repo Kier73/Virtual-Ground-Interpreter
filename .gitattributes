@@ -1,0 +1,10 @@
+# Preserve byte-for-byte content so the frozen MANIFEST.sha256 files stay valid.
+* -text
+
+# Binary formats for diff clarity.
+*.pyc binary
+*.zip binary
+*.wav binary
+*.png binary
+*.jpg binary
+*.pdf binary

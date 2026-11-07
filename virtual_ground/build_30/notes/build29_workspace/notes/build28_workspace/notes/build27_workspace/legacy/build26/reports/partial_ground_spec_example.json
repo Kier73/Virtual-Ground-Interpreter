@@ -1,0 +1,215 @@
+{
+  "actions": [
+    "HOLD",
+    "PROBE_A",
+    "PROBE_B"
+  ],
+  "ambiguous_transitions": [],
+  "channels": [
+    0,
+    1
+  ],
+  "complete_transition_table": false,
+  "current_context": "q_9717824fcc35",
+  "evidence": {
+    "data_truncated": false,
+    "equivalence_scope": "observed action/output histories under declared channels and finite retained horizon",
+    "finite_history_horizon_only": true,
+    "physical_hidden_state_claim": "not inferred",
+    "retained_events": 24,
+    "retired_events": 0,
+    "total_committed_events": 24
+  },
+  "fingerprint": "67b7aafc470f86b473b30027adb5b3d34144680bf4620773de018e5fe36260ff",
+  "format": "VG-IncrementalPartialGround-1",
+  "history_horizon": 1,
+  "initial_context": "q_9717824fcc35",
+  "known_transition_count": 6,
+  "limitations": [
+    "unknown transitions remain unknown; no default edge is inserted",
+    "states are finite-horizon predictive classes, not claims about physical hidden-state ontology",
+    "history refinement is provisional and can over-split equivalent access histories",
+    "when evidence retention is truncated, reconstruction applies only to the retained window",
+    "deterministic exact integer observations are assumed; noise/stochasticity require a separate likelihood model",
+    "action alphabet and channel schema are supplied by the interface"
+  ],
+  "observed_raw_context_count": 7,
+  "predictive_context_count": 6,
+  "signature_mode": "observation",
+  "startup_context_status": "observed_boundary_context",
+  "states": [
+    "q_43e3a2174fd9",
+    "q_5422a0be1dcb",
+    "q_5c7e9e0580ea",
+    "q_6b512ce1edf6",
+    "q_7f0fb47c4531",
+    "q_9717824fcc35"
+  ],
+  "status": "partial",
+  "support_summary": {
+    "high_fragmentation_warning": false,
+    "minimum_known_edge_support": 4,
+    "single_support_known_edges": 0
+  },
+  "transitions": {
+    "q_43e3a2174fd9": {
+      "HOLD": {
+        "evidence_steps": [
+          4,
+          10,
+          16,
+          22
+        ],
+        "output": [
+          1,
+          2
+        ],
+        "quotient_inference": false,
+        "status": "known",
+        "successor": "q_5422a0be1dcb",
+        "support": 4
+      }
+    },
+    "q_5422a0be1dcb": {
+      "HOLD": {
+        "evidence_steps": [
+          5,
+          11,
+          17,
+          23
+        ],
+        "output": [
+          0,
+          0
+        ],
+        "quotient_inference": false,
+        "status": "known",
+        "successor": "q_9717824fcc35",
+        "support": 4
+      }
+    },
+    "q_5c7e9e0580ea": {
+      "HOLD": {
+        "evidence_steps": [
+          2,
+          8,
+          14,
+          20
+        ],
+        "output": [
+          1,
+          0
+        ],
+        "quotient_inference": false,
+        "status": "known",
+        "successor": "q_7f0fb47c4531",
+        "support": 4
+      }
+    },
+    "q_6b512ce1edf6": {
+      "HOLD": {
+        "evidence_steps": [
+          1,
+          7,
+          13,
+          19
+        ],
+        "output": [
+          0,
+          2
+        ],
+        "quotient_inference": false,
+        "status": "known",
+        "successor": "q_5c7e9e0580ea",
+        "support": 4
+      }
+    },
+    "q_7f0fb47c4531": {
+      "HOLD": {
+        "evidence_steps": [
+          3,
+          9,
+          15,
+          21
+        ],
+        "output": [
+          0,
+          1
+        ],
+        "quotient_inference": false,
+        "status": "known",
+        "successor": "q_43e3a2174fd9",
+        "support": 4
+      }
+    },
+    "q_9717824fcc35": {
+      "HOLD": {
+        "evidence_steps": [
+          0,
+          6,
+          12,
+          18
+        ],
+        "output": [
+          1,
+          1
+        ],
+        "quotient_inference": true,
+        "status": "known",
+        "successor": "q_6b512ce1edf6",
+        "support": 4
+      }
+    }
+  },
+  "unknown_transitions": [
+    [
+      "q_43e3a2174fd9",
+      "PROBE_A"
+    ],
+    [
+      "q_43e3a2174fd9",
+      "PROBE_B"
+    ],
+    [
+      "q_5422a0be1dcb",
+      "PROBE_A"
+    ],
+    [
+      "q_5422a0be1dcb",
+      "PROBE_B"
+    ],
+    [
+      "q_5c7e9e0580ea",
+      "PROBE_A"
+    ],
+    [
+      "q_5c7e9e0580ea",
+      "PROBE_B"
+    ],
+    [
+      "q_6b512ce1edf6",
+      "PROBE_A"
+    ],
+    [
+      "q_6b512ce1edf6",
+      "PROBE_B"
+    ],
+    [
+      "q_7f0fb47c4531",
+      "PROBE_A"
+    ],
+    [
+      "q_7f0fb47c4531",
+      "PROBE_B"
+    ],
+    [
+      "q_9717824fcc35",
+      "PROBE_A"
+    ],
+    [
+      "q_9717824fcc35",
+      "PROBE_B"
+    ]
+  ],
+  "version": 9
+}

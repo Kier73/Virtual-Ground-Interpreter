@@ -1,0 +1,420 @@
+{
+  "provenance": "constructed_synthetic_example_only",
+  "clock_A": "local origin 0 s, scale 1",
+  "clock_B": "local origin 120 s, scale 3.5 relative to the constructed latent clock",
+  "matching_used_absolute_cross_clock_timestamps": false,
+  "alignment": {
+    "matches": [
+      {
+        "left_index": 0,
+        "right_index": 0,
+        "cost": 3.6637359812630164e-16,
+        "confidence": 0.9999999999999997
+      },
+      {
+        "left_index": 1,
+        "right_index": 1,
+        "cost": 3.450018049022674e-16,
+        "confidence": 0.9999999999999997
+      },
+      {
+        "left_index": 2,
+        "right_index": 2,
+        "cost": 4.1140701956265956e-16,
+        "confidence": 0.9999999999999996
+      },
+      {
+        "left_index": 3,
+        "right_index": 3,
+        "cost": 3.556877015142845e-16,
+        "confidence": 0.9999999999999997
+      },
+      {
+        "left_index": 4,
+        "right_index": 4,
+        "cost": 3.785860513971784e-16,
+        "confidence": 0.9999999999999997
+      },
+      {
+        "left_index": 5,
+        "right_index": 5,
+        "cost": 2.9004576518332213e-16,
+        "confidence": 0.9999999999999997
+      },
+      {
+        "left_index": 6,
+        "right_index": 6,
+        "cost": 1.8013368574543165e-16,
+        "confidence": 0.9999999999999998
+      },
+      {
+        "left_index": 7,
+        "right_index": 7,
+        "cost": 2.2287727219350016e-16,
+        "confidence": 0.9999999999999998
+      },
+      {
+        "left_index": 8,
+        "right_index": 8,
+        "cost": 8.396061623727746e-16,
+        "confidence": 0.9999999999999991
+      }
+    ],
+    "skipped_left": [],
+    "skipped_right": [],
+    "left_count": 9,
+    "right_count": 9,
+    "matched_count": 9,
+    "left_coverage": 1.0,
+    "right_coverage": 1.0,
+    "median_match_cost": 3.556877015142845e-16,
+    "total_alignment_cost": 3.38971906099772e-15,
+    "normalized_alignment_cost": 1.8831772561098444e-16,
+    "clock_assumption": "independent_local_clocks; no timestamp synchronization used for matching"
+  },
+  "post_match_clock_relation": {
+    "status": "estimated_from_event_correspondence",
+    "matched_points": 9,
+    "left_time_approximately_equals_offset_plus_scale_times_right_time": {
+      "offset_s": -34.285714285714285,
+      "scale": 0.2857142857142857
+    },
+    "median_absolute_residual_s": 1.7208456881689926e-15,
+    "max_absolute_residual_s": 4.440892098500626e-15,
+    "warning": "post-match diagnostic; not used to create the event matches"
+  },
+  "interval_agreement": {
+    "status": "computed",
+    "matched_transitions": 8,
+    "normalized_interval_spearman": 0.9940297973880049,
+    "median_absolute_log_interval_difference": 3.4555691641457997e-15
+  },
+  "graph": {
+    "nodes": [
+      {
+        "id": "L:0",
+        "observer": "observer_A_local_clock",
+        "local_index": 0,
+        "local_time_s": 0.0,
+        "mark_rank": 0.125,
+        "interval_log_shape": -0.4054651081081643
+      },
+      {
+        "id": "L:1",
+        "observer": "observer_A_local_clock",
+        "local_index": 1,
+        "local_time_s": 0.42,
+        "mark_rank": 0.875,
+        "interval_log_shape": -0.14295997872919067
+      },
+      {
+        "id": "L:2",
+        "observer": "observer_A_local_clock",
+        "local_index": 2,
+        "local_time_s": 1.13,
+        "mark_rank": 0.375,
+        "interval_log_shape": -0.04588197150871192
+      },
+      {
+        "id": "L:3",
+        "observer": "observer_A_local_clock",
+        "local_index": 3,
+        "local_time_s": 1.64,
+        "mark_rank": 0.75,
+        "interval_log_shape": 0.055732149297922126
+      },
+      {
+        "id": "L:4",
+        "observer": "observer_A_local_clock",
+        "local_index": 4,
+        "local_time_s": 2.51,
+        "mark_rank": 0.0,
+        "interval_log_shape": 0.055732149297922334
+      },
+      {
+        "id": "L:5",
+        "observer": "observer_A_local_clock",
+        "local_index": 5,
+        "local_time_s": 3.02,
+        "mark_rank": 0.625,
+        "interval_log_shape": 0.19087731416787831
+      },
+      {
+        "id": "L:6",
+        "observer": "observer_A_local_clock",
+        "local_index": 6,
+        "local_time_s": 4.16,
+        "mark_rank": 0.5,
+        "interval_log_shape": 0.22863109042195054
+      },
+      {
+        "id": "L:7",
+        "observer": "observer_A_local_clock",
+        "local_index": 7,
+        "local_time_s": 4.71,
+        "mark_rank": 1.0,
+        "interval_log_shape": 0.04525579245821354
+      },
+      {
+        "id": "L:8",
+        "observer": "observer_A_local_clock",
+        "local_index": 8,
+        "local_time_s": 5.5,
+        "mark_rank": 0.25,
+        "interval_log_shape": 0.22631312607548898
+      },
+      {
+        "id": "R:0",
+        "observer": "observer_B_local_clock",
+        "local_index": 0,
+        "local_time_s": 120.0,
+        "mark_rank": 0.125,
+        "interval_log_shape": -0.4054651081081676
+      },
+      {
+        "id": "R:1",
+        "observer": "observer_B_local_clock",
+        "local_index": 1,
+        "local_time_s": 121.47,
+        "mark_rank": 0.875,
+        "interval_log_shape": -0.1429599787291938
+      },
+      {
+        "id": "R:2",
+        "observer": "observer_B_local_clock",
+        "local_index": 2,
+        "local_time_s": 123.955,
+        "mark_rank": 0.375,
+        "interval_log_shape": -0.04588197150871566
+      },
+      {
+        "id": "R:3",
+        "observer": "observer_B_local_clock",
+        "local_index": 3,
+        "local_time_s": 125.74,
+        "mark_rank": 0.75,
+        "interval_log_shape": 0.05573214929791889
+      },
+      {
+        "id": "R:4",
+        "observer": "observer_B_local_clock",
+        "local_index": 4,
+        "local_time_s": 128.785,
+        "mark_rank": 0.0,
+        "interval_log_shape": 0.05573214929791889
+      },
+      {
+        "id": "R:5",
+        "observer": "observer_B_local_clock",
+        "local_index": 5,
+        "local_time_s": 130.57,
+        "mark_rank": 0.625,
+        "interval_log_shape": 0.19087731416787568
+      },
+      {
+        "id": "R:6",
+        "observer": "observer_B_local_clock",
+        "local_index": 6,
+        "local_time_s": 134.56,
+        "mark_rank": 0.5,
+        "interval_log_shape": 0.22863109042195218
+      },
+      {
+        "id": "R:7",
+        "observer": "observer_B_local_clock",
+        "local_index": 7,
+        "local_time_s": 136.485,
+        "mark_rank": 1.0,
+        "interval_log_shape": 0.04525579245821151
+      },
+      {
+        "id": "R:8",
+        "observer": "observer_B_local_clock",
+        "local_index": 8,
+        "local_time_s": 139.25,
+        "mark_rank": 0.25,
+        "interval_log_shape": 0.22631312607548135
+      }
+    ],
+    "edges": [
+      {
+        "source": "L:0",
+        "target": "L:1",
+        "type": "successor",
+        "normalized_interval": 0.6666666666666667
+      },
+      {
+        "source": "L:1",
+        "target": "L:2",
+        "type": "successor",
+        "normalized_interval": 1.1269841269841272
+      },
+      {
+        "source": "L:2",
+        "target": "L:3",
+        "type": "successor",
+        "normalized_interval": 0.8095238095238096
+      },
+      {
+        "source": "L:3",
+        "target": "L:4",
+        "type": "successor",
+        "normalized_interval": 1.380952380952381
+      },
+      {
+        "source": "L:4",
+        "target": "L:5",
+        "type": "successor",
+        "normalized_interval": 0.80952380952381
+      },
+      {
+        "source": "L:5",
+        "target": "L:6",
+        "type": "successor",
+        "normalized_interval": 1.80952380952381
+      },
+      {
+        "source": "L:6",
+        "target": "L:7",
+        "type": "successor",
+        "normalized_interval": 0.8730158730158729
+      },
+      {
+        "source": "L:7",
+        "target": "L:8",
+        "type": "successor",
+        "normalized_interval": 1.2539682539682542
+      },
+      {
+        "source": "L:2",
+        "target": "L:6",
+        "type": "recurrence",
+        "motif_distance": 0.12249887117335236
+      },
+      {
+        "source": "R:0",
+        "target": "R:1",
+        "type": "successor",
+        "normalized_interval": 0.6666666666666645
+      },
+      {
+        "source": "R:1",
+        "target": "R:2",
+        "type": "successor",
+        "normalized_interval": 1.1269841269841239
+      },
+      {
+        "source": "R:2",
+        "target": "R:3",
+        "type": "successor",
+        "normalized_interval": 0.809523809523806
+      },
+      {
+        "source": "R:3",
+        "target": "R:4",
+        "type": "successor",
+        "normalized_interval": 1.3809523809523783
+      },
+      {
+        "source": "R:4",
+        "target": "R:5",
+        "type": "successor",
+        "normalized_interval": 0.809523809523806
+      },
+      {
+        "source": "R:5",
+        "target": "R:6",
+        "type": "successor",
+        "normalized_interval": 1.8095238095238093
+      },
+      {
+        "source": "R:6",
+        "target": "R:7",
+        "type": "successor",
+        "normalized_interval": 0.873015873015876
+      },
+      {
+        "source": "R:7",
+        "target": "R:8",
+        "type": "successor",
+        "normalized_interval": 1.2539682539682446
+      },
+      {
+        "source": "R:2",
+        "target": "R:6",
+        "type": "recurrence",
+        "motif_distance": 0.12249887117336183
+      },
+      {
+        "source": "L:0",
+        "target": "R:0",
+        "type": "correspondence",
+        "cost": 3.6637359812630164e-16,
+        "confidence": 0.9999999999999997
+      },
+      {
+        "source": "L:1",
+        "target": "R:1",
+        "type": "correspondence",
+        "cost": 3.450018049022674e-16,
+        "confidence": 0.9999999999999997
+      },
+      {
+        "source": "L:2",
+        "target": "R:2",
+        "type": "correspondence",
+        "cost": 4.1140701956265956e-16,
+        "confidence": 0.9999999999999996
+      },
+      {
+        "source": "L:3",
+        "target": "R:3",
+        "type": "correspondence",
+        "cost": 3.556877015142845e-16,
+        "confidence": 0.9999999999999997
+      },
+      {
+        "source": "L:4",
+        "target": "R:4",
+        "type": "correspondence",
+        "cost": 3.785860513971784e-16,
+        "confidence": 0.9999999999999997
+      },
+      {
+        "source": "L:5",
+        "target": "R:5",
+        "type": "correspondence",
+        "cost": 2.9004576518332213e-16,
+        "confidence": 0.9999999999999997
+      },
+      {
+        "source": "L:6",
+        "target": "R:6",
+        "type": "correspondence",
+        "cost": 1.8013368574543165e-16,
+        "confidence": 0.9999999999999998
+      },
+      {
+        "source": "L:7",
+        "target": "R:7",
+        "type": "correspondence",
+        "cost": 2.2287727219350016e-16,
+        "confidence": 0.9999999999999998
+      },
+      {
+        "source": "L:8",
+        "target": "R:8",
+        "type": "correspondence",
+        "cost": 8.396061623727746e-16,
+        "confidence": 0.9999999999999991
+      }
+    ],
+    "node_count": 18,
+    "successor_edge_count": 16,
+    "recurrence_edge_count": 2,
+    "correspondence_edge_count": 9,
+    "cross_observer_clock_edges": 0,
+    "design_note": "observer-local event order is explicit; absolute cross-clock differences are absent"
+  },
+  "note": "Local node timestamps are kept inside their own observer domains. Cross-observer edges encode inferred event correspondence, not timestamp differences."
+}

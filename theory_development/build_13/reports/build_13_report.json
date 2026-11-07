@@ -1,0 +1,55 @@
+{
+  "build": 13,
+  "title": "Paired acoustic / throat-vibration response geometry",
+  "analysis_status": "pipeline_complete_empirical_data_pending",
+  "dataset": "TAPS: Throat and Acoustic Paired Speech Dataset (Korean)",
+  "zenodo_record": "18324208",
+  "zenodo_doi": "10.5281/zenodo.18324208",
+  "source_metadata_verified": true,
+  "empirical_audio_downloaded_in_this_execution": false,
+  "empirical_pair_count": null,
+  "empirical_metrics_computed": false,
+  "synthetic_smoke_test": {
+    "status": "passed",
+    "pairs": 30,
+    "speakers": 3,
+    "note": "Synthetic fixtures validate ingestion, feature extraction, RDM, alignment and privacy behavior only. They are not TAPS observations and are not empirical voice findings."
+  },
+  "test_count": 18,
+  "privacy": {
+    "speaker_ids_exported": false,
+    "transcripts_exported": false,
+    "demographics_exported": false,
+    "aggregate_outputs_default": true,
+    "pair_keys_ephemeral": true
+  },
+  "critical_bandwidth_constraint": {
+    "throat_original_sample_rate_hz": 8000,
+    "throat_original_nyquist_hz": 4000,
+    "released_throat_resampled_rate_hz": 16000,
+    "upsampling_creates_no_new_bandwidth": true,
+    "cross_modal_common_band_hz": [
+      80,
+      3500
+    ],
+    "acoustic_only_band_hz": [
+      4000,
+      7800
+    ],
+    "acoustic_only_band_used_in_cross_modal_rdm": false,
+    "high_band_descriptor": "4000-7800 Hz, acoustic only; throat feature invalid because source Nyquist is 4 kHz"
+  },
+  "alignment": {
+    "source_dataset_already_preprocessed_and_globally_aligned": true,
+    "documented_global_shift_ms": 1.625,
+    "build_applies_additional_shift": false,
+    "residual_lag_is_diagnostic_only": true
+  },
+  "limitations": [
+    "No emotion labels are documented; no emotion inference is performed.",
+    "No empirical TAPS waveform was downloaded or analyzed in this environment.",
+    "Synthetic smoke-test metrics must not be interpreted as empirical results.",
+    "The sensor channels have different physical meanings and calibration; raw sample amplitudes are not directly compared.",
+    "Within-speaker RDM correspondence tests relational alignment, not semantic equivalence or a universal invariant."
+  ]
+}

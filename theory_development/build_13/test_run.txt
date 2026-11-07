@@ -1,0 +1,23 @@
+test_discover_only_complete_pairs (test_build_13.TestPairDiscoveryAndGeometry.test_discover_only_complete_pairs) ... ok
+test_feature_views_exclude_acoustic_only_high_band (test_build_13.TestPairDiscoveryAndGeometry.test_feature_views_exclude_acoustic_only_high_band) ... ok
+test_pair_analysis_has_both_channels (test_build_13.TestPairDiscoveryAndGeometry.test_pair_analysis_has_both_channels) ... ok
+test_run_analysis_does_not_write_transcripts_or_speaker_ids (test_build_13.TestPairDiscoveryAndGeometry.test_run_analysis_does_not_write_transcripts_or_speaker_ids) ... ok
+test_sample_rate_metadata_mismatch_rejected (test_build_13.TestPairDiscoveryAndGeometry.test_sample_rate_metadata_mismatch_rejected) ... ok
+test_upsampled_throat_does_not_claim_above_nyquist_energy (test_build_13.TestPairDiscoveryAndGeometry.test_upsampled_throat_does_not_claim_above_nyquist_energy) ... ok
+test_download_verifies_md5_and_cleans_partial_on_failure (test_build_13.TestSafeDatasetRetrieval.test_download_verifies_md5_and_cleans_partial_on_failure) ... ok
+test_safe_extract_accepts_regular_archive (test_build_13.TestSafeDatasetRetrieval.test_safe_extract_accepts_regular_archive) ... ok
+test_safe_extract_rejects_absolute_path (test_build_13.TestSafeDatasetRetrieval.test_safe_extract_rejects_absolute_path) ... ok
+test_safe_extract_rejects_parent_traversal (test_build_13.TestSafeDatasetRetrieval.test_safe_extract_rejects_parent_traversal) ... ok
+test_envelope_alignment_known_delay (test_build_13.TestSignalFeatures.test_envelope_alignment_known_delay) ... ok
+test_fft_known_bin (test_build_13.TestSignalFeatures.test_fft_known_bin) ... ok
+test_percentile_integer_position (test_build_13.TestSignalFeatures.test_percentile_integer_position) ... ok
+test_raw_alignment_known_delay (test_build_13.TestSignalFeatures.test_raw_alignment_known_delay) ... ok
+test_summarize_channel (test_build_13.TestSignalFeatures.test_summarize_channel) ... ok
+test_pcm16_mono (test_build_13.TestWavReader.test_pcm16_mono) ... ok
+test_pcm24 (test_build_13.TestWavReader.test_pcm24) ... ok
+test_reject_non_wav (test_build_13.TestWavReader.test_reject_non_wav) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 2.056s
+
+OK

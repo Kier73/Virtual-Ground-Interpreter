@@ -1,0 +1,29 @@
+test_amplitude_task_selects_temporal_boundary_view (test_build30.AdaptiveObserverTests.test_amplitude_task_selects_temporal_boundary_view) ... ok
+test_frequency_task_selects_harmonic_family (test_build30.AdaptiveObserverTests.test_frequency_task_selects_harmonic_family) ... ok
+test_heldout_is_not_part_of_selection_contract (test_build30.AdaptiveObserverTests.test_heldout_is_not_part_of_selection_contract) ... ok
+test_mixed_task_selects_combined_boundary_view (test_build30.AdaptiveObserverTests.test_mixed_task_selects_combined_boundary_view) ... ok
+test_selector_rejects_too_small_calibration (test_build30.AdaptiveObserverTests.test_selector_rejects_too_small_calibration) ... ok
+test_build29_signal_observer_finds_fsk_symbol_events (test_build30.EndToEndProgramTests.test_build29_signal_observer_finds_fsk_symbol_events) ... ok
+test_fsk_program_offset_recovered (test_build30.EndToEndProgramTests.test_fsk_program_offset_recovered) ... ok
+test_program_output_matches_modular_arithmetic (test_build30.EndToEndProgramTests.test_program_output_matches_modular_arithmetic) ... ok
+test_signal_coded_program_executes (test_build30.EndToEndProgramTests.test_signal_coded_program_executes) ... ok
+test_control_program_decodes_all_opcodes (test_build30.FSKCodingTests.test_control_program_decodes_all_opcodes) ... ok
+test_fsk_gain_and_dc_offset_invariance (test_build30.FSKCodingTests.test_fsk_gain_and_dc_offset_invariance) ... ok
+test_fsk_rejects_wrong_opcode_complement (test_build30.FSKCodingTests.test_fsk_rejects_wrong_opcode_complement) ... ok
+test_all_add8_pairs (test_build30.PhaseArithmeticTests.test_all_add8_pairs) ... ok
+test_all_sub8_pairs (test_build30.PhaseArithmeticTests.test_all_sub8_pairs) ... ok
+test_bad_opcode_rejected (test_build30.PhaseArithmeticTests.test_bad_opcode_rejected) ... ok
+test_noise_robustness_at_moderate_noise (test_build30.PhaseArithmeticTests.test_noise_robustness_at_moderate_noise) ... ok
+test_operands_are_not_integer_decoded_before_operation (test_build30.PhaseArithmeticTests.test_operands_are_not_integer_decoded_before_operation) ... ok
+test_phase_operation_uses_phasors_not_decoded_integers (test_build30.PhaseArithmeticTests.test_phase_operation_uses_phasors_not_decoded_integers) ... ok
+test_phase_symbol_representation_is_homomorphism (test_build30.PhaseArithmeticTests.test_phase_symbol_representation_is_homomorphism) ... ok
+test_pilot_phase_miscalibration_changes_decoded_result (test_build30.PhaseArithmeticTests.test_pilot_phase_miscalibration_changes_decoded_result) ... ok
+test_all_task_views_present (test_build30.ProvenanceAndSanityTests.test_all_task_views_present) ... ok
+test_noise_sweep_exposes_error_floor (test_build30.ProvenanceAndSanityTests.test_noise_sweep_exposes_error_floor) ... ok
+test_pilot_miscalibration_is_reported (test_build30.ProvenanceAndSanityTests.test_pilot_miscalibration_is_reported) ... ok
+test_signal_computation_scope_explicit (test_build30.ProvenanceAndSanityTests.test_signal_computation_scope_explicit) ... ok
+
+----------------------------------------------------------------------
+Ran 24 tests in 76.014s
+
+OK

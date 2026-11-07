@@ -1,0 +1,183 @@
+{
+  "tree": {
+    "kind": "probe",
+    "probe": [
+      "PROBE_A"
+    ],
+    "cost": 1,
+    "information_bits": 0.6500224216483541,
+    "branches": [
+      {
+        "observed_output": [
+          [
+            0
+          ]
+        ],
+        "next": {
+          "kind": "probe",
+          "probe": [
+            "PROBE_A"
+          ],
+          "cost": 1,
+          "information_bits": 0.7219280948873623,
+          "branches": [
+            {
+              "observed_output": [
+                [
+                  0
+                ]
+              ],
+              "next": {
+                "kind": "probe",
+                "probe": [
+                  "PROBE_A"
+                ],
+                "cost": 1,
+                "information_bits": 0.8112781244591328,
+                "branches": [
+                  {
+                    "observed_output": [
+                      [
+                        0
+                      ]
+                    ],
+                    "next": {
+                      "kind": "probe",
+                      "probe": [
+                        "PROBE_A"
+                      ],
+                      "cost": 1,
+                      "information_bits": 0.9182958340544896,
+                      "branches": [
+                        {
+                          "observed_output": [
+                            [
+                              0
+                            ]
+                          ],
+                          "next": {
+                            "kind": "probe",
+                            "probe": [
+                              "PROBE_A"
+                            ],
+                            "cost": 1,
+                            "information_bits": 1.0,
+                            "branches": [
+                              {
+                                "observed_output": [
+                                  [
+                                    0
+                                  ]
+                                ],
+                                "next": {
+                                  "kind": "identified",
+                                  "contexts": [
+                                    "q0"
+                                  ],
+                                  "cumulative_cost": 5
+                                }
+                              },
+                              {
+                                "observed_output": [
+                                  [
+                                    1
+                                  ]
+                                ],
+                                "next": {
+                                  "kind": "identified",
+                                  "contexts": [
+                                    "q1"
+                                  ],
+                                  "cumulative_cost": 5
+                                }
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "observed_output": [
+                            [
+                              1
+                            ]
+                          ],
+                          "next": {
+                            "kind": "identified",
+                            "contexts": [
+                              "q2"
+                            ],
+                            "cumulative_cost": 4
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "observed_output": [
+                      [
+                        1
+                      ]
+                    ],
+                    "next": {
+                      "kind": "identified",
+                      "contexts": [
+                        "q3"
+                      ],
+                      "cumulative_cost": 3
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "observed_output": [
+                [
+                  1
+                ]
+              ],
+              "next": {
+                "kind": "identified",
+                "contexts": [
+                  "q4"
+                ],
+                "cumulative_cost": 2
+              }
+            }
+          ]
+        }
+      },
+      {
+        "observed_output": [
+          [
+            1
+          ]
+        ],
+        "next": {
+          "kind": "identified",
+          "contexts": [
+            "q5"
+          ],
+          "cumulative_cost": 1
+        }
+      }
+    ]
+  },
+  "statistics": {
+    "nodes": 5,
+    "probe_cost": 5,
+    "identified": 6,
+    "ambiguous": 0,
+    "identification_cost_by_context": {
+      "q0": 5,
+      "q1": 5,
+      "q2": 4,
+      "q3": 3,
+      "q4": 2,
+      "q5": 1
+    },
+    "worst_case_probe_cost": 5,
+    "mean_probe_cost": 3.3333333333333335
+  },
+  "initial_contexts": 6,
+  "max_probe_depth": 6,
+  "max_nodes": 32
+}

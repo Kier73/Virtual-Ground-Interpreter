@@ -1,0 +1,63 @@
+{
+  "build": 15,
+  "dataset": "TAPS paired throat-vibration / acoustic speech corpus",
+  "split": "test",
+  "analysis_status": "empirical_audio_analyzed",
+  "pairs_discovered": 1000,
+  "pairs_selected": 1000,
+  "pairs_analyzed": 1000,
+  "pairs_skipped": 0,
+  "skip_reasons_by_exception_type": {},
+  "event_observer": {
+    "frame_ms": 20.0,
+    "min_gap_ms": 80.0,
+    "peak_rule": "Build 14 RMS-envelope local maxima"
+  },
+  "matching": {
+    "algorithm": "monotone dynamic-programming sequence alignment",
+    "features": "within-stream mark rank + median-normalized log interval shape",
+    "absolute_timestamps_compared": false,
+    "cross_stream_clock_required": false
+  },
+  "aggregate": {
+    "matched_events_per_pair_median": 34.0,
+    "throat_event_coverage": {
+      "speaker_groups": 10,
+      "median": 0.9115722441809397,
+      "bootstrap_95_ci": [
+        0.8913305623973727,
+        0.9285714285714286
+      ]
+    },
+    "acoustic_event_coverage": {
+      "speaker_groups": 10,
+      "median": 0.8597960502030269,
+      "bootstrap_95_ci": [
+        0.8358035454809649,
+        0.8748512943356794
+      ]
+    },
+    "median_match_cost": 0.14339466133780843,
+    "matched_mark_rank_spearman": 0.7053247679381981,
+    "matched_interval_spearman": 0.12164768678083973,
+    "matched_interval_log_error": 0.5236942628710879,
+    "post_match_clock_scale_estimate": 0.9909773667598816,
+    "post_match_clock_offset_estimate_s": -0.032655582896501945,
+    "post_match_clock_residual_s": 0.18290697192770244
+  },
+  "privacy": {
+    "raw_speaker_ids_exported": false,
+    "utterance_ids_exported": false,
+    "transcripts_exported": false,
+    "demographics_exported": false,
+    "raw_audio_copied": false,
+    "per_utterance_results_exported": false
+  },
+  "interpretation_limits": [
+    "Matched envelope landmarks are inferred correspondences, not verified latent-state identities.",
+    "No shared timestamp coordinate is used by the matching algorithm.",
+    "Clock offset and scale are estimated only after event matching and are diagnostics, not proof of clock synchronization.",
+    "Sensor transfer functions and the Build 14 event detector may produce observer-specific missed or extra landmarks.",
+    "An empirical result on TAPS does not establish a universal invariant or generalize automatically to other sensor domains."
+  ]
+}

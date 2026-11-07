@@ -1,0 +1,37 @@
+{
+  "changed_components": [
+    {
+      "component": "inflow_law",
+      "new": [
+        "modular_ramp",
+        [
+          0,
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          2
+        ]
+      ],
+      "old": [
+        "lookup",
+        [
+          1,
+          0,
+          0,
+          1
+        ],
+        []
+      ]
+    }
+  ],
+  "interpretation": "transition-law revision",
+  "new_fingerprint": "01f00659dca3cc71ed506ef687c20f7b4c74b29ed8c7d6adf76c4a65498f3f51",
+  "old_fingerprint": "fde4b658adac784379136241d6bfaf21ed2238b0772381675905fb5d546b8889",
+  "revision_required": true,
+  "same_ground": false,
+  "state_encoding_compatible": true
+}

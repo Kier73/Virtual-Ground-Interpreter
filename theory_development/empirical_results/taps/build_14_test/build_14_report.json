@@ -1,0 +1,242 @@
+{
+  "build": 14,
+  "analysis_status": "empirical_pair_analysis_complete",
+  "dataset": "TAPS Throat and Acoustic Paired Speech Dataset",
+  "data_provenance": "TAPS_file_release_local",
+  "split": "test",
+  "pairs_discovered": 1000,
+  "pairs_analyzed": 1000,
+  "pairs_skipped": 0,
+  "speakers_analyzed": 10,
+  "utterances_per_speaker_cap": 100,
+  "sampling_rates_throat_hz": [
+    16000.0
+  ],
+  "sampling_rates_acoustic_hz": [
+    16000.0
+  ],
+  "residual_envelope_lag_ms": {
+    "median": 0.0,
+    "iqr": 0.0,
+    "median_absolute": 0.0
+  },
+  "raw_waveform_alignment_diagnostic": {
+    "median_residual_lag_ms": 0.0,
+    "median_best_normalized_correlation": 0.6222757685024163,
+    "analysis_rate_hz": 4000,
+    "max_search_lag_ms": 5.0,
+    "applied_to_samples": false
+  },
+  "envelope_correlation": {
+    "median_after_source_preprocessing": 0.7277746279893316,
+    "median_at_zero_extra_shift": 0.7277746279893316
+  },
+  "cross_modal_geometry": {
+    "views": [
+      {
+        "view": "shared_spectral",
+        "features": [
+          "centroid_common_hz",
+          "rolloff85_common_hz",
+          "band_80_250",
+          "band_250_500",
+          "band_500_1000",
+          "band_1000_2000",
+          "band_2000_3500",
+          "flatness_common"
+        ],
+        "speakers_analyzed": 10,
+        "utterances_analyzed": 1000,
+        "median_rdm_spearman": 0.23289170236237636,
+        "speaker_bootstrap_95pct_ci": [
+          0.15274944090520332,
+          0.3271652047335328
+        ],
+        "median_permuted_null": -0.00358156378377173,
+        "permuted_null_95pct": 0.020712319867801414,
+        "empirical_one_sided_permutation_p": 0.01,
+        "n_permutations": 99,
+        "normalization_sensitivity_median_rho": {
+          "robust": 0.23289170236237636,
+          "zscore": 0.2585519702098611,
+          "rank": 0.30447686791240247
+        },
+        "leave_one_feature_out_rho_median": 0.23154850356160395,
+        "leave_one_feature_out_rho_min": 0.03846303746281948,
+        "leave_one_feature_out_cases": 80
+      },
+      {
+        "view": "temporal",
+        "features": [
+          "log_rms",
+          "crest_factor",
+          "zcr",
+          "envelope_cv",
+          "envelope_modulation"
+        ],
+        "speakers_analyzed": 10,
+        "utterances_analyzed": 1000,
+        "median_rdm_spearman": 0.292700282010938,
+        "speaker_bootstrap_95pct_ci": [
+          0.19811426873296278,
+          0.3730787579889486
+        ],
+        "median_permuted_null": -0.003259907835721103,
+        "permuted_null_95pct": 0.025353929654277303,
+        "empirical_one_sided_permutation_p": 0.01,
+        "n_permutations": 99,
+        "normalization_sensitivity_median_rho": {
+          "robust": 0.292700282010938,
+          "zscore": 0.3074155972268936,
+          "rank": 0.2381964550871474
+        },
+        "leave_one_feature_out_rho_median": 0.27041868623649,
+        "leave_one_feature_out_rho_min": 0.0076857702629359636,
+        "leave_one_feature_out_cases": 50
+      },
+      {
+        "view": "periodicity",
+        "features": [
+          "f0_median_hz",
+          "f0_iqr_hz",
+          "voiced_fraction",
+          "periodicity"
+        ],
+        "speakers_analyzed": 10,
+        "utterances_analyzed": 1000,
+        "median_rdm_spearman": 0.48809323163323054,
+        "speaker_bootstrap_95pct_ci": [
+          0.45003497099078205,
+          0.516911788753886
+        ],
+        "median_permuted_null": -0.0008089909275759751,
+        "permuted_null_95pct": 0.033277248144931645,
+        "empirical_one_sided_permutation_p": 0.01,
+        "n_permutations": 99,
+        "normalization_sensitivity_median_rho": {
+          "robust": 0.48809323163323054,
+          "zscore": 0.4463163593182389,
+          "rank": 0.3847388552530636
+        },
+        "leave_one_feature_out_rho_median": 0.4622230225528746,
+        "leave_one_feature_out_rho_min": 0.2576932739565312,
+        "leave_one_feature_out_cases": 40
+      },
+      {
+        "view": "combined_common",
+        "features": [
+          "log_rms",
+          "zcr",
+          "centroid_common_hz",
+          "rolloff85_common_hz",
+          "band_80_250",
+          "band_250_500",
+          "band_500_1000",
+          "band_1000_2000",
+          "band_2000_3500",
+          "flatness_common",
+          "f0_median_hz",
+          "voiced_fraction",
+          "periodicity",
+          "envelope_cv"
+        ],
+        "speakers_analyzed": 10,
+        "utterances_analyzed": 1000,
+        "median_rdm_spearman": 0.35866729566373345,
+        "speaker_bootstrap_95pct_ci": [
+          0.3465963724390279,
+          0.42840413639589836
+        ],
+        "median_permuted_null": 0.0010729164623353132,
+        "permuted_null_95pct": 0.037478658809454495,
+        "empirical_one_sided_permutation_p": 0.01,
+        "n_permutations": 99,
+        "normalization_sensitivity_median_rho": {
+          "robust": 0.35866729566373345,
+          "zscore": 0.376565147905934,
+          "rank": 0.32931824339663773
+        },
+        "leave_one_feature_out_rho_median": 0.3664401851048299,
+        "leave_one_feature_out_rho_min": 0.16126699066800318,
+        "leave_one_feature_out_cases": 140
+      },
+      {
+        "view": "temporal_emission",
+        "features": [
+          "event_interval_cv",
+          "event_interval_entropy",
+          "event_interval_q10_norm",
+          "event_interval_q25_norm",
+          "event_interval_q75_norm",
+          "event_interval_q90_norm",
+          "event_mark_cv_norm"
+        ],
+        "speakers_analyzed": 10,
+        "utterances_analyzed": 1000,
+        "median_rdm_spearman": 0.11962911587594441,
+        "speaker_bootstrap_95pct_ci": [
+          0.08489840793196425,
+          0.17411011386671585
+        ],
+        "median_permuted_null": 0.0006578488425225768,
+        "permuted_null_95pct": 0.03556496348318667,
+        "empirical_one_sided_permutation_p": 0.01,
+        "n_permutations": 99,
+        "normalization_sensitivity_median_rho": {
+          "robust": 0.11962911587594441,
+          "zscore": 0.12671969851159287,
+          "rank": 0.07813694651801908
+        },
+        "leave_one_feature_out_rho_median": 0.10611425538120159,
+        "leave_one_feature_out_rho_min": -0.03551825513426573,
+        "leave_one_feature_out_cases": 70
+      },
+      {
+        "view": "temporal_rate",
+        "features": [
+          "event_rate_hz",
+          "event_interval_median_s",
+          "envelope_modulation",
+          "envelope_cv"
+        ],
+        "speakers_analyzed": 10,
+        "utterances_analyzed": 1000,
+        "median_rdm_spearman": 0.18860373473816616,
+        "speaker_bootstrap_95pct_ci": [
+          0.1237169950656375,
+          0.30333574660604157
+        ],
+        "median_permuted_null": 0.00023079966189768993,
+        "permuted_null_95pct": 0.03527643188434358,
+        "empirical_one_sided_permutation_p": 0.01,
+        "n_permutations": 99,
+        "normalization_sensitivity_median_rho": {
+          "robust": 0.18860373473816616,
+          "zscore": 0.17351102791102196,
+          "rank": 0.16697019968495194
+        },
+        "leave_one_feature_out_rho_median": 0.17643326485831407,
+        "leave_one_feature_out_rho_min": -0.02960624932768917,
+        "leave_one_feature_out_cases": 40
+      }
+    ]
+  },
+  "temporal_emission_model": {
+    "definition": "Observer-extracted event-time landmarks from the short-time RMS envelope; event intervals define a temporal response signature.",
+    "shape_view": "Normalized event intervals; invariant to time-origin shift and uniform clock scaling under the defined event set.",
+    "rate_view": "Absolute event rate and median interval; intentionally changes under clock scaling.",
+    "event_rule": "Envelope local maxima above max(P60, median + 0.5*MAD), greedily separated by 80 ms.",
+    "state_claim": "Events are measured-signal landmarks, not verified hidden-state transitions."
+  },
+  "normalization_sensitivity": "RDMs are recomputed under robust MAD, z-score, and feature-rank scaling; leave-one-feature-out sensitivity is also reported.",
+  "interpretation_guardrails": [
+    "No emotion labels are present in the documented TAPS schema; no emotion classification is performed.",
+    "Speaker IDs and transcripts are used only for within-speaker grouping and are not written to outputs.",
+    "The source dataset is already preprocessed and globally aligned; residual lag is diagnostic only.",
+    "Throat/acoustic amplitudes have different physical units and are not directly compared.",
+    "The acoustic-only high-frequency band is not treated as a missing throat signal that can be recovered without modelling.",
+    "Temporal-emission events are envelope maxima used as observable timing landmarks, not labelled phonetic or hidden-state events.",
+    "Normalized event-interval shape and absolute event rate are reported separately; uniform clock-scale invariance does not imply duration invariance of the physical process.",
+    "Normalization sensitivity and leave-one-feature-out summaries are diagnostics, not independent replications or significance guarantees."
+  ]
+}

@@ -1,0 +1,12 @@
+entity,field,meaning,units_or_scale,role
+node,id,Observer-local event node,opaque local key,graph identity
+node,observer,Observer or sensor label,category,graph identity
+node,local_index,Event ordinal within observer,integer,local ordering
+node,local_time_s,Observer-local timestamp,seconds; local coordinate only,inspection only
+node,mark_rank,Within-stream average empirical rank,0-1,matching feature
+node,interval_log_shape,Mean adjacent log interval divided by median gap,log ratio,matching feature
+edge,successor,Immediate local event precedence,ordered edge,temporal topology
+edge,normalized_interval,Successor gap divided by stream median gap,ratio,temporal topology
+edge,recurrence,Repeated two-interval motif,log-ratio Euclidean distance,recurrence topology
+edge,correspondence,Inferred event match across observers,alignment cost and 1-cost,inter-observer topology
+edge,cross_observer_clock_difference,Not emitted,none,explicitly excluded

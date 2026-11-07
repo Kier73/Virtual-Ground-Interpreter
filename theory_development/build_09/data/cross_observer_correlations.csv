@@ -1,0 +1,17 @@
+acoustic_observer,mechanical_observer,spearman_rdm
+spectral,spectral,0.9999999241388527
+spectral,temporal,0.6461392555265162
+spectral,transfer,0.7061932661346861
+spectral,modal,0.8756955929857266
+temporal,spectral,0.646118469572157
+temporal,temporal,0.9999998482777054
+temporal,transfer,0.3336272109889424
+temporal,modal,0.7454194470303964
+transfer,spectral,0.853276676856926
+transfer,temporal,0.4268221752754107
+transfer,transfer,0.8939571918074513
+transfer,modal,0.7050049265493407
+modal,spectral,0.8850073718069885
+modal,temporal,0.7114068993437631
+modal,transfer,0.6516716319894826
+modal,modal,0.9928518569607723

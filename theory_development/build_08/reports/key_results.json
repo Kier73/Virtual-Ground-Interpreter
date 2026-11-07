@@ -1,0 +1,142 @@
+{
+  "build": "08",
+  "seed": 81008,
+  "family_count": 40,
+  "petal_count_distribution": {
+    "1": 11,
+    "2": 19,
+    "3": 10
+  },
+  "path_vertex_count_range": [
+    29,
+    134
+  ],
+  "primary_cross_observer_pairs": {
+    "shape_clean__local_clean": {
+      "spearman": 0.2716500191486179,
+      "ci95": [
+        0.2084329740094464,
+        0.4636844081518682
+      ],
+      "knn5_jaccard": 0.1425595238095238,
+      "permutation_p": 0.0025,
+      "holm_adjusted_p": 0.0125
+    },
+    "shape_clean__holonomy_clean": {
+      "spearman": 0.17717934852216796,
+      "ci95": [
+        0.10175351037837337,
+        0.39796181234849093
+      ],
+      "knn5_jaccard": 0.14771825396825397,
+      "permutation_p": 0.0025,
+      "holm_adjusted_p": 0.0125
+    },
+    "shape_clean__temporal_clean": {
+      "spearman": 0.09496096122142517,
+      "ci95": [
+        -0.0034129341562341054,
+        0.30838272095281444
+      ],
+      "knn5_jaccard": 0.08809523809523809,
+      "permutation_p": 0.1325,
+      "holm_adjusted_p": 0.265
+    },
+    "holonomy_clean__temporal_clean": {
+      "spearman": 0.0015945760291165199,
+      "ci95": [
+        -0.016809543582981756,
+        0.18696500322147783
+      ],
+      "knn5_jaccard": 0.07916666666666666,
+      "permutation_p": 0.415,
+      "holm_adjusted_p": 0.415
+    },
+    "local_clean__temporal_clean": {
+      "spearman": 0.46351479614782154,
+      "ci95": [
+        0.30396787896068134,
+        0.6389846155445168
+      ],
+      "knn5_jaccard": 0.11299603174603175,
+      "permutation_p": 0.0025,
+      "holm_adjusted_p": 0.0125
+    },
+    "shape_clean__shape_noisy_drop": {
+      "spearman": 0.9313277584661989,
+      "ci95": [
+        0.9016961371854548,
+        0.9582260372032299
+      ],
+      "knn5_jaccard": 0.5182539682539682,
+      "permutation_p": 0.0025,
+      "holm_adjusted_p": null
+    },
+    "local_clean__local_jittered": {
+      "spearman": 0.809380433159565,
+      "ci95": [
+        0.6992122023599157,
+        0.8990653864811464
+      ],
+      "knn5_jaccard": 0.35595238095238096,
+      "permutation_p": 0.0025,
+      "holm_adjusted_p": null
+    },
+    "holonomy_clean__holonomy_noisy": {
+      "spearman": 0.9443864710747135,
+      "ci95": [
+        0.9301092991061852,
+        0.9646031952882185
+      ],
+      "knn5_jaccard": 0.6636904761904762,
+      "permutation_p": 0.0025,
+      "holm_adjusted_p": null
+    },
+    "temporal_clean__temporal_low_band": {
+      "spearman": 0.4822363411056029,
+      "ci95": [
+        0.3019694201517742,
+        0.7142893016548217
+      ],
+      "knn5_jaccard": 0.3613095238095238,
+      "permutation_p": 0.0025,
+      "holm_adjusted_p": null
+    }
+  },
+  "address_substrate_controls": {
+    "sha256__blake2b_256": -0.02086939843921916,
+    "sha256__blake2s_256": 0.06079217334775557,
+    "sha256__shape": -0.07421707980906013,
+    "sha256__local": 0.009300466396770445,
+    "blake2b_256__blake2s_256": 0.01442663609644634,
+    "blake2b_256__shape": 0.054061616323495654,
+    "blake2b_256__local": 0.029684562824206513,
+    "blake2s_256__shape": 0.05508675547658383,
+    "blake2s_256__local": 0.03653523152453495
+  },
+  "positive_H1_intervals": {
+    "shape_clean": 12,
+    "local_clean": 4,
+    "holonomy_clean": 1,
+    "temporal_clean": 9,
+    "shape_noisy_drop": 10,
+    "temporal_low_band": 25
+  },
+  "codonic_equivalence": {
+    "pairwise_abs_error": 2.7755575615628914e-17,
+    "reverse_tree_abs_error": 2.7755575615628914e-17,
+    "alias_renaming_abs_error": 2.7755575615628914e-17,
+    "left_identity_abs_error": 0.0,
+    "right_identity_abs_error": 0.0,
+    "canonical_ir_hash_sha256": "1f331d995832d2344b332f645c9ed98f210b53cd38c8639acc56cd974b5c8e29",
+    "raw_alias_spellings_hash_equal": false
+  },
+  "limitations": [
+    "Synthetic paths and synthetic observers only.",
+    "Bootstrap resamples independent path families; pairwise RDM entries are not treated as independent observations.",
+    "Permutation tests are exploratory and do not establish a universal invariant.",
+    "Vietoris-Rips persistence is computed exactly over F2 through H1 for finite family-level RDMs; H2 is not included.",
+    "The normalized codon IR example is specific to the Hamilton product; arbitrary program equivalence is undecidable in general.",
+    "SHA-256/BLAKE2 address controls demonstrate digest-substrate dependence, not a comparison of the user's full current VL implementation."
+  ]
+}

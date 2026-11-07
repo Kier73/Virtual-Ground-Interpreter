@@ -1,0 +1,107 @@
+{
+  "specification": {
+    "format": "VG-PredictiveMealy-1",
+    "initial": "q0",
+    "actions": [
+      "HOLD",
+      "PROBE_A",
+      "PROBE_B"
+    ],
+    "state_count": 2,
+    "transitions": {
+      "q0": {
+        "HOLD": "q1",
+        "PROBE_A": "q0",
+        "PROBE_B": "q1"
+      },
+      "q1": {
+        "HOLD": "q0",
+        "PROBE_A": "q1",
+        "PROBE_B": "q0"
+      }
+    },
+    "outputs": {
+      "q0": {
+        "HOLD": [
+          0
+        ],
+        "PROBE_A": [
+          0
+        ],
+        "PROBE_B": [
+          0
+        ]
+      },
+      "q1": {
+        "HOLD": [
+          1
+        ],
+        "PROBE_A": [
+          1
+        ],
+        "PROBE_B": [
+          1
+        ]
+      }
+    },
+    "access_representatives": {
+      "q0": [],
+      "q1": [
+        "HOLD"
+      ]
+    },
+    "experiment_count": 3,
+    "access_count": 2
+  },
+  "compiled_program": {
+    "compiler_kind": "modular_phase_program",
+    "phase_count": 2,
+    "phase_order": [
+      "q0",
+      "q1"
+    ],
+    "initial_phase": 0,
+    "action_phase_strides": {
+      "HOLD": 1,
+      "PROBE_A": 0,
+      "PROBE_B": 1
+    },
+    "output_table_by_phase_and_action": {
+      "0": {
+        "HOLD": [
+          0
+        ],
+        "PROBE_A": [
+          0
+        ],
+        "PROBE_B": [
+          0
+        ]
+      },
+      "1": {
+        "HOLD": [
+          1
+        ],
+        "PROBE_A": [
+          1
+        ],
+        "PROBE_B": [
+          1
+        ]
+      }
+    },
+    "semantics": "phase_next=(phase+stride[action]) mod phase_count; output=table[phase][action]"
+  },
+  "compiler_verification": {
+    "cases_checked": 6,
+    "exact": true,
+    "compiler_kind": "modular_phase_program"
+  },
+  "metadata": {
+    "ground_name": "coupled_six",
+    "observer_profile": "parity_only",
+    "semantic_claim": "minimal predictive quotient supported by the observation table and bounded conformance suite",
+    "physical_hidden_state_claim": "not inferred; only behaviorally distinguishable predictive contexts are represented"
+  },
+  "fingerprint": "e62c5a04f05bc7305c3f1deb5afdb9aae567e726124d115b2387e657cb1fe7a8"
+}

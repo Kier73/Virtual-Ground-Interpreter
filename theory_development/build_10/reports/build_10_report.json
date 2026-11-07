@@ -1,0 +1,633 @@
+{
+  "active_probe_identification": {
+    "acoustic": {
+      "active": {
+        "accuracy": 0.3125,
+        "accuracy_wilson_95": [
+          0.17952352116618736,
+          0.4856699969803239
+        ],
+        "brier": 1.3492133818384664,
+        "confusion_matrix": [
+          [
+            4,
+            1,
+            2,
+            1
+          ],
+          [
+            1,
+            3,
+            4,
+            0
+          ],
+          [
+            2,
+            3,
+            0,
+            3
+          ],
+          [
+            2,
+            3,
+            0,
+            3
+          ]
+        ],
+        "correct": 10,
+        "episodes": 32,
+        "log_loss": 11.770117783383597,
+        "mean_probe_cost": 3.3734374999999988
+      },
+      "fixed": {
+        "accuracy": 0.375,
+        "accuracy_wilson_95": [
+          0.2293366846595921,
+          0.5474589941047487
+        ],
+        "brier": 1.2055299791912026,
+        "confusion_matrix": [
+          [
+            3,
+            1,
+            1,
+            3
+          ],
+          [
+            1,
+            4,
+            3,
+            0
+          ],
+          [
+            1,
+            4,
+            1,
+            2
+          ],
+          [
+            2,
+            2,
+            0,
+            4
+          ]
+        ],
+        "correct": 12,
+        "episodes": 32,
+        "log_loss": 11.273257444130595,
+        "mean_probe_cost": 3.5
+      },
+      "random": {
+        "accuracy": 0.3125,
+        "accuracy_wilson_95": [
+          0.17952352116618736,
+          0.4856699969803239
+        ],
+        "brier": 1.2809059055767045,
+        "confusion_matrix": [
+          [
+            2,
+            1,
+            2,
+            3
+          ],
+          [
+            1,
+            4,
+            3,
+            0
+          ],
+          [
+            3,
+            3,
+            1,
+            1
+          ],
+          [
+            1,
+            3,
+            1,
+            3
+          ]
+        ],
+        "correct": 10,
+        "episodes": 32,
+        "log_loss": 13.740846551719008,
+        "mean_probe_cost": 3.728125
+      }
+    },
+    "mechanical": {
+      "active": {
+        "accuracy": 0.5,
+        "accuracy_wilson_95": [
+          0.33630614316859386,
+          0.6636938568314061
+        ],
+        "brier": 0.9393843043046359,
+        "confusion_matrix": [
+          [
+            6,
+            0,
+            2,
+            0
+          ],
+          [
+            0,
+            3,
+            3,
+            2
+          ],
+          [
+            1,
+            3,
+            1,
+            3
+          ],
+          [
+            1,
+            0,
+            1,
+            6
+          ]
+        ],
+        "correct": 16,
+        "episodes": 32,
+        "log_loss": 8.433681752903626,
+        "mean_probe_cost": 3.5125
+      },
+      "fixed": {
+        "accuracy": 0.46875,
+        "accuracy_wilson_95": [
+          0.30869129901682335,
+          0.6355076206742619
+        ],
+        "brier": 1.0057013768883547,
+        "confusion_matrix": [
+          [
+            6,
+            0,
+            2,
+            0
+          ],
+          [
+            0,
+            3,
+            4,
+            1
+          ],
+          [
+            1,
+            2,
+            1,
+            4
+          ],
+          [
+            2,
+            0,
+            1,
+            5
+          ]
+        ],
+        "correct": 15,
+        "episodes": 32,
+        "log_loss": 7.8437597750229635,
+        "mean_probe_cost": 3.450000000000002
+      },
+      "random": {
+        "accuracy": 0.53125,
+        "accuracy_wilson_95": [
+          0.3644923793257382,
+          0.6913087009831766
+        ],
+        "brier": 0.8415406277620578,
+        "confusion_matrix": [
+          [
+            5,
+            1,
+            2,
+            0
+          ],
+          [
+            0,
+            6,
+            2,
+            0
+          ],
+          [
+            2,
+            3,
+            1,
+            2
+          ],
+          [
+            2,
+            0,
+            1,
+            5
+          ]
+        ],
+        "correct": 17,
+        "episodes": 32,
+        "log_loss": 7.15173342097199,
+        "mean_probe_cost": 3.7140624999999994
+      }
+    }
+  },
+  "build": "10",
+  "codon_alias_max_abs_error": 0.0,
+  "duration_s": 2.0,
+  "fs_hz": 256.0,
+  "noise_robustness": [
+    {
+      "distance_rank_retention": 1.0,
+      "distribution": "gaussian",
+      "domain": "acoustic",
+      "feature_noise_z": 0.0
+    },
+    {
+      "distance_rank_retention": 0.9994208653681621,
+      "distribution": "gaussian",
+      "domain": "acoustic",
+      "feature_noise_z": 0.1
+    },
+    {
+      "distance_rank_retention": 0.9994674793629814,
+      "distribution": "laplace",
+      "domain": "acoustic",
+      "feature_noise_z": 0.1
+    },
+    {
+      "distance_rank_retention": 0.9995016039541256,
+      "distribution": "uniform",
+      "domain": "acoustic",
+      "feature_noise_z": 0.1
+    },
+    {
+      "distance_rank_retention": 0.9968211025684901,
+      "distribution": "gaussian",
+      "domain": "acoustic",
+      "feature_noise_z": 0.25
+    },
+    {
+      "distance_rank_retention": 0.9973464442569395,
+      "distribution": "laplace",
+      "domain": "acoustic",
+      "feature_noise_z": 0.25
+    },
+    {
+      "distance_rank_retention": 0.9972691476326188,
+      "distribution": "uniform",
+      "domain": "acoustic",
+      "feature_noise_z": 0.25
+    },
+    {
+      "distance_rank_retention": 0.9884638230162992,
+      "distribution": "gaussian",
+      "domain": "acoustic",
+      "feature_noise_z": 0.5
+    },
+    {
+      "distance_rank_retention": 0.987411172804176,
+      "distribution": "laplace",
+      "domain": "acoustic",
+      "feature_noise_z": 0.5
+    },
+    {
+      "distance_rank_retention": 0.9899372776246924,
+      "distribution": "uniform",
+      "domain": "acoustic",
+      "feature_noise_z": 0.5
+    },
+    {
+      "distance_rank_retention": 1.0,
+      "distribution": "gaussian",
+      "domain": "mechanical",
+      "feature_noise_z": 0.0
+    },
+    {
+      "distance_rank_retention": 0.9994708229828629,
+      "distribution": "gaussian",
+      "domain": "mechanical",
+      "feature_noise_z": 0.1
+    },
+    {
+      "distance_rank_retention": 0.9993598934762042,
+      "distribution": "laplace",
+      "domain": "mechanical",
+      "feature_noise_z": 0.1
+    },
+    {
+      "distance_rank_retention": 0.9995565769986487,
+      "distribution": "uniform",
+      "domain": "mechanical",
+      "feature_noise_z": 0.1
+    },
+    {
+      "distance_rank_retention": 0.996529912613511,
+      "distribution": "gaussian",
+      "domain": "mechanical",
+      "feature_noise_z": 0.25
+    },
+    {
+      "distance_rank_retention": 0.9979924512864086,
+      "distribution": "laplace",
+      "domain": "mechanical",
+      "feature_noise_z": 0.25
+    },
+    {
+      "distance_rank_retention": 0.9974014173014627,
+      "distribution": "uniform",
+      "domain": "mechanical",
+      "feature_noise_z": 0.25
+    },
+    {
+      "distance_rank_retention": 0.990490155006284,
+      "distribution": "gaussian",
+      "domain": "mechanical",
+      "feature_noise_z": 0.5
+    },
+    {
+      "distance_rank_retention": 0.9896908331710694,
+      "distribution": "laplace",
+      "domain": "mechanical",
+      "feature_noise_z": 0.5
+    },
+    {
+      "distance_rank_retention": 0.9902017186206191,
+      "distribution": "uniform",
+      "domain": "mechanical",
+      "feature_noise_z": 0.5
+    }
+  ],
+  "nuisance_sweeps": {
+    "physical_duration_s": 2.0,
+    "sample_rate_sweep": [
+      {
+        "domain": "acoustic",
+        "rdm_rank_retention_vs_256hz": 0.9349545976411648,
+        "sample_rate_hz": 128
+      },
+      {
+        "domain": "acoustic",
+        "rdm_rank_retention_vs_256hz": 0.9804195804195804,
+        "sample_rate_hz": 512
+      },
+      {
+        "domain": "mechanical",
+        "rdm_rank_retention_vs_256hz": 0.9613401523849285,
+        "sample_rate_hz": 128
+      },
+      {
+        "domain": "mechanical",
+        "rdm_rank_retention_vs_256hz": 0.978499112827471,
+        "sample_rate_hz": 512
+      }
+    ],
+    "sensor_transfer_sweep": [
+      {
+        "delay_seconds": 0.008,
+        "domain": "acoustic",
+        "rdm_rank_retention": 0.9646383467278989,
+        "sensor_cutoff_hz": 24.0,
+        "sensor_gain": 1.7
+      },
+      {
+        "delay_seconds": 0.008,
+        "domain": "acoustic",
+        "rdm_rank_retention": 0.9831750339213026,
+        "sensor_cutoff_hz": 48.0,
+        "sensor_gain": 1.7
+      },
+      {
+        "delay_seconds": 0.008,
+        "domain": "acoustic",
+        "rdm_rank_retention": 0.9823817973071705,
+        "sensor_cutoff_hz": 72.0,
+        "sensor_gain": 1.7
+      },
+      {
+        "delay_seconds": 0.008,
+        "domain": "mechanical",
+        "rdm_rank_retention": 0.8980482204362802,
+        "sensor_cutoff_hz": 24.0,
+        "sensor_gain": 1.7
+      },
+      {
+        "delay_seconds": 0.008,
+        "domain": "mechanical",
+        "rdm_rank_retention": 0.9140799499008454,
+        "sensor_cutoff_hz": 48.0,
+        "sensor_gain": 1.7
+      },
+      {
+        "delay_seconds": 0.008,
+        "domain": "mechanical",
+        "rdm_rank_retention": 0.9124099780816198,
+        "sensor_cutoff_hz": 72.0,
+        "sensor_gain": 1.7
+      }
+    ],
+    "systems_per_domain": 12
+  },
+  "probe_information_ranking": [
+    {
+      "cost": 1.0,
+      "domain": "acoustic",
+      "expected_information_gain": 0.7845258854452212,
+      "gain_per_cost": 0.7845258854452212,
+      "probe": "impulse"
+    },
+    {
+      "cost": 1.0,
+      "domain": "acoustic",
+      "expected_information_gain": 0.792980603777478,
+      "gain_per_cost": 0.792980603777478,
+      "probe": "step"
+    },
+    {
+      "cost": 1.45,
+      "domain": "acoustic",
+      "expected_information_gain": 1.0725652312676028,
+      "gain_per_cost": 0.7397001594948985,
+      "probe": "chirp"
+    },
+    {
+      "cost": 1.3,
+      "domain": "acoustic",
+      "expected_information_gain": 0.9346648376048048,
+      "gain_per_cost": 0.7189729520036959,
+      "probe": "multisine"
+    },
+    {
+      "cost": 1.5,
+      "domain": "acoustic",
+      "expected_information_gain": 1.2393178367304203,
+      "gain_per_cost": 0.8262118911536135,
+      "probe": "amplitude_staircase"
+    },
+    {
+      "cost": 1.0,
+      "domain": "mechanical",
+      "expected_information_gain": 1.3011894572150118,
+      "gain_per_cost": 1.3011894572150118,
+      "probe": "impulse"
+    },
+    {
+      "cost": 1.0,
+      "domain": "mechanical",
+      "expected_information_gain": 1.215147090671029,
+      "gain_per_cost": 1.215147090671029,
+      "probe": "step"
+    },
+    {
+      "cost": 1.45,
+      "domain": "mechanical",
+      "expected_information_gain": 1.2088336473078816,
+      "gain_per_cost": 0.8336783774537114,
+      "probe": "chirp"
+    },
+    {
+      "cost": 1.3,
+      "domain": "mechanical",
+      "expected_information_gain": 1.0383541144103066,
+      "gain_per_cost": 0.7987339341617743,
+      "probe": "multisine"
+    },
+    {
+      "cost": 1.5,
+      "domain": "mechanical",
+      "expected_information_gain": 1.1184519957445276,
+      "gain_per_cost": 0.745634663829685,
+      "probe": "amplitude_staircase"
+    }
+  ],
+  "samples": 512,
+  "seed": 20261105,
+  "structural_bank_summary": {
+    "acoustic_antiresonance_count": 12,
+    "acoustic_class_counts": {
+      "0": 10,
+      "1": 9,
+      "2": 7,
+      "3": 6
+    },
+    "acoustic_compression_range": [
+      8.756965426893404e-05,
+      0.0411150700703445
+    ],
+    "acoustic_mode_count_histogram": {
+      "2": 22,
+      "3": 10
+    },
+    "mechanical_class_counts": {
+      "0": 6,
+      "1": 9,
+      "2": 3,
+      "3": 14
+    },
+    "mechanical_damping_nonproportionality_range": [
+      1.5454974870982897e-16,
+      0.2771797402858043
+    ],
+    "mechanical_nonlinear_models": 14
+  },
+  "unpaired_cross_domain_geometry": {
+    "acoustic_systems": 32,
+    "column_shuffled_null_covariance_cosine_95pct": 0.9983535901947493,
+    "column_shuffled_null_covariance_cosine_mean": 0.9949810477093373,
+    "column_shuffled_null_distance_gap_05pct": 0.010004206589926843,
+    "column_shuffled_null_distance_gap_mean": 0.025474657814519217,
+    "column_shuffled_null_mst_gap_05pct": 0.03027504248365423,
+    "column_shuffled_null_mst_gap_mean": 0.05328038495109985,
+    "comparison_type": "unpaired distributional geometry; no itemwise cross-domain pairing",
+    "covariance_eigen_spectrum_acoustic": [
+      0.3033371235397307,
+      0.19866744661117858,
+      0.14647200713301475,
+      0.09549210153801632,
+      0.09013775310710243,
+      0.0394746421382868,
+      0.03167049328994635,
+      0.026828462959294787,
+      0.0237884010628786,
+      0.015118401114198265,
+      0.013909378174206743,
+      0.005683805711423331,
+      0.004094325903428623,
+      0.002438405687957612,
+      0.0019801037185488255,
+      0.0007383421624722457,
+      0.00016880614825809945
+    ],
+    "covariance_eigen_spectrum_mechanical": [
+      0.4000546376382851,
+      0.17972324639139906,
+      0.11348743595930477,
+      0.11145051251004394,
+      0.062061011056504335,
+      0.041037826783831916,
+      0.029469814830034732,
+      0.01954519486975834,
+      0.01546316813738603,
+      0.010781201972538238,
+      0.008093769238554075,
+      0.005010968112768682,
+      0.002237215267747952,
+      0.0008926160591310771,
+      0.000494532847757494,
+      0.0001899880341950579,
+      6.860290702293465e-06
+    ],
+    "covariance_spectrum_cosine_similarity": 0.9776739254768395,
+    "covariance_summary_feature_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      29,
+      30,
+      31,
+      32
+    ],
+    "distance_and_mst_comparison": "same 17-D probe-averaged feature summary in each domain; no cross-domain item pairing",
+    "distance_profile_mean_abs_gap": 0.07131530144396067,
+    "mechanical_systems": 32,
+    "mst_profile_wasserstein": 0.07191811941319927,
+    "normalized_distance_quantiles_acoustic": [
+      0.5748649628547846,
+      0.7068157561382904,
+      0.8002667699591197,
+      0.9055576404156249,
+      0.9999999999997143,
+      1.1060351156160484,
+      1.2141731815477264,
+      1.3031650045466927,
+      1.4935410906309237
+    ],
+    "normalized_distance_quantiles_mechanical": [
+      0.5740010653695831,
+      0.6998520998386554,
+      0.7992443952025434,
+      0.8931610909844928,
+      0.9999999999996848,
+      1.1212264367680091,
+      1.286707282980093,
+      1.5045948903277133,
+      1.8249770172886473
+    ],
+    "null_empirical_p_cosine_upper": 0.995,
+    "null_empirical_p_distance_lower": 1.0,
+    "null_empirical_p_mst_lower": 0.86,
+    "null_replicates": 199,
+    "paired_rdm_correlation": null
+  }
+}

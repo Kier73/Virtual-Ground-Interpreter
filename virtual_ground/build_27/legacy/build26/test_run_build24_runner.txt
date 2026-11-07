@@ -1,0 +1,407 @@
+{
+  "suite": {
+    "coupled_six:parity_only": {
+      "predictive_contexts": 2,
+      "counterexamples": 0,
+      "bounded_equivalent": true,
+      "query_statistics": {
+        "query_requests_by_purpose": {
+          "probe_selection": 4524,
+          "membership": 99,
+          "conformance": 9840,
+          "certificate": 9840,
+          "adaptive_policy": 2
+        },
+        "unique_words_by_purpose": {
+          "probe_selection": 1821,
+          "membership": 21,
+          "conformance": 9840,
+          "certificate": 9840,
+          "adaptive_policy": 2
+        },
+        "unique_query_words_total": 9840,
+        "cache_hits": 14465
+      },
+      "clock": {
+        "is_single_cycle": true,
+        "clock_action": "HOLD",
+        "period": 2,
+        "phase_order": [
+          "q0",
+          "q1"
+        ],
+        "action_phase_strides": {
+          "HOLD": 1,
+          "PROBE_A": 0,
+          "PROBE_B": 1
+        },
+        "all_actions_are_constant_phase_strides": true
+      },
+      "active_probe": {
+        "probe": [
+          "PROBE_B"
+        ],
+        "information_bits_empirical": 1.0,
+        "cost": 1.0,
+        "bits_per_cost": 1.0,
+        "response_classes": 2,
+        "history_count": 2,
+        "candidate_count": 1092
+      }
+    },
+    "coupled_six:residue3_only": {
+      "predictive_contexts": 3,
+      "counterexamples": 0,
+      "bounded_equivalent": true,
+      "query_statistics": {
+        "query_requests_by_purpose": {
+          "probe_selection": 6708,
+          "membership": 165,
+          "conformance": 9840,
+          "certificate": 9840,
+          "adaptive_policy": 3
+        },
+        "unique_words_by_purpose": {
+          "probe_selection": 2550,
+          "membership": 30,
+          "conformance": 9840,
+          "certificate": 9840,
+          "adaptive_policy": 3
+        },
+        "unique_query_words_total": 9840,
+        "cache_hits": 16716
+      },
+      "clock": {
+        "is_single_cycle": true,
+        "clock_action": "HOLD",
+        "period": 3,
+        "phase_order": [
+          "q0",
+          "q1",
+          "q2"
+        ],
+        "action_phase_strides": {
+          "HOLD": 1,
+          "PROBE_A": 2,
+          "PROBE_B": 0
+        },
+        "all_actions_are_constant_phase_strides": true
+      },
+      "active_probe": {
+        "probe": [
+          "PROBE_B"
+        ],
+        "information_bits_empirical": 1.584962500721156,
+        "cost": 1.0,
+        "bits_per_cost": 1.584962500721156,
+        "response_classes": 3,
+        "history_count": 3,
+        "candidate_count": 1092
+      }
+    },
+    "coupled_six:joint": {
+      "predictive_contexts": 6,
+      "counterexamples": 0,
+      "bounded_equivalent": true,
+      "query_statistics": {
+        "query_requests_by_purpose": {
+          "probe_selection": 13260,
+          "membership": 435,
+          "conformance": 9840,
+          "certificate": 9840,
+          "adaptive_policy": 6
+        },
+        "unique_words_by_purpose": {
+          "probe_selection": 4737,
+          "membership": 57,
+          "conformance": 9840,
+          "certificate": 9840,
+          "adaptive_policy": 6
+        },
+        "unique_query_words_total": 9840,
+        "cache_hits": 23541
+      },
+      "clock": {
+        "is_single_cycle": true,
+        "clock_action": "HOLD",
+        "period": 6,
+        "phase_order": [
+          "q0",
+          "q1",
+          "q2",
+          "q3",
+          "q4",
+          "q5"
+        ],
+        "action_phase_strides": {
+          "HOLD": 1,
+          "PROBE_A": 2,
+          "PROBE_B": 3
+        },
+        "all_actions_are_constant_phase_strides": true
+      },
+      "active_probe": {
+        "probe": [
+          "PROBE_B"
+        ],
+        "information_bits_empirical": 2.584962500721156,
+        "cost": 1.0,
+        "bits_per_cost": 2.584962500721156,
+        "response_classes": 6,
+        "history_count": 6,
+        "candidate_count": 1092
+      }
+    },
+    "delayed_six:available": {
+      "predictive_contexts": 6,
+      "counterexamples": 1,
+      "bounded_equivalent": true,
+      "query_statistics": {
+        "query_requests_by_purpose": {
+          "probe_selection": 28548,
+          "membership": 830,
+          "conformance": 10205,
+          "certificate": 9840,
+          "adaptive_policy": 20
+        },
+        "unique_words_by_purpose": {
+          "probe_selection": 14943,
+          "membership": 109,
+          "conformance": 9840,
+          "certificate": 9840,
+          "adaptive_policy": 20
+        },
+        "unique_query_words_total": 20046,
+        "cache_hits": 29397
+      },
+      "clock": {
+        "is_single_cycle": true,
+        "clock_action": "HOLD",
+        "period": 6,
+        "phase_order": [
+          "q0",
+          "q1",
+          "q2",
+          "q3",
+          "q4",
+          "q5"
+        ],
+        "action_phase_strides": {
+          "HOLD": 1,
+          "PROBE_A": 1,
+          "PROBE_B": 1
+        },
+        "all_actions_are_constant_phase_strides": true
+      },
+      "active_probe": {
+        "probe": [
+          "PROBE_A"
+        ],
+        "information_bits_empirical": 0.6500224216483541,
+        "cost": 1.0,
+        "bits_per_cost": 0.6500224216483541,
+        "response_classes": 2,
+        "history_count": 6,
+        "candidate_count": 1092
+      }
+    },
+    "aliased_six:residue3_only": {
+      "predictive_contexts": 3,
+      "counterexamples": 0,
+      "bounded_equivalent": true,
+      "query_statistics": {
+        "query_requests_by_purpose": {
+          "probe_selection": 6708,
+          "membership": 165,
+          "conformance": 9840,
+          "certificate": 9840,
+          "adaptive_policy": 3
+        },
+        "unique_words_by_purpose": {
+          "probe_selection": 2550,
+          "membership": 30,
+          "conformance": 9840,
+          "certificate": 9840,
+          "adaptive_policy": 3
+        },
+        "unique_query_words_total": 9840,
+        "cache_hits": 16716
+      },
+      "clock": {
+        "is_single_cycle": true,
+        "clock_action": "HOLD",
+        "period": 3,
+        "phase_order": [
+          "q0",
+          "q1",
+          "q2"
+        ],
+        "action_phase_strides": {
+          "HOLD": 1,
+          "PROBE_A": 2,
+          "PROBE_B": 0
+        },
+        "all_actions_are_constant_phase_strides": true
+      },
+      "active_probe": {
+        "probe": [
+          "PROBE_B"
+        ],
+        "information_bits_empirical": 1.584962500721156,
+        "cost": 1.0,
+        "bits_per_cost": 1.584962500721156,
+        "response_classes": 3,
+        "history_count": 3,
+        "candidate_count": 1092
+      }
+    },
+    "unobservable_eight:available": {
+      "predictive_contexts": 1,
+      "counterexamples": 0,
+      "bounded_equivalent": true,
+      "query_statistics": {
+        "query_requests_by_purpose": {
+          "probe_selection": 1248,
+          "membership": 45,
+          "conformance": 9840,
+          "certificate": 9840
+        },
+        "unique_words_by_purpose": {
+          "probe_selection": 1092,
+          "membership": 12,
+          "conformance": 9840,
+          "certificate": 9840
+        },
+        "unique_query_words_total": 9840,
+        "cache_hits": 11133
+      },
+      "clock": {
+        "is_single_cycle": false,
+        "is_fixed_context": true,
+        "clock_action": "HOLD",
+        "period": 1,
+        "covered_states": 1,
+        "state_count": 1,
+        "interpretation": "no observable latent progression under this observer"
+      },
+      "active_probe": {
+        "probe": [
+          "PROBE_B"
+        ],
+        "information_bits_empirical": -0.0,
+        "cost": 1.0,
+        "bits_per_cost": -0.0,
+        "response_classes": 1,
+        "history_count": 1,
+        "candidate_count": 1092
+      }
+    },
+    "partial_four:available": {
+      "predictive_contexts": 4,
+      "counterexamples": 1,
+      "bounded_equivalent": true,
+      "query_statistics": {
+        "query_requests_by_purpose": {
+          "probe_selection": 8892,
+          "membership": 435,
+          "conformance": 9880,
+          "certificate": 9840,
+          "adaptive_policy": 4
+        },
+        "unique_words_by_purpose": {
+          "probe_selection": 3279,
+          "membership": 59,
+          "conformance": 9840,
+          "certificate": 9840,
+          "adaptive_policy": 4
+        },
+        "unique_query_words_total": 10569,
+        "cache_hits": 18482
+      },
+      "clock": {
+        "is_single_cycle": false,
+        "clock_action": "HOLD",
+        "covered_states": 3,
+        "state_count": 4
+      },
+      "active_probe": {
+        "probe": [
+          "HOLD",
+          "PROBE_B"
+        ],
+        "information_bits_empirical": 2.0,
+        "cost": 2.0,
+        "bits_per_cost": 1.0,
+        "response_classes": 4,
+        "history_count": 4,
+        "candidate_count": 1092
+      }
+    }
+  },
+  "delayed_horizon": [
+    {
+      "conformance_depth": 1,
+      "learned_contexts": 1,
+      "counterexamples": 0,
+      "rounds": 1,
+      "bounded_equivalent": true,
+      "distinguishing_suffixes": 3
+    },
+    {
+      "conformance_depth": 2,
+      "learned_contexts": 1,
+      "counterexamples": 0,
+      "rounds": 1,
+      "bounded_equivalent": true,
+      "distinguishing_suffixes": 3
+    },
+    {
+      "conformance_depth": 3,
+      "learned_contexts": 1,
+      "counterexamples": 0,
+      "rounds": 1,
+      "bounded_equivalent": true,
+      "distinguishing_suffixes": 3
+    },
+    {
+      "conformance_depth": 4,
+      "learned_contexts": 1,
+      "counterexamples": 0,
+      "rounds": 1,
+      "bounded_equivalent": true,
+      "distinguishing_suffixes": 3
+    },
+    {
+      "conformance_depth": 5,
+      "learned_contexts": 1,
+      "counterexamples": 0,
+      "rounds": 1,
+      "bounded_equivalent": true,
+      "distinguishing_suffixes": 3
+    },
+    {
+      "conformance_depth": 6,
+      "learned_contexts": 6,
+      "counterexamples": 1,
+      "rounds": 2,
+      "bounded_equivalent": true,
+      "distinguishing_suffixes": 7
+    },
+    {
+      "conformance_depth": 7,
+      "learned_contexts": 6,
+      "counterexamples": 1,
+      "rounds": 2,
+      "bounded_equivalent": true,
+      "distinguishing_suffixes": 7
+    },
+    {
+      "conformance_depth": 8,
+      "learned_contexts": 6,
+      "counterexamples": 1,
+      "rounds": 2,
+      "bounded_equivalent": true,
+      "distinguishing_suffixes": 7
+    }
+  ]
+}

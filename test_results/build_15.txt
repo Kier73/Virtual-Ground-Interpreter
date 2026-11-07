@@ -1,0 +1,49 @@
+test_discover_only_complete_pairs (test_build_14.TestPairDiscoveryAndGeometry.test_discover_only_complete_pairs) ... ok
+test_feature_views_exclude_acoustic_only_high_band (test_build_14.TestPairDiscoveryAndGeometry.test_feature_views_exclude_acoustic_only_high_band) ... ok
+test_pair_analysis_has_both_channels (test_build_14.TestPairDiscoveryAndGeometry.test_pair_analysis_has_both_channels) ... ok
+test_run_analysis_does_not_write_transcripts_or_speaker_ids (test_build_14.TestPairDiscoveryAndGeometry.test_run_analysis_does_not_write_transcripts_or_speaker_ids) ... ok
+test_sample_rate_metadata_mismatch_rejected (test_build_14.TestPairDiscoveryAndGeometry.test_sample_rate_metadata_mismatch_rejected) ... ok
+test_upsampled_throat_does_not_claim_above_nyquist_energy (test_build_14.TestPairDiscoveryAndGeometry.test_upsampled_throat_does_not_claim_above_nyquist_energy) ... ok
+test_download_verifies_md5_and_cleans_partial_on_failure (test_build_14.TestSafeDatasetRetrieval.test_download_verifies_md5_and_cleans_partial_on_failure) ... ok
+test_safe_extract_accepts_regular_archive (test_build_14.TestSafeDatasetRetrieval.test_safe_extract_accepts_regular_archive) ... ok
+test_safe_extract_rejects_absolute_path (test_build_14.TestSafeDatasetRetrieval.test_safe_extract_rejects_absolute_path) ... ok
+test_safe_extract_rejects_parent_traversal (test_build_14.TestSafeDatasetRetrieval.test_safe_extract_rejects_parent_traversal) ... ok
+test_envelope_alignment_known_delay (test_build_14.TestSignalFeatures.test_envelope_alignment_known_delay) ... ok
+test_fft_known_bin (test_build_14.TestSignalFeatures.test_fft_known_bin) ... ok
+test_percentile_integer_position (test_build_14.TestSignalFeatures.test_percentile_integer_position) ... ok
+test_raw_alignment_known_delay (test_build_14.TestSignalFeatures.test_raw_alignment_known_delay) ... ok
+test_summarize_channel (test_build_14.TestSignalFeatures.test_summarize_channel) ... ok
+test_pcm16_mono (test_build_14.TestWavReader.test_pcm16_mono) ... ok
+test_pcm24 (test_build_14.TestWavReader.test_pcm24) ... ok
+test_reject_non_wav (test_build_14.TestWavReader.test_reject_non_wav) ... ok
+test_graph_contains_local_successor_and_cross_correspondence_edges (test_local_clock_graph.TestEventGraph.test_graph_contains_local_successor_and_cross_correspondence_edges) ... ok
+test_graph_successor_edges_preserve_local_order (test_local_clock_graph.TestEventGraph.test_graph_successor_edges_preserve_local_order) ... ok
+test_repeated_interval_motifs_generate_recurrence_edges (test_local_clock_graph.TestEventGraph.test_repeated_interval_motifs_generate_recurrence_edges) ... ok
+test_empty_stream_is_valid (test_local_clock_graph.TestEventStream.test_empty_stream_is_valid) ... ok
+test_rejects_mismatched_lengths (test_local_clock_graph.TestEventStream.test_rejects_mismatched_lengths) ... ok
+test_rejects_non_monotone_times (test_local_clock_graph.TestEventStream.test_rejects_non_monotone_times) ... ok
+test_rejects_nonfinite_mark (test_local_clock_graph.TestEventStream.test_rejects_nonfinite_mark) ... ok
+test_alignment_does_not_depend_on_independent_clock_coordinates (test_local_clock_graph.TestIndependentClockInvariance.test_alignment_does_not_depend_on_independent_clock_coordinates) ... ok
+test_features_invariant_to_offset_and_positive_scale (test_local_clock_graph.TestIndependentClockInvariance.test_features_invariant_to_offset_and_positive_scale) ... ok
+test_graph_topology_invariant_to_affine_clock (test_local_clock_graph.TestIndependentClockInvariance.test_graph_topology_invariant_to_affine_clock) ... ok
+test_matcher_declares_no_shared_clock_requirement (test_local_clock_graph.TestIndependentClockInvariance.test_matcher_declares_no_shared_clock_requirement) ... ok
+test_post_match_clock_fit_recovers_known_affine_relation (test_local_clock_graph.TestIndependentClockInvariance.test_post_match_clock_fit_recovers_known_affine_relation) ... ok
+test_dp_size_guard (test_local_clock_graph.TestNoisyEventMatching.test_dp_size_guard) ... ok
+test_dropout_and_false_events_produce_partial_monotone_alignment (test_local_clock_graph.TestNoisyEventMatching.test_dropout_and_false_events_produce_partial_monotone_alignment) ... ok
+test_gap_penalty_must_be_positive (test_local_clock_graph.TestNoisyEventMatching.test_gap_penalty_must_be_positive) ... ok
+test_extracts_event_stream_from_wav (test_local_clock_graph.TestWavIntegration.test_extracts_event_stream_from_wav) ... ok
+test_taps_runner_outputs_aggregate_only (test_local_clock_graph.TestWavIntegration.test_taps_runner_outputs_aggregate_only) ... ok
+test_affine_probe_passes (test_temporal_geometry.TestTemporalEmission.test_affine_probe_passes) ... ok
+test_detector_clock_scale_with_scaled_observer_resolution (test_temporal_geometry.TestTemporalEmission.test_detector_clock_scale_with_scaled_observer_resolution) ... ok
+test_event_detector_respects_minimum_gap (test_temporal_geometry.TestTemporalEmission.test_event_detector_respects_minimum_gap) ... ok
+test_event_marks_gain_normalized (test_temporal_geometry.TestTemporalEmission.test_event_marks_gain_normalized) ... ok
+test_feature_schema_has_consistent_columns (test_temporal_geometry.TestTemporalEmission.test_feature_schema_has_consistent_columns) ... ok
+test_median_normalized_interval_is_one_by_definition (test_temporal_geometry.TestTemporalEmission.test_median_normalized_interval_is_one_by_definition) ... ok
+test_temporal_views_are_separated (test_temporal_geometry.TestTemporalEmission.test_temporal_views_are_separated) ... ok
+test_translation_does_not_change_signature (test_temporal_geometry.TestTemporalEmission.test_translation_does_not_change_signature) ... ok
+test_uniform_clock_scaling_preserves_shape_but_changes_rate (test_temporal_geometry.TestTemporalEmission.test_uniform_clock_scaling_preserves_shape_but_changes_rate) ... ok
+
+----------------------------------------------------------------------
+Ran 44 tests in 4.670s
+
+OK

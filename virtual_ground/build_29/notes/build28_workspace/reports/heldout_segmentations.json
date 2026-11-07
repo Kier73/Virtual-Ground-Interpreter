@@ -1,0 +1,7182 @@
+{
+  "test_00": {
+    "alternatives": [
+      {
+        "score": 67.17775975,
+        "segments": [
+          {
+            "end": 2,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 0
+          },
+          {
+            "end": 5,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 3
+          },
+          {
+            "end": 8,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 6
+          },
+          {
+            "end": 11,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 9
+          },
+          {
+            "end": 14,
+            "motif_id": "M004",
+            "score": 2.61633702,
+            "signature": [
+              "hum",
+              "click"
+            ],
+            "start": 12
+          },
+          {
+            "end": 18,
+            "motif_id": "M004",
+            "score": 2.61633702,
+            "signature": [
+              "hum",
+              "click"
+            ],
+            "start": 16
+          },
+          {
+            "end": 22,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 20
+          },
+          {
+            "end": 25,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 23
+          },
+          {
+            "end": 28,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 26
+          },
+          {
+            "end": 32,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 29
+          },
+          {
+            "end": 35,
+            "motif_id": "M004",
+            "score": 2.61633702,
+            "signature": [
+              "hum",
+              "click"
+            ],
+            "start": 33
+          },
+          {
+            "end": 39,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 36
+          },
+          {
+            "end": 43,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 40
+          },
+          {
+            "end": 47,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 44
+          },
+          {
+            "end": 50,
+            "motif_id": "M004",
+            "score": 2.61633702,
+            "signature": [
+              "hum",
+              "click"
+            ],
+            "start": 48
+          },
+          {
+            "end": 54,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 51
+          },
+          {
+            "end": 59,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 56
+          },
+          {
+            "end": 63,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 61
+          },
+          {
+            "end": 67,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 64
+          },
+          {
+            "end": 71,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 68
+          },
+          {
+            "end": 75,
+            "motif_id": "M004",
+            "score": 2.61633702,
+            "signature": [
+              "hum",
+              "click"
+            ],
+            "start": 73
+          },
+          {
+            "end": 79,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 76
+          },
+          {
+            "end": 84,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 81
+          },
+          {
+            "end": 88,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 86
+          }
+        ],
+        "skipped_token_indices": [
+          2,
+          5,
+          8,
+          11,
+          14,
+          15,
+          18,
+          19,
+          22,
+          25,
+          28,
+          32,
+          35,
+          39,
+          43,
+          47,
+          50,
+          54,
+          55,
+          59,
+          60,
+          63,
+          67,
+          71,
+          72,
+          75,
+          79,
+          80,
+          84,
+          85,
+          88
+        ]
+      },
+      {
+        "score": 64.52142273,
+        "segments": [
+          {
+            "end": 2,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 0
+          },
+          {
+            "end": 5,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 3
+          },
+          {
+            "end": 8,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 6
+          },
+          {
+            "end": 11,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 9
+          },
+          {
+            "end": 14,
+            "motif_id": "M004",
+            "score": 2.61633702,
+            "signature": [
+              "hum",
+              "click"
+            ],
+            "start": 12
+          },
+          {
+            "end": 18,
+            "motif_id": "M004",
+            "score": 2.61633702,
+            "signature": [
+              "hum",
+              "click"
+            ],
+            "start": 16
+          },
+          {
+            "end": 22,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 20
+          },
+          {
+            "end": 25,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 23
+          },
+          {
+            "end": 28,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 26
+          },
+          {
+            "end": 32,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 29
+          },
+          {
+            "end": 35,
+            "motif_id": "M004",
+            "score": 2.61633702,
+            "signature": [
+              "hum",
+              "click"
+            ],
+            "start": 33
+          },
+          {
+            "end": 39,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 36
+          },
+          {
+            "end": 43,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 40
+          },
+          {
+            "end": 47,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 44
+          },
+          {
+            "end": 50,
+            "motif_id": "M004",
+            "score": 2.61633702,
+            "signature": [
+              "hum",
+              "click"
+            ],
+            "start": 48
+          },
+          {
+            "end": 54,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 51
+          },
+          {
+            "end": 59,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 56
+          },
+          {
+            "end": 63,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 61
+          },
+          {
+            "end": 67,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 64
+          },
+          {
+            "end": 71,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 68
+          },
+          {
+            "end": 79,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 76
+          },
+          {
+            "end": 84,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 81
+          },
+          {
+            "end": 88,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 86
+          }
+        ],
+        "skipped_token_indices": [
+          2,
+          5,
+          8,
+          11,
+          14,
+          15,
+          18,
+          19,
+          22,
+          25,
+          28,
+          32,
+          35,
+          39,
+          43,
+          47,
+          50,
+          54,
+          55,
+          59,
+          60,
+          63,
+          67,
+          71,
+          72,
+          73,
+          74,
+          75,
+          79,
+          80,
+          84,
+          85,
+          88
+        ]
+      },
+      {
+        "score": 64.52142273,
+        "segments": [
+          {
+            "end": 2,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 0
+          },
+          {
+            "end": 5,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 3
+          },
+          {
+            "end": 8,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 6
+          },
+          {
+            "end": 11,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 9
+          },
+          {
+            "end": 14,
+            "motif_id": "M004",
+            "score": 2.61633702,
+            "signature": [
+              "hum",
+              "click"
+            ],
+            "start": 12
+          },
+          {
+            "end": 18,
+            "motif_id": "M004",
+            "score": 2.61633702,
+            "signature": [
+              "hum",
+              "click"
+            ],
+            "start": 16
+          },
+          {
+            "end": 22,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 20
+          },
+          {
+            "end": 25,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 23
+          },
+          {
+            "end": 28,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 26
+          },
+          {
+            "end": 32,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 29
+          },
+          {
+            "end": 35,
+            "motif_id": "M004",
+            "score": 2.61633702,
+            "signature": [
+              "hum",
+              "click"
+            ],
+            "start": 33
+          },
+          {
+            "end": 39,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 36
+          },
+          {
+            "end": 43,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 40
+          },
+          {
+            "end": 47,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 44
+          },
+          {
+            "end": 54,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 51
+          },
+          {
+            "end": 59,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 56
+          },
+          {
+            "end": 63,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 61
+          },
+          {
+            "end": 67,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 64
+          },
+          {
+            "end": 71,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 68
+          },
+          {
+            "end": 75,
+            "motif_id": "M004",
+            "score": 2.61633702,
+            "signature": [
+              "hum",
+              "click"
+            ],
+            "start": 73
+          },
+          {
+            "end": 79,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 76
+          },
+          {
+            "end": 84,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 81
+          },
+          {
+            "end": 88,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 86
+          }
+        ],
+        "skipped_token_indices": [
+          2,
+          5,
+          8,
+          11,
+          14,
+          15,
+          18,
+          19,
+          22,
+          25,
+          28,
+          32,
+          35,
+          39,
+          43,
+          47,
+          48,
+          49,
+          50,
+          54,
+          55,
+          59,
+          60,
+          63,
+          67,
+          71,
+          72,
+          75,
+          79,
+          80,
+          84,
+          85,
+          88
+        ]
+      },
+      {
+        "score": 64.52142273,
+        "segments": [
+          {
+            "end": 2,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 0
+          },
+          {
+            "end": 5,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 3
+          },
+          {
+            "end": 8,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 6
+          },
+          {
+            "end": 11,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 9
+          },
+          {
+            "end": 14,
+            "motif_id": "M004",
+            "score": 2.61633702,
+            "signature": [
+              "hum",
+              "click"
+            ],
+            "start": 12
+          },
+          {
+            "end": 18,
+            "motif_id": "M004",
+            "score": 2.61633702,
+            "signature": [
+              "hum",
+              "click"
+            ],
+            "start": 16
+          },
+          {
+            "end": 22,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 20
+          },
+          {
+            "end": 25,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 23
+          },
+          {
+            "end": 28,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 26
+          },
+          {
+            "end": 32,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 29
+          },
+          {
+            "end": 39,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 36
+          },
+          {
+            "end": 43,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 40
+          },
+          {
+            "end": 47,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 44
+          },
+          {
+            "end": 50,
+            "motif_id": "M004",
+            "score": 2.61633702,
+            "signature": [
+              "hum",
+              "click"
+            ],
+            "start": 48
+          },
+          {
+            "end": 54,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 51
+          },
+          {
+            "end": 59,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 56
+          },
+          {
+            "end": 63,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 61
+          },
+          {
+            "end": 67,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 64
+          },
+          {
+            "end": 71,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 68
+          },
+          {
+            "end": 75,
+            "motif_id": "M004",
+            "score": 2.61633702,
+            "signature": [
+              "hum",
+              "click"
+            ],
+            "start": 73
+          },
+          {
+            "end": 79,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 76
+          },
+          {
+            "end": 84,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 81
+          },
+          {
+            "end": 88,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 86
+          }
+        ],
+        "skipped_token_indices": [
+          2,
+          5,
+          8,
+          11,
+          14,
+          15,
+          18,
+          19,
+          22,
+          25,
+          28,
+          32,
+          33,
+          34,
+          35,
+          39,
+          43,
+          47,
+          50,
+          54,
+          55,
+          59,
+          60,
+          63,
+          67,
+          71,
+          72,
+          75,
+          79,
+          80,
+          84,
+          85,
+          88
+        ]
+      },
+      {
+        "score": 64.52142273,
+        "segments": [
+          {
+            "end": 2,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 0
+          },
+          {
+            "end": 5,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 3
+          },
+          {
+            "end": 8,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 6
+          },
+          {
+            "end": 11,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 9
+          },
+          {
+            "end": 14,
+            "motif_id": "M004",
+            "score": 2.61633702,
+            "signature": [
+              "hum",
+              "click"
+            ],
+            "start": 12
+          },
+          {
+            "end": 22,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 20
+          },
+          {
+            "end": 25,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 23
+          },
+          {
+            "end": 28,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 26
+          },
+          {
+            "end": 32,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 29
+          },
+          {
+            "end": 35,
+            "motif_id": "M004",
+            "score": 2.61633702,
+            "signature": [
+              "hum",
+              "click"
+            ],
+            "start": 33
+          },
+          {
+            "end": 39,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 36
+          },
+          {
+            "end": 43,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 40
+          },
+          {
+            "end": 47,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 44
+          },
+          {
+            "end": 50,
+            "motif_id": "M004",
+            "score": 2.61633702,
+            "signature": [
+              "hum",
+              "click"
+            ],
+            "start": 48
+          },
+          {
+            "end": 54,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 51
+          },
+          {
+            "end": 59,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 56
+          },
+          {
+            "end": 63,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 61
+          },
+          {
+            "end": 67,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 64
+          },
+          {
+            "end": 71,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 68
+          },
+          {
+            "end": 75,
+            "motif_id": "M004",
+            "score": 2.61633702,
+            "signature": [
+              "hum",
+              "click"
+            ],
+            "start": 73
+          },
+          {
+            "end": 79,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 76
+          },
+          {
+            "end": 84,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 81
+          },
+          {
+            "end": 88,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 86
+          }
+        ],
+        "skipped_token_indices": [
+          2,
+          5,
+          8,
+          11,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          22,
+          25,
+          28,
+          32,
+          35,
+          39,
+          43,
+          47,
+          50,
+          54,
+          55,
+          59,
+          60,
+          63,
+          67,
+          71,
+          72,
+          75,
+          79,
+          80,
+          84,
+          85,
+          88
+        ]
+      }
+    ],
+    "ambiguous_regions": [],
+    "score_gap": 2.65633702,
+    "status": "resolved",
+    "trace_id": "test_00"
+  },
+  "test_01": {
+    "alternatives": [
+      {
+        "score": 68.45773163,
+        "segments": [
+          {
+            "end": 2,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 0
+          },
+          {
+            "end": 7,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 4
+          },
+          {
+            "end": 10,
+            "motif_id": "M004",
+            "score": 2.61633702,
+            "signature": [
+              "hum",
+              "click"
+            ],
+            "start": 8
+          },
+          {
+            "end": 13,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 11
+          },
+          {
+            "end": 17,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 14
+          },
+          {
+            "end": 21,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 18
+          },
+          {
+            "end": 25,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 22
+          },
+          {
+            "end": 28,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 26
+          },
+          {
+            "end": 32,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 29
+          },
+          {
+            "end": 36,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 33
+          },
+          {
+            "end": 39,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 37
+          },
+          {
+            "end": 43,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 40
+          },
+          {
+            "end": 47,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 44
+          },
+          {
+            "end": 51,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 48
+          },
+          {
+            "end": 55,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 52
+          },
+          {
+            "end": 58,
+            "motif_id": "M004",
+            "score": 2.61633702,
+            "signature": [
+              "hum",
+              "click"
+            ],
+            "start": 56
+          },
+          {
+            "end": 62,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 60
+          },
+          {
+            "end": 67,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 64
+          },
+          {
+            "end": 71,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 68
+          },
+          {
+            "end": 75,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 73
+          },
+          {
+            "end": 78,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 76
+          },
+          {
+            "end": 82,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 80
+          },
+          {
+            "end": 86,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 83
+          },
+          {
+            "end": 89,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 87
+          }
+        ],
+        "skipped_token_indices": [
+          2,
+          3,
+          7,
+          10,
+          13,
+          17,
+          21,
+          25,
+          28,
+          32,
+          36,
+          39,
+          43,
+          47,
+          51,
+          55,
+          58,
+          59,
+          62,
+          63,
+          67,
+          71,
+          72,
+          75,
+          78,
+          79,
+          82,
+          86,
+          89,
+          90
+        ]
+      },
+      {
+        "score": 65.80139461,
+        "segments": [
+          {
+            "end": 2,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 0
+          },
+          {
+            "end": 7,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 4
+          },
+          {
+            "end": 10,
+            "motif_id": "M004",
+            "score": 2.61633702,
+            "signature": [
+              "hum",
+              "click"
+            ],
+            "start": 8
+          },
+          {
+            "end": 13,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 11
+          },
+          {
+            "end": 17,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 14
+          },
+          {
+            "end": 21,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 18
+          },
+          {
+            "end": 25,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 22
+          },
+          {
+            "end": 28,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 26
+          },
+          {
+            "end": 32,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 29
+          },
+          {
+            "end": 36,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 33
+          },
+          {
+            "end": 39,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 37
+          },
+          {
+            "end": 43,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 40
+          },
+          {
+            "end": 47,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 44
+          },
+          {
+            "end": 51,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 48
+          },
+          {
+            "end": 55,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 52
+          },
+          {
+            "end": 62,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 60
+          },
+          {
+            "end": 67,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 64
+          },
+          {
+            "end": 71,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 68
+          },
+          {
+            "end": 75,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 73
+          },
+          {
+            "end": 78,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 76
+          },
+          {
+            "end": 82,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 80
+          },
+          {
+            "end": 86,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 83
+          },
+          {
+            "end": 89,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 87
+          }
+        ],
+        "skipped_token_indices": [
+          2,
+          3,
+          7,
+          10,
+          13,
+          17,
+          21,
+          25,
+          28,
+          32,
+          36,
+          39,
+          43,
+          47,
+          51,
+          55,
+          56,
+          57,
+          58,
+          59,
+          62,
+          63,
+          67,
+          71,
+          72,
+          75,
+          78,
+          79,
+          82,
+          86,
+          89,
+          90
+        ]
+      },
+      {
+        "score": 65.80139461,
+        "segments": [
+          {
+            "end": 2,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 0
+          },
+          {
+            "end": 7,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 4
+          },
+          {
+            "end": 13,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 11
+          },
+          {
+            "end": 17,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 14
+          },
+          {
+            "end": 21,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 18
+          },
+          {
+            "end": 25,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 22
+          },
+          {
+            "end": 28,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 26
+          },
+          {
+            "end": 32,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 29
+          },
+          {
+            "end": 36,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 33
+          },
+          {
+            "end": 39,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 37
+          },
+          {
+            "end": 43,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 40
+          },
+          {
+            "end": 47,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 44
+          },
+          {
+            "end": 51,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 48
+          },
+          {
+            "end": 55,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 52
+          },
+          {
+            "end": 58,
+            "motif_id": "M004",
+            "score": 2.61633702,
+            "signature": [
+              "hum",
+              "click"
+            ],
+            "start": 56
+          },
+          {
+            "end": 62,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 60
+          },
+          {
+            "end": 67,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 64
+          },
+          {
+            "end": 71,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 68
+          },
+          {
+            "end": 75,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 73
+          },
+          {
+            "end": 78,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 76
+          },
+          {
+            "end": 82,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 80
+          },
+          {
+            "end": 86,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 83
+          },
+          {
+            "end": 89,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 87
+          }
+        ],
+        "skipped_token_indices": [
+          2,
+          3,
+          7,
+          8,
+          9,
+          10,
+          13,
+          17,
+          21,
+          25,
+          28,
+          32,
+          36,
+          39,
+          43,
+          47,
+          51,
+          55,
+          58,
+          59,
+          62,
+          63,
+          67,
+          71,
+          72,
+          75,
+          78,
+          79,
+          82,
+          86,
+          89,
+          90
+        ]
+      },
+      {
+        "score": 65.72593216,
+        "segments": [
+          {
+            "end": 7,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 4
+          },
+          {
+            "end": 10,
+            "motif_id": "M004",
+            "score": 2.61633702,
+            "signature": [
+              "hum",
+              "click"
+            ],
+            "start": 8
+          },
+          {
+            "end": 13,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 11
+          },
+          {
+            "end": 17,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 14
+          },
+          {
+            "end": 21,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 18
+          },
+          {
+            "end": 25,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 22
+          },
+          {
+            "end": 28,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 26
+          },
+          {
+            "end": 32,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 29
+          },
+          {
+            "end": 36,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 33
+          },
+          {
+            "end": 39,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 37
+          },
+          {
+            "end": 43,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 40
+          },
+          {
+            "end": 47,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 44
+          },
+          {
+            "end": 51,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 48
+          },
+          {
+            "end": 55,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 52
+          },
+          {
+            "end": 58,
+            "motif_id": "M004",
+            "score": 2.61633702,
+            "signature": [
+              "hum",
+              "click"
+            ],
+            "start": 56
+          },
+          {
+            "end": 62,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 60
+          },
+          {
+            "end": 67,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 64
+          },
+          {
+            "end": 71,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 68
+          },
+          {
+            "end": 75,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 73
+          },
+          {
+            "end": 78,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 76
+          },
+          {
+            "end": 82,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 80
+          },
+          {
+            "end": 86,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 83
+          },
+          {
+            "end": 89,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 87
+          }
+        ],
+        "skipped_token_indices": [
+          0,
+          1,
+          2,
+          3,
+          7,
+          10,
+          13,
+          17,
+          21,
+          25,
+          28,
+          32,
+          36,
+          39,
+          43,
+          47,
+          51,
+          55,
+          58,
+          59,
+          62,
+          63,
+          67,
+          71,
+          72,
+          75,
+          78,
+          79,
+          82,
+          86,
+          89,
+          90
+        ]
+      },
+      {
+        "score": 65.72593216,
+        "segments": [
+          {
+            "end": 2,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 0
+          },
+          {
+            "end": 7,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 4
+          },
+          {
+            "end": 10,
+            "motif_id": "M004",
+            "score": 2.61633702,
+            "signature": [
+              "hum",
+              "click"
+            ],
+            "start": 8
+          },
+          {
+            "end": 13,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 11
+          },
+          {
+            "end": 17,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 14
+          },
+          {
+            "end": 21,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 18
+          },
+          {
+            "end": 25,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 22
+          },
+          {
+            "end": 28,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 26
+          },
+          {
+            "end": 32,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 29
+          },
+          {
+            "end": 36,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 33
+          },
+          {
+            "end": 39,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 37
+          },
+          {
+            "end": 43,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 40
+          },
+          {
+            "end": 47,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 44
+          },
+          {
+            "end": 51,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 48
+          },
+          {
+            "end": 55,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 52
+          },
+          {
+            "end": 58,
+            "motif_id": "M004",
+            "score": 2.61633702,
+            "signature": [
+              "hum",
+              "click"
+            ],
+            "start": 56
+          },
+          {
+            "end": 62,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 60
+          },
+          {
+            "end": 67,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 64
+          },
+          {
+            "end": 71,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 68
+          },
+          {
+            "end": 75,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 73
+          },
+          {
+            "end": 78,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 76
+          },
+          {
+            "end": 86,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 83
+          },
+          {
+            "end": 89,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 87
+          }
+        ],
+        "skipped_token_indices": [
+          2,
+          3,
+          7,
+          10,
+          13,
+          17,
+          21,
+          25,
+          28,
+          32,
+          36,
+          39,
+          43,
+          47,
+          51,
+          55,
+          58,
+          59,
+          62,
+          63,
+          67,
+          71,
+          72,
+          75,
+          78,
+          79,
+          80,
+          81,
+          82,
+          86,
+          89,
+          90
+        ]
+      }
+    ],
+    "ambiguous_regions": [],
+    "score_gap": 2.65633702,
+    "status": "resolved",
+    "trace_id": "test_01"
+  },
+  "test_02": {
+    "alternatives": [
+      {
+        "score": 67.89717302,
+        "segments": [
+          {
+            "end": 3,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 0
+          },
+          {
+            "end": 6,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 4
+          },
+          {
+            "end": 9,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 7
+          },
+          {
+            "end": 13,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 11
+          },
+          {
+            "end": 16,
+            "motif_id": "M004",
+            "score": 2.61633702,
+            "signature": [
+              "hum",
+              "click"
+            ],
+            "start": 14
+          },
+          {
+            "end": 20,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 17
+          },
+          {
+            "end": 25,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 22
+          },
+          {
+            "end": 29,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 26
+          },
+          {
+            "end": 34,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 31
+          },
+          {
+            "end": 39,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 36
+          },
+          {
+            "end": 43,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 41
+          },
+          {
+            "end": 46,
+            "motif_id": "M004",
+            "score": 2.61633702,
+            "signature": [
+              "hum",
+              "click"
+            ],
+            "start": 44
+          },
+          {
+            "end": 50,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 47
+          },
+          {
+            "end": 53,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 51
+          },
+          {
+            "end": 56,
+            "motif_id": "M004",
+            "score": 2.61633702,
+            "signature": [
+              "hum",
+              "click"
+            ],
+            "start": 54
+          },
+          {
+            "end": 61,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 58
+          },
+          {
+            "end": 65,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 62
+          },
+          {
+            "end": 69,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 67
+          },
+          {
+            "end": 72,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 70
+          },
+          {
+            "end": 77,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 74
+          },
+          {
+            "end": 80,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 78
+          },
+          {
+            "end": 84,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 81
+          },
+          {
+            "end": 88,
+            "motif_id": "M004",
+            "score": 2.61633702,
+            "signature": [
+              "hum",
+              "click"
+            ],
+            "start": 86
+          },
+          {
+            "end": 92,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 89
+          }
+        ],
+        "skipped_token_indices": [
+          3,
+          6,
+          9,
+          10,
+          13,
+          16,
+          20,
+          21,
+          25,
+          29,
+          30,
+          34,
+          35,
+          39,
+          40,
+          43,
+          46,
+          50,
+          53,
+          56,
+          57,
+          61,
+          65,
+          66,
+          69,
+          72,
+          73,
+          77,
+          80,
+          84,
+          85,
+          88,
+          92,
+          93
+        ]
+      },
+      {
+        "score": 65.240836,
+        "segments": [
+          {
+            "end": 3,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 0
+          },
+          {
+            "end": 6,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 4
+          },
+          {
+            "end": 9,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 7
+          },
+          {
+            "end": 13,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 11
+          },
+          {
+            "end": 16,
+            "motif_id": "M004",
+            "score": 2.61633702,
+            "signature": [
+              "hum",
+              "click"
+            ],
+            "start": 14
+          },
+          {
+            "end": 20,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 17
+          },
+          {
+            "end": 25,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 22
+          },
+          {
+            "end": 29,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 26
+          },
+          {
+            "end": 34,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 31
+          },
+          {
+            "end": 39,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 36
+          },
+          {
+            "end": 43,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 41
+          },
+          {
+            "end": 46,
+            "motif_id": "M004",
+            "score": 2.61633702,
+            "signature": [
+              "hum",
+              "click"
+            ],
+            "start": 44
+          },
+          {
+            "end": 50,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 47
+          },
+          {
+            "end": 53,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 51
+          },
+          {
+            "end": 56,
+            "motif_id": "M004",
+            "score": 2.61633702,
+            "signature": [
+              "hum",
+              "click"
+            ],
+            "start": 54
+          },
+          {
+            "end": 61,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 58
+          },
+          {
+            "end": 65,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 62
+          },
+          {
+            "end": 69,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 67
+          },
+          {
+            "end": 72,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 70
+          },
+          {
+            "end": 77,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 74
+          },
+          {
+            "end": 80,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 78
+          },
+          {
+            "end": 84,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 81
+          },
+          {
+            "end": 92,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 89
+          }
+        ],
+        "skipped_token_indices": [
+          3,
+          6,
+          9,
+          10,
+          13,
+          16,
+          20,
+          21,
+          25,
+          29,
+          30,
+          34,
+          35,
+          39,
+          40,
+          43,
+          46,
+          50,
+          53,
+          56,
+          57,
+          61,
+          65,
+          66,
+          69,
+          72,
+          73,
+          77,
+          80,
+          84,
+          85,
+          86,
+          87,
+          88,
+          92,
+          93
+        ]
+      },
+      {
+        "score": 65.240836,
+        "segments": [
+          {
+            "end": 3,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 0
+          },
+          {
+            "end": 6,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 4
+          },
+          {
+            "end": 9,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 7
+          },
+          {
+            "end": 13,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 11
+          },
+          {
+            "end": 16,
+            "motif_id": "M004",
+            "score": 2.61633702,
+            "signature": [
+              "hum",
+              "click"
+            ],
+            "start": 14
+          },
+          {
+            "end": 20,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 17
+          },
+          {
+            "end": 25,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 22
+          },
+          {
+            "end": 29,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 26
+          },
+          {
+            "end": 34,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 31
+          },
+          {
+            "end": 39,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 36
+          },
+          {
+            "end": 43,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 41
+          },
+          {
+            "end": 46,
+            "motif_id": "M004",
+            "score": 2.61633702,
+            "signature": [
+              "hum",
+              "click"
+            ],
+            "start": 44
+          },
+          {
+            "end": 50,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 47
+          },
+          {
+            "end": 53,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 51
+          },
+          {
+            "end": 61,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 58
+          },
+          {
+            "end": 65,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 62
+          },
+          {
+            "end": 69,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 67
+          },
+          {
+            "end": 72,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 70
+          },
+          {
+            "end": 77,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 74
+          },
+          {
+            "end": 80,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 78
+          },
+          {
+            "end": 84,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 81
+          },
+          {
+            "end": 88,
+            "motif_id": "M004",
+            "score": 2.61633702,
+            "signature": [
+              "hum",
+              "click"
+            ],
+            "start": 86
+          },
+          {
+            "end": 92,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 89
+          }
+        ],
+        "skipped_token_indices": [
+          3,
+          6,
+          9,
+          10,
+          13,
+          16,
+          20,
+          21,
+          25,
+          29,
+          30,
+          34,
+          35,
+          39,
+          40,
+          43,
+          46,
+          50,
+          53,
+          54,
+          55,
+          56,
+          57,
+          61,
+          65,
+          66,
+          69,
+          72,
+          73,
+          77,
+          80,
+          84,
+          85,
+          88,
+          92,
+          93
+        ]
+      },
+      {
+        "score": 65.240836,
+        "segments": [
+          {
+            "end": 3,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 0
+          },
+          {
+            "end": 6,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 4
+          },
+          {
+            "end": 9,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 7
+          },
+          {
+            "end": 13,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 11
+          },
+          {
+            "end": 16,
+            "motif_id": "M004",
+            "score": 2.61633702,
+            "signature": [
+              "hum",
+              "click"
+            ],
+            "start": 14
+          },
+          {
+            "end": 20,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 17
+          },
+          {
+            "end": 25,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 22
+          },
+          {
+            "end": 29,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 26
+          },
+          {
+            "end": 34,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 31
+          },
+          {
+            "end": 39,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 36
+          },
+          {
+            "end": 43,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 41
+          },
+          {
+            "end": 50,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 47
+          },
+          {
+            "end": 53,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 51
+          },
+          {
+            "end": 56,
+            "motif_id": "M004",
+            "score": 2.61633702,
+            "signature": [
+              "hum",
+              "click"
+            ],
+            "start": 54
+          },
+          {
+            "end": 61,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 58
+          },
+          {
+            "end": 65,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 62
+          },
+          {
+            "end": 69,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 67
+          },
+          {
+            "end": 72,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 70
+          },
+          {
+            "end": 77,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 74
+          },
+          {
+            "end": 80,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 78
+          },
+          {
+            "end": 84,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 81
+          },
+          {
+            "end": 88,
+            "motif_id": "M004",
+            "score": 2.61633702,
+            "signature": [
+              "hum",
+              "click"
+            ],
+            "start": 86
+          },
+          {
+            "end": 92,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 89
+          }
+        ],
+        "skipped_token_indices": [
+          3,
+          6,
+          9,
+          10,
+          13,
+          16,
+          20,
+          21,
+          25,
+          29,
+          30,
+          34,
+          35,
+          39,
+          40,
+          43,
+          44,
+          45,
+          46,
+          50,
+          53,
+          56,
+          57,
+          61,
+          65,
+          66,
+          69,
+          72,
+          73,
+          77,
+          80,
+          84,
+          85,
+          88,
+          92,
+          93
+        ]
+      },
+      {
+        "score": 65.240836,
+        "segments": [
+          {
+            "end": 3,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 0
+          },
+          {
+            "end": 6,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 4
+          },
+          {
+            "end": 9,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 7
+          },
+          {
+            "end": 13,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 11
+          },
+          {
+            "end": 20,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 17
+          },
+          {
+            "end": 25,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 22
+          },
+          {
+            "end": 29,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 26
+          },
+          {
+            "end": 34,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 31
+          },
+          {
+            "end": 39,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 36
+          },
+          {
+            "end": 43,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 41
+          },
+          {
+            "end": 46,
+            "motif_id": "M004",
+            "score": 2.61633702,
+            "signature": [
+              "hum",
+              "click"
+            ],
+            "start": 44
+          },
+          {
+            "end": 50,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 47
+          },
+          {
+            "end": 53,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 51
+          },
+          {
+            "end": 56,
+            "motif_id": "M004",
+            "score": 2.61633702,
+            "signature": [
+              "hum",
+              "click"
+            ],
+            "start": 54
+          },
+          {
+            "end": 61,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 58
+          },
+          {
+            "end": 65,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 62
+          },
+          {
+            "end": 69,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 67
+          },
+          {
+            "end": 72,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 70
+          },
+          {
+            "end": 77,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 74
+          },
+          {
+            "end": 80,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 78
+          },
+          {
+            "end": 84,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 81
+          },
+          {
+            "end": 88,
+            "motif_id": "M004",
+            "score": 2.61633702,
+            "signature": [
+              "hum",
+              "click"
+            ],
+            "start": 86
+          },
+          {
+            "end": 92,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 89
+          }
+        ],
+        "skipped_token_indices": [
+          3,
+          6,
+          9,
+          10,
+          13,
+          14,
+          15,
+          16,
+          20,
+          21,
+          25,
+          29,
+          30,
+          34,
+          35,
+          39,
+          40,
+          43,
+          46,
+          50,
+          53,
+          56,
+          57,
+          61,
+          65,
+          66,
+          69,
+          72,
+          73,
+          77,
+          80,
+          84,
+          85,
+          88,
+          92,
+          93
+        ]
+      }
+    ],
+    "ambiguous_regions": [],
+    "score_gap": 2.65633702,
+    "status": "resolved",
+    "trace_id": "test_02"
+  },
+  "test_03": {
+    "alternatives": [
+      {
+        "score": 69.68740699,
+        "segments": [
+          {
+            "end": 3,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 0
+          },
+          {
+            "end": 8,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 5
+          },
+          {
+            "end": 13,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 10
+          },
+          {
+            "end": 18,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 15
+          },
+          {
+            "end": 21,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 19
+          },
+          {
+            "end": 26,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 23
+          },
+          {
+            "end": 30,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 28
+          },
+          {
+            "end": 33,
+            "motif_id": "M004",
+            "score": 2.61633702,
+            "signature": [
+              "hum",
+              "click"
+            ],
+            "start": 31
+          },
+          {
+            "end": 38,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 35
+          },
+          {
+            "end": 43,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 40
+          },
+          {
+            "end": 47,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 44
+          },
+          {
+            "end": 51,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 48
+          },
+          {
+            "end": 54,
+            "motif_id": "M004",
+            "score": 2.61633702,
+            "signature": [
+              "hum",
+              "click"
+            ],
+            "start": 52
+          },
+          {
+            "end": 58,
+            "motif_id": "M004",
+            "score": 2.61633702,
+            "signature": [
+              "hum",
+              "click"
+            ],
+            "start": 56
+          },
+          {
+            "end": 62,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 59
+          },
+          {
+            "end": 65,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 63
+          },
+          {
+            "end": 68,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 66
+          },
+          {
+            "end": 73,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 70
+          },
+          {
+            "end": 78,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 75
+          },
+          {
+            "end": 82,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 79
+          },
+          {
+            "end": 86,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 83
+          },
+          {
+            "end": 90,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 87
+          },
+          {
+            "end": 95,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 92
+          },
+          {
+            "end": 100,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 97
+          }
+        ],
+        "skipped_token_indices": [
+          3,
+          4,
+          8,
+          9,
+          13,
+          14,
+          18,
+          21,
+          22,
+          26,
+          27,
+          30,
+          33,
+          34,
+          38,
+          39,
+          43,
+          47,
+          51,
+          54,
+          55,
+          58,
+          62,
+          65,
+          68,
+          69,
+          73,
+          74,
+          78,
+          82,
+          86,
+          90,
+          91,
+          95,
+          96,
+          100,
+          101
+        ]
+      },
+      {
+        "score": 67.03106997,
+        "segments": [
+          {
+            "end": 3,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 0
+          },
+          {
+            "end": 8,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 5
+          },
+          {
+            "end": 13,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 10
+          },
+          {
+            "end": 18,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 15
+          },
+          {
+            "end": 21,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 19
+          },
+          {
+            "end": 26,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 23
+          },
+          {
+            "end": 30,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 28
+          },
+          {
+            "end": 33,
+            "motif_id": "M004",
+            "score": 2.61633702,
+            "signature": [
+              "hum",
+              "click"
+            ],
+            "start": 31
+          },
+          {
+            "end": 38,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 35
+          },
+          {
+            "end": 43,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 40
+          },
+          {
+            "end": 47,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 44
+          },
+          {
+            "end": 51,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 48
+          },
+          {
+            "end": 54,
+            "motif_id": "M004",
+            "score": 2.61633702,
+            "signature": [
+              "hum",
+              "click"
+            ],
+            "start": 52
+          },
+          {
+            "end": 62,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 59
+          },
+          {
+            "end": 65,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 63
+          },
+          {
+            "end": 68,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 66
+          },
+          {
+            "end": 73,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 70
+          },
+          {
+            "end": 78,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 75
+          },
+          {
+            "end": 82,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 79
+          },
+          {
+            "end": 86,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 83
+          },
+          {
+            "end": 90,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 87
+          },
+          {
+            "end": 95,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 92
+          },
+          {
+            "end": 100,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 97
+          }
+        ],
+        "skipped_token_indices": [
+          3,
+          4,
+          8,
+          9,
+          13,
+          14,
+          18,
+          21,
+          22,
+          26,
+          27,
+          30,
+          33,
+          34,
+          38,
+          39,
+          43,
+          47,
+          51,
+          54,
+          55,
+          56,
+          57,
+          58,
+          62,
+          65,
+          68,
+          69,
+          73,
+          74,
+          78,
+          82,
+          86,
+          90,
+          91,
+          95,
+          96,
+          100,
+          101
+        ]
+      },
+      {
+        "score": 67.03106997,
+        "segments": [
+          {
+            "end": 3,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 0
+          },
+          {
+            "end": 8,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 5
+          },
+          {
+            "end": 13,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 10
+          },
+          {
+            "end": 18,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 15
+          },
+          {
+            "end": 21,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 19
+          },
+          {
+            "end": 26,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 23
+          },
+          {
+            "end": 30,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 28
+          },
+          {
+            "end": 33,
+            "motif_id": "M004",
+            "score": 2.61633702,
+            "signature": [
+              "hum",
+              "click"
+            ],
+            "start": 31
+          },
+          {
+            "end": 38,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 35
+          },
+          {
+            "end": 43,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 40
+          },
+          {
+            "end": 47,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 44
+          },
+          {
+            "end": 51,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 48
+          },
+          {
+            "end": 58,
+            "motif_id": "M004",
+            "score": 2.61633702,
+            "signature": [
+              "hum",
+              "click"
+            ],
+            "start": 56
+          },
+          {
+            "end": 62,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 59
+          },
+          {
+            "end": 65,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 63
+          },
+          {
+            "end": 68,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 66
+          },
+          {
+            "end": 73,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 70
+          },
+          {
+            "end": 78,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 75
+          },
+          {
+            "end": 82,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 79
+          },
+          {
+            "end": 86,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 83
+          },
+          {
+            "end": 90,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 87
+          },
+          {
+            "end": 95,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 92
+          },
+          {
+            "end": 100,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 97
+          }
+        ],
+        "skipped_token_indices": [
+          3,
+          4,
+          8,
+          9,
+          13,
+          14,
+          18,
+          21,
+          22,
+          26,
+          27,
+          30,
+          33,
+          34,
+          38,
+          39,
+          43,
+          47,
+          51,
+          52,
+          53,
+          54,
+          55,
+          58,
+          62,
+          65,
+          68,
+          69,
+          73,
+          74,
+          78,
+          82,
+          86,
+          90,
+          91,
+          95,
+          96,
+          100,
+          101
+        ]
+      },
+      {
+        "score": 67.03106997,
+        "segments": [
+          {
+            "end": 3,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 0
+          },
+          {
+            "end": 8,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 5
+          },
+          {
+            "end": 13,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 10
+          },
+          {
+            "end": 18,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 15
+          },
+          {
+            "end": 21,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 19
+          },
+          {
+            "end": 26,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 23
+          },
+          {
+            "end": 30,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 28
+          },
+          {
+            "end": 38,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 35
+          },
+          {
+            "end": 43,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 40
+          },
+          {
+            "end": 47,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 44
+          },
+          {
+            "end": 51,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 48
+          },
+          {
+            "end": 54,
+            "motif_id": "M004",
+            "score": 2.61633702,
+            "signature": [
+              "hum",
+              "click"
+            ],
+            "start": 52
+          },
+          {
+            "end": 58,
+            "motif_id": "M004",
+            "score": 2.61633702,
+            "signature": [
+              "hum",
+              "click"
+            ],
+            "start": 56
+          },
+          {
+            "end": 62,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 59
+          },
+          {
+            "end": 65,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 63
+          },
+          {
+            "end": 68,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 66
+          },
+          {
+            "end": 73,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 70
+          },
+          {
+            "end": 78,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 75
+          },
+          {
+            "end": 82,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 79
+          },
+          {
+            "end": 86,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 83
+          },
+          {
+            "end": 90,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 87
+          },
+          {
+            "end": 95,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 92
+          },
+          {
+            "end": 100,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 97
+          }
+        ],
+        "skipped_token_indices": [
+          3,
+          4,
+          8,
+          9,
+          13,
+          14,
+          18,
+          21,
+          22,
+          26,
+          27,
+          30,
+          31,
+          32,
+          33,
+          34,
+          38,
+          39,
+          43,
+          47,
+          51,
+          54,
+          55,
+          58,
+          62,
+          65,
+          68,
+          69,
+          73,
+          74,
+          78,
+          82,
+          86,
+          90,
+          91,
+          95,
+          96,
+          100,
+          101
+        ]
+      },
+      {
+        "score": 66.95560752,
+        "segments": [
+          {
+            "end": 3,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 0
+          },
+          {
+            "end": 8,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 5
+          },
+          {
+            "end": 13,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 10
+          },
+          {
+            "end": 18,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 15
+          },
+          {
+            "end": 21,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 19
+          },
+          {
+            "end": 26,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 23
+          },
+          {
+            "end": 30,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 28
+          },
+          {
+            "end": 33,
+            "motif_id": "M004",
+            "score": 2.61633702,
+            "signature": [
+              "hum",
+              "click"
+            ],
+            "start": 31
+          },
+          {
+            "end": 38,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 35
+          },
+          {
+            "end": 43,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 40
+          },
+          {
+            "end": 47,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 44
+          },
+          {
+            "end": 51,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 48
+          },
+          {
+            "end": 54,
+            "motif_id": "M004",
+            "score": 2.61633702,
+            "signature": [
+              "hum",
+              "click"
+            ],
+            "start": 52
+          },
+          {
+            "end": 58,
+            "motif_id": "M004",
+            "score": 2.61633702,
+            "signature": [
+              "hum",
+              "click"
+            ],
+            "start": 56
+          },
+          {
+            "end": 62,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 59
+          },
+          {
+            "end": 65,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 63
+          },
+          {
+            "end": 73,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 70
+          },
+          {
+            "end": 78,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 75
+          },
+          {
+            "end": 82,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 79
+          },
+          {
+            "end": 86,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 83
+          },
+          {
+            "end": 90,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 87
+          },
+          {
+            "end": 95,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 92
+          },
+          {
+            "end": 100,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 97
+          }
+        ],
+        "skipped_token_indices": [
+          3,
+          4,
+          8,
+          9,
+          13,
+          14,
+          18,
+          21,
+          22,
+          26,
+          27,
+          30,
+          33,
+          34,
+          38,
+          39,
+          43,
+          47,
+          51,
+          54,
+          55,
+          58,
+          62,
+          65,
+          66,
+          67,
+          68,
+          69,
+          73,
+          74,
+          78,
+          82,
+          86,
+          90,
+          91,
+          95,
+          96,
+          100,
+          101
+        ]
+      }
+    ],
+    "ambiguous_regions": [],
+    "score_gap": 2.65633702,
+    "status": "resolved",
+    "trace_id": "test_03"
+  },
+  "test_04": {
+    "alternatives": [
+      {
+        "score": 67.45193101,
+        "segments": [
+          {
+            "end": 2,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 0
+          },
+          {
+            "end": 6,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 3
+          },
+          {
+            "end": 10,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 7
+          },
+          {
+            "end": 14,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 11
+          },
+          {
+            "end": 18,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 16
+          },
+          {
+            "end": 23,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 20
+          },
+          {
+            "end": 27,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 25
+          },
+          {
+            "end": 31,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 28
+          },
+          {
+            "end": 34,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 32
+          },
+          {
+            "end": 38,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 35
+          },
+          {
+            "end": 41,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 39
+          },
+          {
+            "end": 44,
+            "motif_id": "M004",
+            "score": 2.61633702,
+            "signature": [
+              "hum",
+              "click"
+            ],
+            "start": 42
+          },
+          {
+            "end": 49,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 46
+          },
+          {
+            "end": 53,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 50
+          },
+          {
+            "end": 56,
+            "motif_id": "M004",
+            "score": 2.61633702,
+            "signature": [
+              "hum",
+              "click"
+            ],
+            "start": 54
+          },
+          {
+            "end": 59,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 57
+          },
+          {
+            "end": 62,
+            "motif_id": "M004",
+            "score": 2.61633702,
+            "signature": [
+              "hum",
+              "click"
+            ],
+            "start": 60
+          },
+          {
+            "end": 65,
+            "motif_id": "M004",
+            "score": 2.61633702,
+            "signature": [
+              "hum",
+              "click"
+            ],
+            "start": 63
+          },
+          {
+            "end": 69,
+            "motif_id": "M004",
+            "score": 2.61633702,
+            "signature": [
+              "hum",
+              "click"
+            ],
+            "start": 67
+          },
+          {
+            "end": 73,
+            "motif_id": "M004",
+            "score": 2.61633702,
+            "signature": [
+              "hum",
+              "click"
+            ],
+            "start": 71
+          },
+          {
+            "end": 77,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 74
+          },
+          {
+            "end": 80,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 78
+          },
+          {
+            "end": 84,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 81
+          },
+          {
+            "end": 88,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 85
+          }
+        ],
+        "skipped_token_indices": [
+          2,
+          6,
+          10,
+          14,
+          15,
+          18,
+          19,
+          23,
+          24,
+          27,
+          31,
+          34,
+          38,
+          41,
+          44,
+          45,
+          49,
+          53,
+          56,
+          59,
+          62,
+          65,
+          66,
+          69,
+          70,
+          73,
+          77,
+          80,
+          84,
+          88
+        ]
+      },
+      {
+        "score": 64.79559399,
+        "segments": [
+          {
+            "end": 2,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 0
+          },
+          {
+            "end": 6,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 3
+          },
+          {
+            "end": 10,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 7
+          },
+          {
+            "end": 14,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 11
+          },
+          {
+            "end": 18,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 16
+          },
+          {
+            "end": 23,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 20
+          },
+          {
+            "end": 27,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 25
+          },
+          {
+            "end": 31,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 28
+          },
+          {
+            "end": 34,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 32
+          },
+          {
+            "end": 38,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 35
+          },
+          {
+            "end": 41,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 39
+          },
+          {
+            "end": 44,
+            "motif_id": "M004",
+            "score": 2.61633702,
+            "signature": [
+              "hum",
+              "click"
+            ],
+            "start": 42
+          },
+          {
+            "end": 49,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 46
+          },
+          {
+            "end": 53,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 50
+          },
+          {
+            "end": 56,
+            "motif_id": "M004",
+            "score": 2.61633702,
+            "signature": [
+              "hum",
+              "click"
+            ],
+            "start": 54
+          },
+          {
+            "end": 59,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 57
+          },
+          {
+            "end": 62,
+            "motif_id": "M004",
+            "score": 2.61633702,
+            "signature": [
+              "hum",
+              "click"
+            ],
+            "start": 60
+          },
+          {
+            "end": 65,
+            "motif_id": "M004",
+            "score": 2.61633702,
+            "signature": [
+              "hum",
+              "click"
+            ],
+            "start": 63
+          },
+          {
+            "end": 69,
+            "motif_id": "M004",
+            "score": 2.61633702,
+            "signature": [
+              "hum",
+              "click"
+            ],
+            "start": 67
+          },
+          {
+            "end": 77,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 74
+          },
+          {
+            "end": 80,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 78
+          },
+          {
+            "end": 84,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 81
+          },
+          {
+            "end": 88,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 85
+          }
+        ],
+        "skipped_token_indices": [
+          2,
+          6,
+          10,
+          14,
+          15,
+          18,
+          19,
+          23,
+          24,
+          27,
+          31,
+          34,
+          38,
+          41,
+          44,
+          45,
+          49,
+          53,
+          56,
+          59,
+          62,
+          65,
+          66,
+          69,
+          70,
+          71,
+          72,
+          73,
+          77,
+          80,
+          84,
+          88
+        ]
+      },
+      {
+        "score": 64.79559399,
+        "segments": [
+          {
+            "end": 2,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 0
+          },
+          {
+            "end": 6,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 3
+          },
+          {
+            "end": 10,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 7
+          },
+          {
+            "end": 14,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 11
+          },
+          {
+            "end": 18,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 16
+          },
+          {
+            "end": 23,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 20
+          },
+          {
+            "end": 27,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 25
+          },
+          {
+            "end": 31,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 28
+          },
+          {
+            "end": 34,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 32
+          },
+          {
+            "end": 38,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 35
+          },
+          {
+            "end": 41,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 39
+          },
+          {
+            "end": 44,
+            "motif_id": "M004",
+            "score": 2.61633702,
+            "signature": [
+              "hum",
+              "click"
+            ],
+            "start": 42
+          },
+          {
+            "end": 49,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 46
+          },
+          {
+            "end": 53,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 50
+          },
+          {
+            "end": 56,
+            "motif_id": "M004",
+            "score": 2.61633702,
+            "signature": [
+              "hum",
+              "click"
+            ],
+            "start": 54
+          },
+          {
+            "end": 59,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 57
+          },
+          {
+            "end": 62,
+            "motif_id": "M004",
+            "score": 2.61633702,
+            "signature": [
+              "hum",
+              "click"
+            ],
+            "start": 60
+          },
+          {
+            "end": 65,
+            "motif_id": "M004",
+            "score": 2.61633702,
+            "signature": [
+              "hum",
+              "click"
+            ],
+            "start": 63
+          },
+          {
+            "end": 73,
+            "motif_id": "M004",
+            "score": 2.61633702,
+            "signature": [
+              "hum",
+              "click"
+            ],
+            "start": 71
+          },
+          {
+            "end": 77,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 74
+          },
+          {
+            "end": 80,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 78
+          },
+          {
+            "end": 84,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 81
+          },
+          {
+            "end": 88,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 85
+          }
+        ],
+        "skipped_token_indices": [
+          2,
+          6,
+          10,
+          14,
+          15,
+          18,
+          19,
+          23,
+          24,
+          27,
+          31,
+          34,
+          38,
+          41,
+          44,
+          45,
+          49,
+          53,
+          56,
+          59,
+          62,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          73,
+          77,
+          80,
+          84,
+          88
+        ]
+      },
+      {
+        "score": 64.79559399,
+        "segments": [
+          {
+            "end": 2,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 0
+          },
+          {
+            "end": 6,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 3
+          },
+          {
+            "end": 10,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 7
+          },
+          {
+            "end": 14,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 11
+          },
+          {
+            "end": 18,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 16
+          },
+          {
+            "end": 23,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 20
+          },
+          {
+            "end": 27,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 25
+          },
+          {
+            "end": 31,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 28
+          },
+          {
+            "end": 34,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 32
+          },
+          {
+            "end": 38,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 35
+          },
+          {
+            "end": 41,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 39
+          },
+          {
+            "end": 44,
+            "motif_id": "M004",
+            "score": 2.61633702,
+            "signature": [
+              "hum",
+              "click"
+            ],
+            "start": 42
+          },
+          {
+            "end": 49,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 46
+          },
+          {
+            "end": 53,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 50
+          },
+          {
+            "end": 56,
+            "motif_id": "M004",
+            "score": 2.61633702,
+            "signature": [
+              "hum",
+              "click"
+            ],
+            "start": 54
+          },
+          {
+            "end": 59,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 57
+          },
+          {
+            "end": 62,
+            "motif_id": "M004",
+            "score": 2.61633702,
+            "signature": [
+              "hum",
+              "click"
+            ],
+            "start": 60
+          },
+          {
+            "end": 69,
+            "motif_id": "M004",
+            "score": 2.61633702,
+            "signature": [
+              "hum",
+              "click"
+            ],
+            "start": 67
+          },
+          {
+            "end": 73,
+            "motif_id": "M004",
+            "score": 2.61633702,
+            "signature": [
+              "hum",
+              "click"
+            ],
+            "start": 71
+          },
+          {
+            "end": 77,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 74
+          },
+          {
+            "end": 80,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 78
+          },
+          {
+            "end": 84,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 81
+          },
+          {
+            "end": 88,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 85
+          }
+        ],
+        "skipped_token_indices": [
+          2,
+          6,
+          10,
+          14,
+          15,
+          18,
+          19,
+          23,
+          24,
+          27,
+          31,
+          34,
+          38,
+          41,
+          44,
+          45,
+          49,
+          53,
+          56,
+          59,
+          62,
+          63,
+          64,
+          65,
+          66,
+          69,
+          70,
+          73,
+          77,
+          80,
+          84,
+          88
+        ]
+      },
+      {
+        "score": 64.79559399,
+        "segments": [
+          {
+            "end": 2,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 0
+          },
+          {
+            "end": 6,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 3
+          },
+          {
+            "end": 10,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 7
+          },
+          {
+            "end": 14,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 11
+          },
+          {
+            "end": 18,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 16
+          },
+          {
+            "end": 23,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 20
+          },
+          {
+            "end": 27,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 25
+          },
+          {
+            "end": 31,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 28
+          },
+          {
+            "end": 34,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 32
+          },
+          {
+            "end": 38,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 35
+          },
+          {
+            "end": 41,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 39
+          },
+          {
+            "end": 44,
+            "motif_id": "M004",
+            "score": 2.61633702,
+            "signature": [
+              "hum",
+              "click"
+            ],
+            "start": 42
+          },
+          {
+            "end": 49,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 46
+          },
+          {
+            "end": 53,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 50
+          },
+          {
+            "end": 56,
+            "motif_id": "M004",
+            "score": 2.61633702,
+            "signature": [
+              "hum",
+              "click"
+            ],
+            "start": 54
+          },
+          {
+            "end": 59,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 57
+          },
+          {
+            "end": 65,
+            "motif_id": "M004",
+            "score": 2.61633702,
+            "signature": [
+              "hum",
+              "click"
+            ],
+            "start": 63
+          },
+          {
+            "end": 69,
+            "motif_id": "M004",
+            "score": 2.61633702,
+            "signature": [
+              "hum",
+              "click"
+            ],
+            "start": 67
+          },
+          {
+            "end": 73,
+            "motif_id": "M004",
+            "score": 2.61633702,
+            "signature": [
+              "hum",
+              "click"
+            ],
+            "start": 71
+          },
+          {
+            "end": 77,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 74
+          },
+          {
+            "end": 80,
+            "motif_id": "M003",
+            "score": 2.69179947,
+            "signature": [
+              "ramp",
+              "tick"
+            ],
+            "start": 78
+          },
+          {
+            "end": 84,
+            "motif_id": "M001",
+            "score": 3.05122211,
+            "signature": [
+              "pulse",
+              "bend",
+              "tail"
+            ],
+            "start": 81
+          },
+          {
+            "end": 88,
+            "motif_id": "M002",
+            "score": 3.04377488,
+            "signature": [
+              "pulse",
+              "edge",
+              "tail"
+            ],
+            "start": 85
+          }
+        ],
+        "skipped_token_indices": [
+          2,
+          6,
+          10,
+          14,
+          15,
+          18,
+          19,
+          23,
+          24,
+          27,
+          31,
+          34,
+          38,
+          41,
+          44,
+          45,
+          49,
+          53,
+          56,
+          59,
+          60,
+          61,
+          62,
+          65,
+          66,
+          69,
+          70,
+          73,
+          77,
+          80,
+          84,
+          88
+        ]
+      }
+    ],
+    "ambiguous_regions": [],
+    "score_gap": 2.65633702,
+    "status": "resolved",
+    "trace_id": "test_04"
+  }
+}

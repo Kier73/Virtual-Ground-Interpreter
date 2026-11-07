@@ -1,0 +1,13 @@
+starting_object,symmetry_or_operator,candidate_representation,preserved_structure,primary_caution,planned_build
+waveform,translation on R,Fourier-Plancherel,unitary inner product and energy,Fourier magnitude discards phase; transient locality may be lost,17
+nonstationary waveform,translation plus dilation,Wavelet or multiresolution,scale-local energy under admissibility/frame conditions,continuous coefficients may be redundant,17
+event intervals,positive affine time group,Fourier plus Mellin or affine-group wavelet,translation and scale relationships,nonlinear drift is not a global affine symmetry,17
+event graph,node relabeling and graph Laplacian,Graph Fourier,orthogonal expansion and Laplacian spectrum,spectra are not complete graph identifiers,16-17
+observer responses,probe action and response metric,Gram matrix kernel pullback metric,pairwise geometry under shared unitary basis changes,observer metrics may differ,20
+paths,parallel transport and holonomy,group-valued holonomy representation,conjugacy class and trace under gauge changes,depends on connection and path,20+
+quaternion orientation,SU(2) left and right actions,Peter-Weyl Wigner-D functions,nonabelian representation labels and Casimir spectrum,SO(3) quotient loses antipodal distinction for half-integer representations,18
+Hopf fibration,S1 fibre action,Fourier fibre modes plus base harmonics,fibre phase and base angular structure,base-only view removes fibre data,18
+codonic algebra,invertible subgroup or semigroup,group Fourier or Koopman/operator representation,composition law and invariant subspaces,not all codons are invertible,19
+RNS channels,finite cyclic group,NTT where primitive roots exist,exact modular transform arithmetic,RNS basis alone does not guarantee roots of required order,19
+state dynamics,state map T,Koopman operator on observables,linear representation of nonlinear evolution,unitarity requires suitable dynamics and measure,19-20
+weight space,architecture-specific parameter symmetry,quotient geometry and equivariant representation,function-level equivalence under parameter orbits,raw Euclidean weight distance can be misleading,20+

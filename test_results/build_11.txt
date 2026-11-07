@@ -1,0 +1,22 @@
+test_all_windows_time_monotone (test_build_11.Build11DataTests.test_all_windows_time_monotone) ... ok
+test_codon_aliases_match (test_build_11.Build11DataTests.test_codon_aliases_match) ... ok
+test_descriptive_groups_have_two_windows_each (test_build_11.Build11DataTests.test_descriptive_groups_have_two_windows_each) ... ok
+test_division_zero_rejected (test_build_11.Build11DataTests.test_division_zero_rejected) ... ok
+test_excerpt_rows_and_windows (test_build_11.Build11DataTests.test_excerpt_rows_and_windows) ... ok
+test_feature_values_finite (test_build_11.Build11DataTests.test_feature_values_finite) ... ok
+test_observer_interval_constants (test_build_11.Build11DataTests.test_observer_interval_constants) ... ok
+test_rdm_is_symmetric_and_zero_diagonal (test_build_11.Build11DataTests.test_rdm_is_symmetric_and_zero_diagonal) ... ok
+test_sensor_near_limit_flags_only_post_windows (test_build_11.Build11DataTests.test_sensor_near_limit_flags_only_post_windows) ... ok
+test_source_line_numbers_preserved (test_build_11.Build11DataTests.test_source_line_numbers_preserved) ... ok
+test_unit_conversion_distance_invariant (test_build_11.Build11DataTests.test_unit_conversion_distance_invariant) ... ok
+test_window_gaps_not_concatenated (test_build_11.Build11DataTests.test_window_gaps_not_concatenated) ... ok
+test_read_16bit_mono (test_build_11.WavToolTests.test_read_16bit_mono) ... ok
+test_read_24bit_stereo (test_build_11.WavToolTests.test_read_24bit_stereo) ... ok
+test_rt60_positive_for_decay (test_build_11.WavToolTests.test_rt60_positive_for_decay) ... ok
+test_rt60_requires_valid_sample_rate (test_build_11.WavToolTests.test_rt60_requires_valid_sample_rate) ... ok
+test_rt60_returns_none_for_silence (test_build_11.WavToolTests.test_rt60_returns_none_for_silence) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 0.046s
+
+OK

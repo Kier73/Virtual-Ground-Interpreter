@@ -1,0 +1,95 @@
+{
+  "schema_name": "VL Paired Sensor Response Codons",
+  "schema_version": "0.1-draft",
+  "status": "descriptive algebraic mapping; not dispatched by a Virtual Layer VM in this build",
+  "operations": [
+    {
+      "codon": "ld",
+      "meaning": "load channel sample/window",
+      "type": "Signal[N] -> Window[N]"
+    },
+    {
+      "codon": "hp",
+      "meaning": "high-pass / baseline removal",
+      "type": "Signal[N] -> Signal[N]",
+      "note": "The published TAPS release is already preprocessed; Build 13 does not apply a second high-pass filter."
+    },
+    {
+      "codon": "mx",
+      "meaning": "multiply / window taper",
+      "type": "Vector x Vector -> Vector"
+    },
+    {
+      "codon": "ad",
+      "meaning": "sum / accumulate energy",
+      "type": "Vector -> Scalar"
+    },
+    {
+      "codon": "sq",
+      "meaning": "square",
+      "type": "Scalar -> Scalar"
+    },
+    {
+      "codon": "rt",
+      "meaning": "square root",
+      "type": "Scalar -> Scalar"
+    },
+    {
+      "codon": "fft",
+      "meaning": "frequency transform",
+      "type": "Signal[N] -> Spectrum[N]"
+    },
+    {
+      "codon": "acf",
+      "meaning": "autocorrelation / periodicity probe",
+      "type": "Signal[N] -> LagProfile"
+    },
+    {
+      "codon": "cc",
+      "meaning": "cross-correlation for residual alignment diagnostics",
+      "type": "Signal[N] x Signal[M] -> LagScore"
+    },
+    {
+      "codon": "bn",
+      "meaning": "band-energy integration",
+      "type": "Spectrum x FrequencyBand -> Scalar"
+    },
+    {
+      "codon": "nr",
+      "meaning": "robust feature normalization",
+      "type": "FeatureSet -> FeatureSet"
+    },
+    {
+      "codon": "dp2",
+      "meaning": "dot product / distance primitive",
+      "type": "Vector x Vector -> Scalar"
+    },
+    {
+      "codon": "rd",
+      "meaning": "pairwise representational distance",
+      "type": "FeatureMatrix -> RDM"
+    },
+    {
+      "codon": "rk",
+      "meaning": "rank transform",
+      "type": "ScalarVector -> RankVector"
+    },
+    {
+      "codon": "prm",
+      "meaning": "within-speaker pairing permutation control",
+      "type": "PairedFeatureSets -> NullDistribution"
+    },
+    {
+      "codon": "bt",
+      "meaning": "speaker-level bootstrap",
+      "type": "SpeakerStatistics -> Interval"
+    }
+  ],
+  "important_distinctions": [
+    "Throat and acoustic amplitudes are not assumed to share physical units.",
+    "Common-band features are limited to 80-3500 Hz, below the throat sensor original 4 kHz Nyquist.",
+    "The throat WAV is upsampled from 8 kHz to 16 kHz in the release; this does not create physical information above 4 kHz.",
+    "The 4000-7800 Hz energy share is acoustic-only, marked valid only when the original channel bandwidth supports it, and excluded from cross-modal RDMs.",
+    "Alignment estimates are diagnostics only; the final TAPS release already has a global alignment shift applied."
+  ]
+}

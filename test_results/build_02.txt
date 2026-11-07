@@ -1,0 +1,15 @@
+test_area_preserving_observer_preserves_phase (test_vl_shape_dynamics.ShapeDynamicsTests.test_area_preserving_observer_preserves_phase) ... ok
+test_closed_ellipse_phase_converges_to_signed_area (test_vl_shape_dynamics.ShapeDynamicsTests.test_closed_ellipse_phase_converges_to_signed_area) ... ok
+test_intention_selects_different_notions_of_distance (test_vl_shape_dynamics.ShapeDynamicsTests.test_intention_selects_different_notions_of_distance) ... ok
+test_noise_filter_also_suppresses_same_frequency_signal (test_vl_shape_dynamics.ShapeDynamicsTests.test_noise_filter_also_suppresses_same_frequency_signal) ... ok
+test_observer_scaling_changes_observed_phase (test_vl_shape_dynamics.ShapeDynamicsTests.test_observer_scaling_changes_observed_phase) ... ok
+test_rank_deficient_observer_collapses_area (test_vl_shape_dynamics.ShapeDynamicsTests.test_rank_deficient_observer_collapses_area) ... ok
+test_reversing_path_reverses_phase (test_vl_shape_dynamics.ShapeDynamicsTests.test_reversing_path_reverses_phase) ... ok
+test_stable_cycle_decay_rate_recovered (test_vl_shape_dynamics.ShapeDynamicsTests.test_stable_cycle_decay_rate_recovered) ... ok
+test_time_must_increase (test_vl_shape_dynamics.ShapeDynamicsTests.test_time_must_increase) ... ok
+test_time_reparameterization_preserves_geometric_phase (test_vl_shape_dynamics.ShapeDynamicsTests.test_time_reparameterization_preserves_geometric_phase) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.041s
+
+OK

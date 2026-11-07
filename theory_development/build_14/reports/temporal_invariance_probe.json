@@ -1,0 +1,11 @@
+{
+  "test_type": "mathematical_property_check_on_fixed_event_sequence",
+  "data_provenance": "constructed_event_fixture_not_TAPS",
+  "time_origin_invariance_max_abs_error": 3.3306690738754696e-16,
+  "clock_scale_shape_invariance_max_abs_error": 1.1102230246251565e-16,
+  "clock_scale_rate_relation_abs_error": 2.7755575615628914e-17,
+  "clock_scale": 3.5,
+  "expected_rate_after_scale_hz": 0.2380952380952381,
+  "observed_rate_after_scale_hz": 0.23809523809523808,
+  "status": "passed"
+}

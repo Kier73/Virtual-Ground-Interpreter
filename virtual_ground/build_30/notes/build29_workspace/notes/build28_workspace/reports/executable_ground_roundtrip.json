@@ -1,0 +1,71 @@
+{
+  "examples": [
+    {
+      "result": {
+        "evidence_scope": "exact recurrent token motif; finite training checkpoints",
+        "next_state": [
+          49,
+          51
+        ],
+        "operation_id": "M001",
+        "status": "inductive_candidate"
+      },
+      "signature": [
+        "pulse",
+        "bend",
+        "tail"
+      ]
+    },
+    {
+      "result": {
+        "evidence_scope": "exact recurrent token motif; finite training checkpoints",
+        "next_state": [
+          51,
+          50
+        ],
+        "operation_id": "M002",
+        "status": "inductive_candidate"
+      },
+      "signature": [
+        "pulse",
+        "edge",
+        "tail"
+      ]
+    },
+    {
+      "result": {
+        "evidence_scope": "exact recurrent token motif; finite training checkpoints",
+        "next_state": [
+          50,
+          52
+        ],
+        "operation_id": "M003",
+        "status": "inductive_candidate"
+      },
+      "signature": [
+        "ramp",
+        "tick"
+      ]
+    },
+    {
+      "result": {
+        "evidence_scope": "exact recurrent token motif; finite training checkpoints",
+        "next_state": [
+          50,
+          50
+        ],
+        "operation_id": "M004",
+        "status": "recurrent_zero_effect_motif"
+      },
+      "signature": [
+        "hum",
+        "click"
+      ]
+    }
+  ],
+  "fingerprint_valid": true,
+  "unknown_operation": {
+    "next_state": null,
+    "status": "unknown_operation"
+  }
+}

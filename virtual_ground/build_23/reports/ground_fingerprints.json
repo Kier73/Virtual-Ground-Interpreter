@@ -1,0 +1,22 @@
+[
+  {
+    "ground": "cycle4-constant",
+    "sha256": "fde4b658adac784379136241d6bfaf21ed2238b0772381675905fb5d546b8889"
+  },
+  {
+    "ground": "period6-modular-inflow",
+    "sha256": "c5acfd704d001a0013f8069a1fd885143960e674890218e77dadde3a4f2e4749"
+  },
+  {
+    "ground": "irregular-phase-source-parity",
+    "sha256": "56c5ce49999e72d664b25017909ccecc9141e618abb7c79185343b6689b8ecbb"
+  },
+  {
+    "ground": "source-mod3-operation",
+    "sha256": "f472b155ca75acbf566f9e9cdee13a9bf49fa2a0007da7044cccc7a494772d78"
+  },
+  {
+    "ground": "source-mod4-operation",
+    "sha256": "496fb49f74dee17f762a73a0508a1c470af142aa98166c58d9e4ed711c39910a"
+  }
+]
