@@ -19,6 +19,21 @@ else:
     from .common import ROOT
 
 
+def explicit_pair_salt(seed: int) -> bytes:
+    """Derive the 32-byte pair salt from an explicit, logged seed."""
+    return hashlib.sha256(f"VL explicit pair salt seed={seed}".encode("utf-8")).digest()
+
+
+def pair_salt_provenance(seed: int) -> dict:
+    salt = explicit_pair_salt(seed)
+    return {
+        "seed": seed,
+        "salt_source": "validation explicit_pair_salt(seed)",
+        "salt_sha256": hashlib.sha256(salt).hexdigest(),
+        "salt_hex": salt.hex(),
+    }
+
+
 def deterministic_pair_hash(seed: int, parts: tuple[str, ...]) -> str:
     """Privacy-preserving pair identifier derived from an explicit seed.
 

@@ -915,5 +915,260 @@
       "pilot_shift_pi_over_4_errors": 128,
       "total_operations": 128
     }
+  },
+  "taps_cv_results": {
+    "root": "<external TAPS root>",
+    "seed": 13,
+    "seeded_smoke": {
+      "pairs_analyzed": 16,
+      "provenance": {
+        "build": 14,
+        "note": "The frozen build was not edited. Its _PAIR_SALT global was bound to explicit_pair_salt(seed) before the analysis ran.",
+        "output_dir": "validation/taps_seeded_smoke",
+        "pair_ordering": "explicit deterministic_pair_hash(seed, parts)",
+        "root": "<external TAPS root>",
+        "salt": {
+          "salt_hex": "3aac93959fb124cebe2a8da713390af3874c58555409acbf1433fa3b311b6448",
+          "salt_sha256": "edbd9b8810ad7845fddc6564cd17cc7d600b9ada779e057898f9ffa0b961abc3",
+          "salt_source": "validation explicit_pair_salt(seed)",
+          "seed": 13
+        },
+        "seed": 13,
+        "split": "test"
+      },
+      "speakers_analyzed": 2
+    },
+    "sentence_cv": {
+      "fold_rows": [
+        {
+          "fold": 0,
+          "held_out_pairs": 200,
+          "held_out_sentences": 20,
+          "held_out_speakers": 10,
+          "view_median_rho": {
+            "combined_common": 0.34332252970996424,
+            "periodicity": 0.36376893367799956,
+            "shared_spectral": 0.2581331163860786,
+            "temporal": 0.1744518363972759,
+            "temporal_emission": 0.01639613868878129,
+            "temporal_rate": -0.0049259273839047865
+          }
+        },
+        {
+          "fold": 1,
+          "held_out_pairs": 200,
+          "held_out_sentences": 20,
+          "held_out_speakers": 10,
+          "view_median_rho": {
+            "combined_common": 0.33893459652621954,
+            "periodicity": 0.46503781268179173,
+            "shared_spectral": 0.2375143793165287,
+            "temporal": 0.29190428077173736,
+            "temporal_emission": 0.11175320500203388,
+            "temporal_rate": 0.18184641359069575
+          }
+        },
+        {
+          "fold": 2,
+          "held_out_pairs": 200,
+          "held_out_sentences": 20,
+          "held_out_speakers": 10,
+          "view_median_rho": {
+            "combined_common": 0.3553998434130702,
+            "periodicity": 0.5203103745401899,
+            "shared_spectral": 0.2117632650561832,
+            "temporal": 0.33042991422710355,
+            "temporal_emission": 0.05559885752776356,
+            "temporal_rate": 0.225078402813316
+          }
+        },
+        {
+          "fold": 3,
+          "held_out_pairs": 200,
+          "held_out_sentences": 20,
+          "held_out_speakers": 10,
+          "view_median_rho": {
+            "combined_common": 0.3511492518381468,
+            "periodicity": 0.4054455510504009,
+            "shared_spectral": 0.2652818783433278,
+            "temporal": 0.19970694624869328,
+            "temporal_emission": 0.11934635891648843,
+            "temporal_rate": 0.1659812708035359
+          }
+        },
+        {
+          "fold": 4,
+          "held_out_pairs": 200,
+          "held_out_sentences": 20,
+          "held_out_speakers": 10,
+          "view_median_rho": {
+            "combined_common": 0.3330105368132373,
+            "periodicity": 0.5104952608397083,
+            "shared_spectral": 0.27294763960512103,
+            "temporal": 0.28307680195252527,
+            "temporal_emission": 0.12636915150004155,
+            "temporal_rate": 0.14374330240960165
+          }
+        }
+      ],
+      "folds": 5,
+      "method": "sentence group cross-validation inside speakers",
+      "pairs_extracted": 1000,
+      "pairs_skipped": 0,
+      "seed": 13,
+      "view_summary": {
+        "combined_common": {
+          "fold_count": 5,
+          "max": 0.3553998434130702,
+          "median": 0.34332252970996424,
+          "min": 0.3330105368132373
+        },
+        "periodicity": {
+          "fold_count": 5,
+          "max": 0.5203103745401899,
+          "median": 0.46503781268179173,
+          "min": 0.36376893367799956
+        },
+        "shared_spectral": {
+          "fold_count": 5,
+          "max": 0.27294763960512103,
+          "median": 0.2581331163860786,
+          "min": 0.2117632650561832
+        },
+        "temporal": {
+          "fold_count": 5,
+          "max": 0.33042991422710355,
+          "median": 0.28307680195252527,
+          "min": 0.1744518363972759
+        },
+        "temporal_emission": {
+          "fold_count": 5,
+          "max": 0.12636915150004155,
+          "median": 0.11175320500203388,
+          "min": 0.01639613868878129
+        },
+        "temporal_rate": {
+          "fold_count": 5,
+          "max": 0.225078402813316,
+          "median": 0.1659812708035359,
+          "min": -0.0049259273839047865
+        }
+      }
+    },
+    "speaker_cv": {
+      "fold_rows": [
+        {
+          "fold": 0,
+          "held_out_pairs": 60,
+          "held_out_speakers": 2,
+          "view_median_rho": {
+            "combined_common": 0.374822687797859,
+            "periodicity": 0.3212164528229269,
+            "shared_spectral": 0.22286704172540625,
+            "temporal": 0.36845606812287424,
+            "temporal_emission": 0.09707261745612206,
+            "temporal_rate": 0.3403167492058309
+          }
+        },
+        {
+          "fold": 1,
+          "held_out_pairs": 60,
+          "held_out_speakers": 2,
+          "view_median_rho": {
+            "combined_common": 0.4715954234864135,
+            "periodicity": 0.6076453814271573,
+            "shared_spectral": 0.14822388936593303,
+            "temporal": 0.22573086158058248,
+            "temporal_emission": 0.13428536439935446,
+            "temporal_rate": 0.10179061633940145
+          }
+        },
+        {
+          "fold": 2,
+          "held_out_pairs": 60,
+          "held_out_speakers": 2,
+          "view_median_rho": {
+            "combined_common": 0.5736973657930684,
+            "periodicity": 0.4124056582455823,
+            "shared_spectral": 0.5473847452462836,
+            "temporal": 0.4460709948581284,
+            "temporal_emission": 0.1326259554448878,
+            "temporal_rate": 0.3128613852292558
+          }
+        },
+        {
+          "fold": 3,
+          "held_out_pairs": 60,
+          "held_out_speakers": 2,
+          "view_median_rho": {
+            "combined_common": 0.1569477954972541,
+            "periodicity": 0.44991952613723996,
+            "shared_spectral": 0.1455092085716327,
+            "temporal": 0.230704641971493,
+            "temporal_emission": 0.04865279172868646,
+            "temporal_rate": 0.10584295642311173
+          }
+        },
+        {
+          "fold": 4,
+          "held_out_pairs": 60,
+          "held_out_speakers": 2,
+          "view_median_rho": {
+            "combined_common": 0.26323146294776345,
+            "periodicity": 0.4991191610891379,
+            "shared_spectral": 0.23599062304555668,
+            "temporal": 0.12441237314797132,
+            "temporal_emission": 0.21684010339141932,
+            "temporal_rate": 0.18047087414733423
+          }
+        }
+      ],
+      "folds": 5,
+      "max_utterances_per_speaker": 30,
+      "method": "speaker group cross-validation; speakers are held out as whole groups",
+      "pairs_extracted": 300,
+      "pairs_skipped": 0,
+      "seed": 13,
+      "speakers": 10,
+      "view_summary": {
+        "combined_common": {
+          "fold_count": 5,
+          "max": 0.5736973657930684,
+          "median": 0.374822687797859,
+          "min": 0.1569477954972541
+        },
+        "periodicity": {
+          "fold_count": 5,
+          "max": 0.6076453814271573,
+          "median": 0.44991952613723996,
+          "min": 0.3212164528229269
+        },
+        "shared_spectral": {
+          "fold_count": 5,
+          "max": 0.5473847452462836,
+          "median": 0.22286704172540625,
+          "min": 0.1455092085716327
+        },
+        "temporal": {
+          "fold_count": 5,
+          "max": 0.4460709948581284,
+          "median": 0.230704641971493,
+          "min": 0.12441237314797132
+        },
+        "temporal_emission": {
+          "fold_count": 5,
+          "max": 0.21684010339141932,
+          "median": 0.1326259554448878,
+          "min": 0.04865279172868646
+        },
+        "temporal_rate": {
+          "fold_count": 5,
+          "max": 0.3403167492058309,
+          "median": 0.18047087414733423,
+          "min": 0.10179061633940145
+        }
+      }
+    },
+    "split": "test"
   }
 }

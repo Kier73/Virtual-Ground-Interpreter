@@ -10,6 +10,7 @@ This folder is intentionally **outside** the frozen build trees. It adds tests, 
 - `build24_equivalence.py` — canonical Mealy minimization, distinguishing words and minimal counterexample checks.
 - `signal_stress.py` — Build 29–30 multiresolution, drift, noise, jitter, pilot-mismatch and transfer-variation stress tests.
 - `salt_cv.py` — audit of run-dependent salts in Builds 13–15, explicit seeded pair hashing, and group cross-validation for a future paired-corpus run.
+- `taps_seeded_runner.py` / `run_taps_cv.py` — seeded wrappers around the frozen TAPS analyses plus speaker/sentence group cross-validation; writes `taps_cv_results.json` and logged salt provenance.
 
 ## Run
 

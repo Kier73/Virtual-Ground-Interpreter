@@ -1,15 +1,45 @@
 """Post-freeze validation tests for the six proposed fix areas."""
 from __future__ import annotations
 
+import json
 import math
+import random
+import struct
+import tempfile
 import unittest
+from pathlib import Path
 
 from build12_preroll import diagnose_preroll, summarize_preroll
 from build24_equivalence import all_pairs_distinguishable, delayed_counterexample_summary, equivalence_summary, learn_machine, minimize_mealy
 from productivity import all_builds_exact, build20_productivity, build22_productivity, build23_productivity
 from random_grounds import random_build22_summary, random_build23_summary
-from salt_cv import corpus_status, cross_validated_mean, deterministic_pair_hash, rochester_room_loro_summary, salt_audit, seeded_pair_order
+from salt_cv import corpus_status, cross_validated_mean, deterministic_pair_hash, explicit_pair_salt, rochester_room_loro_summary, salt_audit, seeded_pair_order
+from taps_seeded_runner import run_seeded_taps
 from signal_stress import build29_multiresolution_summary, build29_perturbation_summary, build30_adaptive_stress_summary, build30_phase_robustness_summary
+
+
+def _write_pcm16(path: Path, samples, fs: int = 16000) -> None:
+    vals = [max(-32768, min(32767, int(round(float(x) * 32767)))) for x in samples]
+    payload = struct.pack("<" + "h" * len(vals), *vals)
+    fmt = struct.pack("<HHIIHH", 1, 1, fs, fs * 2, 2, 16)
+
+    def chunk(tag, data):
+        return tag + struct.pack("<I", len(data)) + data + (b"\x00" if len(data) & 1 else b"")
+
+    body = b"WAVE" + chunk(b"fmt ", fmt) + chunk(b"data", payload)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_bytes(b"RIFF" + struct.pack("<I", len(body)) + body)
+
+
+def _synth_voice(fs: int = 16000, duration: float = 0.7, f0: float = 120.0, seed: int = 1):
+    rng = random.Random(seed)
+    out = []
+    for i in range(int(fs * duration)):
+        t = i / fs
+        env = 0.45 + 0.25 * math.sin(2 * math.pi * 2.1 * t) ** 2
+        value = (math.sin(2 * math.pi * f0 * t) + 0.45 * math.sin(4 * math.pi * f0 * t)) * env
+        out.append(0.22 * value + 0.001 * (rng.random() - 0.5))
+    return out
 
 
 class Build12PrerollTests(unittest.TestCase):
@@ -217,6 +247,56 @@ class SaltCrossValidationTests(unittest.TestCase):
                 self.assertLess(metrics[metric]["loo_mean_range"], 1.5)
                 self.assertGreaterEqual(metrics[metric]["loo_mean_min"], metrics[metric]["min"])
                 self.assertLessEqual(metrics[metric]["loo_mean_max"], metrics[metric]["max"])
+
+
+class SeededRunnerTests(unittest.TestCase):
+    def test_explicit_pair_salt_is_32_deterministic_bytes(self):
+        salt = explicit_pair_salt(99)
+        self.assertEqual(len(salt), 32)
+        self.assertEqual(salt, explicit_pair_salt(99))
+        self.assertNotEqual(salt, explicit_pair_salt(100))
+
+    def test_seeded_wrapper_writes_logged_salt_provenance(self):
+        with tempfile.TemporaryDirectory() as td:
+            root = Path(td) / "raw"
+            out = Path(td) / "out"
+            for speaker in range(2):
+                for utterance in range(8):
+                    directory = root / "test" / f"speaker_{speaker:02d}" / f"utt_{utterance:03d}"
+                    throat = _synth_voice(f0=110 + utterance * 7, seed=utterance)
+                    acoustic = _synth_voice(f0=110 + utterance * 7, seed=utterance)
+                    _write_pcm16(directory / "throat_microphone.wav", throat)
+                    _write_pcm16(directory / "acoustic_microphone.wav", acoustic)
+                    (directory / "features.json").write_text(
+                        json.dumps(
+                            {
+                                "speaker_id": f"speaker_{speaker:02d}",
+                                "sentence_id": f"utt_{utterance:03d}",
+                                "text": "PRIVATE TRANSCRIPT SHOULD NOT BE EXPORTED",
+                                "throat_microphone": {"sampling_rate": 16000, "num_samples": len(throat)},
+                                "acoustic_microphone": {"sampling_rate": 16000, "num_samples": len(acoustic)},
+                            }
+                        ),
+                        encoding="utf-8",
+                    )
+            result = run_seeded_taps(
+                14,
+                root,
+                out,
+                split="test",
+                max_speakers=2,
+                max_utterances_per_speaker=8,
+                permutations=3,
+                seed=99,
+            )
+            provenance_file = out / "seeded_salt_provenance.json"
+            self.assertTrue(provenance_file.exists())
+            provenance = json.loads(provenance_file.read_text(encoding="utf-8"))
+            self.assertEqual(provenance["seed"], 99)
+            self.assertEqual(provenance["salt"]["salt_sha256"], result["provenance"]["salt"]["salt_sha256"])
+            serialized = (out / "build_14_report.json").read_text(encoding="utf-8")
+            self.assertNotIn("speaker_00", serialized)
+            self.assertNotIn("PRIVATE TRANSCRIPT", serialized)
 
 
 if __name__ == "__main__":

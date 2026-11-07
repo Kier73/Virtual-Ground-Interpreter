@@ -36,6 +36,11 @@ def main() -> None:
         "salt_audit": salt_audit(),
         "external_corpus_status": corpus_status(None),
         "rochester_room_loro": rochester_room_loro_summary(),
+        "taps_cv_results": json.loads(
+            (Path(__file__).resolve().parent / "taps_cv_results.json").read_text(encoding="utf-8")
+        )
+        if (Path(__file__).resolve().parent / "taps_cv_results.json").exists()
+        else {"status": "not_run"},
     }
     out = Path(__file__).resolve().parent / "benchmark_results.json"
     out.write_text(json.dumps(report, indent=2, sort_keys=True) + "\n", encoding="utf-8")
