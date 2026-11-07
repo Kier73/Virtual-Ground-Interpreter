@@ -164,6 +164,8 @@
     ]
   },
   "external_corpus_status": {
+    "manifest": "validation/second_paired_corpus_manifest.json",
+    "manifest_status": "unavailable_in_repository",
     "reason": "external paired corpus not supplied",
     "second_paired_corpus": false,
     "status": "not_run"
@@ -748,6 +750,65 @@
     "note": "The frozen builds keep the ephemeral salt for privacy. New empirical runs should accept an explicit seed, log it, and use deterministic_pair_hash so null and bootstrap draws reproduce.",
     "replacement": "deterministic_pair_hash(seed, parts)",
     "total_salt_definitions": 3
+  },
+  "second_corpus_manifest": {
+    "execution_path": {
+      "default_taps_path": "validation/run_taps_cv.py",
+      "frozen_direct_cli": "historical reproduction only; direct frozen runs may still use ephemeral salts",
+      "seeded_salt_provenance_file": "seeded_salt_provenance.json",
+      "single_build_seeded_path": "validation/run_seeded_taps.py"
+    },
+    "existing_paired_corpus": {
+      "included_in_repository": false,
+      "local_processing_status": "validated through validation/run_taps_cv.py with an external root path",
+      "name": "TAPS Throat and Acoustic Paired Speech Dataset",
+      "notes": "The corpus is not redistributed. Its derived tables, scripts, logs and findings are under theory_development/empirical_results/taps/.",
+      "redistributed_in_repository": false,
+      "role": "existing paired corpus used for Builds 13-15 and validation cross-validation"
+    },
+    "manifest_version": "1.0.0",
+    "purpose": "Machine-readable availability/limitation record for a second paired-sensor corpus.",
+    "second_paired_corpus": {
+      "adapter_notes": [
+        "Current Builds 13-15 expect throat_microphone.wav and acoustic_microphone.wav pairs plus features.json metadata.",
+        "A second corpus with different filenames or metadata needs a small adapter that emits the same pair structure in memory.",
+        "The seeded validation wrapper binds the explicit salt before analysis and writes seeded_salt_provenance.json."
+      ],
+      "blocked_by": "external corpus availability and license terms",
+      "compatibility_with_current_pipeline": "adapter_required",
+      "dataset_attached": false,
+      "minimum_evaluation_protocol": {
+        "cross_validation": "whole-speaker 5-fold and sentence-group 5-fold",
+        "grouping": [
+          "speaker",
+          "sentence"
+        ],
+        "negative_controls": [
+          "within-speaker mismatched pairs",
+          "shuffled marks",
+          "interval-order shuffle",
+          "mark-only and interval-only matching"
+        ],
+        "primary_seed": 13,
+        "privacy": "aggregate outputs only; raw IDs and transcripts never exported",
+        "statistics": "within-speaker RDM Spearman correlations, shuffled-pair nulls, speaker bootstrap intervals"
+      },
+      "reason_not_added": "No second paired-sensor corpus is present in this repository, and no licensed redistributable download was performed for this commit.",
+      "required_before_use": [
+        "A paired-sensor corpus with simultaneous throat/acoustic or equivalent paired channels",
+        "Speaker and sentence grouping available in memory for cross-validation",
+        "License terms that permit local research processing and aggregate reporting",
+        "A documented split and provenance record",
+        "No transcripts, raw speaker IDs or demographics written to outputs"
+      ],
+      "status": "not_added"
+    },
+    "status": "unavailable_in_repository",
+    "validation": {
+      "benchmark_field": "external_corpus_status",
+      "corpus_status_function": "validation/salt_cv.py:corpus_status",
+      "current_status_when_no_external_root": "not_run"
+    }
   },
   "signal_stress": {
     "build29_multiresolution": {

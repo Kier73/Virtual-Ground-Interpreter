@@ -13,7 +13,7 @@ from build12_preroll import diagnose_preroll, summarize_preroll
 from build24_equivalence import all_pairs_distinguishable, delayed_counterexample_summary, equivalence_summary, learn_machine, minimize_mealy
 from productivity import all_builds_exact, build20_productivity, build22_productivity, build23_productivity
 from random_grounds import random_build22_summary, random_build23_summary
-from salt_cv import corpus_status, cross_validated_mean, deterministic_pair_hash, explicit_pair_salt, rochester_room_loro_summary, salt_audit, seeded_pair_order
+from salt_cv import corpus_status, cross_validated_mean, deterministic_pair_hash, explicit_pair_salt, rochester_room_loro_summary, salt_audit, second_corpus_manifest, seeded_pair_order
 from taps_seeded_runner import run_seeded_taps
 from signal_stress import build29_multiresolution_summary, build29_perturbation_summary, build30_adaptive_stress_summary, build30_phase_robustness_summary
 
@@ -233,6 +233,16 @@ class SaltCrossValidationTests(unittest.TestCase):
         result = corpus_status(None)
         self.assertEqual(result["status"], "not_run")
         self.assertFalse(result["second_paired_corpus"])
+        self.assertEqual(result["manifest"], "validation/second_paired_corpus_manifest.json")
+        self.assertEqual(result["manifest_status"], "unavailable_in_repository")
+
+    def test_second_corpus_manifest_records_limitation(self):
+        manifest = second_corpus_manifest()
+        self.assertEqual(manifest["status"], "unavailable_in_repository")
+        self.assertFalse(manifest["second_paired_corpus"]["dataset_attached"])
+        self.assertIn("paired", manifest["second_paired_corpus"]["reason_not_added"])
+        self.assertIn("aggregate", manifest["second_paired_corpus"]["minimum_evaluation_protocol"]["privacy"])
+        self.assertEqual(manifest["execution_path"]["default_taps_path"], "validation/run_taps_cv.py")
 
     def test_rochester_room_leave_one_room_out_is_stable(self):
         result = rochester_room_loro_summary()

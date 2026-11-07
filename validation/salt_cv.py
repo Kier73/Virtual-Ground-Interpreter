@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import csv
 import hashlib
+import json
 import random
 import statistics
 from pathlib import Path
@@ -117,17 +118,27 @@ def cross_validated_mean(rows: list[dict], group_key: str, score_key: str, k: in
     }
 
 
+def second_corpus_manifest() -> dict:
+    path = ROOT / "validation" / "second_paired_corpus_manifest.json"
+    if not path.exists():
+        return {"status": "manifest_missing", "manifest": "validation/second_paired_corpus_manifest.json"}
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
 def corpus_status(corpus_root: str | Path | None) -> dict:
     """Honest status for an external paired corpus.
 
     The repository does not redistribute Rochester or TAPS.  A second corpus
     can be used only when an external path is supplied.
     """
+    manifest = "validation/second_paired_corpus_manifest.json"
     if corpus_root is None:
         return {
             "status": "not_run",
             "reason": "external paired corpus not supplied",
             "second_paired_corpus": False,
+            "manifest": manifest,
+            "manifest_status": second_corpus_manifest().get("status", "unknown"),
         }
     path = Path(corpus_root)
     if not path.exists():
@@ -135,11 +146,14 @@ def corpus_status(corpus_root: str | Path | None) -> dict:
             "status": "not_run",
             "reason": f"corpus path does not exist: {path}",
             "second_paired_corpus": False,
+            "manifest": manifest,
+            "manifest_status": second_corpus_manifest().get("status", "unknown"),
         }
     return {
         "status": "available_for_adapter",
         "corpus_root": str(path),
         "second_paired_corpus": True,
+        "manifest": manifest,
         "note": "Run the empirical analysis with an explicit seed and group cross-validation.",
     }
 

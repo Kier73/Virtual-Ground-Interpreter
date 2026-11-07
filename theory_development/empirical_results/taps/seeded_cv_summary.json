@@ -1,0 +1,44 @@
+{
+  "record_type": "seeded_taps_cv_companion",
+  "purpose": "Companion provenance record for the seeded TAPS cross-validation run; the frozen Build 13-15 reports remain historical.",
+  "default_execution_path": "validation/run_taps_cv.py",
+  "single_build_seeded_path": "validation/run_seeded_taps.py",
+  "seed": 13,
+  "salt": {
+    "seed": 13,
+    "salt_source": "validation explicit_pair_salt(seed)",
+    "salt_sha256": "edbd9b8810ad7845fddc6564cd17cc7d600b9ada779e057898f9ffa0b961abc3",
+    "salt_hex": "3aac93959fb124cebe2a8da713390af3874c58555409acbf1433fa3b311b6448"
+  },
+  "speaker_cv": {
+    "method": "speaker group cross-validation; speakers are held out as whole groups",
+    "folds": 5,
+    "held_out_speakers_per_fold": 2,
+    "view_median_rho": {
+      "combined_common": 0.374822687797859,
+      "periodicity": 0.44991952613723996,
+      "shared_spectral": 0.22286704172540625,
+      "temporal": 0.230704641971493,
+      "temporal_emission": 0.1326259554448878,
+      "temporal_rate": 0.18047087414733423
+    }
+  },
+  "sentence_cv": {
+    "method": "sentence group cross-validation inside speakers",
+    "folds": 5,
+    "view_median_rho": {
+      "combined_common": 0.34332252970996424,
+      "periodicity": 0.46503781268179173,
+      "shared_spectral": 0.2581331163860786,
+      "temporal": 0.28307680195252527,
+      "temporal_emission": 0.11175320500203388,
+      "temporal_rate": 0.1659812708035359
+    }
+  },
+  "second_paired_corpus": {
+    "status": "unavailable_in_repository",
+    "manifest": "validation/second_paired_corpus_manifest.json",
+    "note": "The corpus is not redistributed. An external licensed root is required for a second-corpus run."
+  },
+  "full_results": "validation/taps_cv_results.json"
+}
