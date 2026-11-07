@@ -7,6 +7,7 @@ paired-corpus run that supplies grouped rows.
 """
 from __future__ import annotations
 
+import csv
 import hashlib
 import random
 import statistics
@@ -125,4 +126,32 @@ def corpus_status(corpus_root: str | Path | None) -> dict:
         "corpus_root": str(path),
         "second_paired_corpus": True,
         "note": "Run the empirical analysis with an explicit seed and group cross-validation.",
+    }
+
+
+def rochester_room_loro_summary() -> dict:
+    """Leave-one-room-out summary for the corrected Build 12 room medians."""
+    path = ROOT / "theory_development/empirical_results/build_12/corrected/room_features_corrected.csv"
+    rows = []
+    with path.open(newline="", encoding="utf-8") as handle:
+        rows = list(csv.DictReader(handle))
+    metrics = {}
+    for metric in ("edt_s", "t20_s", "c50_db", "d50"):
+        values = [float(row[metric]) for row in rows]
+        loo_means = []
+        for i in range(len(values)):
+            rest = values[:i] + values[i + 1 :]
+            loo_means.append(statistics.fmean(rest) if rest else 0.0)
+        metrics[metric] = {
+            "min": min(values),
+            "max": max(values),
+            "mean": statistics.fmean(values),
+            "loo_mean_min": min(loo_means),
+            "loo_mean_max": max(loo_means),
+            "loo_mean_range": max(loo_means) - min(loo_means),
+        }
+    return {
+        "room_count": len(rows),
+        "metrics": metrics,
+        "rooms": [row["room_id"] for row in rows],
     }

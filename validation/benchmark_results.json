@@ -667,6 +667,60 @@
     "seed": 20261107,
     "success_rate": 0.8125
   },
+  "rochester_room_loro": {
+    "metrics": {
+      "c50_db": {
+        "loo_mean_max": 6.400678510605833,
+        "loo_mean_min": 5.217826550893063,
+        "loo_mean_range": 1.18285195971277,
+        "max": 13.729842045077906,
+        "mean": 5.785294250505387,
+        "min": -2.8300853909008694
+      },
+      "d50": {
+        "loo_mean_max": 0.781812388688396,
+        "loo_mean_min": 0.7377829967506837,
+        "loo_mean_range": 0.04402939193771227,
+        "max": 0.9590290170828875,
+        "mean": 0.7525327314394973,
+        "min": 0.34261752995491507
+      },
+      "edt_s": {
+        "loo_mean_max": 0.9434163776580318,
+        "loo_mean_min": 0.7383774745954889,
+        "loo_mean_range": 0.2050389030625429,
+        "max": 3.0986152313953426,
+        "mean": 0.8957266583821457,
+        "min": 0.2280705885197432
+      },
+      "t20_s": {
+        "loo_mean_max": 1.2168352542091225,
+        "loo_mean_min": 1.0111538061985137,
+        "loo_mean_range": 0.20568144801060884,
+        "max": 3.1609336900576945,
+        "mean": 1.154472465122459,
+        "min": 0.28139341790917105
+      }
+    },
+    "room_count": 15,
+    "rooms": [
+      "Room10_IRwavs",
+      "Room11_IRwavs",
+      "Room12_IRwavs",
+      "Room13_IRwavs",
+      "Room14_IRwavs",
+      "Room1_IRwavs",
+      "Room2a_IRwavs",
+      "Room2b_IRwavs",
+      "Room3_IRwavs",
+      "Room4_IRwavs",
+      "Room5_IRwavs",
+      "Room6_IRwavs",
+      "Room7_IRwavs",
+      "Room8_IRwavs",
+      "Room9_IRwavs"
+    ]
+  },
   "salt_audit": {
     "files": [
       {

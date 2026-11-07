@@ -9,14 +9,14 @@ if __package__ in (None, ""):
     from build24_equivalence import delayed_counterexample_summary, equivalence_summary
     from productivity import productivity_summary
     from random_grounds import random_build22_summary, random_build23_summary
-    from salt_cv import corpus_status, salt_audit
+    from salt_cv import corpus_status, rochester_room_loro_summary, salt_audit
     from signal_stress import signal_stress_summary
 else:
     from .build12_preroll import summarize_preroll
     from .build24_equivalence import delayed_counterexample_summary, equivalence_summary
     from .productivity import productivity_summary
     from .random_grounds import random_build22_summary, random_build23_summary
-    from .salt_cv import corpus_status, salt_audit
+    from .salt_cv import corpus_status, rochester_room_loro_summary, salt_audit
     from .signal_stress import signal_stress_summary
 
 
@@ -35,6 +35,7 @@ def main() -> None:
         "signal_stress": signal_stress_summary(),
         "salt_audit": salt_audit(),
         "external_corpus_status": corpus_status(None),
+        "rochester_room_loro": rochester_room_loro_summary(),
     }
     out = Path(__file__).resolve().parent / "benchmark_results.json"
     out.write_text(json.dumps(report, indent=2, sort_keys=True) + "\n", encoding="utf-8")

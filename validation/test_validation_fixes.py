@@ -8,7 +8,7 @@ from build12_preroll import diagnose_preroll, summarize_preroll
 from build24_equivalence import all_pairs_distinguishable, delayed_counterexample_summary, equivalence_summary, learn_machine, minimize_mealy
 from productivity import all_builds_exact, build20_productivity, build22_productivity, build23_productivity
 from random_grounds import random_build22_summary, random_build23_summary
-from salt_cv import corpus_status, cross_validated_mean, deterministic_pair_hash, salt_audit, seeded_pair_order
+from salt_cv import corpus_status, cross_validated_mean, deterministic_pair_hash, rochester_room_loro_summary, salt_audit, seeded_pair_order
 from signal_stress import build29_multiresolution_summary, build29_perturbation_summary, build30_adaptive_stress_summary, build30_phase_robustness_summary
 
 
@@ -203,6 +203,20 @@ class SaltCrossValidationTests(unittest.TestCase):
         result = corpus_status(None)
         self.assertEqual(result["status"], "not_run")
         self.assertFalse(result["second_paired_corpus"])
+
+    def test_rochester_room_leave_one_room_out_is_stable(self):
+        result = rochester_room_loro_summary()
+        self.assertGreaterEqual(result["room_count"], 14)
+        metrics = result["metrics"]
+        self.assertLess(metrics["edt_s"]["max"], 5.0)
+        self.assertLess(metrics["t20_s"]["max"], 5.0)
+        self.assertGreater(metrics["c50_db"]["min"], -10.0)
+        self.assertLess(metrics["c50_db"]["max"], 20.0)
+        for metric in ("edt_s", "t20_s", "c50_db", "d50"):
+            with self.subTest(metric=metric):
+                self.assertLess(metrics[metric]["loo_mean_range"], 1.5)
+                self.assertGreaterEqual(metrics[metric]["loo_mean_min"], metrics[metric]["min"])
+                self.assertLessEqual(metrics[metric]["loo_mean_max"], metrics[metric]["max"])
 
 
 if __name__ == "__main__":
