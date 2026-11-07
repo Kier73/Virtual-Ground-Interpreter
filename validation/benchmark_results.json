@@ -1,0 +1,865 @@
+{
+  "build12_preroll": [
+    {
+      "corrected_edt_s": 0.34538776394910686,
+      "corrected_onset_index": 0,
+      "corrected_peak_index": 0,
+      "corrected_t20_s": 0.3453877639491069,
+      "frozen_edt_s": 20.920638689705083,
+      "frozen_onset_index": 0,
+      "frozen_peak_index": 48000,
+      "frozen_t20_s": 0.3453877639491071,
+      "onset_to_peak_ms_frozen": 1000.0,
+      "pre_peak_energy_fraction": 0.3481066190107043,
+      "sample_rate": 48000,
+      "seed": 2699,
+      "signal_length": 144000,
+      "true_peak_index": 48000
+    },
+    {
+      "corrected_edt_s": 0.34538776394910686,
+      "corrected_onset_index": 0,
+      "corrected_peak_index": 0,
+      "corrected_t20_s": 0.3453877639491069,
+      "frozen_edt_s": 20.91963381153144,
+      "frozen_onset_index": 0,
+      "frozen_peak_index": 48000,
+      "frozen_t20_s": 0.3453877639491071,
+      "onset_to_peak_ms_frozen": 1000.0,
+      "pre_peak_energy_fraction": 0.3475640729430641,
+      "sample_rate": 48000,
+      "seed": 2700,
+      "signal_length": 144000,
+      "true_peak_index": 48000
+    },
+    {
+      "corrected_edt_s": 0.34538776394910686,
+      "corrected_onset_index": 0,
+      "corrected_peak_index": 0,
+      "corrected_t20_s": 0.3453877639491069,
+      "frozen_edt_s": 20.910567963384317,
+      "frozen_onset_index": 0,
+      "frozen_peak_index": 48000,
+      "frozen_t20_s": 0.3453877639491071,
+      "onset_to_peak_ms_frozen": 1000.0,
+      "pre_peak_energy_fraction": 0.3474933532584088,
+      "sample_rate": 48000,
+      "seed": 2701,
+      "signal_length": 144000,
+      "true_peak_index": 48000
+    }
+  ],
+  "build24_delayed_counterexample": {
+    "counterexample": [
+      "HOLD",
+      "HOLD",
+      "HOLD",
+      "HOLD",
+      "HOLD",
+      "PROBE_A"
+    ],
+    "counterexample_word_length": 6,
+    "deep_round_counterexample_length": 6,
+    "deep_state_count": 6,
+    "first_mismatch_index": 5,
+    "shallow_state_count": 1
+  },
+  "build24_equivalence": {
+    "fixtures": [
+      {
+        "bounded_equivalent": true,
+        "cases_checked": 9840,
+        "channels": null,
+        "distinguishable_pairs": 15,
+        "fixture": "coupled_six",
+        "is_minimal": true,
+        "longest_distinguishing_word": 1,
+        "minimized_state_count": 6,
+        "missing_distinguishing_pairs": [],
+        "pair_count": 15,
+        "state_count": 6
+      },
+      {
+        "bounded_equivalent": true,
+        "cases_checked": 9840,
+        "channels": [
+          0
+        ],
+        "distinguishable_pairs": 1,
+        "fixture": "coupled_six",
+        "is_minimal": true,
+        "longest_distinguishing_word": 1,
+        "minimized_state_count": 2,
+        "missing_distinguishing_pairs": [],
+        "pair_count": 1,
+        "state_count": 2
+      },
+      {
+        "bounded_equivalent": true,
+        "cases_checked": 9840,
+        "channels": [
+          1
+        ],
+        "distinguishable_pairs": 3,
+        "fixture": "coupled_six",
+        "is_minimal": true,
+        "longest_distinguishing_word": 1,
+        "minimized_state_count": 3,
+        "missing_distinguishing_pairs": [],
+        "pair_count": 3,
+        "state_count": 3
+      },
+      {
+        "bounded_equivalent": true,
+        "cases_checked": 9840,
+        "channels": null,
+        "distinguishable_pairs": 3,
+        "fixture": "aliased_six",
+        "is_minimal": true,
+        "longest_distinguishing_word": 1,
+        "minimized_state_count": 3,
+        "missing_distinguishing_pairs": [],
+        "pair_count": 3,
+        "state_count": 3
+      },
+      {
+        "bounded_equivalent": true,
+        "cases_checked": 9840,
+        "channels": null,
+        "distinguishable_pairs": 0,
+        "fixture": "unobservable_eight",
+        "is_minimal": true,
+        "longest_distinguishing_word": 0,
+        "minimized_state_count": 1,
+        "missing_distinguishing_pairs": [],
+        "pair_count": 0,
+        "state_count": 1
+      },
+      {
+        "bounded_equivalent": true,
+        "cases_checked": 9840,
+        "channels": null,
+        "distinguishable_pairs": 15,
+        "fixture": "delayed_six",
+        "is_minimal": true,
+        "longest_distinguishing_word": 5,
+        "minimized_state_count": 6,
+        "missing_distinguishing_pairs": [],
+        "pair_count": 15,
+        "state_count": 6
+      },
+      {
+        "bounded_equivalent": true,
+        "cases_checked": 9840,
+        "channels": null,
+        "distinguishable_pairs": 6,
+        "fixture": "partial_four",
+        "is_minimal": true,
+        "longest_distinguishing_word": 2,
+        "minimized_state_count": 4,
+        "missing_distinguishing_pairs": [],
+        "pair_count": 6,
+        "state_count": 4
+      }
+    ]
+  },
+  "external_corpus_status": {
+    "reason": "external paired corpus not supplied",
+    "second_paired_corpus": false,
+    "status": "not_run"
+  },
+  "note": "Post-freeze validation summaries. They exercise the published frozen code without modifying it.",
+  "productivity": {
+    "build20": {
+      "descriptor_operation_count": 9,
+      "generative_rule_parameters": 63,
+      "graph_edge_count": 5832,
+      "interpretation": "Two macro commands compress command count, not primitive expansion length. The ground avoids storing the materialized transition table; Build 20's navigator still precomputes a path policy.",
+      "lookup_path_entries": 648,
+      "materialized_transition_entries": 5832,
+      "max_macro_commands": 2,
+      "mean_bfs_length": 3.8854166666666665,
+      "mean_expanded_length": 3.96875,
+      "mean_expanded_to_bfs_ratio": 1.0214477211796247,
+      "mean_macro_commands": 1.8333333333333333,
+      "operation_count": 9,
+      "sample_count": 96,
+      "state_count": 648
+    },
+    "build22": {
+      "active_identified_count": 32,
+      "active_probe_count_max": 2,
+      "active_probe_count_mean": 2.0,
+      "active_total_cost_max": 7.5,
+      "active_total_cost_mean": 6.375,
+      "candidate_count": 32,
+      "interpretation": "Active probing beats passive HOLD for identification inside the closed 32-model family, at the cost of the probe catalogue.",
+      "materialized_observation_entries": 10368,
+      "passive_identified_count": 0,
+      "passive_min_remaining_hypotheses": 2,
+      "probe_catalog_count": 324
+    },
+    "build23": {
+      "grounds": [
+        {
+          "explicit_transition_entries": 300,
+          "generated_transitions_per_syntax_unit": 13.636363636363637,
+          "ground": "cycle4-constant",
+          "heldout_correct": 65,
+          "heldout_count": 65,
+          "program_syntax_cost_units": 22,
+          "state_count": 100,
+          "transition_coverage": 1.0
+        },
+        {
+          "explicit_transition_entries": 648,
+          "generated_transitions_per_syntax_unit": 28.17391304347826,
+          "ground": "period6-modular-inflow",
+          "heldout_correct": 138,
+          "heldout_count": 138,
+          "program_syntax_cost_units": 23,
+          "state_count": 216,
+          "transition_coverage": 1.0
+        },
+        {
+          "explicit_transition_entries": 375,
+          "generated_transitions_per_syntax_unit": 11.363636363636363,
+          "ground": "irregular-phase-source-parity",
+          "heldout_correct": 79,
+          "heldout_count": 79,
+          "program_syntax_cost_units": 33,
+          "state_count": 125,
+          "transition_coverage": 1.0
+        },
+        {
+          "explicit_transition_entries": 540,
+          "generated_transitions_per_syntax_unit": 15.428571428571429,
+          "ground": "source-mod3-operation",
+          "heldout_correct": 114,
+          "heldout_count": 114,
+          "program_syntax_cost_units": 35,
+          "state_count": 180,
+          "transition_coverage": 1.0
+        },
+        {
+          "explicit_transition_entries": 588,
+          "generated_transitions_per_syntax_unit": 17.294117647058822,
+          "ground": "source-mod4-operation",
+          "heldout_correct": 125,
+          "heldout_count": 125,
+          "program_syntax_cost_units": 34,
+          "state_count": 196,
+          "transition_coverage": 1.0
+        }
+      ],
+      "interpretation": "Induced programs generate the full finite transition relation from a compact syntax cost. This is finite-domain compression, not an asymptotic runtime claim.",
+      "max_syntax_cost": 35.0,
+      "mean_explicit_entries": 490.2,
+      "mean_syntax_cost": 29.4,
+      "min_generated_per_syntax_unit": 11.363636363636363
+    }
+  },
+  "random_build22": {
+    "in_family_count": 24,
+    "in_family_identified": 24,
+    "in_family_probe_count_max": 2,
+    "in_family_probe_count_mean": 2.0,
+    "out_of_family_count": 24,
+    "out_of_family_identified_with_extended_mismatch": 24,
+    "out_of_family_identified_without_extended_mismatch": 0,
+    "out_of_family_rejected": 0,
+    "rows": [
+      {
+        "extended_probe_mismatches": 132,
+        "identified": true,
+        "probe_count": 2,
+        "remaining": 1,
+        "selected": "C2-inflow_A-demand_A-Q1-P1-V1",
+        "status": "identified_within_candidate_family",
+        "true": "C2-inflow_C-demand_A-Q1-P1-V1"
+      },
+      {
+        "extended_probe_mismatches": 168,
+        "identified": true,
+        "probe_count": 2,
+        "remaining": 1,
+        "selected": "C3-inflow_A-demand_B-Q2-P2-V1",
+        "status": "identified_within_candidate_family",
+        "true": "C3-inflow_C-demand_B-Q2-P2-V1"
+      },
+      {
+        "extended_probe_mismatches": 168,
+        "identified": true,
+        "probe_count": 2,
+        "remaining": 1,
+        "selected": "C3-inflow_A-demand_A-Q2-P2-V1",
+        "status": "identified_within_candidate_family",
+        "true": "C3-inflow_C-demand_A-Q2-P2-V1"
+      },
+      {
+        "extended_probe_mismatches": 168,
+        "identified": true,
+        "probe_count": 2,
+        "remaining": 1,
+        "selected": "C3-inflow_A-demand_B-Q2-P1-V1",
+        "status": "identified_within_candidate_family",
+        "true": "C3-inflow_C-demand_B-Q2-P1-V1"
+      },
+      {
+        "extended_probe_mismatches": 174,
+        "identified": true,
+        "probe_count": 2,
+        "remaining": 1,
+        "selected": "C3-inflow_A-demand_B-Q1-P2-V1",
+        "status": "identified_within_candidate_family",
+        "true": "C3-inflow_C-demand_B-Q1-P2-V1"
+      },
+      {
+        "extended_probe_mismatches": 168,
+        "identified": true,
+        "probe_count": 2,
+        "remaining": 1,
+        "selected": "C3-inflow_A-demand_B-Q2-P2-V1",
+        "status": "identified_within_candidate_family",
+        "true": "C3-inflow_C-demand_B-Q2-P2-V1"
+      },
+      {
+        "extended_probe_mismatches": 120,
+        "identified": true,
+        "probe_count": 2,
+        "remaining": 1,
+        "selected": "C2-inflow_A-demand_A-Q2-P2-V1",
+        "status": "identified_within_candidate_family",
+        "true": "C2-inflow_C-demand_A-Q2-P2-V1"
+      },
+      {
+        "extended_probe_mismatches": 120,
+        "identified": true,
+        "probe_count": 2,
+        "remaining": 1,
+        "selected": "C2-inflow_A-demand_B-Q2-P2-V1",
+        "status": "identified_within_candidate_family",
+        "true": "C2-inflow_C-demand_B-Q2-P2-V1"
+      },
+      {
+        "extended_probe_mismatches": 168,
+        "identified": true,
+        "probe_count": 2,
+        "remaining": 1,
+        "selected": "C3-inflow_A-demand_A-Q2-P1-V1",
+        "status": "identified_within_candidate_family",
+        "true": "C3-inflow_C-demand_A-Q2-P1-V1"
+      },
+      {
+        "extended_probe_mismatches": 168,
+        "identified": true,
+        "probe_count": 2,
+        "remaining": 1,
+        "selected": "C3-inflow_A-demand_A-Q2-P2-V1",
+        "status": "identified_within_candidate_family",
+        "true": "C3-inflow_C-demand_A-Q2-P2-V1"
+      },
+      {
+        "extended_probe_mismatches": 168,
+        "identified": true,
+        "probe_count": 2,
+        "remaining": 1,
+        "selected": "C3-inflow_A-demand_B-Q2-P1-V1",
+        "status": "identified_within_candidate_family",
+        "true": "C3-inflow_C-demand_B-Q2-P1-V1"
+      },
+      {
+        "extended_probe_mismatches": 174,
+        "identified": true,
+        "probe_count": 2,
+        "remaining": 1,
+        "selected": "C3-inflow_A-demand_A-Q1-P1-V1",
+        "status": "identified_within_candidate_family",
+        "true": "C3-inflow_C-demand_A-Q1-P1-V1"
+      },
+      {
+        "extended_probe_mismatches": 120,
+        "identified": true,
+        "probe_count": 2,
+        "remaining": 1,
+        "selected": "C2-inflow_A-demand_B-Q2-P2-V1",
+        "status": "identified_within_candidate_family",
+        "true": "C2-inflow_C-demand_B-Q2-P2-V1"
+      },
+      {
+        "extended_probe_mismatches": 132,
+        "identified": true,
+        "probe_count": 2,
+        "remaining": 1,
+        "selected": "C2-inflow_A-demand_A-Q1-P2-V1",
+        "status": "identified_within_candidate_family",
+        "true": "C2-inflow_C-demand_A-Q1-P2-V1"
+      },
+      {
+        "extended_probe_mismatches": 120,
+        "identified": true,
+        "probe_count": 2,
+        "remaining": 1,
+        "selected": "C2-inflow_A-demand_A-Q2-P1-V1",
+        "status": "identified_within_candidate_family",
+        "true": "C2-inflow_C-demand_A-Q2-P1-V1"
+      },
+      {
+        "extended_probe_mismatches": 168,
+        "identified": true,
+        "probe_count": 2,
+        "remaining": 1,
+        "selected": "C3-inflow_A-demand_A-Q2-P2-V1",
+        "status": "identified_within_candidate_family",
+        "true": "C3-inflow_C-demand_A-Q2-P2-V1"
+      },
+      {
+        "extended_probe_mismatches": 174,
+        "identified": true,
+        "probe_count": 2,
+        "remaining": 1,
+        "selected": "C3-inflow_A-demand_A-Q1-P1-V1",
+        "status": "identified_within_candidate_family",
+        "true": "C3-inflow_C-demand_A-Q1-P1-V1"
+      },
+      {
+        "extended_probe_mismatches": 174,
+        "identified": true,
+        "probe_count": 2,
+        "remaining": 1,
+        "selected": "C3-inflow_A-demand_B-Q1-P1-V1",
+        "status": "identified_within_candidate_family",
+        "true": "C3-inflow_C-demand_B-Q1-P1-V1"
+      },
+      {
+        "extended_probe_mismatches": 132,
+        "identified": true,
+        "probe_count": 2,
+        "remaining": 1,
+        "selected": "C2-inflow_A-demand_B-Q1-P1-V1",
+        "status": "identified_within_candidate_family",
+        "true": "C2-inflow_C-demand_B-Q1-P1-V1"
+      },
+      {
+        "extended_probe_mismatches": 120,
+        "identified": true,
+        "probe_count": 2,
+        "remaining": 1,
+        "selected": "C2-inflow_A-demand_A-Q2-P2-V1",
+        "status": "identified_within_candidate_family",
+        "true": "C2-inflow_C-demand_A-Q2-P2-V1"
+      },
+      {
+        "extended_probe_mismatches": 168,
+        "identified": true,
+        "probe_count": 2,
+        "remaining": 1,
+        "selected": "C3-inflow_A-demand_B-Q2-P1-V1",
+        "status": "identified_within_candidate_family",
+        "true": "C3-inflow_C-demand_B-Q2-P1-V1"
+      },
+      {
+        "extended_probe_mismatches": 168,
+        "identified": true,
+        "probe_count": 2,
+        "remaining": 1,
+        "selected": "C3-inflow_A-demand_B-Q2-P1-V1",
+        "status": "identified_within_candidate_family",
+        "true": "C3-inflow_C-demand_B-Q2-P1-V1"
+      },
+      {
+        "extended_probe_mismatches": 168,
+        "identified": true,
+        "probe_count": 2,
+        "remaining": 1,
+        "selected": "C3-inflow_A-demand_A-Q2-P2-V1",
+        "status": "identified_within_candidate_family",
+        "true": "C3-inflow_C-demand_A-Q2-P2-V1"
+      },
+      {
+        "extended_probe_mismatches": 174,
+        "identified": true,
+        "probe_count": 2,
+        "remaining": 1,
+        "selected": "C3-inflow_A-demand_A-Q1-P2-V1",
+        "status": "identified_within_candidate_family",
+        "true": "C3-inflow_C-demand_A-Q1-P2-V1"
+      }
+    ],
+    "seed": 20261106
+  },
+  "random_build23": {
+    "cases": 16,
+    "induced": 13,
+    "induced_full_coverage_min": 0.9777777777777777,
+    "induced_heldout_correct": 1958,
+    "induced_heldout_total": 1963,
+    "induction_failed": 3,
+    "rows": [
+      {
+        "capacity": 5,
+        "ground": "random-00",
+        "heldout_correct": 194,
+        "heldout_count": 194,
+        "modulus": 1,
+        "period": 4,
+        "status": "induced",
+        "syntax_cost": 24,
+        "transition_coverage": 1.0
+      },
+      {
+        "capacity": 5,
+        "ground": "random-01",
+        "heldout_correct": 155,
+        "heldout_count": 155,
+        "modulus": 2,
+        "period": 3,
+        "status": "induced",
+        "syntax_cost": 22,
+        "transition_coverage": 1.0
+      },
+      {
+        "capacity": 4,
+        "error": "transfer observations require a richer rule or more probes",
+        "ground": "random-02",
+        "modulus": 3,
+        "period": 4,
+        "status": "induction_failed"
+      },
+      {
+        "capacity": 5,
+        "ground": "random-03",
+        "heldout_correct": 191,
+        "heldout_count": 191,
+        "modulus": 1,
+        "period": 4,
+        "status": "induced",
+        "syntax_cost": 20,
+        "transition_coverage": 1.0
+      },
+      {
+        "capacity": 4,
+        "ground": "random-04",
+        "heldout_correct": 96,
+        "heldout_count": 101,
+        "modulus": 3,
+        "period": 3,
+        "status": "induced",
+        "syntax_cost": 19,
+        "transition_coverage": 0.9777777777777777
+      },
+      {
+        "capacity": 4,
+        "error": "induced program fails training record State(a=0, b=2, phase=0)/B_TO_A: predicted State(a=2, b=1, phase=0), observed State(a=3, b=0, phase=0)",
+        "ground": "random-05",
+        "modulus": 3,
+        "period": 3,
+        "status": "induction_failed"
+      },
+      {
+        "capacity": 4,
+        "ground": "random-06",
+        "heldout_correct": 143,
+        "heldout_count": 143,
+        "modulus": 2,
+        "period": 4,
+        "status": "induced",
+        "syntax_cost": 22,
+        "transition_coverage": 1.0
+      },
+      {
+        "capacity": 5,
+        "ground": "random-07",
+        "heldout_correct": 151,
+        "heldout_count": 151,
+        "modulus": 2,
+        "period": 3,
+        "status": "induced",
+        "syntax_cost": 22,
+        "transition_coverage": 1.0
+      },
+      {
+        "capacity": 5,
+        "ground": "random-08",
+        "heldout_correct": 194,
+        "heldout_count": 194,
+        "modulus": 1,
+        "period": 4,
+        "status": "induced",
+        "syntax_cost": 22,
+        "transition_coverage": 1.0
+      },
+      {
+        "capacity": 4,
+        "ground": "random-09",
+        "heldout_correct": 112,
+        "heldout_count": 112,
+        "modulus": 1,
+        "period": 3,
+        "status": "induced",
+        "syntax_cost": 16,
+        "transition_coverage": 1.0
+      },
+      {
+        "capacity": 5,
+        "ground": "random-10",
+        "heldout_correct": 156,
+        "heldout_count": 156,
+        "modulus": 1,
+        "period": 3,
+        "status": "induced",
+        "syntax_cost": 14,
+        "transition_coverage": 1.0
+      },
+      {
+        "capacity": 5,
+        "ground": "random-11",
+        "heldout_correct": 149,
+        "heldout_count": 149,
+        "modulus": 3,
+        "period": 3,
+        "status": "induced",
+        "syntax_cost": 23,
+        "transition_coverage": 1.0
+      },
+      {
+        "capacity": 4,
+        "ground": "random-12",
+        "heldout_correct": 154,
+        "heldout_count": 154,
+        "modulus": 1,
+        "period": 4,
+        "status": "induced",
+        "syntax_cost": 24,
+        "transition_coverage": 1.0
+      },
+      {
+        "capacity": 4,
+        "ground": "random-13",
+        "heldout_correct": 151,
+        "heldout_count": 151,
+        "modulus": 2,
+        "period": 4,
+        "status": "induced",
+        "syntax_cost": 27,
+        "transition_coverage": 1.0
+      },
+      {
+        "capacity": 4,
+        "ground": "random-14",
+        "heldout_correct": 112,
+        "heldout_count": 112,
+        "modulus": 1,
+        "period": 3,
+        "status": "induced",
+        "syntax_cost": 19,
+        "transition_coverage": 1.0
+      },
+      {
+        "capacity": 4,
+        "error": "induced program fails training record State(a=0, b=2, phase=1)/B_TO_A: predicted State(a=2, b=1, phase=1), observed State(a=3, b=0, phase=1)",
+        "ground": "random-15",
+        "modulus": 3,
+        "period": 3,
+        "status": "induction_failed"
+      }
+    ],
+    "seed": 20261107,
+    "success_rate": 0.8125
+  },
+  "salt_audit": {
+    "files": [
+      {
+        "file": "theory_development\\build_13\\build_13.py",
+        "hash_uses_salt": true,
+        "run_analysis_seed_parameter": true,
+        "salt_definition_count": 1,
+        "secrets_token_bytes_count": 1
+      },
+      {
+        "file": "theory_development\\build_14\\build_14.py",
+        "hash_uses_salt": true,
+        "run_analysis_seed_parameter": true,
+        "salt_definition_count": 1,
+        "secrets_token_bytes_count": 1
+      },
+      {
+        "file": "theory_development\\build_15\\build_14.py",
+        "hash_uses_salt": true,
+        "run_analysis_seed_parameter": true,
+        "salt_definition_count": 1,
+        "secrets_token_bytes_count": 1
+      }
+    ],
+    "note": "The frozen builds keep the ephemeral salt for privacy. New empirical runs should accept an explicit seed, log it, and use deterministic_pair_hash so null and bootstrap draws reproduce.",
+    "replacement": "deterministic_pair_hash(seed, parts)",
+    "total_salt_definitions": 3
+  },
+  "signal_stress": {
+    "build29_multiresolution": {
+      "configs": {
+        "frame_128_hop_32": {
+          "f1": 1.0,
+          "fn": 0,
+          "fp": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "tp": 54
+        },
+        "frame_256_hop_64": {
+          "f1": 1.0,
+          "fn": 0,
+          "fp": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "tp": 54
+        },
+        "frame_512_hop_128": {
+          "f1": 0.9090909090909091,
+          "fn": 9,
+          "fp": 0,
+          "precision": 1.0,
+          "recall": 0.8333333333333334,
+          "tp": 45
+        }
+      },
+      "traces": 6
+    },
+    "build29_perturbations": {
+      "conditions": {
+        "amplitude_drift": {
+          "f1": 1.0,
+          "fn": 0,
+          "fp": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "tp": 36
+        },
+        "amplitude_modulation": {
+          "f1": 1.0,
+          "fn": 0,
+          "fp": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "tp": 36
+        },
+        "baseline": {
+          "f1": 1.0,
+          "fn": 0,
+          "fp": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "tp": 36
+        },
+        "clip_0.8": {
+          "f1": 1.0,
+          "fn": 0,
+          "fp": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "tp": 36
+        },
+        "dc_offset": {
+          "f1": 1.0,
+          "fn": 0,
+          "fp": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "tp": 36
+        },
+        "gain_high": {
+          "f1": 1.0,
+          "fn": 0,
+          "fp": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "tp": 36
+        },
+        "gain_low": {
+          "f1": 1.0,
+          "fn": 0,
+          "fp": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "tp": 36
+        },
+        "jitter": {
+          "f1": 0.927536231884058,
+          "fn": 4,
+          "fp": 1,
+          "precision": 0.9696969696969697,
+          "recall": 0.8888888888888888,
+          "tp": 32
+        },
+        "noise_0.01": {
+          "f1": 1.0,
+          "fn": 0,
+          "fp": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "tp": 36
+        },
+        "noise_0.03": {
+          "f1": 1.0,
+          "fn": 0,
+          "fp": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "tp": 36
+        }
+      },
+      "traces": 4
+    },
+    "build30_adaptive": {
+      "amplitude": {
+        "ambiguous_selection": true,
+        "boundary_view": "temporal",
+        "calibration_count": 6,
+        "heldout_boundary_f1": 0.6579124579124579,
+        "heldout_count": 6,
+        "heldout_token_pairwise_accuracy": 0.9888888888888889,
+        "heldout_utility": 0.7572053872053872,
+        "plausible_profile_count": 2,
+        "selected_profile": "temporal__temporal__f256_h64",
+        "token_view": "temporal"
+      },
+      "frequency": {
+        "ambiguous_selection": true,
+        "boundary_view": "combined",
+        "calibration_count": 6,
+        "heldout_boundary_f1": 0.7823232323232322,
+        "heldout_count": 6,
+        "heldout_token_pairwise_accuracy": 0.9111111111111111,
+        "heldout_utility": 0.8209595959595958,
+        "plausible_profile_count": 2,
+        "selected_profile": "combined__harmonic__f256_h64",
+        "token_view": "harmonic"
+      },
+      "mixed": {
+        "ambiguous_selection": true,
+        "boundary_view": "combined",
+        "calibration_count": 6,
+        "heldout_boundary_f1": 0.8696969696969697,
+        "heldout_count": 6,
+        "heldout_token_pairwise_accuracy": 1.0,
+        "heldout_utility": 0.9087878787878787,
+        "plausible_profile_count": 2,
+        "selected_profile": "combined__combined__f256_h64",
+        "token_view": "combined"
+      }
+    },
+    "build30_phase": {
+      "interpretation": "Pilot calibration is part of the computation. Phase-domain arithmetic is exact in the noiseless fixture but not robust to uncalibrated pilot phase, drift or large noise.",
+      "noise_sigma": {
+        "0.0": 0,
+        "0.02": 0,
+        "0.1": 0,
+        "0.5": 0
+      },
+      "one_sample_roll_errors": 89,
+      "phase_drift_errors": 128,
+      "pilot_shift_pi_over_4_errors": 128,
+      "total_operations": 128
+    }
+  }
+}

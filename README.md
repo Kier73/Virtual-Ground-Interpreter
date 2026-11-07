@@ -61,6 +61,7 @@ VL_Response_Geometry/
 │   ├── build_20/ … build_23/  operational foundations
 │   └── build_25/ … build_30/  Build 24 is embedded in build_25/legacy and build_26/notes
 ├── test_results/              per-build logs, manifest verification, test summary
+├── validation/                post-freeze validation tests and benchmarks
 ├── run_all_tests.py           orchestrates every top-level build's unittest suite
 ├── INDEX.md                   build map, outcomes, and reproducing commands
 └── PERSPECTIVE.md             interpretive essay on both arcs
@@ -71,10 +72,12 @@ Each build keeps its own tests, reports, schemas, manifests and documentation. T
 ## Where to read
 
 1. [`INDEX.md`](INDEX.md) — the full build map, what held up and what did not, and reproducing commands.
-2. [`PERSPECTIVE.md`](PERSPECTIVE.md) — an interpretive essay on the program and its self-corrections.
-3. [`theory_development/README.md`](theory_development/README.md) — Builds 01–19.
-4. [`virtual_ground/README.md`](virtual_ground/README.md) — Builds 20–30.
-5. [`test_results/SUMMARY.md`](test_results/SUMMARY.md) — the test and manifest record.
+2. [`Questions On the Virtual Ground.md`](Questions%20On%20the%20Virtual%20Ground.md) — the source questions that motivate the Virtual Ground concept.
+3. [`PERSPECTIVE.md`](PERSPECTIVE.md) — an interpretive essay on the program and its self-corrections.
+4. [`theory_development/README.md`](theory_development/README.md) — Builds 01–19.
+5. [`virtual_ground/README.md`](virtual_ground/README.md) — Builds 20–30.
+6. [`test_results/SUMMARY.md`](test_results/SUMMARY.md) — the test and manifest record.
+7. [`validation/README.md`](validation/README.md) — post-freeze validation tests and benchmarks.
 
 A suggested sequence through the primary documents:
 

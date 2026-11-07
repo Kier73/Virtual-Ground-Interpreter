@@ -9,6 +9,7 @@ This folder holds the pre-Virtual-Ground arc: the mathematical response-geometry
 - `empirical_results/` — work produced after unpacking, outside the frozen packages:
   - `build_12/` — the shipped Rochester RIR run plus `corrected/`, which fixes the onset convention and reruns the unmodified Build 12 feature functions.
   - `taps/` — held-out TAPS runs for Builds 13–15 and the external Build 15 matcher controls.
+- `Early Codonic Encoding Exploration insights.md` and `VirtualLayer_early_codonic_reference.md` — root-level exploration/reference documents for the early codonic encoding work.
 
 ## Arc summary
 
