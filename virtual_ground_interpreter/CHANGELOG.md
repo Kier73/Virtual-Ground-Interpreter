@@ -1,3 +1,12 @@
+## Unreleased — cost-aware active attention
+
+- Add candidates for action probes and output channels with explicit relative costs.
+- Add unresolved-pair reduction and per-cost probe ranking.
+- Add greedy marginal-gain and bounded exhaustive subset planners.
+- Add a complementary-observation control demonstrating why greedy attention can miss jointly informative capabilities.
+- Add tests and a report runner for delayed-six and complementary-probe cases.
+- The new test suite has not been executed in this environment; no passing totals are claimed.
+
 ## Unreleased — observer-relative relational atlas research
 
 - Add explicit observer contexts over action probes and visible output channels.

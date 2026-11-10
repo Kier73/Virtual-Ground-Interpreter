@@ -381,3 +381,36 @@ Z_H=\sum_{t=0}^{H-1}\gamma^t.
 The same action sequence is applied to both initial contexts. For deterministic systems this is a pseudometric because each fixed action word induces a sum of pullbacks of the output metric, and expectation preserves non-negativity, symmetry, and the triangle inequality. Distinct contexts may still have distance zero. If \(\mu\) has full support on \(A_O\), zero distance is equivalent to equality of selected output traces over all action words of length \(H\), which also determines every shorter prefix.
 
 The current implementation uses the normalized cyclic metric on selected \(\mathbb Z/8\mathbb Z\) output symbols. The resulting distance is not universal or observer-independent; it is a profile whose context, action weights, horizon, discount, and output metric must travel with the value.
+
+
+## 18. Cost-aware active attention over finite observers
+
+A candidate attention capability \(p\) adds either an action probe or an output channel to the current observer contract. For a quotient \(Q_{O,H}\), define the unresolved-pair objective:
+
+\[
+U(O,H)=\sum_{B\in Q_{O,H}}\binom{|B|}{2}.
+\]
+
+The deterministic marginal reduction and efficiency are:
+
+\[
+\Delta(p\mid O,H)=U(O,H)-U(O\oplus p,H),
+\qquad
+\eta(p\mid O,H)=\frac{\Delta(p\mid O,H)}{c(p)}.
+\]
+
+The initial planner implements a myopic greedy policy that repeatedly selects the affordable candidate with maximum marginal efficiency. It stops when no candidate has positive marginal gain.
+
+For small candidate pools, exhaustive planning solves:
+
+\[
+\min_{S\subseteq P}U(O\oplus S,H)
+\quad\text{such that}\quad
+\sum_{p\in S}c(p)\le B.
+\]
+
+The exact solver enumerates candidate subsets and defaults to a maximum of sixteen candidates.
+
+The objective is not generally submodular. A two-context fixture demonstrates complementary observations: adding action \(B\) while channel \(x\) is visible produces no split; adding channel \(y\) while only action \(A\) is available also produces no split; adding both exposes a distinguishing \((B,y)\) output. Thus one candidate can have zero marginal value before another capability is acquired and positive marginal value afterward. Greedy attention can stop despite a feasible informative combination.
+
+The score is deterministic pair reduction, not expected information gain. Probabilistic attention requires explicit priors and calibrated observation likelihoods. Candidate costs are relative declared units and do not imply measured latency or energy.

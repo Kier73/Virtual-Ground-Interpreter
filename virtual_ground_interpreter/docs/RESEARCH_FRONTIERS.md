@@ -28,6 +28,12 @@ The Build 24 delayed-six fixture supplies a sharp temporal control: the full act
 
 The paired behavioral distance is parameterized by observer, action distribution, horizon, discount, and an output metric. This is a candidate family of semantic-distance profiles, not one universal scalar. These artifacts are present in the research branch; the tests must be executed before reporting them as passed.
 
+## Active attention and observation planning
+
+The new finite attention planner separates local probe valuation from set-level planning. It minimizes unresolved predictive-state pairs under an additive candidate-cost budget. The delayed-six control demonstrates a useful single probe; a second control demonstrates complementary action/channel observations for which greedy marginal gain returns no choice while exhaustive lookahead finds a valid pair.
+
+This is evidence against assuming a globally adequate greedy attention policy. The next research target is bounded lookahead or beam search with an anytime bound, followed by an observation-driven Ground update. The present score is deterministic; calibrated probabilistic information gain is a separate experiment.
+
 ## 2. Universal semantic distance
 
 There may be reusable distance profiles, but a single scalar distance is unlikely to be task-independent. Description edit cost, behavioral discrepancy, observation discrepancy, transformation cost, time, and resource cost answer different questions.

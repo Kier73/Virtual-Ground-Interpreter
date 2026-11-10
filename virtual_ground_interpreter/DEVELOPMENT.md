@@ -91,3 +91,19 @@ python examples/run_relational_atlas.py
 ```
 
 The relational layer must preserve the existing epistemic boundary: predictive equivalence is relative to the observer and horizon, not an identity claim about physical hidden states. An omitted probe is outside the observer contract; an unknown or ambiguous selected edge is not a negative observation and must not be completed by inference.
+
+
+## Active-attention planning experiment
+
+The experimental `vgi/attention.py` module adds cost-aware candidate selection over action probes and output channels. It exposes single-candidate rankings, a greedy marginal-gain plan, and an exhaustive subset baseline bounded to a small candidate pool.
+
+Run:
+
+```bash
+python -m unittest discover -s tests -p 'test_attention.py' -v
+python examples/run_active_attention.py
+python -m unittest discover -s tests -v
+python -m vgi verify
+```
+
+The complementary-probe fixture is a required regression control: neither candidate should reduce ambiguity alone, but the pair should. Do not simplify the planner to greedy-only. Candidate costs are relative declared units until measured from a real observation path; deterministic pair reduction must not be described as probabilistic expected information gain.

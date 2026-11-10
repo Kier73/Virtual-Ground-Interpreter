@@ -172,3 +172,12 @@ A successful active-attention policy should be tested against exhaustive probe s
 - The quotient is observer- and horizon-relative, not physical hidden-state identity.
 - No universal coordinate space, unrestricted task synthesis, physical signal computer, speedup, or energy advantage is claimed.
 - The new tests and example runner are included as executable research artifacts; they must be run in the repository environment before their expectations are reported as passed.
+
+
+## Active attention and complementary probes
+
+The first active-attention module ranks candidate action probes and output channels by reduction in unresolved predictive-state pairs per caller-declared cost unit. It includes a greedy planner and an exhaustive subset planner for small candidate pools.
+
+The delayed-six control shows the case where one probe is independently informative: adding PROBE_A resolves the horizon-five partition. A second two-state control shows non-additive value: an additional action and an additional channel each have zero marginal gain alone, but their combination exposes a distinguishing observation. This is a concrete reason not to assume local information gain is sufficient.
+
+See [ACTIVE_ATTENTION.md](ACTIVE_ATTENTION.md) for the formal objective, the counterexample, and the next bounded-lookahead direction. The score is deterministic; it is not Bayesian expected information gain.

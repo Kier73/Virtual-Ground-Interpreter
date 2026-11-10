@@ -20,6 +20,11 @@ from .relational import (
     behavioral_distance, contextual_quotient, quotient_map,
     quotient_transition_table, refinement_series,
 )
+from .attention import (
+    AttentionCandidate, AttentionError, AttentionPlan, AttentionScore,
+    exhaustive_attention_plan, greedy_attention_plan, rank_attention_probes,
+    unresolved_pair_count,
+)
 
 __version__ = "0.2.0"
 
@@ -37,4 +42,7 @@ __all__ = [
     "differential_verify", "RelationalError", "ObserverContext", "ContextualQuotient",
     "QuotientEdge", "refinement_series", "contextual_quotient", "quotient_map",
     "quotient_transition_table", "behavioral_distance",
+    "AttentionError", "AttentionCandidate", "AttentionScore", "AttentionPlan",
+    "unresolved_pair_count", "rank_attention_probes", "greedy_attention_plan",
+    "exhaustive_attention_plan",
 ]
