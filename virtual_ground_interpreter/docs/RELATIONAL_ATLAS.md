@@ -68,7 +68,7 @@ q\equiv_{O,h+1}r
 \Rightarrow q\equiv_{O,h}r.
 \]
 
-For a finite system with \(|Q|=n\), there can be at most \(n-1\) strict refinements after the initial one-class partition. Once a partition is unchanged at one step, it is stable for all later horizons under the same deterministic observer contract.
+For a finite system with \(|Q|=n\), there can be at most \(n-1\) strict refinements after the initial one-class partition. Once a partition is unchanged at one step, it is stable for all later horizons under the same deterministic observer contract. A discrete partition with one class per declared predictive context is immediately stable because it cannot be refined further.
 
 This gives the atlas a useful operational interpretation: it is not a precomputed universal coordinate system. It is a family of progressively finer maps, indexed by what is sensed and how far ahead the observer asks.
 
@@ -172,3 +172,12 @@ A successful active-attention policy should be tested against exhaustive probe s
 - The quotient is observer- and horizon-relative, not physical hidden-state identity.
 - No universal coordinate space, unrestricted task synthesis, physical signal computer, speedup, or energy advantage is claimed.
 - The new tests and example runner are included as executable research artifacts; they must be run in the repository environment before their expectations are reported as passed.
+
+
+## Active attention and complementary probes
+
+The first active-attention module ranks candidate action probes and output channels by reduction in unresolved predictive-state pairs per caller-declared cost unit. It includes a greedy planner and an exhaustive subset planner for small candidate pools.
+
+The delayed-six control shows the case where one probe is independently informative: adding PROBE_A resolves the horizon-five partition. A second two-state control shows non-additive value: an additional action and an additional channel each have zero marginal gain alone, but their combination exposes a distinguishing observation. This is a concrete reason not to assume local information gain is sufficient.
+
+See [ACTIVE_ATTENTION.md](ACTIVE_ATTENTION.md) for the formal objective, the counterexample, and the next bounded-lookahead direction. The score is deterministic; it is not Bayesian expected information gain.

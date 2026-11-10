@@ -188,3 +188,22 @@ distance = behavioral_distance(ground, observer, "q0", "q1", horizon=5)
 ```
 
 See [the relational-atlas experiment](docs/RELATIONAL_ATLAS.md) and run `python examples/run_relational_atlas.py`. This is a finite research tool, not a universal state-space model or a claim about physical hidden-state identity. Unknown and ambiguous selected transitions remain non-executable.
+
+
+## Active attention planning (experimental)
+
+Candidate action probes and output channels can be ranked by their reduction in unresolved predictive-state pairs per declared cost. For small candidate sets, compare local greedy selection with exact subset search:
+
+```python
+from vgi import (
+    AttentionCandidate, greedy_attention_plan, exhaustive_attention_plan,
+)
+
+candidates = (
+    AttentionCandidate("action", "PROBE_A", cost=1.0),
+)
+greedy = greedy_attention_plan(ground, observer, candidates, horizon=5, budget=1.0)
+exact = exhaustive_attention_plan(ground, observer, candidates, horizon=5, budget=1.0)
+```
+
+See [the active-attention experiment](docs/ACTIVE_ATTENTION.md) and run `python examples/run_active_attention.py`. Greedy selection is not assumed sufficient: complementary observations can have zero individual gain and positive joint value.

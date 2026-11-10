@@ -190,7 +190,7 @@ def refinement_series(
             if len({previous_map[state] for state in group}) != 1:
                 raise RelationalError("internal refinement error: a later horizon merged classes")
 
-        stable = _same_partition(classes, previous_classes)
+        # A discrete partition cannot be refined any further; otherwise, wait\n        # for one unchanged horizon before certifying a non-discrete fixed point.\n        stable = _same_partition(classes, previous_classes) or len(classes) == len(system.states)
         quotient = ContextualQuotient(
             system.fingerprint, observer, horizon, classes, state_map, stable
         )

@@ -58,3 +58,13 @@ An experimental increment now adds:
 - three finite probes: delayed-six prediction, cyclic recurrence, and a non-bijective automaton.
 
 This is a research overlay, not a replacement for the typed-backend sequence. Once its test suite is executed, the next curiosity is active attention allocation: select a probe by expected ambiguity reduction per unit cost, then compare against exhaustive schedules on finite controls.
+
+
+## Active-attention planning overlay
+
+A new experimental module ranks candidate action probes and output channels by unresolved pair reduction per declared cost. It provides:
+- a greedy marginal-gain planner;
+- an exhaustive subset baseline for at most 16 candidates by default;
+- explicit tests for a high-value single probe and a complementary-probe counterexample.
+
+The complementary fixture demonstrates that local information gain is not generally sufficient: two candidates can each have zero marginal value yet become informative together. The next iteration should be bounded lookahead or beam search that retains such interactions, followed by active observation and Ground refinement. Probabilistic expected information gain is deferred until explicit priors and calibrated likelihoods exist.
