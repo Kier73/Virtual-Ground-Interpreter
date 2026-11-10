@@ -123,3 +123,17 @@ python -m vgi verify
 ```
 
 Compare beam widths against the exhaustive planner on small fixtures. Treat the beam as heuristic; inspect the pruned-node records before attributing a failure to the observation model.
+
+
+## Counterexample-led perception inquiry
+
+The experimental vgi/inquiry.py layer searches unresolved pairs under the current observer against every action and output channel already declared by the Ground. It returns a shortest known distinguishing action word when one exists; it reports unknown/ambiguous cells rather than imputing them.
+
+Run:
+
+    python -m unittest discover -s tests -p 'test_perception_inquiry.py' -v
+    python examples/run_perception_inquiry.py
+    python -m unittest discover -s tests -v
+    python -m vgi verify
+
+Interpret equivalence only over the evidence-supported reachable paired graph and declared alphabet. Every report retains an open, unenumerated boundary outside that finite schema. Do not generate undeclared sensors, transformations, or states as though the observer could already know them.

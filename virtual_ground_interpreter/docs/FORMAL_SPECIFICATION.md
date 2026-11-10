@@ -432,3 +432,21 @@ The beam search uses a finite caller-supplied candidate set, additive positive c
 Zero-immediate-gain nodes are expanded. This is necessary because candidate capabilities can have complementary value: \(\Delta(p\mid O,H)=0\) can coexist with \(\Delta(q\mid O\oplus p,H)>0\). The complementary-probe fixture demonstrates a two-step path from one unresolved pair to zero, although each first-step capability alone leaves the quotient unchanged.
 
 The result is a route through observer configurations paired with the predictive quotient induced at every step. The route record includes action/channel selections, cumulative cost, unresolved pairs before/after, and class count. The search is bounded and is not an exact optimality guarantee. Candidate costs remain declared relative units.
+
+
+## 20. Counterexample-led inquiry and open-world boundary
+
+Let O be the current observer and Q_(O,H) its predictive quotient. Each unresolved pair q,r in one quotient class is a counterexample target: the current observer has not separated the pair within horizon H.
+
+The inquiry layer searches a paired transition graph over every action A and output channel C already declared by the supplied Ground. A path is a shared action word w. It is traversable only when both sides have a known, single-valued transition for each action. A witness is the first output difference along a breadth-first path:
+
+    exists t < |w| such that lambda(delta*(q, w[:t]), w[t])
+                         != lambda(delta*(r, w[:t]), w[t]).
+
+The returned witness is shortest in action-word length within the declared finite model. It includes the paired output traces and differing channels. If the witness uses actions or channels outside O, those are reported as already-declared but currently unselected requirements. If it uses only O but a longer word, it identifies a temporal rather than a sensor omission.
+
+Unknown and ambiguous transition cells are blockers, not negative observations. A search with reachable blockers is inconclusive. A bounded search with no witness is only a no-witness-within-horizon result. Exhausting the reachable paired graph without blockers supports equivalence for that pair relative to the declared transition system and its declared action/channel alphabet.
+
+Crucially, the declared schema is not the invariant space itself. The finite Ground is a model with a boundary. The inquiry report records undeclared actions, channels, transformations, states, and distinctions as open and unenumerated; it does not attempt to list them. This avoids claiming to discover unknown capabilities by enumerating only capabilities expressible in the current observer vocabulary.
+
+The inquiry result does not establish physical hidden-state identity, universal observability, or completeness of the real system. Adding a genuinely new capability requires a new semantic contract and external evidence. Transformations are not synthesized unless their semantics are declared and verified.

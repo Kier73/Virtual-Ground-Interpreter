@@ -1,3 +1,10 @@
+## Unreleased — counterexample-led inquiry and open perception boundary
+
+- Add shortest, evidence-backed distinguishing-experiment search for pairs collapsed by the current observer.
+- Report omitted declared actions/channels, temporal witnesses, unknown or ambiguous transition blockers, and search bounds.
+- Preserve an explicit open-world boundary beyond the declared finite Ground; do not synthesize undeclared capabilities.
+- Add tests and an example runner. Tests have not been executed in this environment; no passing totals are claimed.
+
 ## Unreleased — joint perception-navigation
 
 - Add bounded beam search over observer configurations and their induced predictive quotients.
