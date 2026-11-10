@@ -77,3 +77,17 @@ For transition-system or compiler work, the minimum gate is:
 - Run the delayed-six integration example under examples/run_delayed_six.py.
 
 The delayed-six runner must report matching direct and compiled state/output traces. Partial or ambiguous transition systems must remain non-executable. Regenerate MANIFEST.sha256 after every package change and verify every listed digest. Do not record passing totals until the commands have actually been run.
+
+
+## Observer-relative relational atlas experiment
+
+The package contains an experimental finite relational layer in `vgi/relational.py`. Its observer contract makes action probes and visible channels explicit. It produces exact predictive partitions by horizon, checks quotient maps and adjacent-layer transitions, and computes a task-conditioned behavioral distance profile. The small runner `examples/run_relational_atlas.py` assembles delayed-six, cyclic, and non-bijective controls.
+
+Run the new checks with:
+
+```bash
+python -m unittest discover -s tests -p 'test_relational.py' -v
+python examples/run_relational_atlas.py
+```
+
+The relational layer must preserve the existing epistemic boundary: predictive equivalence is relative to the observer and horizon, not an identity claim about physical hidden states. An omitted probe is outside the observer contract; an unknown or ambiguous selected edge is not a negative observation and must not be completed by inference.

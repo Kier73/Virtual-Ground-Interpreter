@@ -15,6 +15,11 @@ from .transitions import (
     TransitionObservation, TransitionOutcome, TransitionRun, TransitionStep,
     TransitionSystemError, UnknownTransitionError, differential_verify,
 )
+from .relational import (
+    ContextualQuotient, ObserverContext, QuotientEdge, RelationalError,
+    behavioral_distance, contextual_quotient, quotient_map,
+    quotient_transition_table, refinement_series,
+)
 
 __version__ = "0.2.0"
 
@@ -29,5 +34,7 @@ __all__ = [
     "TransitionOutcome", "TransitionStep", "TransitionRun", "TransitionSystemError",
     "UnknownTransitionError", "AmbiguousTransitionError", "TransitionCompileError",
     "TransitionCompiler", "CompiledTransitionProgram", "CompiledTransitionRun",
-    "differential_verify",
+    "differential_verify", "RelationalError", "ObserverContext", "ContextualQuotient",
+    "QuotientEdge", "refinement_series", "contextual_quotient", "quotient_map",
+    "quotient_transition_table", "behavioral_distance",
 ]

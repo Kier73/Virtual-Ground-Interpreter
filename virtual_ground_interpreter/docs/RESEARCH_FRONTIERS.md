@@ -18,6 +18,16 @@ This defines an exact observational quotient for deterministic observations. It 
 
 Report which relations commute with the maps, which distinctions each observer collapses, whether refinement is monotone, code size and reconstruction cost, counterexamples, and the first context that breaks each map. A trivial one-to-one relabelling is not a meaningful success. A useful result must preserve nontrivial structure and improve organization, prediction, or execution.
 
+
+
+### Finite relational-atlas implementation
+
+The active package now has an experimental observer-relative quotient module. Its observer contract explicitly selects the action probes and output channels. A recursive predictive signature creates a sequence of quotients by increasing horizon; unknown or ambiguous selected transitions stop construction rather than being guessed.
+
+The Build 24 delayed-six fixture supplies a sharp temporal control: the full action profile is expected to split states in order across horizons, while removing PROBE_A leaves its delayed output distinction invisible. Additional tests use a cyclic recurrence (channel projection) and a many-to-one automaton (non-bijective transition). The module also checks quotient projections and adjacent-layer transition/output maps.
+
+The paired behavioral distance is parameterized by observer, action distribution, horizon, discount, and an output metric. This is a candidate family of semantic-distance profiles, not one universal scalar. These artifacts are present in the research branch; the tests must be executed before reporting them as passed.
+
 ## 2. Universal semantic distance
 
 There may be reusable distance profiles, but a single scalar distance is unlikely to be task-independent. Description edit cost, behavioral discrepancy, observation discrepancy, transformation cost, time, and resource cost answer different questions.

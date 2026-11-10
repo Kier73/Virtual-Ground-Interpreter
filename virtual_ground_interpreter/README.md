@@ -173,3 +173,18 @@ The runtime also exposes a bounded bridge from learned predictive machines to ex
 GroundTransitionSystem distinguishes known, unknown, and ambiguous transitions. The initial compiler accepts only complete deterministic grounds and lowers them to the current Signal8 instruction language. It is bounded to eight states, eight actions, and output values in Z/8Z. Unknown and ambiguous transitions are never silently guessed. See the formal specification and the development-throughline review in the docs directory.
 
 Terminal symbol observation also respects phase uncertainty: it returns a symbol only when one decision region is consistent with the declared error bound.
+
+
+## Observer-relative relational atlas (experimental)
+
+The experimental relational layer treats an observer as an explicit choice of available action probes and visible output channels. It constructs exact predictive equivalence classes over increasing horizons, verifies maps between finer and coarser quotients, and calculates a behavioral distance profile tied to the observer and action distribution.
+
+```python
+from vgi import ObserverContext, refinement_series, behavioral_distance
+
+observer = ObserverContext.full(ground, "available")
+quotients = refinement_series(ground, observer, max_horizon=8)
+distance = behavioral_distance(ground, observer, "q0", "q1", horizon=5)
+```
+
+See [the relational-atlas experiment](docs/RELATIONAL_ATLAS.md) and run `python examples/run_relational_atlas.py`. This is a finite research tool, not a universal state-space model or a claim about physical hidden-state identity. Unknown and ambiguous selected transitions remain non-executable.
