@@ -1,46 +1,48 @@
 # Iteration plan — virtual_ground_interpreter
 
-This page turns the package's own `DEVELOPMENT_DIRECTION.md` into an
-executable sequence. Each item is a separate, verifiable increment.
+## Completed in 0.2.0: first-class predictive transition contract
 
-## Increment 0.1.0 → 0.1.1: contract hygiene
+- Add GroundTransitionSystem with explicit known, unknown, and ambiguous state/action evidence.
+- Import the Build 24 VG-PredictiveMealy-1 specification without hidden-state labels.
+- Compile complete finite grounds to the existing Signal8 IR using guarded dispatch and persistent memory.
+- Differentially compare direct and compiled semantic state/output traces.
+- Preserve unknown and ambiguous edges by refusing to compile unresolved grounds.
+- Make terminal symbol observation fail closed when its phase uncertainty spans multiple symbol regions.
 
-- Declare the backend protocol used by `Signal8Backend`.
-- Add instruction pre/postconditions and read/write sets to the formal spec.
-- No semantic change; the goal is to make the current trusted core explicit.
+Evidence remains finite and bounded. The delayed-six model is an integration fixture, not a general induction result newly produced by the active package.
 
-## Increment 0.1.1 → 0.2.0: first-class transition system
+## Next increments
 
-- Represent control state, signal store, guards and transitions as a Ground
-  object: \(\mathcal T=(Q,V,\Gamma,\Delta,q_0)\).
-- Lower that object to the current IR.
-- Run the lowered program and a direct transition-system semantics in
-  parallel and require identical traces.
+### 0.2.0 → 0.3.0: typed backend and instruction contracts
 
-## Increment 0.2.0 → 0.3.0: second backend proof point
+- Extract an explicit backend protocol from the current Signal8Backend assumptions.
+- Add instruction preconditions, postconditions, read/write sets, reversibility classification, and evidence links.
+- Keep direct transition-system semantics independent from the IR implementation.
+
+### 0.3.0 → 0.4.0: second backend proof point
 
 - Add one small non-8-PSK backend behind the same protocol.
-- Require backend-specific law proofs; do not inherit `Z/8Z` assumptions.
-- Measure which interpreter facilities are genuinely reusable.
+- Require backend-specific law tests and uncertainty semantics.
+- Measure which interpreter facilities are reusable without importing Signal8 assumptions.
 
-## Increment 0.3.0 → 0.4.0: observation-driven Ground constructor
+### 0.4.0 → 0.5.0: observation-driven Ground construction
 
-- Reintroduce predictive-context learning as a constructor:
-  observations → predictive distinctions → candidate transition system →
-  executable Ground → counterexample refinement.
-- Preserve unresolved ambiguities and emit a general finite automaton when a
-  group law is not supported.
+- Connect Build 26-style incremental partial grounds to GroundTransitionSystem.
+- Preserve missing and conflicting evidence explicitly.
+- Refine only through new observations, longer distinguishing histories, or retained counterexamples.
+- Emit a general finite transition system when no supported group or phase law is found.
 
-## Increment 0.4.0 → 0.5.0: adaptive interpretation
+### 0.5.0 → 0.6.0: task-conditioned synthesis and navigation
 
-- Richer task/intent contracts, observer and operation selection, and cost
-  estimation.
-- Optimization remains bounded and explicit; no free-form algorithm discovery
-  without an evidence boundary.
+- Extend typed task contracts with output invariants, input domains, resource budgets, latency constraints, and ambiguity policy.
+- Search only within a declared DSL/program grammar.
+- Compare direct execution, recurrence, procedural regeneration, and compiled IR using whole-path cost accounting.
+- Require replayable certificates or differential reference checks for accepted programs.
 
 ## Non-goals
 
 - No universal or Turing-complete computation claim.
 - No physical analog hardware claim.
-- No silent decoding inside the data plane.
-- No loss of indeterminate as a first-class outcome.
+- No silent decoding inside the data plane or terminal observation.
+- No loss of unknown/ambiguous as first-class outcomes.
+- No performance or energy advantage claim without a complete workload baseline.

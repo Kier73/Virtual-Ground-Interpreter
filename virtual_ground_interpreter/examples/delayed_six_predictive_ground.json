@@ -1,0 +1,33 @@
+{
+  "specification": {
+    "format": "VG-PredictiveMealy-1",
+    "initial": "q0",
+    "actions": ["HOLD", "PROBE_A", "PROBE_B"],
+    "transitions": {
+      "q0": {"HOLD": "q1", "PROBE_A": "q1", "PROBE_B": "q1"},
+      "q1": {"HOLD": "q2", "PROBE_A": "q2", "PROBE_B": "q2"},
+      "q2": {"HOLD": "q3", "PROBE_A": "q3", "PROBE_B": "q3"},
+      "q3": {"HOLD": "q4", "PROBE_A": "q4", "PROBE_B": "q4"},
+      "q4": {"HOLD": "q5", "PROBE_A": "q5", "PROBE_B": "q5"},
+      "q5": {"HOLD": "q0", "PROBE_A": "q0", "PROBE_B": "q0"}
+    },
+    "outputs": {
+      "q0": {"HOLD": [0], "PROBE_A": [0], "PROBE_B": [0]},
+      "q1": {"HOLD": [0], "PROBE_A": [0], "PROBE_B": [0]},
+      "q2": {"HOLD": [0], "PROBE_A": [0], "PROBE_B": [0]},
+      "q3": {"HOLD": [0], "PROBE_A": [0], "PROBE_B": [0]},
+      "q4": {"HOLD": [0], "PROBE_A": [0], "PROBE_B": [0]},
+      "q5": {"HOLD": [0], "PROBE_A": [1], "PROBE_B": [0]}
+    },
+    "metadata": {
+      "ground_name": "delayed_six",
+      "observer_profile": "available",
+      "semantic_claim": "minimal predictive quotient supported by the observation table and bounded conformance suite",
+      "physical_hidden_state_claim": "not inferred; only behaviorally distinguishable predictive contexts are represented"
+    }
+  },
+  "metadata": {
+    "lineage": "Build 24 delayed_six learned predictive Mealy fixture",
+    "source": "virtual_ground/build_25/legacy/build24/reports/ground_spec_delayed_six__available.json"
+  }
+}

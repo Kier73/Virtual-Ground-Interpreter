@@ -83,3 +83,8 @@ A future `ValueBackend` protocol should define:
 - propagation of uncertainty or confidence metadata.
 
 A new backend must prove its own laws. It must not inherit the `Z/8Z` assumptions by accident.
+
+
+## Predictive transition compilation
+
+The predictive state-transition object is maintained separately from the signal backend. It supplies direct reference semantics and preserves known, unknown, and ambiguous transition evidence. The bounded TransitionCompiler lowers only complete deterministic grounds into the Signal8 IR. The compiled path uses runtime action slots, persistent signal-valued state, guarded dispatch, and explicit semantic emissions. Direct and compiled state/output traces are compared. See the formal specification and delayed-six example.

@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "virtual-ground-interpreter"
-version = "0.1.0"
-description = "A bounded signal-state interpreter with conditional transitions and executable Ground contracts"
+version = "0.2.0"
+description = "A bounded interpreter with signal-state execution and predictive transition-ground compilation"
 requires-python = ">=3.10"
 license = {text = "MIT"}
 authors = [{name = "Virtual Ground research"}]

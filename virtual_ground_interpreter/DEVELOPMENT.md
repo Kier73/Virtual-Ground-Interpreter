@@ -66,3 +66,14 @@ From `docs/DEVELOPMENT_DIRECTION.md`, in dependency order:
 4. Add a second backend only after the common semantic interface is declared.
 5. Reintroduce observation-driven Ground construction as a constructor with
    counterexample refinement, without forcing every domain into a group law.
+
+
+## Predictive-ground compiler iteration
+
+For transition-system or compiler work, the minimum gate is:
+
+- Run the unit suite with Python unittest discovery over tests.
+- Run the finite Ground verifier through the vgi CLI.
+- Run the delayed-six integration example under examples/run_delayed_six.py.
+
+The delayed-six runner must report matching direct and compiled state/output traces. Partial or ambiguous transition systems must remain non-executable. Regenerate MANIFEST.sha256 after every package change and verify every listed digest. Do not record passing totals until the commands have actually been run.

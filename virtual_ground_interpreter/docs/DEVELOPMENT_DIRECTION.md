@@ -76,3 +76,18 @@ No claim of verified execution should be made until the transition semantics and
 ## Decision rule
 
 Prefer the smallest extension that introduces a new, verifiable capability. Do not add a generalized abstraction merely because it might eventually be useful. Preserve direct fallbacks, expose uncertainty, and record where the chosen interpreter strategy loses against a simpler implementation.
+
+
+## Current integration result
+
+A first-class GroundTransitionSystem now represents predictive states, actions, output channels, known/unknown/ambiguous edges, support counts, and evidence references. A Build 24 VG-PredictiveMealy-1 adapter imports the archived delayed-six model. Complete grounds can be compiled into the existing Signal8 IR for a fixed action-sequence length, with actions supplied as runtime signal-valued inputs. Direct and compiled executions are compared by their semantic state and output traces.
+
+The current compiler is deliberately bounded to eight states, eight actions, and Z/8Z output symbols. It refuses partial or ambiguous grounds. This is the first executable bridge from the predictive-ground archive into the active machine; it does not yet embed the Build 24 learner or the Build 26 online partial-ground learner.
+
+## Immediate next priorities
+
+1. Extract the current backend assumptions into a typed backend protocol and add instruction pre/postconditions, read/write sets, reversibility metadata, and evidence references.
+2. Add a second backend with a distinct domain and independent semantic laws. Do not reuse Signal8 assumptions by default.
+3. Add an observation-driven constructor for GroundTransitionSystem that imports Build 26 partial evidence while preserving unknown and ambiguous edges.
+4. Add intention/resource contracts and compare direct execution, generated rules, and compiled paths against complete cost baselines.
+5. Keep physical signal execution and speed/energy work in separately labelled evidence tiers. The current numerical signal path is not physical hardware and has no demonstrated cost advantage.
