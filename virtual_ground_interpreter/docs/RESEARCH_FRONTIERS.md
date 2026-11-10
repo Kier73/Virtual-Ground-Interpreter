@@ -111,3 +111,14 @@ For energy, measure the system boundary, including transmission, idle time, retr
 - A performance claim includes the complete path.
 
 The desired outcome is not a universal vocabulary imposed on every domain. It is a small, reusable set of semantic contracts that lets different domains retain their own mathematics while still being compared and composed where structure-preserving evidence exists.
+
+
+## Counterexample-led inquiry without closing the world
+
+A breadth-first inquiry now examines each pair collapsed by the current observer. It searches the full declared action/channel schema for a shortest distinguishing sequence, and reports whether resolution is blocked by omitted perception, insufficient horizon, or missing/ambiguous evidence.
+
+This is intentionally narrower than a generator that invents new actions, sensors, transformations, or states. Such a generator would already require a vocabulary and semantics for its proposals, and could reproduce the observer's blind spots. The report instead preserves an explicit open boundary outside the declared Ground: it says what the model has not represented without pretending to enumerate that remainder.
+
+This tests a methodological requirement: mathematical formalization should make a model's scope and blind spots inspectable, not silently redefine the invariant space as the model's current representation. A finite Ground can be complete relative to its own schema while remaining radically incomplete as an account of the system being studied.
+
+**Next falsification target:** connect witness prescriptions to an actual acquisition interface only when a concrete sensor, emulator, or host action exists. Verify acquired evidence independently before constructing a new Ground version. Never convert a proposed experiment into an observation.

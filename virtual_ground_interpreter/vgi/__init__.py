@@ -29,6 +29,10 @@ from .joint_attention import (
     AttentionRouteStep, AttentionSearchRecord, JointAttentionPlan,
     beam_attention_plan,
 )
+from .inquiry import (
+    BlockedTransition, DistinguishingWitness, InquiryError, OpenWorldBoundary,
+    PairInquiry, PerceptionInquiryReport, inquire_unresolved_pairs,
+)
 
 __version__ = "0.2.0"
 
@@ -50,4 +54,6 @@ __all__ = [
     "unresolved_pair_count", "rank_attention_probes", "greedy_attention_plan",
     "exhaustive_attention_plan", "AttentionRouteStep", "AttentionSearchRecord",
     "JointAttentionPlan", "beam_attention_plan",
+    "InquiryError", "BlockedTransition", "DistinguishingWitness", "PairInquiry",
+    "OpenWorldBoundary", "PerceptionInquiryReport", "inquire_unresolved_pairs",
 ]
