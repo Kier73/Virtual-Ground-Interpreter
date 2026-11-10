@@ -28,8 +28,5 @@ python run_all_tests.py
 
 ## Development orientation
 
-Iterative improvement happens in `virtual_ground_interpreter/`. The frozen
-builds are evidence and lineage, not the development branch. See
-`virtual_ground_interpreter/DEVELOPMENT.md` for the iteration loop, quality
-gates and release checklist, and `virtual_ground_interpreter/CHANGELOG.md` for
-version notes.
+Iterative improvement happens in `virtual_ground_interpreter/`. The archive
+builds are evidence and lineage. 
