@@ -1,3 +1,11 @@
+## Unreleased — joint perception-navigation
+
+- Add bounded beam search over observer configurations and their induced predictive quotients.
+- Retain zero-immediate-gain observer configurations to discover complementary attention routes.
+- Record the perception-to-prediction route and every visited configuration's beam-retention decision.
+- Add comparative report runner and tests for complementary-probe and delayed-six controls.
+- New tests have not been executed in this environment; no passing totals are claimed.
+
 ## Unreleased — cost-aware active attention
 
 - Add candidates for action probes and output channels with explicit relative costs.

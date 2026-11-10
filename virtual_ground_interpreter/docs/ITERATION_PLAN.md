@@ -68,3 +68,14 @@ A new experimental module ranks candidate action probes and output channels by u
 - explicit tests for a high-value single probe and a complementary-probe counterexample.
 
 The complementary fixture demonstrates that local information gain is not generally sufficient: two candidates can each have zero marginal value yet become informative together. The next iteration should be bounded lookahead or beam search that retains such interactions, followed by active observation and Ground refinement. Probabilistic expected information gain is deferred until explicit priors and calibrated likelihoods exist.
+
+
+## Joint perception-navigation overlay
+
+The new `vgi/joint_attention.py` layer searches observer configurations while carrying the predictive quotient each configuration induces. It adds:
+- a beam search over finite action/channel capability subsets;
+- route steps showing perception changes and predictive-quotient changes side by side;
+- per-configuration records showing beam retention or pruning;
+- regression controls for complementary probes and delayed-six.
+
+Next, test candidate generation from counterexamples and compare beam widths against exhaustive subset search across small randomized finite grounds. Preserve every generated/pruned configuration in the report so search failures can be diagnosed.

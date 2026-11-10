@@ -34,6 +34,12 @@ The new finite attention planner separates local probe valuation from set-level 
 
 This is evidence against assuming a globally adequate greedy attention policy. The next research target is bounded lookahead or beam search with an anytime bound, followed by an observation-driven Ground update. The present score is deterministic; calibrated probabilistic information gain is a separate experiment.
 
+## Joint navigation across perception and predictive spaces
+
+The active-attention planner now has a bounded beam-search extension. A node pairs an observer configuration (selected action probes and channels) with the predictive quotient that configuration induces. The search expands zero-marginal-gain capabilities, retains distinct observer configurations even when their current quotient scores match, and records the route and beam pruning decisions. The complementary fixture supplies a two-step route from an unresolved pair to a separating quotient.
+
+This supports a more useful architecture than a single search over world states: the system can search over how to perceive, while measuring what each perception configuration makes distinguishable. The current candidate pool remains caller supplied. Generating probes from counterexamples is the next research direction.
+
 ## 2. Universal semantic distance
 
 There may be reusable distance profiles, but a single scalar distance is unlikely to be task-independent. Description edit cost, behavioral discrepancy, observation discrepancy, transformation cost, time, and resource cost answer different questions.
