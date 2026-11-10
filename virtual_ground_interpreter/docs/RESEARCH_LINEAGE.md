@@ -53,3 +53,8 @@ The present package joins those ideas into one executable boundary:
 7. finite verification checks the declared algebra and machine behavior.
 
 The first constrained task-expression compiler now lowers typed expression trees into the IR, including conditional branches. The missing high-level piece remains significant: translate a richer task/intent contract into an appropriate Ground-relative program, selecting among algebraic, automaton, signal, symbolic and other execution strategies. That is the larger interpreter capability this runtime is intended to make possible, not something this first executable core claims to have solved.
+
+
+## Predictive transition-system bridge
+
+The active interpreter now has a first-class predictive transition contract. It can import the archived Build 24 VG-PredictiveMealy-1 format, preserve missing pairs as unknown, represent conflicting alternatives as ambiguous, and compile complete finite grounds to the Signal8 IR. The direct transition semantics remains independent from the compiler and serves as the differential reference. The current lowering is deliberately bounded to eight states/actions and Z/8Z output values; it is not the Build 24 learner and does not yet import Build 26 online partial-ground histories.

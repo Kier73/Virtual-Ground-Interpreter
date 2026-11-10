@@ -149,3 +149,27 @@ SUB(S_a,S_b): (z_a\overline{z_b},u,\min(\pi,\epsilon_a+\epsilon_b)).
 Conditional equality uses a phase-distance interval, not an early integer decode. If the interval overlaps the configured tolerance boundary, the branch is indeterminate and execution traps.
 
 See [`docs/FORMAL_SPECIFICATION.md`](docs/FORMAL_SPECIFICATION.md) for the full transition semantics and assumptions.
+
+
+## Predictive transition grounds
+
+The runtime also exposes a bounded bridge from learned predictive machines to executable VGI programs:
+
+    import json
+    from pathlib import Path
+    from vgi import GroundTransitionSystem, TransitionCompiler
+
+    legacy = json.loads(Path("examples/delayed_six_predictive_ground.json").read_text())
+    ground = GroundTransitionSystem.from_predictive_mealy_dict(legacy)
+    actions = ("HOLD", "HOLD", "HOLD", "HOLD", "HOLD", "PROBE_A")
+
+    direct = ground.run(actions)
+    compiled = TransitionCompiler().compile(ground, len(actions))
+    result = compiled.execute(actions)
+
+    assert result.state_trace == direct.state_trace
+    assert result.outputs == direct.outputs
+
+GroundTransitionSystem distinguishes known, unknown, and ambiguous transitions. The initial compiler accepts only complete deterministic grounds and lowers them to the current Signal8 instruction language. It is bounded to eight states, eight actions, and output values in Z/8Z. Unknown and ambiguous transitions are never silently guessed. See the formal specification and the development-throughline review in the docs directory.
+
+Terminal symbol observation also respects phase uncertainty: it returns a symbol only when one decision region is consistent with the declared error bound.

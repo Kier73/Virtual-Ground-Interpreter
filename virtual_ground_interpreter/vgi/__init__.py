@@ -7,9 +7,16 @@ from .machine import (
     AmbiguousBranchError, ExecutionResult, MissingMemoryCell, MissingRegister,
     RuntimeErrorVGI, SignalStateMachine, StepLimitExceeded, VirtualGroundInterpreter,
 )
-from .values import EqualityDecision, OBSERVERS, Signal8Backend, SignalValue, ValueErrorVGI
+from .values import (AmbiguousSymbolObservation, EqualityDecision, OBSERVERS,
+                     Signal8Backend, SignalValue, ValueErrorVGI)
+from .transitions import (
+    AmbiguousTransitionError, CompiledTransitionProgram, CompiledTransitionRun,
+    GroundTransitionSystem, TransitionCompileError, TransitionCompiler,
+    TransitionObservation, TransitionOutcome, TransitionRun, TransitionStep,
+    TransitionSystemError, UnknownTransitionError, differential_verify,
+)
 
-__version__ = "0.1.0"
+__version__ = "0.2.0"
 
 __all__ = [
     "__version__", "GroundSpec", "SIGNAL8_GROUND", "Instruction", "Program", "ProgramError",
@@ -18,4 +25,9 @@ __all__ = [
     "AmbiguousBranchError", "ExecutionResult", "MissingMemoryCell", "MissingRegister",
     "RuntimeErrorVGI", "SignalStateMachine", "StepLimitExceeded", "VirtualGroundInterpreter",
     "EqualityDecision", "OBSERVERS", "Signal8Backend", "SignalValue", "ValueErrorVGI",
+    "AmbiguousSymbolObservation", "GroundTransitionSystem", "TransitionObservation",
+    "TransitionOutcome", "TransitionStep", "TransitionRun", "TransitionSystemError",
+    "UnknownTransitionError", "AmbiguousTransitionError", "TransitionCompileError",
+    "TransitionCompiler", "CompiledTransitionProgram", "CompiledTransitionRun",
+    "differential_verify",
 ]

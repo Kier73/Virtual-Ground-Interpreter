@@ -268,3 +268,53 @@ The automated finite verifier checks exhaustive cases in the finite domain. This
 - The program is supplied by the user; arbitrary task descriptions are not automatically translated into IR.
 - Learning new transitions, stochastic grounds, continuous state spaces, asynchronous clocks, and resource-aware algorithm selection are outside this version.
 - No physical analog hardware, speedup, energy advantage, or universal-computation result is claimed.
+
+
+## 12. First-class finite transition systems
+
+The runtime now has a separate predictive transition contract:
+
+\[
+\mathcal T=(Q,A,C,q_0,\Omega),
+\]
+
+where \(Q\) is a set of predictive contexts, \(A\) a finite action alphabet, \(C\) an output-channel schema, \(q_0\) the declared initial predictive context, and \(\Omega\) the set of observed transition alternatives.
+
+For a pair \((q,a)\), the evidence status is:
+- **known:** exactly one observed successor/output pair;
+- **ambiguous:** two or more distinct observed successor/output pairs;
+- **unknown:** no observed pair.
+
+The step relation is executable only for known pairs. Unknown and ambiguous pairs raise distinct errors. They are not interpreted as identity transitions, no-ops, or guessed successors.
+
+A GroundTransitionSystem represents predictive contexts. These must not be equated with physical hidden-state identity: two physical states may share a predictive context under the declared observer and tested action family.
+
+The importer accepts the deterministic Build 24 VG-PredictiveMealy-1 format. Missing transition or output evidence is retained as unknown. A new VGI-TransitionSystem-1 serialization can additionally retain ambiguous alternatives, support counts, and evidence references.
+
+## 13. Transition-system compilation and differential semantics
+
+The first compiler lowers a **complete** finite transition system into the existing Signal8 instruction IR. Predictive-state and action identifiers are embedded as finite symbol indices in \(\mathbb Z/8\mathbb Z\); output channels are also finite symbols. This is a backend-specific encoding, not a general encoding for arbitrary state spaces.
+
+For a compiled action word of fixed length, each step performs guarded dispatch over declared state/action pairs. It writes the successor to persistent memory and emits the successor and output-channel values. An unmatched dispatch terminates early; the wrapper rejects incomplete semantic emissions.
+
+Let \(\operatorname{run}_{\mathcal T}(a_0,\ldots,a_{n-1})\) be the direct reference semantics and \(\operatorname{run}_{IR}\) the compiled machine. The required differential condition is equality of the semantic state trace and output trace:
+
+\[
+\operatorname{states}(\operatorname{run}_{\mathcal T})
+=
+\operatorname{states}(\operatorname{run}_{IR}),
+\qquad
+\operatorname{outputs}(\operatorname{run}_{\mathcal T})
+=
+\operatorname{outputs}(\operatorname{run}_{IR}).
+\]
+
+This is checked for supplied action sequences. It is not a proof for untested sequences or arbitrary domains. The compiler refuses partial or ambiguous grounds instead of inventing semantics.
+
+The current Signal8 compiler is intentionally bounded to at most eight states, eight actions, and output values in \(\mathbb Z/8\mathbb Z\). It expands guarded dispatch per compiled action slot; it is a semantic integration step, not yet a compact phase-law optimizer.
+
+## 14. Terminal observation and uncertainty
+
+The terminal symbol observer now respects the value's conservative phase-error bound. It determines which 8-PSK symbol decision regions intersect the phase interval. A symbol is returned only when exactly one symbol remains possible; otherwise the observer raises AmbiguousSymbolObservation.
+
+This aligns terminal decoding with the interpreter's three-valued branch policy: uncertainty must not be silently discarded at the output boundary. A future API may expose the full candidate set as a typed result for callers that can use set-valued outputs.

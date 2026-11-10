@@ -20,6 +20,18 @@ class ValueErrorVGI(ValueError):
     """Invalid signal value or unsupported observer transformation."""
 
 
+class AmbiguousSymbolObservation(ValueErrorVGI):
+    """The phase-error interval overlaps multiple 8-PSK symbol regions."""
+
+    def __init__(self, candidates: tuple[int, ...], phase_error_bound: float):
+        self.candidates = candidates
+        self.phase_error_bound = phase_error_bound
+        super().__init__(
+            f"terminal symbol is indeterminate: candidates={candidates}, "
+            f"phase_error_bound={phase_error_bound:.6g} rad"
+        )
+
+
 @dataclass(frozen=True, slots=True)
 class SignalValue:
     """A signal-domain state.
@@ -118,12 +130,25 @@ class Signal8Backend:
         z = cmath.exp(1j * TAU * ((observer * symbol) % 8) / 8.0)
         return SignalValue(self._normalize(z), observer, phase_error_bound)
 
+    def possible_symbols(self, value: SignalValue) -> tuple[int, ...]:
+        """Return every symbol whose decision sector intersects the phase bound."""
+        phase = math.atan2(value.phasor.imag, value.phasor.real)
+        reach = math.pi / 8.0 + value.phase_error_bound + _EPS
+        possible = []
+        for symbol in range(8):
+            encoded = (value.observer * symbol) % 8
+            centre = TAU * encoded / 8.0
+            delta = abs(math.atan2(math.sin(phase - centre), math.cos(phase - centre)))
+            if delta <= reach:
+                possible.append(symbol)
+        return tuple(possible)
+
     def observe_symbol(self, value: SignalValue) -> int:
-        """Decode at an explicit observation boundary; never used by execution."""
-        phase = math.atan2(value.phasor.imag, value.phasor.real) % TAU
-        encoded_index = int(round(phase * 8.0 / TAU)) % 8
-        inverse = pow(value.observer, -1, 8)
-        return (encoded_index * inverse) % 8
+        """Decode only when the declared phase bound identifies one symbol."""
+        possible = self.possible_symbols(value)
+        if len(possible) != 1:
+            raise AmbiguousSymbolObservation(possible, value.phase_error_bound)
+        return possible[0]
 
     def ingest_iq(self, signal: tuple[complex, ...] | list[complex],
                   pilot: tuple[complex, ...] | list[complex], observer: int = 1,

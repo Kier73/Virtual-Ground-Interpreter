@@ -53,6 +53,21 @@ class SignalDomainTests(unittest.TestCase):
         out = self.backend.add(a, b)
         self.assertAlmostEqual(out.phase_error_bound, 0.03 + 0.12)  # b is reframed 3 -> 1 with exponent 3
 
+    def test_terminal_decoder_refuses_symbol_boundary_ambiguity(self):
+        from vgi.values import AmbiguousSymbolObservation
+        boundary = SignalValue(complex(math.cos(math.pi / 8), math.sin(math.pi / 8)), 1, 0.0)
+        with self.assertRaises(AmbiguousSymbolObservation) as caught:
+            self.backend.observe_symbol(boundary)
+        self.assertEqual(caught.exception.candidates, (0, 1))
+
+        uncertain = SignalValue(1.0 + 0.0j, 1, math.pi / 8)
+        with self.assertRaises(AmbiguousSymbolObservation):
+            self.backend.observe_symbol(uncertain)
+
+    def test_possible_symbols_respects_observer_coordinate(self):
+        value = self.backend.encode_symbol(5, observer=3)
+        self.assertEqual(self.backend.possible_symbols(value), (5,))
+
     def test_comparison_three_way_decision(self):
         identity = self.backend.encode_symbol(0, 1)
         near = SignalValue(complex(math.cos(0.05), math.sin(0.05)), 1, 0.01)
