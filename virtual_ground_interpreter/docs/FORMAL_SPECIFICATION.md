@@ -346,7 +346,7 @@ Define \(q\equiv_{O,h}r\) iff \(P_h(q)=P_h(r)\). This is equality of projected o
 q\equiv_{O,h+1}r\Rightarrow q\equiv_{O,h}r.
 \]
 
-For a finite \(n\)-state Ground, at most \(n-1\) strict refinements are possible. If the partition is unchanged between two adjacent horizons, deterministic refinement is stable thereafter. The implementation refuses to derive a quotient when any selected state/action edge is unknown or ambiguous.
+For a finite \(n\)-state Ground, at most \(n-1\) strict refinements are possible. If the partition is unchanged between two adjacent horizons, deterministic refinement is stable thereafter. A discrete partition (one class per declared state) is also immediately stable because no further split is possible. The implementation refuses to derive a quotient when any selected state/action edge is unknown or ambiguous.
 
 ## 16. Quotient projections and layered transition maps
 

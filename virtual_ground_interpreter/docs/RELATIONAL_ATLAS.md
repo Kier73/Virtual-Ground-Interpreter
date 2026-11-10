@@ -68,7 +68,7 @@ q\equiv_{O,h+1}r
 \Rightarrow q\equiv_{O,h}r.
 \]
 
-For a finite system with \(|Q|=n\), there can be at most \(n-1\) strict refinements after the initial one-class partition. Once a partition is unchanged at one step, it is stable for all later horizons under the same deterministic observer contract.
+For a finite system with \(|Q|=n\), there can be at most \(n-1\) strict refinements after the initial one-class partition. Once a partition is unchanged at one step, it is stable for all later horizons under the same deterministic observer contract. A discrete partition with one class per declared predictive context is immediately stable because it cannot be refined further.
 
 This gives the atlas a useful operational interpretation: it is not a precomputed universal coordinate system. It is a family of progressively finer maps, indexed by what is sensed and how far ahead the observer asks.
 
