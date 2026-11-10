@@ -3,7 +3,7 @@
 This repository now has two layers:
 
 1. **Active project:** `virtual_ground_interpreter/` — a versioned, executable signal-state interpreter. This is the code path for iterative improvement.
-2. **Frozen research archive:** `theory_development/` and `virtual_ground/` — the numbered Builds 01–31. These are preserved as historical records and are not refactored.
+2. **research archive:** `theory_development/` and `virtual_ground/` — the numbered Builds 01–31.
 
 The active package is the bounded interpreter core described in
 `virtual_ground_interpreter/README.md`. It runs typed task expressions and a
@@ -20,7 +20,7 @@ python -m vgi verify
 python -m vgi run examples/conditional_select.task.json --input input.a=3@1 --input input.b=5@3
 ```
 
-The frozen archive suites can still be run from the repository root:
+The archive suites can still be run from the repository root:
 
 ```powershell
 python run_all_tests.py
