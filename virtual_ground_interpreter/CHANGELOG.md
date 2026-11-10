@@ -1,3 +1,11 @@
+## Unreleased — observer-relative relational atlas research
+
+- Add explicit observer contexts over action probes and visible output channels.
+- Add exact horizon-indexed predictive quotient refinement, finer-to-coarser maps, and adjacent-layer transition/output checks.
+- Add observer- and action-distribution-relative behavioral pseudometric profiles.
+- Add finite controls for delayed prediction, cyclic recurrence, and a non-bijective automaton.
+- This is an experimental research increment. The new tests have not been executed in this environment; no passing status is claimed.
+
 # Changelog
 
 ## 0.2.0 — predictive transition-system integration

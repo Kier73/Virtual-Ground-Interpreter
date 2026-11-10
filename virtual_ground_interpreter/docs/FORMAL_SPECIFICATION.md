@@ -318,3 +318,66 @@ The current Signal8 compiler is intentionally bounded to at most eight states, e
 The terminal symbol observer now respects the value's conservative phase-error bound. It determines which 8-PSK symbol decision regions intersect the phase interval. A symbol is returned only when exactly one symbol remains possible; otherwise the observer raises AmbiguousSymbolObservation.
 
 This aligns terminal decoding with the interpreter's three-valued branch policy: uncertainty must not be silently discarded at the output boundary. A future API may expose the full candidate set as a typed result for callers that can use set-valued outputs.
+
+
+## 15. Observer contexts and horizon-indexed predictive quotients
+
+For a finite deterministic transition system \(\mathcal T=(Q,A,C,\delta,\lambda)\), define an observer context \(O=(A_O,C_O)\), where the selected action set determines available probes and the selected channel set determines the observable output projection.
+
+The horizon signatures are:
+
+\[
+P_0(q)=\star,
+\]
+
+\[
+P_{h+1}(q)=
+\left(
+\left(
+\pi_{C_O}(\lambda(q,a)),
+P_h(\delta(q,a))
+\right)
+\right)_{a\in A_O}.
+\]
+
+Define \(q\equiv_{O,h}r\) iff \(P_h(q)=P_h(r)\). This is equality of projected output traces for all selected action words through the declared horizon. Horizon zero places all declared states in one class. Increasing the horizon can split a class but cannot merge classes:
+
+\[
+q\equiv_{O,h+1}r\Rightarrow q\equiv_{O,h}r.
+\]
+
+For a finite \(n\)-state Ground, at most \(n-1\) strict refinements are possible. If the partition is unchanged between two adjacent horizons, deterministic refinement is stable thereafter. The implementation refuses to derive a quotient when any selected state/action edge is unknown or ambiguous.
+
+## 16. Quotient projections and layered transition maps
+
+For \(H\ge h\), every class in \(Q_{O,H}\) lies inside one class in \(Q_{O,h}\), defining a projection \(\pi_{H\to h}\). The implementation checks this property rather than assuming it.
+
+For adjacent layers, a transition/output map is well-defined:
+
+\[
+([q]_{h+1},a)
+\mapsto
+(\pi_{C_O}(\lambda(q,a)),[\delta(q,a)]_h).
+\]
+
+The implementation verifies that all representatives of a source class yield the same projected output and target class. This is a finite homomorphism-like compatibility condition between adjacent predictive quotients. It does not assert that arbitrary observer quotients are isomorphic or share a common geometry.
+
+## 17. Observer-relative behavioral pseudometric
+
+For a fixed observer \(O\), action distribution \(\mu\), horizon \(H\), discount \(\gamma\in[0,1]\), and metric \(d_C\) on projected outputs, define
+
+\[
+D_{H,O,\mu,\gamma}(q,r)=
+\frac{1}{Z_H}
+\mathbb E_{w\sim\mu^H}
+\left[
+\sum_{t=0}^{H-1}\gamma^t
+d_C(y_t(q,w),y_t(r,w))
+\right],
+\qquad
+Z_H=\sum_{t=0}^{H-1}\gamma^t.
+\]
+
+The same action sequence is applied to both initial contexts. For deterministic systems this is a pseudometric because each fixed action word induces a sum of pullbacks of the output metric, and expectation preserves non-negativity, symmetry, and the triangle inequality. Distinct contexts may still have distance zero. If \(\mu\) has full support on \(A_O\), zero distance is equivalent to equality of selected output traces over all action words of length \(H\), which also determines every shorter prefix.
+
+The current implementation uses the normalized cyclic metric on selected \(\mathbb Z/8\mathbb Z\) output symbols. The resulting distance is not universal or observer-independent; it is a profile whose context, action weights, horizon, discount, and output metric must travel with the value.

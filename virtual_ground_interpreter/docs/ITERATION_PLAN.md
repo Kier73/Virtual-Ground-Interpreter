@@ -46,3 +46,15 @@ Evidence remains finite and bounded. The delayed-six model is an integration fix
 - No silent decoding inside the data plane or terminal observation.
 - No loss of unknown/ambiguous as first-class outcomes.
 - No performance or energy advantage claim without a complete workload baseline.
+
+
+## Relational-atlas research overlay
+
+An experimental increment now adds:
+- observer contexts that choose available action probes and visible output channels;
+- exact horizon-indexed predictive partitions with monotone refinement and finite stabilization;
+- explicit maps from finer to coarser quotients and adjacent-layer transition/output checks;
+- a behavioral pseudometric profile parameterized by observer, action distribution, horizon, discount, and output metric;
+- three finite probes: delayed-six prediction, cyclic recurrence, and a non-bijective automaton.
+
+This is a research overlay, not a replacement for the typed-backend sequence. Once its test suite is executed, the next curiosity is active attention allocation: select a probe by expected ambiguity reduction per unit cost, then compare against exhaustive schedules on finite controls.
