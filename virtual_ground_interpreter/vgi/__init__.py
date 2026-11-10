@@ -25,6 +25,10 @@ from .attention import (
     exhaustive_attention_plan, greedy_attention_plan, rank_attention_probes,
     unresolved_pair_count,
 )
+from .joint_attention import (
+    AttentionRouteStep, AttentionSearchRecord, JointAttentionPlan,
+    beam_attention_plan,
+)
 
 __version__ = "0.2.0"
 
@@ -44,5 +48,6 @@ __all__ = [
     "quotient_transition_table", "behavioral_distance",
     "AttentionError", "AttentionCandidate", "AttentionScore", "AttentionPlan",
     "unresolved_pair_count", "rank_attention_probes", "greedy_attention_plan",
-    "exhaustive_attention_plan",
+    "exhaustive_attention_plan", "AttentionRouteStep", "AttentionSearchRecord",
+    "JointAttentionPlan", "beam_attention_plan",
 ]

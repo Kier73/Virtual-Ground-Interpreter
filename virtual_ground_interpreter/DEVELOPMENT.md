@@ -107,3 +107,19 @@ python -m vgi verify
 ```
 
 The complementary-probe fixture is a required regression control: neither candidate should reduce ambiguity alone, but the pair should. Do not simplify the planner to greedy-only. Candidate costs are relative declared units until measured from a real observation path; deterministic pair reduction must not be described as probabilistic expected information gain.
+
+
+## Joint perception-navigation experiment
+
+The experimental `vgi/joint_attention.py` planner searches pairs of observer configurations and induced predictive quotients. It keeps zero-gain candidate steps available for later complementary observations and returns an inspectable route plus search records.
+
+Run:
+
+```bash
+python -m unittest discover -s tests -p 'test_joint_attention.py' -v
+python examples/run_joint_navigation.py
+python -m unittest discover -s tests -v
+python -m vgi verify
+```
+
+Compare beam widths against the exhaustive planner on small fixtures. Treat the beam as heuristic; inspect the pruned-node records before attributing a failure to the observation model.

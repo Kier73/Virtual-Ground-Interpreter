@@ -207,3 +207,22 @@ exact = exhaustive_attention_plan(ground, observer, candidates, horizon=5, budge
 ```
 
 See [the active-attention experiment](docs/ACTIVE_ATTENTION.md) and run `python examples/run_active_attention.py`. Greedy selection is not assumed sufficient: complementary observations can have zero individual gain and positive joint value.
+
+
+## Joint perception-navigation search (experimental)
+
+The joint planner searches observer configurations and tracks the predictive quotient induced by each one. It retains zero-immediate-gain configurations so complementary action/channel capabilities can be combined.
+
+```python
+from vgi import beam_attention_plan
+
+plan = beam_attention_plan(
+    ground, observer, candidates, horizon=5, budget=2.0,
+    beam_width=8, max_depth=4,
+)
+for step in plan.route:
+    print(step.candidate, step.actions, step.channels,
+          step.unresolved_before, step.unresolved_after)
+```
+
+See [the joint navigation experiment](docs/JOINT_NAVIGATION.md) and run `python examples/run_joint_navigation.py`. The search is bounded; its records show which observer configurations were expanded and pruned.

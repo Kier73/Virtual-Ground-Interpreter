@@ -414,3 +414,21 @@ The exact solver enumerates candidate subsets and defaults to a maximum of sixte
 The objective is not generally submodular. A two-context fixture demonstrates complementary observations: adding action \(B\) while channel \(x\) is visible produces no split; adding channel \(y\) while only action \(A\) is available also produces no split; adding both exposes a distinguishing \((B,y)\) output. Thus one candidate can have zero marginal value before another capability is acquired and positive marginal value afterward. Greedy attention can stop despite a feasible informative combination.
 
 The score is deterministic pair reduction, not expected information gain. Probabilistic attention requires explicit priors and calibrated observation likelihoods. Candidate costs are relative declared units and do not imply measured latency or energy.
+
+
+## 19. Joint perception-space and predictive-quotient search
+
+A search node is the pair \(N=(O,Q_{O,H})\), where \(O=(A_O,C_O)\) declares available probes and visible channels, and \(Q_{O,H}\) is the predictive quotient at a fixed horizon.
+
+A candidate capability \(p\) induces an edge:
+
+\[
+(O,Q_{O,H})\xrightarrow{p}
+(O\oplus p,Q_{O\oplus p,H}).
+\]
+
+The beam search uses a finite caller-supplied candidate set, additive positive costs, a budget, a maximum depth, and a beam width. Each generated node is evaluated by the unresolved pair objective \(U(O,H)\). Nodes are ranked by unresolved pairs, cost, route length, and deterministic candidate ordering. The search retains at most the configured beam width at each depth, while recording both retained and pruned configurations.
+
+Zero-immediate-gain nodes are expanded. This is necessary because candidate capabilities can have complementary value: \(\Delta(p\mid O,H)=0\) can coexist with \(\Delta(q\mid O\oplus p,H)>0\). The complementary-probe fixture demonstrates a two-step path from one unresolved pair to zero, although each first-step capability alone leaves the quotient unchanged.
+
+The result is a route through observer configurations paired with the predictive quotient induced at every step. The route record includes action/channel selections, cumulative cost, unresolved pairs before/after, and class count. The search is bounded and is not an exact optimality guarantee. Candidate costs remain declared relative units.

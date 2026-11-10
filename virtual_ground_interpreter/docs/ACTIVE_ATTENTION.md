@@ -111,3 +111,10 @@ The next computational step is a bounded beam planner with explicit interaction 
 - Exact search is exponential in the number of candidate capabilities.
 - The model's predictive contexts are observer-relative, not physical hidden-state identities.
 - No universal intelligence, universal metric, or performance advantage is claimed.
+
+
+## Joint navigation across perception and predictive spaces
+
+The next planner treats an observer configuration and its induced predictive quotient as one search node. It expands action/channel capabilities even when their immediate marginal reduction is zero, then records the route through perception space alongside changes in the predictive quotient.
+
+See [the joint navigation experiment](JOINT_NAVIGATION.md). The complementary-probe control is the key regression: the beam must retain both single-capability configurations and discover the two-step route to a fully separating quotient. The beam is bounded and its pruning is reported; no general optimality guarantee is claimed.
