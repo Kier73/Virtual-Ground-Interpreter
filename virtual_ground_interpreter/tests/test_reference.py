@@ -100,6 +100,8 @@ class IndependentSignal8ReferenceTests(unittest.TestCase):
                             Instruction("LOAD", {"dst": "b", "address": f"b{right}"}),
                             Instruction("ADD", {"dst": "sum", "left": "a", "right": "b"}),
                             Instruction("SUB", {"dst": "difference", "left": "a", "right": "b"}),
+                            Instruction("EMIT", {"src": "sum", "label": f"sum-{left}-{right}"}),
+                            Instruction("EMIT", {"src": "difference", "label": f"difference-{left}-{right}"}),
                         ))
                 instructions.append(Instruction("HALT"))
                 program = Program(
@@ -120,12 +122,26 @@ class IndependentSignal8ReferenceTests(unittest.TestCase):
                     program,
                     initial_memory,
                     trace_id=f"exhaustive-c8-{observer_a}-{observer_b}",
-                    max_steps=300,
+                    max_steps=400,
                 )
                 report = verify_execution_reference(trace)
                 self.assertEqual(report.status, "match", report.mismatches)
-                self.assertEqual(report.checked_steps, 257)
-                self.assertEqual(report.checked_writes, 256)
+                self.assertEqual(report.checked_steps, 385)
+                self.assertEqual(report.checked_writes, 384)
+                outputs = trace.final_snapshot["outputs"]
+                self.assertEqual(len(outputs), 128)
+                for output in outputs:
+                    operation, left_text, right_text = output["label"].split("-")
+                    left, right = int(left_text), int(right_text)
+                    expected = (
+                        (left + right) % 8
+                        if operation == "sum"
+                        else (left - right) % 8
+                    )
+                    observed = self.backend.observe_symbol(
+                        SignalValue.from_dict(output["value"])
+                    )
+                    self.assertEqual(observed, expected, output["label"])
                 checked_traces += 1
                 checked_arithmetic += 128
         self.assertEqual(checked_traces, 16)
