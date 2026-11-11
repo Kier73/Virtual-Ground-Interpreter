@@ -8,6 +8,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from functools import lru_cache
+from itertools import combinations_with_replacement
 import math
 from types import MappingProxyType
 from typing import Mapping
@@ -99,6 +100,195 @@ class ContextualQuotient:
             return self.state_to_class[left] == self.state_to_class[right]
         except KeyError as exc:
             raise RelationalError(f"state {exc.args[0]!r} is outside this quotient") from exc
+
+
+@dataclass(frozen=True, slots=True)
+class PartialPairBlocker:
+    """Why one selected action cannot support pair equivalence at this horizon."""
+
+    action: str
+    left_edge_status: str
+    right_edge_status: str
+    successor_status: str | None = None
+
+    def __post_init__(self) -> None:
+        if not isinstance(self.action, str) or not self.action:
+            raise RelationalError("blocker action must be a non-empty string")
+        allowed = {"known", "unknown", "ambiguous"}
+        if (not isinstance(self.left_edge_status, str)
+                or not isinstance(self.right_edge_status, str)
+                or self.left_edge_status not in allowed
+                or self.right_edge_status not in allowed):
+            raise RelationalError("blocker edge status must be known, unknown, or ambiguous")
+        if self.successor_status not in (None, "unresolved"):
+            raise RelationalError("blocker successor status must be absent or unresolved")
+        if self.successor_status is not None and (
+            self.left_edge_status != "known" or self.right_edge_status != "known"
+        ):
+            raise RelationalError("successor blocker requires two known current edges")
+        if (self.left_edge_status == "known" and self.right_edge_status == "known"
+                and self.successor_status is None):
+            raise RelationalError("known edge pair requires an unresolved successor blocker")
+
+    @property
+    def reason(self) -> str:
+        if self.left_edge_status == "unknown" or self.right_edge_status == "unknown":
+            return "missing_edge"
+        if self.left_edge_status == "ambiguous" or self.right_edge_status == "ambiguous":
+            return "ambiguous_edge"
+        return "unresolved_successor"
+
+
+@dataclass(frozen=True, slots=True)
+class PartialContextualComparison:
+    """Three-valued predictive comparison for a possibly partial Ground.
+
+    Equivalent means selected behavior through this horizon is known and
+    equal. Distinguishable carries a concrete observed action word.
+    Unresolved means no witness is known, but missing or ambiguous evidence
+    prevents an equivalence claim. Unresolved is neither equality nor inequality.
+    """
+
+    system_fingerprint: str
+    states: tuple[str, ...]
+    observer: ObserverContext
+    horizon: int
+    pair_statuses: Mapping[tuple[str, str], str]
+    distinguishing_sequences: Mapping[tuple[str, str], tuple[str, ...]]
+    unresolved_blockers: Mapping[tuple[str, str], tuple[PartialPairBlocker, ...]]
+
+    def __post_init__(self) -> None:
+        states = tuple(self.states)
+        if not states or len(set(states)) != len(states):
+            raise RelationalError("partial comparison requires unique declared states")
+        if isinstance(self.horizon, bool) or not isinstance(self.horizon, int) or self.horizon < 0:
+            raise RelationalError("partial comparison horizon must be non-negative")
+        status_map = dict(self.pair_statuses)
+        order = {state: index for index, state in enumerate(states)}
+        expected = {
+            (states[left], states[right])
+            for left in range(len(states))
+            for right in range(left, len(states))
+        }
+        if set(status_map) != expected:
+            raise RelationalError("partial comparison must classify every unordered state pair")
+        allowed = {"equivalent", "distinguishable", "unresolved"}
+        if any(value not in allowed for value in status_map.values()):
+            raise RelationalError("unknown partial comparison status")
+        witnesses = {
+            pair: tuple(sequence)
+            for pair, sequence in self.distinguishing_sequences.items()
+        }
+        expected_witnesses = {
+            pair for pair, status in status_map.items() if status == "distinguishable"
+        }
+        if set(witnesses) != expected_witnesses:
+            raise RelationalError("every and only distinguishable pairs require a witness")
+        for (left, right), sequence in witnesses.items():
+            if order[left] > order[right] or not sequence:
+                raise RelationalError("distinguishing witnesses require canonical pairs and non-empty words")
+            if any(action not in self.observer.actions for action in sequence):
+                raise RelationalError("distinguishing witness uses an action outside its observer")
+        blockers = {
+            pair: tuple(items)
+            for pair, items in self.unresolved_blockers.items()
+        }
+        expected_unresolved = {
+            pair for pair, status in status_map.items() if status == "unresolved"
+        }
+        if set(blockers) != expected_unresolved:
+            raise RelationalError("every unresolved pair requires blocker provenance")
+        if any(not items for items in blockers.values()):
+            raise RelationalError("unresolved pairs require at least one blocker")
+        for pair, items in blockers.items():
+            if any(not isinstance(item, PartialPairBlocker) for item in items):
+                raise RelationalError("blocker records must be PartialPairBlocker instances")
+            if any(item.action not in self.observer.actions for item in items):
+                raise RelationalError("blocker action is outside its observer")
+            if len({item.action for item in items}) != len(items):
+                raise RelationalError("each selected action may block a pair only once")
+        object.__setattr__(self, "states", states)
+        object.__setattr__(self, "pair_statuses", MappingProxyType(status_map))
+        object.__setattr__(self, "distinguishing_sequences", MappingProxyType(witnesses))
+        object.__setattr__(self, "unresolved_blockers", MappingProxyType(blockers))
+
+    def _key(self, left: str, right: str) -> tuple[str, str]:
+        try:
+            left_index = self.states.index(left)
+            right_index = self.states.index(right)
+        except ValueError as exc:
+            raise RelationalError(f"state {exc.args[0]!r} is outside this comparison") from exc
+        return (left, right) if left_index <= right_index else (right, left)
+
+    def status(self, left: str, right: str) -> str:
+        """Return equivalent, distinguishable, or unresolved for this pair."""
+        return self.pair_statuses[self._key(left, right)]
+
+    def witness(self, left: str, right: str) -> tuple[str, ...] | None:
+        """Return the shortest retained distinguishing action word, if known."""
+        return self.distinguishing_sequences.get(self._key(left, right))
+
+    def blockers(self, left: str, right: str) -> tuple[PartialPairBlocker, ...]:
+        """Return structured reasons why an equivalence claim is blocked."""
+        return self.unresolved_blockers.get(self._key(left, right), ())
+
+    def blocked(self, left: str, right: str) -> tuple[str, ...]:
+        """Return selected action names whose evidence blocks equivalence."""
+        return tuple(item.action for item in self.blockers(left, right))
+
+    @property
+    def equivalent_pairs(self) -> tuple[tuple[str, str], ...]:
+        return tuple(
+            pair for pair, status in self.pair_statuses.items()
+            if pair[0] != pair[1] and status == "equivalent"
+        )
+
+    @property
+    def distinguishable_pairs(self) -> tuple[tuple[str, str], ...]:
+        return tuple(
+            pair for pair, status in self.pair_statuses.items()
+            if status == "distinguishable"
+        )
+
+    @property
+    def unresolved_pairs(self) -> tuple[tuple[str, str], ...]:
+        return tuple(
+            pair for pair, status in self.pair_statuses.items()
+            if pair[0] != pair[1] and status == "unresolved"
+        )
+
+    def to_dict(self) -> dict[str, object]:
+        return {
+            "format": "VGI-PartialContextualComparison-1",
+            "system_fingerprint": self.system_fingerprint,
+            "states": list(self.states),
+            "observer": {
+                "name": self.observer.name,
+                "actions": list(self.observer.actions),
+                "channels": list(self.observer.channels),
+            },
+            "horizon": self.horizon,
+            "pairs": [
+                {
+                    "left": pair[0],
+                    "right": pair[1],
+                    "status": status,
+                    "witness": list(self.distinguishing_sequences[pair])
+                    if pair in self.distinguishing_sequences else None,
+                    "blockers": [
+                        {
+                            "action": item.action,
+                            "left_edge_status": item.left_edge_status,
+                            "right_edge_status": item.right_edge_status,
+                            "successor_status": item.successor_status,
+                            "reason": item.reason,
+                        }
+                        for item in self.unresolved_blockers.get(pair, ())
+                    ],
+                }
+                for pair, status in self.pair_statuses.items()
+            ],
+        }
 
 
 @dataclass(frozen=True, slots=True)
@@ -201,6 +391,127 @@ def refinement_series(
             break
 
     return tuple(result)
+
+
+def partial_refinement_series(
+    system: GroundTransitionSystem,
+    observer: ObserverContext,
+    max_horizon: int,
+) -> tuple[PartialContextualComparison, ...]:
+    """Build three-valued predictive comparisons from horizon zero to a bound.
+
+    Unknown or ambiguous transitions are not filled in. A pair is equivalent
+    only when every selected action is known on both sides, has the same
+    projected output, and reaches states equivalent at the preceding horizon.
+    One concrete distinguishing word is sufficient to prove distinguishability
+    even if another action remains unresolved.
+    """
+    if not isinstance(system, GroundTransitionSystem):
+        raise RelationalError("system must be a GroundTransitionSystem")
+    if not isinstance(observer, ObserverContext):
+        raise RelationalError("observer must be an ObserverContext")
+    if isinstance(max_horizon, bool) or not isinstance(max_horizon, int) or max_horizon < 0:
+        raise RelationalError("max_horizon must be a non-negative integer")
+    observer.validate(system)
+
+    states = tuple(system.states)
+    order = {state: index for index, state in enumerate(states)}
+    pairs = tuple(
+        (states[left], states[right])
+        for left, right in combinations_with_replacement(range(len(states)), 2)
+    )
+    channel_indices = tuple(system.channels.index(channel) for channel in observer.channels)
+    action_order = {action: index for index, action in enumerate(observer.actions)}
+
+    def canonical(left: str, right: str) -> tuple[str, str]:
+        return (left, right) if order[left] <= order[right] else (right, left)
+
+    def witness_key(word: tuple[str, ...]) -> tuple[int, tuple[int, ...]]:
+        return len(word), tuple(action_order[action] for action in word)
+
+    previous_statuses = {pair: "equivalent" for pair in pairs}
+    previous_witnesses: dict[tuple[str, str], tuple[str, ...]] = {}
+    results = [
+        PartialContextualComparison(
+            system.fingerprint, states, observer, 0, previous_statuses, {}, {},
+        )
+    ]
+
+    for horizon in range(1, max_horizon + 1):
+        current_statuses: dict[tuple[str, str], str] = {}
+        current_witnesses: dict[tuple[str, str], tuple[str, ...]] = {}
+        current_blockers: dict[tuple[str, str], tuple[PartialPairBlocker, ...]] = {}
+
+        for pair in pairs:
+            left, right = pair
+            if left == right:
+                current_statuses[pair] = "equivalent"
+                continue
+
+            if previous_statuses[pair] == "distinguishable":
+                current_statuses[pair] = "distinguishable"
+                current_witnesses[pair] = previous_witnesses[pair]
+                continue
+
+            candidates: list[tuple[str, ...]] = []
+            blockers: list[PartialPairBlocker] = []
+            for action in observer.actions:
+                left_edge_status = system.status(left, action)
+                right_edge_status = system.status(right, action)
+                if left_edge_status != "known" or right_edge_status != "known":
+                    blockers.append(PartialPairBlocker(
+                        action, left_edge_status, right_edge_status,
+                    ))
+                    continue
+
+                left_step = system.step(left, action)
+                right_step = system.step(right, action)
+                left_output = tuple(left_step.output[index] for index in channel_indices)
+                right_output = tuple(right_step.output[index] for index in channel_indices)
+
+                if left_output != right_output:
+                    candidates.append((action,))
+                    continue
+
+                target_pair = canonical(left_step.target, right_step.target)
+                target_status = previous_statuses[target_pair]
+                if target_status == "distinguishable":
+                    candidates.append((action,) + previous_witnesses[target_pair])
+                elif target_status == "unresolved":
+                    blockers.append(PartialPairBlocker(
+                        action, "known", "known", "unresolved",
+                    ))
+
+            if candidates:
+                current_statuses[pair] = "distinguishable"
+                current_witnesses[pair] = min(candidates, key=witness_key)
+            elif previous_statuses[pair] == "unresolved" and not blockers:
+                raise RelationalError(
+                    "an unresolved pair cannot become equivalent without new evidence"
+                )
+            elif blockers:
+                current_statuses[pair] = "unresolved"
+                current_blockers[pair] = tuple(blockers)
+            else:
+                current_statuses[pair] = "equivalent"
+
+        results.append(PartialContextualComparison(
+            system.fingerprint, states, observer, horizon,
+            current_statuses, current_witnesses, current_blockers,
+        ))
+        previous_statuses = current_statuses
+        previous_witnesses = current_witnesses
+
+    return tuple(results)
+
+
+def partial_contextual_comparison(
+    system: GroundTransitionSystem,
+    observer: ObserverContext,
+    horizon: int,
+) -> PartialContextualComparison:
+    """Return the three-valued comparison at exactly one bounded horizon."""
+    return partial_refinement_series(system, observer, horizon)[-1]
 
 
 def contextual_quotient(
