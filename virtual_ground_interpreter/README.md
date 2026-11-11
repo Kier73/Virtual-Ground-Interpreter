@@ -247,3 +247,31 @@ The experimental `vgi/channels.py` module distinguishes observation-only channel
 The experimental `vgi/evidence.py` layer separates retained channel observations from policy-admitted transition claims and finite compiled-replay certificates. Transition claims are bound to an Encounter, channel/protocol, source, and a transport-frame receipt. A declared quorum policy must be explicitly finalized before a transition is included in a Ground; unknown, ambiguous, pending, and conflicting events remain absent.
 
 `GroundReconstructionVerifier` separately checks that compiled VGI matches direct Ground semantics over a caller-declared finite action-sequence corpus. Its certificate binds the exact Ground and context and does not claim completeness about an external system. See `docs/EVIDENCE_AND_RECONSTRUCTION.md`.
+
+
+## Signal8 execution trace capture
+
+The experimental `vgi/signal8_trace.py` adapter captures actual instruction
+steps from an existing `SignalStateMachine`. Each successful event becomes an
+observation-only ChannelMessage, retained Encounter, frame receipt, and
+run-scoped `TransitionEvidence` claim. Before/after state identifiers are
+computed from a declared runtime-configuration projection; the raw
+`ExecutionEvent` preserves branch measurements and signal-valued writes
+without decoding them to semantic integers.
+
+The adapter does not apply an evidence policy, finalize transitions, or mutate
+a Ground. A runtime fault is retained as a generic observation, while a
+step-limited trace remains explicitly incomplete. A VGI machine observing its
+own execution is not independent external corroboration. See
+[`docs/SIGNAL8_EXECUTION_TRACE.md`](docs/SIGNAL8_EXECUTION_TRACE.md) and run
+`python examples/run_signal8_execution_trace.py`.
+
+
+### Capture completeness and cross-run comparability
+
+Signal8 capture artifacts retain full before/after runtime configurations,
+program/Ground definitions, and initial/final state snapshots. State IDs can
+be recomputed from retained configurations. Run IDs remain provenance, while
+structurally identical initial contexts share a context digest. Transport
+sessions are scoped per capture to avoid frame-sequence collisions. This is
+replay material, not a replay certificate.

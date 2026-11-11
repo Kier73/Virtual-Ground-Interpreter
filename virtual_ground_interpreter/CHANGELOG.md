@@ -1,3 +1,12 @@
+## Unreleased — Signal8 execution observations
+
+- Add a step-boundary adapter that captures actual SignalStateMachine execution as observation-only channel messages.
+- Bind each successful instruction event to before/after runtime-configuration identifiers, exact program/Ground fingerprints, a retained Encounter, and a payload-bound frame receipt.
+- Preserve raw SignalValue writes and branch measurements without semantic integer decoding.
+- Retain runtime faults as generic observations, not successful transition claims; label bounded captures as incomplete when HALT is not reached.
+- Keep policy finalization and Ground mutation outside the adapter. A machine's self-observation is not independent source corroboration.
+- Add focused adapter tests, an example runner, and execution-trace provenance documentation. Full repository gates must still be run in the repository environment.
+
 ## Unreleased — evidence admission and finite reconstruction
 
 - Add transition evidence linked to retained inbound channel messages, Encounters, and adapter-supplied transport-frame receipts bound to exact payload digests.
@@ -83,3 +92,13 @@ Verification baseline:
 - `vgi verify` reports 4,772 finite cases with zero errors.
 - Ground: `virtual-ground.signal-state.z8`
 - Fingerprint: `4ba599c21ec7e446572dad61b2a66ecb9c0844fd3dee406e4d947e04db56c43b`
+
+
+## Unreleased — Signal8 capture replay material and context identity
+
+- Retain complete before/after runtime configurations with each successful instruction observation.
+- Include program/Ground definitions and initial/final configurations for independent inspection and replay.
+- Keep run IDs in provenance but exclude them from structural context digests, allowing identical initial contexts to be compared.
+- Scope in-process transport identity by run to prevent frame-sequence collisions across captures.
+- Expose runtime-configuration ID recomputation for retained snapshots.
+- Updated focused tests and full repository gates have not been executed here.
