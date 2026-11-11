@@ -87,18 +87,49 @@ class IndependentSignal8ReferenceTests(unittest.TestCase):
         self.assertTrue(any("step[2].event.write_values" in item for item in report.mismatches))
         self.assertTrue(any("final_snapshot.registers.sum" in item for item in report.mismatches))
 
-    def test_all_sixteen_observer_pairs_preserve_ideal_addition(self):
-        checked = 0
+    def test_exhaustive_c8_add_sub_for_all_sixteen_observer_pairs(self):
+        checked_traces = 0
+        checked_arithmetic = 0
         for observer_a in (1, 3, 5, 7):
             for observer_b in (1, 3, 5, 7):
-                trace = self.capture_add(
-                    observer_a, observer_b,
-                    trace_id=f"observer-pair-{observer_a}-{observer_b}",
+                instructions = []
+                for left in range(8):
+                    for right in range(8):
+                        instructions.extend((
+                            Instruction("LOAD", {"dst": "a", "address": f"a{left}"}),
+                            Instruction("LOAD", {"dst": "b", "address": f"b{right}"}),
+                            Instruction("ADD", {"dst": "sum", "left": "a", "right": "b"}),
+                            Instruction("SUB", {"dst": "difference", "left": "a", "right": "b"}),
+                        ))
+                instructions.append(Instruction("HALT"))
+                program = Program(
+                    f"exhaustive-c8-{observer_a}-{observer_b}",
+                    tuple(instructions),
+                )
+                initial_memory = {
+                    **{
+                        f"a{symbol}": self.backend.encode_symbol(symbol, observer=observer_a)
+                        for symbol in range(8)
+                    },
+                    **{
+                        f"b{symbol}": self.backend.encode_symbol(symbol, observer=observer_b)
+                        for symbol in range(8)
+                    },
+                }
+                trace = self.adapter.capture(
+                    program,
+                    initial_memory,
+                    trace_id=f"exhaustive-c8-{observer_a}-{observer_b}",
+                    max_steps=300,
                 )
                 report = verify_execution_reference(trace)
                 self.assertEqual(report.status, "match", report.mismatches)
-                checked += report.checked_steps
-        self.assertEqual(checked, 16 * 5)
+                self.assertEqual(report.checked_steps, 257)
+                self.assertEqual(report.checked_writes, 256)
+                checked_traces += 1
+                checked_arithmetic += 128
+        self.assertEqual(checked_traces, 16)
+        self.assertEqual(checked_arithmetic, 16 * 64 * 2)
 
     def test_branch_result_is_verified_under_a_separating_margin(self):
         for observer in (1, 3, 5, 7):
