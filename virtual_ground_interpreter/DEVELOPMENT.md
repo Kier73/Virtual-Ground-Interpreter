@@ -165,3 +165,17 @@ Run:
     python -m vgi verify
 
 `propose_request` records a local intent and does not transmit it. `exchange` invokes a concrete adapter and records the returned correlated reply. The reference predictive-Ground adapter is model-internal only. Preserve known, unknown, and ambiguous responses distinctly; do not treat the finite model as an external physical source.
+
+
+## Evidence admission and Ground reconstruction
+
+The experimental `vgi/evidence.py` module links inbound channel messages to their Encounter records and transport-frame identity. It groups transition claims under an explicit source/quorum policy; only event finalization with status AUTHORIZED can contribute a TransitionObservation to a Ground.
+
+Run:
+
+    python -m unittest discover -s tests -p 'test_evidence.py' -v
+    python examples/run_evidence_reconstruction.py
+    python -m unittest discover -s tests -v
+    python -m vgi verify
+
+Unknown and ambiguous reports are indeterminate, not negative claims. Strict quorum retains dissent/missing/indeterminate state; non-strict quorum can authorize with dissent but preserves it in the decision. Never treat quorum as universal truth. Reconstruction certificates are separately issued by differential direct-vs-compiled replay over explicit finite action sequences and bind the exact Ground and context.

@@ -42,6 +42,11 @@ from .channels import (
     ChannelAdapter, ChannelContract, ChannelError, ChannelExchangeLedger,
     ChannelMessage, PredictiveGroundAdapter,
 )
+from .evidence import (
+    EvidenceError, GroundReconstructionCertificate, GroundReconstructionVerifier,
+    ObservedOutcome, TransitionEvidence, TransitionEvidenceDecision,
+    TransitionEvidenceFinalization, TransitionEvidenceLedger, TransitionEvidencePolicy,
+)
 
 __version__ = "0.2.0"
 
@@ -69,4 +74,7 @@ __all__ = [
     "AssociationError", "AssociationHypothesis", "AssociationAssessment", "AssociationLedger",
     "ChannelError", "ChannelContract", "ChannelMessage", "ChannelAdapter",
     "ChannelExchangeLedger", "PredictiveGroundAdapter",
+    "EvidenceError", "ObservedOutcome", "TransitionEvidencePolicy", "TransitionEvidence",
+    "TransitionEvidenceDecision", "TransitionEvidenceFinalization", "TransitionEvidenceLedger",
+    "GroundReconstructionCertificate", "GroundReconstructionVerifier",
 ]

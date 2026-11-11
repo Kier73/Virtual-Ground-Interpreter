@@ -149,3 +149,16 @@ The architecture now has a possible interaction cycle:
 The proposal is not the observation. The existence of an observation channel does not grant write authority. The received response is new evidence about the addressed source, but its interpretation and generalization remain separate tasks.
 
 **Next falsification target:** connect a real, authorized source adapter and test whether requests framed in its native protocol produce stable, reproducible replies. Record transport success, response admission, provenance, and semantic validation separately. Do not infer duplex capability from a read-only sensor or from matching formats alone.
+
+
+## E-CPU-inspired evidence separation
+
+The next VGI increment adapts several E-CPU patterns without coupling the VGI runtime to MailCPU: EvidenceLink-style transport-frame identity, policy-relative source consensus, explicit event finalization, and finite witness certificates from structural reconstruction.
+
+The new evidence layer records what arrived, binds the normalized transition claim to its Encounter and transport frame, and keeps source disagreement/unknown/ambiguous reports visible. An explicit policy finalization is required before a transition enters a Ground. The resulting Ground may remain partial.
+
+A separate GroundReconstructionVerifier checks the complete Ground against VGI's compiled execution path over a finite witness corpus. Its certificate describes only those exact Ground/context fingerprints and action sequences. It does not make the Ground a complete description of the outside system.
+
+This gives the VGI pipeline distinct evidence strata: **observed → policy-admitted → replay-verified**. Do not collapse them into one confidence score or let the reconstruction certificate authenticate the source observations.
+
+**Next empirical step:** add a real source adapter and carry its actual receive sequence, source identity, original artifact digest, and context through this pipeline. Compare retransmission, independent source agreement, disagreement, and compiled replay separately.
