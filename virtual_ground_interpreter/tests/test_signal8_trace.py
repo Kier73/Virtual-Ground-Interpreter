@@ -66,7 +66,7 @@ class Signal8ExecutionAdapterTests(unittest.TestCase):
 
     def test_capture_retains_replay_material_and_raw_signal_values(self):
         machine = self.interpreter.instantiate(conditional_program(), self.memory())
-        with patch.object(self.backend, "observe_symbol",
+        with patch.object(self.interpreter.backend, "observe_symbol",
                           side_effect=AssertionError("capture must not decode")):
             capture = self.adapter.capture(machine, run_id="capture-native")
         report = capture.to_dict()
