@@ -190,7 +190,23 @@ quotients = refinement_series(ground, observer, max_horizon=8)
 distance = behavioral_distance(ground, observer, "q0", "q1", horizon=5)
 ```
 
-See [the relational-atlas experiment](docs/RELATIONAL_ATLAS.md) and run `python examples/run_relational_atlas.py`. This is a finite research tool, not a universal state-space model or a claim about physical hidden-state identity. Unknown and ambiguous selected transitions remain non-executable.
+See [the relational-atlas experiment](docs/RELATIONAL_ATLAS.md) and run `python examples/run_relational_atlas.py`. This is a finite research tool, not a universal state-space model or a claim about physical hidden-state identity. The exact quotient still requires known singleton edges.
+
+For incomplete grounds, `partial_refinement_series` retains three pairwise results: equivalent, distinguishable with a shortest known action word, or unresolved because an edge or continuation is missing/ambiguous:
+
+```python
+from vgi import ObserverContext, partial_refinement_series
+
+observer = ObserverContext("available", ("HOLD", "PROBE_A"), ("channel_0",))
+series = partial_refinement_series(partial_ground, observer, max_horizon=8)
+comparison = series[-1]
+print(comparison.status("context-a", "context-b"))
+print(comparison.witness("context-a", "context-b"))
+print(comparison.blocked("context-a", "context-b"))
+print(comparison.blockers("context-a", "context-b"))  # structured missing/ambiguous/successor reasons
+```
+
+See [partial predictive relations](docs/PARTIAL_PREDICTIVE_RELATIONS.md) and run `python examples/run_partial_predictive_relations.py`. An unresolved pair is neither merged nor declared distinct.
 
 
 ## Active attention planning (experimental)
@@ -292,3 +308,33 @@ The canonical execution trace can now be checked by a separate finite semantic i
 The result is match, mismatch, or unsupported. Unsupported is important: a retained input whose uncertainty does not identify a unique Signal8 symbol is not forced into a semantic interpretation. A match checks the finite instruction semantics against the captured events and final state; it does not authenticate the source or establish physical hardware behavior.
 
 See docs/INVARIANT_SPACE_EXPERIMENT.md for the observer-coordinate boundary result, the invariant stack, and the renewed Build 25–31 research path.
+
+
+## Execution orbits and logical-time navigation
+
+The experimental vgi/orbit.py module connects independently checked Signal8 execution traces to evidence-gated partial Grounds and fixed-policy orbit navigation.
+
+~~~python
+from vgi import (
+    ExecutionOrbitAdapter, OrbitNavigator, verify_execution_reference,
+)
+
+report = verify_execution_reference(trace)
+ingestion = ExecutionOrbitAdapter().ingest((trace,), (report,))
+for source_state, action in sorted({
+    (item.source_state, item.action)
+    for item in ingestion.evidence_ledger.evidence
+}):
+    ingestion = ingestion.finalize(source_state, action)
+ground = ingestion.build_ground()
+policy = ingestion.derive_policy()
+orbit = OrbitNavigator.compile(
+    ground, policy, start_state=ground.initial_state,
+    start_time=ingestion.initial_time,
+)
+future = orbit.state_at(ingestion.initial_time.advance(10**12))
+~~~
+
+Observation does not automatically admit a transition. The adapter retains original frames, Encounters, transport receipts, delivery reorder/duplicates/omissions, and failed attempts. Only explicitly finalized AUTHORIZED evidence enters the constructed Ground. A closed cycle is recognized only along known single-valued edges under one fixed state-to-action policy; only then can a distant logical tick be reduced modulo its period.
+
+OrbitTimeCoordinate is an instruction-attempt coordinate, not wall time or elapsed duration. The navigator changes a virtual lookup coordinate; it does not change a host clock or execute an external process. See docs/ORBIT_NAVIGATION.md and run python examples/run_execution_orbit_navigation.py.

@@ -1,3 +1,20 @@
+## Unreleased — evidence-bound execution orbits and logical-time navigation
+
+- Add an execution-orbit adapter that requires an independently matching reference report bound to the exact trace, Program, and machine Ground.
+- Preserve raw execution events while projecting occurrence-normalized semantic-effect tokens for repeated state/action observations; retain the original event identity and digest in the source trace and Encounter.
+- Retain reordered, duplicate, missing, and failed frame deliveries separately; missing frames contribute no transition and failed attempts are never projected as committed transitions.
+- Build partial Grounds only from explicitly finalized AUTHORIZED evidence; retain policy refusals and conflicts in the evidence ledger.
+- Add fixed-policy orbit compilation with exact edge replay, finite cycle closure detection, logical-time state lookup, target-state navigation, and conservative refusal at unknown, ambiguous, missing-policy, or exhausted horizons.
+- Distinguish logical instruction-attempt coordinates from monotonic elapsed time, wall time, causal clocks, and E-CPU scheduler ticks; bind one ingestion to one shared initial runtime context rather than merging separate origins implicitly.
+- Add a runnable end-to-end orbit example and 15 focused regression test methods, including occurrence-normalized loop effects, reordered/duplicate/missing delivery, explicit admission, quorum refusal, and a synthetic competing-source conflict. Tests are authored but have not been executed in this environment; no passing status is claimed.
+
+## Unreleased — partial predictive relations for incomplete Grounds
+
+- Add three-valued observer-relative pair comparison over partial Grounds: equivalent, distinguishable with a shortest known action word, or unresolved.
+- Add a runnable partial predictive relation example using Build 24 delayed-six and an incomplete two-state Ground.
+- Preserve unknown and ambiguous edges as structured blockers rather than imputing transitions or forcing partial state sets into a quotient partition; distinguish missing edges, ambiguous outcomes, and unresolved successor pairs.
+- Encode monotone horizon refinement and test the Build 24 delayed-six witness, observer-restricted invisibility, complete-Ground agreement with exact quotients, unresolved-edge behavior, and evidence-version resolution.
+
 ## Unreleased — independent Signal8 semantic reference and invariant-space experiment
 
 - Add a reference interpreter that does not execute through Signal8Backend, SignalStateMachine, or Program; compare all supported instruction events, writes, branch evidence, failure categories, and final state against retained traces.

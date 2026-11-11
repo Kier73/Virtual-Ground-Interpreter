@@ -16,8 +16,10 @@ from .transitions import (
     TransitionSystemError, UnknownTransitionError, differential_verify,
 )
 from .relational import (
-    ContextualQuotient, ObserverContext, QuotientEdge, RelationalError,
-    behavioral_distance, contextual_quotient, quotient_map,
+    ContextualQuotient, ObserverContext, PartialContextualComparison,
+    PartialPairBlocker, QuotientEdge,
+    RelationalError, behavioral_distance, contextual_quotient,
+    partial_contextual_comparison, partial_refinement_series, quotient_map,
     quotient_transition_table, refinement_series,
 )
 from .attention import (
@@ -63,6 +65,12 @@ from .execution import (
 from .reference import (
     ReferenceExecutionError, ReferenceExecutionReport, verify_execution_reference,
 )
+from .orbit import (
+    ExecutionOrbitAdapter, ExecutionOrbitIngestion, EventToken,
+    FrameDeliveryRecord, OrbitError, OrbitIndex, OrbitNavigationResult,
+    OrbitNavigator, OrbitPathStep, OrbitPolicy, OrbitTimeCoordinate,
+    TraceDeliverySummary,
+)
 
 __version__ = "0.2.0"
 
@@ -78,7 +86,9 @@ __all__ = [
     "UnknownTransitionError", "AmbiguousTransitionError", "TransitionCompileError",
     "TransitionCompiler", "CompiledTransitionProgram", "CompiledTransitionRun",
     "differential_verify", "RelationalError", "ObserverContext", "ContextualQuotient",
-    "QuotientEdge", "refinement_series", "contextual_quotient", "quotient_map",
+    "PartialContextualComparison", "PartialPairBlocker", "partial_refinement_series",
+    "partial_contextual_comparison", "QuotientEdge", "refinement_series",
+    "contextual_quotient", "quotient_map",
     "quotient_transition_table", "behavioral_distance",
     "AttentionError", "AttentionCandidate", "AttentionScore", "AttentionPlan",
     "unresolved_pair_count", "rank_attention_probes", "greedy_attention_plan",
@@ -101,4 +111,8 @@ __all__ = [
     "ExecutionTransitionObservation", "ExecutionTransitionProjection",
     "project_execution_transitions", "verify_execution_replay",
     "ReferenceExecutionError", "ReferenceExecutionReport", "verify_execution_reference",
+    "OrbitError", "OrbitTimeCoordinate", "EventToken", "FrameDeliveryRecord",
+    "TraceDeliverySummary", "ExecutionOrbitIngestion", "ExecutionOrbitAdapter",
+    "OrbitPolicy", "OrbitPathStep", "OrbitNavigationResult", "OrbitIndex",
+    "OrbitNavigator",
 ]

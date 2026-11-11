@@ -22,9 +22,9 @@ Report which relations commute with the maps, which distinctions each observer c
 
 ### Finite relational-atlas implementation
 
-The active package now has an experimental observer-relative quotient module. Its observer contract explicitly selects the action probes and output channels. A recursive predictive signature creates a sequence of quotients by increasing horizon; unknown or ambiguous selected transitions stop construction rather than being guessed.
+The active package now has an experimental observer-relative quotient module. Its observer contract explicitly selects the action probes and output channels. A recursive predictive signature creates exact quotients by increasing horizon; unknown or ambiguous selected transitions prevent exact quotient construction rather than being guessed. A separate three-valued partial refinement now compares state pairs as equivalent, distinguishable with a known action witness, or unresolved when evidence is incomplete. Structured blockers distinguish missing edges, ambiguous edges, and known transitions that reach unresolved successor pairs. This avoids forcing a partial predictive Ground into a total partition. The runnable `examples/run_partial_predictive_relations.py` fixture emits shortest witnesses and structured blockers for both Build 24 and an incomplete two-state Ground.
 
-The Build 24 delayed-six fixture supplies a sharp temporal control: the full action profile is expected to split states in order across horizons, while removing PROBE_A leaves its delayed output distinction invisible. Additional tests use a cyclic recurrence (channel projection) and a many-to-one automaton (non-bijective transition). The module also checks quotient projections and adjacent-layer transition/output maps.
+The Build 24 delayed-six fixture supplies a sharp temporal control: the full action profile splits q0/q1 at horizon five with the retained witness HOLD × 4 followed by PROBE_A, while a profile that removes PROBE_A leaves the q0/q5 output distinction invisible. The partial relation is checked against the exact quotient on this complete fixture and separately on incomplete/ambiguous Grounds. Additional tests use a cyclic recurrence (channel projection) and a many-to-one automaton (non-bijective transition). The module also checks quotient projections and adjacent-layer transition/output maps.
 
 The paired behavioral distance is parameterized by observer, action distribution, horizon, discount, and an output metric. This is a candidate family of semantic-distance profiles, not one universal scalar. These artifacts are present in the research branch; the tests must be executed before reporting them as passed.
 
@@ -186,3 +186,14 @@ recur, and which observations are sensitive to observer profile or branch
 uncertainty. Then examine how independent replay or a second implementation
 could corroborate (or contradict) the machine's self-reported trace. Do not
 treat repetition by one source as independent evidence.
+
+
+## Execution orbits and time-addressable predictive paths
+
+The experimental orbit layer connects captured machine execution to a transition Ground without treating capture as automatic admission. It adapts the E-CPU observed-orbit, observer-relative navigation, and typed temporal-coordinate patterns, but keeps VGI's runtime independent. Independently reference-matched frames are retained with source Encounter and receipt identity. A semantic-effect projection removes per-occurrence step index from categorical event outputs while leaving the exact raw event and digest in the trace. This lets repeated operations become comparable without rewriting evidence.
+
+Evidence finalization remains policy-gated. The resulting Ground may be partial. A fixed state-to-action policy then induces a path. Only known single-valued edges are traversed. If a state repeats, the finite prefix and closed cycle are replay-checked, and later logical-time coordinates can be reduced modulo the cycle period.
+
+This is a specific finite result, not a general theorem that every system has a cyclic orbit. It does not claim physical quantum superposition, retroactive execution of the past, or physical-time travel. Unknown and ambiguous transitions remain unresolved; logical ticks are not elapsed seconds.
+
+**Next experiment:** extend from cycle-based skipping to certified fast-forward for selected transformation families. An affine or modular jump must carry an algebraic certificate and be checked by an independent implementation; it must not become a fallback for incomplete Ground knowledge. The second extension is a time-domain bridge that correlates instruction logical ticks with E-CPU scheduler time only when an explicit shared scheduler identity is declared.
