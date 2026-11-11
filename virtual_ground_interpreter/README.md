@@ -244,6 +244,6 @@ The experimental `vgi/channels.py` module distinguishes observation-only channel
 
 ## Evidence admission and Ground reconstruction
 
-The experimental `vgi/evidence.py` layer separates retained channel observations from policy-admitted transition claims and finite compiled-replay certificates. Transition claims are bound to an Encounter, channel/protocol, source, and transport sequence. A declared quorum policy must be explicitly finalized before a transition is included in a Ground; unknown, ambiguous, pending, and conflicting events remain absent.
+The experimental `vgi/evidence.py` layer separates retained channel observations from policy-admitted transition claims and finite compiled-replay certificates. Transition claims are bound to an Encounter, channel/protocol, source, and a transport-frame receipt. A declared quorum policy must be explicitly finalized before a transition is included in a Ground; unknown, ambiguous, pending, and conflicting events remain absent.
 
 `GroundReconstructionVerifier` separately checks that compiled VGI matches direct Ground semantics over a caller-declared finite action-sequence corpus. Its certificate binds the exact Ground and context and does not claim completeness about an external system. See `docs/EVIDENCE_AND_RECONSTRUCTION.md`.

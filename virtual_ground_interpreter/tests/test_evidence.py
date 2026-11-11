@@ -1,11 +1,12 @@
 import hashlib
 import unittest
+from dataclasses import replace
 
 from vgi.channels import ChannelContract, ChannelExchangeLedger, ChannelMessage
 from vgi.encounters import EncounterLedger, EncounterProvenance
 from vgi.evidence import (
     EvidenceError, GroundReconstructionCertificate, GroundReconstructionVerifier,
-    TransitionEvidenceLedger, TransitionEvidencePolicy,
+    TransitionEvidenceLedger, TransitionEvidencePolicy, TransportFrameReceipt,
 )
 from vgi.transitions import (
     GroundTransitionSystem, TransitionObservation, TransitionOutcome,
@@ -50,13 +51,20 @@ def make_policy(strict=True, quorum=2, sources=("sensor-A", "sensor-B")):
     )
 
 
+def frame_for(message, sequence):
+    return TransportFrameReceipt.capture(
+        message, transport_id="reliable-transport-A", sequence=sequence,
+        received_at="2026-11-10T20:10:00-05:00",
+    )
+
+
 def ingest(messages, pol=None):
     pol = pol or make_policy()
     exchange, encounters = make_exchange(messages)
     ledger = TransitionEvidenceLedger(pol)
     for sequence, item in enumerate(messages, 1):
         ledger = ledger.ingest_channel_message(
-            exchange, item.message_id, sequence, encounters
+            exchange, item.message_id, frame_for(item, sequence), encounters
         )
     return ledger, exchange, encounters
 
@@ -159,7 +167,8 @@ class TransitionEvidenceTests(unittest.TestCase):
         next_exchange = exchange.record_observation(telemetry_contract(), late)
         with self.assertRaises(EvidenceError):
             closed.ingest_channel_message(
-                next_exchange, "a2", 8, next_exchange.to_encounter_ledger()
+                next_exchange, "a2", frame_for(late, 8),
+                next_exchange.to_encounter_ledger()
             )
 
     def test_request_intents_cannot_be_promoted_to_transition_evidence(self):
@@ -174,9 +183,37 @@ class TransitionEvidenceTests(unittest.TestCase):
         with self.assertRaises(EvidenceError):
             from vgi.evidence import TransitionEvidence
             TransitionEvidence.from_channel_message(
-                exchange, "req-1", 1, EncounterLedger(),
+                exchange, "req-1", frame_for(request, 1), EncounterLedger(),
                 ground_id="plant-alpha", context_digest=make_policy().context_digest,
             )
+
+    def test_transport_receipt_must_match_exact_message_and_payload(self):
+        message = observed_message("frame-check", "sensor-A", "s0", "STEP", "known", "s1", [3])
+        exchange, encounters = make_exchange([message])
+        frame = frame_for(message, 4)
+        tampered = replace(frame, payload_digest=digest("different-payload"))
+        from vgi.evidence import TransitionEvidence
+        with self.assertRaises(EvidenceError):
+            TransitionEvidence.from_channel_message(
+                exchange, message.message_id, tampered, encounters,
+                ground_id="plant-alpha", context_digest=make_policy().context_digest,
+            )
+        wrong_message = replace(frame, message_id="another-message")
+        with self.assertRaises(EvidenceError):
+            TransitionEvidence.from_channel_message(
+                exchange, message.message_id, wrong_message, encounters,
+                ground_id="plant-alpha", context_digest=make_policy().context_digest,
+            )
+
+    def test_frame_receipt_captures_distinct_transport_coordinates(self):
+        message = observed_message("frame-roundtrip", "sensor-A", "s0", "STEP", "known", "s1", [3])
+        frame = frame_for(message, 23)
+        restored = TransportFrameReceipt(**frame.to_dict())
+        self.assertEqual(restored, frame)
+        self.assertEqual(restored.payload_digest, hashlib.sha256(
+            __import__("json").dumps(message.to_dict(), sort_keys=True, separators=(",", ":"),
+                                     ensure_ascii=False, allow_nan=False).encode("utf-8")
+        ).hexdigest())
 
     def test_evidence_ledger_round_trip_preserves_finalization(self):
         messages = [

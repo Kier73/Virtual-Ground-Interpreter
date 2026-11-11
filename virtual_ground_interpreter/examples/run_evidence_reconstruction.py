@@ -5,6 +5,7 @@ from vgi.channels import ChannelContract, ChannelExchangeLedger, ChannelMessage
 from vgi.encounters import EncounterProvenance
 from vgi.evidence import (
     GroundReconstructionVerifier, TransitionEvidenceLedger, TransitionEvidencePolicy,
+    TransportFrameReceipt,
 )
 
 
@@ -47,7 +48,11 @@ def main():
     evidence = TransitionEvidenceLedger(policy)
     for message, seq in frames:
         evidence = evidence.ingest_channel_message(
-            exchange, message.message_id, seq, encounters
+            exchange, message.message_id,
+            TransportFrameReceipt.capture(
+                message, transport_id="synthetic-transport", sequence=seq
+            ),
+            encounters,
         )
     before_close = {
         "s0/STEP": evidence.status("s0", "STEP").status,

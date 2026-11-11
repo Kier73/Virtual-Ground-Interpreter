@@ -110,9 +110,9 @@ PredictiveGroundAdapter provides a bounded internal example: a client sends a st
 
 ## Evidence admission and reconstructability
 
-The evidence layer preserves a three-stage distinction: a message has been received and retained as an Encounter; a transition claim has been admitted under a declared source/quorum policy; and a complete Ground has been replayed through compiled VGI over an explicit finite witness corpus.
+The evidence layer preserves three different claims: a message has been received and retained as an Encounter; a transition claim has been admitted under a declared source/quorum policy; and a complete Ground has been replayed through compiled VGI over an explicit finite witness corpus.
 
-Transition evidence binds the Encounter to message ID, source, channel, protocol, transport sequence, payload digest, Ground identity, and context digest. A source counts once per state/action event; same-source contradictions, ties, dissent, missing sources, and unknown/ambiguous observations remain visible. Event closure is explicit and immutable.
+Transition evidence binds the Encounter to message ID, source, channel, protocol, a transport-frame receipt, exact message digest, Ground identity, and context digest. A source counts once per state/action event; same-source contradictions, ties, dissent, missing sources, and unknown/ambiguous observations remain visible. Event closure is explicit and immutable.
 
 Only AUTHORIZED finalizations contribute transitions to a Ground. Other events remain absent and therefore unknown. This process establishes a transition only relative to the declared policy and retained evidence; it does not establish external physical truth.
 

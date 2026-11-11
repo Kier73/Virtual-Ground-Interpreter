@@ -515,31 +515,35 @@ Schema identifiers are declarations, not general JSON Schema validation. Each co
 
 ## 23. Evidence admission and finite reconstruction
 
-Let a retained inbound message frame be:
+A retained inbound message is bound to a transport frame receipt:
 
-    F = (message_id, channel, protocol, sequence, source, payload_digest, encounter_id).
+    F = (transport_id, frame_id, source, channel, message_id, sequence,
+         payload_digest, received_at).
 
-A transition evidence record binds that frame to a claim:
+The receipt must match the exact channel message's source, channel, message ID, and canonical payload digest. It is supplied at the adapter's receive boundary. The binding detects mismatched records, but does not authenticate the adapter, source, or transport.
 
-    E = (F, ground_id, context_digest, source_state, action, status, outcomes).
+A transition evidence record is:
 
-Only observations or replies may be normalized as transition evidence. The matching Encounter must already exist and its payload, provenance, and message context must match the channel record. The transport sequence is separate from message identity. Frame uniqueness is scoped by (source, channel, sequence).
+    E = (F, encounter_id, ground_id, context_digest, source_state,
+         action, status, outcomes).
+
+Only inbound observations and replies may be normalized as transition evidence. The matching Encounter must already exist, and its payload, provenance, and context must match the channel record. The transport sequence is distinct from application message identity. Frame uniqueness is scoped by transport, source, channel, and sequence.
 
 The evidence policy is:
 
     P = (ground_id, context_digest, allowed_sources, quorum, strict).
 
-For a state/action event, matching known claims are grouped by exact successor/output pair. Each source contributes at most one vote. Repeated identical frames from one source do not increase its vote; if the same source changes its claim for the event, that source is marked conflicting. Unknown and ambiguous reports are indeterminate, not votes for a missing edge.
+For each state/action event, known claims are grouped by exact successor/output pair. Each source contributes at most one vote. Repeated identical frames from one source do not increase its vote; if the same source changes its claim, that source is marked conflicting. Unknown and ambiguous reports are indeterminate, not votes for a missing edge.
 
-Under strict policy, quorum requires no dissent, missing sources, or indeterminate sources. Under non-strict policy, a quorum can authorize despite dissent or missing/indeterminate sources, but those observations remain in the decision record. Ties and source contradictions remain conflicts.
+Under strict policy, quorum requires no dissent, missing sources, or indeterminate sources. Under non-strict policy, quorum may authorize despite dissent or incomplete source participation, but those observations remain in the decision. Ties and source contradictions remain conflicts.
 
-A pre-finalization decision with status QUORUM is not yet a Ground transition. Explicit finalization closes the event and records AUTHORIZED, CONFLICT, or REFUSED, bound to the exact ordered evidence IDs and decision digest. Additional evidence for a finalized event requires a new Ground/context revision.
+A pre-finalization QUORUM decision is not a Ground transition. Explicit finalization closes the event and records AUTHORIZED, CONFLICT, or REFUSED, bound to the exact ordered evidence IDs and decision digest. Additional evidence for a finalized event requires a new Ground/context revision.
 
-A Ground constructed from an evidence ledger contains only AUTHORIZED finalizations. All other state/action pairs remain absent (unknown). This is policy-relative admission; quorum is not a universal truth criterion and the evidence source is not authenticated by this layer.
+A Ground constructed from the ledger contains only AUTHORIZED finalizations. Other state/action pairs remain absent (unknown). This is policy-relative admission; quorum is not a universal truth criterion and frame receipts are not authenticated by this layer.
 
 A reconstruction certificate is:
 
     R = (ground_fingerprint, context_digest, witness_digest,
          action_sequences, witness_count, max_horizon, compiler_id, compiler_version).
 
-The verifier invokes the existing direct-vs-compiled differential path and hashes the direct traces for the supplied finite action sequences. Revalidation repeats the same corpus and requires the exact Ground and context fingerprints. The scope is finite_action_sequence_replay. It does not establish behavior outside the retained sequences, completeness of the external system, or physical hidden-state identity. The certificate digest is an integrity identity, not an authenticated signature.
+The verifier invokes the existing direct-vs-compiled differential path and hashes the direct traces for the supplied finite action sequences. Revalidation repeats the same corpus and requires exact Ground and context fingerprints. Its scope is finite_action_sequence_replay. It does not establish behavior outside the witnesses, completeness of the external system, or physical hidden-state identity. The certificate digest is an integrity identity, not an authenticated signature.

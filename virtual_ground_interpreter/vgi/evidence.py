@@ -133,6 +133,68 @@ class TransitionEvidencePolicy:
 
 
 @dataclass(frozen=True, slots=True)
+class TransportFrameReceipt:
+    """Adapter-supplied identity for one received transport frame.
+
+    The digest binds the receipt to the exact ChannelMessage. This record is
+    provenance metadata, not a cryptographic source signature or proof that
+    the named transport actually delivered the frame.
+    """
+    transport_id: str
+    frame_id: str
+    source: str
+    channel_id: str
+    message_id: str
+    sequence: int
+    payload_digest: str
+    received_at: str | None = None
+
+    def __post_init__(self) -> None:
+        for value, name in (
+            (self.transport_id, "transport_id"), (self.frame_id, "frame_id"),
+            (self.source, "source"), (self.channel_id, "channel_id"),
+            (self.message_id, "message_id"),
+        ):
+            _text(value, name)
+        _positive(self.sequence, "transport sequence")
+        _sha(self.payload_digest, "frame payload digest")
+        if self.received_at is not None:
+            _text(self.received_at, "received_at")
+
+    def to_dict(self) -> dict[str, Any]:
+        return {
+            "transport_id": self.transport_id, "frame_id": self.frame_id,
+            "source": self.source, "channel_id": self.channel_id,
+            "message_id": self.message_id, "sequence": self.sequence,
+            "payload_digest": self.payload_digest, "received_at": self.received_at,
+        }
+
+    @classmethod
+    def capture(
+        cls, message, *, transport_id: str, sequence: int,
+        frame_id: str | None = None, received_at: str | None = None,
+    ) -> "TransportFrameReceipt":
+        """Create an integrity-bound receipt at a transport receive boundary.
+
+        This convenience constructor does not authenticate the adapter or
+        transport; deployment-specific adapters may supply their own receipt.
+        """
+        from .channels import ChannelMessage
+        if not isinstance(message, ChannelMessage):
+            raise EvidenceError("frame capture requires a ChannelMessage")
+        payload_digest = _digest(message.to_dict())
+        identity = {
+            "transport_id": transport_id, "source": message.provenance.source,
+            "channel_id": message.channel_id, "message_id": message.message_id,
+            "sequence": sequence, "payload_digest": payload_digest,
+        }
+        return cls(
+            transport_id, frame_id or _digest(identity), message.provenance.source,
+            message.channel_id, message.message_id, sequence, payload_digest, received_at,
+        )
+
+
+@dataclass(frozen=True, slots=True)
 class TransitionEvidence:
     """A typed transition claim bound to a retained message and transport frame."""
 
@@ -141,6 +203,8 @@ class TransitionEvidence:
     message_id: str
     channel_id: str
     protocol_id: str
+    transport_id: str
+    frame_id: str
     transport_sequence: int
     source: str
     ground_id: str
@@ -157,7 +221,8 @@ class TransitionEvidence:
         for value, name in (
             (self.evidence_id, "evidence_id"), (self.encounter_id, "encounter_id"),
             (self.message_id, "message_id"), (self.channel_id, "channel_id"),
-            (self.protocol_id, "protocol_id"), (self.source, "source"),
+            (self.protocol_id, "protocol_id"), (self.transport_id, "transport_id"),
+            (self.frame_id, "frame_id"), (self.source, "source"),
             (self.ground_id, "ground_id"), (self.source_state, "source_state"),
             (self.action, "action"),
         ):
@@ -196,7 +261,8 @@ class TransitionEvidence:
         return {
             "evidence_id": self.evidence_id, "encounter_id": self.encounter_id,
             "message_id": self.message_id, "channel_id": self.channel_id,
-            "protocol_id": self.protocol_id, "transport_sequence": self.transport_sequence,
+            "protocol_id": self.protocol_id, "transport_id": self.transport_id,
+            "frame_id": self.frame_id, "transport_sequence": self.transport_sequence,
             "source": self.source, "ground_id": self.ground_id,
             "context_digest": self.context_digest, "source_state": self.source_state,
             "action": self.action, "status": self.status,
@@ -211,7 +277,8 @@ class TransitionEvidence:
             return cls(
                 evidence_id=data["evidence_id"], encounter_id=data["encounter_id"],
                 message_id=data["message_id"], channel_id=data["channel_id"],
-                protocol_id=data["protocol_id"], transport_sequence=data["transport_sequence"],
+                protocol_id=data["protocol_id"], transport_id=data["transport_id"],
+                frame_id=data["frame_id"], transport_sequence=data["transport_sequence"],
                 source=data["source"], ground_id=data["ground_id"],
                 context_digest=data["context_digest"], source_state=data["source_state"],
                 action=data["action"], status=data["status"],
@@ -228,7 +295,7 @@ class TransitionEvidence:
         cls,
         exchange: ChannelExchangeLedger,
         message_id: str,
-        transport_sequence: int,
+        frame: TransportFrameReceipt,
         encounters: EncounterLedger,
         *,
         ground_id: str,
@@ -244,6 +311,16 @@ class TransitionEvidence:
         message = next((x for x in exchange.messages if x.message_id == message_id), None)
         if message is None:
             raise EvidenceError(f"message {message_id!r} is absent from channel ledger")
+        if not isinstance(frame, TransportFrameReceipt):
+            raise EvidenceError("frame must be a TransportFrameReceipt")
+        expected_payload_digest = _digest(message.to_dict())
+        if (
+            frame.message_id != message.message_id
+            or frame.channel_id != message.channel_id
+            or frame.source != message.provenance.source
+            or frame.payload_digest != expected_payload_digest
+        ):
+            raise EvidenceError("transport frame receipt does not bind this exact message")
         contract = exchange.contract_for(message.channel_id)
         if message.direction == "request":
             raise EvidenceError("outbound request intents are not observations")
@@ -300,7 +377,8 @@ class TransitionEvidence:
             evidence_id=evidence_id or f"{message.message_id}:{transport_sequence}",
             encounter_id=encounter_id, message_id=message.message_id,
             channel_id=message.channel_id, protocol_id=message.protocol_id,
-            transport_sequence=transport_sequence, source=message.provenance.source,
+            transport_id=frame.transport_id, frame_id=frame.frame_id,
+            transport_sequence=frame.sequence, source=message.provenance.source,
             ground_id=ground_id, context_digest=context_digest,
             source_state=state, action=action, status=status, outcomes=outcomes,
             payload_digest=_digest(message.to_dict()), correlation_id=message.correlation_id,
@@ -404,10 +482,13 @@ class TransitionEvidenceLedger:
             raise EvidenceError("finalizations must contain finalization records")
         evidence_ids = [x.evidence_id for x in records]
         message_ids = [x.message_id for x in records]
-        frame_ids = [(x.source, x.channel_id, x.transport_sequence) for x in records]
+        frame_ids = [(x.transport_id, x.source, x.channel_id, x.transport_sequence) for x in records]
+        receipt_ids = [x.frame_id for x in records]
         event_ids = [x.event for x in finalizations]
         for values, label in ((evidence_ids, "evidence IDs"), (message_ids, "message IDs"),
-                              (frame_ids, "source/channel frame IDs"), (event_ids, "finalized events")):
+                              (frame_ids, "transport/source/channel frame IDs"),
+                              (receipt_ids, "transport frame receipt IDs"),
+                              (event_ids, "finalized events")):
             if len(values) != len(set(values)):
                 raise EvidenceError(f"{label} must be unique")
         for item in records:
@@ -513,21 +594,23 @@ class TransitionEvidenceLedger:
             raise EvidenceError("evidence ID already recorded")
         if any(x.message_id == evidence.message_id for x in self.evidence):
             raise EvidenceError("message ID already recorded")
-        if any((x.source, x.channel_id, x.transport_sequence) ==
-               (evidence.source, evidence.channel_id, evidence.transport_sequence)
+        if any((x.transport_id, x.source, x.channel_id, x.transport_sequence) ==
+               (evidence.transport_id, evidence.source, evidence.channel_id, evidence.transport_sequence)
                for x in self.evidence):
-            raise EvidenceError("source/channel transport frame already recorded")
+            raise EvidenceError("transport/source/channel frame already recorded")
+        if any(x.frame_id == evidence.frame_id for x in self.evidence):
+            raise EvidenceError("transport frame receipt ID already recorded")
         return TransitionEvidenceLedger(
             self.policy, self.evidence + (evidence,), self.finalizations
         )
 
     def ingest_channel_message(
         self, exchange: ChannelExchangeLedger, message_id: str,
-        transport_sequence: int, encounters: EncounterLedger, *,
+        frame: TransportFrameReceipt, encounters: EncounterLedger, *,
         evidence_id: str | None = None,
     ) -> "TransitionEvidenceLedger":
         item = TransitionEvidence.from_channel_message(
-            exchange, message_id, transport_sequence, encounters,
+            exchange, message_id, frame, encounters,
             ground_id=self.policy.ground_id, context_digest=self.policy.context_digest,
             evidence_id=evidence_id,
         )
@@ -652,11 +735,12 @@ class GroundReconstructionCertificate:
         _sha(self.context_digest, "context_digest")
         _sha(self.witness_digest, "witness_digest")
         _positive(self.witness_count, "witness_count")
-        if isinstance(self.action_sequences, (str, bytes)) or any(
-            isinstance(x, (str, bytes)) for x in self.action_sequences
-        ):
+        if isinstance(self.action_sequences, (str, bytes)):
             raise EvidenceError("action_sequences must be a sequence of action sequences")
-        sequences = tuple(tuple(x) for x in self.action_sequences)
+        raw_sequences = tuple(self.action_sequences)
+        if any(isinstance(x, (str, bytes)) for x in raw_sequences):
+            raise EvidenceError("each witness must be an action sequence, not one string")
+        sequences = tuple(tuple(x) for x in raw_sequences)
         if not sequences or len(sequences) != self.witness_count:
             raise EvidenceError("witness_count must equal retained non-empty sequence count")
         if len(sequences) != len(set(sequences)):
@@ -799,5 +883,5 @@ class GroundReconstructionVerifier:
 __all__ = [
     "EvidenceError", "ObservedOutcome", "TransitionEvidencePolicy", "TransitionEvidence",
     "TransitionEvidenceDecision", "TransitionEvidenceFinalization", "TransitionEvidenceLedger",
-    "GroundReconstructionCertificate", "GroundReconstructionVerifier",
+    "TransportFrameReceipt", "GroundReconstructionCertificate", "GroundReconstructionVerifier",
 ]

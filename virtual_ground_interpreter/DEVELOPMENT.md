@@ -169,7 +169,7 @@ Run:
 
 ## Evidence admission and Ground reconstruction
 
-The experimental `vgi/evidence.py` module links inbound channel messages to their Encounter records and transport-frame identity. It groups transition claims under an explicit source/quorum policy; only event finalization with status AUTHORIZED can contribute a TransitionObservation to a Ground.
+The experimental `vgi/evidence.py` module links inbound channel messages to their Encounter records and an adapter-supplied `TransportFrameReceipt`. The receipt binds transport identity, frame ID, source, channel, message ID, sequence, and the exact message digest; it is integrity metadata, not source authentication. Evidence is grouped under an explicit source/quorum policy, and only event finalization with status AUTHORIZED can contribute a transition to a Ground.
 
 Run:
 
@@ -178,4 +178,4 @@ Run:
     python -m unittest discover -s tests -v
     python -m vgi verify
 
-Unknown and ambiguous reports are indeterminate, not negative claims. Strict quorum retains dissent/missing/indeterminate state; non-strict quorum can authorize with dissent but preserves it in the decision. Never treat quorum as universal truth. Reconstruction certificates are separately issued by differential direct-vs-compiled replay over explicit finite action sequences and bind the exact Ground and context.
+Unknown and ambiguous reports are indeterminate, not negative claims. Strict quorum retains dissent, missing sources, and indeterminate observations; non-strict quorum may authorize despite them but preserves them in the decision. Never treat quorum as universal truth. Reconstruction certificates are separately issued by differential direct-vs-compiled replay over explicit finite action sequences and bind the exact Ground and context.

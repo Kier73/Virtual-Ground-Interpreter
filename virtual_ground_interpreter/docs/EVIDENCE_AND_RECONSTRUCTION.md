@@ -14,9 +14,9 @@ The implementation is VGI-native. It is inspired by E-CPU's typed substrate obse
 
 ## Observed evidence
 
-TransitionEvidence.from_channel_message accepts only an inbound observation or reply already present in ChannelExchangeLedger and whose derived Encounter exists in EncounterLedger. It verifies the exact payload, provenance, channel/protocol, direction, message identity, and correlation context.
+TransitionEvidence.from_channel_message accepts only an inbound observation or reply already present in ChannelExchangeLedger, a matching TransportFrameReceipt, and a derived Encounter in EncounterLedger. It verifies the exact payload, provenance, channel/protocol, direction, message identity, and correlation context.
 
-The transport sequence is supplied separately because application message identity and transport-frame identity are different coordinates. Frame identity is scoped by source, channel, and sequence. Repeated matching messages from one source count as one source vote; a source that changes its claim creates a conflict.
+A TransportFrameReceipt binds transport identity, frame ID, source, channel, message ID, sequence, and a digest of the exact ChannelMessage. The receipt is supplied by the adapter at its receive boundary. This provides integrity binding within the record, but does not cryptographically authenticate the adapter or source. Frame identity is scoped by transport, source, channel, and sequence. Repeated matching messages from one source count as one source vote; a source that changes its claim creates a conflict.
 
 The normalized transition claim has three statuses:
 

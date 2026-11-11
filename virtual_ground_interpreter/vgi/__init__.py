@@ -46,6 +46,7 @@ from .evidence import (
     EvidenceError, GroundReconstructionCertificate, GroundReconstructionVerifier,
     ObservedOutcome, TransitionEvidence, TransitionEvidenceDecision,
     TransitionEvidenceFinalization, TransitionEvidenceLedger, TransitionEvidencePolicy,
+    TransportFrameReceipt,
 )
 
 __version__ = "0.2.0"
@@ -76,5 +77,5 @@ __all__ = [
     "ChannelExchangeLedger", "PredictiveGroundAdapter",
     "EvidenceError", "ObservedOutcome", "TransitionEvidencePolicy", "TransitionEvidence",
     "TransitionEvidenceDecision", "TransitionEvidenceFinalization", "TransitionEvidenceLedger",
-    "GroundReconstructionCertificate", "GroundReconstructionVerifier",
+    "TransportFrameReceipt", "GroundReconstructionCertificate", "GroundReconstructionVerifier",
 ]

@@ -1,10 +1,10 @@
 ## Unreleased — evidence admission and finite reconstruction
 
-- Add transport-frame-bound transition evidence extracted only from retained inbound channel messages and matching Encounters.
+- Add transition evidence linked to retained inbound channel messages, Encounters, and adapter-supplied transport-frame receipts bound to exact payload digests.
 - Add explicit source/quorum decisions and immutable event finalization before transition admission.
 - Build partial Grounds from authorized transitions only; keep unknown, ambiguous, pending, refused, and conflicting events unresolved.
 - Add finite compiled-replay certificates bound to exact Ground/context fingerprints and witness action sequences.
-- Add 13 focused tests, an example runner, and architecture/formal documentation. The committed evidence tests and full repository quality gates have not been run in this environment.
+- Add 15 focused tests, an example runner, and architecture/formal documentation. The committed evidence tests and full repository quality gates have not been run in this environment.
 
 ## Unreleased — duplex channel contracts
 
