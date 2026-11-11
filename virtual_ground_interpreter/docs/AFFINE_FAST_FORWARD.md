@@ -75,7 +75,7 @@ The result records the requested logical transition count, exponent bit length, 
 Run:
 
 ~~~bash
-python -m unittest tests.test_affine -v
+python -m unittest discover -s tests -p test_affine.py -v
 python examples/run_certified_affine_fast_forward.py
 ~~~
 

@@ -197,3 +197,24 @@ Evidence finalization remains policy-gated. The resulting Ground may be partial.
 This is a specific finite result, not a general theorem that every system has a cyclic orbit. It does not claim physical quantum superposition, retroactive execution of the past, or physical-time travel. Unknown and ambiguous transitions remain unresolved; logical ticks are not elapsed seconds.
 
 **Next experiment:** extend orbit navigation to observer-relative target predicates and behavioral-equivalence classes. A target may describe a meaning or observable condition rather than a raw state digest, while the result preserves multiple matches, observer scope, and unresolved predicate outcomes. Any inverse lookup must remain bounded to a certified orbit unless a separate preimage proof is provided.
+
+## Certified modular-affine fast-forward
+
+The first algebraic fast-forward path is now implemented as a certificate over
+one replay-checked, closed, fixed-policy orbit. A caller supplies a
+modular-affine map and an injective state-vector encoding. The implementation
+checks every retained edge before powering the homogeneous matrix in
+logarithmic time. The transform, encoding, orbit, Ground, policy, and logical
+clock are fingerprint-bound.
+
+This is an orbit-restricted generator result, not a claim that the full Ground
+or external system is affine. Composite moduli and non-invertible matrices
+are supported for forward navigation; unknown or ambiguous edges remain a
+hard stop.
+
+**Next experiment:** state-target navigation over observer-relative predicates
+and behavioral-equivalence classes, connecting the partial predictive
+relations to the orbit layer. A target may describe an observable condition
+rather than a raw state digest, while preserving multiple matches, observer
+scope, and unresolved outcomes. Inverse lookup must remain bounded to a
+certified orbit unless a separate preimage proof is provided.

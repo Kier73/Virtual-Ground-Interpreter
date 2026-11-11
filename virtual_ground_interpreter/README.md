@@ -354,4 +354,4 @@ certificate = AffineOrbitCertificate.certify(
 future = certificate.state_at(ingestion.initial_time.advance(10**12))
 ~~~
 
-This does not make the entire Ground affine. The state encoding must be complete and injective over the closed orbit, and the candidate map must reproduce every retained transition. The certificate is bound to that exact orbit, Ground, fixed policy, and clock. See the dedicated AFFINE_FAST_FORWARD document and run the certified-affine example.
+This does not make the entire Ground affine. The state encoding must be complete and injective over the closed orbit, and the candidate map must reproduce every retained transition. The certificate is bound to that exact orbit, Ground, fixed policy, and clock. [AFFINE_FAST_FORWARD.md](docs/AFFINE_FAST_FORWARD.md) explains the certificate boundary; run the example with `python examples/run_certified_affine_fast_forward.py`.
