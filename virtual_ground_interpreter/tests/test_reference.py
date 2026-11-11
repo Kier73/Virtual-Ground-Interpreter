@@ -110,6 +110,21 @@ class IndependentSignal8ReferenceTests(unittest.TestCase):
             branch = trace.exchange.messages[2].payload["event"]
             self.assertIs(branch["branch_result"], True)
 
+    def test_distinct_symbols_remain_separated_below_pi_over_four(self):
+        for observer in (1, 3, 5, 7):
+            trace = self.adapter.capture(
+                branch_program(math.pi / 4 - 1e-4),
+                {
+                    "a": self.backend.encode_symbol(0, observer=observer),
+                    "b": self.backend.encode_symbol(1, observer=observer),
+                },
+                trace_id=f"strict-separation-margin-{observer}",
+            )
+            report = verify_execution_reference(trace)
+            self.assertEqual(report.status, "match", report.mismatches)
+            branch = trace.exchange.messages[2].payload["event"]
+            self.assertIs(branch["branch_result"], False)
+
     def test_branch_tolerance_has_a_real_observer_dependent_boundary(self):
         results = {}
         for observer in (1, 3):

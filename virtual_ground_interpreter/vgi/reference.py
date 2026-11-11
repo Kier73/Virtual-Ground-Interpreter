@@ -559,8 +559,13 @@ def verify_execution_reference(
             state.halted = before_halted
             state.outputs = before_outputs
             return ReferenceExecutionReport(
-                trace_id, "unsupported", checked_steps, checked_writes,
-                len(initial_memory), unsupported_reason=str(exc),
+                trace_id,
+                "mismatch" if mismatches else "unsupported",
+                checked_steps,
+                checked_writes,
+                len(initial_memory),
+                mismatches=tuple(mismatches[:80]),
+                unsupported_reason=None if mismatches else str(exc),
             )
 
         if failure is not None:
