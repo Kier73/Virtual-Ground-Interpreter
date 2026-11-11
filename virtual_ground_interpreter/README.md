@@ -338,3 +338,20 @@ future = orbit.state_at(ingestion.initial_time.advance(10**12))
 Observation does not automatically admit a transition. The adapter retains original frames, Encounters, transport receipts, delivery reorder/duplicates/omissions, and failed attempts. Only explicitly finalized AUTHORIZED evidence enters the constructed Ground. A closed cycle is recognized only along known single-valued edges under one fixed state-to-action policy; only then can a distant logical tick be reduced modulo its period.
 
 OrbitTimeCoordinate is an instruction-attempt coordinate, not wall time or elapsed duration. The navigator changes a virtual lookup coordinate; it does not change a host clock or execute an external process. See docs/ORBIT_NAVIGATION.md and run python examples/run_execution_orbit_navigation.py.
+
+## Certified modular-affine fast-forward
+
+For a selected closed orbit, VGI can validate a finite-ring affine generator against every retained edge and use homogeneous matrix exponentiation to reach a distant logical coordinate:
+
+~~~python
+from vgi.affine import AffineOrbitCertificate, ModularAffineMap
+
+transform = ModularAffineMap(modulus=8, matrix=((2,),), offset=(0,))
+certificate = AffineOrbitCertificate.certify(
+    orbit, transform,
+    {"s0": (1,), "s1": (2,), "s2": (4,), "s3": (0,)},
+)
+future = certificate.state_at(ingestion.initial_time.advance(10**12))
+~~~
+
+This does not make the entire Ground affine. The state encoding must be complete and injective over the closed orbit, and the candidate map must reproduce every retained transition. The certificate is bound to that exact orbit, Ground, fixed policy, and clock. [AFFINE_FAST_FORWARD.md](docs/AFFINE_FAST_FORWARD.md) explains the certificate boundary; run the example with `python examples/run_certified_affine_fast_forward.py`.

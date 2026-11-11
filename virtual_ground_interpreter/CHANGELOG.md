@@ -1,3 +1,11 @@
+## Unreleased — certified modular-affine orbit fast-forward
+
+- Add finite modular-affine maps over \((\mathbb Z/m\mathbb Z)^d\), with exact homogeneous-matrix exponentiation by repeated squaring and no prime-modulus or invertibility requirement.
+- Require a closed, replay-checked OrbitIndex, a total injective caller-supplied state encoding, and a successful one-step affine check for every retained edge before enabling fast-forward.
+- Bind certificates and results to the exact orbit, Ground, fixed policy, transform, encoding, and logical clock; refuse clock mismatch and pre-origin coordinates.
+- Preserve the proof boundary: this is an orbit-restricted generator certificate, not a claim that the whole Ground or external system is affine. Open, unknown, or ambiguous paths are not extrapolated.
+- Add a runnable transient-plus-cycle example and 10 focused tests, including independent iterative-reference comparisons, composite moduli, non-invertible transforms, and a \(10^{12}\)-scale coordinate. Tests are authored but have not been executed in this repository environment; no passing status is claimed.
+
 ## Unreleased — evidence-bound execution orbits and logical-time navigation
 
 - Add an execution-orbit adapter that requires an independently matching reference report bound to the exact trace, Program, and machine Ground.

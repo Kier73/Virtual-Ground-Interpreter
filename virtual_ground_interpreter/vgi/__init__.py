@@ -71,6 +71,10 @@ from .orbit import (
     OrbitNavigator, OrbitPathStep, OrbitPolicy, OrbitTimeCoordinate,
     TraceDeliverySummary,
 )
+from .affine import (
+    AffineFastForwardError, AffineFastForwardResult, AffineOrbitCertificate,
+    ModularAffineMap,
+)
 
 __version__ = "0.2.0"
 
@@ -115,4 +119,6 @@ __all__ = [
     "TraceDeliverySummary", "ExecutionOrbitIngestion", "ExecutionOrbitAdapter",
     "OrbitPolicy", "OrbitPathStep", "OrbitNavigationResult", "OrbitIndex",
     "OrbitNavigator",
+    "AffineFastForwardError", "ModularAffineMap",
+    "AffineFastForwardResult", "AffineOrbitCertificate",
 ]

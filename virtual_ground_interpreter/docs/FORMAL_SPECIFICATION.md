@@ -620,3 +620,59 @@ digests. Transport IDs and capture timestamps are excluded from semantic
 comparison. A match is bounded evidence of reproducibility in the same VGI
 runtime. It does not authenticate the original source, independently validate
 the runtime semantics, or establish completeness of an external system.
+
+## 22. Certified modular-affine orbit fast-forward
+
+A modular-affine shortcut is admissible only as a certificate over one closed
+OrbitIndex, not as a replacement for the Ground transition relation.
+
+Choose \(m\geq2\), \(d\geq1\), \(M\in(\mathbb Z/m\mathbb Z)^{d\times d}\),
+and \(b\in(\mathbb Z/m\mathbb Z)^d\). The candidate map is
+
+\[
+F(x)=Mx+b\pmod m.
+\]
+
+A caller supplies a state encoding
+\(\eta:S_{\mathrm{orbit}}\rightarrow(\mathbb Z/m\mathbb Z)^d\).
+It must be total and injective over every distinct state in the closed
+transient-plus-cycle path. Certification requires, for every retained
+transition \(s_i\rightarrow s_{i+1}\),
+
+\[
+F(\eta(s_i))=\eta(s_{i+1}).
+\]
+
+The underlying OrbitIndex already requires a fixed policy, known singleton
+Ground edges, replay equality, and explicit cycle closure. The affine
+certificate binds the OrbitIndex, Ground fingerprint, policy fingerprint,
+start state, logical clock, transform, and complete state encoding. A
+certificate for one orbit is not valid for another Ground, policy, origin,
+clock, or mapping.
+
+Using homogeneous coordinates,
+
+\[
+H=\begin{bmatrix}M&b\\0&1\end{bmatrix},
+\qquad
+\begin{bmatrix}x_{t+N}\\1\end{bmatrix}
+=H^N\begin{bmatrix}x_t\\1\end{bmatrix}\pmod m.
+\]
+
+Repeated squaring evaluates the power in \(O(\log N)\) matrix compositions.
+The finite ring may have a composite modulus and \(M\) need not be invertible;
+forward powers require neither a field nor a modular inverse. Integer
+arithmetic is exact in the Python implementation.
+
+The proof is orbit-restricted. Every one-step image is checked against the
+successor encoding, including the cycle-closing edge. Induction then shows
+that every future affine iterate from the declared origin is the encoding
+of the corresponding state on the retained orbit. Injectivity makes decoding
+unambiguous. This proves no claim about states or policies outside that orbit,
+nor about external physical behavior. Unknown or ambiguous edges cannot be
+skipped: an open OrbitIndex cannot receive an affine certificate.
+
+AffineFastForwardResult reports the exact logical coordinate, decoded state,
+encoded vector, exponent bit length, certificate/orbit/Ground/policy
+fingerprints, and that no intermediate states were materialized. A clock
+mismatch or coordinate before the certified origin is refused.
