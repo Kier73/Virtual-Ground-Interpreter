@@ -355,3 +355,7 @@ future = certificate.state_at(ingestion.initial_time.advance(10**12))
 ~~~
 
 This does not make the entire Ground affine. The state encoding must be complete and injective over the closed orbit, and the candidate map must reproduce every retained transition. The certificate is bound to that exact orbit, Ground, fixed policy, and clock. [AFFINE_FAST_FORWARD.md](docs/AFFINE_FAST_FORWARD.md) explains the certificate boundary; run the example with `python examples/run_certified_affine_fast_forward.py`.
+
+## Proof-search dogfooding
+
+A reproducible finite experiment maps Boolean-cube influence, CNF prefix search, and k-Clique extension into VGI Grounds. It exercises observer-relative quotient refinement and deliberately missing transition evidence. Run python examples/run_proof_search_dogfood.py from this package directory. The experiment and its limitations are described in [PROOF_SEARCH_DOGFOOD.md](docs/PROOF_SEARCH_DOGFOOD.md).

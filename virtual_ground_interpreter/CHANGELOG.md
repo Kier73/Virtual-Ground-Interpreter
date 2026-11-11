@@ -1,3 +1,11 @@
+## Unreleased — proof-search dogfooding and complexity assessment
+
+- Add a runnable finite experiment for Boolean-cube influence, CNF prefix search, and k-Clique extension using the current Ground and partial-relation APIs.
+- Exercise an intentionally missing state/action transition and retain the equivalent → unresolved → distinguishable progression with blocker provenance.
+- Document complete-Ground versus partial-Ground refinement costs, the current partial-attention integration gap, and the need for AND/OR proof obligations before proof-search use.
+- State the scope explicitly: these finite workloads test VGI's representation and behavioral compression; they do not prove the general conjectures or asymptotic complexity results. The example has been authored but not executed against the full repository package in this environment.
+
+
 ## Unreleased — certified modular-affine orbit fast-forward
 
 - Add finite modular-affine maps over \((\mathbb Z/m\mathbb Z)^d\), with exact homogeneous-matrix exponentiation by repeated squaring and no prime-modulus or invertibility requirement.
