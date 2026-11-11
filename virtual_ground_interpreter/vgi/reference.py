@@ -12,6 +12,8 @@ from __future__ import annotations
 
 from collections.abc import Mapping
 from dataclasses import dataclass
+import hashlib
+import json
 import math
 from typing import Any
 
@@ -41,6 +43,10 @@ class _ReferenceFault(Exception):
 @dataclass(frozen=True, slots=True)
 class ReferenceExecutionReport:
     trace_id: str
+    trace_fingerprint: str
+    program_fingerprint: str
+    ground_fingerprint: str
+    numerical_tolerance_rad: float
     status: str
     checked_steps: int
     checked_writes: int
@@ -49,6 +55,20 @@ class ReferenceExecutionReport:
     unsupported_reason: str | None = None
 
     def __post_init__(self) -> None:
+        for name in ("trace_fingerprint", "program_fingerprint", "ground_fingerprint"):
+            value = getattr(self, name)
+            if (not isinstance(value, str) or len(value) != 64
+                    or value.lower() != value):
+                raise ReferenceExecutionError(f"{name} must be a lowercase SHA-256 digest")
+            try:
+                int(value, 16)
+            except ValueError as exc:
+                raise ReferenceExecutionError(f"{name} must be a lowercase SHA-256 digest") from exc
+        if (not isinstance(self.numerical_tolerance_rad, (int, float))
+                or isinstance(self.numerical_tolerance_rad, bool)
+                or not math.isfinite(float(self.numerical_tolerance_rad))
+                or not 0.0 < float(self.numerical_tolerance_rad) <= 1e-3):
+            raise ReferenceExecutionError("numerical_tolerance_rad must be in (0, 1e-3]")
         if self.status not in ("match", "mismatch", "unsupported"):
             raise ReferenceExecutionError("status must be match, mismatch, or unsupported")
         if self.status == "match" and self.mismatches:
@@ -62,10 +82,19 @@ class ReferenceExecutionReport:
     def matched(self) -> bool:
         return self.status == "match"
 
+    @property
+    def fingerprint(self) -> str:
+        canonical = json.dumps(self.to_dict(), sort_keys=True, separators=(",", ":"))
+        return hashlib.sha256(canonical.encode("utf-8")).hexdigest()
+
     def to_dict(self) -> dict[str, Any]:
         return {
             "format": "VGI-IndependentSignal8Reference-1",
             "trace_id": self.trace_id,
+            "trace_fingerprint": self.trace_fingerprint,
+            "program_fingerprint": self.program_fingerprint,
+            "ground_fingerprint": self.ground_fingerprint,
+            "numerical_tolerance_rad": self.numerical_tolerance_rad,
             "status": self.status,
             "checked_steps": self.checked_steps,
             "checked_writes": self.checked_writes,
@@ -471,9 +500,9 @@ def verify_execution_reference(
     has no unique semantic symbol.
     """
     required = (
-        "trace_id", "status", "max_steps", "program_definition",
-        "ground_definition", "initial_memory", "entries", "exchange",
-        "final_snapshot",
+        "trace_id", "fingerprint", "program_fingerprint", "ground_fingerprint",
+        "status", "max_steps", "program_definition", "ground_definition",
+        "initial_memory", "entries", "exchange", "final_snapshot",
     )
     if any(not hasattr(trace, name) for name in required):
         raise ReferenceExecutionError("trace is not a canonical Signal8ExecutionTrace")
@@ -486,6 +515,9 @@ def verify_execution_reference(
         raise ReferenceExecutionError("angular_tolerance_rad must be in (0, 1e-3]")
 
     trace_id = str(trace.trace_id)
+    trace_fingerprint = str(trace.fingerprint)
+    program_fingerprint = str(trace.program_fingerprint)
+    ground_fingerprint = str(trace.ground_fingerprint)
     try:
         program = _plain(trace.program_definition)
         ground = _plain(trace.ground_definition)
@@ -501,6 +533,10 @@ def verify_execution_reference(
             for value in allowed_observers
         ):
             raise _ReferenceUnsupported("Ground has no valid finite observer profile")
+        if any(value not in (1, 3, 5, 7) for value in allowed_observers):
+            raise _ReferenceUnsupported(
+                "the declared observer profiles are not units of Z/8Z"
+            )
         declared_ops = set(ground.get("instruction_set", ()))
         for index, instruction in enumerate(instructions):
             if not isinstance(instruction, Mapping):
@@ -514,7 +550,15 @@ def verify_execution_reference(
         }
     except _ReferenceUnsupported as exc:
         return ReferenceExecutionReport(
-            trace_id, "unsupported", 0, 0, 0,
+            trace_id=trace_id,
+            trace_fingerprint=trace_fingerprint,
+            program_fingerprint=program_fingerprint,
+            ground_fingerprint=ground_fingerprint,
+            numerical_tolerance_rad=tolerance,
+            status="unsupported",
+            checked_steps=0,
+            checked_writes=0,
+            decoded_inputs=0,
             unsupported_reason=str(exc),
         )
     except (KeyError, TypeError, ValueError, AttributeError) as exc:
@@ -559,11 +603,15 @@ def verify_execution_reference(
             state.halted = before_halted
             state.outputs = before_outputs
             return ReferenceExecutionReport(
-                trace_id,
-                "mismatch" if mismatches else "unsupported",
-                checked_steps,
-                checked_writes,
-                len(initial_memory),
+                trace_id=trace_id,
+                trace_fingerprint=trace_fingerprint,
+                program_fingerprint=program_fingerprint,
+                ground_fingerprint=ground_fingerprint,
+                numerical_tolerance_rad=tolerance,
+                status="mismatch" if mismatches else "unsupported",
+                checked_steps=checked_steps,
+                checked_writes=checked_writes,
+                decoded_inputs=len(initial_memory),
                 mismatches=tuple(mismatches[:80]),
                 unsupported_reason=None if mismatches else str(exc),
             )
@@ -652,6 +700,10 @@ def verify_execution_reference(
 
     return ReferenceExecutionReport(
         trace_id=trace_id,
+        trace_fingerprint=trace_fingerprint,
+        program_fingerprint=program_fingerprint,
+        ground_fingerprint=ground_fingerprint,
+        numerical_tolerance_rad=tolerance,
         status="mismatch" if mismatches else "match",
         checked_steps=checked_steps,
         checked_writes=checked_writes,

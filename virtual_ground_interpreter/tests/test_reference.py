@@ -63,6 +63,11 @@ class IndependentSignal8ReferenceTests(unittest.TestCase):
         self.assertEqual(report.checked_steps, 5)
         self.assertEqual(report.checked_writes, 4)
         self.assertEqual(report.decoded_inputs, 2)
+        self.assertEqual(report.trace_fingerprint, trace.fingerprint)
+        self.assertEqual(report.program_fingerprint, trace.program_fingerprint)
+        self.assertEqual(report.ground_fingerprint, trace.ground_fingerprint)
+        self.assertEqual(report.numerical_tolerance_rad, 1e-8)
+        self.assertEqual(len(report.fingerprint), 64)
 
     def test_reference_does_not_call_runtime_machine_or_algebra(self):
         trace = self.capture_add(trace_id="reference-isolated")

@@ -150,6 +150,8 @@ For each attempted instruction it independently predicts:
 
 It then checks the retained raw event, frame identity/order, and final snapshot. A runtime operation deliberately replaced by a wrong result should produce a semantic mismatch even though the trace is internally well-formed.
 
+Each report is bound to the exact trace fingerprint, Program fingerprint, and Ground fingerprint, and records the numerical comparison tolerance used. Its own canonical fingerprint makes the comparison result referable without treating the result as a signature or source-authentication proof.
+
 Three outcomes are deliberately distinct:
 
 - match: the independent finite semantics agree within the declared numerical tolerance;
