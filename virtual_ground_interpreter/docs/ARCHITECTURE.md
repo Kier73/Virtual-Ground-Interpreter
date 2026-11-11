@@ -119,35 +119,25 @@ Only AUTHORIZED finalizations contribute transitions to a Ground. Other events r
 GroundReconstructionVerifier uses the existing TransitionCompiler and differential verifier. Its certificate binds the exact Ground/context and finite action sequences tested. It demonstrates replay agreement only for those witnesses, not universal reconstruction of the modeled environment.
 
 
-## Runtime execution as a source of encounters
+## Signal8 execution observation adapter
 
-The active Signal8 machine is now an instrumented source in its own right.
-`Signal8ExecutionAdapter` observes the actual `step()` boundary rather than
-reconstructing instruction events from a completed Ground. Each committed
-event retains the exact instruction and ExecutionEvent, signal-valued writes,
-branch decision intervals, program/Ground identities, pre/post operational
-state digests, and a local frame receipt. Failed instruction attempts are also
-retained after atomic rollback, but are not treated as successful transitions.
+`Signal8ExecutionAdapter` wraps the existing `SignalStateMachine.step()`
+boundary. It does not alter instruction execution. For each successful step
+it fingerprints a future-relevant runtime-configuration projection before and
+after the instruction, serializes the original `ExecutionEvent`, and records
+an observation-only ChannelMessage. The channel is materialized into the
+EncounterLedger and linked to a TransportFrameReceipt before the message is
+normalized into a concrete-step TransitionEvidence claim.
 
-The derived transition projection is deliberately downstream and weaker than
-the raw trace. It groups only observed successful source/action/successor
-tuples. It does not complete a state/action product, decide what an unseen
-instruction would do, or admit a transition into a Ground. Repeated executions
-are occurrences in the captured corpus, not independent source corroboration.
+The runtime-state projection includes program and Ground fingerprints, PC,
+halt state, initial/current memory, registers, and outputs. It excludes the
+execution journal and undo stack so equivalent configurations in separate
+runs can share an identifier. The adapter does not integer-decode phasors:
+the typed transition output tuple is empty, while the raw event retains
+serialized signal values and branch evidence.
 
-A trace can be replayed using the retained program and initial signal-valued
-memory. Agreement checks reproducibility under the same runtime and Ground;
-it is not an independent oracle or an external completeness claim.
-
-    SignalStateMachine
-      -> ExecutionEvent + before/after operational snapshots
-      -> observation-only ChannelMessage
-      -> TransportFrameReceipt + Encounter
-      -> observed transition projection
-      -> separately interpreted evidence claim
-      -> explicit admission policy
-      -> Ground
-
-The local execution adapter is an in-process observation source. Its frame
-receipt is integrity metadata, not host authentication, a network receipt, or
-a cryptographic signature.
+Faults are retained as generic observations without a transition status.
+Step-limited captures remain incomplete. The resulting evidence is not
+automatically admitted, and the adapter's own reports are not independent
+corroboration of the machine. The evidence policy and Ground-construction
+stages remain explicit downstream operations.

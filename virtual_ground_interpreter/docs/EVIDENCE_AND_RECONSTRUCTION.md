@@ -71,3 +71,17 @@ Observed evidence, policy-admitted structure, and replay certificates remain sep
 - Only complete finite Grounds supported by the current Signal8 compiler receive reconstruction certificates.
 - Replay certificates cover only their finite witness corpora and exact Ground/context digests.
 - No automatic Ground mutation, missing-edge inference, or physical hidden-state identity claim is made.
+
+
+## Signal8 execution source
+
+The Signal8 runtime can now serve as a first in-repository observation source.
+`Signal8ExecutionAdapter` captures each successful instruction step as an
+observation-only ChannelMessage, Encounter, TransportFrameReceipt, and
+concrete-step TransitionEvidence claim. Runtime state identifiers are based on
+a declared projection of machine configuration, while the original
+`ExecutionEvent` retains raw signal values and branch measurements.
+
+These records are scoped to one run and one concrete machine execution. They
+are not independent source votes, are not automatically finalized, and do not
+mutate a Ground. See [Signal8 execution trace capture](SIGNAL8_EXECUTION_TRACE.md).

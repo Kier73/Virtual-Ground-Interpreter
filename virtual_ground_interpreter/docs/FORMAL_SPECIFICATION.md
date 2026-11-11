@@ -549,59 +549,47 @@ A reconstruction certificate is:
 The verifier invokes the existing direct-vs-compiled differential path and hashes the direct traces for the supplied finite action sequences. Revalidation repeats the same corpus and requires exact Ground and context fingerprints. Its scope is finite_action_sequence_replay. It does not establish behavior outside the witnesses, completeness of the external system, or physical hidden-state identity. The certificate digest is an integrity identity, not an authenticated signature.
 
 
-## Signal8 instruction-event observation
+## 19. Signal8 execution observation capture
 
-Let `M_t` be the machine snapshot immediately before an instruction step.
-Define the operational-state projection:
-
+Let the runtime configuration projection be
 \[
-\sigma_t = M_t \setminus \{\text{trace},\text{state_digest}\},
-\qquad
-h_t = \operatorname{SHA256}(\operatorname{canonical}(\sigma_t)).
+\sigma(M)=(
+fp(P),fp(G),pc,halted,\mu_0,\mu,\rho,\Omega
+),
+\]
+where the execution journal and undo stack are excluded. The stable runtime
+configuration identifier is
+\[
+id(M)=\texttt{"signal8-runtime/1:"}\Vert
+SHA256(\operatorname{canonicalJSON}(\sigma(M))).
 \]
 
-This projection retains the program and Ground fingerprints, program counter,
-halt flag, initial and current signal-valued memory, register file, and emitted
-outputs. Excluding trace history allows recurrent operational configurations
-to have the same identifier even though the append-only execution journal has
-grown.
-
-For instruction \(I_t\) at program counter \(pc_t\), define its action
-descriptor:
-
+For a successful instruction transition
+\(\langle P,M_i\rangle\to\langle P,M_{i+1}\rangle\), the adapter emits an
+observation claim
 \[
-a_t = (pc_t,\operatorname{opcode}(I_t),
-       \operatorname{SHA256}(\operatorname{canonical}(I_t))).
+(id(M_i), a_i, id(M_{i+1}), \varnothing),
 \]
+where \(a_i\) binds the program counter, opcode, and fingerprint of the exact
+instruction. The raw `ExecutionEvent` remains attached to the observation.
+The empty abstract output tuple is intentional: signal values and branch
+measurements are preserved in the raw event and are not decoded to
+\(\mathbb Z/8\mathbb Z\) by trace capture.
 
-A committed machine event with post-step operational state \(\sigma_{t+1}\)
-contributes one observed tuple:
+The capture context binds the run identifier, Ground/program fingerprints, and
+initial runtime-configuration ID. Each message is retained as an Encounter,
+bound to an adapter-supplied TransportFrameReceipt, and normalized through
+the existing TransitionEvidence constructor. The claim is scoped to one
+concrete execution step; it is not automatically generalized to all
+configurations sharing an opcode.
 
-\[
-(h_t,a_t,h_{t+1}).
-\]
+A failed instruction is atomic under the machine semantics and is retained as
+a generic `execution_fault` observation without a transition status. A
+step-limited capture is marked incomplete; only reaching HALT yields
+`halted`.
 
-The tuple is an observation of this execution, not an admitted transition law.
-The projection groups tuples present in the supplied trace corpus and preserves
-multiple successor digests as a conflict. Its occurrence count measures
-repeated event records only; it is not a source quorum or an independence claim.
-
-If an instruction raises, the existing machine restores its pre-step snapshot.
-The adapter retains the attempted instruction, exception type/message, and
-pre/post operational digests, which should be equal under atomic rollback.
-Such a record is a failed attempt, not a successful transition tuple.
-
-No Cartesian completion is performed. For a state/action pair absent from the
-trace corpus, the correct result is **unqueried**. Absence from a finite trace
-does not establish impossibility or a negative transition.
-
-Replay verification compares the retained program and Ground identities,
-initial operational-state digest, status, instruction/event digests, each
-pre/post digest, and final operational-state digest. The replay uses the same
-VGI implementation and therefore establishes bounded reproducibility, not
-independent semantic correctness. The local frame receipt binds an in-process
-ChannelMessage; it does not authenticate an external process or transport.
-
-The raw execution trace, its observed-only projection, a later policy-admitted
-Ground, and a reconstruction certificate remain distinct artifacts. No
-projection operation automatically promotes a transition into a Ground.
+The adapter creates no TransitionEvidencePolicy, finalization, or Ground
+mutation. Source identity identifies the same VGI machine that generated the
+event, so these records cannot be counted as independent corroboration merely
+because they occupy separate frames. Frame digests bind payload integrity
+within the record but do not authenticate the source or transport.

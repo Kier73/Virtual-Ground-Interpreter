@@ -1,10 +1,11 @@
-## Unreleased — Signal8 execution encounters and observed transition projection
+## Unreleased — Signal8 execution observations
 
-- Add an instruction-step adapter that retains raw Signal8 ExecutionEvents, program/Ground lineage, signal-valued writes, pre/post operational-state digests, and local frame receipts as channel messages and Encounters.
-- Retain failed instruction attempts separately from successful transitions, including atomic rollback evidence.
-- Add serialization round trips, exact replay comparison, and an observed-only transition projection. Repeated executions count as occurrences, not independent source votes.
-- Keep absent state/action pairs unqueried; no Ground is built, completed, or admitted from the projection.
-- Add focused tests, a runnable example, and architecture/formal documentation. The focused tests and full repository gates have not been executed in this environment.
+- Add a step-boundary adapter that captures actual SignalStateMachine execution as observation-only channel messages.
+- Bind each successful instruction event to before/after runtime-configuration identifiers, exact program/Ground fingerprints, a retained Encounter, and a payload-bound frame receipt.
+- Preserve raw SignalValue writes and branch measurements without semantic integer decoding.
+- Retain runtime faults as generic observations, not successful transition claims; label bounded captures as incomplete when HALT is not reached.
+- Keep policy finalization and Ground mutation outside the adapter. A machine's self-observation is not independent source corroboration.
+- Add focused adapter tests, an example runner, and execution-trace provenance documentation. Full repository gates must still be run in the repository environment.
 
 ## Unreleased — evidence admission and finite reconstruction
 
@@ -91,3 +92,13 @@ Verification baseline:
 - `vgi verify` reports 4,772 finite cases with zero errors.
 - Ground: `virtual-ground.signal-state.z8`
 - Fingerprint: `4ba599c21ec7e446572dad61b2a66ecb9c0844fd3dee406e4d947e04db56c43b`
+
+
+## Unreleased — Signal8 capture replay material and context identity
+
+- Retain complete before/after runtime configurations with each successful instruction observation.
+- Include program/Ground definitions and initial/final configurations for independent inspection and replay.
+- Keep run IDs in provenance but exclude them from structural context digests, allowing identical initial contexts to be compared.
+- Scope in-process transport identity by run to prevent frame-sequence collisions across captures.
+- Expose runtime-configuration ID recomputation for retained snapshots.
+- Updated focused tests and full repository gates have not been executed here.
