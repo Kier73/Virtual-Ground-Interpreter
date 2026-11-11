@@ -52,6 +52,12 @@ from .evidence import (
     TransitionEvidenceFinalization, TransitionEvidenceLedger, TransitionEvidencePolicy,
     TransportFrameReceipt,
 )
+from .execution import (
+    ExecutionReplayReport, ExecutionTraceError, ExecutionTraceFrame,
+    ExecutionTransitionObservation, ExecutionTransitionProjection,
+    Signal8ExecutionAdapter, Signal8ExecutionTrace,
+    project_execution_transitions, verify_execution_replay,
+)
 
 __version__ = "0.2.0"
 
