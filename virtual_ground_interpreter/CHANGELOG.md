@@ -1,3 +1,12 @@
+## Unreleased — independent Signal8 semantic reference and invariant-space experiment
+
+- Add a reference interpreter that does not execute through Signal8Backend, SignalStateMachine, or Program; compare all supported instruction events, writes, branch evidence, failure categories, and final state against retained traces.
+- Separate ideal Z/8Z symbols from continuous residual phase and propagated error bounds; return unsupported when input uncertainty does not justify one symbol.
+- Add controls for all 16 mixed-observer operand pairs, ambiguous branch traps, an observer-dependent equality-tolerance boundary, noisy observer round trips, and a deliberately corrupted runtime arithmetic result.
+- Document the distinction between representation, algebra, control, prediction, behavior, evidence, and resource invariants.
+- Re-examine Builds 25–31 and define a provenance-preserving route to renew online Ground induction, competing explanations, raw event/motif discovery, adaptive observer selection, and signal algebra.
+- The focused tests and repository-wide gates have not been executed in this environment; no passing status is claimed.
+
 ## Unreleased — Signal8 execution observations
 
 - Add a step-boundary adapter that captures actual SignalStateMachine execution as observation-only channel messages.

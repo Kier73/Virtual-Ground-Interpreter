@@ -278,3 +278,17 @@ be recomputed from retained configurations. Run IDs remain provenance, while
 structurally identical initial contexts share a context digest. Transport
 sessions are scoped per capture to avoid frame-sequence collisions. This is
 replay material, not a replay certificate.
+
+
+## Independent Signal8 semantic reference
+
+The canonical execution trace can now be checked by a separate finite semantic implementation. The reference interprets the retained instruction stream over the abstract cyclic group Z/8Z while separately propagating residual phase and error bounds. It does not call the runtime machine or Signal8 arithmetic backend.
+
+    from vgi import verify_execution_reference
+
+    report = verify_execution_reference(trace)
+    print(report.to_dict())
+
+The result is match, mismatch, or unsupported. Unsupported is important: a retained input whose uncertainty does not identify a unique Signal8 symbol is not forced into a semantic interpretation. A match checks the finite instruction semantics against the captured events and final state; it does not authenticate the source or establish physical hardware behavior.
+
+See docs/INVARIANT_SPACE_EXPERIMENT.md for the observer-coordinate boundary result, the invariant stack, and the renewed Build 25–31 research path.

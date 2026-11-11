@@ -60,6 +60,9 @@ from .execution import (
     Signal8ExecutionAdapter, Signal8ExecutionTrace,
     project_execution_transitions, verify_execution_replay,
 )
+from .reference import (
+    ReferenceExecutionError, ReferenceExecutionReport, verify_execution_reference,
+)
 
 __version__ = "0.2.0"
 
@@ -97,4 +100,5 @@ __all__ = [
     "Signal8ExecutionAdapter", "ExecutionReplayReport",
     "ExecutionTransitionObservation", "ExecutionTransitionProjection",
     "project_execution_transitions", "verify_execution_replay",
+    "ReferenceExecutionError", "ReferenceExecutionReport", "verify_execution_reference",
 ]
