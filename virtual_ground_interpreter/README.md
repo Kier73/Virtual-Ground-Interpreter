@@ -359,3 +359,18 @@ This does not make the entire Ground affine. The state encoding must be complete
 ## Proof-search dogfooding
 
 A reproducible finite experiment maps Boolean-cube influence, CNF prefix search, and k-Clique extension into VGI Grounds. It exercises observer-relative quotient refinement and deliberately missing transition evidence. Run python examples/run_proof_search_dogfood.py from this package directory. The experiment and its limitations are described in [PROOF_SEARCH_DOGFOOD.md](docs/PROOF_SEARCH_DOGFOOD.md).
+
+## Sparse partial refinement, ProofGround and exact observables
+
+The sparse partial-refinement API builds definite-equivalence partitions and
+computes pair witnesses/blockers lazily. The cell-specific attention planner
+evaluates counterfactual outcomes, using exact expected value only when exact
+scenario probabilities are supplied. Exact rational and sparse-polynomial
+observables remain separate from Signal8 outputs.
+
+The ProofGround adapter imports normalized Lean proof-state traces into an
+AND/OR hypergraph: each tactic edge's subgoals are jointly required (AND),
+while alternative tactic edges are OR routes. Raw kernel claims are preserved
+as untrusted observations; only a separate environment-bound kernel receipt
+can set kernel status. See docs/PROOFGROUND_NAVIGATION.md for the data contract
+and limitations.
