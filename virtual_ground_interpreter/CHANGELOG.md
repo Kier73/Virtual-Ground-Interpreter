@@ -1,3 +1,11 @@
+## Unreleased — Signal8 execution encounters and observed transition projection
+
+- Add an instruction-step adapter that retains raw Signal8 ExecutionEvents, program/Ground lineage, signal-valued writes, pre/post operational-state digests, and local frame receipts as channel messages and Encounters.
+- Retain failed instruction attempts separately from successful transitions, including atomic rollback evidence.
+- Add serialization round trips, exact replay comparison, and an observed-only transition projection. Repeated executions count as occurrences, not independent source votes.
+- Keep absent state/action pairs unqueried; no Ground is built, completed, or admitted from the projection.
+- Add focused tests, a runnable example, and architecture/formal documentation. The focused tests and full repository gates have not been executed in this environment.
+
 ## Unreleased — evidence admission and finite reconstruction
 
 - Add transition evidence linked to retained inbound channel messages, Encounters, and adapter-supplied transport-frame receipts bound to exact payload digests.

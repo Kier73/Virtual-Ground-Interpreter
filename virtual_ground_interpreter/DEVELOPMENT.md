@@ -179,3 +179,26 @@ Run:
     python -m vgi verify
 
 Unknown and ambiguous reports are indeterminate, not negative claims. Strict quorum retains dissent, missing sources, and indeterminate observations; non-strict quorum may authorize despite them but preserves them in the decision. Never treat quorum as universal truth. Reconstruction certificates are separately issued by differential direct-vs-compiled replay over explicit finite action sequences and bind the exact Ground and context.
+
+
+## Signal8 execution encounter adapter
+
+The experimental `vgi/execution.py` adapter instruments the active
+`SignalStateMachine.step()` boundary. It captures committed instruction events
+without terminal symbol decoding, and retains failed attempts after the
+runtime's atomic rollback. Each raw event is linked to an observation-only
+ChannelMessage, a TransportFrameReceipt, and an Encounter.
+
+Run:
+
+    python -m unittest discover -s tests -p 'test_execution.py' -v
+    python examples/run_signal8_execution_trace.py
+    python -m unittest discover -s tests -v
+    python -m vgi verify
+
+The transition projection is an observed-only view over supplied execution
+traces. Its support field counts event occurrences, not independent sources.
+It does not enumerate absent pairs, authorize Ground transitions, or claim the
+runtime Ground exhausts an external system. Replay is a same-runtime
+reproducibility check, not an independent semantic proof. The local receipt
+binds the captured message but does not authenticate a host or transport.

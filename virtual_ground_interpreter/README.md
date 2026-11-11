@@ -247,3 +247,34 @@ The experimental `vgi/channels.py` module distinguishes observation-only channel
 The experimental `vgi/evidence.py` layer separates retained channel observations from policy-admitted transition claims and finite compiled-replay certificates. Transition claims are bound to an Encounter, channel/protocol, source, and a transport-frame receipt. A declared quorum policy must be explicitly finalized before a transition is included in a Ground; unknown, ambiguous, pending, and conflicting events remain absent.
 
 `GroundReconstructionVerifier` separately checks that compiled VGI matches direct Ground semantics over a caller-declared finite action-sequence corpus. Its certificate binds the exact Ground and context and does not claim completeness about an external system. See `docs/EVIDENCE_AND_RECONSTRUCTION.md`.
+
+
+## Signal8 execution encounters and observed transitions
+
+The active Signal8 runtime can now be instrumented at its instruction-step
+boundary with `Signal8ExecutionAdapter` from `vgi/execution.py`.
+
+The adapter retains each committed `ExecutionEvent` as an inbound channel
+message and an immutable Encounter. It binds the exact instruction, event,
+program and Ground fingerprints, pre/post operational-state digests, signal-
+valued writes, and a local frame receipt. It never decodes SignalValue payloads
+during capture. Failed instructions are retained as failed attempts; the
+machine's atomic rollback is recorded and such attempts are not projected as
+successful transitions.
+
+`project_execution_transitions` groups only successful transitions observed
+in the supplied execution traces. Action descriptors identify the instruction
+position, opcode, and exact instruction digest; state identifiers are
+operational machine-state digests. Repeated executions are counted as
+occurrences, not independent source votes. Conflicting successors remain
+visible. State/action pairs absent from the traces remain unqueried.
+
+`verify_execution_replay` compares a retained trace with a fresh execution
+using the same program, initial signal memory, and Ground. This is a
+reproducibility check for the current runtime, not an independent semantic
+oracle, source authentication, external-system model, or proof of Ground
+completeness. The projection cannot admit transitions into a Ground. A
+separate interpretation and evidence-policy step is required.
+
+See [Signal8 execution traces](docs/SIGNAL8_EXECUTION_TRACES.md) and run
+`python examples/run_signal8_execution_trace.py`.

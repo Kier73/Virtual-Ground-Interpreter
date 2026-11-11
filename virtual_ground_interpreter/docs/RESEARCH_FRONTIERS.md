@@ -161,4 +161,25 @@ A separate GroundReconstructionVerifier checks the complete Ground against VGI's
 
 This gives the VGI pipeline distinct evidence strata: **observed → policy-admitted → replay-verified**. Do not collapse them into one confidence score or let the reconstruction certificate authenticate source observations.
 
-**Next empirical step:** add a real source adapter and carry its actual receive sequence, source identity, original artifact digest, and context through this pipeline. Compare retransmission, independent source agreement, disagreement, and compiled replay separately.
+**First runtime source implemented:** the active Signal8 interpreter is now instrumented at its instruction-step boundary. Raw ExecutionEvents, signal-valued writes, program/Ground lineage, operational-state digests, and local frame receipts are retained as Encounters. The first projection groups only successful transitions actually seen in supplied traces; it does not complete absent pairs or admit a Ground. Same-runtime replay checks reproducibility without claiming independent semantic correctness.
+
+**Next cross-source experiment:** compare these interpreter traces with a separately executed reference implementation, emulator, or authorized host interface. Keep each source's raw language and provenance intact; only then test whether a shared interpretation is supported. Treat repeated events from one runtime as occurrences, not independent source corroboration.
+
+
+## Signal8 runtime capture as an empirical source
+
+The new execution adapter makes the VGI interpreter itself a first-class source
+of encounters. This closes one internal loop: execution can generate raw
+observations, those observations can be retained with provenance, and repeated
+runs can be compared without decoding the signal payload during capture.
+
+This is still a same-runtime experiment. A replay match says that the given
+program, initial signal memory, and Ground reproduce the captured operational
+trace under the same implementation. It does not independently validate the
+runtime semantics. A stronger test must compare against a separately
+implemented interpreter or an authorized external execution source and retain
+the two raw traces independently.
+
+An important future question is whether two execution sources can communicate
+through a shared native protocol while retaining different internal state
+representations. The adapter deliberately does not answer that question yet.

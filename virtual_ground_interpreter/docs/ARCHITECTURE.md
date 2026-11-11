@@ -117,3 +117,37 @@ Transition evidence binds the Encounter to message ID, source, channel, protocol
 Only AUTHORIZED finalizations contribute transitions to a Ground. Other events remain absent and therefore unknown. This process establishes a transition only relative to the declared policy and retained evidence; it does not establish external physical truth.
 
 GroundReconstructionVerifier uses the existing TransitionCompiler and differential verifier. Its certificate binds the exact Ground/context and finite action sequences tested. It demonstrates replay agreement only for those witnesses, not universal reconstruction of the modeled environment.
+
+
+## Runtime execution as a source of encounters
+
+The active Signal8 machine is now an instrumented source in its own right.
+`Signal8ExecutionAdapter` observes the actual `step()` boundary rather than
+reconstructing instruction events from a completed Ground. Each committed
+event retains the exact instruction and ExecutionEvent, signal-valued writes,
+branch decision intervals, program/Ground identities, pre/post operational
+state digests, and a local frame receipt. Failed instruction attempts are also
+retained after atomic rollback, but are not treated as successful transitions.
+
+The derived transition projection is deliberately downstream and weaker than
+the raw trace. It groups only observed successful source/action/successor
+tuples. It does not complete a state/action product, decide what an unseen
+instruction would do, or admit a transition into a Ground. Repeated executions
+are occurrences in the captured corpus, not independent source corroboration.
+
+A trace can be replayed using the retained program and initial signal-valued
+memory. Agreement checks reproducibility under the same runtime and Ground;
+it is not an independent oracle or an external completeness claim.
+
+    SignalStateMachine
+      -> ExecutionEvent + before/after operational snapshots
+      -> observation-only ChannelMessage
+      -> TransportFrameReceipt + Encounter
+      -> observed transition projection
+      -> separately interpreted evidence claim
+      -> explicit admission policy
+      -> Ground
+
+The local execution adapter is an in-process observation source. Its frame
+receipt is integrity metadata, not host authentication, a network receipt, or
+a cryptographic signature.

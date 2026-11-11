@@ -48,6 +48,12 @@ from .evidence import (
     TransitionEvidenceFinalization, TransitionEvidenceLedger, TransitionEvidencePolicy,
     TransportFrameReceipt,
 )
+from .execution import (
+    ExecutionReplayReport, ExecutionTraceError, ExecutionTraceFrame,
+    ExecutionTransitionObservation, ExecutionTransitionProjection,
+    Signal8ExecutionAdapter, Signal8ExecutionTrace,
+    project_execution_transitions, verify_execution_replay,
+)
 
 __version__ = "0.2.0"
 
@@ -78,4 +84,8 @@ __all__ = [
     "EvidenceError", "ObservedOutcome", "TransitionEvidencePolicy", "TransitionEvidence",
     "TransitionEvidenceDecision", "TransitionEvidenceFinalization", "TransitionEvidenceLedger",
     "TransportFrameReceipt", "GroundReconstructionCertificate", "GroundReconstructionVerifier",
+    "ExecutionTraceError", "ExecutionTraceFrame", "Signal8ExecutionTrace",
+    "Signal8ExecutionAdapter", "ExecutionTransitionObservation",
+    "ExecutionTransitionProjection", "ExecutionReplayReport",
+    "project_execution_transitions", "verify_execution_replay",
 ]

@@ -547,3 +547,61 @@ A reconstruction certificate is:
          action_sequences, witness_count, max_horizon, compiler_id, compiler_version).
 
 The verifier invokes the existing direct-vs-compiled differential path and hashes the direct traces for the supplied finite action sequences. Revalidation repeats the same corpus and requires exact Ground and context fingerprints. Its scope is finite_action_sequence_replay. It does not establish behavior outside the witnesses, completeness of the external system, or physical hidden-state identity. The certificate digest is an integrity identity, not an authenticated signature.
+
+
+## Signal8 instruction-event observation
+
+Let `M_t` be the machine snapshot immediately before an instruction step.
+Define the operational-state projection:
+
+\[
+\sigma_t = M_t \setminus \{\text{trace},\text{state_digest}\},
+\qquad
+h_t = \operatorname{SHA256}(\operatorname{canonical}(\sigma_t)).
+\]
+
+This projection retains the program and Ground fingerprints, program counter,
+halt flag, initial and current signal-valued memory, register file, and emitted
+outputs. Excluding trace history allows recurrent operational configurations
+to have the same identifier even though the append-only execution journal has
+grown.
+
+For instruction \(I_t\) at program counter \(pc_t\), define its action
+descriptor:
+
+\[
+a_t = (pc_t,\operatorname{opcode}(I_t),
+       \operatorname{SHA256}(\operatorname{canonical}(I_t))).
+\]
+
+A committed machine event with post-step operational state \(\sigma_{t+1}\)
+contributes one observed tuple:
+
+\[
+(h_t,a_t,h_{t+1}).
+\]
+
+The tuple is an observation of this execution, not an admitted transition law.
+The projection groups tuples present in the supplied trace corpus and preserves
+multiple successor digests as a conflict. Its occurrence count measures
+repeated event records only; it is not a source quorum or an independence claim.
+
+If an instruction raises, the existing machine restores its pre-step snapshot.
+The adapter retains the attempted instruction, exception type/message, and
+pre/post operational digests, which should be equal under atomic rollback.
+Such a record is a failed attempt, not a successful transition tuple.
+
+No Cartesian completion is performed. For a state/action pair absent from the
+trace corpus, the correct result is **unqueried**. Absence from a finite trace
+does not establish impossibility or a negative transition.
+
+Replay verification compares the retained program and Ground identities,
+initial operational-state digest, status, instruction/event digests, each
+pre/post digest, and final operational-state digest. The replay uses the same
+VGI implementation and therefore establishes bounded reproducibility, not
+independent semantic correctness. The local frame receipt binds an in-process
+ChannelMessage; it does not authenticate an external process or transport.
+
+The raw execution trace, its observed-only projection, a later policy-admitted
+Ground, and a reconstruction certificate remain distinct artifacts. No
+projection operation automatically promotes a transition into a Ground.
