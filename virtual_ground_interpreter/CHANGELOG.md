@@ -1,3 +1,11 @@
+## Unreleased — encounter memory and associative hypotheses
+
+- Add immutable, interpretation-neutral encounter records with provenance, context, canonical fingerprints, and append-only ledger snapshots.
+- Add cross-encounter hypotheses requiring a rationale, experiment, and falsifier.
+- Add append-only supporting, contradicting, and inconclusive assessments; support/contradiction requires evidence beyond the original hypothesis basis.
+- Keep encounter memory and associations separate from predictive Ground construction; no automatic semantic promotion or curiosity scalar is introduced.
+- Add focused tests, an example runner, and the encounter/association architecture note. Core ledger behavior was exercised in a small isolated local harness; the committed test file and full repository gates have not been run.
+
 ## Unreleased — counterexample-led inquiry and open perception boundary
 
 - Add shortest, evidence-backed distinguishing-experiment search for pairs collapsed by the current observer.

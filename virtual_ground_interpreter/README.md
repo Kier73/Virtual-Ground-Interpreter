@@ -226,3 +226,10 @@ for step in plan.route:
 ```
 
 See [the joint navigation experiment](docs/JOINT_NAVIGATION.md) and run `python examples/run_joint_navigation.py`. The search is bounded; its records show which observer configurations were expanded and pruned.
+
+
+## Encounter memory and associative hypotheses
+
+The experimental encounter layer records observations and provenance before requiring a semantic interpretation. Immutable EncounterLedger snapshots preserve payload/context envelopes and content fingerprints. A separate AssociationLedger stores cross-encounter hypotheses with a rationale, experiment, falsifier, and append-only assessments. Supporting or contradicting assessments require at least one new evidence encounter beyond the hypothesis's original basis.
+
+This layer does not automatically classify encounters, calculate a universal curiosity score, or promote hypotheses into Ground transitions. See docs/ENCOUNTER_ASSOCIATION.md for the contract and example runner.

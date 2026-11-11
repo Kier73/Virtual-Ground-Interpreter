@@ -137,3 +137,17 @@ Run:
     python -m vgi verify
 
 Interpret equivalence only over the evidence-supported reachable paired graph and declared alphabet. Every report retains an open, unenumerated boundary outside that finite schema. Do not generate undeclared sensors, transformations, or states as though the observer could already know them.
+
+
+## Encounter and association layer
+
+The experimental vgi/encounters.py module records JSON-compatible observation envelopes and provenance before semantic interpretation. EncounterLedger is append-only and immutable by operation. AssociationLedger stores falsifiable cross-encounter hypotheses and assessment history independently of predictive Grounds.
+
+Run:
+
+    python -m unittest discover -s tests -p 'test_encounters.py' -v
+    python examples/run_encounter_association.py
+    python -m unittest discover -s tests -v
+    python -m vgi verify
+
+Supporting or contradicting assessments must cite at least one encounter beyond the hypothesis's original basis. Keep contradictory assessments in the history. Do not automatically promote an association into a transition, invariant, or executable rule. The encounter payload envelope is JSON-compatible; large or binary source data stays in an external source store with an opaque reference and digest.

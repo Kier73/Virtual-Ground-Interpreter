@@ -450,3 +450,36 @@ Unknown and ambiguous transition cells are blockers, not negative observations. 
 Crucially, the declared schema is not the invariant space itself. The finite Ground is a model with a boundary. The inquiry report records undeclared actions, channels, transformations, states, and distinctions as open and unenumerated; it does not attempt to list them. This avoids claiming to discover unknown capabilities by enumerating only capabilities expressible in the current observer vocabulary.
 
 The inquiry result does not establish physical hidden-state identity, universal observability, or completeness of the real system. Adding a genuinely new capability requires a new semantic contract and external evidence. Transformations are not synthesized unless their semantics are declared and verified.
+
+
+## 21. Encounter memory and associative hypotheses
+
+An encounter is an interpretation-neutral envelope:
+
+    E = (id, payload, provenance, context).
+
+The payload and context are finite JSON-compatible values. Provenance records the source, optional source reference, capture-time string, collector, and optional external SHA-256 content digest. Nested values are frozen at construction. A canonical serialization defines an encounter fingerprint; a ledger fingerprint binds the ordered encounter sequence.
+
+An EncounterLedger is an immutable append-only sequence:
+
+    L_E' = L_E || E
+
+Append rejects an already-used encounter identifier. The original ledger snapshot remains unchanged. The envelope records what a caller supplied; it does not assert that the package acquired or authenticated the source data. Binary or large external material remains in its source store and is referenced rather than silently converted into a semantic label.
+
+An association hypothesis is:
+
+    H = (id, encounter_ids, relationship, rationale, experiment, falsifier, proposer).
+
+It references at least two existing encounter IDs. Relationship and rationale are descriptive hypotheses, not executable semantics. The required experiment and falsifier make the proposal testable. No requirement is imposed that the encounters share a domain, source, modality, or context key.
+
+An assessment is:
+
+    A = (id, hypothesis_id, verdict, method, explanation, evidence_encounter_ids, assessor),
+
+where verdict is supports, contradicts, or inconclusive. Supporting and contradicting assessments must cite at least one encounter not present in the original hypothesis basis. The original encounters may also be cited for comparison. Inconclusive assessments may cite partial evidence or no evidence. All cited encounter IDs must resolve in the supplied ledger.
+
+An AssociationLedger appends hypotheses and assessments without rewriting prior records. Its current verdict is the latest recorded assessment, while the entire assessment history remains accessible. A later contradiction does not erase earlier support. This ordering convenience does not make the latest verdict a universal truth value.
+
+The association layer is deliberately decoupled from GroundTransitionSystem. It does not automatically promote a supported hypothesis into an executable transition, state, invariant, or law. Such a promotion would require a separate Ground-construction process, explicit semantics, provenance-aware evidence checks, and independent verification.
+
+This separation is intended to preserve incidental encounters and cross-domain association opportunities without forcing every observation into the current observer's ontology. The package does not supply an automatic semantic embedding, curiosity score, exhaustive pair enumerator, live acquisition driver, source authenticator, or universal representation of the encounter space.

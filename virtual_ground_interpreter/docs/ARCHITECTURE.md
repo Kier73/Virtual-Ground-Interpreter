@@ -88,3 +88,12 @@ A new backend must prove its own laws. It must not inherit the `Z/8Z` assumption
 ## Predictive transition compilation
 
 The predictive state-transition object is maintained separately from the signal backend. It supplies direct reference semantics and preserves known, unknown, and ambiguous transition evidence. The bounded TransitionCompiler lowers only complete deterministic grounds into the Signal8 IR. The compiled path uses runtime action slots, persistent signal-valued state, guarded dispatch, and explicit semantic emissions. Direct and compiled state/output traces are compared. See the formal specification and delayed-six example.
+
+
+## Encounter memory before interpretation
+
+The EncounterLedger sits upstream of observer-specific interpretation. It retains caller-supplied payloads, provenance, and context without assigning a required domain, action, channel, or state label. The records are immutable; append produces a new ledger snapshot with a canonical fingerprint.
+
+The AssociationLedger is separate. A hypothesis may connect encounters from unrelated sources and contexts, but must provide a proposed relationship, rationale, experiment, and falsifier. Assessments append supporting, contradicting, or inconclusive results and cite encounter evidence. A supporting or contradicting assessment requires at least one encounter not used in the original hypothesis basis.
+
+Neither layer mutates a predictive Ground. Any future conversion from an association into formal state/transition structure must pass through a separate construction and verification step. The ledgers preserve history; they do not authenticate external sources or infer a universal semantic space.
