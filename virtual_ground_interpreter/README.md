@@ -233,3 +233,10 @@ See [the joint navigation experiment](docs/JOINT_NAVIGATION.md) and run `python 
 The experimental encounter layer records observations and provenance before requiring a semantic interpretation. Immutable EncounterLedger snapshots preserve payload/context envelopes and content fingerprints. A separate AssociationLedger stores cross-encounter hypotheses with a rationale, experiment, falsifier, and append-only assessments. Supporting or contradicting assessments require at least one new evidence encounter beyond the hypothesis's original basis.
 
 This layer does not automatically classify encounters, calculate a universal curiosity score, or promote hypotheses into Ground transitions. See docs/ENCOUNTER_ASSOCIATION.md for the contract and example runner.
+
+
+## Duplex channel contracts
+
+The experimental `vgi/channels.py` module distinguishes observation-only channels from addressable request/reply channels. A shared protocol identifier describes the message framing language, while observation, request, and response schemas declare the supported directions separately. Correlated exchanges can be materialized as encounters without turning outbound requests into observations.
+
+`PredictiveGroundAdapter` is a model-internal reference implementation. It answers queries about the finite Ground while preserving known, unknown, and ambiguous transitions. It is not a physical sensor/actuator adapter. See `docs/DUPLEX_CHANNELS.md` and `examples/run_duplex_channel.py`.

@@ -97,3 +97,12 @@ The EncounterLedger sits upstream of observer-specific interpretation. It retain
 The AssociationLedger is separate. A hypothesis may connect encounters from unrelated sources and contexts, but must provide a proposed relationship, rationale, experiment, and falsifier. Assessments append supporting, contradicting, or inconclusive results and cite encounter evidence. A supporting or contradicting assessment requires at least one encounter not used in the original hypothesis basis.
 
 Neither layer mutates a predictive Ground. Any future conversion from an association into formal state/transition structure must pass through a separate construction and verification step. The ledgers preserve history; they do not authenticate external sources or infer a universal semantic space.
+
+
+## Duplex channels and addressable perception
+
+An observation channel and an addressable channel are different capabilities. The ChannelContract has a shared protocol identifier, plus independent observation, request, and response schema identifiers. A contract is addressable only when both request and response schemas are declared. A sensor's ability to emit a message does not imply that it accepts commands or can reply.
+
+ChannelMessage separates observation, request, and reply directions. ChannelExchangeLedger validates protocol identity, unique message IDs, and replies correlated to earlier requests. Only inbound observations and replies can be materialized as Encounters; outbound request intents remain actions proposed by the observer.
+
+PredictiveGroundAdapter provides a bounded internal example: a client sends a state/action query through the declared protocol and receives a correlated response. Known transitions return their target/output; unknown cells remain unknown; ambiguous cells return all represented alternatives. This is a dialogue with the model's declared structure, not communication with a physical environment. A real sensor or actuator requires a source-specific, authorized adapter.

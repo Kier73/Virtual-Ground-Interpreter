@@ -133,3 +133,19 @@ This design is intentionally not a semantic-similarity engine. Automatically pai
 A supporting or contradicting assessment must cite at least one new encounter beyond the original hypothesis basis. Assessments remain history, not proof. No association automatically mutates the predictive Ground.
 
 **Next experiment:** connect an actual encounter source—such as a repository observation, an emulator trace, or a sensor feed—to the ledger through a source-specific adapter. Retain the original artifact and digest, then evaluate whether associations generated from independently collected encounters yield reproducible experiments. Measure useful discoveries and false leads separately; do not equate surprise with learning progress.
+
+
+## Active intention, perception, and addressable channels
+
+The next experiment separates observation from communication. A sensor can expose an incoming stream without accepting commands; an addressable source can accept a request and return a correlated response. A shared protocol identifier describes the message framing language, while the observation, request, and response schemas describe the available directions independently.
+
+The first reference adapter queries the VGI's own finite predictive Ground using its declared state/action vocabulary. It demonstrates a limited form of model-internal dialogue: a request enters in the model's query language and a reply returns in the same protocol framing. Known, unknown, and ambiguous transition states are preserved rather than collapsed into a guessed answer. This is not a physical sensor connection.
+
+The architecture now has a possible interaction cycle:
+
+    active intention -> request proposal -> authorized adapter exchange
+      -> correlated reply -> encounter -> association -> experiment.
+
+The proposal is not the observation. The existence of an observation channel does not grant write authority. The received response is new evidence about the addressed source, but its interpretation and generalization remain separate tasks.
+
+**Next falsification target:** connect a real, authorized source adapter and test whether requests framed in its native protocol produce stable, reproducible replies. Record transport success, response admission, provenance, and semantic validation separately. Do not infer duplex capability from a read-only sensor or from matching formats alone.

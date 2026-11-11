@@ -483,3 +483,31 @@ An AssociationLedger appends hypotheses and assessments without rewriting prior 
 The association layer is deliberately decoupled from GroundTransitionSystem. It does not automatically promote a supported hypothesis into an executable transition, state, invariant, or law. Such a promotion would require a separate Ground-construction process, explicit semantics, provenance-aware evidence checks, and independent verification.
 
 This separation is intended to preserve incidental encounters and cross-domain association opportunities without forcing every observation into the current observer's ontology. The package does not supply an automatic semantic embedding, curiosity score, exhaustive pair enumerator, live acquisition driver, source authenticator, or universal representation of the encounter space.
+
+
+## 22. Duplex channel contracts and active communication
+
+A channel contract is:
+
+    C = (channel_id, protocol_id, observation_schema, request_schema, response_schema).
+
+The protocol identifier denotes shared message framing/encoding, while the schemas describe directional message shapes. The observation schema may be declared independently. Addressability is granted only when both request and response schemas are present:
+
+    can_observe(C) = observation_schema != null
+    can_address(C) = request_schema != null and response_schema != null.
+
+Thus, an observation-capable sensor is not presumed to accept requests. A request/reply path is an explicit capability, not an inference from a shared encoding or matching modality.
+
+A ChannelMessage is:
+
+    M = (message_id, channel_id, protocol_id, direction, payload, provenance, correlation_id),
+
+where direction is observation, request, or reply. Observations are incoming and uncorrelated. Requests are outbound intents, identified by message_id. Replies are incoming and must correlate to a prior request on the same channel and protocol. Payloads are immutable finite JSON-compatible objects.
+
+ChannelExchangeLedger preserves channel contracts and ordered messages. It rejects unknown channel identifiers, protocol mismatches, duplicate message IDs, unsupported directions, and uncorrelated replies. The request intent can be recorded separately before transport; the exchange operation invokes a concrete ChannelAdapter and appends its returned reply. This separation permits an adapter failure to leave a durable request intent when callers record it before dispatch.
+
+Inbound observations and replies may be materialized into EncounterLedger records, preserving payload, provenance, protocol identity, direction, and correlation. Outbound request intents cannot be materialized as observations.
+
+The reference PredictiveGroundAdapter accepts a request containing a declared state and action, then returns a correlated message with one of three statuses: known, unknown, or ambiguous. It returns a target/output only for a known transition; an unknown cell remains without a target; an ambiguous cell returns all represented alternatives and evidence references. The adapter is a model-internal query path, not a physical sensing or actuation interface.
+
+Schema identifiers are declarations, not general JSON Schema validation. Each concrete adapter must validate its own request semantics. Protocol compatibility does not establish physical accessibility, authority, authentication, or semantic equivalence between a sensor and an internal source. Those require evidence and an actual source-specific adapter.

@@ -1,3 +1,11 @@
+## Unreleased — duplex channel contracts
+
+- Add explicit observation, request, and reply schemas under a shared protocol identifier.
+- Keep observation-only sensors distinct from addressable request/reply channels.
+- Add a correlated append-only channel ledger and conversion of inbound messages into encounters.
+- Add a predictive-Ground query adapter that reports known, unknown, and ambiguous transitions without completing missing evidence.
+- Add ten focused tests and a model-internal request/reply example. The committed channel test suite and full repository gates have not been executed in this environment.
+
 ## Unreleased — encounter memory and associative hypotheses
 
 - Add immutable, interpretation-neutral encounter records with provenance, context, canonical fingerprints, and append-only ledger snapshots.
