@@ -180,6 +180,34 @@ class IndependentSignal8ReferenceTests(unittest.TestCase):
         self.assertEqual(report.status, "unsupported")
         self.assertIn("does not identify one Z/8Z symbol", report.unsupported_reason)
 
+    def test_same_observer_reframe_is_an_exact_runtime_identity(self):
+        magnitude = 1.0 + 5e-8
+        angle = 2.0 * math.pi * (3 * 2 % 8) / 8.0 + 0.001
+        value = SignalValue(
+            magnitude * complex(math.cos(angle), math.sin(angle)),
+            3,
+            0.002,
+        )
+        program = Program("same-observer-reframe", (
+            Instruction("LOAD", {"dst": "source", "address": "x"}),
+            Instruction("REFRAME", {"dst": "same", "src": "source", "observer": 3}),
+            Instruction("EMIT", {"src": "same", "label": "same"}),
+            Instruction("HALT"),
+        ))
+        trace = self.adapter.capture(
+            program, {"x": value}, trace_id="same-observer-reframe-identity",
+        )
+        report = verify_execution_reference(trace)
+        self.assertEqual(report.status, "match", report.mismatches)
+        self.assertAlmostEqual(
+            abs(complex(
+                trace.final_snapshot["registers"]["same"]["real"],
+                trace.final_snapshot["registers"]["same"]["imag"],
+            )),
+            magnitude,
+            places=8,
+        )
+
     def test_reframe_round_trip_preserves_symbol_but_expands_residual(self):
         symbol = 2
         residual = 0.001

@@ -55,6 +55,14 @@ class ReferenceExecutionReport:
     unsupported_reason: str | None = None
 
     def __post_init__(self) -> None:
+        if not isinstance(self.trace_id, str) or not self.trace_id.strip():
+            raise ReferenceExecutionError("trace_id must be a non-empty string")
+        for name in ("checked_steps", "checked_writes", "decoded_inputs"):
+            count = getattr(self, name)
+            if isinstance(count, bool) or not isinstance(count, int) or count < 0:
+                raise ReferenceExecutionError(f"{name} must be a non-negative integer")
+        if any(not isinstance(item, str) or not item for item in self.mismatches):
+            raise ReferenceExecutionError("mismatches must contain non-empty strings")
         for name in ("trace_fingerprint", "program_fingerprint", "ground_fingerprint"):
             value = getattr(self, name)
             if (not isinstance(value, str) or len(value) != 64
@@ -221,6 +229,10 @@ def _decode_record(
 def _reframe(value: _Meaning, target: int, allowed_observers: tuple[int, ...]) -> _Meaning:
     if isinstance(target, bool) or not isinstance(target, int) or target not in allowed_observers:
         raise _ReferenceFault("ValueErrorVGI")
+    if target == value.observer:
+        # The runtime backend treats a same-coordinate reframe as the identity;
+        # preserve even the tiny magnitude deviation accepted by SignalValue.
+        return value
     exponent = (target * pow(value.observer, -1, 8)) % 8
     # The residue exponent transports the ideal C8 character exactly.
     # The continuous residual is multiplied by the integer exponent and can grow.
