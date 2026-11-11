@@ -44,7 +44,7 @@ from .channels import (
 )
 from .signal8_trace import (
     SIGNAL8_EXECUTION_CONTRACT, Signal8ExecutionAdapter,
-    Signal8ExecutionCapture, Signal8TraceError, runtime_state_id,
+    Signal8ExecutionCapture, Signal8TraceError, runtime_configuration,\n    runtime_state_id, runtime_state_id_from_configuration,
 )
 from .evidence import (
     EvidenceError, GroundReconstructionCertificate, GroundReconstructionVerifier,
@@ -83,5 +83,5 @@ __all__ = [
     "TransitionEvidenceDecision", "TransitionEvidenceFinalization", "TransitionEvidenceLedger",
     "TransportFrameReceipt", "GroundReconstructionCertificate", "GroundReconstructionVerifier",
     "SIGNAL8_EXECUTION_CONTRACT", "Signal8ExecutionAdapter",
-    "Signal8ExecutionCapture", "Signal8TraceError", "runtime_state_id",
+    "Signal8ExecutionCapture", "Signal8TraceError", "runtime_configuration",\n    "runtime_state_id", "runtime_state_id_from_configuration",
 ]

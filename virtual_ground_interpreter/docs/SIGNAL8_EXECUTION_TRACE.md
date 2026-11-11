@@ -1,11 +1,8 @@
 # Signal8 execution trace as observation evidence
 
-## Purpose
-
-Signal8 already emits an instruction-level `ExecutionEvent` after every
-successful machine step. The adapter makes those events available to VGI's
-Encounter, Channel, and Evidence layers without changing instruction semantics
-or treating the machine's own observations as independent corroboration.
+Signal8 emits an instruction-level `ExecutionEvent` after each successful
+machine step. The adapter connects those events to VGI's Encounter, Channel,
+and Evidence layers without changing instruction semantics.
 
 Run:
 
@@ -16,78 +13,74 @@ python -m unittest discover -s tests -p 'test_signal8_trace.py' -v
 
 ## Capture boundary
 
-`Signal8ExecutionAdapter.capture(machine, run_id=..., max_steps=...)` advances
-an existing `SignalStateMachine` one instruction at a time. Each successful
-step captures before/after runtime-configuration identifiers, exact instruction
-identity, and the complete raw `ExecutionEvent`. It retains a ChannelMessage,
-Encounter, TransportFrameReceipt, and concrete-step TransitionEvidence claim.
+`Signal8ExecutionAdapter.capture(machine, run_id=..., max_steps=...)` steps
+an existing `SignalStateMachine` and retains the full before/after runtime
+configuration, stable IDs for those configurations, exact instruction
+identity, and raw `ExecutionEvent`. The capture retains the complete program
+and Ground definitions, initial/final configuration, and machine trace. Each
+event is bound to a ChannelMessage, Encounter, TransportFrameReceipt, and
+concrete step-level TransitionEvidence claim.
 
-The runtime-configuration projection includes program and Ground fingerprints,
-PC, halt state, initial/current memory, registers, and outputs. It excludes the
-trace journal and undo stack so equivalent configurations reached in separate
-runs can share an ID. Action identifiers bind PC, opcode, and the exact
-instruction fingerprint. Runtime IDs use the `signal8-runtime/1:` prefix.
+The runtime projection contains program/Ground fingerprints, PC, halt status,
+initial/current memory, registers, and outputs. It excludes trace journal and
+undo stack so equivalent configurations in different runs share an ID. Full
+snapshots remain attached to observations, allowing consumers to recompute
+IDs and inspect the signal-valued data that produced each transition.
+
+## Context versus run provenance
+
+The context digest binds adapter version, Ground identity/fingerprint, program
+fingerprint, and initial runtime configuration. It excludes run ID, allowing
+equivalent runs to be compared. Run ID remains in messages and source refs.
+The in-process transport ID is scoped by run ID because sequence numbers restart
+for each capture. Thus independently retained captures cannot collide on
+transport/source/channel/sequence identity.
 
 ## What is observed
 
-A successful step is recorded as a `known` transition claim for that one
-concrete runtime configuration and instruction. Its target is the post-step
-runtime-configuration ID.
+A successful step is a `known` transition claim for one concrete runtime
+configuration and instruction. The target is the post-step configuration ID.
+The abstract output tuple is empty: the adapter does not decode phasors into
+semantic Z/8Z integers. Raw events and full configurations preserve branch
+measurements, writes, and signal values.
 
-The abstract transition output tuple is empty: this adapter does not decode
-`SignalValue` phasors into semantic Z/8Z integers. The complete raw event,
-including branch measurements, write locations, and serialized signal-valued
-writes, remains in the ChannelMessage and Encounter.
-
-The adapter does not create a policy, finalize an event, admit a transition,
-or mutate a Ground. One machine reporting its own execution is not independent
-source corroboration.
+These records provide replay material, not a replay certificate. The adapter
+does not create a policy, finalize events, admit transitions, or mutate a
+Ground. Repeating the same capture does not create independent source votes.
 
 ## Faults and incomplete runs
 
-A failed instruction is rolled back by the existing machine. The adapter
-retains a generic `execution_fault` observation containing the exception type,
-message, program counter, and pre-step runtime-state ID. It has no transition
-status and cannot be mistaken for a successful transition claim.
+Failed instructions are rolled back by the machine. The adapter retains a
+generic `execution_fault` observation with the exception, attempted
+instruction when available, and full pre-step configuration; it has no
+transition status. Reaching `max_steps` before HALT yields `step_limit`.
+Only HALT produces `halted`.
 
-If `max_steps` is reached before HALT, capture status is `step_limit`. The
-partial trace is retained and is not reported as completed. Reaching HALT
-produces `halted`. Capture can begin from a machine that has already executed
-some instructions; the run context binds the current starting configuration.
+## Trust boundary
 
-## Provenance and trust boundary
+The channel is observation-only. Frame receipts bind exact payload digests
+but are not cryptographic signatures, source authentication, an independent
+process boundary, or proof of physical signal transport.
 
-The adapter uses an observation-only ChannelContract and an in-process
-transport identifier. The frame receipt binds each retained message to its
-exact serialized payload. This is integrity metadata, not a cryptographic
-signature, source authentication, independent process boundary, or proof of
-physical signal transport.
-
-## Resulting path
+## Dataflow
 
 ```text
 SignalStateMachine.step()
         |
         v
-ExecutionEvent + before/after runtime configuration
+full before/after configuration + ExecutionEvent
         |
         v
-Observation-only ChannelMessage
+ChannelMessage -> EncounterLedger
         |
-        +----> EncounterLedger
-        |
-        +----> TransportFrameReceipt
-                    |
-                    v
-             TransitionEvidence
-                    |
-                    v
-        [policy admission remains separate]
-                    |
-                    v
-        [Ground construction remains separate]
+        +-> run-scoped TransportFrameReceipt
+                  |
+                  v
+           TransitionEvidence
+                  |
+                  v
+       [policy admission remains separate]
+                  |
+                  v
+       [Ground construction remains separate]
 ```
-
-This creates an auditable bridge from actual VGI execution into its
-observation and evidence structures. It does not establish that Signal8
-exhausts an external system or that this trace is a physical measurement.

@@ -265,3 +265,13 @@ step-limited trace remains explicitly incomplete. A VGI machine observing its
 own execution is not independent external corroboration. See
 [`docs/SIGNAL8_EXECUTION_TRACE.md`](docs/SIGNAL8_EXECUTION_TRACE.md) and run
 `python examples/run_signal8_execution_trace.py`.
+
+
+### Capture completeness and cross-run comparability
+
+Signal8 capture artifacts retain full before/after runtime configurations,
+program/Ground definitions, and initial/final state snapshots. State IDs can
+be recomputed from retained configurations. Run IDs remain provenance, while
+structurally identical initial contexts share a context digest. Transport
+sessions are scoped per capture to avoid frame-sequence collisions. This is
+replay material, not a replay certificate.

@@ -1,9 +1,12 @@
 """Capture Signal8 machine execution as provenance-linked observations."""
 from __future__ import annotations
 
+from collections.abc import Mapping
 from dataclasses import dataclass
 import hashlib
 import json
+import math
+from types import MappingProxyType
 from typing import Any
 
 from .channels import ChannelContract, ChannelExchangeLedger, ChannelMessage
@@ -25,6 +28,28 @@ SIGNAL8_EXECUTION_CONTRACT = ChannelContract(
 )
 
 
+def _freeze_json(value: Any) -> Any:
+    if isinstance(value, Mapping):
+        if any(not isinstance(key, str) for key in value):
+            raise Signal8TraceError("captured JSON object keys must be strings")
+        return MappingProxyType({key: _freeze_json(item) for key, item in value.items()})
+    if isinstance(value, (list, tuple)):
+        return tuple(_freeze_json(item) for item in value)
+    if value is None or isinstance(value, (str, int, bool)):
+        return value
+    if isinstance(value, float) and math.isfinite(value):
+        return value
+    raise Signal8TraceError(f"capture contains non-JSON value {type(value).__name__}")
+
+
+def _thaw_json(value: Any) -> Any:
+    if isinstance(value, Mapping):
+        return {key: _thaw_json(item) for key, item in value.items()}
+    if isinstance(value, tuple):
+        return [_thaw_json(item) for item in value]
+    return value
+
+
 def _canonical(value: Any) -> str:
     try:
         return json.dumps(value, sort_keys=True, separators=(",", ":"),
@@ -37,8 +62,10 @@ def _digest(value: Any) -> str:
     return hashlib.sha256(_canonical(value).encode("utf-8")).hexdigest()
 
 
-def _runtime_state_payload(machine: SignalStateMachine) -> dict[str, Any]:
-    """Project future-relevant configuration, excluding trace and undo history."""
+def runtime_configuration(machine: SignalStateMachine) -> dict[str, Any]:
+    """Return future-relevant machine configuration, excluding the audit journal."""
+    if not isinstance(machine, SignalStateMachine):
+        raise TypeError("runtime_configuration expects a SignalStateMachine")
     return {
         "schema": "vgi.signal8-runtime-state/1",
         "program_fingerprint": machine._program_fingerprint,
@@ -52,9 +79,18 @@ def _runtime_state_payload(machine: SignalStateMachine) -> dict[str, Any]:
     }
 
 
+def runtime_state_id_from_configuration(configuration: Mapping[str, Any]) -> str:
+    """Recompute a runtime-state ID from its retained configuration snapshot."""
+    if not isinstance(configuration, Mapping):
+        raise TypeError("configuration must be a mapping")
+    if configuration.get("schema") != "vgi.signal8-runtime-state/1":
+        raise Signal8TraceError("unsupported runtime configuration schema")
+    return "signal8-runtime/1:" + _digest(_thaw_json(configuration))
+
+
 def runtime_state_id(machine: SignalStateMachine) -> str:
-    """Stable ID for the declared runtime-configuration projection."""
-    return "signal8-runtime/1:" + _digest(_runtime_state_payload(machine))
+    """Stable ID for a machine's declared runtime-configuration projection."""
+    return runtime_state_id_from_configuration(runtime_configuration(machine))
 
 
 def _action_id(machine: SignalStateMachine, pc: int) -> str:
@@ -65,11 +101,16 @@ def _action_id(machine: SignalStateMachine, pc: int) -> str:
 @dataclass(frozen=True, slots=True)
 class Signal8ExecutionCapture:
     run_id: str
+    transport_id: str
     status: str
     context_digest: str
     program_fingerprint: str
     ground_id: str
     ground_fingerprint: str
+    program_definition: Mapping[str, Any]
+    ground_definition: Mapping[str, Any]
+    initial_configuration: Mapping[str, Any]
+    final_configuration: Mapping[str, Any]
     events: tuple[ExecutionEvent, ...]
     result: ExecutionResult
     exchange: ChannelExchangeLedger
@@ -86,6 +127,12 @@ class Signal8ExecutionCapture:
             raise Signal8TraceError("faulted capture requires a fault type")
         if self.status != "faulted" and self.fault_type is not None:
             raise Signal8TraceError("only faulted captures may carry a fault type")
+        for name in ("program_definition", "ground_definition",
+                     "initial_configuration", "final_configuration"):
+            value = getattr(self, name)
+            if not isinstance(value, Mapping):
+                raise Signal8TraceError(f"{name} must be a mapping")
+            object.__setattr__(self, name, _freeze_json(value))
         object.__setattr__(self, "events", tuple(self.events))
         object.__setattr__(self, "frame_receipts", tuple(self.frame_receipts))
         object.__setattr__(self, "transition_evidence", tuple(self.transition_evidence))
@@ -102,18 +149,24 @@ class Signal8ExecutionCapture:
         return {
             "schema": "vgi.signal8-execution-capture/1",
             "run_id": self.run_id,
+            "transport_id": self.transport_id,
             "status": self.status,
             "context_digest": self.context_digest,
             "program_fingerprint": self.program_fingerprint,
             "ground_id": self.ground_id,
             "ground_fingerprint": self.ground_fingerprint,
+            "program_definition": _thaw_json(self.program_definition),
+            "ground_definition": _thaw_json(self.ground_definition),
+            "initial_configuration": _thaw_json(self.initial_configuration),
+            "final_configuration": _thaw_json(self.final_configuration),
+            "initial_state_id": runtime_state_id_from_configuration(self.initial_configuration),
+            "final_state_id": runtime_state_id_from_configuration(self.final_configuration),
             "step_count": self.step_count,
             "final_pc": self.result.final_pc,
             "halted": self.result.halted,
-            "captured_events": [x.to_dict() for x in self.events],
-            "machine_trace_length": len(self.result.trace),
-            "outputs": [{"label": x.label, "value": x.value.to_dict()}
-                        for x in self.result.outputs],
+            "captured_events": [event.to_dict() for event in self.events],
+            "machine_trace": [event.to_dict() for event in self.result.trace],
+            "outputs": [{"label": x.label, "value": x.value.to_dict()} for x in self.result.outputs],
             "channel_contracts": [x.to_dict() for x in self.exchange.contracts],
             "channel_messages": [x.to_dict() for x in self.exchange.messages],
             "encounters": [x.to_dict() for x in self.encounters.encounters],
@@ -127,23 +180,17 @@ class Signal8ExecutionCapture:
 
 
 class Signal8ExecutionAdapter:
-    """Capture actual SignalStateMachine steps without changing execution semantics.
+    """Capture real SignalStateMachine steps without changing execution semantics.
 
-    Successful steps produce concrete runtime-transition claims. The raw event
-    retains signal values and branch evidence; this adapter never integer-decodes
-    them. Runtime faults are generic observations with no transition status.
+    Each successful step becomes an observation-only message with full
+    before/after configurations and its raw ExecutionEvent. No evidence policy
+    is finalized and no Ground is mutated.
     """
-
     contract = SIGNAL8_EXECUTION_CONTRACT
 
-    def capture(
-        self,
-        machine: SignalStateMachine,
-        *,
-        run_id: str,
-        transport_id: str = TRANSPORT_ID,
-        max_steps: int = 10_000,
-    ) -> Signal8ExecutionCapture:
+    def capture(self, machine: SignalStateMachine, *, run_id: str,
+                transport_id: str = TRANSPORT_ID,
+                max_steps: int = 10_000) -> Signal8ExecutionCapture:
         if not isinstance(machine, SignalStateMachine):
             raise TypeError("capture expects a SignalStateMachine")
         if not isinstance(run_id, str) or not run_id.strip():
@@ -156,16 +203,18 @@ class Signal8ExecutionAdapter:
         program_fp = machine._program_fingerprint
         ground_id = machine.interpreter.ground.ground_id
         ground_fp = machine.interpreter.ground.fingerprint
-        initial_state = runtime_state_id(machine)
+        initial_configuration = runtime_configuration(machine)
         context_digest = _digest({
             "schema": "vgi.signal8-execution-context/1",
             "adapter": "Signal8ExecutionAdapter/1",
-            "run_id": run_id,
             "ground_id": ground_id,
             "ground_fingerprint": ground_fp,
             "program_fingerprint": program_fp,
-            "initial_runtime_state": initial_state,
+            "initial_runtime_configuration": initial_configuration,
         })
+        # Run ID is provenance, not model context. Frame sequence numbers restart
+        # per capture, so scope the in-process transport identity by run.
+        capture_transport_id = f"{transport_id}/{run_id}"
 
         exchange = ChannelExchangeLedger().register(self.contract)
         frames: list[TransportFrameReceipt] = []
@@ -189,13 +238,14 @@ class Signal8ExecutionAdapter:
             )
             exchange = exchange.record_observation(self.contract, message)
             receipt = TransportFrameReceipt.capture(
-                message, transport_id=transport_id, sequence=sequence,
+                message, transport_id=capture_transport_id, sequence=sequence,
             )
             frames.append(receipt)
             return message, receipt
 
         while not machine.halted and len(events) < max_steps:
-            before = runtime_state_id(machine)
+            before_configuration = runtime_configuration(machine)
+            before_state = runtime_state_id_from_configuration(before_configuration)
             pc_before = machine.pc
             try:
                 instruction = machine.program.instructions[pc_before]
@@ -203,22 +253,26 @@ class Signal8ExecutionAdapter:
             except Exception as exc:
                 fault_type, fault_message = type(exc).__name__, str(exc)
                 retain({
-                    "kind": "execution_fault",
-                    "run_id": run_id,
-                    "pc": machine.pc,
-                    "step_index": len(events),
-                    "runtime_state": before,
+                    "kind": "execution_fault", "run_id": run_id,
+                    "pc": machine.pc, "step_index": len(events),
+                    "runtime_state": before_state,
+                    "before_configuration": before_configuration,
                     "program_fingerprint": program_fp,
                     "ground_fingerprint": ground_fp,
-                    "fault_type": fault_type,
-                    "fault_message": fault_message,
-                }, f"fault:{len(frames) + 1}", f"vgi-signal8://{run_id}/fault/{len(events)}")
+                    "fault_type": fault_type, "fault_message": fault_message,
+                    "attempted_instruction": (
+                        None if not 0 <= pc_before < len(machine.program.instructions)
+                        else machine.program.instructions[pc_before].to_dict()
+                    ),
+                }, f"fault:{len(frames) + 1}",
+                   f"vgi-signal8://{run_id}/fault/{len(events)}")
                 break
 
             if event is None:
                 break
             events.append(event)
-            after = runtime_state_id(machine)
+            after_configuration = runtime_configuration(machine)
+            after_state = runtime_state_id_from_configuration(after_configuration)
             payload = {
                 "kind": "instruction_transition",
                 "status": "known",
@@ -227,11 +281,12 @@ class Signal8ExecutionAdapter:
                 "step_index": event.step,
                 "pc_before": event.pc_before,
                 "pc_after": event.pc_after,
-                "source_state": before,
+                "source_state": before_state,
                 "action": _action_id(machine, pc_before),
-                "target": after,
-                # Raw SignalValue data stays in raw_event; no symbol decoding here.
+                "target": after_state,
                 "output": [],
+                "before_configuration": before_configuration,
+                "after_configuration": after_configuration,
                 "raw_event": event.to_dict(),
                 "instruction": instruction.to_dict(),
                 "program_fingerprint": program_fp,
@@ -255,7 +310,23 @@ class Signal8ExecutionAdapter:
             for message, receipt in transition_messages
         )
         return Signal8ExecutionCapture(
-            run_id, status, context_digest, program_fp, ground_id, ground_fp,
-            tuple(events), machine.result(), exchange, encounters,
-            tuple(frames), evidence, fault_type, fault_message,
+            run_id=run_id,
+            transport_id=capture_transport_id,
+            status=status,
+            context_digest=context_digest,
+            program_fingerprint=program_fp,
+            ground_id=ground_id,
+            ground_fingerprint=ground_fp,
+            program_definition=machine.program.to_dict(),
+            ground_definition=machine.interpreter.ground.canonical_dict(),
+            initial_configuration=initial_configuration,
+            final_configuration=runtime_configuration(machine),
+            events=tuple(events),
+            result=machine.result(),
+            exchange=exchange,
+            encounters=encounters,
+            frame_receipts=tuple(frames),
+            transition_evidence=evidence,
+            fault_type=fault_type,
+            fault_message=fault_message,
         )
