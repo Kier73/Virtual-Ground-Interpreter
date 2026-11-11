@@ -102,3 +102,13 @@ Verification baseline:
 - Scope in-process transport identity by run to prevent frame-sequence collisions across captures.
 - Expose runtime-configuration ID recomputation for retained snapshots.
 - Updated focused tests and full repository gates have not been executed here.
+
+
+## Unreleased — harden Signal8 trace replay and consolidate the adapter API
+
+- Enforce contiguous frame and step indices, a continuous pre/post state-digest chain, and closure at the retained final-state digest.
+- Require one channel message and one Encounter per execution frame; require one transport session per trace and keep failed attempts final.
+- Compare frame sequence as part of replay verification while continuing to ignore transport IDs and capture timestamps.
+- Make `vgi.execution.Signal8ExecutionAdapter` the canonical package-level API; expose the previous in-progress-machine adapter under the explicit `LegacySignal8ExecutionAdapter` name.
+- Update the runnable example, legacy tests, and documentation so the two APIs cannot be confused.
+- The focused test suite and repository-wide gates have not been executed in this environment.

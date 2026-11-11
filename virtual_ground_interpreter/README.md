@@ -107,6 +107,9 @@ There is deliberately no integer `<` operator on `Z/8Z`: the cyclic group has no
 - `vgi/ir.py` — validated instruction and program representation.
 - `vgi/compiler.py` — typed task-expression DSL and lowering to control-flow IR.
 - `vgi/machine.py` — interpreter, persistent memory, register state, branch logic, trace, checkpoints and undo.
+- `vgi/execution.py` — canonical Signal8 execution-trace capture, serialization, same-runtime replay comparison, and observed-only transition projection.
+- `vgi/signal8_trace.py` — compatibility adapter for observing an already-instantiated machine; exported as `LegacySignal8ExecutionAdapter`.
+
 - `vgi/verification.py` — finite exhaustive verification of the declared Ground.
 - `vgi/cli.py` — compile, execute, and verify commands.
 - `examples/` — runnable conditional signal-state program.

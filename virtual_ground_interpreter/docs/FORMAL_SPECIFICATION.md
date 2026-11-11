@@ -593,3 +593,30 @@ mutation. Source identity identifies the same VGI machine that generated the
 event, so these records cannot be counted as independent corroboration merely
 because they occupy separate frames. Frame digests bind payload integrity
 within the record but do not authenticate the source or transport.
+
+
+## 21. Execution-trace chain and replay obligations
+
+For a captured trace with initial digest \(d_0\), ordered frame records
+\(F_0,\ldots,F_{n-1}\), and final digest \(d_f\), structural validity
+requires:
+
+\[
+F_i.state_{before}=d_i,\qquad
+d_{i+1}=F_i.state_{after},\qquad
+d_n=d_f.
+\]
+
+Frame sequence numbers are exactly \(1,\ldots,n\); attempt indices are
+exactly \(0,\ldots,n-1\). A failed instruction record, if present, is the
+final frame and has identical before/after state digests. Every frame has
+exactly one retained ChannelMessage and Encounter, and all frame receipts in
+one capture share a transport-session identity.
+
+Replay reconstructs the retained Program and initial SignalValue memory under
+the declared Ground, then compares each regenerated frame's sequence, record
+type, instruction digest, raw-event digest, and pre/post operational-state
+digests. Transport IDs and capture timestamps are excluded from semantic
+comparison. A match is bounded evidence of reproducibility in the same VGI
+runtime. It does not authenticate the original source, independently validate
+the runtime semantics, or establish completeness of an external system.

@@ -141,3 +141,25 @@ Step-limited captures remain incomplete. The resulting evidence is not
 automatically admitted, and the adapter's own reports are not independent
 corroboration of the machine. The evidence policy and Ground-construction
 stages remain explicit downstream operations.
+
+
+## Signal8 execution traces and replay
+
+The canonical `vgi/execution.py` path captures a Program and initial
+SignalValue memory by stepping the existing Signal8 machine. It retains raw
+instruction events, pre/post operational-state digests, Program/Ground
+definitions and fingerprints, ChannelMessages, Encounters, and transport-frame
+receipts. Failed attempts remain distinct from committed transitions.
+
+`Signal8ExecutionAdapter.replay` rebuilds the declared Program and initial
+memory in the selected VGI interpreter. `verify_execution_replay` compares
+each frame's sequence, instruction and event digests, and pre/post state
+digests, while ignoring transport identity and capture timestamps. Trace
+construction also validates contiguous frame/step numbering, one-to-one
+message and Encounter lineage, a continuous state-digest chain, and final
+state closure.
+
+This is same-runtime reproducibility, not an independent semantic oracle or a
+claim that the Ground exhausts an external system. The previous in-progress
+machine adapter remains available as `LegacySignal8ExecutionAdapter` for
+compatibility; new code should use the canonical API.

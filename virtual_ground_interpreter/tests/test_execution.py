@@ -95,6 +95,19 @@ class Signal8ExecutionTraceTests(unittest.TestCase):
         with self.assertRaises(ExecutionTraceError):
             replace(trace, entries=trace.entries[:2] + (altered,) + trace.entries[3:])
 
+    def test_trace_rejects_a_missing_prefix_from_the_execution_chain(self):
+        trace = self.adapter.capture(
+            add_program(), memory(self.backend), trace_id="missing-prefix-001",
+        )
+        with self.assertRaises(ExecutionTraceError):
+            replace(trace, entries=trace.entries[1:])
+
+    def test_package_exposes_distinct_current_and_legacy_adapters(self):
+        from vgi import LegacySignal8ExecutionAdapter
+        self.assertIsNot(Signal8ExecutionAdapter, LegacySignal8ExecutionAdapter)
+        self.assertEqual(Signal8ExecutionAdapter.__module__, "vgi.execution")
+        self.assertEqual(LegacySignal8ExecutionAdapter.__module__, "vgi.signal8_trace")
+
     def test_replay_matches_exact_instruction_and_signal_state_trace(self):
         first = self.adapter.capture(
             add_program(), memory(self.backend),

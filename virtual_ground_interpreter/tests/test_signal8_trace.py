@@ -2,7 +2,7 @@ import unittest
 from unittest.mock import patch
 
 from vgi import (
-    Instruction, Program, Signal8Backend, Signal8ExecutionAdapter,
+    Instruction, Program, Signal8Backend, LegacySignal8ExecutionAdapter,
     VirtualGroundInterpreter, runtime_state_id_from_configuration,
 )
 
@@ -26,7 +26,7 @@ class Signal8ExecutionAdapterTests(unittest.TestCase):
     def setUp(self):
         self.backend = Signal8Backend()
         self.interpreter = VirtualGroundInterpreter()
-        self.adapter = Signal8ExecutionAdapter()
+        self.adapter = LegacySignal8ExecutionAdapter()
 
     def memory(self):
         return {
