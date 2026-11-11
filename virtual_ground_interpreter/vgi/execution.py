@@ -206,6 +206,34 @@ class Signal8ExecutionTrace:
             raise ExecutionTraceError("execution frame message and Encounter identifiers must be unique")
         if len(entries) > self.max_steps:
             raise ExecutionTraceError("captured entries cannot exceed max_steps")
+        if not entries:
+            raise ExecutionTraceError("an execution capture must retain at least one attempted instruction")
+        if sequences != tuple(range(1, len(entries) + 1)):
+            raise ExecutionTraceError("frame sequences must be contiguous from one")
+        step_indices = tuple(item.step_index for item in entries)
+        if step_indices != tuple(range(len(entries))):
+            raise ExecutionTraceError("instruction step indices must be contiguous from zero")
+        if any(
+            item.record_type == "execution_failure" for item in entries[:-1]
+        ):
+            raise ExecutionTraceError("a failed instruction attempt must be the final frame")
+        if len(self.exchange.messages) != len(entries):
+            raise ExecutionTraceError("every execution frame must have exactly one channel message")
+        if len(self.encounters.encounters) != len(entries):
+            raise ExecutionTraceError("every execution frame must have exactly one retained Encounter")
+        transport_ids = {item.receipt.transport_id for item in entries}
+        if len(transport_ids) != 1:
+            raise ExecutionTraceError("all frames in one trace must share a transport session")
+
+        state_cursor = self.initial_state_digest
+        for index, item in enumerate(entries):
+            if item.state_before_digest != state_cursor:
+                raise ExecutionTraceError(
+                    f"execution state chain is discontinuous before frame {index}"
+                )
+            state_cursor = item.state_after_digest
+        if state_cursor != self.final_state_digest:
+            raise ExecutionTraceError("final state digest does not close the retained execution chain")
         if (self.status == "failed") != (self.failure is not None):
             raise ExecutionTraceError("failure details must be present exactly for failed traces")
 
@@ -843,7 +871,7 @@ def verify_execution_replay(
     for index in range(checked):
         left, right = observed.entries[index], replayed.entries[index]
         for field_name in (
-            "record_type", "step_index", "state_before_digest", "state_after_digest",
+            "sequence", "record_type", "step_index", "state_before_digest", "state_after_digest",
             "instruction_digest", "event_digest",
         ):
             if getattr(left, field_name) != getattr(right, field_name):

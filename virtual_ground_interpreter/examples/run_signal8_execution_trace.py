@@ -1,16 +1,21 @@
-"""Capture a real Signal8 execution as VGI observations and evidence."""
+"""Capture a Signal8 run, retain its provenance, and verify deterministic replay."""
 
 import json
 
 from vgi import (
-    Instruction, Program, Signal8Backend, Signal8ExecutionAdapter,
+    Instruction,
+    Program,
+    Signal8Backend,
+    Signal8ExecutionAdapter,
     VirtualGroundInterpreter,
+    verify_execution_replay,
 )
 
 
 def main():
     backend = Signal8Backend()
-    interpreter = VirtualGroundInterpreter()
+    interpreter = VirtualGroundInterpreter(backend=backend)
+    adapter = Signal8ExecutionAdapter(interpreter)
     program = Program("signal8-observed-add", (
         Instruction("LOAD", {"dst": "left", "address": "input.left"}),
         Instruction("LOAD", {"dst": "right", "address": "input.right"}),
@@ -19,20 +24,30 @@ def main():
         Instruction("EMIT", {"src": "sum", "label": "sum"}),
         Instruction("HALT"),
     ))
-    machine = interpreter.instantiate(program, {
+    initial_memory = {
         "input.left": backend.encode_symbol(3, observer=1),
         "input.right": backend.encode_symbol(5, observer=3),
-    })
-    capture = Signal8ExecutionAdapter().capture(
-        machine, run_id="signal8-add-demo-001",
+    }
+
+    observed = adapter.capture(
+        program, initial_memory, trace_id="signal8-add-observed-001",
     )
-    report = capture.to_dict()
-    report["interpretation"] = (
-        "Successful instructions are retained as concrete runtime transition "
-        "observations. Raw phasors remain in the event records; capture performs "
-        "no semantic integer decoding, evidence-policy finalization, or Ground mutation."
+    replayed = adapter.replay(
+        observed, trace_id="signal8-add-replay-001",
     )
-    print(json.dumps(report, indent=2, sort_keys=True))
+    verification = verify_execution_replay(observed, replayed)
+
+    print(json.dumps({
+        "observed_trace": observed.to_dict(),
+        "replayed_trace": replayed.to_dict(),
+        "replay_verification": verification.to_dict(),
+        "interpretation": (
+            "The replay checks the exact program, initial signal memory, Ground, "
+            "and retained instruction path in the same VGI implementation. "
+            "It establishes bounded reproducibility, not an independent semantic "
+            "oracle or completeness about an external system."
+        ),
+    }, indent=2, sort_keys=True))
 
 
 if __name__ == "__main__":

@@ -43,8 +43,10 @@ from .channels import (
     ChannelMessage, PredictiveGroundAdapter,
 )
 from .signal8_trace import (
-    SIGNAL8_EXECUTION_CONTRACT, Signal8ExecutionAdapter,
-    Signal8ExecutionCapture, Signal8TraceError, runtime_configuration,\n    runtime_state_id, runtime_state_id_from_configuration,
+    SIGNAL8_EXECUTION_CONTRACT,
+    Signal8ExecutionAdapter as LegacySignal8ExecutionAdapter,
+    Signal8ExecutionCapture, Signal8TraceError, runtime_configuration,
+    runtime_state_id, runtime_state_id_from_configuration,
 )
 from .evidence import (
     EvidenceError, GroundReconstructionCertificate, GroundReconstructionVerifier,
@@ -88,6 +90,11 @@ __all__ = [
     "EvidenceError", "ObservedOutcome", "TransitionEvidencePolicy", "TransitionEvidence",
     "TransitionEvidenceDecision", "TransitionEvidenceFinalization", "TransitionEvidenceLedger",
     "TransportFrameReceipt", "GroundReconstructionCertificate", "GroundReconstructionVerifier",
-    "SIGNAL8_EXECUTION_CONTRACT", "Signal8ExecutionAdapter",
-    "Signal8ExecutionCapture", "Signal8TraceError", "runtime_configuration",\n    "runtime_state_id", "runtime_state_id_from_configuration",
+    "SIGNAL8_EXECUTION_CONTRACT", "LegacySignal8ExecutionAdapter",
+    "Signal8ExecutionCapture", "Signal8TraceError", "runtime_configuration",
+    "runtime_state_id", "runtime_state_id_from_configuration",
+    "ExecutionTraceError", "ExecutionTraceFrame", "Signal8ExecutionTrace",
+    "Signal8ExecutionAdapter", "ExecutionReplayReport",
+    "ExecutionTransitionObservation", "ExecutionTransitionProjection",
+    "project_execution_transitions", "verify_execution_replay",
 ]

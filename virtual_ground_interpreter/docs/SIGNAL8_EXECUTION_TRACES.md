@@ -97,3 +97,19 @@ From virtual_ground_interpreter/:
 
 The focused tests and runner are included in this increment. Do not report
 them as passing until they have been executed in the repository environment.
+
+
+## Chain integrity
+
+A valid trace has a contiguous frame sequence beginning at one and a
+contiguous zero-based instruction-attempt index. The first pre-state digest
+must equal the trace's initial-state digest. Every frame's pre-state digest
+must equal the preceding frame's post-state digest, and the last post-state
+digest must equal the retained final-state digest. A failed attempt is the
+final frame and must preserve atomic rollback.
+
+The trace envelope also requires a one-to-one correspondence between
+execution frames, channel messages, and retained Encounters. Replay comparison
+checks frame sequence, record type, instruction/event digests, and pre/post
+state digests. Transport IDs and capture timestamps remain deliberately
+outside the semantic comparison.
