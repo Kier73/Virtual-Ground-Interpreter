@@ -114,7 +114,12 @@ class SparsePartialComparison:
 
 
 def sparse_partial_refinement_series(system, observer, max_horizon):
-    """Build equivalence partitions in O(H*S*A); pair explanations stay lazy."""
+    """Build partitions in expected O(H*S*A); keep pair explanations lazy.
+
+    A single queried pair explores only its reachable successor-pair slice.
+    The worst case is O(H*S^2*A) because that slice can branch to O(S^2)
+    distinct pairs per horizon. Memoization is shared across queries.
+    """
     if not isinstance(system, GroundTransitionSystem):
         raise SparsePartialError("system must be a GroundTransitionSystem")
     if not isinstance(observer, ObserverContext):
