@@ -122,3 +122,14 @@ This is intentionally narrower than a generator that invents new actions, sensor
 This tests a methodological requirement: mathematical formalization should make a model's scope and blind spots inspectable, not silently redefine the invariant space as the model's current representation. A finite Ground can be complete relative to its own schema while remaining radically incomplete as an account of the system being studied.
 
 **Next falsification target:** connect witness prescriptions to an actual acquisition interface only when a concrete sensor, emulator, or host action exists. Verify acquired evidence independently before constructing a new Ground version. Never convert a proposed experiment into an observation.
+
+
+## Encounter memory and associative hypothesis history
+
+The new experimental encounter layer records observations before requiring an interpretation. Immutable encounter envelopes retain payload, provenance, context, and a canonical fingerprint. Cross-encounter associations are stored as explicit hypotheses with rationale, experiment, and falsifier; append-only assessments retain support, contradiction, and inconclusive outcomes.
+
+This design is intentionally not a semantic-similarity engine. Automatically pairing every encounter or ranking all weak connections by one curiosity score would introduce a new observer ontology and may reward noise. Instead, it supplies a durable substrate to which human or machine explorers can contribute hypotheses from directed and open-ended exploration.
+
+A supporting or contradicting assessment must cite at least one new encounter beyond the original hypothesis basis. Assessments remain history, not proof. No association automatically mutates the predictive Ground.
+
+**Next experiment:** connect an actual encounter source—such as a repository observation, an emulator trace, or a sensor feed—to the ledger through a source-specific adapter. Retain the original artifact and digest, then evaluate whether associations generated from independently collected encounters yield reproducible experiments. Measure useful discoveries and false leads separately; do not equate surprise with learning progress.

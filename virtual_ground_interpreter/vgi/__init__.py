@@ -33,6 +33,11 @@ from .inquiry import (
     BlockedTransition, DistinguishingWitness, InquiryError, OpenWorldBoundary,
     PairInquiry, PerceptionInquiryReport, inquire_unresolved_pairs,
 )
+from .encounters import (
+    AssociationAssessment, AssociationError, AssociationHypothesis,
+    AssociationLedger, Encounter, EncounterError, EncounterLedger,
+    EncounterProvenance,
+)
 
 __version__ = "0.2.0"
 
@@ -56,4 +61,6 @@ __all__ = [
     "JointAttentionPlan", "beam_attention_plan",
     "InquiryError", "BlockedTransition", "DistinguishingWitness", "PairInquiry",
     "OpenWorldBoundary", "PerceptionInquiryReport", "inquire_unresolved_pairs",
+    "EncounterError", "EncounterProvenance", "Encounter", "EncounterLedger",
+    "AssociationError", "AssociationHypothesis", "AssociationAssessment", "AssociationLedger",
 ]
