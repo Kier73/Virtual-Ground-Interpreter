@@ -1,3 +1,12 @@
+## Unreleased — Signal8 execution observations
+
+- Add a step-boundary adapter that captures actual SignalStateMachine execution as observation-only channel messages.
+- Bind each successful instruction event to before/after runtime-configuration identifiers, exact program/Ground fingerprints, a retained Encounter, and a payload-bound frame receipt.
+- Preserve raw SignalValue writes and branch measurements without semantic integer decoding.
+- Retain runtime faults as generic observations, not successful transition claims; label bounded captures as incomplete when HALT is not reached.
+- Keep policy finalization and Ground mutation outside the adapter. A machine's self-observation is not independent source corroboration.
+- Add focused adapter tests, an example runner, and execution-trace provenance documentation. Full repository gates must still be run in the repository environment.
+
 ## Unreleased — evidence admission and finite reconstruction
 
 - Add transition evidence linked to retained inbound channel messages, Encounters, and adapter-supplied transport-frame receipts bound to exact payload digests.

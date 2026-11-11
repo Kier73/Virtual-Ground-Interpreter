@@ -547,3 +547,49 @@ A reconstruction certificate is:
          action_sequences, witness_count, max_horizon, compiler_id, compiler_version).
 
 The verifier invokes the existing direct-vs-compiled differential path and hashes the direct traces for the supplied finite action sequences. Revalidation repeats the same corpus and requires exact Ground and context fingerprints. Its scope is finite_action_sequence_replay. It does not establish behavior outside the witnesses, completeness of the external system, or physical hidden-state identity. The certificate digest is an integrity identity, not an authenticated signature.
+
+
+## 19. Signal8 execution observation capture
+
+Let the runtime configuration projection be
+\[
+\sigma(M)=(
+fp(P),fp(G),pc,halted,\mu_0,\mu,\rho,\Omega
+),
+\]
+where the execution journal and undo stack are excluded. The stable runtime
+configuration identifier is
+\[
+id(M)=\texttt{"signal8-runtime/1:"}\Vert
+SHA256(\operatorname{canonicalJSON}(\sigma(M))).
+\]
+
+For a successful instruction transition
+\(\langle P,M_i\rangle\to\langle P,M_{i+1}\rangle\), the adapter emits an
+observation claim
+\[
+(id(M_i), a_i, id(M_{i+1}), \varnothing),
+\]
+where \(a_i\) binds the program counter, opcode, and fingerprint of the exact
+instruction. The raw `ExecutionEvent` remains attached to the observation.
+The empty abstract output tuple is intentional: signal values and branch
+measurements are preserved in the raw event and are not decoded to
+\(\mathbb Z/8\mathbb Z\) by trace capture.
+
+The capture context binds the run identifier, Ground/program fingerprints, and
+initial runtime-configuration ID. Each message is retained as an Encounter,
+bound to an adapter-supplied TransportFrameReceipt, and normalized through
+the existing TransitionEvidence constructor. The claim is scoped to one
+concrete execution step; it is not automatically generalized to all
+configurations sharing an opcode.
+
+A failed instruction is atomic under the machine semantics and is retained as
+a generic `execution_fault` observation without a transition status. A
+step-limited capture is marked incomplete; only reaching HALT yields
+`halted`.
+
+The adapter creates no TransitionEvidencePolicy, finalization, or Ground
+mutation. Source identity identifies the same VGI machine that generated the
+event, so these records cannot be counted as independent corroboration merely
+because they occupy separate frames. Frame digests bind payload integrity
+within the record but do not authenticate the source or transport.

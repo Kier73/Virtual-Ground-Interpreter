@@ -162,3 +162,27 @@ A separate GroundReconstructionVerifier checks the complete Ground against VGI's
 This gives the VGI pipeline distinct evidence strata: **observed → policy-admitted → replay-verified**. Do not collapse them into one confidence score or let the reconstruction certificate authenticate source observations.
 
 **Next empirical step:** add a real source adapter and carry its actual receive sequence, source identity, original artifact digest, and context through this pipeline. Compare retransmission, independent source agreement, disagreement, and compiled replay separately.
+
+
+## Signal8 self-observation and execution-derived evidence
+
+The Signal8 runtime already emits an auditable `ExecutionEvent` per successful
+instruction. `Signal8ExecutionAdapter` captures that real runtime path into
+VGI's existing observation/evidence structures. It fingerprints before/after
+runtime configurations, preserves the raw event (including signal-valued
+writes and branch uncertainty), and binds each observation to an Encounter
+and frame receipt.
+
+This creates an executable bridge from operation to observation without
+confusing the machine's own report with independent validation. Successful
+steps yield concrete, run-context-scoped transition claims; runtime faults
+remain generic observations; a step limit remains an incomplete capture.
+No policy is finalized and no Ground is mutated.
+
+**Next experiment:** compare repeated runs under identical and deliberately
+altered initial memory, program, and Ground contexts. Determine which
+runtime-state identifiers remain invariant, which instruction transitions
+recur, and which observations are sensitive to observer profile or branch
+uncertainty. Then examine how independent replay or a second implementation
+could corroborate (or contradict) the machine's self-reported trace. Do not
+treat repetition by one source as independent evidence.

@@ -117,3 +117,27 @@ Transition evidence binds the Encounter to message ID, source, channel, protocol
 Only AUTHORIZED finalizations contribute transitions to a Ground. Other events remain absent and therefore unknown. This process establishes a transition only relative to the declared policy and retained evidence; it does not establish external physical truth.
 
 GroundReconstructionVerifier uses the existing TransitionCompiler and differential verifier. Its certificate binds the exact Ground/context and finite action sequences tested. It demonstrates replay agreement only for those witnesses, not universal reconstruction of the modeled environment.
+
+
+## Signal8 execution observation adapter
+
+`Signal8ExecutionAdapter` wraps the existing `SignalStateMachine.step()`
+boundary. It does not alter instruction execution. For each successful step
+it fingerprints a future-relevant runtime-configuration projection before and
+after the instruction, serializes the original `ExecutionEvent`, and records
+an observation-only ChannelMessage. The channel is materialized into the
+EncounterLedger and linked to a TransportFrameReceipt before the message is
+normalized into a concrete-step TransitionEvidence claim.
+
+The runtime-state projection includes program and Ground fingerprints, PC,
+halt state, initial/current memory, registers, and outputs. It excludes the
+execution journal and undo stack so equivalent configurations in separate
+runs can share an identifier. The adapter does not integer-decode phasors:
+the typed transition output tuple is empty, while the raw event retains
+serialized signal values and branch evidence.
+
+Faults are retained as generic observations without a transition status.
+Step-limited captures remain incomplete. The resulting evidence is not
+automatically admitted, and the adapter's own reports are not independent
+corroboration of the machine. The evidence policy and Ground-construction
+stages remain explicit downstream operations.
