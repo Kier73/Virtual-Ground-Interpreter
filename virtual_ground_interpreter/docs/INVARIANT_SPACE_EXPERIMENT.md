@@ -178,6 +178,44 @@ These layers interact, but they are not interchangeable. A perfect hash chain ca
 
 The invariant space is thus better modeled as a family of task- and context-indexed preservation relations, with explicit maps between representations. The target is not one coordinate system in which every meaning must live. It is a navigable structure of compatible descriptions, each preserving specified distinctions.
 
+There is a concrete integration gap here. `GroundTransitionSystem` preserves missing and ambiguous state/action pairs, but the current `relational.refinement_series` resolves every selected edge through `step()`; consequently it requires known singleton edges and cannot refine a partial Ground directly. A partial learner must not solve this by imputing missing edges. The next relational primitive should classify each state pair at each horizon as:
+
+- **equivalent:** every selected action is known on both sides, produces the same projected output, and leads to a pair equivalent at the previous horizon;
+- **distinguishable:** at least one fully observed action sequence supplies a counterexample;
+- **unresolved:** no distinguishing witness is known, but at least one required edge is missing or ambiguous.
+
+This is a relation over pairs, not a partition that silently treats unresolved pairs as equal or different. It should retain shortest distinguishing action words, and let new encounters upgrade unresolved pairs to either equivalent-at-a-bounded-horizon or distinguishable. The Build 24 delayed-six suffix is the positive control; missing and ambiguous edges are the negative/epistemic controls.
+
+## 6. Re-examining Builds 01–31 with the newer architecture
+
+### Builds 01–06: identity, paths, holonomy, observer fibres, and intention
+
+These earliest experiments should not be discarded; they should be given more precise modern contracts.
+
+- **Build 01 — identity versus response.** A codonic expression's canonical identity and its responses under probes were separate objects. Modern Encounter identity and trace fingerprints can preserve this distinction. A fingerprint is a stable identity handle, not a metric of semantic distance.
+- **Build 02 — path versus time parameterization.** The geometric path and its time-resolved realization can differ. Modern execution frames now provide logical step order, while acquisition timestamps, source-local clocks, transport receipts, and measured computation duration remain separate. Revisit path/time experiments only when those clocks are independently retained.
+- **Build 03 — composition and path-dependent orientation.** The shears/rotation result was a discrete holonomy analogue, not a completed principal-bundle result. Re-test it as a commuting-square/closed-loop experiment: compare paths with the same endpoint state but different transformation histories, then independently check whether the claimed lifted distinction affects a held-out observable.
+- **Builds 04 and 06 — observer fibres.** The Hopf-fibration experiments made a useful point: a coarse observer can identify several representatives that a richer observer separates. The current contextual quotient can express that operationally without asserting that every domain is an (S^3) object or that the quotient reveals physical hidden states.
+- **Build 05 — intention as a target map.** The target-map and active-probe work remains compatible with current inquiry and attention planning. Its important negative control also remains: an adaptive policy need not beat a known optimal fixed design in a stationary fixture.
+
+The renewed test is to compare observer-induced equivalence classes, path history, and task-relevant outputs under the current reference/evidence rules. Preserve separate metrics for identity, path distance, response distance, and resource cost.
+
+### Builds 07–10: falsification and negative controls
+
+Randomized paths and cross-modal controls weakened attractive correlations from earlier matched positive controls. This is important retained knowledge, not failed work. New experiments should use preregistered invariants, independently selected systems, held-out observer contexts, ablations, and negative controls that preserve nuisance structure. A successful fixture demonstrates that an implementation can realize a hypothesis; it does not establish that the hypothesis generalizes.
+
+### Builds 11–19: physical observation and preprocessing
+
+The vibration, acoustic, room-response, and event-clock work exposed how strongly conclusions depend on acquisition and preprocessing. Build 12's onset convention invalidated important metrics, and later event-matching work was demoted when mark-only matching beat the combined matcher on external controls. Grouped validation improved reproducibility, but cross-view relationships remained moderate and heterogeneous.
+
+A renewed sensor experiment must retain raw samples, calibration, source-local clocks, preprocessing version, alternative segmentation hypotheses, and original as well as corrected analyses. Any new motif or cross-modal invariant must survive grouped held-out validation and null controls before it becomes a transition candidate.
+
+### Builds 20–24: generative grounds and predictive state
+
+Builds 20–23 moved toward compact generative laws, executable Ground descriptions, and active identification. The current transition compiler, IR, execution capture, and independent reference now provide a way to test those descriptions as programs rather than only as generated graphs.
+
+**Build 24 is the best immediate bridge fixture.** Its delayed-six model demonstrates that contexts indistinguishable through horizons 1–5 can be separated at horizon 6 by a specific action suffix. Re-run that witness through the current trace/evidence path, then verify that the inferred predictive distinction survives independent execution and a held-out run. This gives a falsifiable regression for any new partial quotient algorithm.
+
 ## 6. Re-examining Builds 25–31 with the newer architecture
 
 ### Builds 25–26: online tracking and partial Ground induction
@@ -305,11 +343,12 @@ This organization yields a practical meaning for “navigating invariant space�
 
 The present change deliberately implements only the independent Signal8 reference and its observer/uncertainty controls. The most useful follow-on experiments, in order, are:
 
-1. **Trace-to-partial-Ground ingestion:** stream retained execution encounters into the existing partial-ground machinery, injecting reorder, duplication, missing frames and conflicts.
-2. **Counterexample-generated probe proposals:** connect replay/reference discrepancies and inquiry witnesses to candidate attention actions; require an authorized source before acquisition.
-3. **Multi-hypothesis raw segmentation:** revisit Builds 28–29 using retained raw data, alternative segmentations, order-preserving null controls, and independent checkpoint/ablation evidence.
-4. **Observer-set robustness:** revisit Build 30 by comparing near-optimal sets across held-out task contracts, rather than selecting a single profile from one labelled calibration split.
-5. **Cross-substrate commuting tests:** use the same task contract and semantic reference to compare the Signal8 runtime with a second implementation or eventual hardware adapter.
+1. **Trace-to-partial-Ground ingestion:** stream retained execution Encounters into observed state/action/output edges. Require an independent reference match; inject reorder, duplicate, delay, omission, and conflict; exclude failed attempts as committed transitions.
+2. **Partial predictive comparison:** add the three-valued pair relation above. Test monotone horizon refinement, shortest distinguishing suffixes, unknown/ambiguous propagation, and the Build 24 delayed-six control.
+3. **Counterexample-generated probe proposals:** connect reference discrepancies and inquiry witnesses to candidate attention actions; require an authorized source before acquisition and retain expected outcomes, costs, and falsifiers.
+4. **Multi-hypothesis raw segmentation:** revisit Builds 28–29 using retained raw data, alternative segmentations, order-preserving null controls, and independent checkpoint/ablation evidence.
+5. **Observer-set robustness:** revisit Build 30 by comparing near-optimal sets across held-out task contracts, rather than selecting one profile from one labelled calibration split.
+6. **Cross-substrate commuting tests:** use the same task contract and semantic reference to compare the Signal8 runtime with a second implementation or eventual hardware adapter.
 
 The order matters. It builds on the now-established trace/evidence foundations before attempting automatic semantic discovery.
 
