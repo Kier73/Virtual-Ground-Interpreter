@@ -190,7 +190,23 @@ quotients = refinement_series(ground, observer, max_horizon=8)
 distance = behavioral_distance(ground, observer, "q0", "q1", horizon=5)
 ```
 
-See [the relational-atlas experiment](docs/RELATIONAL_ATLAS.md) and run `python examples/run_relational_atlas.py`. This is a finite research tool, not a universal state-space model or a claim about physical hidden-state identity. Unknown and ambiguous selected transitions remain non-executable.
+See [the relational-atlas experiment](docs/RELATIONAL_ATLAS.md) and run `python examples/run_relational_atlas.py`. This is a finite research tool, not a universal state-space model or a claim about physical hidden-state identity. The exact quotient still requires known singleton edges.
+
+For incomplete grounds, `partial_refinement_series` retains three pairwise results: equivalent, distinguishable with a shortest known action word, or unresolved because an edge or continuation is missing/ambiguous:
+
+```python
+from vgi import ObserverContext, partial_refinement_series
+
+observer = ObserverContext("available", ("HOLD", "PROBE_A"), ("channel_0",))
+series = partial_refinement_series(partial_ground, observer, max_horizon=8)
+comparison = series[-1]
+print(comparison.status("context-a", "context-b"))
+print(comparison.witness("context-a", "context-b"))
+print(comparison.blocked("context-a", "context-b"))
+print(comparison.blockers("context-a", "context-b"))  # structured missing/ambiguous/successor reasons
+```
+
+See [partial predictive relations](docs/PARTIAL_PREDICTIVE_RELATIONS.md) and run `python examples/run_partial_predictive_relations.py`. An unresolved pair is neither merged nor declared distinct.
 
 
 ## Active attention planning (experimental)

@@ -1,3 +1,10 @@
+## Unreleased — partial predictive relations for incomplete Grounds
+
+- Add three-valued observer-relative pair comparison over partial Grounds: equivalent, distinguishable with a shortest known action word, or unresolved.
+- Add a runnable partial predictive relation example using Build 24 delayed-six and an incomplete two-state Ground.
+- Preserve unknown and ambiguous edges as structured blockers rather than imputing transitions or forcing partial state sets into a quotient partition; distinguish missing edges, ambiguous outcomes, and unresolved successor pairs.
+- Encode monotone horizon refinement and test the Build 24 delayed-six witness, observer-restricted invisibility, complete-Ground agreement with exact quotients, unresolved-edge behavior, and evidence-version resolution.
+
 ## Unreleased — independent Signal8 semantic reference and invariant-space experiment
 
 - Add a reference interpreter that does not execute through Signal8Backend, SignalStateMachine, or Program; compare all supported instruction events, writes, branch evidence, failure categories, and final state against retained traces.
