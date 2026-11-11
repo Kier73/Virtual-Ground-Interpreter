@@ -66,7 +66,13 @@ class SparsePartialComparison:
 
     @property
     def stored_pair_records(self):
+        """Number of pair records eagerly materialized; always zero."""
         return 0
+
+    @property
+    def cached_pair_decisions(self):
+        """Lazy pair-dependency records materialized by queries so far."""
+        return self._decide.cache_info().currsize
 
     def _validate(self, left, right):
         if left not in self.state_to_class or right not in self.state_to_class:

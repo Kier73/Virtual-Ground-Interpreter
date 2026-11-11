@@ -28,10 +28,12 @@ blockers preserve the unresolved result.
 
 Building the partitions takes expected \(O(HSA)\) time and \(O(S)\) working
 memory per horizon, where \(S\) is the state count, \(A\) is the observer
-action count, and \(H\) is the horizon. A requested pair decision costs at
-most \(O(HA)\) absent cache reuse. Querying all pairs still costs quadratic
-work: sparse construction makes no promise to make an all-pairs census
-subquadratic.
+action count, and \(H\) is the horizon. A requested pair explores only its reachable
+successor-pair dependency slice. In the worst case this slice can contain
+\(O(HS^2)\) distinct pairs and cost \(O(HS^2A)\). Pair decisions are memoized
+and shared across queries on one comparison. Querying all pairs still costs
+quadratic work: sparse construction makes no promise to make an all-pairs
+census subquadratic.
 
 API:
 - sparse_partial_refinement_series(system, observer, max_horizon)
