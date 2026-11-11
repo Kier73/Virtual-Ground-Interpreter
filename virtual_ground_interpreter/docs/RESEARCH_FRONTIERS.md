@@ -218,3 +218,19 @@ relations to the orbit layer. A target may describe an observable condition
 rather than a raw state digest, while preserving multiple matches, observer
 scope, and unresolved outcomes. Inverse lookup must remain bounded to a
 certified orbit unless a separate preimage proof is provided.
+
+## Proof-search dogfooding and formal-methods interface
+
+The finite proof-shaped experiments now live in
+[PROOF_SEARCH_DOGFOOD.md](PROOF_SEARCH_DOGFOOD.md), with a runnable package
+example. They show that VGI can compare future observable behavior of
+Boolean-cube vertices, partial CNF assignments, and partial clique
+constructions, while preserving explicit blockers for missing edges.
+
+The architectural gap is now clearer: proof states often create multiple
+jointly required subgoals, which need AND/OR hyper-transitions rather than
+the current one-target deterministic edge or ambiguous alternative outcomes.
+In addition, active attention still relies on complete contextual quotients
+and cannot yet rank missing state/action cells directly. The strongest next
+build is a proof-state adapter plus partial-aware active attention, with a
+trusted Lean/kernel result retained as separate evidence.
