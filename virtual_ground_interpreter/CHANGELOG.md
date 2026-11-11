@@ -1,3 +1,13 @@
+## Unreleased — sparse partial attention, ProofGround and exact observables
+
+- Add partition-first sparse partial refinement with lazy pair-level witness and blocker computation, preserving the existing eager three-valued API.
+- Add cell-specific counterfactual probe scoring. Exact expected gain is calculated only from caller-supplied Fraction weights; otherwise the scorer reports scenario bounds without inventing probabilities.
+- Add exact rational aggregates and sparse multivariate polynomials, attached as typed logical-time observables outside Signal8 channels.
+- Add AND/OR proof-obligation hyper-transitions and a normalized Lean trace adapter. Every hyperedge retains its full AND-subgoal bundle; alternative tactics remain OR branches.
+- Preserve raw kernel claims as untrusted evidence. Only separately supplied environment-bound kernel receipts can set kernel-accepted/rejected status. The adapter does not run Lean or authenticate receipts itself.
+- Add 14 focused tests for sparse/eager agreement, counterfactual attention, exact arithmetic, scope-sensitive proof identity and kernel-receipt provenance. Tests are authored but have not been executed in this environment.
+
+
 ## Unreleased — proof-search dogfooding and complexity assessment
 
 - Add a runnable finite experiment for Boolean-cube influence, CNF prefix search, and k-Clique extension using the current Ground and partial-relation APIs.

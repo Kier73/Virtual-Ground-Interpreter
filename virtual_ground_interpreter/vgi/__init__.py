@@ -76,6 +76,24 @@ from .affine import (
     ModularAffineMap,
 )
 
+from .sparse import (
+    SparsePartialComparison, SparsePartialError,
+    sparse_partial_contextual_comparison, sparse_partial_refinement_series,
+)
+from .partial_attention import (
+    PartialAttentionError, PartialProbeScore, ProbeScenario, ProbeScenarioScore,
+    TransitionProbe, rank_partial_probes, score_partial_probe,
+)
+from .exact import (
+    ExactObservable, ExactObservableFrame, ExactPolynomial, ExactValueError,
+    RationalValue, rational_mean, rational_sum, rational_variance,
+    rational_weighted_sum,
+)
+from .proof import (
+    ProofEnvironment, ProofGround, ProofGroundAdapter, ProofGroundError,
+    ProofHyperTransition, ProofObligation, VerifiedKernelReceipt,
+)
+
 __version__ = "0.2.0"
 
 __all__ = [
@@ -121,4 +139,14 @@ __all__ = [
     "OrbitNavigator",
     "AffineFastForwardError", "ModularAffineMap",
     "AffineFastForwardResult", "AffineOrbitCertificate",
+    "SparsePartialError", "SparsePartialComparison",
+    "sparse_partial_refinement_series", "sparse_partial_contextual_comparison",
+    "PartialAttentionError", "ProbeScenario", "TransitionProbe",
+    "ProbeScenarioScore", "PartialProbeScore", "score_partial_probe", "rank_partial_probes",
+    "ExactValueError", "RationalValue", "ExactPolynomial",
+    "ExactObservable", "ExactObservableFrame", "rational_sum", "rational_mean",
+    "rational_variance", "rational_weighted_sum",
+    "ProofGroundError", "ProofEnvironment", "ProofObligation",
+    "ProofHyperTransition", "VerifiedKernelReceipt", "ProofGround",
+    "ProofGroundAdapter",
 ]

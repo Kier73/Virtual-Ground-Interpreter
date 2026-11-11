@@ -234,3 +234,32 @@ In addition, active attention still relies on complete contextual quotients
 and cannot yet rank missing state/action cells directly. The strongest next
 build is a proof-state adapter plus partial-aware active attention, with a
 trusted Lean/kernel result retained as separate evidence.
+
+## Sparse attention and ProofGround navigation
+
+A new architectural increment adds a sparse partial-refinement interface,
+cell-specific counterfactual attention, exact rational/polynomial observables,
+and an AND/OR ProofGround adapter.
+
+The sparse interface eagerly builds only proven-equivalence classes and
+computes distinguishability witnesses or uncertainty blockers lazily for
+requested pairs. Its construction is expected \(O(HSA)\); requesting every
+pair still costs quadratic work. The attention scorer changes one hypothetical
+cell at a time, and reports exact expected value only when the caller supplies
+an exact scenario distribution. Otherwise it reports scenario bounds.
+
+ProofGround represents tactic applications as hyperedges: all child
+obligations on one edge are jointly required, while different edges are
+alternative routes. Scope-sensitive identity includes the local context,
+assumptions, metavariables and environment fingerprints. Raw kernel claims
+are retained as untrusted data; an external kernel receipt is required for
+accepted/rejected status, and the upstream checker remains a separate trust
+boundary.
+
+Exact rational and polynomial observables are stored outside the Signal8
+categorical channel, preserving exact mathematical quantities without
+pretending Signal8 can carry them losslessly.
+
+**Next work:** connect a real Lean trace exporter and authenticated kernel
+receipt verifier, then add a proof-obligation scheduler whose probe selection
+uses sparse relations and partial-aware attention.
