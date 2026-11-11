@@ -38,6 +38,10 @@ from .encounters import (
     AssociationLedger, Encounter, EncounterError, EncounterLedger,
     EncounterProvenance,
 )
+from .channels import (
+    ChannelAdapter, ChannelContract, ChannelError, ChannelExchangeLedger,
+    ChannelMessage, PredictiveGroundAdapter,
+)
 
 __version__ = "0.2.0"
 
@@ -63,4 +67,6 @@ __all__ = [
     "OpenWorldBoundary", "PerceptionInquiryReport", "inquire_unresolved_pairs",
     "EncounterError", "EncounterProvenance", "Encounter", "EncounterLedger",
     "AssociationError", "AssociationHypothesis", "AssociationAssessment", "AssociationLedger",
+    "ChannelError", "ChannelContract", "ChannelMessage", "ChannelAdapter",
+    "ChannelExchangeLedger", "PredictiveGroundAdapter",
 ]

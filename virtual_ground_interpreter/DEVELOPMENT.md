@@ -151,3 +151,17 @@ Run:
     python -m vgi verify
 
 Supporting or contradicting assessments must cite at least one encounter beyond the hypothesis's original basis. Keep contradictory assessments in the history. Do not automatically promote an association into a transition, invariant, or executable rule. The encounter payload envelope is JSON-compatible; large or binary source data stays in an external source store with an opaque reference and digest.
+
+
+## Duplex channel and internal query experiment
+
+The experimental `vgi/channels.py` module distinguishes incoming observations, outbound request intents, and correlated replies. A channel contract shares a protocol identifier across directions but declares its observation, request, and response schemas independently. Observation support does not imply addressability.
+
+Run:
+
+    python -m unittest discover -s tests -p 'test_channels.py' -v
+    python examples/run_duplex_channel.py
+    python -m unittest discover -s tests -v
+    python -m vgi verify
+
+`propose_request` records a local intent and does not transmit it. `exchange` invokes a concrete adapter and records the returned correlated reply. The reference predictive-Ground adapter is model-internal only. Preserve known, unknown, and ambiguous responses distinctly; do not treat the finite model as an external physical source.
