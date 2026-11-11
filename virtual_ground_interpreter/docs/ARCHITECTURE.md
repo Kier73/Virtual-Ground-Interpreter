@@ -106,3 +106,14 @@ An observation channel and an addressable channel are different capabilities. Th
 ChannelMessage separates observation, request, and reply directions. ChannelExchangeLedger validates protocol identity, unique message IDs, and replies correlated to earlier requests. Only inbound observations and replies can be materialized as Encounters; outbound request intents remain actions proposed by the observer.
 
 PredictiveGroundAdapter provides a bounded internal example: a client sends a state/action query through the declared protocol and receives a correlated response. Known transitions return their target/output; unknown cells remain unknown; ambiguous cells return all represented alternatives. This is a dialogue with the model's declared structure, not communication with a physical environment. A real sensor or actuator requires a source-specific, authorized adapter.
+
+
+## Evidence admission and reconstructability
+
+The evidence layer preserves three different claims: a message has been received and retained as an Encounter; a transition claim has been admitted under a declared source/quorum policy; and a complete Ground has been replayed through compiled VGI over an explicit finite witness corpus.
+
+Transition evidence binds the Encounter to message ID, source, channel, protocol, a transport-frame receipt, exact message digest, Ground identity, and context digest. A source counts once per state/action event; same-source contradictions, ties, dissent, missing sources, and unknown/ambiguous observations remain visible. Event closure is explicit and immutable.
+
+Only AUTHORIZED finalizations contribute transitions to a Ground. Other events remain absent and therefore unknown. This process establishes a transition only relative to the declared policy and retained evidence; it does not establish external physical truth.
+
+GroundReconstructionVerifier uses the existing TransitionCompiler and differential verifier. Its certificate binds the exact Ground/context and finite action sequences tested. It demonstrates replay agreement only for those witnesses, not universal reconstruction of the modeled environment.
