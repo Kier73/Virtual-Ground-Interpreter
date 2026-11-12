@@ -82,7 +82,13 @@ from .sparse import (
 )
 from .partial_attention import (
     PartialAttentionError, PartialProbeScore, ProbeScenario, ProbeScenarioScore,
-    TransitionProbe, rank_partial_probes, score_partial_probe,
+    TransitionProbe, counterfactual_probe_ground,
+    rank_partial_probes, score_partial_probe,
+)
+from .partial_policy import (
+    PartialProbePolicyBranch, PartialProbePolicyError,
+    PartialProbePolicyNode, PartialProbePolicyPlan,
+    plan_partial_probe_policy,
 )
 from .exact import (
     ExactObservable, ExactObservableFrame, ExactPolynomial, ExactValueError,
@@ -143,6 +149,9 @@ __all__ = [
     "sparse_partial_refinement_series", "sparse_partial_contextual_comparison",
     "PartialAttentionError", "ProbeScenario", "TransitionProbe",
     "ProbeScenarioScore", "PartialProbeScore", "score_partial_probe", "rank_partial_probes",
+    "counterfactual_probe_ground", "PartialProbePolicyError",
+    "PartialProbePolicyBranch", "PartialProbePolicyNode", "PartialProbePolicyPlan",
+    "plan_partial_probe_policy",
     "ExactValueError", "RationalValue", "ExactPolynomial",
     "ExactObservable", "ExactObservableFrame", "rational_sum", "rational_mean",
     "rational_variance", "rational_weighted_sum",

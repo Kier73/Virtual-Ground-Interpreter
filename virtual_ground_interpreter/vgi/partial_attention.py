@@ -95,6 +95,31 @@ def _counterfactual_system(system, probe, outcome):
     )
 
 
+def counterfactual_probe_ground(system, probe, outcome):
+    """Return a hypothetical Ground after one declared probe scenario.
+
+    This is a counterfactual model value only. It does not append evidence,
+    establish that the scenario occurred, or modify the supplied Ground.
+    """
+    if not isinstance(system, GroundTransitionSystem):
+        raise PartialAttentionError("system must be a GroundTransitionSystem")
+    if not isinstance(probe, TransitionProbe):
+        raise PartialAttentionError("probe must be a TransitionProbe")
+    if not isinstance(outcome, TransitionOutcome):
+        raise PartialAttentionError("outcome must be a TransitionOutcome")
+    if probe.state not in system.states or probe.action not in system.actions:
+        raise PartialAttentionError("probe cell is outside the Ground schema")
+    if system.status(probe.state, probe.action) == "known":
+        raise PartialAttentionError("only unknown or ambiguous cells qualify")
+    if outcome not in tuple(item.outcome for item in probe.scenarios):
+        raise PartialAttentionError("outcome is not a declared scenario for this probe")
+    if outcome.target not in system.states:
+        raise PartialAttentionError("scenario target is outside the Ground")
+    if len(outcome.output) != len(system.channels):
+        raise PartialAttentionError("scenario output width does not match Ground channels")
+    return _counterfactual_system(system, probe, outcome)
+
+
 def score_partial_probe(system, observer, probe, horizon):
     """Score one missing/ambiguous cell by re-evaluating only affected state pairs.
 
@@ -128,7 +153,7 @@ def score_partial_probe(system, observer, probe, horizon):
     unresolved_before = sum(value == "unresolved" for value in baseline.values())
     scores = []
     for scenario in probe.scenarios:
-        hypothetical = _counterfactual_system(system, probe, scenario.outcome)
+        hypothetical = counterfactual_probe_ground(system, probe, scenario.outcome)
         after = sparse_partial_contextual_comparison(hypothetical, observer, horizon)
         new = {state: after.status(probe.state, state) for state in others}
         unresolved_after = sum(value == "unresolved" for value in new.values())
@@ -172,5 +197,5 @@ def rank_partial_probes(system, observer, probes: Sequence[TransitionProbe], hor
 __all__ = [
     "PartialAttentionError", "ProbeScenario", "TransitionProbe",
     "ProbeScenarioScore", "PartialProbeScore", "score_partial_probe",
-    "rank_partial_probes",
+    "rank_partial_probes", "counterfactual_probe_ground",
 ]
