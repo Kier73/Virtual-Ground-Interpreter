@@ -374,7 +374,7 @@ class TransitionEvidence:
                 raise EvidenceError(f"ambiguous outcome has invalid shape: {exc}") from exc
 
         return cls(
-            evidence_id=evidence_id or f"{message.message_id}:{transport_sequence}",
+            evidence_id=evidence_id or f"{message.message_id}:{frame.sequence}",
             encounter_id=encounter_id, message_id=message.message_id,
             channel_id=message.channel_id, protocol_id=message.protocol_id,
             transport_id=frame.transport_id, frame_id=frame.frame_id,
