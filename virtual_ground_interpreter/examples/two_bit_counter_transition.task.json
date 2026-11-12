@@ -1,0 +1,597 @@
+{
+  "name": "two-bit-counter-reset-dominant",
+  "inputs": [
+    "input.state_1",
+    "input.state_0",
+    "input.advance",
+    "input.reset",
+    "input.zero",
+    "input.one"
+  ],
+  "outputs": [
+    {
+      "label": "next_state_1",
+      "expression": {
+        "type": "if",
+        "guard": {
+          "type": "equal",
+          "left": {
+            "type": "input",
+            "address": "input.state_1"
+          },
+          "right": {
+            "type": "input",
+            "address": "input.one"
+          },
+          "tolerance_rad": 0.02
+        },
+        "when_true": {
+          "type": "if",
+          "guard": {
+            "type": "equal",
+            "left": {
+              "type": "input",
+              "address": "input.state_0"
+            },
+            "right": {
+              "type": "input",
+              "address": "input.one"
+            },
+            "tolerance_rad": 0.02
+          },
+          "when_true": {
+            "type": "if",
+            "guard": {
+              "type": "equal",
+              "left": {
+                "type": "input",
+                "address": "input.advance"
+              },
+              "right": {
+                "type": "input",
+                "address": "input.one"
+              },
+              "tolerance_rad": 0.02
+            },
+            "when_true": {
+              "type": "if",
+              "guard": {
+                "type": "equal",
+                "left": {
+                  "type": "input",
+                  "address": "input.reset"
+                },
+                "right": {
+                  "type": "input",
+                  "address": "input.one"
+                },
+                "tolerance_rad": 0.02
+              },
+              "when_true": {
+                "type": "input",
+                "address": "input.zero"
+              },
+              "when_false": {
+                "type": "input",
+                "address": "input.zero"
+              }
+            },
+            "when_false": {
+              "type": "if",
+              "guard": {
+                "type": "equal",
+                "left": {
+                  "type": "input",
+                  "address": "input.reset"
+                },
+                "right": {
+                  "type": "input",
+                  "address": "input.one"
+                },
+                "tolerance_rad": 0.02
+              },
+              "when_true": {
+                "type": "input",
+                "address": "input.zero"
+              },
+              "when_false": {
+                "type": "input",
+                "address": "input.one"
+              }
+            }
+          },
+          "when_false": {
+            "type": "if",
+            "guard": {
+              "type": "equal",
+              "left": {
+                "type": "input",
+                "address": "input.advance"
+              },
+              "right": {
+                "type": "input",
+                "address": "input.one"
+              },
+              "tolerance_rad": 0.02
+            },
+            "when_true": {
+              "type": "if",
+              "guard": {
+                "type": "equal",
+                "left": {
+                  "type": "input",
+                  "address": "input.reset"
+                },
+                "right": {
+                  "type": "input",
+                  "address": "input.one"
+                },
+                "tolerance_rad": 0.02
+              },
+              "when_true": {
+                "type": "input",
+                "address": "input.zero"
+              },
+              "when_false": {
+                "type": "input",
+                "address": "input.one"
+              }
+            },
+            "when_false": {
+              "type": "if",
+              "guard": {
+                "type": "equal",
+                "left": {
+                  "type": "input",
+                  "address": "input.reset"
+                },
+                "right": {
+                  "type": "input",
+                  "address": "input.one"
+                },
+                "tolerance_rad": 0.02
+              },
+              "when_true": {
+                "type": "input",
+                "address": "input.zero"
+              },
+              "when_false": {
+                "type": "input",
+                "address": "input.one"
+              }
+            }
+          }
+        },
+        "when_false": {
+          "type": "if",
+          "guard": {
+            "type": "equal",
+            "left": {
+              "type": "input",
+              "address": "input.state_0"
+            },
+            "right": {
+              "type": "input",
+              "address": "input.one"
+            },
+            "tolerance_rad": 0.02
+          },
+          "when_true": {
+            "type": "if",
+            "guard": {
+              "type": "equal",
+              "left": {
+                "type": "input",
+                "address": "input.advance"
+              },
+              "right": {
+                "type": "input",
+                "address": "input.one"
+              },
+              "tolerance_rad": 0.02
+            },
+            "when_true": {
+              "type": "if",
+              "guard": {
+                "type": "equal",
+                "left": {
+                  "type": "input",
+                  "address": "input.reset"
+                },
+                "right": {
+                  "type": "input",
+                  "address": "input.one"
+                },
+                "tolerance_rad": 0.02
+              },
+              "when_true": {
+                "type": "input",
+                "address": "input.zero"
+              },
+              "when_false": {
+                "type": "input",
+                "address": "input.one"
+              }
+            },
+            "when_false": {
+              "type": "if",
+              "guard": {
+                "type": "equal",
+                "left": {
+                  "type": "input",
+                  "address": "input.reset"
+                },
+                "right": {
+                  "type": "input",
+                  "address": "input.one"
+                },
+                "tolerance_rad": 0.02
+              },
+              "when_true": {
+                "type": "input",
+                "address": "input.zero"
+              },
+              "when_false": {
+                "type": "input",
+                "address": "input.zero"
+              }
+            }
+          },
+          "when_false": {
+            "type": "if",
+            "guard": {
+              "type": "equal",
+              "left": {
+                "type": "input",
+                "address": "input.advance"
+              },
+              "right": {
+                "type": "input",
+                "address": "input.one"
+              },
+              "tolerance_rad": 0.02
+            },
+            "when_true": {
+              "type": "if",
+              "guard": {
+                "type": "equal",
+                "left": {
+                  "type": "input",
+                  "address": "input.reset"
+                },
+                "right": {
+                  "type": "input",
+                  "address": "input.one"
+                },
+                "tolerance_rad": 0.02
+              },
+              "when_true": {
+                "type": "input",
+                "address": "input.zero"
+              },
+              "when_false": {
+                "type": "input",
+                "address": "input.zero"
+              }
+            },
+            "when_false": {
+              "type": "if",
+              "guard": {
+                "type": "equal",
+                "left": {
+                  "type": "input",
+                  "address": "input.reset"
+                },
+                "right": {
+                  "type": "input",
+                  "address": "input.one"
+                },
+                "tolerance_rad": 0.02
+              },
+              "when_true": {
+                "type": "input",
+                "address": "input.zero"
+              },
+              "when_false": {
+                "type": "input",
+                "address": "input.zero"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "label": "next_state_0",
+      "expression": {
+        "type": "if",
+        "guard": {
+          "type": "equal",
+          "left": {
+            "type": "input",
+            "address": "input.state_1"
+          },
+          "right": {
+            "type": "input",
+            "address": "input.one"
+          },
+          "tolerance_rad": 0.02
+        },
+        "when_true": {
+          "type": "if",
+          "guard": {
+            "type": "equal",
+            "left": {
+              "type": "input",
+              "address": "input.state_0"
+            },
+            "right": {
+              "type": "input",
+              "address": "input.one"
+            },
+            "tolerance_rad": 0.02
+          },
+          "when_true": {
+            "type": "if",
+            "guard": {
+              "type": "equal",
+              "left": {
+                "type": "input",
+                "address": "input.advance"
+              },
+              "right": {
+                "type": "input",
+                "address": "input.one"
+              },
+              "tolerance_rad": 0.02
+            },
+            "when_true": {
+              "type": "if",
+              "guard": {
+                "type": "equal",
+                "left": {
+                  "type": "input",
+                  "address": "input.reset"
+                },
+                "right": {
+                  "type": "input",
+                  "address": "input.one"
+                },
+                "tolerance_rad": 0.02
+              },
+              "when_true": {
+                "type": "input",
+                "address": "input.zero"
+              },
+              "when_false": {
+                "type": "input",
+                "address": "input.zero"
+              }
+            },
+            "when_false": {
+              "type": "if",
+              "guard": {
+                "type": "equal",
+                "left": {
+                  "type": "input",
+                  "address": "input.reset"
+                },
+                "right": {
+                  "type": "input",
+                  "address": "input.one"
+                },
+                "tolerance_rad": 0.02
+              },
+              "when_true": {
+                "type": "input",
+                "address": "input.zero"
+              },
+              "when_false": {
+                "type": "input",
+                "address": "input.one"
+              }
+            }
+          },
+          "when_false": {
+            "type": "if",
+            "guard": {
+              "type": "equal",
+              "left": {
+                "type": "input",
+                "address": "input.advance"
+              },
+              "right": {
+                "type": "input",
+                "address": "input.one"
+              },
+              "tolerance_rad": 0.02
+            },
+            "when_true": {
+              "type": "if",
+              "guard": {
+                "type": "equal",
+                "left": {
+                  "type": "input",
+                  "address": "input.reset"
+                },
+                "right": {
+                  "type": "input",
+                  "address": "input.one"
+                },
+                "tolerance_rad": 0.02
+              },
+              "when_true": {
+                "type": "input",
+                "address": "input.zero"
+              },
+              "when_false": {
+                "type": "input",
+                "address": "input.one"
+              }
+            },
+            "when_false": {
+              "type": "if",
+              "guard": {
+                "type": "equal",
+                "left": {
+                  "type": "input",
+                  "address": "input.reset"
+                },
+                "right": {
+                  "type": "input",
+                  "address": "input.one"
+                },
+                "tolerance_rad": 0.02
+              },
+              "when_true": {
+                "type": "input",
+                "address": "input.zero"
+              },
+              "when_false": {
+                "type": "input",
+                "address": "input.zero"
+              }
+            }
+          }
+        },
+        "when_false": {
+          "type": "if",
+          "guard": {
+            "type": "equal",
+            "left": {
+              "type": "input",
+              "address": "input.state_0"
+            },
+            "right": {
+              "type": "input",
+              "address": "input.one"
+            },
+            "tolerance_rad": 0.02
+          },
+          "when_true": {
+            "type": "if",
+            "guard": {
+              "type": "equal",
+              "left": {
+                "type": "input",
+                "address": "input.advance"
+              },
+              "right": {
+                "type": "input",
+                "address": "input.one"
+              },
+              "tolerance_rad": 0.02
+            },
+            "when_true": {
+              "type": "if",
+              "guard": {
+                "type": "equal",
+                "left": {
+                  "type": "input",
+                  "address": "input.reset"
+                },
+                "right": {
+                  "type": "input",
+                  "address": "input.one"
+                },
+                "tolerance_rad": 0.02
+              },
+              "when_true": {
+                "type": "input",
+                "address": "input.zero"
+              },
+              "when_false": {
+                "type": "input",
+                "address": "input.zero"
+              }
+            },
+            "when_false": {
+              "type": "if",
+              "guard": {
+                "type": "equal",
+                "left": {
+                  "type": "input",
+                  "address": "input.reset"
+                },
+                "right": {
+                  "type": "input",
+                  "address": "input.one"
+                },
+                "tolerance_rad": 0.02
+              },
+              "when_true": {
+                "type": "input",
+                "address": "input.zero"
+              },
+              "when_false": {
+                "type": "input",
+                "address": "input.one"
+              }
+            }
+          },
+          "when_false": {
+            "type": "if",
+            "guard": {
+              "type": "equal",
+              "left": {
+                "type": "input",
+                "address": "input.advance"
+              },
+              "right": {
+                "type": "input",
+                "address": "input.one"
+              },
+              "tolerance_rad": 0.02
+            },
+            "when_true": {
+              "type": "if",
+              "guard": {
+                "type": "equal",
+                "left": {
+                  "type": "input",
+                  "address": "input.reset"
+                },
+                "right": {
+                  "type": "input",
+                  "address": "input.one"
+                },
+                "tolerance_rad": 0.02
+              },
+              "when_true": {
+                "type": "input",
+                "address": "input.zero"
+              },
+              "when_false": {
+                "type": "input",
+                "address": "input.one"
+              }
+            },
+            "when_false": {
+              "type": "if",
+              "guard": {
+                "type": "equal",
+                "left": {
+                  "type": "input",
+                  "address": "input.reset"
+                },
+                "right": {
+                  "type": "input",
+                  "address": "input.one"
+                },
+                "tolerance_rad": 0.02
+              },
+              "when_true": {
+                "type": "input",
+                "address": "input.zero"
+              },
+              "when_false": {
+                "type": "input",
+                "address": "input.zero"
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}
