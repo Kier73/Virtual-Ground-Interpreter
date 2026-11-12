@@ -375,6 +375,47 @@ as untrusted observations; only a separate environment-bound kernel receipt
 can set kernel status. See docs/PROOFGROUND_NAVIGATION.md for the data contract
 and limitations.
 
+## Minimax policies for cell-specific partial attention
+
+The partial-probe scorer ranks one missing transition cell at a time. The
+minimax policy planner composes several such measurements into an adaptive
+AND/OR tree. A node chooses one state/action cell; each of that probe's
+declared counterfactual outcomes is a branch, and the policy is optimized for
+the worst branch.
+
+```python
+from fractions import Fraction
+from vgi import plan_partial_probe_policy
+
+plan = plan_partial_probe_policy(
+    partial_ground,
+    observer,
+    candidate_probes,
+    horizon=4,
+    budget=Fraction(20),
+    max_probes=8,
+)
+print(plan.first_probe)
+print(plan.worst_case_unresolved_pairs)
+print(plan.worst_case_cost)
+```
+
+The objective first minimizes the worst-branch count of unresolved state
+pairs, then exact worst-branch cumulative cost, then maximum probe count.
+A pair classified as equivalent is resolved for this bounded observer/horizon;
+the goal is not to force every pair to become distinguishable. Scenario weights
+are retained for inspection but are not used by the minimax objective.
+
+The planner only accepts unknown cells. Existing ambiguous cells are never
+collapsed by a hypothetical scenario. It does not dispatch measurements,
+create evidence, or claim that the caller's declared scenario sets exhaust the
+physical possibilities. It is exact only over the finite candidate/scenario
+model supplied by the caller, and fails closed when its search-state cap is
+exceeded.
+
+See [cell-specific minimax probe policies](docs/PARTIAL_PROBE_POLICIES.md) for
+the objective, bounds, counterexample, API and trust boundary.
+
 ## Boolean subgroup realization bridge
 
 The binary subgroup embedding `0 -> 0`, `1 -> 4` makes the existing `ADD`
