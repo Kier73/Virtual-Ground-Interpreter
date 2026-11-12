@@ -1,0 +1,14 @@
+{
+  "name": "boolean-xor",
+  "inputs": ["input.a", "input.b"],
+  "outputs": [
+    {
+      "label": "result",
+      "expression": {
+        "type": "add",
+        "left": {"type": "input", "address": "input.a"},
+        "right": {"type": "input", "address": "input.b"}
+      }
+    }
+  ]
+}

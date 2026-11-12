@@ -1,0 +1,30 @@
+{
+  "name": "boolean-and",
+  "inputs": ["input.a", "input.b", "input.zero", "input.one"],
+  "outputs": [
+    {
+      "label": "result",
+      "expression": {
+        "type": "if",
+        "guard": {
+          "type": "equal",
+          "left": {"type": "input", "address": "input.a"},
+          "right": {"type": "input", "address": "input.one"},
+          "tolerance_rad": 0.02
+        },
+        "when_true": {
+          "type": "if",
+          "guard": {
+            "type": "equal",
+            "left": {"type": "input", "address": "input.b"},
+            "right": {"type": "input", "address": "input.one"},
+            "tolerance_rad": 0.02
+          },
+          "when_true": {"type": "input", "address": "input.one"},
+          "when_false": {"type": "input", "address": "input.zero"}
+        },
+        "when_false": {"type": "input", "address": "input.zero"}
+      }
+    }
+  ]
+}

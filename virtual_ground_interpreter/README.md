@@ -374,3 +374,20 @@ while alternative tactic edges are OR routes. Raw kernel claims are preserved
 as untrusted observations; only a separate environment-bound kernel receipt
 can set kernel status. See docs/PROOFGROUND_NAVIGATION.md for the data contract
 and limitations.
+
+## Boolean subgroup realization bridge
+
+The binary subgroup embedding `0 -> 0`, `1 -> 4` makes the existing `ADD`
+instruction realize XOR because `4 + 4 = 0 (mod 8)`. The companion
+`examples/boolean_xor.task.json` demonstrates this direct group operation.
+`examples/boolean_and.task.json` uses the existing equality and conditional
+instructions to realize AND. Both functions are exhaustively tested over all
+four binary input pairs, including inputs represented in different observer
+coordinates:
+
+```bash
+python -m unittest discover -s tests -p 'test_boolean_subgroup.py' -v
+```
+
+This is a finite semantic reference for the cross-representation weight-space
+experiment, not a new VGI opcode or an expansion of the interpreter's domain.
