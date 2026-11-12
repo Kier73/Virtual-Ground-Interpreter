@@ -238,6 +238,27 @@ def complete_ground():
     )
 
 
+    def test_default_evidence_id_uses_the_bound_transport_frame_sequence(self):
+        from vgi.evidence import TransitionEvidence
+
+        message = observed_message(
+            "sequence-bound", "sensor-A", "s0", "STEP",
+            "known", "s1", [3], source_sequence=1,
+        )
+        exchange, encounters = make_exchange([message])
+        frame = frame_for(message, 23)
+        evidence = TransitionEvidence.from_channel_message(
+            exchange,
+            message.message_id,
+            frame,
+            encounters,
+            ground_id="plant-alpha",
+            context_digest=make_policy().context_digest,
+        )
+        self.assertEqual(evidence.transport_sequence, 23)
+        self.assertEqual(evidence.evidence_id, "sequence-bound:23")
+
+
 class GroundReconstructionTests(unittest.TestCase):
     def test_finite_compiled_replay_certificate_is_revalidatable(self):
         system = complete_ground()

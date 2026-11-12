@@ -1,0 +1,32 @@
+name: Active VGI interpreter tests
+
+on:
+  push:
+    paths:
+      - "virtual_ground_interpreter/**"
+      - ".github/workflows/active-vgi-tests.yml"
+  pull_request:
+    paths:
+      - "virtual_ground_interpreter/**"
+      - ".github/workflows/active-vgi-tests.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  active-interpreter:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Run active VGI unit tests
+        working-directory: virtual_ground_interpreter
+        run: python -m unittest discover -s tests -p "test_*.py" -v
+      - name: Verify the declared Signal8 Ground
+        working-directory: virtual_ground_interpreter
+        run: python -m vgi verify

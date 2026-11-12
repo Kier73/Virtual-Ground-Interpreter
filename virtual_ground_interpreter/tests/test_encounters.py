@@ -121,12 +121,14 @@ class AssociationLedgerTests(unittest.TestCase):
 
     def test_support_and_contradiction_require_new_evidence(self):
         ledger = AssociationLedger().propose(self.hypothesis, self.encounters)
-        no_evidence = AssociationAssessment(
-            "assessment-empty", self.hypothesis.hypothesis_id, "supports",
-            "comparison", "Looks promising.",
-        )
-        with self.assertRaises(AssociationError):
-            ledger.assess(no_evidence, self.encounters)
+        with self.assertRaisesRegex(
+            AssociationError,
+            "supporting or contradicting assessments require evidence encounter references",
+        ):
+            AssociationAssessment(
+                "assessment-empty", self.hypothesis.hypothesis_id, "supports",
+                "comparison", "Looks promising.",
+            )
         basis_only = AssociationAssessment(
             "assessment-reuse", self.hypothesis.hypothesis_id, "supports",
             "re-reading", "The original pair is reconsidered.",
