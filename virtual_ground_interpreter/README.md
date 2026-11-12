@@ -391,3 +391,15 @@ python -m unittest discover -s tests -p 'test_boolean_subgroup.py' -v
 
 This is a finite semantic reference for the cross-representation weight-space
 experiment, not a new VGI opcode or an expansion of the interpreter's domain.
+
+## Finite-state transition reference
+
+The example `examples/two_bit_counter_transition.task.json` expresses a reset-dominant two-bit counter using only the existing equality and conditional task nodes. Its four inputs are state bits, an advance bit, and a reset bit; its two outputs are the next-state bits.
+
+The companion test constructs the complete 16-row transition relation, evaluates it through the VGI interpreter, and round-trips the task through its JSON representation:
+
+```bash
+python -m unittest discover -s tests -p 'test_finite_state_transition.py' -v
+```
+
+This is a finite reference realization. It does not change the VGI instruction set or claim a new universal transition algebra.
