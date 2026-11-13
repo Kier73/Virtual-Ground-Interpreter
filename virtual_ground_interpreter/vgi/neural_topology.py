@@ -230,8 +230,14 @@ def _operator_contract_failures(operation: Mapping[str, Any]) -> list[str]:
 def _validate_graph(graph: Mapping[str, Any]) -> dict[str, Any]:
     """Independently validate typed endpoint connectivity, local operator dimensions and operation-DAG acyclicity."""
     source = graph.get("source_observation")
+    completeness = graph.get("completeness")
+    verification = graph.get("verification")
     if not isinstance(source, Mapping):
         raise NeuralTopologyProofError("source_observation is required")
+    if not isinstance(completeness, Mapping):
+        raise NeuralTopologyProofError("source completeness record is required")
+    if not isinstance(verification, Mapping):
+        raise NeuralTopologyProofError("source verification record is required")
     repository = source.get("repository")
     revision = source.get("revision")
     if not isinstance(repository, str) or not repository:
