@@ -375,6 +375,20 @@ as untrusted observations; only a separate environment-bound kernel receipt
 can set kernel status. See docs/PROOFGROUND_NAVIGATION.md for the data contract
 and limitations.
 
+### HFR-002 neural topology obligations
+
+The neural-topology adapter imports In-Formation-Space's typed HFR-002 graph
+into a separate AND/OR ProofGround. It independently checks typed endpoint
+connectivity, supported local operator dimensions, tensor coverage, and
+acyclic operation dependencies, then creates explicit obligations for
+provenance, tensors, operations, edges, topology, and interface completeness.
+
+Every obligation remains **unverified** until an external proof checker supplies
+a matching `VerifiedKernelReceipt`. The source graph's own "passed" status is
+not accepted as a kernel result. This is proof planning and structured evidence
+intake, not tensor execution or theorem proving. See
+[NEURAL_TOPOLOGY_PROOFGROUND.md](docs/NEURAL_TOPOLOGY_PROOFGROUND.md).
+
 ## Minimax policies for cell-specific partial attention
 
 The partial-probe scorer ranks one missing transition cell at a time. The
