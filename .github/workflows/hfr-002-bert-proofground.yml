@@ -1,0 +1,82 @@
+name: HFR-002 live BERT graph to VGI ProofGround
+
+on:
+  push:
+    paths:
+      - "virtual_ground_interpreter/vgi/neural_topology.py"
+      - "virtual_ground_interpreter/tests/test_bert_operator_contracts.py"
+      - ".github/workflows/hfr-002-bert-proofground.yml"
+  pull_request:
+    paths:
+      - "virtual_ground_interpreter/vgi/neural_topology.py"
+      - "virtual_ground_interpreter/tests/test_bert_operator_contracts.py"
+      - ".github/workflows/hfr-002-bert-proofground.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  bert-proof-intake:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out VGI
+        uses: actions/checkout@v4
+      - name: Check out pinned BERT graph compiler
+        uses: actions/checkout@v4
+        with:
+          repository: Kier73/In-Formation-Space
+          ref: a54a7cba4ef0cd637faa21bd622ff4a301fe37a2
+          path: hfr_source
+          persist-credentials: false
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install graph schema validation
+        run: python -m pip install --disable-pip-version-check jsonschema
+      - name: Regenerate pinned BERT graph from header-only evidence
+        working-directory: hfr_source
+        run: python -m experiments.external_neural_structure_reading.live_reference.run_bert_topology
+      - name: Validate complete BERT proof-planning intake
+        run: |
+          python - <<'PY'
+          import json
+          import sys
+          from pathlib import Path
+
+          sys.path.insert(0, "virtual_ground_interpreter")
+          from vgi import build_neural_topology_proof_ground
+
+          graph = json.loads(
+              Path("hfr_source/experiments/external_neural_structure_reading/results/bert-typed-topology.json")
+              .read_text(encoding="utf-8")
+          )
+          package = build_neural_topology_proof_ground(graph)
+          report = package.manifest()
+          facts = report["local_validation"]
+          summary = package.ground.summary()
+          assert package.source_repository == "google-bert/bert-base-uncased"
+          assert package.source_revision == "bcde001674fa61ee216714dd9cca5a5f9cfa4b12"
+          assert facts["status"] == "passed"
+          assert facts["tensor_count"] == 206
+          assert facts["operation_count"] == 184
+          assert facts["edge_count"] == 455
+          assert facts["graph_output_count"] == 2
+          assert summary["obligation_count"] == 852
+          assert summary["unverified_obligations"] == 852
+          assert summary["kernel_accepted_obligations"] == 0
+          assert report["kernel_acceptance_claimed"] is False
+          assert facts["raw_tensor_values_observed"] is False
+          print(json.dumps({
+              "source_graph_digest": package.graph_digest,
+              "tensor_count": facts["tensor_count"],
+              "operation_count": facts["operation_count"],
+              "edge_count": facts["edge_count"],
+              "graph_outputs": facts["graph_output_count"],
+              "proof_obligations": summary["obligation_count"],
+              "unverified": summary["unverified_obligations"],
+              "kernel_accepted": summary["kernel_accepted_obligations"],
+              "weight_payload_bytes_read": 0,
+          }, sort_keys=True))
+          PY
