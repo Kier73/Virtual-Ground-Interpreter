@@ -244,6 +244,71 @@ def _validate_graph(graph: Mapping[str, Any]) -> dict[str, Any]:
     tensors = _unique(graph.get("tensors"), "name", "tensor catalog")
     operations = _unique(graph.get("operations"), "id", "operations")
     edges = graph.get("edges")
+    source_files = _unique(source.get("source_files"), "path", "source files")
+    if not isinstance(edges, list):
+        raise NeuralTopologyProofError("edges must be an array")
+
+    # The "complete" flag is a source claim; check its counters against the
+    # actual imported collections before using it to construct the proof plan.
+    if (
+        completeness.get("observed_tensor_count") != len(tensors)
+        or completeness.get("classified_tensor_count") != len(tensors)
+        or completeness.get("bound_tensor_count") != len(tensors)
+        or completeness.get("unclassified_tensors") != []
+        or completeness.get("unused_tensors") != []
+        or completeness.get("unsupported_components") != []
+        or completeness.get("missing_expected_components") != []
+    ):
+        raise NeuralTopologyProofError("source completeness counters do not match the imported tensor catalog")
+    if (
+        verification.get("failed_check_count") != 0
+        or verification.get("operation_count") != len(operations)
+        or verification.get("edge_count") != len(edges)
+    ):
+        raise NeuralTopologyProofError("source verification counters do not match the imported graph")
+
+    tensor_provenance_failures: list[str] = []
+    for name, tensor in tensors.items():
+        dtype = tensor.get("dtype")
+        shape = tensor.get("shape")
+        source_ref = tensor.get("source")
+        classification = tensor.get("classification")
+        if not isinstance(dtype, str) or not dtype:
+            tensor_provenance_failures.append(f"{name}: dtype is missing")
+        if not isinstance(shape, list) or any(type(dimension) is not int or dimension < 0 for dimension in shape):
+            tensor_provenance_failures.append(f"{name}: tensor shape is invalid")
+        if not isinstance(source_ref, Mapping):
+            tensor_provenance_failures.append(f"{name}: source reference is missing")
+            continue
+        file_record = source_files.get(source_ref.get("file"))
+        if file_record is None:
+            tensor_provenance_failures.append(f"{name}: source file is absent from graph provenance")
+            continue
+        offsets = source_ref.get("data_offsets")
+        if (
+            not isinstance(offsets, list)
+            or len(offsets) != 2
+            or any(type(offset) is not int or offset < 0 for offset in offsets)
+            or offsets[1] < offsets[0]
+            or source_ref.get("data_bytes") != offsets[1] - offsets[0]
+        ):
+            tensor_provenance_failures.append(f"{name}: source data offsets/length are invalid")
+        if (
+            source_ref.get("header_sha256") != file_record.get("sha256")
+            or source_ref.get("header_hash_scope") != file_record.get("sha256_scope")
+        ):
+            tensor_provenance_failures.append(f"{name}: source header digest/scope differs from source file record")
+        if (
+            not isinstance(classification, Mapping)
+            or classification.get("status") != "family-interpreted"
+            or not isinstance(classification.get("role"), str)
+            or not classification.get("role")
+        ):
+            tensor_provenance_failures.append(f"{name}: tensor classification is not a typed family interpretation")
+    if tensor_provenance_failures:
+        raise NeuralTopologyProofError(
+            "source tensor provenance is inconsistent: " + "; ".join(tensor_provenance_failures[:8])
+        )
     if not isinstance(edges, list):
         raise NeuralTopologyProofError("edges must be an array")
 
