@@ -173,7 +173,7 @@ class NeuralTopologyProofGroundTests(unittest.TestCase):
         self.assertFalse(manifest["kernel_acceptance_claimed"])
         self.assertTrue(manifest["all_unreceipted_obligations_remain_unverified"])
         self.assertEqual(ground.summary()["obligation_count"], 12)
-        self.assertEqual(ground.summary()["hyper_transition_count"], 11)
+        self.assertEqual(ground.summary()["hyper_transition_count"], 12)
         self.assertEqual(ground.summary()["unverified_obligations"], 12)
 
         root = package.obligation_keys["graph"]
