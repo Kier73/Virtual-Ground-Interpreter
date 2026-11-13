@@ -446,3 +446,10 @@ python -m unittest discover -s tests -p 'test_boolean_subgroup.py' -v
 
 This is a finite semantic reference for the cross-representation weight-space
 experiment, not a new VGI opcode or an expansion of the interpreter's domain.
+
+
+## Live HFR-002 graph integration
+
+The [HFR-002 live graph integration workflow](../../.github/workflows/hfr-002-live-graph-integration.yml) checks out the pinned In-Formation-Space graph adapter, regenerates the GPT-2 topology from public Hub metadata and Safetensors headers, and imports the actual 160-tensor / 150-operation / 337-edge graph into this ProofGround adapter.
+
+The passing live run creates 654 obligations; all 654 remain unverified and none are kernel-accepted. The graph is regenerated without reading weight payload bytes. This validates the cross-repository description/proof-planning handoff, not neural execution or theorem proving.
