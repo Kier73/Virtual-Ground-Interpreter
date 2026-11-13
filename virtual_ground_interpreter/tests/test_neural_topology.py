@@ -241,6 +241,8 @@ class NeuralTopologyProofGroundTests(unittest.TestCase):
 
         graph = make_graph()
         graph["operations"][0]["inputs"][1]["shape"] = [3, 2]
+        graph["tensors"][0]["shape"] = [3, 2]
+        graph["tensors"][0]["source"]["data_bytes"] = 24
         with self.assertRaisesRegex(NeuralTopologyProofError, "linear.affine input width mismatch"):
             build_neural_topology_proof_ground(graph)
 
