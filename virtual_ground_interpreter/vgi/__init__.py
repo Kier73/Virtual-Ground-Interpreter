@@ -99,6 +99,13 @@ from .proof import (
     ProofEnvironment, ProofGround, ProofGroundAdapter, ProofGroundError,
     ProofHyperTransition, ProofObligation, VerifiedKernelReceipt,
 )
+from .neural_topology import (
+    ADAPTER_ID as NEURAL_TOPOLOGY_ADAPTER_ID,
+    ADAPTER_VERSION as NEURAL_TOPOLOGY_ADAPTER_VERSION,
+    NeuralTopologyProofError,
+    NeuralTopologyProofPackage,
+    build_neural_topology_proof_ground,
+)
 
 __version__ = "0.2.0"
 
@@ -155,7 +162,7 @@ __all__ = [
     "ExactValueError", "RationalValue", "ExactPolynomial",
     "ExactObservable", "ExactObservableFrame", "rational_sum", "rational_mean",
     "rational_variance", "rational_weighted_sum",
-    "ProofGroundError", "ProofEnvironment", "ProofObligation",
-    "ProofHyperTransition", "VerifiedKernelReceipt", "ProofGround",
-    "ProofGroundAdapter",
-]
+    "ProofGroundError", "ProofEnvironment", "ProofGround", "ProofGroundAdapter", "ProofGroundError",
+    "ProofHyperTransition", "ProofObligation", "VerifiedKernelReceipt",
+    "NEURAL_TOPOLOGY_ADAPTER_ID", "NEURAL_TOPOLOGY_ADAPTER_VERSION",
+    "NeuralTopologyProofError", "NeuralTopologyProofPackage", "build_neural_topology_proof_ground",
