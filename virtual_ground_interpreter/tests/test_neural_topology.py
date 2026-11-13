@@ -276,6 +276,24 @@ class NeuralTopologyProofGroundTests(unittest.TestCase):
         for obligation_id in package.ground.obligation_ids:
             self.assertNotEqual(package.ground.kernel_status(obligation_id), "kernel_accepted")
 
+    def test_complete_flag_cannot_override_inconsistent_tensor_counts(self):
+        graph = make_graph()
+        graph["completeness"]["classified_tensor_count"] = 0
+        with self.assertRaisesRegex(NeuralTopologyProofError, "completeness counters"):
+            build_neural_topology_proof_ground(graph)
+
+    def test_tensor_source_header_digest_must_match_graph_file_provenance(self):
+        graph = make_graph()
+        graph["tensors"][0]["source"]["header_sha256"] = "b" * 64
+        with self.assertRaisesRegex(NeuralTopologyProofError, "header digest/scope"):
+            build_neural_topology_proof_ground(graph)
+
+    def test_tensor_offsets_must_match_the_declared_data_byte_length(self):
+        graph = make_graph()
+        graph["tensors"][0]["source"]["data_bytes"] = 12
+        with self.assertRaisesRegex(NeuralTopologyProofError, "data offsets/length"):
+            build_neural_topology_proof_ground(graph)
+
 
 if __name__ == "__main__":
     unittest.main()
