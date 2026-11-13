@@ -77,3 +77,26 @@ The resulting object is suitable for proof exploration, obligation partitioning,
 The adapter uses graph descriptors and declared operator-family semantics; it does not load the numerical weight payloads. Its local checks establish internal consistency of the supported typed topology representation. They do not establish that the source model's learned parameters, tokenizer, forward pass, or semantic behavior have been reconstructed.
 
 The signal-state interpreter remains Signal8-specific. This ProofGround intake does not extend that runtime to floating-point matrix multiplication, attention, or arbitrary tensor operators.
+
+## Second-family verification: bidirectional BERT
+
+The [live BERT proof-intake workflow](../../.github/workflows/hfr-002-bert-proofground.yml)
+checks out In-Formation-Space at the exact merged HFR-002 BERT commit
+`a54a7cba4ef0cd637faa21bd622ff4a301fe37a2`, regenerates the public
+`google-bert/bert-base-uncased` typed graph from its pinned Safetensors
+header/configuration only, then imports it into VGI's ProofGround.
+
+The graph has **206 tensor descriptors, 184 operations, 455 typed edges, and
+two checkpoint-present outputs**. VGI's independent contracts now cover the
+bidirectional attention/padding-mask operations, first-token selection, tanh,
+and erf-based GELU in addition to GPT-2's causal attention and tanh-based GELU.
+
+The passing live integration creates **852 proof obligations**; every one
+remains `unverified`, and none is kernel-accepted. It reads no weight payload.
+These structural obligations are about a family-interpreted checkpoint graph,
+not proofs of neural numerical behavior, model output equivalence, or both
+checkpoint heads being active in a particular loader.
+
+The adapter's version has advanced from 0.1.0 to 0.2.0. Its environment
+fingerprint includes the expanded operator contract vocabulary; prior
+environment-bound receipts must not be silently reused for the new semantics.
