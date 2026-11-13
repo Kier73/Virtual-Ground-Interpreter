@@ -162,7 +162,7 @@ __all__ = [
     "ExactValueError", "RationalValue", "ExactPolynomial",
     "ExactObservable", "ExactObservableFrame", "rational_sum", "rational_mean",
     "rational_variance", "rational_weighted_sum",
-    "ProofGroundError", "ProofEnvironment", "ProofGround", "ProofGroundAdapter", "ProofGroundError",
+    "ProofGroundError", "ProofEnvironment", "ProofGround", "ProofGroundAdapter",
     "ProofHyperTransition", "ProofObligation", "VerifiedKernelReceipt",
     "NEURAL_TOPOLOGY_ADAPTER_ID", "NEURAL_TOPOLOGY_ADAPTER_VERSION",
     "NeuralTopologyProofError", "NeuralTopologyProofPackage", "build_neural_topology_proof_ground",
