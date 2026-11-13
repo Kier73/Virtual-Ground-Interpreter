@@ -309,8 +309,6 @@ def _validate_graph(graph: Mapping[str, Any]) -> dict[str, Any]:
         raise NeuralTopologyProofError(
             "source tensor provenance is inconsistent: " + "; ".join(tensor_provenance_failures[:8])
         )
-    if not isinstance(edges, list):
-        raise NeuralTopologyProofError("edges must be an array")
 
     input_ports = {
         (operation_id, name): port
