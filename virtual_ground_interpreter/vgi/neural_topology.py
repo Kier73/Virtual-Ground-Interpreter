@@ -27,7 +27,7 @@ from .proof import (
 
 GRAPH_SCHEMA = "in-formation-space.neural-computation-graph.v0.1"
 ADAPTER_ID = "vgi.hfr-neural-topology-proofground"
-ADAPTER_VERSION = "0.1.0"
+ADAPTER_VERSION = "0.2.0"
 _REVISION = re.compile(r"^[0-9a-f]{40}$")
 
 
@@ -217,6 +217,53 @@ def _operator_contract_failures(operation: Mapping[str, Any]) -> list[str]:
                 require(mask["shape"][2] == mask["shape"][3], "causal mask must be square")
             require(attributes.get("causal") is True, "attention must declare causal masking")
             require(attributes.get("scale_by_sqrt_head_width") is True, "attention must declare scaled dot-product")
+    elif operator == "attention.padding_mask_prepare":
+        require(set(inputs) == {"mask"} and set(outputs) == {"mask"}, "padding mask prepare port signature is invalid")
+        if set(inputs) == {"mask"} and set(outputs) == {"mask"}:
+            require(inputs["mask"]["dtype"] == outputs["mask"]["dtype"] == "I64", "padding mask prepare must preserve I64 mask dtype")
+            require(inputs["mask"]["shape"] == outputs["mask"]["shape"], "padding mask prepare must preserve shape")
+            require(len(inputs["mask"]["shape"]) == 2, "padding mask prepare expects a batch/sequence mask")
+        require(attributes.get("mask_semantics") == "one_attend_zero_mask", "padding mask convention must be explicit")
+    elif operator == "attention.bidirectional_scaled_dot_product":
+        require(set(inputs) == {"query", "key", "value", "mask"}, "bidirectional attention inputs are invalid")
+        require(set(outputs) == {"context"}, "bidirectional attention output is invalid")
+        if set(inputs) == {"query", "key", "value", "mask"} and set(outputs) == {"context"}:
+            query, key, value = inputs["query"], inputs["key"], inputs["value"]
+            mask, result = inputs["mask"], outputs["context"]
+            require(query["shape"] == key["shape"] == value["shape"] == result["shape"], "bidirectional Q/K/V/context shapes must match")
+            require(query["dtype"] == key["dtype"] == value["dtype"] == result["dtype"], "bidirectional Q/K/V/context dtypes must match")
+            require(len(query["shape"]) == 3, "bidirectional attention projected inputs must be rank three")
+            if len(query["shape"]) == 3:
+                require(mask["shape"] == query["shape"][:2], "padding mask batch/sequence dims mismatch")
+            require(mask["dtype"] == "I64", "bidirectional padding mask must be I64")
+            heads, width = attributes.get("head_count"), attributes.get("head_width")
+            require(_positive_int(heads, "head_count"), "bidirectional attention head_count must be positive")
+            require(_positive_int(width, "head_width"), "bidirectional attention head_width must be positive")
+            if _positive_int(heads, "head_count") and _positive_int(width, "head_width") and len(query["shape"]) == 3:
+                require(query["shape"][-1] == heads * width, "bidirectional attention feature width mismatch")
+            require(attributes.get("causal") is False, "bidirectional attention cannot use a causal mask")
+            require(attributes.get("scale_by_sqrt_head_width") is True, "bidirectional attention must declare scaling")
+            require(attributes.get("mask_semantics") == "one_attend_zero_mask", "bidirectional padding-mask convention must be explicit")
+    elif operator == "sequence.select_first_token":
+        require(set(inputs) == {"sequence"} and set(outputs) == {"first"}, "first-token selection ports are invalid")
+        if set(inputs) == {"sequence"} and set(outputs) == {"first"}:
+            sequence, first = inputs["sequence"], outputs["first"]
+            require(len(sequence["shape"]) == 3, "first-token selection input must be rank three")
+            if len(sequence["shape"]) == 3:
+                require(first["shape"] == [sequence["shape"][0], sequence["shape"][2]], "first-token output must be batch/hidden")
+            require(sequence["dtype"] == first["dtype"], "first-token selection dtype mismatch")
+        require(attributes.get("token_index") == 0, "first-token selection must target index zero")
+    elif operator == "activation.tanh":
+        require(set(inputs) == {"value"} and set(outputs) == {"output"}, "tanh ports are invalid")
+        if set(inputs) == {"value"} and set(outputs) == {"output"}:
+            require(inputs["value"]["shape"] == outputs["output"]["shape"], "tanh must preserve shape")
+            require(inputs["value"]["dtype"] == outputs["output"]["dtype"], "tanh must preserve dtype")
+    elif operator == "activation.gelu_erf":
+        require(set(inputs) == {"value"} and set(outputs) == {"output"}, "erf GELU ports are invalid")
+        if set(inputs) == {"value"} and set(outputs) == {"output"}:
+            require(inputs["value"]["shape"] == outputs["output"]["shape"], "erf GELU must preserve shape")
+            require(inputs["value"]["dtype"] == outputs["output"]["dtype"], "erf GELU must preserve dtype")
+        require(attributes.get("form") == "erf", "erf GELU cannot be silently replaced by tanh approximation")
     elif operator == "activation.gelu_tanh":
         require(set(inputs) == {"value"} and set(outputs) == {"output"}, "GELU port signature is invalid")
         if set(inputs) == {"value"} and set(outputs) == {"output"}:
@@ -509,7 +556,12 @@ def build_neural_topology_proof_ground(
             "normalization.layer_norm",
             "linear.affine",
             "attention.causal_scaled_dot_product",
+            "attention.padding_mask_prepare",
+            "attention.bidirectional_scaled_dot_product",
+            "sequence.select_first_token",
+            "activation.tanh",
             "activation.gelu_tanh",
+            "activation.gelu_erf",
         ],
         "edge_contract": "exact source/target dtype and symbolic-shape equality",
         "topology_contract": "finite acyclic operation dependency graph",
