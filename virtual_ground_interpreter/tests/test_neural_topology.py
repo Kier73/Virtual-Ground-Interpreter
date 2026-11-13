@@ -258,6 +258,67 @@ class NeuralTopologyProofGroundTests(unittest.TestCase):
         with self.assertRaisesRegex(NeuralTopologyProofError, "complete for its supported"):
             build_neural_topology_proof_ground(graph)
 
+        cyclic = make_graph()
+        cyclic["operations"].extend(
+            [
+                {
+                    "id": "sum",
+                    "operator": "tensor.add",
+                    "inputs": [
+                        port("left", "F32", ["batch", 2]),
+                        port("right", "F32", ["batch", 2]),
+                    ],
+                    "outputs": [port("sum", "F32", ["batch", 2])],
+                    "attributes": {"broadcasting": "none"},
+                },
+                {
+                    "id": "activation",
+                    "operator": "activation.gelu_tanh",
+                    "inputs": [port("value", "F32", ["batch", 2])],
+                    "outputs": [port("output", "F32", ["batch", 2])],
+                    "attributes": {"activation": "gelu_tanh"},
+                },
+            ]
+        )
+        cyclic["edges"] = [
+            {
+                "source": {"kind": "graph_input", "name": "input.values"},
+                "target": {"kind": "operation_input", "operation": "linear", "port": "data"},
+                "provenance": {"status": "inferred-connection", "basis": "cycle fixture input"},
+            },
+            {
+                "source": {"kind": "tensor", "name": "linear.weight"},
+                "target": {"kind": "operation_input", "operation": "linear", "port": "weight"},
+                "provenance": {"status": "inferred-connection", "basis": "cycle fixture parameter"},
+            },
+            {
+                "source": {"kind": "operation_output", "operation": "linear", "port": "projected"},
+                "target": {"kind": "operation_input", "operation": "sum", "port": "left"},
+                "provenance": {"status": "inferred-connection", "basis": "cycle fixture"},
+            },
+            {
+                "source": {"kind": "operation_output", "operation": "activation", "port": "output"},
+                "target": {"kind": "operation_input", "operation": "sum", "port": "right"},
+                "provenance": {"status": "inferred-connection", "basis": "cycle fixture"},
+            },
+            {
+                "source": {"kind": "operation_output", "operation": "sum", "port": "sum"},
+                "target": {"kind": "operation_input", "operation": "activation", "port": "value"},
+                "provenance": {"status": "inferred-connection", "basis": "cycle fixture"},
+            },
+            {
+                "source": {"kind": "operation_output", "operation": "activation", "port": "output"},
+                "target": {"kind": "graph_output", "name": "output.values"},
+                "provenance": {"status": "inferred-connection", "basis": "cycle fixture output"},
+            },
+        ]
+        cyclic["verification"]["operation_count"] = 3
+        cyclic["verification"]["edge_count"] = 6
+        cyclic["verification"]["input_port_count"] = 5
+        cyclic["verification"]["output_port_count"] = 3
+        with self.assertRaisesRegex(NeuralTopologyProofError, "contains a cycle"):
+            build_neural_topology_proof_ground(cyclic)
+
     def test_provenance_digest_and_environment_change_with_source_description(self):
         first = build_neural_topology_proof_ground(make_graph())
         changed = make_graph()
