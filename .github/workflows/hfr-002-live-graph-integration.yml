@@ -1,0 +1,90 @@
+name: HFR-002 live graph to VGI ProofGround integration
+
+on:
+  push:
+    paths:
+      - "virtual_ground_interpreter/vgi/neural_topology.py"
+      - "virtual_ground_interpreter/tests/test_neural_topology.py"
+      - ".github/workflows/hfr-002-live-graph-integration.yml"
+  pull_request:
+    paths:
+      - "virtual_ground_interpreter/vgi/neural_topology.py"
+      - "virtual_ground_interpreter/tests/test_neural_topology.py"
+      - ".github/workflows/hfr-002-live-graph-integration.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  live-graph-proof-intake:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out VGI
+        uses: actions/checkout@v4
+
+      - name: Check out pinned HFR-002 source
+        uses: actions/checkout@v4
+        with:
+          repository: Kier73/In-Formation-Space
+          ref: 4f0a78aae54aa671ac6d894665225a44b8eb70f4
+          path: hfr_source
+          persist-credentials: false
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install HFR schema validator
+        run: python -m pip install --disable-pip-version-check jsonschema
+
+      - name: Regenerate pinned GPT-2 typed graph with zero payload reads
+        working-directory: hfr_source
+        run: >-
+          python -m experiments.external_neural_structure_reading.live_reference.run_gpt2_topology
+          --output results/gpt2-typed-topology.json
+
+      - name: Import real HFR-002 graph into VGI ProofGround
+        working-directory: .
+        run: |
+          python - <<'PY'
+          import json
+          import sys
+          from pathlib import Path
+
+          sys.path.insert(0, "virtual_ground_interpreter")
+          from vgi.neural_topology import build_neural_topology_proof_ground
+
+          graph_path = Path("hfr_source/results/gpt2-typed-topology.json")
+          graph = json.loads(graph_path.read_text(encoding="utf-8"))
+          package = build_neural_topology_proof_ground(graph)
+          manifest = package.manifest()
+          summary = package.ground.summary()
+
+          assert graph["source_observation"]["repository"] == "openai-community/gpt2"
+          assert graph["source_observation"]["revision"] == "607a30d783dfa663caf39e06633721c8d4cfcd7e"
+          assert manifest["local_validation"]["status"] == "passed"
+          assert manifest["local_validation"]["tensor_count"] == 160
+          assert manifest["local_validation"]["operation_count"] == 150
+          assert manifest["local_validation"]["edge_count"] == 337
+          assert summary["obligation_count"] == 654
+          assert summary["unverified_obligations"] == 654
+          assert summary["kernel_accepted_obligations"] == 0
+          assert not manifest["kernel_acceptance_claimed"]
+          assert not manifest["local_validation"]["raw_tensor_values_observed"]
+
+          print({
+              "repository": package.source_repository,
+              "revision": package.source_revision,
+              "graph_digest": package.graph_digest,
+              "tensor_count": manifest["local_validation"]["tensor_count"],
+              "operation_count": manifest["local_validation"]["operation_count"],
+              "edge_count": manifest["local_validation"]["edge_count"],
+              "proof_obligation_count": summary["obligation_count"],
+              "unverified_obligations": summary["unverified_obligations"],
+              "kernel_accepted_obligations": summary["kernel_accepted_obligations"],
+              "tensor_payload_bytes_read": 0,
+              "kernel_acceptance_claimed": manifest["kernel_acceptance_claimed"],
+          })
+          PY
