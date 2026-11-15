@@ -1,0 +1,152 @@
+{
+  "certificate": {
+    "certificate_fingerprint": "5260da94ee947a6a556d7305739795d0688aee00debf00822fee65797d30f86a",
+    "external_implementation_verified": false,
+    "features": [
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ]
+    ],
+    "format": "VGI-ProgramNavigationCertificate-1",
+    "model_fingerprint": "0195ab4c447a08f8a2d4c9f4c57e2e287ea8bd6040035f3ddaea15aec3b418d0",
+    "observation_fingerprint": null,
+    "observed_edges": 0,
+    "proof_method": "bounded_ast_denotational_semantics_and_exact_polynomial_identity",
+    "source_digest": "00ea0f9f511a2fed31ac955988cb34b809b7582e0a61aa492ba5bd0d4e13958d",
+    "transition": {
+      "matrix": [
+        [
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          2,
+          1
+        ]
+      ],
+      "modulus": 101,
+      "offset": [
+        0,
+        1,
+        1
+      ]
+    },
+    "trust_scope": "formal_bounded_program_semantics_only"
+  },
+  "costs": {
+    "finite_formal_state_count": 10201,
+    "iterative_reference_steps": 25000,
+    "optional_independent_observations": 6,
+    "symbolic_source_observations_required": 0,
+    "timings_ms": {
+      "iterative_25000_median": 32.16487,
+      "navigate_25000_median": 0.13059,
+      "navigate_huge_coordinate_median": 0.88739,
+      "source_to_certificate_median": 0.33017,
+      "structural_extraction_median": 0.14017
+    }
+  },
+  "experiment": "VGI-GEOMETRY-FIRST-004",
+  "independent_checks": {
+    "closed_form_matches": true,
+    "conflicting_observation_rejected": true,
+    "cubic_feature_closure": [
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        3
+      ]
+    ],
+    "iterative_reference_matches": true,
+    "six_observed_edges_match_source": true
+  },
+  "large_time_navigation": {
+    "certificate_fingerprint": "5260da94ee947a6a556d7305739795d0688aee00debf00822fee65797d30f86a",
+    "coordinates": [
+      81,
+      57
+    ],
+    "exponent_bits": 100,
+    "format": "VGI-ProgramNavigationResult-1",
+    "logical_tick": 1000000000000000000000000000011,
+    "materialized_intermediate_states": 0,
+    "model_fingerprint": "0195ab4c447a08f8a2d4c9f4c57e2e287ea8bd6040035f3ddaea15aec3b418d0",
+    "observation_fingerprint": null,
+    "source_digest": "00ea0f9f511a2fed31ac955988cb34b809b7582e0a61aa492ba5bd0d4e13958d",
+    "state": 8238,
+    "trust_scope": "formal_bounded_program_semantics_only"
+  },
+  "runtime": "isolated API-compatible VGI harness unless CI executes repository package",
+  "source_law": {
+    "action": "advance",
+    "degree": 2,
+    "format": "VGI-ExtractedProgramLaw-1",
+    "model_fingerprint": "0195ab4c447a08f8a2d4c9f4c57e2e287ea8bd6040035f3ddaea15aec3b418d0",
+    "modulus": 101,
+    "scope": "formal_bounded_program_semantics_only",
+    "source_digest": "00ea0f9f511a2fed31ac955988cb34b809b7582e0a61aa492ba5bd0d4e13958d",
+    "statement_count": 4,
+    "status": "derived_from_bounded_ast_subset",
+    "structure_digest": "9d7fab6d4d5e5507fc0247d976b66524765a8645c3a442aaf37d716062cf3ea6",
+    "x_next": [
+      [
+        [
+          0,
+          2
+        ],
+        1
+      ],
+      [
+        [
+          1,
+          0
+        ],
+        1
+      ]
+    ],
+    "y_next": [
+      [
+        [
+          0,
+          0
+        ],
+        1
+      ],
+      [
+        [
+          0,
+          1
+        ],
+        1
+      ]
+    ]
+  },
+  "trust_scope": "exact denotational semantics of accepted bounded source DSL, not arbitrary Python or external processes"
+}
