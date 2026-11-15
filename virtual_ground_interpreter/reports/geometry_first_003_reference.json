@@ -1,0 +1,160 @@
+{
+  "algebra": {
+    "independently_checked_destination": [
+      81,
+      57
+    ],
+    "matches_full_observation_certificate": true,
+    "outside_probe_counterexample_detected_when_observed": true
+  },
+  "certificate": {
+    "certificate_fingerprint": "db5e56200fdbe0d5c34cbd5bb38f0f4cba5e9430721d172b6f54aa499bd312e4",
+    "features": [
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ]
+    ],
+    "fit_states": [
+      0,
+      1,
+      2,
+      101,
+      102,
+      202
+    ],
+    "format": "VGI-SymbolicModelLiftCertificate-1",
+    "heldout_states": [
+      1954,
+      7995
+    ],
+    "model_fingerprint": "d9f22a0c273edf07e436084bd41b20ae4e5b25ef99e9554f9222f0d359845b38",
+    "navigation_admitted_for_declared_model": true,
+    "navigation_admitted_for_external_system": false,
+    "observation_revision": "geometry-first-003",
+    "observation_source": "synthetic-fixture",
+    "observations_fingerprint": "fa199b9b8b79906c2929983f82235ec791b3475643b13dae1d7efd0ae3c86d04",
+    "observed_edges": 8,
+    "proof_method": "exact_symbolic_polynomial_coefficient_identity",
+    "status": "certified_for_declared_model_not_external_ground",
+    "transform": {
+      "matrix": [
+        [
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          2,
+          1
+        ]
+      ],
+      "modulus": 101,
+      "offset": [
+        0,
+        1,
+        1
+      ]
+    }
+  },
+  "costs": {
+    "fit_samples": 6,
+    "full_edges_observed": 10201,
+    "heldout_observations": 2,
+    "observation_count_reduction": 1275.125,
+    "partial_edges_observed": 8,
+    "timings_ms": {
+      "fully_observed_certificate_median": 133.55214,
+      "sparse_certified_distant_query_median": 0.8751,
+      "sparse_fit_median": 0.15771,
+      "symbolic_model_certificate_median": 0.05036
+    },
+    "total_ground_states": 10201
+  },
+  "experiment": "VGI-GEOMETRY-FIRST-003",
+  "hypothesis": {
+    "degree": 2,
+    "format": "VGI-SparsePolynomialHypothesis-1",
+    "heldout_states": [
+      1954,
+      7995
+    ],
+    "hypothesis_fingerprint": "7a7820c3c8ff52f3f24f96ce475f4666900734fa3b399d4764387f7a1ff9e78f",
+    "independent_fit_states": [
+      0,
+      1,
+      2,
+      101,
+      102,
+      202
+    ],
+    "navigation_admitted": false,
+    "observation_fingerprint": "fa199b9b8b79906c2929983f82235ec791b3475643b13dae1d7efd0ae3c86d04",
+    "observed_edges": 8,
+    "status": "observational_hypothesis_unverified_outside_samples",
+    "x_next": [
+      [
+        [
+          0,
+          2
+        ],
+        1
+      ],
+      [
+        [
+          1,
+          0
+        ],
+        1
+      ]
+    ],
+    "y_next": [
+      [
+        [
+          0,
+          0
+        ],
+        1
+      ],
+      [
+        [
+          0,
+          1
+        ],
+        1
+      ]
+    ]
+  },
+  "large_time_result": {
+    "certificate_fingerprint": "db5e56200fdbe0d5c34cbd5bb38f0f4cba5e9430721d172b6f54aa499bd312e4",
+    "coordinates": [
+      81,
+      57
+    ],
+    "declared_ground_fingerprint": "d9f22a0c273edf07e436084bd41b20ae4e5b25ef99e9554f9222f0d359845b38",
+    "exponent_bits": 100,
+    "format": "VGI-SparseNavigationResult-1",
+    "logical_tick": 1000000000000000000000000000011,
+    "materialized_intermediate_states": 0,
+    "observation_fingerprint": "fa199b9b8b79906c2929983f82235ec791b3475643b13dae1d7efd0ae3c86d04",
+    "observed_edges": 8,
+    "state": 8238,
+    "trust_scope": "formal_declared_ground_only"
+  },
+  "status": "sample_hypothesis_plus_exact_symbolic_model_identity",
+  "trust_scope": "only the declared mathematical polynomial Ground; samples cannot certify any unobserved external system"
+}
