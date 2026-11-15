@@ -45,7 +45,7 @@ Equivalently,
 
 The certificate checks the above map on **all 10,201 declared transitions**, not only the six fitted probe points. By induction it therefore agrees with every reachable future state of this finite deterministic Ground, for every start state and all nonnegative logical times. Runtime queries use `ModularAffineMap` homogeneous matrix exponentiation, `O(log t)` in the number of matrix compositions for fixed dimension, rather than iterating the state transition `t` times. Dense matrix multiplication still carries dimension and bit-operation costs; the certificate construction costs `O(|S|)` complete edge audits plus fitting/search work.
 
-The invariant `z = y² mod 101` is independently checked on returned coordinates. The verified coordinate at **`t = 10^30 + 11`** from `(39,47)` is **`(81,57)`**; the lifted coordinate `z=17`. An independent integer sum-of-squares formula checks the large-t result.
+The immutable snapshot and certificate SHA-256 fingerprints are computed once at admission, not rehashed over all 10,201 edges for every query. This preserves the intended logarithmic logical-time query complexity. The invariant `z = y² mod 101` is independently checked on returned coordinates. The verified coordinate at **`t = 10^30 + 11`** from `(39,47)` is **`(81,57)`**; the lifted coordinate `z=17`. An independent integer sum-of-squares formula checks the large-t result.
 
 ### A richer second case
 
@@ -66,12 +66,12 @@ The following measurements were produced in an **isolated API-compatible harness
 
 | Operation | Median wall time |
 |---|---:|
-| Degree-two discovery + full-domain certification (3 repetitions) | ~135 ms |
-| Query `t=10^30+11` after certification (7 repetitions) | ~1.38 ms |
-| Direct 250,000 transitions from an existing table (3 repetitions) | ~5.94 ms |
-| Query `t=250,000` using affine power (7 repetitions) | ~0.61 ms |
+| Degree-two discovery + full-domain certification (3 repetitions) | ~139 ms |
+| Query `t=10^30+11` after certification (7 repetitions) | ~0.89 ms |
+| Direct 250,000 transitions from an existing table (3 repetitions) | ~5.01 ms |
+| Query `t=250,000` using affine power (7 repetitions) | ~0.16 ms |
 
-A fair amortized comparison **includes** the ~135 ms preprocessing plus the original cost of building/admitting the full 10,201-edge Ground. For a few small queries, conventional execution wins; for many long-time requests to the same certified map, the preprocessing may amortize. The iterative baseline uses **fast table lookups**, rather than the underlying function, to avoid biasing it against navigation. This experiment tests a finite mathematical law, not an arbitrary runtime matrix multiplication accelerator.
+A fair amortized comparison **includes** the ~139 ms preprocessing plus the original cost of building/admitting the full 10,201-edge Ground. For a few small queries, conventional execution wins; for many long-time requests to the same certified map, the preprocessing may amortize. The iterative baseline uses **fast table lookups**, rather than the underlying function, to avoid biasing it against navigation. This experiment tests a finite mathematical law, not an arbitrary runtime matrix multiplication accelerator.
 
 ## E-CPU correspondence — proposed, not yet wired
 
