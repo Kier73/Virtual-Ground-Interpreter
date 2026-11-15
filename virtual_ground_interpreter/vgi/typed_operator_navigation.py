@@ -493,3 +493,115 @@ __all__ = [
     "verify_receipt", "PreparedTemporalOperator", "TemporalNavigationReceipt",
     "verify_temporal_receipt",
 ]
+
+
+@dataclass(frozen=True, slots=True)
+class PreparedDiagonalTemporalOperator:
+    """An exact type-discovered diagonal semigroup with no dense preparation.
+
+    Only closed endomorphism chains composed entirely of admitted DiagonalMap
+    factors qualify. Certification checks each basis action of the original
+    graph against the pointwise product of the diagonal coefficients.
+    """
+    graph: OperatorChain
+    diagonal: tuple[int, ...]
+    fingerprint: str = field(init=False)
+
+    def __post_init__(self) -> None:
+        if (not isinstance(self.graph, OperatorChain)
+            or self.graph.domain != self.graph.codomain
+            or any(not isinstance(f, DiagonalMap) for f in self.graph.factors)):
+            raise TypedOperatorError("structured temporal navigation requires a closed diagonal chain")
+        m, n = self.graph.domain.modulus, self.graph.domain.dimension
+        expected = tuple(
+            _component_diagonal(self.graph.factors, i, m) for i in range(n)
+        )
+        if (not isinstance(self.diagonal, (tuple, list))
+            or len(self.diagonal) != n
+            or any(type(x) is not int for x in self.diagonal)
+            or tuple(self.diagonal) != expected):
+            raise TypedOperatorError("structured temporal coefficients disagree with graph")
+        for j in range(n):
+            basis = TypedVector(self.graph.domain, tuple(int(i == j) for i in range(n)))
+            image = self.graph.apply(basis)
+            if image.values != tuple(expected[i] if i == j else 0 for i in range(n)):
+                raise TypedOperatorError("structured certificate fails independent basis check")
+        object.__setattr__(self, "diagonal", expected)
+        object.__setattr__(self, "fingerprint", _digest({
+            "schema": "VGI-StructuredDiagonalTemporalOperator-1",
+            "graph": self.graph.fingerprint, "diagonal": expected,
+            "basis_checks": n,
+        }))
+
+    @classmethod
+    def from_chain(cls, chain: OperatorChain) -> "PreparedDiagonalTemporalOperator":
+        if not isinstance(chain, OperatorChain) or chain.domain != chain.codomain:
+            raise TypedOperatorError("structured temporal query requires a closed chain")
+        if any(not isinstance(f, DiagonalMap) for f in chain.factors):
+            raise TypedOperatorError("cannot prove diagonal structure from arbitrary dense leaves")
+        return cls(chain, tuple(_component_diagonal(chain.factors, i, chain.domain.modulus)
+                                for i in range(chain.domain.dimension)))
+
+    def state_at(self, initial: TypedVector, logical_tick: int) -> "StructuredTemporalReceipt":
+        _int(logical_tick, "logical tick")
+        if not isinstance(initial, TypedVector) or initial.space != self.graph.domain:
+            raise TypedOperatorError("structured temporal input frame mismatch")
+        m = self.graph.domain.modulus
+        return StructuredTemporalReceipt(
+            self.fingerprint, initial, logical_tick,
+            TypedVector(self.graph.codomain, tuple(
+                pow(d, logical_tick, m) * x % m
+                for d, x in zip(self.diagonal, initial.values)
+            )), logical_tick.bit_length(),
+            basis_checks=self.graph.domain.dimension,
+            composite_dense_materialized=False,
+            intermediate_logical_states_materialized=0,
+        )
+
+
+def _component_diagonal(factors: tuple[Leaf, ...], index: int, modulus: int) -> int:
+    value = 1
+    for factor in factors:
+        if not isinstance(factor, DiagonalMap):
+            raise TypedOperatorError("non-diagonal factor cannot enter diagonal certificate")
+        value = value * factor.diagonal[index] % modulus
+    return value
+
+
+@dataclass(frozen=True, slots=True)
+class StructuredTemporalReceipt:
+    certificate_fingerprint: str
+    initial: TypedVector
+    logical_tick: int
+    result: TypedVector
+    exponent_bits: int
+    basis_checks: int
+    composite_dense_materialized: bool
+    intermediate_logical_states_materialized: int
+
+    def to_dict(self) -> dict[str, Any]:
+        return {"format": "VGI-StructuredTemporalReceipt-1",
+                "certificate_fingerprint": self.certificate_fingerprint,
+                "initial": self.initial.to_dict(), "logical_tick": self.logical_tick,
+                "result": self.result.to_dict(), "exponent_bits": self.exponent_bits,
+                "basis_checks": self.basis_checks,
+                "composite_dense_materialized": self.composite_dense_materialized,
+                "intermediate_logical_states_materialized": self.intermediate_logical_states_materialized,
+                "method": "certified_diagonal_component_powers",
+                "scope": "declared_exact_linear_ring_semantics_only"}
+
+
+def verify_structured_temporal_receipt(prepared: PreparedDiagonalTemporalOperator,
+                                       receipt: StructuredTemporalReceipt) -> bool:
+    if not isinstance(prepared, PreparedDiagonalTemporalOperator) or not isinstance(receipt, StructuredTemporalReceipt):
+        return False
+    try:
+        return prepared.state_at(receipt.initial, receipt.logical_tick) == receipt
+    except TypedOperatorError:
+        return False
+
+
+__all__.extend([
+    "PreparedDiagonalTemporalOperator", "StructuredTemporalReceipt",
+    "verify_structured_temporal_receipt",
+])
