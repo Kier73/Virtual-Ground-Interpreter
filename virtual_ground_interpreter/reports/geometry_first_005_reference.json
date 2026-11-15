@@ -1,0 +1,58 @@
+{
+  "dense_dimension": 48,
+  "dense_estimated_scalar_products": 221184,
+  "dense_leaf_applications": 96,
+  "dynamic_rebind_fingerprint_changed": true,
+  "format": "GEOMETRY-FIRST-005-reference-1",
+  "full_matrix_demand_materializes_full_product": true,
+  "graph_fingerprint": "88b73f77a1dc6d65b5e3abf0d277c71e2163a5ed7fb23d0ee3a14511a5a8fc6b",
+  "matrix_chain_length": 2,
+  "modulus": 97,
+  "one_vector_materializes_full_product": false,
+  "outputs_match_independent_reference": true,
+  "provenance": "isolated Python compatibility harness: real E-CPU host not exercised",
+  "single_entry": 91,
+  "single_entry_materializes_full_product": false,
+  "stale_receipt_refused": true,
+  "temporal": {
+    "certificate_fingerprint": "a749f0d35890a3560e6440761a5c86df0e2c1290602077529c4116d329ac2f5d",
+    "dense_operator_prepared_before_query": true,
+    "exponent_bits": 100,
+    "initial": [
+      39,
+      47,
+      1
+    ],
+    "intermediate_logical_states_materialized": 0,
+    "result": [
+      4,
+      47,
+      1
+    ],
+    "tick": "1000000000000000000000000000011"
+  },
+  "timing_note": "median single-threaded Python perf_counter_ns; reference workload only; separate preparation and query; not a hardware speedup claim",
+  "timings": {
+    "conventional_dense_product_ms": 5.150294,
+    "entry_on_demand_ms": 0.168132,
+    "same_diagonal_chain_dense_preparation_ms": 9.537618,
+    "structured_diagonal_huge_query_ms": 0.111301,
+    "structured_diagonal_preparation_ms": 1.204734,
+    "temporal_dense_preparation_ms": 0.031455,
+    "temporal_huge_query_ms": 0.889821,
+    "vector_on_demand_ms": 0.19285,
+    "whole_dense_via_basis_ms": 8.609671
+  },
+  "vector_estimated_scalar_products": 4608,
+  "vector_leaf_applications": 2,
+  "structured_temporal": {
+    "kind": "certified_diagonal",
+    "tick": "1000000000000000000000000000011",
+    "dimension": 48,
+    "factors": 3,
+    "result_fingerprint": "e688539e9409c218d5c87926bdb0acf869d0712640b96f9708337427c93fe741",
+    "output_matches_independent_per_coordinate_modular_power": true,
+    "composite_dense_materialized": false,
+    "intermediate_logical_states_materialized": 0
+  }
+}
