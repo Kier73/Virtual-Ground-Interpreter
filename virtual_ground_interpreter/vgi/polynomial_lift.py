@@ -7,7 +7,7 @@ only binds the exact finite transition table supplied by the observer.
 """
 from __future__ import annotations
 
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from hashlib import sha256
 import json
 from typing import Sequence
@@ -115,6 +115,7 @@ class TransitionSnapshot:
     side: int
     action: str
     targets: tuple[int, ...]
+    _fingerprint_cache: str = field(init=False, repr=False, compare=False)
 
     def __post_init__(self) -> None:
         side = _prime(self.side)
@@ -125,6 +126,10 @@ class TransitionSnapshot:
         if any(isinstance(v, bool) or not isinstance(v, int) or
                v < 0 or v >= side * side for v in self.targets):
             raise PolynomialLiftError("snapshot contains invalid destination")
+        object.__setattr__(self, "_fingerprint_cache", _fingerprint({
+            "format": "VGI-TransitionSnapshot-1", "side": self.side,
+            "action": self.action, "targets": self.targets,
+        }))
 
     @classmethod
     def capture(cls, geometry: FiniteGeometry, action: str) -> "TransitionSnapshot":
@@ -133,8 +138,7 @@ class TransitionSnapshot:
 
     @property
     def fingerprint(self) -> str:
-        return _fingerprint({"format": "VGI-TransitionSnapshot-1", "side": self.side,
-                             "action": self.action, "targets": self.targets})
+        return self._fingerprint_cache
 
     def coordinates(self, state: int) -> tuple[int, int]:
         _integer(state, "state")
@@ -156,6 +160,7 @@ class PolynomialLiftCertificate:
     features: tuple[Monomial, ...]
     transform: ModularAffineMap
     fit_probes: tuple[int, ...]
+    _fingerprint_cache: str = field(init=False, repr=False, compare=False)
 
     def __post_init__(self) -> None:
         if not isinstance(self.snapshot, TransitionSnapshot):
@@ -186,13 +191,9 @@ class PolynomialLiftCertificate:
             predicted = self.transform.apply(self._lift(self.snapshot.coordinates(state)))
             if actual != predicted:
                 raise PolynomialLiftError(f"lift fails at observed edge {state} -> {target}")
-
-    def _lift(self, coords: tuple[int, int]) -> tuple[int, ...]:
-        return tuple(_eval(m, *coords, self.snapshot.side) for m in self.features)
-
-    @property
-    def fingerprint(self) -> str:
-        return _fingerprint({
+        # Certification is expensive, but a query MUST NOT re-hash the whole
+        # Ground: its complexity should depend on the lifted dimension and log t.
+        object.__setattr__(self, "_fingerprint_cache", _fingerprint({
             "format": "VGI-PolynomialLiftCertificate-1",
             "snapshot_fingerprint": self.snapshot.fingerprint,
             "max_degree": self.max_degree,
@@ -200,7 +201,14 @@ class PolynomialLiftCertificate:
             "transform": self.transform.to_dict(),
             "fit_probes": self.fit_probes,
             "verified_edges": len(self.snapshot.targets),
-        })
+        }))
+
+    def _lift(self, coords: tuple[int, int]) -> tuple[int, ...]:
+        return tuple(_eval(m, *coords, self.snapshot.side) for m in self.features)
+
+    @property
+    def fingerprint(self) -> str:
+        return self._fingerprint_cache
 
     def state_at(self, start: int, tick: int) -> "PolynomialLiftResult":
         """Navigate from arbitrary runtime operands to any nonnegative tick."""
