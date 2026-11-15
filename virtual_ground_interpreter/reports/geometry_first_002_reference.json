@@ -1,0 +1,83 @@
+{
+  "consistency": {
+    "direct_250000_equals_navigated": true,
+    "distant_matches_independent_closed_form": true
+  },
+  "discovery": {
+    "affine_matrix": [
+      [
+        1,
+        0,
+        1
+      ],
+      [
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        2,
+        1
+      ]
+    ],
+    "affine_offset": [
+      0,
+      1,
+      1
+    ],
+    "certificate_fingerprint": "4c38aac9b1a11a4b8365065d800bc35da03202887d5a11d6997f5ab6b70c322f",
+    "degree_one_rejected": true,
+    "exhaustive_edge_checks": 10201,
+    "feature_exponents": [
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ]
+    ],
+    "fitting_probes": 6
+  },
+  "distant_query": {
+    "action": "epsilon",
+    "certificate_fingerprint": "4c38aac9b1a11a4b8365065d800bc35da03202887d5a11d6997f5ab6b70c322f",
+    "coordinates": [
+      81,
+      57
+    ],
+    "exponent_bits": 100,
+    "format": "VGI-PolynomialLiftResult-1",
+    "lifted_coordinates": [
+      81,
+      57,
+      17
+    ],
+    "logical_tick": 1000000000000000000000000000011,
+    "materialized_intermediate_states": 0,
+    "method": "certified_polynomial_coordinate_lift_and_affine_power",
+    "start": 3986,
+    "state": 8238,
+    "verified_edges": 10201
+  },
+  "experiment": "VGI-GEOMETRY-FIRST-002",
+  "scope": "certified finite-field synthetic Ground, logical time not elapsed time",
+  "source": {
+    "action": "epsilon",
+    "geometry": "finite torus / F_101^2",
+    "observed_edges": 10201,
+    "snapshot_fingerprint": "5d5b434e5ea3de15ecc6cf77c1efbe87ecd60131112ad94f28b556f7c212bc8a"
+  },
+  "timings_ms": {
+    "direct_250000_steps_median": 5.01225,
+    "discovery_and_certification_median": 138.53754,
+    "navigated_250000_steps_median": 0.1591,
+    "verified_distant_navigation_median": 0.89493
+  }
+}
