@@ -42,6 +42,19 @@ A logical-time query `T^t·v` is supported only for a closed endomorphism, where
 
 Preparing the dense operator is a real cost: `O(k n³)` in the general square dense case. The subsequent query uses `O(n³ log t)` ring operations, and no intermediate **logical states** are materialized. This is meaningful for repeated queries at distant logical times against an unchanged graph, *not* a claim of constant-time calculation or acceleration of arbitrary unknown models. A new dynamic operand invalidates the prepared temporal identity and requires preparation against the new graph.
 
+### Structure-selected logical time without dense preparation
+
+For a closed chain whose admitted leaves are *all explicitly typed diagonal maps*, the system can discover a stronger coordinatewise law:
+
+```
+T = Diag(d1) ◦ Diag(d2) ◦ ... ◦ Diag(dk)
+T^t · v = ((d1_i*d2_i*...*dk_i)^t * v_i mod m)_i
+```
+
+`PreparedDiagonalTemporalOperator` derives and binds the per-coordinate product from the immutable dynamic operands. Its proof checks **every input basis action** against the original typed graph before permitting distant-time requests. No dense composite is formed, including during certificate preparation; the proof cost is `O(k n²)` reference ring operations for basis checks, and time navigation uses `n` scalar modular exponentiations, `O(n log t)` ring multiplications. It works on composite moduli and singular maps because no inverse is required. Rebinding any operand requires a new certificate. Non-diagonal dense operands are **refused** by this route, even when they might happen to be numerically diagonal; recognizing equivalent structure in opaque representations remains research.
+
+The benchmark additionally compares 48-coordinate, three-diagonal-factor structured preparation and a conventional dense preparation of the *same* graph. Median local measurements were **1.20 ms** for structure-aware certification, **0.14 ms** for the `10^30+11` query, and **13.13 ms** for dense preparation. These are reference Python measurements for this deliberately structured case, not hardware or arbitrary-matrix speedup claims.
+
 ### Program-derived affine adapter
 
 A verified `ModularAffineMap` of dimension `d` and offset `b` can be embedded as the homogeneous `(d+1)×(d+1)` linear map:
@@ -73,9 +86,10 @@ The new regression tests cover:
 - Immutable dynamic operand versions, stale receipt refusal, and tampered result/cost refusal.
 - Randomly generated closed dense operator chains compared with repeated reference execution for many small logical times, including noninvertible maps.
 - A `10^30+11`-scale temporal query checked against an independent shear formula.
+- A structurally selected 48-coordinate diagonal temporal route, over prime and composite rings, which does **not** prepare a dense map; refuses non-diagonal factors and tampered coefficients.
 - A program-derived polynomial lift bridged to the homogeneous typed operator graph, with negative homogeneous-chart invariant control.
 
-The local reference suite currently ran **42/42** tests across GEOMETRY-FIRST-001 through 005 in a minimal API-compatible Python harness, including **9/9** newly added tests. The real repository uses its own existing `vgi.affine` implementation and existing tests; GitHub CI (currently queued) is required before reporting full-repository verification. The benchmark report records exact machine-dependent local timings separately from operation-count proxies.
+The local reference suite currently ran **43/43** tests across GEOMETRY-FIRST-001 through 005 in a minimal API-compatible Python harness, including **10/10** newly added tests. The real repository uses its own existing `vgi.affine` implementation and existing tests; GitHub CI (currently queued) is required before reporting full-repository verification. The benchmark report records exact machine-dependent local timings separately from operation-count proxies.
 
 ## Connection to E-CPU (proposed; not implemented)
 
