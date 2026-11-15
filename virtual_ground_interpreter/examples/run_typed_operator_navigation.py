@@ -8,7 +8,9 @@ import time
 
 from vgi.typed_operator_navigation import (
     DenseMap, DiagonalMap, FiniteSpace, OperatorChain, OperatorDemand,
-    PreparedTemporalOperator, TypedVector, fulfill, verify_receipt, verify_temporal_receipt,
+    PreparedTemporalOperator, PreparedDiagonalTemporalOperator, TypedVector,
+    fulfill, verify_receipt, verify_temporal_receipt,
+    verify_structured_temporal_receipt,
 )
 
 
@@ -77,6 +79,34 @@ def run() -> dict:
     assert verify_temporal_receipt(temporal, result)
     benchmark['temporal_dense_preparation_ms'] = median_ms(lambda: PreparedTemporalOperator.from_chain(temporal_chain))
     benchmark['temporal_huge_query_ms'] = median_ms(lambda: temporal.state_at(origin, tick))
+    # A structure-discovered diagonal semigroup needs no dense temporal map.
+    other_space = FiniteSpace('diag-middle', n, modulus)
+    middle_space = FiniteSpace('diag-other', n, modulus)
+    input_state = FiniteSpace('diag-state', n, modulus)
+    diagonal_factors = (
+        DiagonalMap('dynamic-d0', other_space, input_state,
+                    tuple(rng.randrange(modulus) for _ in range(n))),
+        DiagonalMap('dynamic-d1', middle_space, other_space,
+                    tuple(rng.randrange(modulus) for _ in range(n))),
+        DiagonalMap('dynamic-d2', input_state, middle_space,
+                    tuple(rng.randrange(modulus) for _ in range(n))),
+    )
+    diagonal_chain = OperatorChain(diagonal_factors)
+    structured = PreparedDiagonalTemporalOperator.from_chain(diagonal_chain)
+    diagonal_seed = TypedVector(input_state, tuple(rng.randrange(modulus) for _ in range(n)))
+    structured_result = structured.state_at(diagonal_seed, tick)
+    assert verify_structured_temporal_receipt(structured, structured_result)
+    assert structured_result.result.values == tuple(
+        x * pow(d, tick, modulus) % modulus
+        for x, d in zip(diagonal_seed.values, structured.diagonal)
+    )
+    assert not structured_result.composite_dense_materialized
+    benchmark['structured_diagonal_preparation_ms'] = median_ms(
+        lambda: PreparedDiagonalTemporalOperator.from_chain(diagonal_chain))
+    benchmark['structured_diagonal_huge_query_ms'] = median_ms(
+        lambda: structured.state_at(diagonal_seed, tick))
+    benchmark['same_diagonal_chain_dense_preparation_ms'] = median_ms(
+        lambda: PreparedTemporalOperator.from_chain(diagonal_chain), samples=5)
     return {
         'format': 'GEOMETRY-FIRST-005-reference-1',
         'provenance': 'isolated Python compatibility harness: real E-CPU host not exercised',
@@ -95,6 +125,12 @@ def run() -> dict:
         'dense_leaf_applications': receipts['dense'].leaf_applications,
         'vector_estimated_scalar_products': receipts['vector'].estimated_scalar_products,
         'dense_estimated_scalar_products': receipts['dense'].estimated_scalar_products,
+        'structured_temporal': {'kind': 'certified_diagonal', 'tick': str(tick),
+                                'dimension': n, 'factors': len(diagonal_factors),
+                                'result_fingerprint': structured.fingerprint,
+                                'output_matches_independent_per_coordinate_modular_power': True,
+                                'composite_dense_materialized': structured_result.composite_dense_materialized,
+                                'intermediate_logical_states_materialized': 0},
         'temporal': {'tick': str(tick), 'initial': list(origin.values),
                      'result': list(result.result.values),
                      'certificate_fingerprint': temporal.fingerprint,
