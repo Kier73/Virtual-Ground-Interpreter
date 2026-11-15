@@ -1,0 +1,111 @@
+{
+  "block_sizes_after": [
+    4,
+    4,
+    4
+  ],
+  "certificate_fingerprint": "67b806cd15d998b84a9030c1291a515c98aebffe78c70f34dd22fd92d0b92431",
+  "changed_operand_reverified_same_basis": true,
+  "claim": "portable independently checked mathematical structural memory, not E-CPU authority",
+  "coordinate_partition_before": [
+    [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ]
+  ],
+  "dense_reference_matches": true,
+  "different_process": {
+    "block_sizes": [
+      4,
+      4,
+      4
+    ],
+    "certificate_fingerprint": "67b806cd15d998b84a9030c1291a515c98aebffe78c70f34dd22fd92d0b92431",
+    "format": "VGI-IndependentBasisMemoryVerification-1",
+    "graph_sha256": "ffb3ec9724357314baedee9b6eb3711076f26f61d4d6f3167331b84f80a9085e",
+    "host_authority": "not_claimed",
+    "logical_tick": 1000000000000000000000000000011,
+    "memory_sha256": "f9330612e8d85bb250e416021c2100aaa0c953d056cd8cb93a0af1813d7b7e18",
+    "receipt_verified": true,
+    "rediscovered_basis": false,
+    "result": [
+      44,
+      47,
+      85,
+      83,
+      69,
+      48,
+      32,
+      23,
+      17,
+      51,
+      23,
+      65
+    ]
+  },
+  "dimension": 12,
+  "experiment": "GEOMETRY-FIRST-008",
+  "factors": 3,
+  "graph_fingerprint": "ffb3ec9724357314baedee9b6eb3711076f26f61d4d6f3167331b84f80a9085e",
+  "initial": [
+    3,
+    21,
+    41,
+    63,
+    87,
+    12,
+    40,
+    70,
+    1,
+    35,
+    71,
+    8
+  ],
+  "limitations": [
+    "The original mathematical Ground is assumed to be a faithful description of the intended computation.",
+    "Memory carries full factor snapshot; O(L n^2) bytes not reduced by this protocol.",
+    "Verifier checks all input factors; it only avoids the expensive centralizer/eigenspace candidate search.",
+    "Digest anchors are external trust inputs, not signatures; attacker-controlled reference digests confer no authority.",
+    "Changed operands must retain the exact commutant witness and eigenspace certificate, otherwise rebind refuses.",
+    "No E-CPU host, transport, hypervisor or official CI integration is claimed."
+  ],
+  "logical_tick": "1000000000000000000000000000011",
+  "memory_sha256": "f9330612e8d85bb250e416021c2100aaa0c953d056cd8cb93a0af1813d7b7e18",
+  "modulus": 101,
+  "new_digest_after_operand_change": "dbacb50c0b26a2d5393bf86fc4fe514293fa0e2db059f85b37b17d0f448cb9b1",
+  "old_receipt_invalid_after_change": true,
+  "result": [
+    44,
+    47,
+    85,
+    83,
+    69,
+    48,
+    32,
+    23,
+    17,
+    51,
+    23,
+    65
+  ],
+  "same_graph_reconstruction_without_discovery": true,
+  "serialized_record_bytes": 4096,
+  "source": "independent finite-field simulation with prior VGI API-compatible modules",
+  "timings_ms_median": {
+    "fresh_observer_admission": 2.608,
+    "original_discovery_and_certification": 730.6512,
+    "query_huge_time_after_admission": 5.1208,
+    "serialization": 2.2867,
+    "valid_operand_rebind_and_reverification": 7.4772
+  }
+}
