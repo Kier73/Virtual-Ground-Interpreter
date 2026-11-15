@@ -66,11 +66,11 @@ Local measured medians (Python, isolated compatibility harness; see `reports/geo
 
 | Request | Median |
 |---|---:|
-| Discover and certify eight block composites | 2.84 ms |
-| Full dense composite preparation via prior VGI method | 27.18 ms |
-| Block navigation at logical tick 2,048 | 2.95 ms |
-| Full dense navigation at the same tick 2,048 | 56.56 ms |
-| Block navigation at logical tick 10³⁰ + 11 | 31.13 ms |
+| Discover and certify eight block composites | 2.62 ms |
+| Full dense composite preparation via prior VGI method | 30.45 ms |
+| Block navigation at logical tick 2,048 | 3.01 ms |
+| Full dense navigation at the same tick 2,048 | 58.19 ms |
+| Block navigation at logical tick 10³⁰ + 11 | 33.46 ms |
 
 For fixed square-matrix powering, the cubic arithmetic **proxy** improves from \(48^3=110{,}592\) to \(8(6^3)=1{,}728\), a ratio of **64×**; this is an operation-size estimate, **not** a benchmark speedup claim. The observed timings compare explicitly different preparation strategies for the same mathematical output. Neither strategy beats direct computation for arbitrary data or arbitrary structure; this is a synthetic block-structured workload.
 
