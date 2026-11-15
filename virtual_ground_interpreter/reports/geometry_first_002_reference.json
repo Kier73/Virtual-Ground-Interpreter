@@ -75,9 +75,9 @@
     "snapshot_fingerprint": "5d5b434e5ea3de15ecc6cf77c1efbe87ecd60131112ad94f28b556f7c212bc8a"
   },
   "timings_ms": {
-    "direct_250000_steps_median": 5.94232,
-    "discovery_and_certification_median": 135.11314,
-    "navigated_250000_steps_median": 0.60839,
-    "verified_distant_navigation_median": 1.37991
+    "direct_250000_steps_median": 5.01225,
+    "discovery_and_certification_median": 138.53754,
+    "navigated_250000_steps_median": 0.1591,
+    "verified_distant_navigation_median": 0.89493
   }
 }
