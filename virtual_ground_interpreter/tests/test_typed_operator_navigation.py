@@ -8,6 +8,7 @@ from vgi.typed_operator_navigation import (
     PreparedTemporalOperator, TypedOperatorError, TypedVector, fulfill,
     verify_receipt, verify_temporal_receipt,
     homogeneous_affine_map, project_homogeneous_vector,
+    PreparedDiagonalTemporalOperator, verify_structured_temporal_receipt,
 )
 
 
@@ -199,6 +200,47 @@ class TypedOperatorNavigationTests(unittest.TestCase):
                        ((1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, 0, 0)))
         with self.assertRaises(TypedOperatorError):
             project_homogeneous_vector(bad.apply(initial))
+
+    def test_diagonal_structure_discovers_fast_logical_time_without_dense_preparation(self):
+        rng = random.Random(7269)
+        for modulus in (8, 97, 101):
+            for dimension in (2, 5, 11):
+                p = FiniteSpace('persistent-state', dimension, modulus)
+                q = FiniteSpace('intermediate', dimension, modulus)
+                r = FiniteSpace('second-intermediate', dimension, modulus)
+                factors = (
+                    DiagonalMap('gainA', q, p, tuple(rng.randrange(modulus) for _ in range(dimension))),
+                    DiagonalMap('gainB', r, q, tuple(rng.randrange(modulus) for _ in range(dimension))),
+                    DiagonalMap('gainC', p, r, tuple(rng.randrange(modulus) for _ in range(dimension))),
+                )
+                chain = OperatorChain(factors)
+                structured = PreparedDiagonalTemporalOperator.from_chain(chain)
+                initial = TypedVector(p, tuple(rng.randrange(modulus) for _ in range(dimension)))
+                self.assertEqual(structured.diagonal, tuple(
+                    factors[0].diagonal[i]*factors[1].diagonal[i]*factors[2].diagonal[i] % modulus
+                    for i in range(dimension)
+                ))
+                for tick in (0, 1, 2, 100, 10**30+11):
+                    result = structured.state_at(initial, tick)
+                    expected = tuple(pow(d, tick, modulus)*x%modulus
+                                     for d, x in zip(structured.diagonal, initial.values))
+                    self.assertEqual(result.result.values, expected)
+                    self.assertFalse(result.composite_dense_materialized)
+                    self.assertEqual(result.intermediate_logical_states_materialized, 0)
+                    self.assertTrue(verify_structured_temporal_receipt(structured, result))
+                changed = chain.rebind(1, DiagonalMap('gainB-v2', r, q,
+                                                     tuple((d+1)%modulus for d in factors[1].diagonal)))
+                self.assertNotEqual(structured.fingerprint,
+                                    PreparedDiagonalTemporalOperator.from_chain(changed).fingerprint)
+                with self.assertRaises(TypedOperatorError):
+                    PreparedDiagonalTemporalOperator(chain,
+                                                     ((structured.diagonal[0]+1)%modulus,)
+                                                     + structured.diagonal[1:])
+                with self.assertRaises(TypedOperatorError):
+                    PreparedDiagonalTemporalOperator.from_chain(
+                        OperatorChain((DenseMap('identity-dense', p, p,
+                                                tuple(tuple(int(i==j) for j in range(dimension))
+                                                      for i in range(dimension))),)))
 
     def test_prepared_mathematical_evidence_cannot_be_rebound(self):
         s = FiniteSpace("state", 2, 11)
