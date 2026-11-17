@@ -48,10 +48,14 @@ Reintroduce the earlier predictive-context workflow as a Ground constructor:
 
 \[
 	ext{observations}
-ightarrow	ext{predictive distinctions}
-ightarrow	ext{candidate transition system}
-ightarrow	ext{executable Ground}
-ightarrow	ext{counterexample refinement}.
+
+ightarrow	ext{predictive distinctions}
+
+ightarrow	ext{candidate transition system}
+
+ightarrow	ext{executable Ground}
+
+ightarrow	ext{counterexample refinement}.
 \]
 
 The constructor must distinguish observable equivalence from physical identity and retain unresolved ambiguities. When a cyclic/phase law is not supported, it must emit a general finite automaton rather than force a group structure.
@@ -82,7 +86,7 @@ Prefer the smallest extension that introduces a new, verifiable capability. Do n
 
 A first-class GroundTransitionSystem now represents predictive states, actions, output channels, known/unknown/ambiguous edges, support counts, and evidence references. A Build 24 VG-PredictiveMealy-1 adapter imports the archived delayed-six model. Complete grounds can be compiled into the existing Signal8 IR for a fixed action-sequence length, with actions supplied as runtime signal-valued inputs. Direct and compiled executions are compared by their semantic state and output traces.
 
-The current compiler is deliberately bounded to eight states, eight actions, and Z/8Z output symbols. It refuses partial or ambiguous grounds. This is the first executable bridge from the predictive-ground archive into the active machine; it does not yet embed the Build 24 learner or the Build 26 online partial-ground learner.
+The compiler now lowers larger finite state/action alphabets through multi-digit Signal8 identities; channel outputs remain Z/8Z. Dispatch size still grows with the explicit transition table and compiled action count. It refuses partial or ambiguous grounds. This is the first executable bridge from the predictive-ground archive into the active machine; it does not yet embed the Build 24 learner or the Build 26 online partial-ground learner.
 
 ## Immediate next priorities
 

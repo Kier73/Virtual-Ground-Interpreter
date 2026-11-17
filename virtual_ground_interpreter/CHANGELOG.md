@@ -1,3 +1,10 @@
+## Unreleased - multi-digit finite Ground compilation
+
+- Remove the one-symbol cap on state and action identities by composing existing Signal8 cells and equality guards; output channels retain Z/8Z semantics.
+- Preserve width-one compiler-v1 programs and certificates. Wider programs and reconstruction certificates identify compiler v2; wrong-version and wrong-context certificates are rejected.
+- Add differential coverage of all 81 edges of a nine-state/nine-action Ground, two/three-digit thresholds, mixed observer coordinates, empty words, unused encodings, uncertainty and execution budgets.
+- Verification evidence is recorded in reports/MULTIDIGIT_GROUND_VERIFICATION.md. No new Signal8 operations, physical-path result or asymptotic speedup is claimed.
+
 ## Unreleased — sparse partial attention, ProofGround and exact observables
 
 - Add partition-first sparse partial refinement with lazy pair-level witness and blocker computation, preserving the existing eager three-valued API.

@@ -173,7 +173,7 @@ The runtime also exposes a bounded bridge from learned predictive machines to ex
     assert result.state_trace == direct.state_trace
     assert result.outputs == direct.outputs
 
-GroundTransitionSystem distinguishes known, unknown, and ambiguous transitions. The initial compiler accepts only complete deterministic grounds and lowers them to the current Signal8 instruction language. It is bounded to eight states, eight actions, and output values in Z/8Z. Unknown and ambiguous transitions are never silently guessed. See the formal specification and the development-throughline review in the docs directory.
+GroundTransitionSystem distinguishes known, unknown, and ambiguous transitions. The initial compiler accepts only complete deterministic grounds and lowers them to the current Signal8 instruction language. State and action identities use as many base-eight Signal8 digits as needed; output values remain in Z/8Z. Width-one programs preserve the original compiler-v1 interface, while wider identities and their reconstruction certificates identify compiler v2. Unknown and ambiguous transitions are never silently guessed. See the formal specification and the development-throughline review in the docs directory.
 
 Terminal symbol observation also respects phase uncertainty: it returns a symbol only when one decision region is consistent with the declared error bound.
 

@@ -17,7 +17,7 @@ from typing import Any, Mapping, Sequence
 from .channels import ChannelExchangeLedger
 from .encounters import EncounterLedger
 from .transitions import (
-    GroundTransitionSystem, TransitionObservation, TransitionOutcome,
+    GroundTransitionSystem, TransitionCompiler, TransitionObservation, TransitionOutcome,
     TransitionSystemError, differential_verify,
 )
 
@@ -832,6 +832,7 @@ class GroundReconstructionVerifier:
         if not system.complete:
             raise EvidenceError("only complete, single-valued Grounds can be compiled")
         sequences = self._normalize(action_sequences)
+        compiler_version = TransitionCompiler.version_for(system)
         try:
             report = differential_verify(system, sequences)
         except (TransitionSystemError, TypeError, ValueError) as exc:
@@ -848,14 +849,14 @@ class GroundReconstructionVerifier:
             })
         witness_digest = _digest({
             "ground_fingerprint": system.fingerprint, "context_digest": context_digest,
-            "compiler_id": self.compiler_id, "compiler_version": self.compiler_version,
+            "compiler_id": self.compiler_id, "compiler_version": compiler_version,
             "traces": traces,
         })
         return GroundReconstructionCertificate(
             ground_fingerprint=system.fingerprint, context_digest=context_digest,
             witness_digest=witness_digest, action_sequences=sequences,
             witness_count=len(sequences), max_horizon=max(len(x) for x in sequences),
-            compiler_id=self.compiler_id, compiler_version=self.compiler_version,
+            compiler_id=self.compiler_id, compiler_version=compiler_version,
         )
 
     def verify(
@@ -871,7 +872,7 @@ class GroundReconstructionVerifier:
         if context_digest != certificate.context_digest:
             raise EvidenceError("certificate belongs to a different context")
         if (certificate.compiler_id, certificate.compiler_version) != (
-            self.compiler_id, self.compiler_version
+            self.compiler_id, TransitionCompiler.version_for(system)
         ):
             raise EvidenceError("certificate compiler identity/version is unsupported")
         actual = self.certify(system, certificate.action_sequences, context_digest=context_digest)

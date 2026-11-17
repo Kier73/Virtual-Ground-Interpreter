@@ -363,6 +363,16 @@ class CompiledTransitionRun:
     runtime_ground_fingerprint: str
 
 
+def _identity_width(size: int) -> int:
+    """Minimum positive base-eight width, without floating-point logarithms."""
+    return max(1, ((size - 1).bit_length() + 2) // 3)
+
+
+def _digit_name(name: str, digit: int, width: int) -> str:
+    """Keep the original v1 names for single-symbol identities."""
+    return name if width == 1 else f"{name}.digit.{digit}"
+
+
 @dataclass(frozen=True, slots=True)
 class CompiledTransitionProgram:
     system_fingerprint: str
@@ -388,19 +398,26 @@ class CompiledTransitionProgram:
         action_index = {name: index for index, name in enumerate(self.actions)}
         memory = dict(self.initial_memory)
         backend = interpreter.backend if interpreter is not None else Signal8Backend()
+        state_width = _identity_width(len(self.states))
+        action_width = _identity_width(len(self.actions))
         for index, action in enumerate(action_word):
             if action not in action_index:
                 raise TransitionExecutionError(f"action {action!r} is outside the compiled Ground")
-            memory[f"input.action.{index}"] = backend.encode_symbol(action_index[action], observer=1)
+            for digit in range(action_width):
+                address = _digit_name(f"input.action.{index}", digit, action_width)
+                memory[address] = backend.encode_symbol(
+                    (action_index[action] >> (3 * digit)) & 7, observer=1,
+                )
 
         runtime = interpreter or VirtualGroundInterpreter()
         result = runtime.execute(self.program, memory, max_steps=max_steps)
         observed = result.observed_outputs(runtime.backend)
         required = {
-            *(f"state_after_{index}" for index in range(self.action_count)),
+            *(_digit_name(f"state_after_{index}", digit, state_width)
+              for index in range(self.action_count) for digit in range(state_width)),
             *(f"output_{index}_{channel}" for index in range(self.action_count)
               for channel in range(len(self.channels))),
-            "final_state",
+            *(_digit_name("final_state", digit, state_width) for digit in range(state_width)),
         }
         missing = required - set(observed)
         if missing:
@@ -408,14 +425,21 @@ class CompiledTransitionProgram:
                 "compiled dispatch stopped before completing the requested trace; "
                 f"missing emissions: {sorted(missing)}"
             )
+        def observed_state(label: str) -> str:
+            code = sum(observed[_digit_name(label, digit, state_width)] << (3 * digit)
+                       for digit in range(state_width))
+            if not 0 <= code < len(self.states):
+                raise TransitionExecutionError("compiled state encoding is outside its Ground")
+            return self.states[code]
+
         try:
-            state_trace = tuple(self.states[observed[f"state_after_{i}"]]
+            state_trace = tuple(observed_state(f"state_after_{i}")
                                 for i in range(self.action_count))
             output_trace = tuple(
                 tuple(observed[f"output_{i}_{channel}"] for channel in range(len(self.channels)))
                 for i in range(self.action_count)
             )
-            final_state = self.states[observed["final_state"]]
+            final_state = observed_state("final_state")
         except (IndexError, KeyError) as exc:
             raise TransitionExecutionError(f"compiled output is outside its Ground: {exc}") from exc
         return CompiledTransitionRun(
@@ -427,6 +451,11 @@ class CompiledTransitionProgram:
 class TransitionCompiler:
     """Compile complete finite grounds to the existing Signal8 instruction IR."""
 
+    @staticmethod
+    def version_for(system: GroundTransitionSystem) -> int:
+        """Bind wider identity lowering separately from the compatible v1 path."""
+        return 1 if len(system.states) <= 8 and len(system.actions) <= 8 else 2
+
     def compile(self, system: GroundTransitionSystem, action_count: int, *,
                 backend: Signal8Backend | None = None) -> CompiledTransitionProgram:
         if isinstance(action_count, bool) or not isinstance(action_count, int) or action_count < 0:
@@ -436,8 +465,6 @@ class TransitionCompiler:
                 "only complete, single-valued grounds can be compiled; "
                 f"unknown={list(system.unknown_pairs)}, ambiguous={list(system.ambiguous_pairs)}"
             )
-        if len(system.states) > 8 or len(system.actions) > 8:
-            raise TransitionCompileError("Signal8 lowering supports at most eight states and eight actions")
         backend = backend or Signal8Backend()
         if backend.domain_id != "signal.phase.cyclic.z8.v1":
             raise TransitionCompileError("this compiler currently targets Signal8 Z/8Z")
@@ -446,17 +473,25 @@ class TransitionCompiler:
 
         state_code = {name: index for index, name in enumerate(system.states)}
         action_code = {name: index for index, name in enumerate(system.actions)}
-        memory: dict[str, SignalValue] = {
-            "state": backend.encode_symbol(state_code[system.initial_state], observer=1)
-        }
+        state_width = _identity_width(len(system.states))
+        action_width = _identity_width(len(system.actions))
+        memory: dict[str, SignalValue] = {}
+
+        def put_identity(name: str, value: int, width: int) -> None:
+            for digit in range(width):
+                memory[_digit_name(name, digit, width)] = backend.encode_symbol(
+                    (value >> (3 * digit)) & 7, observer=1,
+                )
+
+        put_identity("state", state_code[system.initial_state], state_width)
         for symbol in range(8):
             memory[f"const.symbol.{symbol}"] = backend.encode_symbol(symbol, observer=1)
         for name, index in state_code.items():
-            memory[f"const.state.{index}"] = backend.encode_symbol(index, observer=1)
+            put_identity(f"const.state.{index}", index, state_width)
         for name, index in action_code.items():
-            memory[f"const.action.{index}"] = backend.encode_symbol(index, observer=1)
+            put_identity(f"const.action.{index}", index, action_width)
         for index in range(action_count):
-            memory[f"input.action.{index}"] = backend.encode_symbol(0, observer=1)
+            put_identity(f"input.action.{index}", 0, action_width)
 
         instructions: list[Instruction] = []
 
@@ -474,39 +509,46 @@ class TransitionCompiler:
 
         edge_lookup = {(item.source, item.action): item.outcomes[0] for item in system.observations}
         for step_index in range(action_count):
-            emit("LOAD", dst="dispatch_state", address="state")
-            emit("LOAD", dst="dispatch_action", address=f"input.action.{step_index}")
+            for kind, address, width in (
+                ("state", "state", state_width),
+                ("action", f"input.action.{step_index}", action_width),
+            ):
+                for digit in range(width):
+                    emit("LOAD", dst=_digit_name(f"dispatch_{kind}", digit, width),
+                         address=_digit_name(address, digit, width))
             success_jumps: list[int] = []
             for source in system.states:
                 for action in system.actions:
                     outcome = edge_lookup[(source, action)]
-                    emit("LOAD", dst="expected_state", address=f"const.state.{state_code[source]}")
-                    state_branch = emit(
-                        "BRANCH_EQ", left="dispatch_state", right="expected_state",
-                        target=-1, tolerance_rad=1e-8,
-                    )
-                    state_miss = emit("JUMP", target=-1)
-                    action_test = len(instructions)
-                    patch(state_branch, action_test)
-                    emit("LOAD", dst="expected_action", address=f"const.action.{action_code[action]}")
-                    action_branch = emit(
-                        "BRANCH_EQ", left="dispatch_action", right="expected_action",
-                        target=-1, tolerance_rad=1e-8,
-                    )
-                    action_miss = emit("JUMP", target=-1)
-                    matched = len(instructions)
-                    patch(action_branch, matched)
+                    misses: list[int] = []
+                    for kind, code, width in (
+                        ("state", state_code[source], state_width),
+                        ("action", action_code[action], action_width),
+                    ):
+                        for digit in range(width):
+                            emit("LOAD", dst=f"expected_{kind}",
+                                 address=_digit_name(f"const.{kind}.{code}", digit, width))
+                            branch = emit(
+                                "BRANCH_EQ",
+                                left=_digit_name(f"dispatch_{kind}", digit, width),
+                                right=f"expected_{kind}", target=-1, tolerance_rad=1e-8,
+                            )
+                            misses.append(emit("JUMP", target=-1))
+                            patch(branch, len(instructions))
 
-                    emit("LOAD", dst="next_state", address=f"const.state.{state_code[outcome.target]}")
-                    emit("STORE", src="next_state", address="state")
-                    emit("EMIT", src="next_state", label=f"state_after_{step_index}")
+                    for digit in range(state_width):
+                        emit("LOAD", dst="next_state", address=_digit_name(
+                            f"const.state.{state_code[outcome.target]}", digit, state_width))
+                        emit("STORE", src="next_state", address=_digit_name("state", digit, state_width))
+                        emit("EMIT", src="next_state", label=_digit_name(
+                            f"state_after_{step_index}", digit, state_width))
                     for channel_index, value in enumerate(outcome.output):
                         emit("LOAD", dst="channel_output", address=f"const.symbol.{value}")
                         emit("EMIT", src="channel_output", label=f"output_{step_index}_{channel_index}")
                     success_jumps.append(emit("JUMP", target=-1))
                     next_pair = len(instructions)
-                    patch(state_miss, next_pair)
-                    patch(action_miss, next_pair)
+                    for miss in misses:
+                        patch(miss, next_pair)
 
             # A corrupted state/action input cannot fall through as a valid transition.
             emit("HALT")
@@ -514,17 +556,20 @@ class TransitionCompiler:
             for jump_index in success_jumps:
                 patch(jump_index, next_step)
 
-        emit("LOAD", dst="final_state", address="state")
-        emit("EMIT", src="final_state", label="final_state")
+        for digit in range(state_width):
+            emit("LOAD", dst="final_state", address=_digit_name("state", digit, state_width))
+            emit("EMIT", src="final_state", label=_digit_name("final_state", digit, state_width))
         emit("HALT")
         program = Program(
             name=f"ground-transition-{system.fingerprint[:12]}",
             instructions=tuple(instructions),
             metadata={
-                "source": "vgi.transition-compiler.v1",
+                "source": f"vgi.transition-compiler.v{self.version_for(system)}",
                 "system_fingerprint": system.fingerprint,
                 "action_count": action_count,
-                "state_encoding": "finite indices embedded in Signal8 Z/8Z",
+                "state_encoding": ("finite indices embedded in Signal8 Z/8Z"
+                                   if state_width == action_width == 1
+                                   else "little-endian base-eight Signal8 identity digits"),
                 "semantic_trace": "state_after_i and output_i_channel emissions",
             },
         )

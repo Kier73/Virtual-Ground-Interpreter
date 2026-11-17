@@ -70,7 +70,7 @@ class GroundTransitionSystemTests(unittest.TestCase):
         self.assertEqual(round_trip.fingerprint, self.ground.fingerprint)
         self.assertEqual(round_trip.to_dict(), self.ground.to_dict())
 
-    def test_signal8_compiler_rejects_domains_outside_its_finite_embedding(self):
+    def test_signal8_compiler_embeds_more_than_eight_states(self):
         states = tuple(f"s{i}" for i in range(9))
         observations = tuple(
             TransitionObservation(source, "A", (TransitionOutcome(states[(i + 1) % 9], (0,)),))
@@ -80,8 +80,9 @@ class GroundTransitionSystemTests(unittest.TestCase):
             states=states, actions=("A",), initial_state="s0", channels=("y",),
             observations=observations,
         )
-        with self.assertRaises(TransitionCompileError):
-            TransitionCompiler().compile(too_large, 1)
+        compiled = TransitionCompiler().compile(too_large, 9)
+        self.assertEqual(compiled.execute(("A",) * 9).state_trace,
+                         too_large.run(("A",) * 9).state_trace)
 
 
 class DifferentialCompilationTests(unittest.TestCase):
