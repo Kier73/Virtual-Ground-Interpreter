@@ -311,7 +311,7 @@ Let \(\operatorname{run}_{\mathcal T}(a_0,\ldots,a_{n-1})\) be the direct refere
 
 This is checked for supplied action sequences. It is not a proof for untested sequences or arbitrary domains. The compiler refuses partial or ambiguous grounds instead of inventing semantics.
 
-The current Signal8 compiler is intentionally bounded to at most eight states, eight actions, and output values in \(\mathbb Z/8\mathbb Z\). It expands guarded dispatch per compiled action slot; it is a semantic integration step, not yet a compact phase-law optimizer.
+The Signal8 compiler uses multi-digit identities for state and action alphabets larger than eight; channel outputs remain in \(\mathbb Z/8\mathbb Z\). It expands guarded dispatch per compiled action slot; it is a semantic integration step, not yet a compact phase-law optimizer.
 
 ## 14. Terminal observation and uncertainty
 
@@ -676,3 +676,25 @@ AffineFastForwardResult reports the exact logical coordinate, decoded state,
 encoded vector, exponent bit length, certificate/orbit/Ground/policy
 fingerprints, and that no intermediate states were materialized. A clock
 mismatch or coordinate before the certified origin is refused.
+# Multi-digit predictive identity lowering (compiler v2)
+
+Complete finite predictive Grounds may use more than eight states or actions.
+For an alphabet of size N, encode its enumeration index in the minimum positive
+number w of little-endian base-eight digits satisfying N <= 8**w. Each digit
+is an ordinary Signal8 value. State and action widths are independent.
+
+Dispatch requires equality of every state digit and every action digit using
+the existing uncertainty-aware BRANCH_EQ instruction. A mismatch advances to
+the next declared edge; an indeterminate comparison retains the runtime trap.
+Only a complete match writes the successor digits and emits channel outputs.
+Unused encodings halt without a completed trace and are rejected by the adapter.
+The adapter reconstructs state indices only from terminal observations and
+rejects indices outside the declared alphabet. Output channels remain Z/8Z.
+
+Width-one programs retain their v1 memory addresses, emissions and metadata.
+Wider programs use `.digit.d` addresses/emissions and compiler-v2 metadata.
+The Signal8 Ground, instructions and observer family are unchanged. Compilation
+still requires complete, single-valued transitions. Code size grows with the
+explicit transition table, action count and digit widths; this is a wider
+finite compiler, not a new orbit shortcut or universal scalability result.
+
