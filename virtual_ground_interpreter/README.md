@@ -19,16 +19,19 @@ VGI is being treated as an executable runtime with a versioned contract, not as 
 - Records branch evidence and signal-valued writes in its instruction trace; supports pause/resume, checkpoints, reset, and journal-based undo.
 - Associates execution with a versioned Ground contract and fingerprint.
 
-## What it does not do yet
+## Implementation and development trajectory
 
-- Infer a program from an unrestricted natural-language task or an unconstrained objective.
-- Discover an unknown signal alphabet or arbitrary operation algebra without supplied evidence.
-- Learn or update a Ground online from live observations.
-- Execute raw ADC arrays continuously inside the machine; the current runtime's native state is a pilot-calibrated phasor. I/Q ingress/egress adapters are provided.
-- Implement a physical analog computer or prove a hardware performance advantage.
-- Establish universal or Turing-complete computation.
+The interpreter's implemented signal-state algebra, control flow, and persistent machine state are described above. The separate [evidence-admission and reconstruction contract](docs/EVIDENCE_AND_RECONSTRUCTION.md) now expresses its policy as a source-deduplicated quorum decision, explicit finalization, and finite compiled-replay obligation, with code and test references.
 
-The current control plane is a typed instruction stream executed by ordinary software. The data plane uses signal-domain values. The distinction is intentional and explicit.
+| Next construction | Implementation target |
+|---|---|
+| Intent interpretation | Translate a richer typed intention into the existing program IR, with source/contract evidence |
+| Ground qualification | Infer and admit candidate signal alphabets and operation laws from source-bound observations |
+| Stateful streaming | Extend pilot-calibrated I/Q ingress to sustained signal-state ingestion with replayable event traces |
+| Physical measurement | Bind the interpreter to independently observed ADC/analog hardware effects and measure precision/cost |
+| Expressiveness | Qualify larger instruction and memory semantics through explicit testable language contracts |
+
+**Execution contract:** current control operations run as a typed software instruction stream; calibrated phasors constitute its signal-valued data plane. Source authentication, physical independence and hardware performance are each distinct validation targets.
 
 ## Installation and quick start
 
