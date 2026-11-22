@@ -2,13 +2,13 @@
 
 ## Current implementation: observation → policy → admitted Ground → replay certificate
 
-\`vgi.evidence\` implements four distinct transitions: retain an exact inbound message and its transport/encounter bindings; aggregate source-relative claims; explicitly finalize an event; construct authorized Ground transitions and verify a finite compiled replay corpus.
+`vgi.evidence` implements four distinct transitions: retain an exact inbound message and its transport/encounter bindings; aggregate source-relative claims; explicitly finalize an event; construct authorized Ground transitions and verify a finite compiled replay corpus.
 
-**Code**: [\`vgi/evidence.py\`](../vgi/evidence.py) (\`TransitionEvidenceLedger\`, \`TransitionEvidencePolicy\`, \`GroundReconstructionVerifier\`). **Tests**: [\`tests/test_evidence.py\`](../tests/test_evidence.py). The policy, claim and certificate each retain separate exact provenance identities.
+**Code**: [`vgi/evidence.py`](../vgi/evidence.py) (`TransitionEvidenceLedger`, `TransitionEvidencePolicy`, `GroundReconstructionVerifier`). **Tests**: [`tests/test_evidence.py`](../tests/test_evidence.py). The policy, claim and certificate each retain separate exact provenance identities.
 
 ### Formal admission relation
 
-For one event \(e=(s,a)\), let \(S\) be the policy's allowed source IDs, \(q\) the quorum and \(R_e\) the retained evidence records. Group claims by source; a source with more than one distinct claim signature contributes to \(C_e\), the conflict set. A source with one \`known\` claim votes once for its exact \((target,output)\); a source with one \`unknown\` or \`ambiguous\` claim belongs to the indeterminate set \(I_e\).
+For one event \(e=(s,a)\), let \(S\) be the policy's allowed source IDs, \(q\) the quorum and \(R_e\) the retained evidence records. Group claims by source; a source with more than one distinct claim signature contributes to \(C_e\), the conflict set. A source with one `known` claim votes once for its exact \((target,output)\); a source with one `unknown` or `ambiguous` claim belongs to the indeterminate set \(I_e\).
 
 For each outcome \(o\), define the agreeing source set \(A_o\), and let \(A_*\) be the unique largest group when one exists. Define \(M_e=S\setminus\operatorname{ObservedSources}(R_e)\) and \(D_e\) as known dissenters outside \(A_*\).
 
@@ -18,9 +18,9 @@ For each outcome \(o\), define the agreeing source set \(A_o\), and let \(A_*\) 
 (\operatorname{strict}\land D_e\ne\varnothing).
 \]
 
-After conflict precedence is applied, the implementation returns \`QUORUM\` exactly when a unique winner exists, \(|A_*|\ge q\), and either \`strict=False\` or both \(M_e\) and \(I_e\) are empty. Other cases remain \`PENDING\`. In particular, strict dissent gives \`CONFLICT\`, whereas non-strict dissent may coexist with \`QUORUM\` and remains recorded.
+After conflict precedence is applied, the implementation returns `QUORUM` exactly when a unique winner exists, \(|A_*|\ge q\), and either `strict=False` or both \(M_e\) and \(I_e\) are empty. Other cases remain `PENDING`. In particular, strict dissent gives `CONFLICT`, whereas non-strict dissent may coexist with `QUORUM` and remains recorded.
 
-The **commit boundary** is the separate call \`finalize(s,a)\`:
+The **commit boundary** is the separate call `finalize(s,a)`:
 
 \[
 \texttt{QUORUM}\mapsto\texttt{AUTHORIZED},\qquad
@@ -28,11 +28,11 @@ The **commit boundary** is the separate call \`finalize(s,a)\`:
 \texttt{PENDING}\mapsto\texttt{REFUSED}.
 \]
 
-\`build_ground\` includes a transition for \(e\) **iff** it has an \`AUTHORIZED\` finalization. The finalized event binds the ordered evidence IDs and the raw decision digest; further evidence for that event requires a new Ground/context revision.
+`build_ground` includes a transition for \(e\) **iff** it has an `AUTHORIZED` finalization. The finalized event binds the ordered evidence IDs and the raw decision digest; further evidence for that event requires a new Ground/context revision.
 
 ### Current Python call path
 
-\`\`\`python
+```python
 from vgi.evidence import (
     TransitionEvidencePolicy, TransitionEvidenceLedger,
     GroundReconstructionVerifier,
@@ -57,20 +57,20 @@ ground = ledger.build_ground(
 certificate = GroundReconstructionVerifier().certify(
     ground, (("STEP",), ("STEP", "STEP")), context_digest=context_digest
 )
-\`\`\`
+```
 
-The final \`certify\` call requires a **complete** Ground; the snippet shows the API and is executable only when the supplied received evidence has authorized transitions for every declared state/action. For a self-contained two-state reconstruction fixture, see \`complete_ground()\` and \`GroundReconstructionTests.test_finite_compiled_replay_certificate_is_revalidatable\` in the tests.
+The final `certify` call requires a **complete** Ground; the snippet shows the API and is executable only when the supplied received evidence has authorized transitions for every declared state/action. For a self-contained two-state reconstruction fixture, see `complete_ground()` and `GroundReconstructionTests.test_finite_compiled_replay_certificate_is_revalidatable` in the tests.
 
 ### Replay obligation
 
-For a complete Ground \(G\) and caller-declared finite action corpus \(W\), \`GroundReconstructionVerifier.certify\` requires
+For a complete Ground \(G\) and caller-declared finite action corpus \(W\), `GroundReconstructionVerifier.certify` requires
 
 \[
 \forall w\in W:\;
 \operatorname{Run}_{G}(w)=\operatorname{Run}_{\operatorname{Compile}(G)}(w),
 \]
 
-including the checked trace semantics returned by \`differential_verify\`. The certificate binds the exact Ground fingerprint, context, compiler identity/version, action words and digest of direct-run traces. The current corpus has \(1\le |W|\le4096\), unique words, and maximum word length \(128\).
+including the checked trace semantics returned by `differential_verify`. The certificate binds the exact Ground fingerprint, context, compiler identity/version, action words and digest of direct-run traces. The current corpus has \(1\le |W|\le4096\), unique words, and maximum word length \(128\).
 
 **Translation insight:** provenance and agreement, finalization authority, and replay equivalence are three different types of evidence. This makes a useful candidate for a typed cross-repository evidence interface: an observer-relative processor may consume a source law only after a declared evidence/admission transition, and its output equality can then be certified separately.
 
